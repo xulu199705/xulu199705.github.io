@@ -23,24 +23,24 @@
 <meta name="description" content="还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从零开始的客制化87键机械键盘_1_立项">
-<meta property="og:url" content="http://example.com/2020/03/19/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/index.html">
+<meta property="og:url" content="http://example.com/2018/12/25/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/index.html">
 <meta property="og:site_name" content="Leon的网络日志">
 <meta property="og:description" content="还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2020/03/19/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/source%5Cimg%5C2020%5C02%5C3841195344.jpg">
-<meta property="article:published_time" content="2020-03-19T12:24:41.000Z">
-<meta property="article:modified_time" content="2021-05-06T10:33:41.895Z">
+<meta property="og:image" content="http://example.com/2018/12/25/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/source%5Cimg%5C2020%5C02%5C3841195344.jpg">
+<meta property="article:published_time" content="2018-12-25T12:24:41.000Z">
+<meta property="article:modified_time" content="2021-05-06T10:37:24.977Z">
 <meta property="article:author" content="Leon">
 <meta property="article:tag" content="STM32">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2020/03/19/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/source%5Cimg%5C2020%5C02%5C3841195344.jpg">
+<meta name="twitter:image" content="http://example.com/2018/12/25/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/source%5Cimg%5C2020%5C02%5C3841195344.jpg">
 
 
-<link rel="canonical" href="http://example.com/2020/03/19/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/">
+<link rel="canonical" href="http://example.com/2018/12/25/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;en&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;03&#x2F;19&#x2F;%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9&#x2F;&quot;,&quot;path&quot;:&quot;2020&#x2F;03&#x2F;19&#x2F;从零开始的客制化87键机械键盘_1_立项&#x2F;&quot;,&quot;title&quot;:&quot;从零开始的客制化87键机械键盘_1_立项&quot;}</script>
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;en&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2018&#x2F;12&#x2F;25&#x2F;%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9&#x2F;&quot;,&quot;path&quot;:&quot;2018&#x2F;12&#x2F;25&#x2F;从零开始的客制化87键机械键盘_1_立项&#x2F;&quot;,&quot;title&quot;:&quot;从零开始的客制化87键机械键盘_1_立项&quot;}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
 <title>从零开始的客制化87键机械键盘_1_立项 | Leon的网络日志</title><script src="/js/config.js"></script>
@@ -167,7 +167,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/03/19/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/12/25/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -191,14 +191,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2020-03-19 20:24:41" itemprop="dateCreated datePublished" datetime="2020-03-19T20:24:41+08:00">2020-03-19</time>
+      <time title="Created: 2018-12-25 20:24:41" itemprop="dateCreated datePublished" datetime="2018-12-25T20:24:41+08:00">2018-12-25</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-06 18:33:41" itemprop="dateModified" datetime="2021-05-06T18:33:41+08:00">2021-05-06</time>
+        <time title="Modified: 2021-05-06 18:37:24" itemprop="dateModified" datetime="2021-05-06T18:37:24+08:00">2021-05-06</time>
       </span>
 
   
@@ -216,7 +216,7 @@
 
 
 <h2 id="项目初衷"><a href="#项目初衷" class="headerlink" title="项目初衷"></a>项目初衷</h2><p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
-<p><img src="/2020/03/19/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/source%5Cimg%5C2020%5C02%5C3841195344.jpg" alt="USB-to-Bluetooth Convertor"></p>
+<p><img src="/2018/12/25/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%AE%A2%E5%88%B6%E5%8C%9687%E9%94%AE%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98_1_%E7%AB%8B%E9%A1%B9/source%5Cimg%5C2020%5C02%5C3841195344.jpg" alt="USB-to-Bluetooth Convertor"></p>
 <p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
 <p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
 <p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a target="_blank" rel="noopener" href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
