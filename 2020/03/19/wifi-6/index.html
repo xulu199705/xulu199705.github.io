@@ -20,17 +20,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
-<meta name="description" content="Wi-Fi 6 详解 简析Wi-Fi 6这个词是我在翻看张大妈了解到的，只是大概知道Wi-Fi 6的延迟更低，传输更快，多设备体验更舒服。 2月13日，雷军在小米的 无人 发布会上发布了Wi-Fi 6协议的AX3600，售价599，真不愧是价格屠夫。 反正最近一段时间一直在家蹲着，自然要看看这个Wi-Fi 6协议到底是个啥情况，Wi-Fi 6对于我这样的普通用户是不是真的有丶东西呢？  紧接着小米">
+<meta name="description" content="Wi-Fi 6这个词是我在翻看张大妈了解到的，只是大概知道Wi-Fi 6的延迟更低，传输更快，多设备体验更舒服。 2月13日，雷军在小米的 无人 发布会上发布了Wi-Fi 6协议的AX3600，售价599，真不愧是价格屠夫。 反正最近一段时间一直在家蹲着，自然要看看这个Wi-Fi 6协议到底是个啥情况，Wi-Fi 6对于我这样的普通用户是不是真的有丶东西呢？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Wi-Fi 6简析">
 <meta property="og:url" content="http://example.com/2020/03/19/wifi-6/index.html">
 <meta property="og:site_name" content="Leon的网络日志">
-<meta property="og:description" content="Wi-Fi 6 详解 简析Wi-Fi 6这个词是我在翻看张大妈了解到的，只是大概知道Wi-Fi 6的延迟更低，传输更快，多设备体验更舒服。 2月13日，雷军在小米的 无人 发布会上发布了Wi-Fi 6协议的AX3600，售价599，真不愧是价格屠夫。 反正最近一段时间一直在家蹲着，自然要看看这个Wi-Fi 6协议到底是个啥情况，Wi-Fi 6对于我这样的普通用户是不是真的有丶东西呢？  紧接着小米">
+<meta property="og:description" content="Wi-Fi 6这个词是我在翻看张大妈了解到的，只是大概知道Wi-Fi 6的延迟更低，传输更快，多设备体验更舒服。 2月13日，雷军在小米的 无人 发布会上发布了Wi-Fi 6协议的AX3600，售价599，真不愧是价格屠夫。 反正最近一段时间一直在家蹲着，自然要看看这个Wi-Fi 6协议到底是个啥情况，Wi-Fi 6对于我这样的普通用户是不是真的有丶东西呢？">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2020/03/19/wifi-6/img/2020/02/718581389.jpg">
 <meta property="og:image" content="http://example.com/2020/03/19/wifi-6/img/2020/02/3653584390.png">
 <meta property="article:published_time" content="2020-03-19T12:24:41.000Z">
-<meta property="article:modified_time" content="2021-05-03T12:45:01.471Z">
+<meta property="article:modified_time" content="2021-05-06T10:03:48.855Z">
 <meta property="article:author" content="Leon">
 <meta property="article:tag" content="Wi-Fi">
 <meta name="twitter:card" content="summary">
@@ -111,7 +111,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Wi-Fi-6-%E8%AF%A6%E8%A7%A3-%E7%AE%80%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">Wi-Fi 6 详解 简析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E2%80%9C6%E2%80%9D%E4%BB%8E%E4%BD%95%E8%80%8C%E6%9D%A5"><span class="nav-number">1.1.</span> <span class="nav-text">1 “6”从何而来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%B0%E5%BA%95%E6%9C%89%E5%A4%9A%E2%80%9C6%E2%80%9D"><span class="nav-number">1.2.</span> <span class="nav-text">2 到底有多“6”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%B7%A5%E4%BD%9C%E9%A2%91%E6%AE%B5"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 工作频段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%9C%80%E5%A4%A7%E9%A2%91%E5%AE%BD"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 最大频宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E5%8D%95%E6%B5%81%E5%B8%A6%E5%AE%BD-amp-%E6%9C%80%E5%A4%A7%E5%B8%A6%E5%AE%BD"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 单流带宽&amp;最大带宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-MU-MIMO"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4 MU-MIMO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-OFDMA"><span class="nav-number">1.2.5.</span> <span class="nav-text">2.5 OFDMA</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E2%80%9C6%E2%80%9D%E4%BB%8E%E4%BD%95%E8%80%8C%E6%9D%A5"><span class="nav-number">1.</span> <span class="nav-text">1 “6”从何而来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%B0%E5%BA%95%E6%9C%89%E5%A4%9A%E2%80%9C6%E2%80%9D"><span class="nav-number">2.</span> <span class="nav-text">2 到底有多“6”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%B7%A5%E4%BD%9C%E9%A2%91%E6%AE%B5"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 工作频段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%9C%80%E5%A4%A7%E9%A2%91%E5%AE%BD"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 最大频宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E5%8D%95%E6%B5%81%E5%B8%A6%E5%AE%BD-amp-%E6%9C%80%E5%A4%A7%E5%B8%A6%E5%AE%BD"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 单流带宽&amp;最大带宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-MU-MIMO"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 MU-MIMO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-OFDMA"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 OFDMA</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -199,7 +199,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-03 20:45:01" itemprop="dateModified" datetime="2021-05-03T20:45:01+08:00">2021-05-03</time>
+        <time title="Modified: 2021-05-06 18:03:48" itemprop="dateModified" datetime="2021-05-06T18:03:48+08:00">2021-05-06</time>
       </span>
 
   
@@ -212,9 +212,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Wi-Fi-6-详解-简析"><a href="#Wi-Fi-6-详解-简析" class="headerlink" title="Wi-Fi 6 详解 简析"></a>Wi-Fi 6 <del>详解</del> 简析</h1><p>Wi-Fi 6这个词是我在翻看张大妈了解到的，只是大概知道Wi-Fi 6的延迟更低，传输更快，多设备体验更舒服。</p>
+        <p>Wi-Fi 6这个词是我在翻看张大妈了解到的，只是大概知道Wi-Fi 6的延迟更低，传输更快，多设备体验更舒服。</p>
 <p>2月13日，雷军在小米的 <del>无人</del> 发布会上发布了Wi-Fi 6协议的AX3600，售价599，真不愧是价格屠夫。</p>
 <p>反正最近一段时间一直在家蹲着，自然要看看这个Wi-Fi 6协议到底是个啥情况，Wi-Fi 6对于我这样的普通用户是不是真的有丶东西呢？</p>
+<span id="more"></span>
+
 <blockquote>
 <p>紧接着小米无人发布会，华为也发布了Wi-Fi 6路由器。</p>
 </blockquote>
