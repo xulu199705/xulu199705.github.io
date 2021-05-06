@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-05-06T10:03:48.855Z</updated>
+  <updated>2021-05-06T11:59:55.818Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2020/03/19/wifi-6/"/>
     <id>http://example.com/2020/03/19/wifi-6/</id>
     <published>2020-03-19T12:24:41.000Z</published>
-    <updated>2021-05-06T10:03:48.855Z</updated>
+    <updated>2021-05-06T11:59:55.818Z</updated>
     
     <content type="html"><![CDATA[<p>Wi-Fi 6这个词是我在翻看张大妈了解到的，只是大概知道Wi-Fi 6的延迟更低，传输更快，多设备体验更舒服。</p><p>2月13日，雷军在小米的 <del>无人</del> 发布会上发布了Wi-Fi 6协议的AX3600，售价599，真不愧是价格屠夫。</p><p>反正最近一段时间一直在家蹲着，自然要看看这个Wi-Fi 6协议到底是个啥情况，Wi-Fi 6对于我这样的普通用户是不是真的有丶东西呢？</p><span id="more"></span><blockquote><p>紧接着小米无人发布会，华为也发布了Wi-Fi 6路由器。</p></blockquote><h2 id="1-“6”从何而来"><a href="#1-“6”从何而来" class="headerlink" title="1 “6”从何而来"></a>1 “6”从何而来</h2><p>Wi-Fi并不是某一项标准，而是在IEEE 802.11内，包括IEEE 802.11n/ac/ax的一系列标准，用于规范化无线局域网传输。</p><p>2018年下半年，Wi-Fi联盟(Wi-Fi Alliance，WFA)正式发布了IEEE 802.11 ax标准，并把802.11 ax称作Wi-Fi 6。同时为IEEE 802.11n和ac添加名称Wi-Fi 4和Wi-Fi 5。这既方便硬件厂商对产品进行宣传，又让消费者不再需要仔细研究IEEE 802.11a/b/g/n/ac/ax这一堆标准了。</p><p><img src="/2020/03/19/wifi-6/img/2020/02/718581389.jpg" alt="Wi-Fi 6 logo"></p><p>那Wi-Fi 6到底6在哪里呢？</p><h2 id="2-到底有多“6”"><a href="#2-到底有多“6”" class="headerlink" title="2 到底有多“6”"></a>2 到底有多“6”</h2><p>要想知道Wi-Fi 6有多“6”，那就一定要和Wi-Fi 4和Wi-Fi 5比较一下。</p><table style="text-align:center">    <tr>        <td></td>        <td>Wi-Fi 4</td>        <td colspan="2">Wi-Fi 5</td>        <td>Wi-Fi 6</td>    </tr>    <tr>        <td rowspan="2">协议</td>        <td rowspan="2">802.11n</td>        <td colspan="2">802.11ac</td>        <td rowspan="2">802.11ax</td>    </tr>    <tr>        <td>Wave1</td>        <td>Wave2</td>    </tr>    <tr>        <td>发布年份</td>        <td>2009</td>        <td>2013</td>        <td>2016</td>        <td>2018</td>    </tr>    <tr>        <td>工作频段</td>        <td>2.4 GHz 5 GHz</td>        <td colspan="2">5 GHz</td>        <td>2.4 GHz 5 GHz</td>    </tr>    <tr>        <td>最大频宽</td>        <td>40 MHz</td>        <td>80 MHz</td>        <td>160 MHz</td>        <td>160 MHz</td>    </tr>    <tr>        <td>最高调制</td>        <td>64 QAM</td>        <td colspan="2">256 QAM</td>        <td>1024 QAM</td>    </tr>    <tr>        <td>单流带宽</td>        <td>150 Mbps</td>        <td>433 Mbps</td>        <td>867 Mbps</td>        <td>1024 Mbps</td>    </tr>    <tr>        <td>最大带宽</td>        <td>600 Mbps</td>        <td>3466 Mbps</td>        <td>6933 Mbps</td>        <td>9.6 Gbps</td>    </tr>    <tr>        <td>最大空间流</td>        <td>4 * 4</td>        <td colspan="2">8 * 8</td>        <td>8 * 8</td>    </tr>    <tr>        <td>MU-MIMO</td>        <td>N/A</td>        <td>N/A</td>        <td>下行</td>        <td>上行 下行</td>    </tr>    <tr>        <td>OFDMA</td>        <td>N/A</td>        <td>N/A</td>        <td>N/A</td>        <td>上行 下行</td>    </tr></table><h3 id="2-1-工作频段"><a href="#2-1-工作频段" class="headerlink" title="2.1 工作频段"></a>2.1 工作频段</h3><p>工作频段是通信时使用的电波的频率范围，它不是一个特定的频率，而是一个频率范围。比如，Wi-Fi 4所使用的的2.4 GHz频段的范围是2.401 GHz-2.483 Ghz，ZigBee和蓝牙同样在使用2.4 GHz频段，只是工作频段的范围不同罢了。这个频段还被细分为14个信道，每个信道的带宽可依据使用场合进行设置，各信道中心频点以5 MHz的倍数增加，有效带宽为20 MHz，剩余2 MHz属于隔离保护带宽。电波的频率越高，承载的信息自然就越多，通信的时间效率也就更高。所以，5 GHz能为通信提供更高的传输速率。但根据波的相关原理，频率越高，波长就越短，介质的穿透能力就越弱。因此，5 GHz的穿墙能力要比2.4 GHz弱的多。</p><p>Wi-Fi 6同时兼容了2.4 GHz和5 GHz，兼容性和性能兼得。同时，Wi-Fi联盟目前申请6 GHz频段，并把新标准命名为Wi-Fi 6E，该标准提供的超高传输速率将为VR和AR提供硬件支持。</p><h3 id="2-2-最大频宽"><a href="#2-2-最大频宽" class="headerlink" title="2.2 最大频宽"></a>2.2 最大频宽</h3><p>频宽是指工作频段内被细分的信道的带宽。当工作频段为2.4 GHz，频宽设置为20 MHz时，此时，每个信道就是20 MHz。因为2.4 GHz频段总总频宽只有83 MHz，所以信道与信道之间必定会有重叠，图示如下。</p><p><img src="/2020/03/19/wifi-6/img/2020/02/3653584390.png" alt="信道图示"></p><p>理论上，频宽越高，最高传输速率就高。但你的设备当前使用的信道其实一直被其它设备的信号干扰。在频宽不变的情况下，当周围使用的Wi-Fi的设备增加时，这种干扰就更加明显，表现为网络延迟等(当然，日常使用不会感觉出来)。</p><p>因此，目前来说，高频宽带来的高速传输和低频宽带来的低干扰不可兼得。</p><p>Wi-Fi 6的最大频宽可以达到160 MHz，与Wi-Fi 5 Wave 2相同，理论上可以提供高速上下行传输速率。</p><h3 id="2-3-单流带宽-amp-最大带宽"><a href="#2-3-单流带宽-amp-最大带宽" class="headerlink" title="2.3 单流带宽&amp;最大带宽"></a>2.3 单流带宽&amp;最大带宽</h3><p>带宽是最能直接表明传输（理论）速度的指标了。一眼看过去就能明白Wi-Fi 6的传输速度very fast，其他就不赘述了。</p><h3 id="2-4-MU-MIMO"><a href="#2-4-MU-MIMO" class="headerlink" title="2.4 MU-MIMO"></a>2.4 MU-MIMO</h3><p>MU-MIMO（Multi-User Multiple-Input Multiple-Output）在Wi-Fi 5标准中就提出了，Wi-Fi 6依旧采用了MU-MIMO。MU-MIMO旨在将多终端的数据传输放在相同的子载波上，尽可能提高系统的吞吐量，直观的表现在延时降低上。当然，MU-MIMO也有缺点：多终端的共信道干扰、中断间通信协作困难等。</p><h3 id="2-5-OFDMA"><a href="#2-5-OFDMA" class="headerlink" title="2.5 OFDMA"></a>2.5 OFDMA</h3><p>Wi-Fi 6采用了OFDMA，支持局域网内的多个无线终端并行传输数据。之前的Wi-Fi协议中，信息传输都是基于时间的周期传输；OFDMA支持多个终端。以快递公司打个比方，未使用OFDMA的A公司，送给同小区X、Y、Z三人的快递使用一辆运输车分三次运送；使用OFDMA的B公司，送给同小区X、Y、Z三人的快递装在一辆运输车上一次性送达（这个比喻不是特别恰当）。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上对于Wi-Fi 6的介绍比较简略的将它的一些特点列写出来了。总的来看，Wi-Fi 6确实是有技术更新和体验的提升的；但目前来说，Wi-Fi 6进入大众家庭，或者说大众家庭完全发挥好Wi-Fi 6的优势，依旧是厂商和用户需要考虑和头疼的问题。（好吧，我承认我刚买了华硕的AC系列路由器，想安慰一下自己[doge]）</p>]]></content>
     
@@ -32,8 +32,12 @@
     
     
     
+    <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
+    
     
     <category term="Wi-Fi" scheme="http://example.com/tags/Wi-Fi/"/>
+    
+    <category term="IEEE 802.11" scheme="http://example.com/tags/IEEE-802-11/"/>
     
   </entry>
   
@@ -42,7 +46,7 @@
     <link href="http://example.com/2018/12/25/keyboard87_1/"/>
     <id>http://example.com/2018/12/25/keyboard87_1/</id>
     <published>2018-12-25T12:24:41.000Z</published>
-    <updated>2021-05-06T10:43:45.646Z</updated>
+    <updated>2021-05-06T12:00:17.567Z</updated>
     
     <content type="html"><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p><span id="more"></span><h2 id="项目初衷"><a href="#项目初衷" class="headerlink" title="项目初衷"></a>项目初衷</h2><p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p><p><img src="/2018/12/25/keyboard87_1/img/2020/02/3841195344.jpg" alt="USB-to-Bluetooth Convertor"></p><p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p><p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p><p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>]]></content>
     
@@ -50,6 +54,8 @@
     <summary type="html">&lt;p&gt;还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。&lt;/p&gt;</summary>
     
     
+    
+    <category term="硬件" scheme="http://example.com/categories/%E7%A1%AC%E4%BB%B6/"/>
     
     
     <category term="STM32" scheme="http://example.com/tags/STM32/"/>
@@ -65,7 +71,7 @@
     <link href="http://example.com/2016/09/26/hello-world/"/>
     <id>http://example.com/2016/09/26/hello-world/</id>
     <published>2016-09-26T04:04:41.000Z</published>
-    <updated>2021-05-06T11:31:01.500Z</updated>
+    <updated>2021-05-06T11:59:19.979Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><span id="more"></span><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
@@ -73,6 +79,8 @@
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
     
     
+    
+    <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
   </entry>
