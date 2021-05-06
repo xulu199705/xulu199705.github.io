@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
+<meta name="description" content="STM32基础_GPIO流水灯    从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leon的网络日志">
+<meta property="og:url" content="http://example.com/2021/05/06/STM32%E5%9F%BA%E7%A1%80_GPIO%E6%B5%81%E6%B0%B4%E7%81%AF/index.html">
+<meta property="og:site_name" content="Leon的网络日志">
+<meta property="og:description" content="STM32基础_GPIO流水灯    从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/05/06/STM32%E5%9F%BA%E7%A1%80_GPIO%E6%B5%81%E6%B0%B4%E7%81%AF/uploads/2020/02/1646673628.png">
+<meta property="article:published_time" content="2021-05-06T10:23:47.217Z">
+<meta property="article:modified_time" content="2020-08-05T08:04:08.366Z">
+<meta property="article:author" content="Leon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/05/06/STM32%E5%9F%BA%E7%A1%80_GPIO%E6%B5%81%E6%B0%B4%E7%81%AF/uploads/2020/02/1646673628.png">
+
+
+<link rel="canonical" href="http://example.com/2021/05/06/STM32%E5%9F%BA%E7%A1%80_GPIO%E6%B5%81%E6%B0%B4%E7%81%AF/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;en&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;05&#x2F;06&#x2F;STM32%E5%9F%BA%E7%A1%80_GPIO%E6%B5%81%E6%B0%B4%E7%81%AF&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;05&#x2F;06&#x2F;STM32基础_GPIO流水灯&#x2F;&quot;,&quot;title&quot;:&quot;&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title> | Leon的网络日志</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Leon的网络日志</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#STM32%E5%9F%BA%E7%A1%80-GPIO%E6%B5%81%E6%B0%B4%E7%81%AF"><span class="nav-number">1.</span> <span class="nav-text">STM32基础_GPIO流水灯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%81%AF%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">流水灯实验原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E8%84%9A%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">管脚配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CODE"><span class="nav-number">1.4.</span> <span class="nav-text">CODE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Leon</p>
+  <div class="site-description" itemprop="description">这里是爱研究各种问题、立许多flag的Leon的网络日志</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/06/STM32%E5%9F%BA%E7%A1%80_GPIO%E6%B5%81%E6%B0%B4%E7%81%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leon">
+      <meta itemprop="description" content="这里是爱研究各种问题、立许多flag的Leon的网络日志">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leon的网络日志">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-05-06 18:23:47" itemprop="dateCreated datePublished" datetime="2021-05-06T18:23:47+08:00">2021-05-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-08-05 16:04:08" itemprop="dateModified" datetime="2020-08-05T16:04:08+08:00">2020-08-05</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="STM32基础-GPIO流水灯"><a href="#STM32基础-GPIO流水灯" class="headerlink" title="STM32基础_GPIO流水灯"></a>STM32基础_GPIO流水灯</h1><!-- category: 硬件 -->
+<!-- tag: STM32 -->
+<!-- url: stm32_gpio_led -->
+
+<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
+<span id="more"></span>
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#stm32%E5%9F%BA%E7%A1%80_gpio%E6%B5%81%E6%B0%B4%E7%81%AF">STM32基础_GPIO流水灯</a><ul>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#%E6%B5%81%E6%B0%B4%E7%81%AF%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86">流水灯实验原理</a></li>
+<li><a href="#%E7%AE%A1%E8%84%9A%E9%85%8D%E7%BD%AE">管脚配置</a></li>
+<li><a href="#code">CODE</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="流水灯实验原理"><a href="#流水灯实验原理" class="headerlink" title="流水灯实验原理"></a>流水灯实验原理</h2><p>LED模块的原理图如图1所示：</p>
+<p><img src="/2021/05/06/STM32%E5%9F%BA%E7%A1%80_GPIO%E6%B5%81%E6%B0%B4%E7%81%AF/uploads/2020/02/1646673628.png" alt="图1 LED模块原理图"></p>
+<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。<br>因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
+<h2 id="管脚配置"><a href="#管脚配置" class="headerlink" title="管脚配置"></a>管脚配置</h2><p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a target="_blank" rel="noopener" href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a target="_blank" rel="noopener" href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
+<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> nCount)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> nCount)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
+<table>
+<thead>
+<tr>
+<th align="center">模式名称</th>
+<th align="center">标识</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">浮空输入</td>
+<td align="center">GPIO_MODE_IN_FLOATING</td>
+</tr>
+<tr>
+<td align="center">带上拉输入</td>
+<td align="center">GPIO_MODE_IPU</td>
+</tr>
+<tr>
+<td align="center">带下拉输入</td>
+<td align="center">GPIO_MODE_IPD</td>
+</tr>
+<tr>
+<td align="center">模拟输入</td>
+<td align="center">GPIO_MODE_AIN</td>
+</tr>
+<tr>
+<td align="center">开漏输出</td>
+<td align="center">GPIO_MODE_OUT_OD</td>
+</tr>
+<tr>
+<td align="center">推挽输出</td>
+<td align="center">GPIO_MODE_OUT_PP</td>
+</tr>
+<tr>
+<td align="center">复用_推挽输出</td>
+<td align="center">GPIO_MODE_AF_PP</td>
+</tr>
+<tr>
+<td align="center">复用_开漏输出</td>
+<td align="center">GPIO_MODE_AF_OD</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:<br>  初始化(Initialization)–&gt;配置(Configuation)–&gt;调用(Call)</p>
+</blockquote>
+<h2 id="CODE"><a href="#CODE" class="headerlink" title="CODE"></a>CODE</h2><p>下面就贴一下代码。</p>
+<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1 .pdf第三章。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">uint32_t</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(__IO <span class="keyword">uint32_t</span> nCount)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/05/06/Linux%E7%AC%94%E8%AE%B0%E4%B9%8BXDMCP%E9%85%8D%E7%BD%AE/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/05/06/VHDL%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%85%83%E4%BB%B6%E9%80%92%E5%BD%92/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leon</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
