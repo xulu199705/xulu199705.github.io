@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
-<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
 <meta name="description" content="IC笔记系列再次更新，这次介绍一下瞬态仿真。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IC笔记之瞬态仿真">
@@ -27,29 +27,29 @@
 <meta property="og:site_name" content="Leon的网络日志">
 <meta property="og:description" content="IC笔记系列再次更新，这次介绍一下瞬态仿真。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_1.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_timestep.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_algorithm.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_statefile.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_output_1.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_output_2.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_emiroutput.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_misc.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/circuit_opa.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_stimuli_1.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_stimuli_2_vin.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_stimuli_2_vdda.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_stimuli_2_gnda.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_mode.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings.png">
-<meta property="og:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_results.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_settings_1.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_settings_2_timestep.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_settings_2_algorithm.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_settings_2_statefile.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_settings_2_output_1.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_settings_2_output_2.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_settings_2_emiroutput.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_settings_2_misc.png">
+<meta property="og:image" content="http://example.com/img/2021/04/circuit_opa.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_stimuli_1.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_stimuli_2_vin.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_stimuli_2_vdda.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_stimuli_2_gnda.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_mode.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_settings.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tran_ade_results.png">
 <meta property="article:published_time" content="2021-04-06T01:46:19.000Z">
 <meta property="article:modified_time" content="2021-05-06T13:06:57.406Z">
 <meta property="article:author" content="Leon">
 <meta property="article:tag" content="瞬态仿真">
 <meta property="article:tag" content="仿真">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_1.png">
+<meta name="twitter:image" content="http://example.com/img/2021/04/tran_ade_settings_1.png">
 
 
 <link rel="canonical" href="http://example.com/2021/04/06/ic-note-simu-tran/">
@@ -319,7 +319,7 @@
 <h3 id="基本设置">1.1 基本设置</h3>
 <p>在"ADE"中选择"Analyses"-"Choose"，可以选择仿真功能选择。点击"tran"后，可以看到如下图的基本设置界面。</p>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_1.png" alt="图1-1"><figcaption aria-hidden="true">图1-1</figcaption>
+<img data-src="/img/2021/04/tran_ade_settings_1.png" alt="图1-1"><figcaption aria-hidden="true">图1-1</figcaption>
 </figure>
 <ol type="1">
 <li>"Stop Time"，设置仿真时间<br>
@@ -334,7 +334,7 @@
 <p>在图1-1中点击右下角的"Options"可进入高级设置。</p>
 <h4 id="time-step标签页">1.2.1 Time Step标签页</h4>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_timestep.png" alt="图1-2"><figcaption aria-hidden="true">图1-2</figcaption>
+<img data-src="/img/2021/04/tran_ade_settings_2_timestep.png" alt="图1-2"><figcaption aria-hidden="true">图1-2</figcaption>
 </figure>
 <p>Simulation Interval Parameters</p>
 <ul>
@@ -348,7 +348,7 @@
 </ul>
 <h4 id="algorithm标签页">1.2.2 Algorithm标签页</h4>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_algorithm.png" alt="图1-3"><figcaption aria-hidden="true">图1-3</figcaption>
+<img data-src="/img/2021/04/tran_ade_settings_2_algorithm.png" alt="图1-3"><figcaption aria-hidden="true">图1-3</figcaption>
 </figure>
 <p>Initial Condition Parameters</p>
 <p>用户可以利用设置电路节点状态的初始化语句（ic statement）或电容、电感等模型内的初始条件参数（ic parameters）两种方式为瞬态仿真设置初始条件。其中电容中设置的是初始电压值，电感中设置的是初始电流值。如果没有进行设置，仿真器将默认采用直流分析的结果作为初始条件。对这个参数进行设置时要格外注意，如果对电路分析不明，贸然设置电路节点的初始值，极易造成电路瞬态仿真出现收敛性问题，并产生错误结果。</p>
@@ -389,7 +389,7 @@
 </ul>
 <h4 id="state-file标签页">1.2.3 State File标签页</h4>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_statefile.png" alt="图1-4"><figcaption aria-hidden="true">图1-4</figcaption>
+<img data-src="/img/2021/04/tran_ade_settings_2_statefile.png" alt="图1-4"><figcaption aria-hidden="true">图1-4</figcaption>
 </figure>
 <p>StateFile Parameters</p>
 <p>状态文件（State File）主要有两个用处： 1. 将保存下来的状态文件用于后续的仿真分析中。如在一次瞬态分析中保存下结束时刻的信息，在下一次瞬态分析中能够以该时刻作为起始点继续完成后续时间段的分析。 2. 用户能够利用状态文件自动完成初始条件的更新。设计者能够利用仿真器将一次分析的初始时刻工作点或终止时刻工作点生成状态文件。同时，设计者也能手动编写一个状态文件。</p>
@@ -400,7 +400,7 @@
 <p>Save-Restart Parameters</p>
 <p>该参数用于配置保存和载入的频率等参数。</p>
 <h4 id="output标签页">1.2.3 Output标签页</h4>
-<p>[photos] <img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_output_1.png" alt="图1-5"> <img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_output_2.png" alt="图1-6"> [/photos]</p>
+<p>[photos] <img data-src="/img/2021/04/tran_ade_settings_2_output_1.png" alt="图1-5"> <img data-src="/img/2021/04/tran_ade_settings_2_output_2.png" alt="图1-6"> [/photos]</p>
 <p>Output Parameters</p>
 <p>仿真器默认情况下会把所有仿真数据都保存下来，但有时并不需要所有的数据量。仿真器允许设计者选择保存需要的数据。如果需要得到更精确的结果，也可以增大数据输出量。<br>
 该参数配置"compression"输出模式，将恒定信号的重复记录删除。</p>
@@ -414,12 +414,12 @@
 <p>未找到相关资料，待补充。</p>
 <h4 id="emir-output标签页">1.2.5 EM/IR Output标签页</h4>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_emiroutput.png" alt="图1-7"><figcaption aria-hidden="true">图1-7</figcaption>
+<img data-src="/img/2021/04/tran_ade_settings_2_emiroutput.png" alt="图1-7"><figcaption aria-hidden="true">图1-7</figcaption>
 </figure>
 <p>该标签页涉及EM（电子迁移）和IR（IR压降）。<del>恕我直言，不会。</del></p>
 <h4 id="misc标签页">1.2.6 Misc标签页</h4>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings_2_misc.png" alt="图1-7"><figcaption aria-hidden="true">图1-7</figcaption>
+<img data-src="/img/2021/04/tran_ade_settings_2_misc.png" alt="图1-7"><figcaption aria-hidden="true">图1-7</figcaption>
 </figure>
 <p>该标签页为一些难以分类的配置，毕竟都写了是misc了。</p>
 <ol type="1">
@@ -430,29 +430,29 @@
 <h2 id="实例">2 实例</h2>
 <p>仿真电路如图。瞬态仿真实例选择了使用二极管连接方式的PMOS作为负载的共源极电路。</p>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/circuit_opa.png" alt="图2-1"><figcaption aria-hidden="true">图2-1</figcaption>
+<img data-src="/img/2021/04/circuit_opa.png" alt="图2-1"><figcaption aria-hidden="true">图2-1</figcaption>
 </figure>
 <h3 id="配置激励源">2.1 配置激励源</h3>
 <p>与前一篇关于<a target="_blank" rel="noopener" href="https://www.blueschwarz.top/2021/03/ic-note-inv-simu.html">反相器仿真</a>中对于激励信号的配置不同，这次选择直接对端口进行激励源配置。</p>
 <p>在ADE窗口中选择"Setup"-"Stimuli"。</p>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_stimuli_1.png" alt="图2-2"><figcaption aria-hidden="true">图2-2</figcaption>
+<img data-src="/img/2021/04/tran_ade_stimuli_1.png" alt="图2-2"><figcaption aria-hidden="true">图2-2</figcaption>
 </figure>
 <p>按照下面三张图片依次对三个端口的输入信号进行配置。</p>
-<p>[photos] <img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_stimuli_2_vin.png" alt="图2-3"> <img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_stimuli_2_vdda.png" alt="图2-4"> <img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_stimuli_2_gnda.png" alt="图2-5"> [/photos]</p>
+<p>[photos] <img data-src="/img/2021/04/tran_ade_stimuli_2_vin.png" alt="图2-3"> <img data-src="/img/2021/04/tran_ade_stimuli_2_vdda.png" alt="图2-4"> <img data-src="/img/2021/04/tran_ade_stimuli_2_gnda.png" alt="图2-5"> [/photos]</p>
 <h3 id="配置瞬态仿真">2.2 配置瞬态仿真</h3>
 <p>选择瞬态仿真模式，并选择仿真时间和精度。</p>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_mode.png" alt="图2-6"><figcaption aria-hidden="true">图2-6</figcaption>
+<img data-src="/img/2021/04/tran_ade_mode.png" alt="图2-6"><figcaption aria-hidden="true">图2-6</figcaption>
 </figure>
 <p>选取观测信号后，仿真配置结束。</p>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_settings.png" alt="图2-7"><figcaption aria-hidden="true">图2-7</figcaption>
+<img data-src="/img/2021/04/tran_ade_settings.png" alt="图2-7"><figcaption aria-hidden="true">图2-7</figcaption>
 </figure>
 <h3 id="仿真结果">2.3 仿真结果</h3>
 <p>下图是仿真结果。局部放大后，可以通过"M"键选取曲线上的点，对信号进行进一步分析。</p>
 <figure>
-<img src="/2021/04/06/ic-note-simu-tran/2021/04/tran_ade_results.png" alt="图2-8"><figcaption aria-hidden="true">图2-8</figcaption>
+<img data-src="/img/2021/04/tran_ade_results.png" alt="图2-8"><figcaption aria-hidden="true">图2-8</figcaption>
 </figure>
 <h2 id="总结">总结</h2>
 <p>以上就是ADE中瞬态仿真的大部分介绍。本次笔记结束。 :@(击掌)</p>
@@ -517,6 +517,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   

@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
-<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
 <meta name="description" content="恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。 XDMCP配置主要是XDMCP Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux笔记之XDMCP配置">
@@ -27,10 +27,10 @@
 <meta property="og:site_name" content="Leon的网络日志">
 <meta property="og:description" content="恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。 XDMCP配置主要是XDMCP Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/04/08/linux-note-xdmcp-config/2021/04/tcping_ip_port.png">
-<meta property="og:image" content="http://example.com/2021/04/08/linux-note-xdmcp-config/2021/04/tmux_listen_177.png">
-<meta property="og:image" content="http://example.com/2021/04/08/linux-note-xdmcp-config/2021/04/xmanager_config.png">
-<meta property="og:image" content="http://example.com/2021/04/08/linux-note-xdmcp-config/2021/04/xdmcp_res.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tcping_ip_port.png">
+<meta property="og:image" content="http://example.com/img/2021/04/tmux_listen_177.png">
+<meta property="og:image" content="http://example.com/img/2021/04/xmanager_config.png">
+<meta property="og:image" content="http://example.com/img/2021/04/xdmcp_res.png">
 <meta property="article:published_time" content="2021-04-08T09:55:19.000Z">
 <meta property="article:modified_time" content="2021-05-06T13:07:45.828Z">
 <meta property="article:author" content="Leon">
@@ -38,7 +38,7 @@
 <meta property="article:tag" content="Xmanager">
 <meta property="article:tag" content="CentOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/04/08/linux-note-xdmcp-config/2021/04/tcping_ip_port.png">
+<meta name="twitter:image" content="http://example.com/img/2021/04/tcping_ip_port.png">
 
 
 <link rel="canonical" href="http://example.com/2021/04/08/linux-note-xdmcp-config/">
@@ -365,7 +365,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置177端口tcp协议永久监听</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目前177端口状态</span></span><br><span class="line">netstat -tunlp | grep 177</span><br></pre></td></tr></table></figure>
 <p>CentOS部分的端口配置基本结束，接下来就用telnet或者tcping来ping服务器的177端口。</p>
 <figure>
-<img src="/2021/04/08/linux-note-xdmcp-config/2021/04/tcping_ip_port.png" alt="tcping Ping端口177"><figcaption aria-hidden="true">tcping Ping端口177</figcaption>
+<img data-src="/img/2021/04/tcping_ip_port.png" alt="tcping Ping端口177"><figcaption aria-hidden="true">tcping Ping端口177</figcaption>
 </figure>
 <p>你以为这么简单就结束了？ :&amp;(蛆音娘_摊手) 一旦SSH连接断开或系统重启<del>当然生产用的服务器没有特殊情况是不会重启的</del>，监听就自动结束了。这时候有两个解决方案了。</p>
 <h3 id="方案一使用tmux针对不重启的系统">4.1 方案一：使用tmux，针对不重启的系统</h3>
@@ -373,7 +373,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装tmux</span></span><br><span class="line">sudo yum install tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建tmux会话</span></span><br><span class="line">tmux new -s xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入会话后开始监听177端口</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 离开tmux会话，返回主终端</span></span><br><span class="line">tmux detach</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其它tmux相关操作</span></span><br><span class="line"><span class="comment"># 列出已有tmux会话</span></span><br><span class="line">tmux ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新进入会话</span></span><br><span class="line">tmux attach-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭会话（需在会话中）</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 或（无需在会话中）</span></span><br><span class="line">tmux kill-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名会话xdmcp_listen_177为xdmcp_listen</span></span><br><span class="line">tmux rename -t xdmcp_listen_177 xdmcp_listen</span><br></pre></td></tr></table></figure>
 <p>下图是我关闭终端后进行的测试（测试端口178），可以满足目标需求。</p>
 <figure>
-<img src="/2021/04/08/linux-note-xdmcp-config/2021/04/tmux_listen_177.png" alt="使用tmux实现端口永久监听"><figcaption aria-hidden="true">使用tmux实现端口永久监听</figcaption>
+<img data-src="/img/2021/04/tmux_listen_177.png" alt="使用tmux实现端口永久监听"><figcaption aria-hidden="true">使用tmux实现端口永久监听</figcaption>
 </figure>
 <h3 id="方案二配置自启动">4.2 方案二：配置自启动</h3>
 <p>这是我最开始想到的方案，只适用于个人使用的、没有重启限制的服务器。</p>
@@ -387,10 +387,10 @@
 <p>这里就是各显神通的地方了。</p>
 <p>Windows端当然是推荐Xmanager，macOS可以使用XQuartz。我就放一下我自己的Xmanager效果图。</p>
 <figure>
-<img src="/2021/04/08/linux-note-xdmcp-config/2021/04/xmanager_config.png" alt="Xmanager配置"><figcaption aria-hidden="true">Xmanager配置</figcaption>
+<img data-src="/img/2021/04/xmanager_config.png" alt="Xmanager配置"><figcaption aria-hidden="true">Xmanager配置</figcaption>
 </figure>
 <figure>
-<img src="/2021/04/08/linux-note-xdmcp-config/2021/04/xdmcp_res.png" alt="最终效果图"><figcaption aria-hidden="true">最终效果图</figcaption>
+<img data-src="/img/2021/04/xdmcp_res.png" alt="最终效果图"><figcaption aria-hidden="true">最终效果图</figcaption>
 </figure>
 <h2 id="总结">总结</h2>
 <p>XDMCP配置到此结束，希望有需求的各位同学能有点收获吧。</p>
@@ -455,6 +455,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
