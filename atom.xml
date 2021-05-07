@@ -320,9 +320,9 @@
     <link href="http://example.com/2019/01/28/keyboard87-3/"/>
     <id>http://example.com/2019/01/28/keyboard87-3/</id>
     <published>2019-01-28T12:14:30.000Z</published>
-    <updated>2021-05-06T13:49:27.317Z</updated>
+    <updated>2021-05-07T11:11:30.387Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>前文：<br><a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a><br><a href="/2019/01/22/keyboard87-2/">从零开始的客制化87键机械键盘_2_硬件设计</a></p></blockquote><p>机械键盘的原理图搞定之后就投去打样了，这次体验还是不错。</p><span id="more"></span><h2 id="pcb打样">PCB打样</h2><p>PCB打样就交给嘉立创了，下单系统虽然UI做的不怎么样，但系统操作和服务看上去特别高大上。而且最近嘉立创对自己的SMT进行了升级，添加了很多可贴元器件，这样一来，板子一拿回来就只要焊四个0805的贴片和直插的按键轴体。</p><p>下单大概四天，板子就寄到了。一层一层的红色气泡纸把五块板子包得严严实实。</p><figure><img data-src="../img/2020/02/1443212437.jpg" alt="pcb_package.jpg"><figcaption aria-hidden="true">pcb_package.jpg</figcaption></figure><p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>前文：<br><a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a><br><a href="/2019/01/22/keyboard87-2/">从零开始的客制化87键机械键盘_2_硬件设计</a></p></blockquote><p>机械键盘的原理图搞定之后就投去打样了，这次体验还是不错。</p><span id="more"></span><h2 id="pcb打样">PCB打样</h2><p>PCB打样就交给嘉立创了，下单系统虽然UI做的不怎么样，但系统操作和服务看上去特别高大上。而且最近嘉立创对自己的SMT进行了升级，添加了很多可贴元器件，这样一来，板子一拿回来就只要焊四个0805的贴片和直插的按键轴体。</p><p>下单大概四天，板子就寄到了。一层一层的红色气泡纸把五块板子包得严严实实。</p><figure><img data-src="/img/2020/02/1443212437.jpg" alt="pcb_package.jpg"><figcaption aria-hidden="true">pcb_package.jpg</figcaption></figure><p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>]]></content>
     
     
     <summary type="html">&lt;blockquote&gt;
