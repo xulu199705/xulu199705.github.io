@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2016/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-  </entry>
-  <entry>
     <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
     <url>/2019/01/30/can-based-optimization/</url>
     <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
@@ -49,6 +26,29 @@
         <tag>控制</tag>
         <tag>summary</tag>
         <tag>总线</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_1_立项</title>
+    <url>/2018/12/25/keyboard87-1/</url>
+    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+<span id="more"></span>
+<h2 id="项目初衷">项目初衷</h2>
+<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<figure>
+<img data-src="/img/2020/02/3841195344.jpg" alt="USB-to-Bluetooth Convertor"><figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+</figure>
+<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
+<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
+<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -276,6 +276,29 @@ vdc是直流源，在analoglib库中。在反相器的仿真中，只需要设�
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2016/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+  </entry>
+  <entry>
     <title>IC笔记之瞬态仿真</title>
     <url>/2021/04/06/ic-note-simu-tran/</url>
     <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
@@ -433,29 +456,6 @@ vdc是直流源，在analoglib库中。在反相器的仿真中，只需要设�
       <tags>
         <tag>瞬态仿真</tag>
         <tag>仿真</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_1_立项</title>
-    <url>/2018/12/25/keyboard87-1/</url>
-    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
-<span id="more"></span>
-<h2 id="项目初衷">项目初衷</h2>
-<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
-<figure>
-<img data-src="/img/2020/02/3841195344.jpg" alt="USB-to-Bluetooth Convertor"><figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
-</figure>
-<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
-<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
-<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -911,91 +911,6 @@ MPI的检测性能依赖于结构体表面的平整程度，而水下表面清�
       </tags>
   </entry>
   <entry>
-    <title>STM32基础_GPIO流水灯</title>
-    <url>/2017/07/28/stm32-gpio-led/</url>
-    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
-<span id="more"></span>
-<h2 id="目录">目录</h2>
-<ul>
-<li><a href="#目录">目录</a></li>
-<li><a href="#流水灯实验原理">流水灯实验原理</a></li>
-<li><a href="#管脚配置">管脚配置</a></li>
-<li><a href="#code">CODE</a></li>
-<li><a href="#总结">总结</a></li>
-</ul>
-<h2 id="流水灯实验原理">流水灯实验原理</h2>
-<p>LED模块的原理图如图1所示：</p>
-<figure>
-<img data-src="/img/2020/02/1646673628.png" alt="图1 LED模块原理图"><figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
-</figure>
-<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。 因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
-<h2 id="管脚配置">管脚配置</h2>
-<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
-<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> nCount)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> nCount)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">模式名称</th>
-<th style="text-align: center;">标识</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">浮空输入</td>
-<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">带上拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPU</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">带下拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">模拟输入</td>
-<td style="text-align: center;">GPIO_MODE_AIN</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">复用_推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_PP</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">复用_开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_OD</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程: 初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
-</blockquote>
-<h2 id="code">CODE</h2>
-<p>下面就贴一下代码。</p>
-<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1 .pdf第三章。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">uint32_t</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(__IO <span class="keyword">uint32_t</span> nCount)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自建RSS服务——Tiny Tiny RSS</title>
     <url>/2020/04/23/ttrss-build/</url>
     <content><![CDATA[<p>很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder 3停更了。<br>
@@ -1118,60 +1033,88 @@ SSH工具(如XShell)使用教程自行百度(喜欢谷歌的可以选择番羽�
       </tags>
   </entry>
   <entry>
-    <title>VHDL学习笔记之元件递归</title>
-    <url>/2020/08/05/vhdl-note-component-recursion/</url>
-    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
-<blockquote>
-<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
-</blockquote>
+    <title>STM32基础_GPIO流水灯</title>
+    <url>/2017/07/28/stm32-gpio-led/</url>
+    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
 <span id="more"></span>
-<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
-<h2 id="元件递归设计">元件递归设计</h2>
+<h2 id="目录">目录</h2>
+<ul>
+<li><a href="#目录">目录</a></li>
+<li><a href="#流水灯实验原理">流水灯实验原理</a></li>
+<li><a href="#管脚配置">管脚配置</a></li>
+<li><a href="#code">CODE</a></li>
+<li><a href="#总结">总结</a></li>
+</ul>
+<h2 id="流水灯实验原理">流水灯实验原理</h2>
+<p>LED模块的原理图如图1所示：</p>
+<figure>
+<img data-src="/img/2020/02/1646673628.png" alt="图1 LED模块原理图"><figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
+</figure>
+<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。 因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
+<h2 id="管脚配置">管脚配置</h2>
+<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
+<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> nCount)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> nCount)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">模式名称</th>
+<th style="text-align: center;">标识</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">浮空输入</td>
+<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">带上拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPU</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">带下拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">模拟输入</td>
+<td style="text-align: center;">GPIO_MODE_AIN</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">复用_推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_PP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">复用_开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_OD</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
-<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
+<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程: 初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
 </blockquote>
-<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://gitee.com/blueschwarz/blog_attachment/raw/master/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE Std 1076-2019</a>。</p>
-<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
-为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m} \rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
-方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>简单写了个仿真文件，仿真结果如下。</p>
-<figure>
-<img data-src="/img/2020/08/3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果"><figcaption aria-hidden="true">综合前仿真结果</figcaption>
-</figure>
-<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
-<figure>
-<img data-src="/img/2020/08/4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错"><figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
-</figure>
-<h2 id="正常的n输入与门设计">正常的n输入与门设计</h2>
-<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
-<figure>
-<img data-src="/img/2020/08/590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图"><figcaption aria-hidden="true">示例一RTL原理图</figcaption>
-</figure>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
-<figure>
-<img data-src="/img/2020/08/2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图"><figcaption aria-hidden="true">示例二RTL原理图</figcaption>
-</figure>
-<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
-<figure>
-<img data-src="/img/2020/08/2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图"><figcaption aria-hidden="true">示例一综合后原理图</figcaption>
-</figure>
-<figure>
-<img data-src="/img/2020/08/350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图"><figcaption aria-hidden="true">示例二综合后原理图</figcaption>
-</figure>
+<h2 id="code">CODE</h2>
+<p>下面就贴一下代码。</p>
+<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1 .pdf第三章。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">uint32_t</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(__IO <span class="keyword">uint32_t</span> nCount)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="总结">总结</h2>
-<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的 :&amp;(蛆音娘_扶额) ，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。 :@(击掌)</p>
-<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
+<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
 ]]></content>
       <categories>
-        <category>集成电路</category>
+        <category>硬件</category>
       </categories>
       <tags>
-        <tag>VHDL</tag>
-        <tag>FPGA</tag>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -1294,6 +1237,97 @@ SSH工具(如XShell)使用教程自行百度(喜欢谷歌的可以选择番羽�
       <tags>
         <tag>VS Code</tag>
         <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code笔记之根据语言选择性删除行末空格</title>
+    <url>/2020/04/08/vscode-note-trimTrailingWhitespace/</url>
+    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex Workshop、Markdown+Math和Markdown Preview Enhanced配合来写东西，用着特别顺手。</p>
+<p>平时用VS Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
+<span id="more"></span>
+<h2 id="问题">问题</h2>
+<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
+样例一：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1</p>
+<p>para-2</p>
+<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
+样例二：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1<br>
+para-2</p>
+<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;files.trimTrailingWhitespace&quot;: true,</span><br></pre></td></tr></table></figure>
+<p>VS Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;[markdown]&quot;: &#123;&quot;files.trimTrailingWhitespace&quot;: false,&#125;,</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VHDL学习笔记之元件递归</title>
+    <url>/2020/08/05/vhdl-note-component-recursion/</url>
+    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
+<blockquote>
+<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
+</blockquote>
+<span id="more"></span>
+<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
+<h2 id="元件递归设计">元件递归设计</h2>
+<blockquote>
+<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
+</blockquote>
+<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://gitee.com/blueschwarz/blog_attachment/raw/master/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE Std 1076-2019</a>。</p>
+<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
+为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m} \rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
+方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>简单写了个仿真文件，仿真结果如下。</p>
+<figure>
+<img data-src="/img/2020/08/3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果"><figcaption aria-hidden="true">综合前仿真结果</figcaption>
+</figure>
+<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
+<figure>
+<img data-src="/img/2020/08/4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错"><figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
+</figure>
+<h2 id="正常的n输入与门设计">正常的n输入与门设计</h2>
+<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
+<figure>
+<img data-src="/img/2020/08/590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图"><figcaption aria-hidden="true">示例一RTL原理图</figcaption>
+</figure>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
+<figure>
+<img data-src="/img/2020/08/2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图"><figcaption aria-hidden="true">示例二RTL原理图</figcaption>
+</figure>
+<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
+<figure>
+<img data-src="/img/2020/08/2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图"><figcaption aria-hidden="true">示例一综合后原理图</figcaption>
+</figure>
+<figure>
+<img data-src="/img/2020/08/350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图"><figcaption aria-hidden="true">示例二综合后原理图</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的 :&amp;(蛆音娘_扶额) ，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。 :@(击掌)</p>
+<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
+]]></content>
+      <categories>
+        <category>集成电路</category>
+      </categories>
+      <tags>
+        <tag>VHDL</tag>
+        <tag>FPGA</tag>
       </tags>
   </entry>
   <entry>
@@ -1522,40 +1556,6 @@ N/A
       <tags>
         <tag>Wi-Fi</tag>
         <tag>IEEE 802.11</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS Code笔记之根据语言选择性删除行末空格</title>
-    <url>/2020/04/08/vscode-note-trimTrailingWhitespace/</url>
-    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex Workshop、Markdown+Math和Markdown Preview Enhanced配合来写东西，用着特别顺手。</p>
-<p>平时用VS Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
-<span id="more"></span>
-<h2 id="问题">问题</h2>
-<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
-样例一：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1</p>
-<p>para-2</p>
-<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
-样例二：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1<br>
-para-2</p>
-<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
-<h2 id="解决方案">解决方案</h2>
-<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;files.trimTrailingWhitespace&quot;: true,</span><br></pre></td></tr></table></figure>
-<p>VS Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;[markdown]&quot;: &#123;&quot;files.trimTrailingWhitespace&quot;: false,&#125;,</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Markdown</tag>
       </tags>
   </entry>
 </search>
