@@ -19,5 +19,5 @@ Disallow: /downloads/
 Disallow: /categories/
 Disallow: /dailyword/
 
-Sitemap: https://www.techgrow.cn/sitemap.xml
-Sitemap: https://www.techgrow.cn/baidusitemap.xml
+Sitemap: https://hexo.leonxu.top/sitemap.xml
+Sitemap: https://hexo.leonxu.top/baidusitemap.xml
