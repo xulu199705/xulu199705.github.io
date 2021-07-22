@@ -36,10 +36,10 @@
 <meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_pre_1.png">
 <meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_pre_2.png">
 <meta property="article:published_time" content="2021-06-21T12:15:24.000Z">
-<meta property="article:modified_time" content="2021-06-29T00:43:34.901Z">
+<meta property="article:modified_time" content="2021-07-22T13:07:04.064Z">
 <meta property="article:author" content="Leon">
-<meta property="article:tag" content="VNC">
 <meta property="article:tag" content="CentOS">
+<meta property="article:tag" content="VNC">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_gnome.png">
 
@@ -175,7 +175,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -274,7 +274,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-29 08:43:34" itemprop="dateModified" datetime="2021-06-29T08:43:34+08:00">2021-06-29</time>
+        <time title="修改时间：2021-07-22 21:07:04" itemprop="dateModified" datetime="2021-07-22T21:07:04+08:00">2021-07-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -377,7 +377,7 @@
 </figure>
 <p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
-<p>关闭SELinux~~我也不知道这个具体怎么使用，只清楚开着没办法连接¯_( ツ )_/¯~~</p>
+<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_( ツ )_/¯</del></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
 <p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
 <figure>
@@ -420,8 +420,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/VNC/" rel="tag"><i class="fa fa-tag"></i> VNC</a>
               <a href="/tags/CentOS/" rel="tag"><i class="fa fa-tag"></i> CentOS</a>
+              <a href="/tags/VNC/" rel="tag"><i class="fa fa-tag"></i> VNC</a>
           </div>
 
         
@@ -433,6 +433,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/07/22/ttrss-build-2/" rel="next" title="Tiny Tiny RSS再次搭建">
+                  Tiny Tiny RSS再次搭建 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
