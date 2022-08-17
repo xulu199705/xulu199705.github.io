@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>是什么驱动着无限进步？</title>
+    <url>//2021/08/05/driver-of-development/</url>
+    <content><![CDATA[<span id="more"></span>
+<blockquote>
+<p>崇高的理念在欲望面前根本无能为力</p>
+<p>说到底 人类不过是充满欲望的生物</p>
+<p>人活着就不能否定这一点</p>
+<p>正因为这份欲望文明才进化至今</p>
+<p>今后也会继续进化 绝不会倒退</p>
+<p>建造燃料废物处理厂</p>
+<p>修建高速公路 打造购物中心</p>
+<p>森林面积不断减少 稀有物种濒临灭绝</p>
+<p>终有一天这里会变得和一般的城市一样</p>
+<p>于是他们一边缅怀过去 一边伤感唏嘘</p>
+<p>但是大家都想这样做 多棒啊</p>
+<p>这就是人类</p>
+<p>—— LEGAL HIGH.S02E08</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>观点&amp;感想</category>
+      </categories>
+      <tags>
+        <tag>观点</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>//2016/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+  </entry>
+  <entry>
     <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
     <url>//2019/01/30/can-based-optimization/</url>
     <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
@@ -29,6 +83,533 @@ CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
         <tag>控制</tag>
         <tag>summary</tag>
         <tag>总线</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_2_硬件设计</title>
+    <url>//2019/01/22/keyboard87-2/</url>
+    <content><![CDATA[<blockquote>
+<p>前文：<br>
+<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a></p>
+</blockquote>
+<p>从这个项目立项以来已经快一个月了，终于在师傅和同学的帮助下，搞定了硬件设计。下面我就器件选型简单介绍一下，最后贴了一下渲染图。</p>
+<span id="more"></span>
+<h2 id="硬件设计">硬件设计</h2>
+<p>这一章介绍一下客制化键盘的硬件设计，包括以下4项：主控芯片、传输接口、轴体选择、键盘布局。</p>
+<h3 id="主控芯片">主控芯片</h3>
+<p>在确定STM32作为主控芯片之前，我在网上搜了一下，也拆了手上的ikbc
+C87，ATMEL的ATMEGA32芯片使用的比较多。我最终还是选择了STM32，主要原因是对STM32比较熟悉。</p>
+<p>当然，作为32位的MCU，STM32不管是在IO数量、USB接口支持，还是程序运算速度，都能满足机械键盘的需求。</p>
+<ul>
+<li>USB接口</li>
+</ul>
+<p>机械键盘使用时是作为USB
+Slave使用的，所以只需要芯片支持USB就行，不需要OTG。STM32F1的所有芯片都支持全速USB
+2.0，所以随便选一款就行。</p>
+<ul>
+<li>IO数量</li>
+</ul>
+<p>简单计算一下机械键盘需要的IO口，见下表（实际IO分配以实际原理图为准）。</p>
+<table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>序号</th>
+<th>用途</th>
+<th>数量</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>键盘列</td>
+<td>17</td>
+<td>87键键盘布局，最多的一行（第2行）共17个按键</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>键盘行</td>
+<td>6</td>
+<td>87键键盘布局，共6行</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>USB接口</td>
+<td>2</td>
+<td>USBDN和USBDP</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>调试接口</td>
+<td>2</td>
+<td>使用STLink连接，仅需JTMS-SWDIO、JTCK-SWCLK和GND三个接口</td>
+</tr>
+</tbody>
+</table>
+<p>简单计算一下，键盘需求的IO口为27个。</p>
+<ul>
+<li>运算速度</li>
+</ul>
+<p>STM32有四个时钟源：</p>
+<table>
+<thead>
+<tr class="header">
+<th>时钟源</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>高速外部时钟(HSE)</td>
+<td>可取4-16MHz，一般采用8MHz</td>
+</tr>
+<tr class="even">
+<td>高速内部时钟(HSI)</td>
+<td>8MHz，内部RC振荡器产生，不稳定</td>
+</tr>
+<tr class="odd">
+<td>低速外部时钟(LSE)</td>
+<td>外部晶振，一般采用32.768KHz</td>
+</tr>
+<tr class="even">
+<td>低速内部时钟(LSI)</td>
+<td>内部RC振荡器产生，约40KHz</td>
+</tr>
+</tbody>
+</table>
+<p>机械键盘用8MHz外部晶振，内部的系统时钟最高为72MHz，满足机械键盘的输入精度要求。</p>
+<h3 id="传输接口">传输接口</h3>
+<p>机械键盘的传输接口已经确定为USB。一般来说，USB有以下几种接口类型：</p>
+<p>[photos] <img data-src="/img/2020/02/3082159515.jpg" alt="type_a"> <img data-src="/img/2020/02/3927602725.jpg" alt="type_b"> <img data-src="/img/2020/02/1301417559.jpg" alt="miniusb"> <img data-src="/img/2020/02/3726218615.jpg" alt="microusb"> <img data-src="/img/2020/02/1494934121.jpg" alt="type_c"> [/photos]</p>
+<p>目前现在市面上键线分离的机械键盘一般用的是miniUSB或microUSB接口。最近半年来，USB
+C-type特别流行。这个接口不仅提供大功率传输，而且支持正反随便插，大大降低了插第二次的郁闷。机械键盘就决定用USB
+C-type。</p>
+<h3 id="轴体选择">轴体选择</h3>
+<p>在选择机械键盘的轴体时，因为正在使用的ikbc
+C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四种，茶轴肯定是我的首选，不管用做什么，都可以满足要求。</p>
+<p>MX轴的封装尺寸：<a href="https://github.com/xulu199705/KeyBoard87/tree/master/Reference/Cherry_MX/Cherry_MX_sw.pdf">PDF</a></p>
+<h3 id="键盘布局">键盘布局</h3>
+<p>键盘布局选择和手头使用的ikbc c87一样的87键布局，在<a href="http://www.keyboard-layout-editor.com/">这里</a>可以将需要的布局信息生成一堆文本，将文本复制到<a href="http://builder.swillkb.com/">这里</a>，生成定位板文件，方面在PCB中定位每个键轴的位置。</p>
+<p>布线图 <img data-src="/img/2020/02/1178723672.png" alt="pcb_2d_bottomlayer.png"></p>
+<table>
+<thead>
+<tr class="header">
+<th>3D顶部视图</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="/img/2020/02/1617787578.png" alt="2.PNG"></td>
+<td><img data-src="/img/2020/02/2508825578.png" alt="pcb_3d_top.png"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>3D底部视图</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="/img/2020/02/784997014.png" alt="1.PNG"></td>
+<td><img data-src="/img/2020/02/210904615.png" alt="pcb_3d_bottom.png"></td>
+</tr>
+</tbody>
+</table>
+<p>LOGO视图 <img data-src="/img/2020/02/2778683646.png" alt="pcb_3d_logo.png"></p>
+<p>P.S. PCB文件已上传<a href="https://github.com/xulu199705/KeyBoard87">github</a>，过一会儿就投板给嘉立创打样。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IC笔记之瞬态仿真</title>
+    <url>//2021/04/06/ic-note-simu-tran/</url>
+    <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
+<span id="more"></span>
+<h2 id="概述">1 概述</h2>
+<p>瞬态仿真是什么？</p>
+<blockquote>
+<p>瞬态仿真是电路在给定的输入激励下，在设定的时间范围内计算电路时域瞬态响应性能的一种仿真手段。</p>
+</blockquote>
+<p>瞬态仿真一般是集成电路的第一个仿真，是年轻人的第一个仿真手段；通常是验证稳定性、速度、精度等等，需要在多次不同的瞬态分析过程才能得出结论。</p>
+<h3 id="基本设置">1.1 基本设置</h3>
+<p>在"ADE"中选择"Analyses"-"Choose"，可以选择仿真功能选择。点击"tran"后，可以看到如下图的基本设置界面。</p>
+<figure>
+<img data-src="/img/2021/04/tran_ade_settings_1.png" alt="图1-1">
+<figcaption aria-hidden="true">图1-1</figcaption>
+</figure>
+<ol type="1">
+<li>"Stop Time"，设置仿真时间<br>
+仿真时间默认从0时刻开始，这里只设置停止时间。时间单位为可以是"s"（秒）、"m"（毫秒）和"u"（微秒）。</li>
+<li>"Accuracy Defaults(errpreset)"，设置仿真精度和速度<br>
+软件内置有三种仿真精度："conservative"、"moderate"、"liberal"。"conservative"具有最高的精度，但速度较慢，用于高精度模拟电路和混合信号电路；"liberal"则是速度最快，精度较差，用于数字电路和变化率不高的模拟电路；"moderate"是比较折衷的模式，用于绝大多数模拟电路。如果需要更高的精度，则要在高级设置中配置参数。</li>
+<li>"Transient Noise"，设置瞬态噪声</li>
+<li>"Dynamic Parameter"，设置动态参数</li>
+<li>"Enabled"，设置瞬态仿真启用</li>
+</ol>
+<h3 id="高级设置">1.2 高级设置</h3>
+<p>在图1-1中点击右下角的"Options"可进入高级设置。</p>
+<h4 id="time-step标签页">1.2.1 Time Step标签页</h4>
+<figure>
+<img data-src="/img/2021/04/tran_ade_settings_2_timestep.png" alt="图1-2">
+<figcaption aria-hidden="true">图1-2</figcaption>
+</figure>
+<p>Simulation Interval Parameters</p>
+<ul>
+<li>"start"：仿真起始时刻。仿真器默认起始时间为0s。</li>
+<li>"outputstart"：输出波形时间。如果设计者的仿真时间较长，而只需观察某个时间点或者部分时间段内的电路瞬态特性输出，则可以通过该参数控制数据输出。</li>
+</ul>
+<p>Time Step Parameters</p>
+<ul>
+<li>"step"：最小的时间步长。</li>
+<li>"maxstep"：最大时间步长，根据"errpreset"中的精度设定取得默认值。</li>
+</ul>
+<h4 id="algorithm标签页">1.2.2 Algorithm标签页</h4>
+<figure>
+<img data-src="/img/2021/04/tran_ade_settings_2_algorithm.png" alt="图1-3">
+<figcaption aria-hidden="true">图1-3</figcaption>
+</figure>
+<p>Initial Condition Parameters</p>
+<p>用户可以利用设置电路节点状态的初始化语句（ic
+statement）或电容、电感等模型内的初始条件参数（ic
+parameters）两种方式为瞬态仿真设置初始条件。其中电容中设置的是初始电压值，电感中设置的是初始电流值。如果没有进行设置，仿真器将默认采用直流分析的结果作为初始条件。对这个参数进行设置时要格外注意，如果对电路分析不明，贸然设置电路节点的初始值，极易造成电路瞬态仿真出现收敛性问题，并产生错误结果。</p>
+<ul>
+<li>"ic"：设定通过何种方式设置初始条件。
+<ul>
+<li>ic=dc：忽略任何设置的初始条件，直接采用直流分析的结果。</li>
+<li>ic=node：忽略电容、电感等器件上设置的初始条件，而采用"ic
+statement"设置的初始条件。</li>
+<li>ic=dev：忽略由"ic
+statement"设置的初始条件，采用电容、电感上的初始条件。</li>
+<li>ic=all：两种初始条件都将被采用。当设置条件发生冲突时，"ic
+parameters"比"ic statement"的优先级更高。<br>
+&gt; "ic statement"的格式是ic NodeName=value。<br>
+&gt; 例：ic V1=1 M1:int_d=3.3 L1:1=10u<br>
+&gt;
+上句表示的是：在节点V1上的初始电压是1V；在MOS管M1的漏极电压是3.3V；在电感L1
+上流过的初始电流是10μA。</li>
+</ul></li>
+<li>"skipdc"：最小的时间步长。
+选择跳过直流分析。在没有直流分析的情况下，电路的初始解将采用通解，或是从由"readic"定义的文件中读取初始条件。如果"readic"中没有定义，则将从"ic
+statement"中获取初始条件。无论是否跳过直流分析，器件上的初始条件肯定都会被采用。如果一个节点没有被赋予初始条件，将自动被仿真器设置为零。</li>
+<li>"readic"：从文件中读取初始条件。</li>
+</ul>
+<p>Initial Condition Parameters For Oscillator</p>
+<p>用户可以手动配置振荡器的初始条件，也可以选择使用软件自动配置。</p>
+<p>Convergence Parameters</p>
+<p>当电路在仿真时存在无限快的响应速度（如一个电路节点不存在任何电容），仿真器可能会产生收敛性问题。为了避免出现这种问题，需要设置"cmin"参数，给该节点设置一个合理的对地电容值。</p>
+<ul>
+<li>"readns"：从文件中读取电路瞬态仿真的初始解。</li>
+<li>"cmin"：设定每个节点对地的最小电容</li>
+</ul>
+<p>Integration Method Parameters</p>
+<p>该参数用于设计者根据仿真速度和仿真精确度选择合适的积分方式。仿真器提供3种不同的积分方式："backward-Euler"，"Trapezoidal"，"Second-order
+Gear"。根据这3种方式一共组合出6种模式，分别为"euler"、"traponly"、"trap"、"gear2only"、gear2"、"trapgear2"。<br>
+如果设计者需要高精度仿真，可以选择"trapezoidal"积分方式。但是，这种积分方式对前一时刻计算产生的误差非常敏感，因此在容差很大时并不是一种很好的选择。在容差很大而且要求速度较快的情况下，通常选择"Second-order
+Gear"积分法。"Second-order
+Gear"积分法比"backward-Euler"积分法更加精确。</p>
+<p>Accuracy Parameters -
+"relref"：相对收敛标准的参考，默认值从"errpreset"得到。包括以下几个选项。<br>
+"relref =
+pointlocal"：即relref=局部点，这个设置用来定量比较每个节点的值相对于待分析节点上当前数值的相对误差。<br>
+"relref =
+alllocal"：即relref=局部所有点，定量比较过去所有时间点的值相对于最大节点值的相对误差。<br>
+"relref =
+sigglobal"：即relref=所有信号点，定量比较每个电路上信号值相对于电路中所有信号中的最大值的相对误差。<br>
+"relref =
+allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最大悬浮电流值设定比较方程，此时不能满足基尔霍夫电流方程。
+- "lteratio"：比例系数，用于计算Newton容差中的LTE 容差。</p>
+<p>Newton Parameters</p>
+<ul>
+<li>"maxiters"：在每个时间步长内最多的迭代次数。</li>
+<li>"restart"：如果有任何条件发生变化，是否从最开始重新计算直流解。如果不重新计算，将直接采用上一次的初始值。</li>
+</ul>
+<h4 id="state-file标签页">1.2.3 State File标签页</h4>
+<figure>
+<img data-src="/img/2021/04/tran_ade_settings_2_statefile.png" alt="图1-4">
+<figcaption aria-hidden="true">图1-4</figcaption>
+</figure>
+<p>StateFile Parameters</p>
+<p>状态文件（State File）主要有两个用处： 1.
+将保存下来的状态文件用于后续的仿真分析中。如在一次瞬态分析中保存下结束时刻的信息，在下一次瞬态分析中能够以该时刻作为起始点继续完成后续时间段的分析。
+2.
+用户能够利用状态文件自动完成初始条件的更新。设计者能够利用仿真器将一次分析的初始时刻工作点或终止时刻工作点生成状态文件。同时，设计者也能手动编写一个状态文件。</p>
+<ul>
+<li>"write"：将瞬态分析的初始状态解写到指定的文件中。</li>
+<li>"writefinal"：将瞬态分析的最终解写到指定的文件中。</li>
+</ul>
+<p>Save-Restart Parameters</p>
+<p>该参数用于配置保存和载入的频率等参数。</p>
+<h4 id="output标签页">1.2.3 Output标签页</h4>
+<p>[photos] <img data-src="/img/2021/04/tran_ade_settings_2_output_1.png" alt="图1-5"> <img data-src="/img/2021/04/tran_ade_settings_2_output_2.png" alt="图1-6"> [/photos]</p>
+<p>Output Parameters</p>
+<p>仿真器默认情况下会把所有仿真数据都保存下来，但有时并不需要所有的数据量。仿真器允许设计者选择保存需要的数据。如果需要得到更精确的结果，也可以增大数据输出量。<br>
+该参数配置"compression"输出模式，将恒定信号的重复记录删除。</p>
+<p>Strobing Parameters</p>
+<p>该参数配置"strobing"输出模式。在保存点之间设置一个时间间隔。虽然仿真器计算过这些数据，但是并没有将其保存输出。</p>
+<p>Final OP Point Settings</p>
+<p>该参数配置静态工作点的保存等参数。</p>
+<p>Infotimes Settings</p>
+<p>该参数配置"infotimes"输出模式。允许设计者保存某些自定义时刻的工作点数据。如果需要保存多个时刻的工作点，填入时间矢量之间以空格隔开。</p>
+<p>Actimes Settings</p>
+<p>未找到相关资料，待补充。</p>
+<h4 id="emir-output标签页">1.2.5 EM/IR Output标签页</h4>
+<figure>
+<img data-src="/img/2021/04/tran_ade_settings_2_emiroutput.png" alt="图1-7">
+<figcaption aria-hidden="true">图1-7</figcaption>
+</figure>
+<p>该标签页涉及EM（电子迁移）和IR（IR压降）。<del>恕我直言，不会。</del></p>
+<h4 id="misc标签页">1.2.6 Misc标签页</h4>
+<figure>
+<img data-src="/img/2021/04/tran_ade_settings_2_misc.png" alt="图1-7">
+<figcaption aria-hidden="true">图1-7</figcaption>
+</figure>
+<p>该标签页为一些难以分类的配置，毕竟都写了是misc了。</p>
+<ol type="1">
+<li>Annotation Parameters，注释。</li>
+<li>Captab Parameters，电容列表参数。</li>
+<li>Additional Parameters，额外参数。</li>
+</ol>
+<h2 id="实例">2 实例</h2>
+<p>仿真电路如图。瞬态仿真实例选择了使用二极管连接方式的PMOS作为负载的共源极电路。</p>
+<figure>
+<img data-src="/img/2021/04/circuit_opa.png" alt="图2-1">
+<figcaption aria-hidden="true">图2-1</figcaption>
+</figure>
+<h3 id="配置激励源">2.1 配置激励源</h3>
+<p>与前一篇关于<a href="https://www.blueschwarz.top/2021/03/ic-note-inv-simu.html">反相器仿真</a>中对于激励信号的配置不同，这次选择直接对端口进行激励源配置。</p>
+<p>在ADE窗口中选择"Setup"-"Stimuli"。</p>
+<figure>
+<img data-src="/img/2021/04/tran_ade_stimuli_1.png" alt="图2-2">
+<figcaption aria-hidden="true">图2-2</figcaption>
+</figure>
+<p>按照下面三张图片依次对三个端口的输入信号进行配置。</p>
+<p>[photos] <img data-src="/img/2021/04/tran_ade_stimuli_2_vin.png" alt="图2-3"> <img data-src="/img/2021/04/tran_ade_stimuli_2_vdda.png" alt="图2-4"> <img data-src="/img/2021/04/tran_ade_stimuli_2_gnda.png" alt="图2-5"> [/photos]</p>
+<h3 id="配置瞬态仿真">2.2 配置瞬态仿真</h3>
+<p>选择瞬态仿真模式，并选择仿真时间和精度。</p>
+<figure>
+<img data-src="/img/2021/04/tran_ade_mode.png" alt="图2-6">
+<figcaption aria-hidden="true">图2-6</figcaption>
+</figure>
+<p>选取观测信号后，仿真配置结束。</p>
+<figure>
+<img data-src="/img/2021/04/tran_ade_settings.png" alt="图2-7">
+<figcaption aria-hidden="true">图2-7</figcaption>
+</figure>
+<h3 id="仿真结果">2.3 仿真结果</h3>
+<p>下图是仿真结果。局部放大后，可以通过"M"键选取曲线上的点，对信号进行进一步分析。</p>
+<figure>
+<img data-src="/img/2021/04/tran_ade_results.png" alt="图2-8">
+<figcaption aria-hidden="true">图2-8</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>以上就是ADE中瞬态仿真的大部分介绍。本次笔记结束。 :@(击掌)</p>
+]]></content>
+      <categories>
+        <category>集成电路</category>
+      </categories>
+      <tags>
+        <tag>瞬态仿真</tag>
+        <tag>仿真</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_1_立项</title>
+    <url>//2018/12/25/keyboard87-1/</url>
+    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
+type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+<span id="more"></span>
+<h2 id="项目初衷">项目初衷</h2>
+<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<figure>
+<img data-src="/img/2020/02/3841195344.jpg" alt="USB-to-Bluetooth Convertor">
+<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+</figure>
+<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
+<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
+<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux笔记之XDMCP配置</title>
+    <url>//2021/04/08/linux-note-xdmcp-config/</url>
+    <content><![CDATA[<p>恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。</p>
+<p>XDMCP配置主要是XDMCP
+Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。</p>
+<span id="more"></span>
+<blockquote>
+<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
+</blockquote>
+<h2 id="概述">1 概述</h2>
+<p>首先简单地介绍一下目前的问题。</p>
+<ol type="1">
+<li>需要在局域网内访问服务器，并实现远程桌面。</li>
+<li>CentOS
+7默认桌面为Gnome。虽说没什么问题，但是7开始的Gnome据说开始使用硬件加速，如果使用XDMCP协议来远程与gdm会有冲突，会出现奇奇怪怪的问题，Xmanager官方提到了<a href="http://blog.netsarang.com/89/connecting-to-centos-7/">这个问题</a>，建议更换显示管理（display
+manager）和桌面环境（desktop environment）。</li>
+</ol>
+<blockquote>
+<p>这里顺嘴说一下CentOS的版本。下面我是用的是CentOS
+7的虚拟机，没有使用CentOS 8。原因嘛，大家可以看一下CentOS官网<a href="https://www.centos.org/centos-linux/">下载页面</a>看一下这两个版本的支持时间。CentOS之前明明说好了对CentOS
+8有10年支持的，结果RedHat为了推CentOS Stream就把CentOS
+8在今年（2021年）年底提前结束了。这个博客还跑在CentOS
+8上面，就挺难受的。</p>
+</blockquote>
+<h2 id="更换镜像源">2 更换镜像源</h2>
+<p>众所周知啊，CentOS的服务器经常因为一些问题访问非常缓慢，下载速度堪忧。所以，更换镜像源是非常直接的解决方案。目前推荐使用清华TUNA或者北外BFSU（广度优先搜索大学）的镜像。当然用阿里或者华为的也不是不行。</p>
+<p>更换镜像源指令很简单，共两个，依次执行就可以。<del>当然，你的账号需要有或者通过sudo可以拿到root的权限，直接使用root账号的可以忽略sudo，下同</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sed -e <span class="string">&#x27;s|^mirrorlist=|#mirrorlist=|g&#x27;</span> \</span><br><span class="line">         -e <span class="string">&#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27;</span> \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果之前对于镜像源进行过更改，还需要检查一下修改过的镜像源文件是否启用，再执行makecache。</p>
+</blockquote>
+<p>这部分内容参考了TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
+<h2 id="更换display-manager和desktop-environment">3 更换display
+manager和desktop environment</h2>
+<p>display manager更换为lightdm，不再使用gdm；desktop
+environment可以使用MATE desktop、Xfce、KDE等等。MATE desktop是基于Gnome
+2.x的桌面环境，资源占用极小。</p>
+<ul>
+<li>安装EPEL（Extra Package for Enterprise Linux），这是Fedora Special
+Interest Group维护的Enterprise Linux（RHEL、CentOS）中常用的包。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装lightdm。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install lightdm</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装X Windows System。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;X Window system&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;X Window system&quot;</span></span><br></pre></td></tr></table></figure>
+<p>接下来展示的桌面环境安装只需要选择一个，反正我就用META了。<del>当然都选了我也不知道，你开心就好</del></p>
+<ul>
+<li>META desktop安装。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;MATE Desktop&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;MATE Desktop&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Xfce安装。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum groupinstall xfce</span><br></pre></td></tr></table></figure>
+<h3 id="使用lightdm配置xdmcp-server">3.1使用lightdm配置XDMCP Server</h3>
+<p>通过vim打开lightdm配置文件。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
+<p>在文件中找到<code>[XDMCPServer]</code>，修改其下方被注释的代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">···</span><br><span class="line">[XDMCPServer]</span><br><span class="line">···</span><br><span class="line">enabled=true</span><br><span class="line">port=177</span><br><span class="line">···</span><br></pre></td></tr></table></figure>
+<h3 id="配置lightdm为默认桌面环境">3.2 配置lightdm为默认桌面环境</h3>
+<p>切换display
+manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行，同时，如果是图形界面执行该命令，需要重新登录一下系统再继续下一步；<code>init 5</code>是将系统的运行再次切换到UI桌面。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">disable</span> gdm &amp;&amp; systemctl <span class="built_in">enable</span> lightdm</span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
+<p>这时我们第二次重新登录后，就进入了META desktop了。</p>
+<p>接着，还需要讲META设置为默认桌面环境。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/share/xsessions/ &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> back</span><br><span class="line">sudo <span class="built_in">mv</span> gnome* back &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
+<h2 id="打开177端口">4 打开177端口</h2>
+<p>XDMCP默认的端口是177端口，可以在lightdm配置文件根据需求中更改。系统默认是不会放开177端口的，需要进一步配置。</p>
+<p>另外，为了测试端口是否可用，需要实现准备可以ping端口的程序。Linux环境可以安装telnet；Windows环境建议使用<a href="https://elifulkerson.com/projects/tcping.php">tcping</a>，使用时务必在程序所在文件夹中打开终端执行命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># telnet Ping 192.168.58.130的177端口</span></span><br><span class="line">telnet 192.168.58.130 177</span><br><span class="line"></span><br><span class="line"><span class="comment"># tcping Ping 192.168.58.130的177端口</span></span><br><span class="line">.\tcping.exe 192.168.58.130 177</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">.\tcping64.exe 192.168.58.130 177</span><br></pre></td></tr></table></figure>
+<p>好，接下来解决端口开放问题。</p>
+<p>防火墙设置部分。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置防火墙，将177端口永久开放给所有用户</span></span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/udp</span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新防火墙规则</span></span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有打开的端口</span></span><br><span class="line">sudo firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
+<p>端口监听部分。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置177端口tcp协议永久监听</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目前177端口状态</span></span><br><span class="line">netstat -tunlp | grep 177</span><br></pre></td></tr></table></figure>
+<p>CentOS部分的端口配置基本结束，接下来就用telnet或者tcping来ping服务器的177端口。</p>
+<figure>
+<img data-src="/img/2021/04/tcping_ip_port.png" alt="tcping Ping端口177">
+<figcaption aria-hidden="true">tcping Ping端口177</figcaption>
+</figure>
+<p>你以为这么简单就结束了？ :&amp;(蛆音娘_摊手)
+一旦SSH连接断开或系统重启<del>当然生产用的服务器没有特殊情况是不会重启的</del>，监听就自动结束了。这时候有两个解决方案了。</p>
+<h3 id="方案一使用tmux针对不重启的系统">4.1
+方案一：使用tmux，针对不重启的系统</h3>
+<p>tmux可以实现终端复用，即使表面上终端结束了，但是跑在tmux中的指令不会就此结束，非常适合目前的需求。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装tmux</span></span><br><span class="line">sudo yum install tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建tmux会话</span></span><br><span class="line">tmux new -s xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入会话后开始监听177端口</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 离开tmux会话，返回主终端</span></span><br><span class="line">tmux detach</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其它tmux相关操作</span></span><br><span class="line"><span class="comment"># 列出已有tmux会话</span></span><br><span class="line">tmux <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新进入会话</span></span><br><span class="line">tmux attach-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭会话（需在会话中）</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 或（无需在会话中）</span></span><br><span class="line">tmux kill-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名会话xdmcp_listen_177为xdmcp_listen</span></span><br><span class="line">tmux rename -t xdmcp_listen_177 xdmcp_listen</span><br></pre></td></tr></table></figure>
+<p>下图是我关闭终端后进行的测试（测试端口178），可以满足目标需求。</p>
+<figure>
+<img data-src="/img/2021/04/tmux_listen_177.png" alt="使用tmux实现端口永久监听">
+<figcaption aria-hidden="true">使用tmux实现端口永久监听</figcaption>
+</figure>
+<h3 id="方案二配置自启动">4.2 方案二：配置自启动</h3>
+<p>这是我最开始想到的方案，只适用于个人使用的、没有重启限制的服务器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建需要自启动的文件</span></span><br><span class="line">vim listen177.sh</span><br></pre></td></tr></table></figure>
+<p>在文件中编写以下内容，用<code>:wq</code>保存并关闭。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#chkconfig:5 80 90</span></span><br><span class="line"><span class="comment">#decription:autostart</span></span><br><span class="line"></span><br><span class="line">nc -lk 177</span><br></pre></td></tr></table></figure>
+<p>然后进行自启动配置。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> listen177.sh /etc/rc.d/init.d/</span><br><span class="line"><span class="built_in">cd</span> /etc/rc.d/init.d</span><br><span class="line"><span class="built_in">chmod</span> +x  /etc/rc.d/init.d/listen177.sh</span><br><span class="line">chkconfig --add listen177.sh</span><br><span class="line">chkconfig listen177.sh</span><br></pre></td></tr></table></figure>
+<p>到此，端口监听才全部结束。上面两种方案就看自己的需求选取吧。</p>
+<h2 id="xdmcp客户端">5 XDMCP客户端</h2>
+<p>这里就是各显神通的地方了。</p>
+<p>Windows端当然是推荐Xmanager，macOS可以使用XQuartz。我就放一下我自己的Xmanager效果图。</p>
+<figure>
+<img data-src="/img/2021/04/xmanager_config.png" alt="Xmanager配置">
+<figcaption aria-hidden="true">Xmanager配置</figcaption>
+</figure>
+<figure>
+<img data-src="/img/2021/04/xdmcp_res.png" alt="最终效果图">
+<figcaption aria-hidden="true">最终效果图</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>XDMCP配置到此结束，希望有需求的各位同学能有点收获吧。</p>
+<p>最后，预告一下服务器挂上公网的笔记。<del>只要我的宽带不是传说的虚拟IP</del></p>
+<p>最后的最后，日常求<del>一键三连</del>收藏分享。 :@(击掌)</p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>XDMCP</tag>
+        <tag>Xmanager</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
+    <url>//2019/01/28/keyboard87-3/</url>
+    <content><![CDATA[<blockquote>
+<p>前文：<br>
+<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a><br>
+<a href="/2019/01/22/keyboard87-2/">从零开始的客制化87键机械键盘_2_硬件设计</a></p>
+</blockquote>
+<p>机械键盘的原理图搞定之后就投去打样了，这次体验还是不错。</p>
+<span id="more"></span>
+<h2 id="pcb打样">PCB打样</h2>
+<p>PCB打样就交给嘉立创了，下单系统虽然UI做的不怎么样，但系统操作和服务看上去特别高大上。而且最近嘉立创对自己的SMT进行了升级，添加了很多可贴元器件，这样一来，板子一拿回来就只要焊四个0805的贴片和直插的按键轴体。</p>
+<p>下单大概四天，板子就寄到了。一层一层的红色气泡纸把五块板子包得严严实实。</p>
+<figure>
+<img data-src="/img/2020/02/1443212437.jpg" alt="pcb_package.jpg">
+<figcaption aria-hidden="true">pcb_package.jpg</figcaption>
+</figure>
+<p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -318,582 +899,6 @@ As"为仿真配置的名称，"Description"中可以选填一些配置信息，�
       </tags>
   </entry>
   <entry>
-    <title>从零开始的客制化87键机械键盘_1_立项</title>
-    <url>//2018/12/25/keyboard87-1/</url>
-    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
-type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
-<span id="more"></span>
-<h2 id="项目初衷">项目初衷</h2>
-<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
-<figure>
-<img data-src="/img/2020/02/3841195344.jpg" alt="USB-to-Bluetooth Convertor">
-<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
-</figure>
-<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
-<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
-<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
-    <url>//2019/01/28/keyboard87-3/</url>
-    <content><![CDATA[<blockquote>
-<p>前文：<br>
-<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a><br>
-<a href="/2019/01/22/keyboard87-2/">从零开始的客制化87键机械键盘_2_硬件设计</a></p>
-</blockquote>
-<p>机械键盘的原理图搞定之后就投去打样了，这次体验还是不错。</p>
-<span id="more"></span>
-<h2 id="pcb打样">PCB打样</h2>
-<p>PCB打样就交给嘉立创了，下单系统虽然UI做的不怎么样，但系统操作和服务看上去特别高大上。而且最近嘉立创对自己的SMT进行了升级，添加了很多可贴元器件，这样一来，板子一拿回来就只要焊四个0805的贴片和直插的按键轴体。</p>
-<p>下单大概四天，板子就寄到了。一层一层的红色气泡纸把五块板子包得严严实实。</p>
-<figure>
-<img data-src="/img/2020/02/1443212437.jpg" alt="pcb_package.jpg">
-<figcaption aria-hidden="true">pcb_package.jpg</figcaption>
-</figure>
-<p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IC笔记之瞬态仿真</title>
-    <url>//2021/04/06/ic-note-simu-tran/</url>
-    <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
-<span id="more"></span>
-<h2 id="概述">1 概述</h2>
-<p>瞬态仿真是什么？</p>
-<blockquote>
-<p>瞬态仿真是电路在给定的输入激励下，在设定的时间范围内计算电路时域瞬态响应性能的一种仿真手段。</p>
-</blockquote>
-<p>瞬态仿真一般是集成电路的第一个仿真，是年轻人的第一个仿真手段；通常是验证稳定性、速度、精度等等，需要在多次不同的瞬态分析过程才能得出结论。</p>
-<h3 id="基本设置">1.1 基本设置</h3>
-<p>在"ADE"中选择"Analyses"-"Choose"，可以选择仿真功能选择。点击"tran"后，可以看到如下图的基本设置界面。</p>
-<figure>
-<img data-src="/img/2021/04/tran_ade_settings_1.png" alt="图1-1">
-<figcaption aria-hidden="true">图1-1</figcaption>
-</figure>
-<ol type="1">
-<li>"Stop Time"，设置仿真时间<br>
-仿真时间默认从0时刻开始，这里只设置停止时间。时间单位为可以是"s"（秒）、"m"（毫秒）和"u"（微秒）。</li>
-<li>"Accuracy Defaults(errpreset)"，设置仿真精度和速度<br>
-软件内置有三种仿真精度："conservative"、"moderate"、"liberal"。"conservative"具有最高的精度，但速度较慢，用于高精度模拟电路和混合信号电路；"liberal"则是速度最快，精度较差，用于数字电路和变化率不高的模拟电路；"moderate"是比较折衷的模式，用于绝大多数模拟电路。如果需要更高的精度，则要在高级设置中配置参数。</li>
-<li>"Transient Noise"，设置瞬态噪声</li>
-<li>"Dynamic Parameter"，设置动态参数</li>
-<li>"Enabled"，设置瞬态仿真启用</li>
-</ol>
-<h3 id="高级设置">1.2 高级设置</h3>
-<p>在图1-1中点击右下角的"Options"可进入高级设置。</p>
-<h4 id="time-step标签页">1.2.1 Time Step标签页</h4>
-<figure>
-<img data-src="/img/2021/04/tran_ade_settings_2_timestep.png" alt="图1-2">
-<figcaption aria-hidden="true">图1-2</figcaption>
-</figure>
-<p>Simulation Interval Parameters</p>
-<ul>
-<li>"start"：仿真起始时刻。仿真器默认起始时间为0s。</li>
-<li>"outputstart"：输出波形时间。如果设计者的仿真时间较长，而只需观察某个时间点或者部分时间段内的电路瞬态特性输出，则可以通过该参数控制数据输出。</li>
-</ul>
-<p>Time Step Parameters</p>
-<ul>
-<li>"step"：最小的时间步长。</li>
-<li>"maxstep"：最大时间步长，根据"errpreset"中的精度设定取得默认值。</li>
-</ul>
-<h4 id="algorithm标签页">1.2.2 Algorithm标签页</h4>
-<figure>
-<img data-src="/img/2021/04/tran_ade_settings_2_algorithm.png" alt="图1-3">
-<figcaption aria-hidden="true">图1-3</figcaption>
-</figure>
-<p>Initial Condition Parameters</p>
-<p>用户可以利用设置电路节点状态的初始化语句（ic
-statement）或电容、电感等模型内的初始条件参数（ic
-parameters）两种方式为瞬态仿真设置初始条件。其中电容中设置的是初始电压值，电感中设置的是初始电流值。如果没有进行设置，仿真器将默认采用直流分析的结果作为初始条件。对这个参数进行设置时要格外注意，如果对电路分析不明，贸然设置电路节点的初始值，极易造成电路瞬态仿真出现收敛性问题，并产生错误结果。</p>
-<ul>
-<li>"ic"：设定通过何种方式设置初始条件。
-<ul>
-<li>ic=dc：忽略任何设置的初始条件，直接采用直流分析的结果。</li>
-<li>ic=node：忽略电容、电感等器件上设置的初始条件，而采用"ic
-statement"设置的初始条件。</li>
-<li>ic=dev：忽略由"ic
-statement"设置的初始条件，采用电容、电感上的初始条件。</li>
-<li>ic=all：两种初始条件都将被采用。当设置条件发生冲突时，"ic
-parameters"比"ic statement"的优先级更高。<br>
-&gt; "ic statement"的格式是ic NodeName=value。<br>
-&gt; 例：ic V1=1 M1:int_d=3.3 L1:1=10u<br>
-&gt;
-上句表示的是：在节点V1上的初始电压是1V；在MOS管M1的漏极电压是3.3V；在电感L1
-上流过的初始电流是10μA。</li>
-</ul></li>
-<li>"skipdc"：最小的时间步长。
-选择跳过直流分析。在没有直流分析的情况下，电路的初始解将采用通解，或是从由"readic"定义的文件中读取初始条件。如果"readic"中没有定义，则将从"ic
-statement"中获取初始条件。无论是否跳过直流分析，器件上的初始条件肯定都会被采用。如果一个节点没有被赋予初始条件，将自动被仿真器设置为零。</li>
-<li>"readic"：从文件中读取初始条件。</li>
-</ul>
-<p>Initial Condition Parameters For Oscillator</p>
-<p>用户可以手动配置振荡器的初始条件，也可以选择使用软件自动配置。</p>
-<p>Convergence Parameters</p>
-<p>当电路在仿真时存在无限快的响应速度（如一个电路节点不存在任何电容），仿真器可能会产生收敛性问题。为了避免出现这种问题，需要设置"cmin"参数，给该节点设置一个合理的对地电容值。</p>
-<ul>
-<li>"readns"：从文件中读取电路瞬态仿真的初始解。</li>
-<li>"cmin"：设定每个节点对地的最小电容</li>
-</ul>
-<p>Integration Method Parameters</p>
-<p>该参数用于设计者根据仿真速度和仿真精确度选择合适的积分方式。仿真器提供3种不同的积分方式："backward-Euler"，"Trapezoidal"，"Second-order
-Gear"。根据这3种方式一共组合出6种模式，分别为"euler"、"traponly"、"trap"、"gear2only"、gear2"、"trapgear2"。<br>
-如果设计者需要高精度仿真，可以选择"trapezoidal"积分方式。但是，这种积分方式对前一时刻计算产生的误差非常敏感，因此在容差很大时并不是一种很好的选择。在容差很大而且要求速度较快的情况下，通常选择"Second-order
-Gear"积分法。"Second-order
-Gear"积分法比"backward-Euler"积分法更加精确。</p>
-<p>Accuracy Parameters -
-"relref"：相对收敛标准的参考，默认值从"errpreset"得到。包括以下几个选项。<br>
-"relref =
-pointlocal"：即relref=局部点，这个设置用来定量比较每个节点的值相对于待分析节点上当前数值的相对误差。<br>
-"relref =
-alllocal"：即relref=局部所有点，定量比较过去所有时间点的值相对于最大节点值的相对误差。<br>
-"relref =
-sigglobal"：即relref=所有信号点，定量比较每个电路上信号值相对于电路中所有信号中的最大值的相对误差。<br>
-"relref =
-allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最大悬浮电流值设定比较方程，此时不能满足基尔霍夫电流方程。
-- "lteratio"：比例系数，用于计算Newton容差中的LTE 容差。</p>
-<p>Newton Parameters</p>
-<ul>
-<li>"maxiters"：在每个时间步长内最多的迭代次数。</li>
-<li>"restart"：如果有任何条件发生变化，是否从最开始重新计算直流解。如果不重新计算，将直接采用上一次的初始值。</li>
-</ul>
-<h4 id="state-file标签页">1.2.3 State File标签页</h4>
-<figure>
-<img data-src="/img/2021/04/tran_ade_settings_2_statefile.png" alt="图1-4">
-<figcaption aria-hidden="true">图1-4</figcaption>
-</figure>
-<p>StateFile Parameters</p>
-<p>状态文件（State File）主要有两个用处： 1.
-将保存下来的状态文件用于后续的仿真分析中。如在一次瞬态分析中保存下结束时刻的信息，在下一次瞬态分析中能够以该时刻作为起始点继续完成后续时间段的分析。
-2.
-用户能够利用状态文件自动完成初始条件的更新。设计者能够利用仿真器将一次分析的初始时刻工作点或终止时刻工作点生成状态文件。同时，设计者也能手动编写一个状态文件。</p>
-<ul>
-<li>"write"：将瞬态分析的初始状态解写到指定的文件中。</li>
-<li>"writefinal"：将瞬态分析的最终解写到指定的文件中。</li>
-</ul>
-<p>Save-Restart Parameters</p>
-<p>该参数用于配置保存和载入的频率等参数。</p>
-<h4 id="output标签页">1.2.3 Output标签页</h4>
-<p>[photos] <img data-src="/img/2021/04/tran_ade_settings_2_output_1.png" alt="图1-5"> <img data-src="/img/2021/04/tran_ade_settings_2_output_2.png" alt="图1-6"> [/photos]</p>
-<p>Output Parameters</p>
-<p>仿真器默认情况下会把所有仿真数据都保存下来，但有时并不需要所有的数据量。仿真器允许设计者选择保存需要的数据。如果需要得到更精确的结果，也可以增大数据输出量。<br>
-该参数配置"compression"输出模式，将恒定信号的重复记录删除。</p>
-<p>Strobing Parameters</p>
-<p>该参数配置"strobing"输出模式。在保存点之间设置一个时间间隔。虽然仿真器计算过这些数据，但是并没有将其保存输出。</p>
-<p>Final OP Point Settings</p>
-<p>该参数配置静态工作点的保存等参数。</p>
-<p>Infotimes Settings</p>
-<p>该参数配置"infotimes"输出模式。允许设计者保存某些自定义时刻的工作点数据。如果需要保存多个时刻的工作点，填入时间矢量之间以空格隔开。</p>
-<p>Actimes Settings</p>
-<p>未找到相关资料，待补充。</p>
-<h4 id="emir-output标签页">1.2.5 EM/IR Output标签页</h4>
-<figure>
-<img data-src="/img/2021/04/tran_ade_settings_2_emiroutput.png" alt="图1-7">
-<figcaption aria-hidden="true">图1-7</figcaption>
-</figure>
-<p>该标签页涉及EM（电子迁移）和IR（IR压降）。<del>恕我直言，不会。</del></p>
-<h4 id="misc标签页">1.2.6 Misc标签页</h4>
-<figure>
-<img data-src="/img/2021/04/tran_ade_settings_2_misc.png" alt="图1-7">
-<figcaption aria-hidden="true">图1-7</figcaption>
-</figure>
-<p>该标签页为一些难以分类的配置，毕竟都写了是misc了。</p>
-<ol type="1">
-<li>Annotation Parameters，注释。</li>
-<li>Captab Parameters，电容列表参数。</li>
-<li>Additional Parameters，额外参数。</li>
-</ol>
-<h2 id="实例">2 实例</h2>
-<p>仿真电路如图。瞬态仿真实例选择了使用二极管连接方式的PMOS作为负载的共源极电路。</p>
-<figure>
-<img data-src="/img/2021/04/circuit_opa.png" alt="图2-1">
-<figcaption aria-hidden="true">图2-1</figcaption>
-</figure>
-<h3 id="配置激励源">2.1 配置激励源</h3>
-<p>与前一篇关于<a href="https://www.blueschwarz.top/2021/03/ic-note-inv-simu.html">反相器仿真</a>中对于激励信号的配置不同，这次选择直接对端口进行激励源配置。</p>
-<p>在ADE窗口中选择"Setup"-"Stimuli"。</p>
-<figure>
-<img data-src="/img/2021/04/tran_ade_stimuli_1.png" alt="图2-2">
-<figcaption aria-hidden="true">图2-2</figcaption>
-</figure>
-<p>按照下面三张图片依次对三个端口的输入信号进行配置。</p>
-<p>[photos] <img data-src="/img/2021/04/tran_ade_stimuli_2_vin.png" alt="图2-3"> <img data-src="/img/2021/04/tran_ade_stimuli_2_vdda.png" alt="图2-4"> <img data-src="/img/2021/04/tran_ade_stimuli_2_gnda.png" alt="图2-5"> [/photos]</p>
-<h3 id="配置瞬态仿真">2.2 配置瞬态仿真</h3>
-<p>选择瞬态仿真模式，并选择仿真时间和精度。</p>
-<figure>
-<img data-src="/img/2021/04/tran_ade_mode.png" alt="图2-6">
-<figcaption aria-hidden="true">图2-6</figcaption>
-</figure>
-<p>选取观测信号后，仿真配置结束。</p>
-<figure>
-<img data-src="/img/2021/04/tran_ade_settings.png" alt="图2-7">
-<figcaption aria-hidden="true">图2-7</figcaption>
-</figure>
-<h3 id="仿真结果">2.3 仿真结果</h3>
-<p>下图是仿真结果。局部放大后，可以通过"M"键选取曲线上的点，对信号进行进一步分析。</p>
-<figure>
-<img data-src="/img/2021/04/tran_ade_results.png" alt="图2-8">
-<figcaption aria-hidden="true">图2-8</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>以上就是ADE中瞬态仿真的大部分介绍。本次笔记结束。 :@(击掌)</p>
-]]></content>
-      <categories>
-        <category>集成电路</category>
-      </categories>
-      <tags>
-        <tag>瞬态仿真</tag>
-        <tag>仿真</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>是什么驱动着无限进步？</title>
-    <url>//2021/08/05/driver-of-development/</url>
-    <content><![CDATA[<span id="more"></span>
-<blockquote>
-<p>崇高的理念在欲望面前根本无能为力</p>
-<p>说到底 人类不过是充满欲望的生物</p>
-<p>人活着就不能否定这一点</p>
-<p>正因为这份欲望文明才进化至今</p>
-<p>今后也会继续进化 绝不会倒退</p>
-<p>建造燃料废物处理厂</p>
-<p>修建高速公路 打造购物中心</p>
-<p>森林面积不断减少 稀有物种濒临灭绝</p>
-<p>终有一天这里会变得和一般的城市一样</p>
-<p>于是他们一边缅怀过去 一边伤感唏嘘</p>
-<p>但是大家都想这样做 多棒啊</p>
-<p>这就是人类</p>
-<p>—— LEGAL HIGH.S02E08</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>观点&amp;感想</category>
-      </categories>
-      <tags>
-        <tag>观点</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>//2016/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ACFM裂纹检测改进——RACFM</title>
-    <url>//2020/04/03/racfm-summary/</url>
-    <content><![CDATA[<p>之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。</p>
-<p>针对交变电场检测（ACFM）的方向性局限，文章<em>High sensitivity
-rotating alternating current field measurement for arbitrary-angle
-underwater
-cracks</em>（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环境实验验证了RACFM
-对任意角度裂纹的灵敏性。</p>
-<span id="more"></span>
-<h2 id="论文背景">1 论文背景</h2>
-<p>原文以离岸油气开采行业为实际应用背景，列举了当时水下管道裂纹检测的几种方法，并分析这些方法的特点和缺陷，请参见表1。针对当时普遍使用的交变电场检测（ACFM）的方向性局限，原文提出了一种新型的旋转交变电场检测（RACFM）在保证相对较高的灵敏度的前提下，克服方向性的局限。</p>
-<table>
-<tr>
-<th colspan="3">
-表1 多种裂纹检测比较
-</th>
-</tr>
-<tr>
-<th>
-</th>
-<th>
-特点
-</th>
-<th>
-缺陷
-</th>
-</tr>
-<tr>
-<th>
-肉眼检查
-</th>
-<th>
-实用、廉价
-</th>
-<th>
-<ol type="1">
-<li>高度依赖使用者的经验和能力<br>2. 不借助工具无法发现应力腐蚀开裂(SCC)
-</li></ol></th>
-</tr>
-<tr>
-<th>
-磁粉探伤(MPI)
-</th>
-<th>
-<ol type="1">
-<li>使用最广泛<br>2. 使用铁屑探查裂纹
-</li></ol></th>
-<th>
-MPI的检测性能依赖于结构体表面的平整程度，而水下表面清洁成本高昂
-</th>
-</tr>
-<tr>
-<th>
-漏磁检测(MFL)
-</th>
-<th>
-无接触检测，无需表面清洁
-</th>
-<th>
-无法检测排列紧密的裂纹
-</th>
-</tr>
-<tr>
-<th>
-涡流检测(ECT)
-</th>
-<th>
-检测导电材料表面和亚表面的裂缝
-</th>
-<th>
-水下结构体表面不规则，难以做到匀速检测装置离开，影响ECT精准性
-</th>
-</tr>
-<tr>
-<th>
-交流电场检测(ACFM)
-</th>
-<th>
-<ol type="1">
-<li>无需表面清洁<br>2. 数学模型精确<br>3. 对检测装置移动具有高容忍度
-</li></ol></th>
-<th>
-裂纹与感应电流垂直时，感应电流的扰动最大，与感应电流平行时最小，实际使用时需对同一位置多次检测，增加检测成本
-</th>
-</tr>
-</table>
-
-
-
-<h2 id="理论分析">2 理论分析</h2>
-<p>ACFM
-是一种基于交流电位差的裂纹检测手段。通以交流电的线圈在其周围产生变化的交流磁场，被测表面感应出感生电动势，产生变化的感生交流电场。当被测表面出现裂纹时，感生交流电场就会被干扰，同时交流磁场也会受到轻微的扰动。ACFM
-就是通过检测交流磁场的扰动来检测裂纹的长度和深度，其原理框图请参见图1。</p>
-<figure>
-<img data-src="/img/2020/04/2779082017.png" alt="图1 ACFM原理框图">
-<figcaption aria-hidden="true">图1 ACFM原理框图</figcaption>
-</figure>
-<p>图2-a和图2-b分别为被测表面的裂纹与交流电场垂直和平行的示意图。显而易见，当交流电场的方向与裂纹垂直时，裂纹对交流电场的影响就会更加明显；反之，两者平行时，裂纹对交流电场的影响明显降低。原文针对这一局限，RACFM
-使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM
-感生交流电场方向理论示意图如图3所示。</p>
-<p>原文针对这一局限，RACFM使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM感生交流电场方向理论示意图如图3所示。</p>
-<figure>
-<img data-src="/img/2020/04/3338828193.jpg" alt="图2 裂纹角度对交流电场的影响">
-<figcaption aria-hidden="true">图2 裂纹角度对交流电场的影响</figcaption>
-</figure>
-<figure>
-<img data-src="/img/2020/04/3045871072.jpg" alt="图3 周期内RACFM感生交流电场方向理论示意图">
-<figcaption aria-hidden="true">图3
-周期内RACFM感生交流电场方向理论示意图</figcaption>
-</figure>
-<h2 id="实验验证">3 实验验证</h2>
-<p>原文使用RACFM与传统ACFM对照试验，除电感器的激励电流外，其余均相同。</p>
-<p>探测器直线移动经过裂纹，通过改变路径与裂纹的夹角(0°-90°)来模拟任意角度的裂纹，记录<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>两个方向的磁感应强度，实验结果如图4所示。在夹角为0°时，RACFM和ACFM得到的扰动都有明显的波动，可以作为裂纹的依据。随着夹角不断变大，ACFM得到的磁感应强度扰动不断衰减，当夹角过大时，扰动被噪声覆盖。而RACFM得到的扰动则一直比较明显，不会随着夹角变化产生明显的衰减。</p>
-<figure>
-<img data-src="/img/2020/04/1016029282.jpg" alt="图4 B_x和B_z实验数据">
-<figcaption aria-hidden="true">图4 <span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>实验数据</figcaption>
-</figure>
-<p>为了量化RACFM的性能，原文定义了x和z方向磁感应强度的灵敏度，见下方公式。</p>
-<p><span class="math display">\[
-\begin{equation}  \label{eq1}
-\left\{ \begin{array}{l}
-{S_x} = \frac{ {M{X_{max} } } }{ {M{X_0} } } \times 100\% \\
-{S_z} = \frac{ {M{Z_{max} } } }{ {M{X_0} } } \times 100\%
-\end{array} \right.
-\end{equation}
-\]</span></p>
-<p>其中，<span class="math inline">\(MX_0\)</span>表示无裂纹时，<span class="math inline">\(B_x\)</span>的幅度；<span class="math inline">\(M{X_{max}}\)</span>和<span class="math inline">\(M{Z_{max}}\)</span>分别表示<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>扰动的最大值。灵敏度与角度变化的关系如图5所示。随着路径与裂纹夹角不断变大，ACFM的灵敏度急剧降低，当夹角大于50°时，ACFM的两个方向灵敏度接近0；RACFM的灵敏度<span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>虽然有衰减，但依旧处于较高的灵敏范围内，可以作为裂纹检测的依据。</p>
-<figure>
-<img data-src="/img/2020/04/2353434411.jpg" alt="图5 S_x和S_z变化趋势">
-<figcaption aria-hidden="true">图5 <span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>变化趋势</figcaption>
-</figure>
-<p>根据实验结果，RACFM能克服传统ACFM的方向性局限，同时，RACFM还保持了较高的裂纹检测灵敏度，可以应用在实际的离岸油气开采行业的管道裂纹检测场景中。</p>
-<hr>
-<p>其实这篇文章提出的RACFM其实就是将ACFM从线到面，从单一角度扩展到多个角度，并不是特别深奥难懂的点子。甚至这样的例子也发生在平时的生活中，我们也许会写下“就这？”。前几天开始看<em>Talk
-Like TED</em>，开篇第一句就是“Ideas are the currency of the twenty-first
-century”。这就让我想起了RACFM这篇文章，以及经常遇见的“就这？”。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>summary</tag>
-        <tag>检测</tag>
-        <tag>电磁感应</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux笔记之XDMCP配置</title>
-    <url>//2021/04/08/linux-note-xdmcp-config/</url>
-    <content><![CDATA[<p>恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。</p>
-<p>XDMCP配置主要是XDMCP
-Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。</p>
-<span id="more"></span>
-<blockquote>
-<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
-</blockquote>
-<h2 id="概述">1 概述</h2>
-<p>首先简单地介绍一下目前的问题。</p>
-<ol type="1">
-<li>需要在局域网内访问服务器，并实现远程桌面。</li>
-<li>CentOS
-7默认桌面为Gnome。虽说没什么问题，但是7开始的Gnome据说开始使用硬件加速，如果使用XDMCP协议来远程与gdm会有冲突，会出现奇奇怪怪的问题，Xmanager官方提到了<a href="http://blog.netsarang.com/89/connecting-to-centos-7/">这个问题</a>，建议更换显示管理（display
-manager）和桌面环境（desktop environment）。</li>
-</ol>
-<blockquote>
-<p>这里顺嘴说一下CentOS的版本。下面我是用的是CentOS
-7的虚拟机，没有使用CentOS 8。原因嘛，大家可以看一下CentOS官网<a href="https://www.centos.org/centos-linux/">下载页面</a>看一下这两个版本的支持时间。CentOS之前明明说好了对CentOS
-8有10年支持的，结果RedHat为了推CentOS Stream就把CentOS
-8在今年（2021年）年底提前结束了。这个博客还跑在CentOS
-8上面，就挺难受的。</p>
-</blockquote>
-<h2 id="更换镜像源">2 更换镜像源</h2>
-<p>众所周知啊，CentOS的服务器经常因为一些问题访问非常缓慢，下载速度堪忧。所以，更换镜像源是非常直接的解决方案。目前推荐使用清华TUNA或者北外BFSU（广度优先搜索大学）的镜像。当然用阿里或者华为的也不是不行。</p>
-<p>更换镜像源指令很简单，共两个，依次执行就可以。<del>当然，你的账号需要有或者通过sudo可以拿到root的权限，直接使用root账号的可以忽略sudo，下同</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sed -e <span class="string">&#x27;s|^mirrorlist=|#mirrorlist=|g&#x27;</span> \</span><br><span class="line">         -e <span class="string">&#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27;</span> \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果之前对于镜像源进行过更改，还需要检查一下修改过的镜像源文件是否启用，再执行makecache。</p>
-</blockquote>
-<p>这部分内容参考了TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
-<h2 id="更换display-manager和desktop-environment">3 更换display
-manager和desktop environment</h2>
-<p>display manager更换为lightdm，不再使用gdm；desktop
-environment可以使用MATE desktop、Xfce、KDE等等。MATE desktop是基于Gnome
-2.x的桌面环境，资源占用极小。</p>
-<ul>
-<li>安装EPEL（Extra Package for Enterprise Linux），这是Fedora Special
-Interest Group维护的Enterprise Linux（RHEL、CentOS）中常用的包。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
-<ul>
-<li>安装lightdm。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install lightdm</span><br></pre></td></tr></table></figure>
-<ul>
-<li>安装X Windows System。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;X Window system&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;X Window system&quot;</span></span><br></pre></td></tr></table></figure>
-<p>接下来展示的桌面环境安装只需要选择一个，反正我就用META了。<del>当然都选了我也不知道，你开心就好</del></p>
-<ul>
-<li>META desktop安装。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;MATE Desktop&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;MATE Desktop&quot;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Xfce安装。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum groupinstall xfce</span><br></pre></td></tr></table></figure>
-<h3 id="使用lightdm配置xdmcp-server">3.1使用lightdm配置XDMCP Server</h3>
-<p>通过vim打开lightdm配置文件。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
-<p>在文件中找到<code>[XDMCPServer]</code>，修改其下方被注释的代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">···</span><br><span class="line">[XDMCPServer]</span><br><span class="line">···</span><br><span class="line">enabled=true</span><br><span class="line">port=177</span><br><span class="line">···</span><br></pre></td></tr></table></figure>
-<h3 id="配置lightdm为默认桌面环境">3.2 配置lightdm为默认桌面环境</h3>
-<p>切换display
-manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行，同时，如果是图形界面执行该命令，需要重新登录一下系统再继续下一步；<code>init 5</code>是将系统的运行再次切换到UI桌面。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">disable</span> gdm &amp;&amp; systemctl <span class="built_in">enable</span> lightdm</span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
-<p>这时我们第二次重新登录后，就进入了META desktop了。</p>
-<p>接着，还需要讲META设置为默认桌面环境。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/share/xsessions/ &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> back</span><br><span class="line">sudo <span class="built_in">mv</span> gnome* back &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
-<h2 id="打开177端口">4 打开177端口</h2>
-<p>XDMCP默认的端口是177端口，可以在lightdm配置文件根据需求中更改。系统默认是不会放开177端口的，需要进一步配置。</p>
-<p>另外，为了测试端口是否可用，需要实现准备可以ping端口的程序。Linux环境可以安装telnet；Windows环境建议使用<a href="https://elifulkerson.com/projects/tcping.php">tcping</a>，使用时务必在程序所在文件夹中打开终端执行命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># telnet Ping 192.168.58.130的177端口</span></span><br><span class="line">telnet 192.168.58.130 177</span><br><span class="line"></span><br><span class="line"><span class="comment"># tcping Ping 192.168.58.130的177端口</span></span><br><span class="line">.\tcping.exe 192.168.58.130 177</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">.\tcping64.exe 192.168.58.130 177</span><br></pre></td></tr></table></figure>
-<p>好，接下来解决端口开放问题。</p>
-<p>防火墙设置部分。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置防火墙，将177端口永久开放给所有用户</span></span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/udp</span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新防火墙规则</span></span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有打开的端口</span></span><br><span class="line">sudo firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
-<p>端口监听部分。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置177端口tcp协议永久监听</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目前177端口状态</span></span><br><span class="line">netstat -tunlp | grep 177</span><br></pre></td></tr></table></figure>
-<p>CentOS部分的端口配置基本结束，接下来就用telnet或者tcping来ping服务器的177端口。</p>
-<figure>
-<img data-src="/img/2021/04/tcping_ip_port.png" alt="tcping Ping端口177">
-<figcaption aria-hidden="true">tcping Ping端口177</figcaption>
-</figure>
-<p>你以为这么简单就结束了？ :&amp;(蛆音娘_摊手)
-一旦SSH连接断开或系统重启<del>当然生产用的服务器没有特殊情况是不会重启的</del>，监听就自动结束了。这时候有两个解决方案了。</p>
-<h3 id="方案一使用tmux针对不重启的系统">4.1
-方案一：使用tmux，针对不重启的系统</h3>
-<p>tmux可以实现终端复用，即使表面上终端结束了，但是跑在tmux中的指令不会就此结束，非常适合目前的需求。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装tmux</span></span><br><span class="line">sudo yum install tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建tmux会话</span></span><br><span class="line">tmux new -s xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入会话后开始监听177端口</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 离开tmux会话，返回主终端</span></span><br><span class="line">tmux detach</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其它tmux相关操作</span></span><br><span class="line"><span class="comment"># 列出已有tmux会话</span></span><br><span class="line">tmux <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新进入会话</span></span><br><span class="line">tmux attach-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭会话（需在会话中）</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 或（无需在会话中）</span></span><br><span class="line">tmux kill-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名会话xdmcp_listen_177为xdmcp_listen</span></span><br><span class="line">tmux rename -t xdmcp_listen_177 xdmcp_listen</span><br></pre></td></tr></table></figure>
-<p>下图是我关闭终端后进行的测试（测试端口178），可以满足目标需求。</p>
-<figure>
-<img data-src="/img/2021/04/tmux_listen_177.png" alt="使用tmux实现端口永久监听">
-<figcaption aria-hidden="true">使用tmux实现端口永久监听</figcaption>
-</figure>
-<h3 id="方案二配置自启动">4.2 方案二：配置自启动</h3>
-<p>这是我最开始想到的方案，只适用于个人使用的、没有重启限制的服务器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建需要自启动的文件</span></span><br><span class="line">vim listen177.sh</span><br></pre></td></tr></table></figure>
-<p>在文件中编写以下内容，用<code>:wq</code>保存并关闭。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#chkconfig:5 80 90</span></span><br><span class="line"><span class="comment">#decription:autostart</span></span><br><span class="line"></span><br><span class="line">nc -lk 177</span><br></pre></td></tr></table></figure>
-<p>然后进行自启动配置。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> listen177.sh /etc/rc.d/init.d/</span><br><span class="line"><span class="built_in">cd</span> /etc/rc.d/init.d</span><br><span class="line"><span class="built_in">chmod</span> +x  /etc/rc.d/init.d/listen177.sh</span><br><span class="line">chkconfig --add listen177.sh</span><br><span class="line">chkconfig listen177.sh</span><br></pre></td></tr></table></figure>
-<p>到此，端口监听才全部结束。上面两种方案就看自己的需求选取吧。</p>
-<h2 id="xdmcp客户端">5 XDMCP客户端</h2>
-<p>这里就是各显神通的地方了。</p>
-<p>Windows端当然是推荐Xmanager，macOS可以使用XQuartz。我就放一下我自己的Xmanager效果图。</p>
-<figure>
-<img data-src="/img/2021/04/xmanager_config.png" alt="Xmanager配置">
-<figcaption aria-hidden="true">Xmanager配置</figcaption>
-</figure>
-<figure>
-<img data-src="/img/2021/04/xdmcp_res.png" alt="最终效果图">
-<figcaption aria-hidden="true">最终效果图</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>XDMCP配置到此结束，希望有需求的各位同学能有点收获吧。</p>
-<p>最后，预告一下服务器挂上公网的笔记。<del>只要我的宽带不是传说的虚拟IP</del></p>
-<p>最后的最后，日常求<del>一键三连</del>收藏分享。 :@(击掌)</p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>XDMCP</tag>
-        <tag>Xmanager</tag>
-        <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux笔记之VNC配置</title>
     <url>//2021/06/21/linux-note-vnc-config/</url>
     <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
@@ -987,6 +992,49 @@ manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行�
       <tags>
         <tag>CentOS</tag>
         <tag>VNC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>斯普林格Springer免费书籍</title>
+    <url>//2020/06/24/springer-free-books-2020/</url>
+    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
+<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
+<span id="more"></span>
+<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
+<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
+<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
+<hr>
+<blockquote>
+<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
+最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+        <tag>书籍</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Spring框架的IOC和DI的理解</title>
+    <url>//2018/01/26/spring-ioc-di/</url>
+    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
+<p>下面来说说我，一个初学者，对DI的理解。</p>
+<span id="more"></span>
+<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
+2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
+<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
+<p>这个是我今天看了Spring框架之后的理解。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -1119,28 +1167,11 @@ G）</h3>
 <h2 id="视频">4 视频</h2>
 <p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>斯普林格Springer免费书籍</title>
-    <url>//2020/06/24/springer-free-books-2020/</url>
-    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
-<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
-<span id="more"></span>
-<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
-<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
-<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
-<hr>
-<blockquote>
-<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
-最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
-</blockquote>
-]]></content>
       <categories>
-        <category>杂项</category>
+        <category>镜头</category>
       </categories>
       <tags>
-        <tag>资源</tag>
-        <tag>书籍</tag>
+        <tag>镜头</tag>
       </tags>
   </entry>
   <entry>
@@ -1339,155 +1370,148 @@ API。因此，需要配置fever插件。</p>
       </tags>
   </entry>
   <entry>
-    <title>从零开始的客制化87键机械键盘_2_硬件设计</title>
-    <url>//2019/01/22/keyboard87-2/</url>
-    <content><![CDATA[<blockquote>
-<p>前文：<br>
-<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a></p>
-</blockquote>
-<p>从这个项目立项以来已经快一个月了，终于在师傅和同学的帮助下，搞定了硬件设计。下面我就器件选型简单介绍一下，最后贴了一下渲染图。</p>
+    <title>ACFM裂纹检测改进——RACFM</title>
+    <url>//2020/04/03/racfm-summary/</url>
+    <content><![CDATA[<p>之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。</p>
+<p>针对交变电场检测（ACFM）的方向性局限，文章<em>High sensitivity
+rotating alternating current field measurement for arbitrary-angle
+underwater
+cracks</em>（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环境实验验证了RACFM
+对任意角度裂纹的灵敏性。</p>
 <span id="more"></span>
-<h2 id="硬件设计">硬件设计</h2>
-<p>这一章介绍一下客制化键盘的硬件设计，包括以下4项：主控芯片、传输接口、轴体选择、键盘布局。</p>
-<h3 id="主控芯片">主控芯片</h3>
-<p>在确定STM32作为主控芯片之前，我在网上搜了一下，也拆了手上的ikbc
-C87，ATMEL的ATMEGA32芯片使用的比较多。我最终还是选择了STM32，主要原因是对STM32比较熟悉。</p>
-<p>当然，作为32位的MCU，STM32不管是在IO数量、USB接口支持，还是程序运算速度，都能满足机械键盘的需求。</p>
-<ul>
-<li>USB接口</li>
-</ul>
-<p>机械键盘使用时是作为USB
-Slave使用的，所以只需要芯片支持USB就行，不需要OTG。STM32F1的所有芯片都支持全速USB
-2.0，所以随便选一款就行。</p>
-<ul>
-<li>IO数量</li>
-</ul>
-<p>简单计算一下机械键盘需要的IO口，见下表（实际IO分配以实际原理图为准）。</p>
+<h2 id="论文背景">1 论文背景</h2>
+<p>原文以离岸油气开采行业为实际应用背景，列举了当时水下管道裂纹检测的几种方法，并分析这些方法的特点和缺陷，请参见表1。针对当时普遍使用的交变电场检测（ACFM）的方向性局限，原文提出了一种新型的旋转交变电场检测（RACFM）在保证相对较高的灵敏度的前提下，克服方向性的局限。</p>
 <table>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>序号</th>
-<th>用途</th>
-<th>数量</th>
-<th>备注</th>
+<tr>
+<th colspan="3">
+表1 多种裂纹检测比较
+</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>键盘列</td>
-<td>17</td>
-<td>87键键盘布局，最多的一行（第2行）共17个按键</td>
+<tr>
+<th>
+</th>
+<th>
+特点
+</th>
+<th>
+缺陷
+</th>
 </tr>
-<tr class="even">
-<td>2</td>
-<td>键盘行</td>
-<td>6</td>
-<td>87键键盘布局，共6行</td>
+<tr>
+<th>
+肉眼检查
+</th>
+<th>
+实用、廉价
+</th>
+<th>
+<ol type="1">
+<li>高度依赖使用者的经验和能力<br>2. 不借助工具无法发现应力腐蚀开裂(SCC)
+</li></ol></th>
 </tr>
-<tr class="odd">
-<td>3</td>
-<td>USB接口</td>
-<td>2</td>
-<td>USBDN和USBDP</td>
+<tr>
+<th>
+磁粉探伤(MPI)
+</th>
+<th>
+<ol type="1">
+<li>使用最广泛<br>2. 使用铁屑探查裂纹
+</li></ol></th>
+<th>
+MPI的检测性能依赖于结构体表面的平整程度，而水下表面清洁成本高昂
+</th>
 </tr>
-<tr class="even">
-<td>4</td>
-<td>调试接口</td>
-<td>2</td>
-<td>使用STLink连接，仅需JTMS-SWDIO、JTCK-SWCLK和GND三个接口</td>
+<tr>
+<th>
+漏磁检测(MFL)
+</th>
+<th>
+无接触检测，无需表面清洁
+</th>
+<th>
+无法检测排列紧密的裂纹
+</th>
 </tr>
-</tbody>
+<tr>
+<th>
+涡流检测(ECT)
+</th>
+<th>
+检测导电材料表面和亚表面的裂缝
+</th>
+<th>
+水下结构体表面不规则，难以做到匀速检测装置离开，影响ECT精准性
+</th>
+</tr>
+<tr>
+<th>
+交流电场检测(ACFM)
+</th>
+<th>
+<ol type="1">
+<li>无需表面清洁<br>2. 数学模型精确<br>3. 对检测装置移动具有高容忍度
+</li></ol></th>
+<th>
+裂纹与感应电流垂直时，感应电流的扰动最大，与感应电流平行时最小，实际使用时需对同一位置多次检测，增加检测成本
+</th>
+</tr>
 </table>
-<p>简单计算一下，键盘需求的IO口为27个。</p>
-<ul>
-<li>运算速度</li>
-</ul>
-<p>STM32有四个时钟源：</p>
-<table>
-<thead>
-<tr class="header">
-<th>时钟源</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>高速外部时钟(HSE)</td>
-<td>可取4-16MHz，一般采用8MHz</td>
-</tr>
-<tr class="even">
-<td>高速内部时钟(HSI)</td>
-<td>8MHz，内部RC振荡器产生，不稳定</td>
-</tr>
-<tr class="odd">
-<td>低速外部时钟(LSE)</td>
-<td>外部晶振，一般采用32.768KHz</td>
-</tr>
-<tr class="even">
-<td>低速内部时钟(LSI)</td>
-<td>内部RC振荡器产生，约40KHz</td>
-</tr>
-</tbody>
-</table>
-<p>机械键盘用8MHz外部晶振，内部的系统时钟最高为72MHz，满足机械键盘的输入精度要求。</p>
-<h3 id="传输接口">传输接口</h3>
-<p>机械键盘的传输接口已经确定为USB。一般来说，USB有以下几种接口类型：</p>
-<p>[photos] <img data-src="/img/2020/02/3082159515.jpg" alt="type_a"> <img data-src="/img/2020/02/3927602725.jpg" alt="type_b"> <img data-src="/img/2020/02/1301417559.jpg" alt="miniusb"> <img data-src="/img/2020/02/3726218615.jpg" alt="microusb"> <img data-src="/img/2020/02/1494934121.jpg" alt="type_c"> [/photos]</p>
-<p>目前现在市面上键线分离的机械键盘一般用的是miniUSB或microUSB接口。最近半年来，USB
-C-type特别流行。这个接口不仅提供大功率传输，而且支持正反随便插，大大降低了插第二次的郁闷。机械键盘就决定用USB
-C-type。</p>
-<h3 id="轴体选择">轴体选择</h3>
-<p>在选择机械键盘的轴体时，因为正在使用的ikbc
-C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四种，茶轴肯定是我的首选，不管用做什么，都可以满足要求。</p>
-<p>MX轴的封装尺寸：<a href="https://github.com/xulu199705/KeyBoard87/tree/master/Reference/Cherry_MX/Cherry_MX_sw.pdf">PDF</a></p>
-<h3 id="键盘布局">键盘布局</h3>
-<p>键盘布局选择和手头使用的ikbc c87一样的87键布局，在<a href="http://www.keyboard-layout-editor.com/">这里</a>可以将需要的布局信息生成一堆文本，将文本复制到<a href="http://builder.swillkb.com/">这里</a>，生成定位板文件，方面在PCB中定位每个键轴的位置。</p>
-<p>布线图 <img data-src="/img/2020/02/1178723672.png" alt="pcb_2d_bottomlayer.png"></p>
-<table>
-<thead>
-<tr class="header">
-<th>3D顶部视图</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img data-src="/img/2020/02/1617787578.png" alt="2.PNG"></td>
-<td><img data-src="/img/2020/02/2508825578.png" alt="pcb_3d_top.png"></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th>3D底部视图</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img data-src="/img/2020/02/784997014.png" alt="1.PNG"></td>
-<td><img data-src="/img/2020/02/210904615.png" alt="pcb_3d_bottom.png"></td>
-</tr>
-</tbody>
-</table>
-<p>LOGO视图 <img data-src="/img/2020/02/2778683646.png" alt="pcb_3d_logo.png"></p>
-<p>P.S. PCB文件已上传<a href="https://github.com/xulu199705/KeyBoard87">github</a>，过一会儿就投板给嘉立创打样。</p>
+
+
+
+<h2 id="理论分析">2 理论分析</h2>
+<p>ACFM
+是一种基于交流电位差的裂纹检测手段。通以交流电的线圈在其周围产生变化的交流磁场，被测表面感应出感生电动势，产生变化的感生交流电场。当被测表面出现裂纹时，感生交流电场就会被干扰，同时交流磁场也会受到轻微的扰动。ACFM
+就是通过检测交流磁场的扰动来检测裂纹的长度和深度，其原理框图请参见图1。</p>
+<figure>
+<img data-src="/img/2020/04/2779082017.png" alt="图1 ACFM原理框图">
+<figcaption aria-hidden="true">图1 ACFM原理框图</figcaption>
+</figure>
+<p>图2-a和图2-b分别为被测表面的裂纹与交流电场垂直和平行的示意图。显而易见，当交流电场的方向与裂纹垂直时，裂纹对交流电场的影响就会更加明显；反之，两者平行时，裂纹对交流电场的影响明显降低。原文针对这一局限，RACFM
+使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM
+感生交流电场方向理论示意图如图3所示。</p>
+<p>原文针对这一局限，RACFM使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM感生交流电场方向理论示意图如图3所示。</p>
+<figure>
+<img data-src="/img/2020/04/3338828193.jpg" alt="图2 裂纹角度对交流电场的影响">
+<figcaption aria-hidden="true">图2 裂纹角度对交流电场的影响</figcaption>
+</figure>
+<figure>
+<img data-src="/img/2020/04/3045871072.jpg" alt="图3 周期内RACFM感生交流电场方向理论示意图">
+<figcaption aria-hidden="true">图3
+周期内RACFM感生交流电场方向理论示意图</figcaption>
+</figure>
+<h2 id="实验验证">3 实验验证</h2>
+<p>原文使用RACFM与传统ACFM对照试验，除电感器的激励电流外，其余均相同。</p>
+<p>探测器直线移动经过裂纹，通过改变路径与裂纹的夹角(0°-90°)来模拟任意角度的裂纹，记录<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>两个方向的磁感应强度，实验结果如图4所示。在夹角为0°时，RACFM和ACFM得到的扰动都有明显的波动，可以作为裂纹的依据。随着夹角不断变大，ACFM得到的磁感应强度扰动不断衰减，当夹角过大时，扰动被噪声覆盖。而RACFM得到的扰动则一直比较明显，不会随着夹角变化产生明显的衰减。</p>
+<figure>
+<img data-src="/img/2020/04/1016029282.jpg" alt="图4 B_x和B_z实验数据">
+<figcaption aria-hidden="true">图4 <span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>实验数据</figcaption>
+</figure>
+<p>为了量化RACFM的性能，原文定义了x和z方向磁感应强度的灵敏度，见下方公式。</p>
+<p><span class="math display">\[
+\left\{ \begin{array}{l}
+{S_x} = \frac{ {M{X_{max} } } }{ {M{X_0} } } \times 100\% \\
+{S_z} = \frac{ {M{Z_{max} } } }{ {M{X_0} } } \times 100\%
+\end{array} \right.
+\]</span></p>
+<p>其中，<span class="math inline">\(MX_0\)</span>表示无裂纹时，<span class="math inline">\(B_x\)</span>的幅度；<span class="math inline">\(M{X_{max}}\)</span>和<span class="math inline">\(M{Z_{max}}\)</span>分别表示<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>扰动的最大值。灵敏度与角度变化的关系如图5所示。随着路径与裂纹夹角不断变大，ACFM的灵敏度急剧降低，当夹角大于50°时，ACFM的两个方向灵敏度接近0；RACFM的灵敏度<span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>虽然有衰减，但依旧处于较高的灵敏范围内，可以作为裂纹检测的依据。</p>
+<figure>
+<img data-src="/img/2020/04/2353434411.jpg" alt="图5 S_x和S_z变化趋势">
+<figcaption aria-hidden="true">图5 <span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>变化趋势</figcaption>
+</figure>
+<p>根据实验结果，RACFM能克服传统ACFM的方向性局限，同时，RACFM还保持了较高的裂纹检测灵敏度，可以应用在实际的离岸油气开采行业的管道裂纹检测场景中。</p>
+<hr>
+<p>其实这篇文章提出的RACFM其实就是将ACFM从线到面，从单一角度扩展到多个角度，并不是特别深奥难懂的点子。甚至这样的例子也发生在平时的生活中，我们也许会写下“就这？”。前几天开始看<em>Talk
+Like TED</em>，开篇第一句就是“Ideas are the currency of the twenty-first
+century”。这就让我想起了RACFM这篇文章，以及经常遇见的“就这？”。</p>
 ]]></content>
       <categories>
         <category>硬件</category>
       </categories>
       <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
+        <tag>summary</tag>
+        <tag>检测</tag>
+        <tag>电磁感应</tag>
       </tags>
   </entry>
   <entry>
@@ -1532,23 +1556,42 @@ Code笔记之快速插入Markdown目录"的标题，如图1。</p>
       </tags>
   </entry>
   <entry>
-    <title>关于Spring框架的IOC和DI的理解</title>
-    <url>//2018/01/26/spring-ioc-di/</url>
-    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
-<p>下面来说说我，一个初学者，对DI的理解。</p>
+    <title>VS Code笔记之根据语言选择性删除行末空格</title>
+    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
+    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
+Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
+Workshop、Markdown+Math和Markdown Preview
+Enhanced配合来写东西，用着特别顺手。</p>
+<p>平时用VS
+Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
 <span id="more"></span>
-<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
-2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
-<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
-<p>这个是我今天看了Spring框架之后的理解。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="问题">问题</h2>
+<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
+样例一：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1</p>
+<p>para-2</p>
+<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
+样例二：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1<br>
+para-2</p>
+<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<p>VS
+Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>杂项</category>
+        <category>软件</category>
       </categories>
       <tags>
-        <tag>Spring</tag>
-        <tag>前端</tag>
+        <tag>VS Code</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -1620,153 +1663,99 @@ Std 1076-2019</a>。</p>
       </tags>
   </entry>
   <entry>
-    <title>自建RSS服务——Tiny Tiny RSS</title>
-    <url>//2020/04/23/ttrss-build/</url>
-    <content><![CDATA[<p><strong>这篇文章使用的是TTRSS老版本安装方式，新版的Docker安装请参考最新的文章<a href="/2021/07/22/ttrss-build-2/">Tiny Tiny
-RSS再次搭建</a>。</strong></p>
-<p>很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder
-3停更了。<br>
-为了解决日常的RSS阅读，自建RSS服务就提上了日程<del>从冒出想法到搞定实际只花了半天时间</del>。</p>
-<p>本文我就来详细介绍一下搭建多平台RSS服务——Tiny Tiny RSS(TTRSS)。</p>
+    <title>视频相关术语</title>
+    <url>//2020/02/12/video-terms/</url>
+    <content><![CDATA[<p>今天在人人影视上找资源的时候，突然对文件名上的HEVC、10bit等感到疑惑，就花了一下午时间研究了一下视频相关的术语，在下面分享一下。</p>
 <span id="more"></span>
-<blockquote>
-<p><strong>最新版的TTRSS更新了安装方式，目前官方推荐使用docker方式安装，具体的安装和迁移请等待相关文章的更新。</strong></p>
-</blockquote>
-<h2 id="ttrss">1 TTRSS</h2>
-<p>冒出自建RSS服务之前，我其实已经删掉Reeder准备放弃移动端了。网上推荐的Win平台RSS阅读器，发现大多都是Outlook、ThunderMail之类的邮件客户端；虽然我也用"宇宙最强的邮件客户端"——Outlook，但我并不想把娱乐消遣和工作搅和在一起。<br>
-在小众软件的一篇文章的评论里面，我发现了Tiny Tiny
-RSS(TTRSS)，一下子就发现它非常符合我的情况： 1. 国内有闲置的服务器可用；
-2. 订阅源偏重国内(国外源较多建议使用国外的服务器)； 3.
-时间较多的白嫖党。</p>
-<p>说干就干。花了一下午把TTRSS给搞定了，并已经成功在Reeder上登录、阅读、标记。</p>
-<h2 id="服务器配置">2 服务器配置</h2>
-<p>闲置的服务器是在两年前买的腾讯云"1C+2G+1Mbps"，无域名，一直没有利用起来。</p>
-<p>首先，在腾讯云控制台重装系统，这是清空系统防止出现程序冲突。如果服务器已经运行其它任务，可以无视，但出现问题需要考虑会不会是已运行任务的冲突。因为比较偏爱CentOS，所以操作系统选择了CentOS。</p>
-<figure>
-<img data-src="/img/2020/04/3506696871.png" alt="服务器系统重装">
-<figcaption aria-hidden="true">服务器系统重装</figcaption>
-</figure>
-<p>重装完服务器的系统先不要关掉控制台，在左侧找到"安全组"，新建一个安全组规则。<br>
-我开通了3个端口： 1. 8888 --&gt; 宝塔面板默认端口； 2. 2333 --&gt;
-预留给宝塔面板的端口； 3. 9999 --&gt; 预留给TTRSS的端口。<br>
-注：宝塔面板和TTRSS的端口可以选自己喜欢的，只要不和现有的冲突就行。</p>
-<p>新建安全组规则后，将这个规则绑定到服务器。</p>
-<figure>
-<img data-src="/img/2020/04/2662962289.png" alt="配置安全组">
-<figcaption aria-hidden="true">配置安全组</figcaption>
-</figure>
-<h2 id="服务器环境安装">3 服务器环境安装</h2>
-<h3 id="宝塔面板安装">3.1 宝塔面板安装</h3>
-<p>云服务器的配置结束后，就可以使用SSH工具登录服务器了(别告诉我你把密码给忘记了)。<br>
-SSH工具(如XShell)使用教程自行百度(喜欢谷歌的可以选择番羽土啬)。</p>
-<p>使用SSH登录服务器后，根据系统使用下面的命令安装宝塔面板，其它操作系统的安装命令请到<a href="https://www.bt.cn/download/linux.html">宝塔面板官网</a>查看。<br>
-使用宝塔面板的目的是为了安装LNMP并为TTRSS建立站点，已经安装过或者对此精通的大佬请自觉跳至<a href="#ttrss%e7%ab%99%e7%82%b9%e5%bb%ba%e7%ab%8b">TTRSS站点建立</a>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># CentOS 安装命令</span></span><br><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh</span><br><span class="line"><span class="comment"># Ubuntu/Deepin 安装命令</span></span><br><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
-<p>安装过程不是特别慢，大概几分钟就搞定了。宝塔面板安装成功后会在最后有"Completed"字样，并在字样上方有访问宝塔面板的默认URL及账号密码，请务必将这几行字符复制出来并暂时保存起来。这里的图片没有截，请仔细阅读这段文字。</p>
-<h3 id="lnmp安装">3.2 LNMP安装</h3>
-<p>使用宝塔面板安装后输出的URL和账号密码登录宝塔面板，然后在弹出的框内选择LNMP进行安装。<br>
-如果你看到这篇文章的时候PHP没有更新8.0的话，PHP版本选择最新的；服务器配置如果是1核1G，MySQL版本请自觉选用5.6及以下；phpMyAdmin可以不选。我安装时没有截图，这张图是官方论坛里截取的，使用图里的版本也可以。</p>
-<figure>
-<img data-src="/img/2020/04/2780109685.png" alt="安装LNMP">
-<figcaption aria-hidden="true">安装LNMP</figcaption>
-</figure>
-<p>安装过程看具体服务器配置，我的2G内存的跑了十分钟左右。等任务队列全部跑完就说明环境安装好了。</p>
-<p>接下来需要安装PHP的扩展fileinfo，否则TTRSS的初始化会出错。几年前我搭建我的WordPress的时候就因为没安装fileinfo，一直初始化失败。<br>
-在左侧边栏中选择"软件商店"，选择分类"已安装"，点击PHP的"设置"。</p>
-<figure>
-<img data-src="/img/2020/04/1674883902.png" alt="安装fileinfo插件-1">
-<figcaption aria-hidden="true">安装fileinfo插件-1</figcaption>
-</figure>
-<p>在弹出的界面中选择左侧的"安装扩展"，找到fileinfo并点击安装，安装需要等待几秒钟。</p>
-<figure>
-<img data-src="/img/2020/04/3460819832.png" alt="安装fileinfo插件-2">
-<figcaption aria-hidden="true">安装fileinfo插件-2</figcaption>
-</figure>
-<p>到这里，LNMP的环境就搭建好了，但我还是要多说一句，<strong>请务必在左侧边栏的"面板设置"中修改面板登录端口、账号密码以及安全入口</strong>，端口使用安全组预留给宝塔面板的端口。</p>
-<h3 id="ttrss站点建立">3.3 TTRSS站点建立</h3>
-<p>在左侧边栏中选择"网站"，点击"添加站点"。</p>
-<figure>
-<img data-src="/img/2020/04/2348240304.png" alt="建立站点">
-<figcaption aria-hidden="true">建立站点</figcaption>
-</figure>
-<p>在弹出的界面中填写站点的信息。</p>
-<blockquote>
-<p>填写要求：<br>
-域名 -
-使用"http://服务器外网ip:端口号"的格式，端口号使用安全组预留给TTRSS使用的端口；可以使用域名代替外网ip，甚至使用https<br>
-根目录 - 为了方便，我使用了"/www/wwwroot/ttrss"<br>
-数据库 - 选择"MySQL"，编码为"utf-8"，用户名与密码自己输入并记住</p>
-</blockquote>
-<h2 id="ttrss安装及配置">4 TTRSS安装及配置</h2>
-<p>此时服务器上的站点还是空的网站，需要从<a href="https://tt-rss.org/">TTRSS官网</a>下载TTRSS并进行配置。</p>
-<h3 id="ttrss下载">4.1 TTRSS下载</h3>
-<p>虽然使用服务器也可以获取TTRSS，但下载速度太感人，还是在PC上下好了传上去吧。不信邪的可以使用下面的命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.tt-rss.org/fox/tt-rss.git ttrss</span><br></pre></td></tr></table></figure>
-<p>建议大家使用浏览器访问TTRSS的<a href="https://git.tt-rss.org/git/tt-rss/src/master">仓库</a>，下载zip包。如果这个仓库失效可以访问<a href="https://tt-rss.org/">TTRSS官网</a>，再进入仓库下载。</p>
-<p>成功下载TTRSS后，使用宝塔面板将zip包上传到服务器的/www/wwwroot/目录下；<br>
-解压这个zip包，将tt-rss文件夹内的所有文件剪切到/www/wwwroot/ttrss/目录下。<br>
-小文件上传速度堪忧，请务必在服务器解压zip包。</p>
-<figure>
-<img data-src="/img/2020/04/2606487638.png" alt="上传TTRSS">
-<figcaption aria-hidden="true">上传TTRSS</figcaption>
-</figure>
-<h3 id="ttrss初始化">4.2 TTRSS初始化</h3>
-<p>打开浏览器，访问"http://服务器外网ip:端口号/install"，进入TTRSS的初始化。<br>
-数据库选择MySQL，端口选择3306，用户名密码是建立站点时设置的，希望没有忘记。然后点击"Test
-configuration"。</p>
-<figure>
-<img data-src="/img/2020/04/301425375.png" alt="TTRSS初始化-1">
-<figcaption aria-hidden="true">TTRSS初始化-1</figcaption>
-</figure>
-<p>网页下方出现下图的内容，点击"Initialize database"。</p>
-<figure>
-<img data-src="/img/2020/04/3081491383.png" alt="TTRSS初始化-2">
-<figcaption aria-hidden="true">TTRSS初始化-2</figcaption>
-</figure>
-<p>接着，在出现的内容中点击"Save
-configuration"，让系统自己保存配置。</p>
-<figure>
-<img data-src="/img/2020/04/3023230390.png" alt="TTRSS初始化-3">
-<figcaption aria-hidden="true">TTRSS初始化-3</figcaption>
-</figure>
-<p>到此，TTRSS就配置结束了，访问"http://服务器外网ip:端口号"即可登录TTRSS了。<br>
-使用默认用户名及密码(admin,password)即可登录TTRSS，第一次登录时系统会提示重设密码。</p>
-<h3 id="ttrss配置自动更新">4.3 TTRSS配置——自动更新</h3>
-<p>可能是因为bug的原因，目前的TTRSS通过"偏好设置"无法自动更新，需要使用服务器的非root用户的crontab进行自动更新。配置过程如下。</p>
-<p>使用SSH登录服务器，输入下面这个命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">crontab -u www -e</span><br></pre></td></tr></table></figure>
-<p>然后，点击"i"进入编辑模式，插入以下命令实现1小时更新一下信息源。请注意php后的路径和命令中的空格。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* */1 * * * php /www/wwwroot/ttrss/update.php  --feeds  &gt; /dev/null</span><br></pre></td></tr></table></figure>
-<p>最后，使用"Esc"和":wq"退出vim编辑，TTRSS就可以自动更新了。</p>
-<p>至于订阅源的配置步骤就不赘述了。</p>
-<h3 id="ttrss配置多平台支持fever">4.4 TTRSS配置——多平台支持/fever</h3>
-<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
-API。因此，需要配置fever插件。</p>
-<ol type="1">
-<li>下载<a href="/img/2020/04/3738853280.7z">fever插件</a>并解压，使用宝塔面板将<strong>整个fever文件夹</strong>上传到/www/wwwroot/ttrss/plugins/目录下。注意：<strong>整个fever文件夹</strong>。</li>
-<li>在TTRSS的偏好设置中，勾选"允许外部客户端通过API来访问该账户"。</li>
-<li>在TTRSS的偏好设置中，选择"插件"页面，勾选fever，点击"启用选择的插件"。</li>
-<li>刷新页面，在TTRSS的偏好设置中，选择"Fever
-Emulation"页面，设置密码。密码可与TTRSS账户密码相同，用于客户端访问TTRSS。</li>
-</ol>
-<p>下面就可以在客户端使用Fever访问TTRSS了。下面是Reeder 3的配置页面。
-服务器填写"http://服务器外网ip:端口号/plugins/fever"；邮箱填写TTRSS账号用户名，不一定要邮箱；密码是在"Fever
-Emulation"页面设置的密码。</p>
-<figure>
-<img data-src="/img/2020/04/3057100732.png#vhei=800" alt="Reeder 3配置界面">
-<figcaption aria-hidden="true">Reeder 3配置界面</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>整篇文章写下来花了两天时间，有几张图片因为搭建时遗忘而没有截图，但整个搭建描述还是挺清晰的(自我评价的)。</p>
-<p>如果参考了这篇TTRSS搭建教程，请别忘了<del>一键三连</del>收藏分享哦。</p>
+<ul>
+<li><a href="#%e8%a7%86%e9%a2%91%e7%9b%b8%e5%85%b3%e6%9c%af%e8%af%ad">视频相关术语</a>
+<ul>
+<li><a href="#%e7%9b%ae%e5%bd%95">目录</a></li>
+<li><a href="#%e5%88%86%e8%be%a8%e7%8e%87">分辨率</a></li>
+<li><a href="#%e5%ae%bd%e9%ab%98%e6%af%94">宽高比</a>
+<ul>
+<li><a href="#%e5%bd%b1%e5%83%8f%e5%ae%bd%e9%ab%98%e6%af%94">影像宽高比</a></li>
+<li><a href="#%e5%83%8f%e7%b4%a0%e5%ae%bd%e9%ab%98%e6%af%94">像素宽高比</a></li>
+</ul></li>
+<li><a href="#%e5%b8%a7%e7%8e%87">帧率</a>
+<ul>
+<li><a href="#%e8%a7%86%e9%a2%91%e5%88%b6%e5%bc%8fpalntsc">视频制式(PAL&amp;NTSC)</a></li>
+</ul></li>
+<li><a href="#%e4%bd%8d%e6%b7%b1">位深</a></li>
+<li><a href="#%e7%bc%96%e7%a0%81">编码</a></li>
+</ul></li>
+</ul>
+<h2 id="分辨率">1 分辨率</h2>
+<p>分辨率(Resolution)指影像的尺寸大小。衡量视频分辨率的基本单位为像素(Pixel,px)。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">┌-------------┐┄┄┄┄┄</span><br><span class="line">|             |   ↑</span><br><span class="line">|    Video    | Height</span><br><span class="line">|             |   ↓</span><br><span class="line">└-------------┘┄┄┄┄┄</span><br><span class="line">┆←   Width   →┆</span><br></pre></td></tr></table></figure>
+<p>分辨率一般用宽(Width) * 高(Height)来表示。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">常见分辨率</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">720P</td>
+<td style="text-align: center;">1280px * 720px</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1080P</td>
+<td style="text-align: center;">1920px * 1080px</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4K</td>
+<td style="text-align: center;">3840px * 2160px</td>
+</tr>
+</tbody>
+</table>
+<p>对于宽/宽为16:9的分辨率，通常可以用720P、1080P等简称来表示。其中，P(Progressive)表示逐行扫描。1080P即表示每一次刷新都需要对1080行像素进行刷新(当然，最新的屏幕刷新技术已经可以对局部进行更新，以实现更高的刷新率)。</p>
+<h2 id="宽高比">2 宽高比</h2>
+<p>宽高比(Aspect Ratio)表示为宽(Width)和高(Height)的比例。</p>
+<h3 id="影像宽高比">2.1 影像宽高比</h3>
+<p>常见的影像宽高比(Video Aspect
+Ratio)有16:9、4:3、21:9、16:10。不同的使用场景和需求需要不同的宽高比，比如电视、电影或“带鱼屏”等。</p>
+<h3 id="像素宽高比">2.2 像素宽高比</h3>
+<p>像素宽高比(Pixel Aspect
+Ratio)与影像宽高比类似，表示像素的宽高之比。</p>
+<p>目前，方形像素(Square Pixel)比较常用。但是，非方形像素(Non-Square
+Pixel)仍然存在于某些场合中，并且发挥着一定的作用。我们需要能够辨别这些非方形像素，否则，图像显示会出现扭曲，信息传达会出现错误。</p>
+<h2 id="帧率">3 帧率</h2>
+<p>帧率(Frame Rate)是视频实现影像从静止到运动转变的关键。</p>
+<p>在视频中，一幅静止的画面被称为帧(Frame)。视频播放实质上就是许多帧连续展示在屏幕上，当帧展示的间隔不断缩小，也就是每秒展示的帧不断增加，人眼看到的图案就变得连续起来(原理可自行搜索视觉暂留)。</p>
+<p>帧率就是视频在一秒内展示的帧的数量。帧率单位是fps(frame pre
+second)。一般来说，电影的帧率为24fps，当然最近也有120fps拍的电影(片名忘记了，只记得是李安导演的)；流媒体的帧率则需要根据你的网速和你的会员级别确定了；而电视的帧率则有所在地区的视频制式决定。</p>
+<h3 id="视频制式palntsc">3.1 视频制式(PAL&amp;NTSC)</h3>
+<p>这是一个存在于传统的电视广播行业的问题。</p>
+<p>NTSC普遍用于北美和南美，每秒30帧隔行；而其他地区，比如中国、欧洲，则使用每秒25帧隔行的PAL。在电视广播行业中工作，就需要考虑到这个问题；如果是上传到网站的视频，就可以忽略这个问题。</p>
+<h2 id="位深">4 位深</h2>
+<p>位深(Bit
+Depth)可以表示图像或者影像系统中可以使用的独立色彩的个数。如果系统的位深为10，那么需要三个10bit数码来分别表示R、G、B(当然还有其他色彩表示方式)，那么，系统就可以使用30bit的数码表示混合后的颜色，共有2^30=1.07*10^9种。</p>
+<p>位深越多的系统，色彩就越丰富，图像或影像的色彩表现力就越强。目前，8位和10位的位深常见于各种场合中。当然，在部分对色彩显示要求不高的场合中，使用8位或10位RGB码来表示颜色也屡见不鲜。</p>
+<h2 id="编码">5 编码</h2>
+<p>编码(CODEC)可以看做编码器(Coder) + 解码器(DeCoder)。</p>
+<p>首先，来看一下编码出现的原因。</p>
+<p>对于一段无压缩的、8bitRGB、4K、24fps的视频，暂且不考虑音频，它的码率
+= 3840 * 2160 * 8 * 3 * 24 bps = 4777574400bps =
+570MB/s，即如果要实现24fps播放这段视频，硬盘或网络需要传输570MB数据，GPU每秒需要处理570MB数据。以目前主流的硬件状况来看，5400rpm机械硬盘最高读取速度为130MB/s，(虽然m.2
+NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至少需要570MB的存储空间，反正我是没有这么多钱)，IEEE
+802.11 ac(WiFi
+5)能实现的最高无线传输速度在300-400MBPS之间，硬盘和网络都完全无法承受无压缩4K视频的码率。也因此，视频的压制和编码就应运而生。</p>
+<p>一般我们看见的视频文件后缀名MOV、MP4、MKV是是视频的封装格式(Format)，可以理解为一个容器，里面包含了视频的帧信息、音频信息、媒体信息、字幕及其他信息。</p>
+<p>目前，常见编码有H.264、H.265/HEVC等，编码信息记录着帧与帧之间的变化，虽然有效地压缩了视频体积，但却大大增加了处理器压力。</p>
+<p>在视频处理过程中，编码通常有拍摄编码、剪辑编码、输出编码三种使用场景。</p>
+<p>拍摄编码，顾名思义，是指使用相机进行拍摄时所使用的的编码，索尼、松下等相机在存储获取的影像时就会使用帧间编码对每一帧进行存储。</p>
+<p>剪辑编码，指对素材进行剪辑时使用的编码。举个栗子，由于帧间编码需要强大的处理能力，如果剪辑使用的设备性能欠缺，剪辑时素材的播放就会出现卡顿，使用体验极差；这时就可以将素材重编码为低分辨率视频进行编辑，再用源素材进行输出。</p>
+<p>输出编码，指剪辑软件根据需求输出的视频的编码。对于网络视频来说，网络平台会对码率过高的视频进行二次压缩。为了解决这个问题，要么将上传的视频压制到平台限定码率之下；要么尽量减少复杂移动画面的拍摄、调整曝光减少噪点等。</p>
 ]]></content>
       <categories>
-        <category>DIY</category>
+        <category>杂项</category>
       </categories>
       <tags>
-        <tag>DIY</tag>
-        <tag>RSS</tag>
-        <tag>服务器</tag>
+        <tag>视频</tag>
+        <tag>视频编码</tag>
       </tags>
   </entry>
   <entry>
@@ -2031,138 +2020,153 @@ MHz，所以信道与信道之间必定会有重叠，图示如下。</p>
       </tags>
   </entry>
   <entry>
-    <title>视频相关术语</title>
-    <url>//2020/02/12/video-terms/</url>
-    <content><![CDATA[<p>今天在人人影视上找资源的时候，突然对文件名上的HEVC、10bit等感到疑惑，就花了一下午时间研究了一下视频相关的术语，在下面分享一下。</p>
+    <title>自建RSS服务——Tiny Tiny RSS</title>
+    <url>//2020/04/23/ttrss-build/</url>
+    <content><![CDATA[<p><strong>这篇文章使用的是TTRSS老版本安装方式，新版的Docker安装请参考最新的文章<a href="/2021/07/22/ttrss-build-2/">Tiny Tiny
+RSS再次搭建</a>。</strong></p>
+<p>很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder
+3停更了。<br>
+为了解决日常的RSS阅读，自建RSS服务就提上了日程<del>从冒出想法到搞定实际只花了半天时间</del>。</p>
+<p>本文我就来详细介绍一下搭建多平台RSS服务——Tiny Tiny RSS(TTRSS)。</p>
 <span id="more"></span>
-<ul>
-<li><a href="#%e8%a7%86%e9%a2%91%e7%9b%b8%e5%85%b3%e6%9c%af%e8%af%ad">视频相关术语</a>
-<ul>
-<li><a href="#%e7%9b%ae%e5%bd%95">目录</a></li>
-<li><a href="#%e5%88%86%e8%be%a8%e7%8e%87">分辨率</a></li>
-<li><a href="#%e5%ae%bd%e9%ab%98%e6%af%94">宽高比</a>
-<ul>
-<li><a href="#%e5%bd%b1%e5%83%8f%e5%ae%bd%e9%ab%98%e6%af%94">影像宽高比</a></li>
-<li><a href="#%e5%83%8f%e7%b4%a0%e5%ae%bd%e9%ab%98%e6%af%94">像素宽高比</a></li>
-</ul></li>
-<li><a href="#%e5%b8%a7%e7%8e%87">帧率</a>
-<ul>
-<li><a href="#%e8%a7%86%e9%a2%91%e5%88%b6%e5%bc%8fpalntsc">视频制式(PAL&amp;NTSC)</a></li>
-</ul></li>
-<li><a href="#%e4%bd%8d%e6%b7%b1">位深</a></li>
-<li><a href="#%e7%bc%96%e7%a0%81">编码</a></li>
-</ul></li>
-</ul>
-<h2 id="分辨率">1 分辨率</h2>
-<p>分辨率(Resolution)指影像的尺寸大小。衡量视频分辨率的基本单位为像素(Pixel,px)。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">┌-------------┐┄┄┄┄┄</span><br><span class="line">|             |   ↑</span><br><span class="line">|    Video    | Height</span><br><span class="line">|             |   ↓</span><br><span class="line">└-------------┘┄┄┄┄┄</span><br><span class="line">┆←   Width   →┆</span><br></pre></td></tr></table></figure>
-<p>分辨率一般用宽(Width) * 高(Height)来表示。</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">常见分辨率</th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">720P</td>
-<td style="text-align: center;">1280px * 720px</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1080P</td>
-<td style="text-align: center;">1920px * 1080px</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">4K</td>
-<td style="text-align: center;">3840px * 2160px</td>
-</tr>
-</tbody>
-</table>
-<p>对于宽/宽为16:9的分辨率，通常可以用720P、1080P等简称来表示。其中，P(Progressive)表示逐行扫描。1080P即表示每一次刷新都需要对1080行像素进行刷新(当然，最新的屏幕刷新技术已经可以对局部进行更新，以实现更高的刷新率)。</p>
-<h2 id="宽高比">2 宽高比</h2>
-<p>宽高比(Aspect Ratio)表示为宽(Width)和高(Height)的比例。</p>
-<h3 id="影像宽高比">2.1 影像宽高比</h3>
-<p>常见的影像宽高比(Video Aspect
-Ratio)有16:9、4:3、21:9、16:10。不同的使用场景和需求需要不同的宽高比，比如电视、电影或“带鱼屏”等。</p>
-<h3 id="像素宽高比">2.2 像素宽高比</h3>
-<p>像素宽高比(Pixel Aspect
-Ratio)与影像宽高比类似，表示像素的宽高之比。</p>
-<p>目前，方形像素(Square Pixel)比较常用。但是，非方形像素(Non-Square
-Pixel)仍然存在于某些场合中，并且发挥着一定的作用。我们需要能够辨别这些非方形像素，否则，图像显示会出现扭曲，信息传达会出现错误。</p>
-<h2 id="帧率">3 帧率</h2>
-<p>帧率(Frame Rate)是视频实现影像从静止到运动转变的关键。</p>
-<p>在视频中，一幅静止的画面被称为帧(Frame)。视频播放实质上就是许多帧连续展示在屏幕上，当帧展示的间隔不断缩小，也就是每秒展示的帧不断增加，人眼看到的图案就变得连续起来(原理可自行搜索视觉暂留)。</p>
-<p>帧率就是视频在一秒内展示的帧的数量。帧率单位是fps(frame pre
-second)。一般来说，电影的帧率为24fps，当然最近也有120fps拍的电影(片名忘记了，只记得是李安导演的)；流媒体的帧率则需要根据你的网速和你的会员级别确定了；而电视的帧率则有所在地区的视频制式决定。</p>
-<h3 id="视频制式palntsc">3.1 视频制式(PAL&amp;NTSC)</h3>
-<p>这是一个存在于传统的电视广播行业的问题。</p>
-<p>NTSC普遍用于北美和南美，每秒30帧隔行；而其他地区，比如中国、欧洲，则使用每秒25帧隔行的PAL。在电视广播行业中工作，就需要考虑到这个问题；如果是上传到网站的视频，就可以忽略这个问题。</p>
-<h2 id="位深">4 位深</h2>
-<p>位深(Bit
-Depth)可以表示图像或者影像系统中可以使用的独立色彩的个数。如果系统的位深为10，那么需要三个10bit数码来分别表示R、G、B(当然还有其他色彩表示方式)，那么，系统就可以使用30bit的数码表示混合后的颜色，共有2^30=1.07*10^9种。</p>
-<p>位深越多的系统，色彩就越丰富，图像或影像的色彩表现力就越强。目前，8位和10位的位深常见于各种场合中。当然，在部分对色彩显示要求不高的场合中，使用8位或10位RGB码来表示颜色也屡见不鲜。</p>
-<h2 id="编码">5 编码</h2>
-<p>编码(CODEC)可以看做编码器(Coder) + 解码器(DeCoder)。</p>
-<p>首先，来看一下编码出现的原因。</p>
-<p>对于一段无压缩的、8bitRGB、4K、24fps的视频，暂且不考虑音频，它的码率
-= 3840 * 2160 * 8 * 3 * 24 bps = 4777574400bps =
-570MB/s，即如果要实现24fps播放这段视频，硬盘或网络需要传输570MB数据，GPU每秒需要处理570MB数据。以目前主流的硬件状况来看，5400rpm机械硬盘最高读取速度为130MB/s，(虽然m.2
-NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至少需要570MB的存储空间，反正我是没有这么多钱)，IEEE
-802.11 ac(WiFi
-5)能实现的最高无线传输速度在300-400MBPS之间，硬盘和网络都完全无法承受无压缩4K视频的码率。也因此，视频的压制和编码就应运而生。</p>
-<p>一般我们看见的视频文件后缀名MOV、MP4、MKV是是视频的封装格式(Format)，可以理解为一个容器，里面包含了视频的帧信息、音频信息、媒体信息、字幕及其他信息。</p>
-<p>目前，常见编码有H.264、H.265/HEVC等，编码信息记录着帧与帧之间的变化，虽然有效地压缩了视频体积，但却大大增加了处理器压力。</p>
-<p>在视频处理过程中，编码通常有拍摄编码、剪辑编码、输出编码三种使用场景。</p>
-<p>拍摄编码，顾名思义，是指使用相机进行拍摄时所使用的的编码，索尼、松下等相机在存储获取的影像时就会使用帧间编码对每一帧进行存储。</p>
-<p>剪辑编码，指对素材进行剪辑时使用的编码。举个栗子，由于帧间编码需要强大的处理能力，如果剪辑使用的设备性能欠缺，剪辑时素材的播放就会出现卡顿，使用体验极差；这时就可以将素材重编码为低分辨率视频进行编辑，再用源素材进行输出。</p>
-<p>输出编码，指剪辑软件根据需求输出的视频的编码。对于网络视频来说，网络平台会对码率过高的视频进行二次压缩。为了解决这个问题，要么将上传的视频压制到平台限定码率之下；要么尽量减少复杂移动画面的拍摄、调整曝光减少噪点等。</p>
+<blockquote>
+<p><strong>最新版的TTRSS更新了安装方式，目前官方推荐使用docker方式安装，具体的安装和迁移请等待相关文章的更新。</strong></p>
+</blockquote>
+<h2 id="ttrss">1 TTRSS</h2>
+<p>冒出自建RSS服务之前，我其实已经删掉Reeder准备放弃移动端了。网上推荐的Win平台RSS阅读器，发现大多都是Outlook、ThunderMail之类的邮件客户端；虽然我也用"宇宙最强的邮件客户端"——Outlook，但我并不想把娱乐消遣和工作搅和在一起。<br>
+在小众软件的一篇文章的评论里面，我发现了Tiny Tiny
+RSS(TTRSS)，一下子就发现它非常符合我的情况： 1. 国内有闲置的服务器可用；
+2. 订阅源偏重国内(国外源较多建议使用国外的服务器)； 3.
+时间较多的白嫖党。</p>
+<p>说干就干。花了一下午把TTRSS给搞定了，并已经成功在Reeder上登录、阅读、标记。</p>
+<h2 id="服务器配置">2 服务器配置</h2>
+<p>闲置的服务器是在两年前买的腾讯云"1C+2G+1Mbps"，无域名，一直没有利用起来。</p>
+<p>首先，在腾讯云控制台重装系统，这是清空系统防止出现程序冲突。如果服务器已经运行其它任务，可以无视，但出现问题需要考虑会不会是已运行任务的冲突。因为比较偏爱CentOS，所以操作系统选择了CentOS。</p>
+<figure>
+<img data-src="/img/2020/04/3506696871.png" alt="服务器系统重装">
+<figcaption aria-hidden="true">服务器系统重装</figcaption>
+</figure>
+<p>重装完服务器的系统先不要关掉控制台，在左侧找到"安全组"，新建一个安全组规则。<br>
+我开通了3个端口： 1. 8888 --&gt; 宝塔面板默认端口； 2. 2333 --&gt;
+预留给宝塔面板的端口； 3. 9999 --&gt; 预留给TTRSS的端口。<br>
+注：宝塔面板和TTRSS的端口可以选自己喜欢的，只要不和现有的冲突就行。</p>
+<p>新建安全组规则后，将这个规则绑定到服务器。</p>
+<figure>
+<img data-src="/img/2020/04/2662962289.png" alt="配置安全组">
+<figcaption aria-hidden="true">配置安全组</figcaption>
+</figure>
+<h2 id="服务器环境安装">3 服务器环境安装</h2>
+<h3 id="宝塔面板安装">3.1 宝塔面板安装</h3>
+<p>云服务器的配置结束后，就可以使用SSH工具登录服务器了(别告诉我你把密码给忘记了)。<br>
+SSH工具(如XShell)使用教程自行百度(喜欢谷歌的可以选择番羽土啬)。</p>
+<p>使用SSH登录服务器后，根据系统使用下面的命令安装宝塔面板，其它操作系统的安装命令请到<a href="https://www.bt.cn/download/linux.html">宝塔面板官网</a>查看。<br>
+使用宝塔面板的目的是为了安装LNMP并为TTRSS建立站点，已经安装过或者对此精通的大佬请自觉跳至<a href="#ttrss%e7%ab%99%e7%82%b9%e5%bb%ba%e7%ab%8b">TTRSS站点建立</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># CentOS 安装命令</span></span><br><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh</span><br><span class="line"><span class="comment"># Ubuntu/Deepin 安装命令</span></span><br><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+<p>安装过程不是特别慢，大概几分钟就搞定了。宝塔面板安装成功后会在最后有"Completed"字样，并在字样上方有访问宝塔面板的默认URL及账号密码，请务必将这几行字符复制出来并暂时保存起来。这里的图片没有截，请仔细阅读这段文字。</p>
+<h3 id="lnmp安装">3.2 LNMP安装</h3>
+<p>使用宝塔面板安装后输出的URL和账号密码登录宝塔面板，然后在弹出的框内选择LNMP进行安装。<br>
+如果你看到这篇文章的时候PHP没有更新8.0的话，PHP版本选择最新的；服务器配置如果是1核1G，MySQL版本请自觉选用5.6及以下；phpMyAdmin可以不选。我安装时没有截图，这张图是官方论坛里截取的，使用图里的版本也可以。</p>
+<figure>
+<img data-src="/img/2020/04/2780109685.png" alt="安装LNMP">
+<figcaption aria-hidden="true">安装LNMP</figcaption>
+</figure>
+<p>安装过程看具体服务器配置，我的2G内存的跑了十分钟左右。等任务队列全部跑完就说明环境安装好了。</p>
+<p>接下来需要安装PHP的扩展fileinfo，否则TTRSS的初始化会出错。几年前我搭建我的WordPress的时候就因为没安装fileinfo，一直初始化失败。<br>
+在左侧边栏中选择"软件商店"，选择分类"已安装"，点击PHP的"设置"。</p>
+<figure>
+<img data-src="/img/2020/04/1674883902.png" alt="安装fileinfo插件-1">
+<figcaption aria-hidden="true">安装fileinfo插件-1</figcaption>
+</figure>
+<p>在弹出的界面中选择左侧的"安装扩展"，找到fileinfo并点击安装，安装需要等待几秒钟。</p>
+<figure>
+<img data-src="/img/2020/04/3460819832.png" alt="安装fileinfo插件-2">
+<figcaption aria-hidden="true">安装fileinfo插件-2</figcaption>
+</figure>
+<p>到这里，LNMP的环境就搭建好了，但我还是要多说一句，<strong>请务必在左侧边栏的"面板设置"中修改面板登录端口、账号密码以及安全入口</strong>，端口使用安全组预留给宝塔面板的端口。</p>
+<h3 id="ttrss站点建立">3.3 TTRSS站点建立</h3>
+<p>在左侧边栏中选择"网站"，点击"添加站点"。</p>
+<figure>
+<img data-src="/img/2020/04/2348240304.png" alt="建立站点">
+<figcaption aria-hidden="true">建立站点</figcaption>
+</figure>
+<p>在弹出的界面中填写站点的信息。</p>
+<blockquote>
+<p>填写要求：<br>
+域名 -
+使用"http://服务器外网ip:端口号"的格式，端口号使用安全组预留给TTRSS使用的端口；可以使用域名代替外网ip，甚至使用https<br>
+根目录 - 为了方便，我使用了"/www/wwwroot/ttrss"<br>
+数据库 - 选择"MySQL"，编码为"utf-8"，用户名与密码自己输入并记住</p>
+</blockquote>
+<h2 id="ttrss安装及配置">4 TTRSS安装及配置</h2>
+<p>此时服务器上的站点还是空的网站，需要从<a href="https://tt-rss.org/">TTRSS官网</a>下载TTRSS并进行配置。</p>
+<h3 id="ttrss下载">4.1 TTRSS下载</h3>
+<p>虽然使用服务器也可以获取TTRSS，但下载速度太感人，还是在PC上下好了传上去吧。不信邪的可以使用下面的命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.tt-rss.org/fox/tt-rss.git ttrss</span><br></pre></td></tr></table></figure>
+<p>建议大家使用浏览器访问TTRSS的<a href="https://git.tt-rss.org/git/tt-rss/src/master">仓库</a>，下载zip包。如果这个仓库失效可以访问<a href="https://tt-rss.org/">TTRSS官网</a>，再进入仓库下载。</p>
+<p>成功下载TTRSS后，使用宝塔面板将zip包上传到服务器的/www/wwwroot/目录下；<br>
+解压这个zip包，将tt-rss文件夹内的所有文件剪切到/www/wwwroot/ttrss/目录下。<br>
+小文件上传速度堪忧，请务必在服务器解压zip包。</p>
+<figure>
+<img data-src="/img/2020/04/2606487638.png" alt="上传TTRSS">
+<figcaption aria-hidden="true">上传TTRSS</figcaption>
+</figure>
+<h3 id="ttrss初始化">4.2 TTRSS初始化</h3>
+<p>打开浏览器，访问"http://服务器外网ip:端口号/install"，进入TTRSS的初始化。<br>
+数据库选择MySQL，端口选择3306，用户名密码是建立站点时设置的，希望没有忘记。然后点击"Test
+configuration"。</p>
+<figure>
+<img data-src="/img/2020/04/301425375.png" alt="TTRSS初始化-1">
+<figcaption aria-hidden="true">TTRSS初始化-1</figcaption>
+</figure>
+<p>网页下方出现下图的内容，点击"Initialize database"。</p>
+<figure>
+<img data-src="/img/2020/04/3081491383.png" alt="TTRSS初始化-2">
+<figcaption aria-hidden="true">TTRSS初始化-2</figcaption>
+</figure>
+<p>接着，在出现的内容中点击"Save
+configuration"，让系统自己保存配置。</p>
+<figure>
+<img data-src="/img/2020/04/3023230390.png" alt="TTRSS初始化-3">
+<figcaption aria-hidden="true">TTRSS初始化-3</figcaption>
+</figure>
+<p>到此，TTRSS就配置结束了，访问"http://服务器外网ip:端口号"即可登录TTRSS了。<br>
+使用默认用户名及密码(admin,password)即可登录TTRSS，第一次登录时系统会提示重设密码。</p>
+<h3 id="ttrss配置自动更新">4.3 TTRSS配置——自动更新</h3>
+<p>可能是因为bug的原因，目前的TTRSS通过"偏好设置"无法自动更新，需要使用服务器的非root用户的crontab进行自动更新。配置过程如下。</p>
+<p>使用SSH登录服务器，输入下面这个命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">crontab -u www -e</span><br></pre></td></tr></table></figure>
+<p>然后，点击"i"进入编辑模式，插入以下命令实现1小时更新一下信息源。请注意php后的路径和命令中的空格。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* */1 * * * php /www/wwwroot/ttrss/update.php  --feeds  &gt; /dev/null</span><br></pre></td></tr></table></figure>
+<p>最后，使用"Esc"和":wq"退出vim编辑，TTRSS就可以自动更新了。</p>
+<p>至于订阅源的配置步骤就不赘述了。</p>
+<h3 id="ttrss配置多平台支持fever">4.4 TTRSS配置——多平台支持/fever</h3>
+<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
+API。因此，需要配置fever插件。</p>
+<ol type="1">
+<li>下载<a href="/img/2020/04/3738853280.7z">fever插件</a>并解压，使用宝塔面板将<strong>整个fever文件夹</strong>上传到/www/wwwroot/ttrss/plugins/目录下。注意：<strong>整个fever文件夹</strong>。</li>
+<li>在TTRSS的偏好设置中，勾选"允许外部客户端通过API来访问该账户"。</li>
+<li>在TTRSS的偏好设置中，选择"插件"页面，勾选fever，点击"启用选择的插件"。</li>
+<li>刷新页面，在TTRSS的偏好设置中，选择"Fever
+Emulation"页面，设置密码。密码可与TTRSS账户密码相同，用于客户端访问TTRSS。</li>
+</ol>
+<p>下面就可以在客户端使用Fever访问TTRSS了。下面是Reeder 3的配置页面。
+服务器填写"http://服务器外网ip:端口号/plugins/fever"；邮箱填写TTRSS账号用户名，不一定要邮箱；密码是在"Fever
+Emulation"页面设置的密码。</p>
+<figure>
+<img data-src="/img/2020/04/3057100732.png#vhei=800" alt="Reeder 3配置界面">
+<figcaption aria-hidden="true">Reeder 3配置界面</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>整篇文章写下来花了两天时间，有几张图片因为搭建时遗忘而没有截图，但整个搭建描述还是挺清晰的(自我评价的)。</p>
+<p>如果参考了这篇TTRSS搭建教程，请别忘了<del>一键三连</del>收藏分享哦。</p>
 ]]></content>
       <categories>
-        <category>杂项</category>
+        <category>DIY</category>
       </categories>
       <tags>
-        <tag>视频</tag>
-        <tag>视频编码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS Code笔记之根据语言选择性删除行末空格</title>
-    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
-    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
-Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
-Workshop、Markdown+Math和Markdown Preview
-Enhanced配合来写东西，用着特别顺手。</p>
-<p>平时用VS
-Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
-<span id="more"></span>
-<h2 id="问题">问题</h2>
-<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
-样例一：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1</p>
-<p>para-2</p>
-<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
-样例二：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1<br>
-para-2</p>
-<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
-<h2 id="解决方案">解决方案</h2>
-<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-<p>VS
-Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Markdown</tag>
+        <tag>DIY</tag>
+        <tag>RSS</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
 </search>
