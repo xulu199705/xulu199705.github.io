@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/logo_180px.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/logo_180px.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon.ico">
+  <link rel="mask-icon" href="/favicon/logo_180px.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hexo.leonxu.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-2},"utterances":{"order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="又要当苦力了，自bei愿po学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！ 和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux笔记之VNC配置">
+<meta property="og:url" content="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/index.html">
+<meta property="og:site_name" content="Leon的网络日志">
+<meta property="og:description" content="又要当苦力了，自bei愿po学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！ 和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_gnome.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_vnc.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_script_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_script_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_port.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_selinux.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_pre_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_pre_2.png">
+<meta property="article:published_time" content="2021-06-21T12:15:24.000Z">
+<meta property="article:modified_time" content="2021-07-22T13:07:04.000Z">
+<meta property="article:author" content="Leon">
+<meta property="article:tag" content="CentOS">
+<meta property="article:tag" content="VNC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_gnome.png">
+
+
+<link rel="canonical" href="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/","path":"/2021/06/21/linux-note-vnc-config/","title":"Linux笔记之VNC配置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Linux笔记之VNC配置 | Leon的网络日志</title>
+  
+
+
+
+
+<link rel="dns-prefetch" href="https://my-waline-repo.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Leon的网络日志" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Leon的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-闲言碎语"><a href="/dailyword/" rel="section"><i class="fas fa-book fa-fw"></i>闲言碎语</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">1 预备知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85vnc"><span class="nav-number">2.</span> <span class="nav-text">2 安装VNC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 安装桌面环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85vnc%E7%BB%84%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 安装VNC组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEvnc"><span class="nav-number">3.</span> <span class="nav-text">3 配置VNC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8vnc%E6%9C%8D%E5%8A%A1%E5%8F%8A%E7%AB%AF%E5%8F%A3%E5%BC%80%E6%94%BE"><span class="nav-number">4.</span> <span class="nav-text">4 启动VNC服务及端口开放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5vnc"><span class="nav-number">5.</span> <span class="nav-text">5 连接VNC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leon"
+      src="https://avatars.githubusercontent.com/u/17242727?s=60&v=4">
+  <p class="site-author-name" itemprop="name">Leon</p>
+  <div class="site-description" itemprop="description">这里是爱研究各种问题、立许多flag的Leon的网络日志</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xulu199705" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xulu199705" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xulu199705@163.com" title="E-Mail → mailto:xulu199705@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/xulu199705" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/17242727?s=60&v=4">
+      <meta itemprop="name" content="Leon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leon的网络日志">
+      <meta itemprop="description" content="这里是爱研究各种问题、立许多flag的Leon的网络日志">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux笔记之VNC配置 | Leon的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux笔记之VNC配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-21 20:15:24" itemprop="dateCreated datePublished" datetime="2021-06-21T20:15:24+08:00">2021-06-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-07-22 21:07:04" itemprop="dateModified" datetime="2021-07-22T21:07:04+08:00">2021-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2021/06/21/linux-note-vnc-config/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2021/06/21/linux-note-vnc-config/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.4k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
+<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
+<span id="more"></span>
+<blockquote>
+<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
+</blockquote>
+<h2 id="预备知识">1 预备知识</h2>
+<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
+<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
+<p>wikipedia上有详细介绍<a target="_blank" rel="noopener" href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
+<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
+<h2 id="安装vnc">2 安装VNC</h2>
+<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
+<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="/img/2021/06/linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
+<figcaption aria-hidden="true">yum grouplist结果</figcaption>
+</figure>
+<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y <span class="string">&quot;GNOME Desktop&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="comment"># 切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
+<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
+<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="comment"># 验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="/img/2021/06/linux_note_vnc_config_vnc.png" alt="验证VNC安装">
+<figcaption aria-hidden="true">验证VNC安装</figcaption>
+</figure>
+<h2 id="配置vnc">3 配置VNC</h2>
+<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
+<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从sample创建VNC启动脚本</span></span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
+<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
+<p>接着，需要小小处理一下刚刚复制的脚本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system</span><br><span class="line"><span class="comment"># 给权限x</span></span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:1.service</span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>接着打开2个脚本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
+<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
+<figure>
+<img data-src="/img/2021/06/linux_note_vnc_config_script_1.png" alt="脚本修改前">
+<figcaption aria-hidden="true">脚本修改前</figcaption>
+</figure>
+<figure>
+<img data-src="/img/2021/06/linux_note_vnc_config_script_2.png" alt="脚本修改后">
+<figcaption aria-hidden="true">脚本修改后</figcaption>
+</figure>
+<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
+<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
+<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
+<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
+<p>下面是VNC服务的启动和开机自启的配置。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="comment"># 配置开机自启</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:1.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="/img/2021/06/linux_note_vnc_config_port.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
+<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
+ツ )_/¯</del></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
+<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
+<figure>
+<img data-src="/img/2021/06/linux_note_vnc_config_selinux.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<h2 id="连接vnc">5 连接VNC</h2>
+<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
+<figure>
+<img data-src="/img/2021/06/linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
+<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
+</figure>
+<figure>
+<img data-src="/img/2021/06/linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
+<figcaption aria-hidden="true">连接VNC演示</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
+<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Leon
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/" title="Linux笔记之VNC配置">https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/CentOS/" rel="tag"><i class="fa fa-tag"></i> CentOS</a>
+              <a href="/tags/VNC/" rel="tag"><i class="fa fa-tag"></i> VNC</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/04/08/linux-note-xdmcp-config/" rel="prev" title="Linux笔记之XDMCP配置">
+                  <i class="fa fa-chevron-left"></i> Linux笔记之XDMCP配置
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/07/22/ttrss-build-2/" rel="next" title="Tiny Tiny RSS再次搭建">
+                  Tiny Tiny RSS再次搭建 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-utterances">utterances</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">苏 ICP 备 17063385 号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leon</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://my-waline-repo.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"Just go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick","mail"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/2021/06/21/linux-note-vnc-config/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"xulu199705/blog-attachment","issue_term":"title","theme":"github-light","label":"comment"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

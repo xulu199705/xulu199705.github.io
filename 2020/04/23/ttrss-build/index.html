@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/logo_180px.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/logo_180px.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon.ico">
+  <link rel="mask-icon" href="/favicon/logo_180px.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hexo.leonxu.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-2},"utterances":{"order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这篇文章使用的是TTRSS老版本安装方式，新版的Docker安装请参考最新的文章Tiny Tiny RSS再次搭建。 很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder 3停更了。 为了解决日常的RSS阅读，自建RSS服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自建RSS服务——Tiny Tiny RSS">
+<meta property="og:url" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/index.html">
+<meta property="og:site_name" content="Leon的网络日志">
+<meta property="og:description" content="这篇文章使用的是TTRSS老版本安装方式，新版的Docker安装请参考最新的文章Tiny Tiny RSS再次搭建。 很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder 3停更了。 为了解决日常的RSS阅读，自建RSS服务">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/3506696871.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/2662962289.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/2780109685.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/1674883902.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/3460819832.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/2348240304.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/2606487638.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/301425375.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/3081491383.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/3023230390.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/3057100732.png#vhei=800">
+<meta property="article:published_time" content="2020-04-23T13:16:19.000Z">
+<meta property="article:modified_time" content="2022-08-17T16:55:15.770Z">
+<meta property="article:author" content="Leon">
+<meta property="article:tag" content="DIY">
+<meta property="article:tag" content="RSS">
+<meta property="article:tag" content="服务器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hexo.leonxu.top/img/2020/04/3506696871.png">
+
+
+<link rel="canonical" href="https://hexo.leonxu.top/2020/04/23/ttrss-build/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hexo.leonxu.top/2020/04/23/ttrss-build/","path":"/2020/04/23/ttrss-build/","title":"自建RSS服务——Tiny Tiny RSS"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>自建RSS服务——Tiny Tiny RSS | Leon的网络日志</title>
+  
+
+
+
+
+<link rel="dns-prefetch" href="https://my-waline-repo.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Leon的网络日志" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Leon的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-闲言碎语"><a href="/dailyword/" rel="section"><i class="fas fa-book fa-fw"></i>闲言碎语</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ttrss"><span class="nav-number">1.</span> <span class="nav-text">1 TTRSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">2 服务器配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">3 服务器环境安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 宝塔面板安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lnmp%E5%AE%89%E8%A3%85"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 LNMP安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ttrss%E7%AB%99%E7%82%B9%E5%BB%BA%E7%AB%8B"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 TTRSS站点建立</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ttrss%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">4 TTRSS安装及配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ttrss%E4%B8%8B%E8%BD%BD"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 TTRSS下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ttrss%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 TTRSS初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ttrss%E9%85%8D%E7%BD%AE%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 TTRSS配置——自动更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ttrss%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%B9%B3%E5%8F%B0%E6%94%AF%E6%8C%81fever"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 TTRSS配置——多平台支持&#x2F;fever</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leon"
+      src="https://avatars.githubusercontent.com/u/17242727?s=60&v=4">
+  <p class="site-author-name" itemprop="name">Leon</p>
+  <div class="site-description" itemprop="description">这里是爱研究各种问题、立许多flag的Leon的网络日志</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xulu199705" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xulu199705" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xulu199705@163.com" title="E-Mail → mailto:xulu199705@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/xulu199705" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hexo.leonxu.top/2020/04/23/ttrss-build/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/17242727?s=60&v=4">
+      <meta itemprop="name" content="Leon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leon的网络日志">
+      <meta itemprop="description" content="这里是爱研究各种问题、立许多flag的Leon的网络日志">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="自建RSS服务——Tiny Tiny RSS | Leon的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          自建RSS服务——Tiny Tiny RSS
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-04-23 21:16:19" itemprop="dateCreated datePublished" datetime="2020-04-23T21:16:19+08:00">2020-04-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-08-18 00:55:15" itemprop="dateModified" datetime="2022-08-18T00:55:15+08:00">2022-08-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/DIY/" itemprop="url" rel="index"><span itemprop="name">DIY</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2020/04/23/ttrss-build/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2020/04/23/ttrss-build/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.7k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><strong>这篇文章使用的是TTRSS老版本安装方式，新版的Docker安装请参考最新的文章<a href="/2021/07/22/ttrss-build-2/">Tiny Tiny
+RSS再次搭建</a>。</strong></p>
+<p>很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder
+3停更了。<br>
+为了解决日常的RSS阅读，自建RSS服务就提上了日程<del>从冒出想法到搞定实际只花了半天时间</del>。</p>
+<p>本文我就来详细介绍一下搭建多平台RSS服务——Tiny Tiny RSS(TTRSS)。</p>
+<span id="more"></span>
+<blockquote>
+<p><strong>最新版的TTRSS更新了安装方式，目前官方推荐使用docker方式安装，具体的安装和迁移请等待相关文章的更新。</strong></p>
+</blockquote>
+<h2 id="ttrss">1 TTRSS</h2>
+<p>冒出自建RSS服务之前，我其实已经删掉Reeder准备放弃移动端了。网上推荐的Win平台RSS阅读器，发现大多都是Outlook、ThunderMail之类的邮件客户端；虽然我也用"宇宙最强的邮件客户端"——Outlook，但我并不想把娱乐消遣和工作搅和在一起。<br>
+在小众软件的一篇文章的评论里面，我发现了Tiny Tiny
+RSS(TTRSS)，一下子就发现它非常符合我的情况： 1. 国内有闲置的服务器可用；
+2. 订阅源偏重国内(国外源较多建议使用国外的服务器)； 3.
+时间较多的白嫖党。</p>
+<p>说干就干。花了一下午把TTRSS给搞定了，并已经成功在Reeder上登录、阅读、标记。</p>
+<h2 id="服务器配置">2 服务器配置</h2>
+<p>闲置的服务器是在两年前买的腾讯云"1C+2G+1Mbps"，无域名，一直没有利用起来。</p>
+<p>首先，在腾讯云控制台重装系统，这是清空系统防止出现程序冲突。如果服务器已经运行其它任务，可以无视，但出现问题需要考虑会不会是已运行任务的冲突。因为比较偏爱CentOS，所以操作系统选择了CentOS。</p>
+<figure>
+<img data-src="/img/2020/04/3506696871.png" alt="服务器系统重装">
+<figcaption aria-hidden="true">服务器系统重装</figcaption>
+</figure>
+<p>重装完服务器的系统先不要关掉控制台，在左侧找到"安全组"，新建一个安全组规则。<br>
+我开通了3个端口： 1. 8888 --&gt; 宝塔面板默认端口； 2. 2333 --&gt;
+预留给宝塔面板的端口； 3. 9999 --&gt; 预留给TTRSS的端口。<br>
+注：宝塔面板和TTRSS的端口可以选自己喜欢的，只要不和现有的冲突就行。</p>
+<p>新建安全组规则后，将这个规则绑定到服务器。</p>
+<figure>
+<img data-src="/img/2020/04/2662962289.png" alt="配置安全组">
+<figcaption aria-hidden="true">配置安全组</figcaption>
+</figure>
+<h2 id="服务器环境安装">3 服务器环境安装</h2>
+<h3 id="宝塔面板安装">3.1 宝塔面板安装</h3>
+<p>云服务器的配置结束后，就可以使用SSH工具登录服务器了(别告诉我你把密码给忘记了)。<br>
+SSH工具(如XShell)使用教程自行百度(喜欢谷歌的可以选择番羽土啬)。</p>
+<p>使用SSH登录服务器后，根据系统使用下面的命令安装宝塔面板，其它操作系统的安装命令请到<a target="_blank" rel="noopener" href="https://www.bt.cn/download/linux.html">宝塔面板官网</a>查看。<br>
+使用宝塔面板的目的是为了安装LNMP并为TTRSS建立站点，已经安装过或者对此精通的大佬请自觉跳至<a href="#ttrss%e7%ab%99%e7%82%b9%e5%bb%ba%e7%ab%8b">TTRSS站点建立</a>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># CentOS 安装命令</span></span><br><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh</span><br><span class="line"><span class="comment"># Ubuntu/Deepin 安装命令</span></span><br><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+<p>安装过程不是特别慢，大概几分钟就搞定了。宝塔面板安装成功后会在最后有"Completed"字样，并在字样上方有访问宝塔面板的默认URL及账号密码，请务必将这几行字符复制出来并暂时保存起来。这里的图片没有截，请仔细阅读这段文字。</p>
+<h3 id="lnmp安装">3.2 LNMP安装</h3>
+<p>使用宝塔面板安装后输出的URL和账号密码登录宝塔面板，然后在弹出的框内选择LNMP进行安装。<br>
+如果你看到这篇文章的时候PHP没有更新8.0的话，PHP版本选择最新的；服务器配置如果是1核1G，MySQL版本请自觉选用5.6及以下；phpMyAdmin可以不选。我安装时没有截图，这张图是官方论坛里截取的，使用图里的版本也可以。</p>
+<figure>
+<img data-src="/img/2020/04/2780109685.png" alt="安装LNMP">
+<figcaption aria-hidden="true">安装LNMP</figcaption>
+</figure>
+<p>安装过程看具体服务器配置，我的2G内存的跑了十分钟左右。等任务队列全部跑完就说明环境安装好了。</p>
+<p>接下来需要安装PHP的扩展fileinfo，否则TTRSS的初始化会出错。几年前我搭建我的WordPress的时候就因为没安装fileinfo，一直初始化失败。<br>
+在左侧边栏中选择"软件商店"，选择分类"已安装"，点击PHP的"设置"。</p>
+<figure>
+<img data-src="/img/2020/04/1674883902.png" alt="安装fileinfo插件-1">
+<figcaption aria-hidden="true">安装fileinfo插件-1</figcaption>
+</figure>
+<p>在弹出的界面中选择左侧的"安装扩展"，找到fileinfo并点击安装，安装需要等待几秒钟。</p>
+<figure>
+<img data-src="/img/2020/04/3460819832.png" alt="安装fileinfo插件-2">
+<figcaption aria-hidden="true">安装fileinfo插件-2</figcaption>
+</figure>
+<p>到这里，LNMP的环境就搭建好了，但我还是要多说一句，<strong>请务必在左侧边栏的"面板设置"中修改面板登录端口、账号密码以及安全入口</strong>，端口使用安全组预留给宝塔面板的端口。</p>
+<h3 id="ttrss站点建立">3.3 TTRSS站点建立</h3>
+<p>在左侧边栏中选择"网站"，点击"添加站点"。</p>
+<figure>
+<img data-src="/img/2020/04/2348240304.png" alt="建立站点">
+<figcaption aria-hidden="true">建立站点</figcaption>
+</figure>
+<p>在弹出的界面中填写站点的信息。</p>
+<blockquote>
+<p>填写要求：<br>
+域名 -
+使用"http://服务器外网ip:端口号"的格式，端口号使用安全组预留给TTRSS使用的端口；可以使用域名代替外网ip，甚至使用https<br>
+根目录 - 为了方便，我使用了"/www/wwwroot/ttrss"<br>
+数据库 - 选择"MySQL"，编码为"utf-8"，用户名与密码自己输入并记住</p>
+</blockquote>
+<h2 id="ttrss安装及配置">4 TTRSS安装及配置</h2>
+<p>此时服务器上的站点还是空的网站，需要从<a target="_blank" rel="noopener" href="https://tt-rss.org/">TTRSS官网</a>下载TTRSS并进行配置。</p>
+<h3 id="ttrss下载">4.1 TTRSS下载</h3>
+<p>虽然使用服务器也可以获取TTRSS，但下载速度太感人，还是在PC上下好了传上去吧。不信邪的可以使用下面的命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.tt-rss.org/fox/tt-rss.git ttrss</span><br></pre></td></tr></table></figure>
+<p>建议大家使用浏览器访问TTRSS的<a target="_blank" rel="noopener" href="https://git.tt-rss.org/git/tt-rss/src/master">仓库</a>，下载zip包。如果这个仓库失效可以访问<a target="_blank" rel="noopener" href="https://tt-rss.org/">TTRSS官网</a>，再进入仓库下载。</p>
+<p>成功下载TTRSS后，使用宝塔面板将zip包上传到服务器的/www/wwwroot/目录下；<br>
+解压这个zip包，将tt-rss文件夹内的所有文件剪切到/www/wwwroot/ttrss/目录下。<br>
+小文件上传速度堪忧，请务必在服务器解压zip包。</p>
+<figure>
+<img data-src="/img/2020/04/2606487638.png" alt="上传TTRSS">
+<figcaption aria-hidden="true">上传TTRSS</figcaption>
+</figure>
+<h3 id="ttrss初始化">4.2 TTRSS初始化</h3>
+<p>打开浏览器，访问"http://服务器外网ip:端口号/install"，进入TTRSS的初始化。<br>
+数据库选择MySQL，端口选择3306，用户名密码是建立站点时设置的，希望没有忘记。然后点击"Test
+configuration"。</p>
+<figure>
+<img data-src="/img/2020/04/301425375.png" alt="TTRSS初始化-1">
+<figcaption aria-hidden="true">TTRSS初始化-1</figcaption>
+</figure>
+<p>网页下方出现下图的内容，点击"Initialize database"。</p>
+<figure>
+<img data-src="/img/2020/04/3081491383.png" alt="TTRSS初始化-2">
+<figcaption aria-hidden="true">TTRSS初始化-2</figcaption>
+</figure>
+<p>接着，在出现的内容中点击"Save
+configuration"，让系统自己保存配置。</p>
+<figure>
+<img data-src="/img/2020/04/3023230390.png" alt="TTRSS初始化-3">
+<figcaption aria-hidden="true">TTRSS初始化-3</figcaption>
+</figure>
+<p>到此，TTRSS就配置结束了，访问"http://服务器外网ip:端口号"即可登录TTRSS了。<br>
+使用默认用户名及密码(admin,password)即可登录TTRSS，第一次登录时系统会提示重设密码。</p>
+<h3 id="ttrss配置自动更新">4.3 TTRSS配置——自动更新</h3>
+<p>可能是因为bug的原因，目前的TTRSS通过"偏好设置"无法自动更新，需要使用服务器的非root用户的crontab进行自动更新。配置过程如下。</p>
+<p>使用SSH登录服务器，输入下面这个命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -u www -e</span><br></pre></td></tr></table></figure>
+<p>然后，点击"i"进入编辑模式，插入以下命令实现1小时更新一下信息源。请注意php后的路径和命令中的空格。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* */1 * * * php /www/wwwroot/ttrss/update.php  --feeds  &gt; /dev/null</span><br></pre></td></tr></table></figure>
+<p>最后，使用"Esc"和":wq"退出vim编辑，TTRSS就可以自动更新了。</p>
+<p>至于订阅源的配置步骤就不赘述了。</p>
+<h3 id="ttrss配置多平台支持fever">4.4 TTRSS配置——多平台支持/fever</h3>
+<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
+API。因此，需要配置fever插件。</p>
+<ol type="1">
+<li>下载<a href="/img/2020/04/3738853280.7z">fever插件</a>并解压，使用宝塔面板将<strong>整个fever文件夹</strong>上传到/www/wwwroot/ttrss/plugins/目录下。注意：<strong>整个fever文件夹</strong>。</li>
+<li>在TTRSS的偏好设置中，勾选"允许外部客户端通过API来访问该账户"。</li>
+<li>在TTRSS的偏好设置中，选择"插件"页面，勾选fever，点击"启用选择的插件"。</li>
+<li>刷新页面，在TTRSS的偏好设置中，选择"Fever
+Emulation"页面，设置密码。密码可与TTRSS账户密码相同，用于客户端访问TTRSS。</li>
+</ol>
+<p>下面就可以在客户端使用Fever访问TTRSS了。下面是Reeder 3的配置页面。
+服务器填写"http://服务器外网ip:端口号/plugins/fever"；邮箱填写TTRSS账号用户名，不一定要邮箱；密码是在"Fever
+Emulation"页面设置的密码。</p>
+<figure>
+<img data-src="/img/2020/04/3057100732.png#vhei=800" alt="Reeder 3配置界面">
+<figcaption aria-hidden="true">Reeder 3配置界面</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>整篇文章写下来花了两天时间，有几张图片因为搭建时遗忘而没有截图，但整个搭建描述还是挺清晰的(自我评价的)。</p>
+<p>如果参考了这篇TTRSS搭建教程，请别忘了<del>一键三连</del>收藏分享哦。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Leon
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hexo.leonxu.top/2020/04/23/ttrss-build/" title="自建RSS服务——Tiny Tiny RSS">https://hexo.leonxu.top/2020/04/23/ttrss-build/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/DIY/" rel="tag"><i class="fa fa-tag"></i> DIY</a>
+              <a href="/tags/RSS/" rel="tag"><i class="fa fa-tag"></i> RSS</a>
+              <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 服务器</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/04/08/vscode-note-trimTrailingWhitespace/" rel="prev" title="VS Code笔记之根据语言选择性删除行末空格">
+                  <i class="fa fa-chevron-left"></i> VS Code笔记之根据语言选择性删除行末空格
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/05/05/vscode-note-tableofcontents/" rel="next" title="VS Code笔记之可自动更新的Markdown目录">
+                  VS Code笔记之可自动更新的Markdown目录 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-utterances">utterances</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">苏 ICP 备 17063385 号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leon</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://my-waline-repo.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"Just go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick","mail"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/2020/04/23/ttrss-build/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"xulu199705/blog-attachment","issue_term":"title","theme":"github-light","label":"comment"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

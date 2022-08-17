@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/logo_180px.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/logo_180px.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon.ico">
+  <link rel="mask-icon" href="/favicon/logo_180px.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hexo.leonxu.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-2},"utterances":{"order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="2021第一次更新啦！！！ 本文是基于IC618的ADE仿真操作基本介绍，以反相器为例。 接下来一段时间还会陆陆续续地更新一些IC电路的仿真。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IC笔记之反相器仿真">
+<meta property="og:url" content="https://hexo.leonxu.top/2021/03/30/ic-note-inv-simu/index.html">
+<meta property="og:site_name" content="Leon的网络日志">
+<meta property="og:description" content="2021第一次更新啦！！！ 本文是基于IC618的ADE仿真操作基本介绍，以反相器为例。 接下来一段时间还会陆陆续续地更新一些IC电路的仿真。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/virtuoso_ui.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/new_library_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/new_library_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/new_library_3.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/new_library_4.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/lib_manager_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/lib_manager_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/new_cell_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/new_cell_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/new_cell_3.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/new_cell_4.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_add_instance_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_add_instance_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_add_instance_3.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_add_instance_4.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_add_instance_5.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_add_instance_6.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_add_port_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_add_port_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_add_wire.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_check_and_save.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_generate_symbol_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_generate_symbol_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_generate_symbol_3.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_generate_symbol_4.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/sch_generate_symbol_5.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_add_vdc.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_add_vpulse.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_add_gnd.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_add_wire_name_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_add_wire_name_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sch.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_3.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_4.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_5.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_6.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_7.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_8.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_9.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_save_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/img/2021/03/ade_sim_save_2.png">
+<meta property="article:published_time" content="2021-03-30T00:23:04.000Z">
+<meta property="article:modified_time" content="2022-08-17T16:54:29.825Z">
+<meta property="article:author" content="Leon">
+<meta property="article:tag" content="IC">
+<meta property="article:tag" content="IC618">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hexo.leonxu.top/img/2021/03/virtuoso_ui.png">
+
+
+<link rel="canonical" href="https://hexo.leonxu.top/2021/03/30/ic-note-inv-simu/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hexo.leonxu.top/2021/03/30/ic-note-inv-simu/","path":"/2021/03/30/ic-note-inv-simu/","title":"IC笔记之反相器仿真"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>IC笔记之反相器仿真 | Leon的网络日志</title>
+  
+
+
+
+
+<link rel="dns-prefetch" href="https://my-waline-repo.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Leon的网络日志" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Leon的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-闲言碎语"><a href="/dailyword/" rel="section"><i class="fas fa-book fa-fw"></i>闲言碎语</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BAlibrary"><span class="nav-number">1.</span> <span class="nav-text">1 新建Library</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BAcell"><span class="nav-number">2.</span> <span class="nav-text">2 新建Cell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE%E7%BB%98%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">3 原理图绘制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%99%A8%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 添加器件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%AB%AF%E5%8F%A3"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 添加端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%98%E5%88%B6%E5%AF%BC%E7%BA%BF"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 绘制导线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90symbol"><span class="nav-number">4.</span> <span class="nav-text">4 生成Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BF%E7%9C%9F%E7%94%B5%E8%B7%AF%E6%90%AD%E5%BB%BA"><span class="nav-number">5.</span> <span class="nav-text">5 仿真电路搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ade%E4%BB%BF%E7%9C%9F%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">6 ADE仿真配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leon"
+      src="https://avatars.githubusercontent.com/u/17242727?s=60&v=4">
+  <p class="site-author-name" itemprop="name">Leon</p>
+  <div class="site-description" itemprop="description">这里是爱研究各种问题、立许多flag的Leon的网络日志</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xulu199705" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xulu199705" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xulu199705@163.com" title="E-Mail → mailto:xulu199705@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/xulu199705" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hexo.leonxu.top/2021/03/30/ic-note-inv-simu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/17242727?s=60&v=4">
+      <meta itemprop="name" content="Leon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leon的网络日志">
+      <meta itemprop="description" content="这里是爱研究各种问题、立许多flag的Leon的网络日志">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="IC笔记之反相器仿真 | Leon的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          IC笔记之反相器仿真
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-30 08:23:04" itemprop="dateCreated datePublished" datetime="2021-03-30T08:23:04+08:00">2021-03-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-08-18 00:54:29" itemprop="dateModified" datetime="2022-08-18T00:54:29+08:00">2022-08-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF/" itemprop="url" rel="index"><span itemprop="name">集成电路</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2021/03/30/ic-note-inv-simu/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2021/03/30/ic-note-inv-simu/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.3k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>2021第一次更新啦！！！</p>
+<p>本文是基于IC618的ADE仿真操作基本介绍，以反相器为例。</p>
+<p>接下来一段时间还会陆陆续续地更新一些IC电路的仿真。</p>
+<span id="more"></span>
+<p>仿真基于SMIC的.18库（工艺库的安装看后续时间安排，可能会写一篇<del>当然也可能不写</del>）。</p>
+<figure>
+<img data-src="/img/2021/03/virtuoso_ui.png" alt="图0-1">
+<figcaption aria-hidden="true">图0-1</figcaption>
+</figure>
+<h2 id="新建library">1 新建Library</h2>
+<p>选择"File"-"New"-"Library"。</p>
+<figure>
+<img data-src="/img/2021/03/new_library_1.png" alt="图1-1">
+<figcaption aria-hidden="true">图1-1</figcaption>
+</figure>
+<p>在弹出的对话框的文本框中输入Library的名称（因为之后的电路仿真主要是模拟方面，我就选了"analog_test"）。<br>
+"Technology File"选择第3项"Attach to an existing technology
+library"。点击"OK"，进入下一步。</p>
+<figure>
+<img data-src="/img/2021/03/new_library_2.png" alt="图1-2">
+<figcaption aria-hidden="true">图1-2</figcaption>
+</figure>
+<p>选择依赖的已存在工艺库（这里我选择了"smic18ee"）。点击"OK"，进入下一步。</p>
+<figure>
+<img data-src="/img/2021/03/new_library_3.png" alt="图1-3">
+<figcaption aria-hidden="true">图1-3</figcaption>
+</figure>
+<p>这是，Virtuoso的输出信息中就会有Library创建成功的信息。</p>
+<figure>
+<img data-src="/img/2021/03/new_library_4.png" alt="图1-4">
+<figcaption aria-hidden="true">图1-4</figcaption>
+</figure>
+<p>选择"Tools"-"Library Manager"进入Library管理界面。</p>
+<figure>
+<img data-src="/img/2021/03/lib_manager_1.png" alt="图1-5">
+<figcaption aria-hidden="true">图1-5</figcaption>
+</figure>
+<p>刚刚新建的库可以看到，但库中还没有任何Cell。</p>
+<figure>
+<img data-src="/img/2021/03/lib_manager_2.png" alt="图1-6">
+<figcaption aria-hidden="true">图1-6</figcaption>
+</figure>
+<h2 id="新建cell">2 新建Cell</h2>
+<p>在"Library Manager"中选择"File"-"New"-"Cell View"。</p>
+<figure>
+<img data-src="/img/2021/03/new_cell_1.png" alt="图2-1">
+<figcaption aria-hidden="true">图2-1</figcaption>
+</figure>
+<p>在弹出对话框的"Cell"对话框中输入接下来设计的电路的名称，"Type"为"schematic"。点击"OK"，进入下一步。</p>
+<figure>
+<img data-src="/img/2021/03/new_cell_2.png" alt="图2-2">
+<figcaption aria-hidden="true">图2-2</figcaption>
+</figure>
+<p>Cell新建对话框消失后，进入"Schematic Editor"窗口。</p>
+<figure>
+<img data-src="/img/2021/03/new_cell_3.png" alt="图2-3">
+<figcaption aria-hidden="true">图2-3</figcaption>
+</figure>
+<p>"Library Manager"中"analog_test"库中也可以看到刚刚新建的Cell。</p>
+<figure>
+<img data-src="/img/2021/03/new_cell_4.png" alt="图2-4">
+<figcaption aria-hidden="true">图2-4</figcaption>
+</figure>
+<h2 id="原理图绘制">3 原理图绘制</h2>
+<p>目前的原理图还是空的，需要向其中添加需要仿真的电路。</p>
+<h3 id="添加器件">3.1 添加器件</h3>
+<p>首先添加元器件。在"Schematic
+Editor"窗口空白处（好吧，是黑色的）按"i"。点击"Library"下拉框右边的"Browse"。</p>
+<figure>
+<img data-src="/img/2021/03/sch_add_instance_1.png" alt="图3-1">
+<figcaption aria-hidden="true">图3-1</figcaption>
+</figure>
+<p>先勾选弹窗左上角的"Show
+Categories"勾选框，再选择"smic18ee"-"mosfet"中的PMOS，根据需求选择规格，我选择了"p33e2r"。之后在"View"栏中双击"Symbol"。</p>
+<figure>
+<img data-src="/img/2021/03/sch_add_instance_2.png" alt="图3-2">
+<figcaption aria-hidden="true">图3-2</figcaption>
+</figure>
+<p>此时，"Add
+Instance"对话框中就有刚刚选择的"p33e2r"的详细参数，可以自行调节。<br>
+这里我简单设置了PMOS的宽长（<span class="math inline">\(L=1u,
+W=2u\)</span>）。</p>
+<figure>
+<img data-src="/img/2021/03/sch_add_instance_3.png" alt="图3-3">
+<figcaption aria-hidden="true">图3-3</figcaption>
+</figure>
+<p>设置好参数后，鼠标就可以在"Schematic
+Editor"窗口空白处中放置刚刚配置好参数的PMOS了。</p>
+<figure>
+<img data-src="/img/2021/03/sch_add_instance_4.png" alt="图3-4">
+<figcaption aria-hidden="true">图3-4</figcaption>
+</figure>
+<p>反相器还需要一个NMOS，也可通过上述的"Add Instance"来实现。<br>
+为了方便，我使用了另一种方法。首先复制一个PMOS，再选中后右键选择"Properties"进入第二个PMOS的属性页。</p>
+<figure>
+<img data-src="/img/2021/03/sch_add_instance_5.png" alt="图3-5">
+<figcaption aria-hidden="true">图3-5</figcaption>
+</figure>
+<p>在属性页中，修改"Cell
+Name"为"n33e2r"，再修改宽长比，点击"OK"。这样就得到一个NMOS了。</p>
+<figure>
+<img data-src="/img/2021/03/sch_add_instance_6.png" alt="图3-6">
+<figcaption aria-hidden="true">图3-6</figcaption>
+</figure>
+<h3 id="添加端口">3.2 添加端口</h3>
+<p>电路中除了器件外，还有输入输出端口和电源端口。在空白处按"p"进入"Create
+Pin"对话框。这里需要注意的是"Names"、"Direction"、"Signal
+Type"这三个属性。<br>
+与放置器件一样，配置好端口属性就可以在空白处放置端口了。表格中是常用的端口配置。</p>
+<figure>
+<img data-src="/img/2021/03/sch_add_port_1.png" alt="图3-7">
+<figcaption aria-hidden="true">图3-7</figcaption>
+</figure>
+<p>表3-1 常用端口配置 | Pin Name | Direction | Signal Type | | :---: |
+:---: | :---: | | in | input | signal | | out | output | signal | | vdd
+| inputoutput| power | | gnd | inputoutput| ground |</p>
+<p>按照上述的方法，根据电路需求放置其它的端口。</p>
+<figure>
+<img data-src="/img/2021/03/sch_add_port_2.png" alt="图3-8">
+<figcaption aria-hidden="true">图3-8</figcaption>
+</figure>
+<h3 id="绘制导线">3.3 绘制导线</h3>
+<p>器件和端口添加好后，根据设计的电路连接导线，快捷键是"w"。<br>
+在连接MOS时，注意衬底"Bulk"上的连线。</p>
+<figure>
+<img data-src="/img/2021/03/sch_add_wire.png" alt="图3-9">
+<figcaption aria-hidden="true">图3-9</figcaption>
+</figure>
+<p>原理图绘制结束后，使用"Shift+X"检查保存。原理图的检查信息会输出到Virtuoso主界面。</p>
+<figure>
+<img data-src="/img/2021/03/sch_check_and_save.png" alt="图3-10">
+<figcaption aria-hidden="true">图3-10</figcaption>
+</figure>
+<p>到这里，电路的原理图就设计完成了。</p>
+<h2 id="生成symbol">4 生成Symbol</h2>
+<p>为了方便调用设计好的电路，可以为电路生成一个Symbol。如果之前简单学习过Altium
+Designer，可以将之前绘制电路原理图理解为一个芯片，将Symbol理解为这个芯片的元器件符号。<br>
+在"Schematic Editor"窗口中选择"Create"-"Cellview"-"From Cellview"。</p>
+<figure>
+<img data-src="/img/2021/03/sch_generate_symbol_1.png" alt="图4-1">
+<figcaption aria-hidden="true">图4-1</figcaption>
+</figure>
+<p>这个对话框中的信息都是自动生成的，只要检查一下没有出现导出错误，可以直接进入下一步。</p>
+<figure>
+<img data-src="/img/2021/03/sch_generate_symbol_2.png" alt="图4-2">
+<figcaption aria-hidden="true">图4-2</figcaption>
+</figure>
+<p>这个对话框中只需要调整一下输出端口在Symbol中排布的位置。当然，这里直接进入下一步也没有问题，端口位置可以在下一步调整。</p>
+<figure>
+<img data-src="/img/2021/03/sch_generate_symbol_3.png" alt="图4-3">
+<figcaption aria-hidden="true">图4-3</figcaption>
+</figure>
+<p>此时，进入了"Symbol
+Editor"窗口，空白处已经放置了一个元器件符号。至此，Symbol就基本完成了。</p>
+<figure>
+<img data-src="/img/2021/03/sch_generate_symbol_4.png" alt="图4-4">
+<figcaption aria-hidden="true">图4-4</figcaption>
+</figure>
+<p>众所周知啊，反相器的符号绝对不是方形的，但是方形也不是不能用。所以，如果同样有轻微强迫症的同学可以自己捣鼓一下Symbol。我最后将Symbol整成下面这样。<br>
+友情提醒，在调整Symbol时，需要时刻注意鼠标的样式和被选择的对象。操作失误及时使用"u"撤销。</p>
+<figure>
+<img data-src="/img/2021/03/sch_generate_symbol_5.png" alt="图4-5">
+<figcaption aria-hidden="true">图4-5</figcaption>
+</figure>
+<h2 id="仿真电路搭建">5 仿真电路搭建</h2>
+<p>使用新建Cell的方法新建一个inv_ade的Cell。<br>
+仿真电路中需要使用4个器件和1个端口：反相器inv、直流源vdc、脉冲生成器vpulse、电源地gnd和端口out。<br>
+器件使用"i"添加，端口使用"p"添加。</p>
+<p>以下是vdc、vpulse和gnd的参数配置。<br>
+vdc是直流源，在analoglib库中。在反相器的仿真中，只需要设置"DC
+Voltage"为3.3V就可以了。</p>
+<figure>
+<img data-src="/img/2021/03/ade_add_vdc.png" alt="图5-1">
+<figcaption aria-hidden="true">图5-1</figcaption>
+</figure>
+<p>vpluse是脉冲生成器，在analoglib库中。有4个参数需要设置，分别为"Voltage
+1"、"Voltage 2"、"Period"、"Pulse Width"。<br>
+"Voltage 1"、"Voltage 2"控制输出脉冲的两个边界电压。<br>
+"Period"控制脉冲的周期。<br>
+"Pulse Width"控制脉冲的宽度。<br>
+这方面的内容可以看一下PWM波的知识。</p>
+<figure>
+<img data-src="/img/2021/03/ade_add_vpulse.png" alt="图5-2">
+<figcaption aria-hidden="true">图5-2</figcaption>
+</figure>
+<p>gnd是电源地，在analoglib库中。</p>
+<figure>
+<img data-src="/img/2021/03/ade_add_gnd.png" alt="图5-2">
+<figcaption aria-hidden="true">图5-2</figcaption>
+</figure>
+<p>器件和端口添加完毕，通过导线连接好。<br>
+为了仿真中对除端口外的信号进行更好的观察，需要为信号线添加导线名。<br>
+选择目标导线，右键选择"Add Name"。</p>
+<figure>
+<img data-src="/img/2021/03/ade_add_wire_name_1.png" alt="图5-3">
+<figcaption aria-hidden="true">图5-3</figcaption>
+</figure>
+<p>在弹出对话框中输入导线名称后，添加在导线上。</p>
+<figure>
+<img data-src="/img/2021/03/ade_add_wire_name_2.png" alt="图5-4">
+<figcaption aria-hidden="true">图5-4</figcaption>
+</figure>
+<p>所有工作完成后，同样需要进行检查保存。仿真原理图设计完毕。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sch.png" alt="图5-5">
+<figcaption aria-hidden="true">图5-5</figcaption>
+</figure>
+<h2 id="ade仿真配置">6 ADE仿真配置</h2>
+<p>在仿真电路的窗口中选择"Launch"-"ADE L"。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_1.png" alt="图6-1">
+<figcaption aria-hidden="true">图6-1</figcaption>
+</figure>
+<p>此时，进入到"ADE L"窗口中。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_2.png" alt="图6-2">
+<figcaption aria-hidden="true">图6-2</figcaption>
+</figure>
+<p>选择"Setup"-"Model Libraries"查看仿真库的路径配置。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_3.png" alt="图6-3">
+<figcaption aria-hidden="true">图6-3</figcaption>
+</figure>
+<p>一般来说，仿真库的路径是没有错的。但还是建议<strong>检查一下对应路径下是否有需要的仿真文件</strong>。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_4.png" alt="图6-4">
+<figcaption aria-hidden="true">图6-4</figcaption>
+</figure>
+<p>返回"ADE L"窗口，选择"Analyses"-"Choose"。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_5.png" alt="图6-5">
+<figcaption aria-hidden="true">图6-5</figcaption>
+</figure>
+<p>在"Choosing Analyses"对话框中配置仿真模式和对应参数。<br>
+这次的反相器仿真就使用瞬态仿真"tran"简单看一下结果。时间设置为5u。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_6.png" alt="图6-6">
+<figcaption aria-hidden="true">图6-6</figcaption>
+</figure>
+<p>接下来，需要将跟踪的信号添加进来。选择"Outputs"-"To Be
+Ploted"-"Select On
+Design"。然后再仿真原理图中选择对应的信号节点或导线。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_7.png" alt="图6-7">
+<figcaption aria-hidden="true">图6-7</figcaption>
+</figure>
+<p>这时，"ADE L"窗口就有仿真策略"tran"和跟踪信号"in"和"out"。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_8.png" alt="图6-8">
+<figcaption aria-hidden="true">图6-8</figcaption>
+</figure>
+<p>点击右侧的绿色按钮开始仿真。<br>
+仿真结果的可视化如下图所示（两个信号分组可以在右键中选择）。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_9.png" alt="图6-9">
+<figcaption aria-hidden="true">图6-9</figcaption>
+</figure>
+<p>如果想重复使用本次的仿真配置，可以将其保存起来以备后用。<br>
+选择"Session"-"Save State"。（加载仿真配置选择"Session"-"Load
+State"）</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_save_1.png" alt="图6-10">
+<figcaption aria-hidden="true">图6-10</figcaption>
+</figure>
+<p>共有3个属性需要填写。"State Save Directiory"为保存路径，"Save
+As"为仿真配置的名称，"Description"中可以选填一些配置信息，方便更好地与其他仿真配置区分。</p>
+<figure>
+<img data-src="/img/2021/03/ade_sim_save_2.png" alt="图6-11">
+<figcaption aria-hidden="true">图6-11</figcaption>
+</figure>
+<hr>
+<h2 id="总结">总结</h2>
+<p>基于IC618的反相器仿真就结束了，很详细地介绍了从建库到仿真结束的全部流程。</p>
+<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。 :@(击掌)</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Leon
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hexo.leonxu.top/2021/03/30/ic-note-inv-simu/" title="IC笔记之反相器仿真">https://hexo.leonxu.top/2021/03/30/ic-note-inv-simu/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/IC/" rel="tag"><i class="fa fa-tag"></i> IC</a>
+              <a href="/tags/IC618/" rel="tag"><i class="fa fa-tag"></i> IC618</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/08/05/vhdl-note-component-recursion/" rel="prev" title="VHDL学习笔记之元件递归">
+                  <i class="fa fa-chevron-left"></i> VHDL学习笔记之元件递归
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/04/06/ic-note-simu-tran/" rel="next" title="IC笔记之瞬态仿真">
+                  IC笔记之瞬态仿真 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-utterances">utterances</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">苏 ICP 备 17063385 号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leon</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://my-waline-repo.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"Just go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick","mail"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/2021/03/30/ic-note-inv-simu/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"xulu199705/blog-attachment","issue_term":"title","theme":"github-light","label":"comment"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>
