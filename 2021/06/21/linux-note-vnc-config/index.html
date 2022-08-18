@@ -28,21 +28,21 @@
 <meta property="og:site_name" content="Leon的网络日志">
 <meta property="og:description" content="又要当苦力了，自bei愿po学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！ 和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_gnome.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_vnc.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_script_1.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_script_2.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_port.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_selinux.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_pre_1.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_pre_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_gnome.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_vnc.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_script_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_script_2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_port.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_selinux.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_pre_1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_pre_2.png">
 <meta property="article:published_time" content="2021-06-21T12:15:24.000Z">
-<meta property="article:modified_time" content="2021-07-22T13:07:04.000Z">
+<meta property="article:modified_time" content="2022-08-18T03:06:21.274Z">
 <meta property="article:author" content="Leon">
 <meta property="article:tag" content="CentOS">
 <meta property="article:tag" content="VNC">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hexo.leonxu.top/img/2021/06/linux_note_vnc_config_gnome.png">
+<meta name="twitter:image" content="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_gnome.png">
 
 
 <link rel="canonical" href="https://hexo.leonxu.top/2021/06/21/linux-note-vnc-config/">
@@ -272,7 +272,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-07-22 21:07:04" itemprop="dateModified" datetime="2021-07-22T21:07:04+08:00">2021-07-22</time>
+      <time title="修改时间：2022-08-18 11:06:21" itemprop="dateModified" datetime="2022-08-18T11:06:21+08:00">2022-08-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -331,7 +331,7 @@
 <p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="/img/2021/06/linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
+<img data-src="./linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
 <figcaption aria-hidden="true">yum grouplist结果</figcaption>
 </figure>
 <p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
@@ -342,7 +342,7 @@
 <p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="comment"># 验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="/img/2021/06/linux_note_vnc_config_vnc.png" alt="验证VNC安装">
+<img data-src="./linux_note_vnc_config_vnc.png" alt="验证VNC安装">
 <figcaption aria-hidden="true">验证VNC安装</figcaption>
 </figure>
 <h2 id="配置vnc">3 配置VNC</h2>
@@ -356,11 +356,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
 <p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
 <figure>
-<img data-src="/img/2021/06/linux_note_vnc_config_script_1.png" alt="脚本修改前">
+<img data-src="./linux_note_vnc_config_script_1.png" alt="脚本修改前">
 <figcaption aria-hidden="true">脚本修改前</figcaption>
 </figure>
 <figure>
-<img data-src="/img/2021/06/linux_note_vnc_config_script_2.png" alt="脚本修改后">
+<img data-src="./linux_note_vnc_config_script_2.png" alt="脚本修改后">
 <figcaption aria-hidden="true">脚本修改后</figcaption>
 </figure>
 <p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
@@ -373,7 +373,7 @@
 <p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="/img/2021/06/linux_note_vnc_config_port.png" alt="端口监听状态">
+<img data-src="./linux_note_vnc_config_port.png" alt="端口监听状态">
 <figcaption aria-hidden="true">端口监听状态</figcaption>
 </figure>
 <p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
@@ -383,17 +383,17 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
 <p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
 <figure>
-<img data-src="/img/2021/06/linux_note_vnc_config_selinux.png" alt="端口监听状态">
+<img data-src="./linux_note_vnc_config_selinux.png" alt="端口监听状态">
 <figcaption aria-hidden="true">端口监听状态</figcaption>
 </figure>
 <h2 id="连接vnc">5 连接VNC</h2>
 <p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
 <figure>
-<img data-src="/img/2021/06/linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
+<img data-src="./linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
 <figcaption aria-hidden="true">连接VNC地址配置</figcaption>
 </figure>
 <figure>
-<img data-src="/img/2021/06/linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
+<img data-src="./linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
 <figcaption aria-hidden="true">连接VNC演示</figcaption>
 </figure>
 <h2 id="总结">总结</h2>

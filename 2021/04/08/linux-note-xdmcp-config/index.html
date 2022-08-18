@@ -28,18 +28,18 @@
 <meta property="og:site_name" content="Leon的网络日志">
 <meta property="og:description" content="恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。 XDMCP配置主要是XDMCP Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/04/tcping_ip_port.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/04/tmux_listen_177.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/04/xmanager_config.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/04/xdmcp_res.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/04/08/linux-note-xdmcp-config/tcping_ip_port.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/04/08/linux-note-xdmcp-config/tmux_listen_177.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/04/08/linux-note-xdmcp-config/xmanager_config.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/04/08/linux-note-xdmcp-config/xdmcp_res.png">
 <meta property="article:published_time" content="2021-04-08T09:55:19.000Z">
-<meta property="article:modified_time" content="2021-05-06T13:07:45.000Z">
+<meta property="article:modified_time" content="2022-08-18T03:09:01.084Z">
 <meta property="article:author" content="Leon">
 <meta property="article:tag" content="XDMCP">
 <meta property="article:tag" content="Xmanager">
 <meta property="article:tag" content="CentOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hexo.leonxu.top/img/2021/04/tcping_ip_port.png">
+<meta name="twitter:image" content="https://hexo.leonxu.top/2021/04/08/linux-note-xdmcp-config/tcping_ip_port.png">
 
 
 <link rel="canonical" href="https://hexo.leonxu.top/2021/04/08/linux-note-xdmcp-config/">
@@ -271,7 +271,7 @@ manager和desktop environment</span></a><ol class="nav-child"><li class="nav-ite
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-05-06 21:07:45" itemprop="dateModified" datetime="2021-05-06T21:07:45+08:00">2021-05-06</time>
+      <time title="修改时间：2022-08-18 11:09:01" itemprop="dateModified" datetime="2022-08-18T11:09:01+08:00">2022-08-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -394,7 +394,7 @@ manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行�
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置177端口tcp协议永久监听</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目前177端口状态</span></span><br><span class="line">netstat -tunlp | grep 177</span><br></pre></td></tr></table></figure>
 <p>CentOS部分的端口配置基本结束，接下来就用telnet或者tcping来ping服务器的177端口。</p>
 <figure>
-<img data-src="/img/2021/04/tcping_ip_port.png" alt="tcping Ping端口177">
+<img data-src="./tcping_ip_port.png" alt="tcping Ping端口177">
 <figcaption aria-hidden="true">tcping Ping端口177</figcaption>
 </figure>
 <p>你以为这么简单就结束了？ :&amp;(蛆音娘_摊手)
@@ -405,7 +405,7 @@ manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行�
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装tmux</span></span><br><span class="line">sudo yum install tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建tmux会话</span></span><br><span class="line">tmux new -s xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入会话后开始监听177端口</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 离开tmux会话，返回主终端</span></span><br><span class="line">tmux detach</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其它tmux相关操作</span></span><br><span class="line"><span class="comment"># 列出已有tmux会话</span></span><br><span class="line">tmux <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新进入会话</span></span><br><span class="line">tmux attach-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭会话（需在会话中）</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 或（无需在会话中）</span></span><br><span class="line">tmux kill-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名会话xdmcp_listen_177为xdmcp_listen</span></span><br><span class="line">tmux rename -t xdmcp_listen_177 xdmcp_listen</span><br></pre></td></tr></table></figure>
 <p>下图是我关闭终端后进行的测试（测试端口178），可以满足目标需求。</p>
 <figure>
-<img data-src="/img/2021/04/tmux_listen_177.png" alt="使用tmux实现端口永久监听">
+<img data-src="./tmux_listen_177.png" alt="使用tmux实现端口永久监听">
 <figcaption aria-hidden="true">使用tmux实现端口永久监听</figcaption>
 </figure>
 <h3 id="方案二配置自启动">4.2 方案二：配置自启动</h3>
@@ -420,11 +420,11 @@ manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行�
 <p>这里就是各显神通的地方了。</p>
 <p>Windows端当然是推荐Xmanager，macOS可以使用XQuartz。我就放一下我自己的Xmanager效果图。</p>
 <figure>
-<img data-src="/img/2021/04/xmanager_config.png" alt="Xmanager配置">
+<img data-src="./xmanager_config.png" alt="Xmanager配置">
 <figcaption aria-hidden="true">Xmanager配置</figcaption>
 </figure>
 <figure>
-<img data-src="/img/2021/04/xdmcp_res.png" alt="最终效果图">
+<img data-src="./xdmcp_res.png" alt="最终效果图">
 <figcaption aria-hidden="true">最终效果图</figcaption>
 </figure>
 <h2 id="总结">总结</h2>

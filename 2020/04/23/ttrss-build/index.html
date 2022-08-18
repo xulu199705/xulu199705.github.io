@@ -28,25 +28,25 @@
 <meta property="og:site_name" content="Leon的网络日志">
 <meta property="og:description" content="这篇文章使用的是TTRSS老版本安装方式，新版的Docker安装请参考最新的文章Tiny Tiny RSS再次搭建。 很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder 3停更了。 为了解决日常的RSS阅读，自建RSS服务">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/3506696871.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/2662962289.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/2780109685.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/1674883902.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/3460819832.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/2348240304.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/2606487638.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/301425375.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/3081491383.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/3023230390.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2020/04/3057100732.png#vhei=800">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/3506696871.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/2662962289.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/2780109685.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/1674883902.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/3460819832.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/2348240304.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/2606487638.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/301425375.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/3081491383.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/3023230390.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/3057100732.png#vhei=800">
 <meta property="article:published_time" content="2020-04-23T13:16:19.000Z">
-<meta property="article:modified_time" content="2022-08-17T16:55:15.770Z">
+<meta property="article:modified_time" content="2022-08-18T03:14:09.983Z">
 <meta property="article:author" content="Leon">
 <meta property="article:tag" content="DIY">
 <meta property="article:tag" content="RSS">
 <meta property="article:tag" content="服务器">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hexo.leonxu.top/img/2020/04/3506696871.png">
+<meta name="twitter:image" content="https://hexo.leonxu.top/2020/04/23/ttrss-build/3506696871.png">
 
 
 <link rel="canonical" href="https://hexo.leonxu.top/2020/04/23/ttrss-build/">
@@ -276,7 +276,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-08-18 00:55:15" itemprop="dateModified" datetime="2022-08-18T00:55:15+08:00">2022-08-18</time>
+      <time title="修改时间：2022-08-18 11:14:09" itemprop="dateModified" datetime="2022-08-18T11:14:09+08:00">2022-08-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -340,7 +340,7 @@ RSS(TTRSS)，一下子就发现它非常符合我的情况： 1. 国内有闲置
 <p>闲置的服务器是在两年前买的腾讯云"1C+2G+1Mbps"，无域名，一直没有利用起来。</p>
 <p>首先，在腾讯云控制台重装系统，这是清空系统防止出现程序冲突。如果服务器已经运行其它任务，可以无视，但出现问题需要考虑会不会是已运行任务的冲突。因为比较偏爱CentOS，所以操作系统选择了CentOS。</p>
 <figure>
-<img data-src="/img/2020/04/3506696871.png" alt="服务器系统重装">
+<img data-src="./3506696871.png" alt="服务器系统重装">
 <figcaption aria-hidden="true">服务器系统重装</figcaption>
 </figure>
 <p>重装完服务器的系统先不要关掉控制台，在左侧找到"安全组"，新建一个安全组规则。<br>
@@ -349,7 +349,7 @@ RSS(TTRSS)，一下子就发现它非常符合我的情况： 1. 国内有闲置
 注：宝塔面板和TTRSS的端口可以选自己喜欢的，只要不和现有的冲突就行。</p>
 <p>新建安全组规则后，将这个规则绑定到服务器。</p>
 <figure>
-<img data-src="/img/2020/04/2662962289.png" alt="配置安全组">
+<img data-src="./2662962289.png" alt="配置安全组">
 <figcaption aria-hidden="true">配置安全组</figcaption>
 </figure>
 <h2 id="服务器环境安装">3 服务器环境安装</h2>
@@ -364,26 +364,26 @@ SSH工具(如XShell)使用教程自行百度(喜欢谷歌的可以选择番羽�
 <p>使用宝塔面板安装后输出的URL和账号密码登录宝塔面板，然后在弹出的框内选择LNMP进行安装。<br>
 如果你看到这篇文章的时候PHP没有更新8.0的话，PHP版本选择最新的；服务器配置如果是1核1G，MySQL版本请自觉选用5.6及以下；phpMyAdmin可以不选。我安装时没有截图，这张图是官方论坛里截取的，使用图里的版本也可以。</p>
 <figure>
-<img data-src="/img/2020/04/2780109685.png" alt="安装LNMP">
+<img data-src="./2780109685.png" alt="安装LNMP">
 <figcaption aria-hidden="true">安装LNMP</figcaption>
 </figure>
 <p>安装过程看具体服务器配置，我的2G内存的跑了十分钟左右。等任务队列全部跑完就说明环境安装好了。</p>
 <p>接下来需要安装PHP的扩展fileinfo，否则TTRSS的初始化会出错。几年前我搭建我的WordPress的时候就因为没安装fileinfo，一直初始化失败。<br>
 在左侧边栏中选择"软件商店"，选择分类"已安装"，点击PHP的"设置"。</p>
 <figure>
-<img data-src="/img/2020/04/1674883902.png" alt="安装fileinfo插件-1">
+<img data-src="./1674883902.png" alt="安装fileinfo插件-1">
 <figcaption aria-hidden="true">安装fileinfo插件-1</figcaption>
 </figure>
 <p>在弹出的界面中选择左侧的"安装扩展"，找到fileinfo并点击安装，安装需要等待几秒钟。</p>
 <figure>
-<img data-src="/img/2020/04/3460819832.png" alt="安装fileinfo插件-2">
+<img data-src="./3460819832.png" alt="安装fileinfo插件-2">
 <figcaption aria-hidden="true">安装fileinfo插件-2</figcaption>
 </figure>
 <p>到这里，LNMP的环境就搭建好了，但我还是要多说一句，<strong>请务必在左侧边栏的"面板设置"中修改面板登录端口、账号密码以及安全入口</strong>，端口使用安全组预留给宝塔面板的端口。</p>
 <h3 id="ttrss站点建立">3.3 TTRSS站点建立</h3>
 <p>在左侧边栏中选择"网站"，点击"添加站点"。</p>
 <figure>
-<img data-src="/img/2020/04/2348240304.png" alt="建立站点">
+<img data-src="./2348240304.png" alt="建立站点">
 <figcaption aria-hidden="true">建立站点</figcaption>
 </figure>
 <p>在弹出的界面中填写站点的信息。</p>
@@ -404,7 +404,7 @@ SSH工具(如XShell)使用教程自行百度(喜欢谷歌的可以选择番羽�
 解压这个zip包，将tt-rss文件夹内的所有文件剪切到/www/wwwroot/ttrss/目录下。<br>
 小文件上传速度堪忧，请务必在服务器解压zip包。</p>
 <figure>
-<img data-src="/img/2020/04/2606487638.png" alt="上传TTRSS">
+<img data-src="./2606487638.png" alt="上传TTRSS">
 <figcaption aria-hidden="true">上传TTRSS</figcaption>
 </figure>
 <h3 id="ttrss初始化">4.2 TTRSS初始化</h3>
@@ -412,18 +412,18 @@ SSH工具(如XShell)使用教程自行百度(喜欢谷歌的可以选择番羽�
 数据库选择MySQL，端口选择3306，用户名密码是建立站点时设置的，希望没有忘记。然后点击"Test
 configuration"。</p>
 <figure>
-<img data-src="/img/2020/04/301425375.png" alt="TTRSS初始化-1">
+<img data-src="./301425375.png" alt="TTRSS初始化-1">
 <figcaption aria-hidden="true">TTRSS初始化-1</figcaption>
 </figure>
 <p>网页下方出现下图的内容，点击"Initialize database"。</p>
 <figure>
-<img data-src="/img/2020/04/3081491383.png" alt="TTRSS初始化-2">
+<img data-src="./3081491383.png" alt="TTRSS初始化-2">
 <figcaption aria-hidden="true">TTRSS初始化-2</figcaption>
 </figure>
 <p>接着，在出现的内容中点击"Save
 configuration"，让系统自己保存配置。</p>
 <figure>
-<img data-src="/img/2020/04/3023230390.png" alt="TTRSS初始化-3">
+<img data-src="./3023230390.png" alt="TTRSS初始化-3">
 <figcaption aria-hidden="true">TTRSS初始化-3</figcaption>
 </figure>
 <p>到此，TTRSS就配置结束了，访问"http://服务器外网ip:端口号"即可登录TTRSS了。<br>
@@ -440,7 +440,7 @@ configuration"，让系统自己保存配置。</p>
 <p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
 API。因此，需要配置fever插件。</p>
 <ol type="1">
-<li>下载<a href="/img/2020/04/3738853280.7z">fever插件</a>并解压，使用宝塔面板将<strong>整个fever文件夹</strong>上传到/www/wwwroot/ttrss/plugins/目录下。注意：<strong>整个fever文件夹</strong>。</li>
+<li>下载<a href="./3738853280.7z">fever插件</a>并解压，使用宝塔面板将<strong>整个fever文件夹</strong>上传到/www/wwwroot/ttrss/plugins/目录下。注意：<strong>整个fever文件夹</strong>。</li>
 <li>在TTRSS的偏好设置中，勾选"允许外部客户端通过API来访问该账户"。</li>
 <li>在TTRSS的偏好设置中，选择"插件"页面，勾选fever，点击"启用选择的插件"。</li>
 <li>刷新页面，在TTRSS的偏好设置中，选择"Fever
@@ -450,7 +450,7 @@ Emulation"页面，设置密码。密码可与TTRSS账户密码相同，用于�
 服务器填写"http://服务器外网ip:端口号/plugins/fever"；邮箱填写TTRSS账号用户名，不一定要邮箱；密码是在"Fever
 Emulation"页面设置的密码。</p>
 <figure>
-<img data-src="/img/2020/04/3057100732.png#vhei=800" alt="Reeder 3配置界面">
+<img data-src="./3057100732.png#vhei=800" alt="Reeder 3配置界面">
 <figcaption aria-hidden="true">Reeder 3配置界面</figcaption>
 </figure>
 <h2 id="总结">总结</h2>

@@ -28,22 +28,22 @@
 <meta property="og:site_name" content="Leon的网络日志">
 <meta property="og:description" content="贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github Pages上了，阿里云的服务器就空出来了。 但是，不幸再次降临，TTRSS官方把原来的安装方式取消了，推荐使用docker安装。经过一番摸索，终于完成了docker安装TTRSS，并搞定fever。 环境说明：所使用的是Aliyun服">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/07/ttrss-setting-1.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/07/ttrss-safari-bug.jpg">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/07/locate-plugins-folder.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/07/ttrss-fever-1.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/07/ttrss-fever-2.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/07/ttrss-fever-3.png">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/07/ttrss-reeder-setting.jpg">
-<meta property="og:image" content="https://hexo.leonxu.top/img/2021/07/ttrss-reeder-done.jpg">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/07/22/ttrss-build-2/ttrss-setting-1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/07/22/ttrss-build-2/ttrss-safari-bug.jpg">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/07/22/ttrss-build-2/locate-plugins-folder.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/07/22/ttrss-build-2/ttrss-fever-1.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/07/22/ttrss-build-2/ttrss-fever-2.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/07/22/ttrss-build-2/ttrss-fever-3.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/07/22/ttrss-build-2/ttrss-reeder-setting.jpg">
+<meta property="og:image" content="https://hexo.leonxu.top/2021/07/22/ttrss-build-2/ttrss-reeder-done.jpg">
 <meta property="article:published_time" content="2021-07-22T13:00:27.000Z">
-<meta property="article:modified_time" content="2021-07-22T13:34:37.000Z">
+<meta property="article:modified_time" content="2022-08-18T03:13:04.135Z">
 <meta property="article:author" content="Leon">
 <meta property="article:tag" content="DIY">
 <meta property="article:tag" content="RSS">
 <meta property="article:tag" content="服务器">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hexo.leonxu.top/img/2021/07/ttrss-setting-1.png">
+<meta name="twitter:image" content="https://hexo.leonxu.top/2021/07/22/ttrss-build-2/ttrss-setting-1.png">
 
 
 <link rel="canonical" href="https://hexo.leonxu.top/2021/07/22/ttrss-build-2/">
@@ -265,9 +265,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-07-22 21:00:27 / 修改时间：21:34:37" itemprop="dateCreated datePublished" datetime="2021-07-22T21:00:27+08:00">2021-07-22</time>
+      <time title="创建时间：2021-07-22 21:00:27" itemprop="dateCreated datePublished" datetime="2021-07-22T21:00:27+08:00">2021-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-08-18 11:13:04" itemprop="dateModified" datetime="2022-08-18T11:13:04+08:00">2022-08-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -360,9 +366,9 @@ Compose的Release包。下面的命令使用的是1.29.2版本的Release，可�
 <h3 id="登录ttrss">3.4 登录TTRSS</h3>
 <p>使用浏览器访问<code>TTRSS_SELF_URL_PATH</code>配置的URL。默认账号密码为<code>admin</code>和<code>password</code>。<strong>进入前台系统后，请先通过界面右上角的<code>偏好设置</code>修改密码。</strong></p>
 <p>有需要的可以新建普通用户，将<code>admin</code>仅作为管理员用户。</p>
-<p><img data-src="/img/2021/07/ttrss-setting-1.png"></p>
+<p><img data-src="./ttrss-setting-1.png"></p>
 <p>注：文章编写时，TTRSS的前台系统由于使用<code>window.requestIdleCallback</code>API，该API并不受Safari支持，所以前台系统不能使用Safari<del>应该都知道我为什么知道吧</del>。</p>
-<p><img data-src="/img/2021/07/ttrss-safari-bug.jpg"></p>
+<p><img data-src="./ttrss-safari-bug.jpg"></p>
 <h2 id="ttrss后续配置">4 TTRSS后续配置</h2>
 <h3 id="fever">4.1 Fever</h3>
 <p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
@@ -377,20 +383,20 @@ API。因此，需要配置fever插件。</p>
 <p>确定TTRSS安装路径。由于插件目录名称为<code>plugins.local</code>，为了简化搜索，直接搜索<code>plugins.local</code>即可。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locate plugins.local</span><br></pre></td></tr></table></figure>
 <p>搜索后，TTRSS的安装路径就一目了然了，我的路径为<code>/var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/</code>。</p>
-<p><img data-src="/img/2021/07/locate-plugins-folder.png"></p>
+<p><img data-src="./locate-plugins-folder.png"></p>
 <p>之后将插件复制到TTRSS的<code>plugins.local</code>目录下。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
 <p>登录到TTRSS前台界面，进入偏好设置，勾选<code>启用API:外部客户端通过API来访问账户</code>。同时，页面底部会有<code>Fever Emulation</code>的条目。</p>
-<p><img data-src="/img/2021/07/ttrss-fever-1.png"></p>
+<p><img data-src="./ttrss-fever-1.png"></p>
 <p>选择<code>插件</code>条目，勾选<code>fever</code>。</p>
-<p><img data-src="/img/2021/07/ttrss-fever-2.png"></p>
+<p><img data-src="./ttrss-fever-2.png"></p>
 <p>选择<code>Fever Emulation</code>的条目，在文本框中输入fever连接密码（可以与ttrss账号密码相同）。点击<code>Set Password</code>，设置成功后会有浮窗。另外，记住红框内的地址，这是客户端连接fever的地址。</p>
-<p><img data-src="/img/2021/07/ttrss-fever-3.png"></p>
+<p><img data-src="./ttrss-fever-3.png"></p>
 <p>到这里，ttrss fever插件就搞定了。</p>
 <p>关于ttrss fever插件的更新。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
 <p>客户端连接可以参考下图。</p>
-<p><img data-src="/img/2021/07/ttrss-reeder-setting.jpg"></p>
+<p><img data-src="./ttrss-reeder-setting.jpg"></p>
 <h3 id="ttrss工具更新">4.2 TTRSS工具更新</h3>
 <p>停止TTRSS相关容器。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose down &amp;&amp; docker-compose rm</span><br></pre></td></tr></table></figure>
@@ -401,7 +407,7 @@ API。因此，需要配置fever插件。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up</span><br></pre></td></tr></table></figure>
 <h2 id="总结">总结</h2>
 <p>写文章时，我的TTRSS已经稳定运行了两周了，没有出什么幺蛾子。</p>
-<p><img data-src="/img/2021/07/ttrss-reeder-done.jpg"></p>
+<p><img data-src="./ttrss-reeder-done.jpg"></p>
 <p>有TTRSS安装需求的同学可以参考上面的安装步骤，搭建自己的、可靠的RSS订阅服务。</p>
 
     </div>
