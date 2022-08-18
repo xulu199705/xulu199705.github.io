@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>是什么驱动着无限进步？</title>
-    <url>//2021/08/05/driver-of-development/</url>
-    <content><![CDATA[<span id="more"></span>
-<blockquote>
-<p>崇高的理念在欲望面前根本无能为力</p>
-<p>说到底 人类不过是充满欲望的生物</p>
-<p>人活着就不能否定这一点</p>
-<p>正因为这份欲望文明才进化至今</p>
-<p>今后也会继续进化 绝不会倒退</p>
-<p>建造燃料废物处理厂</p>
-<p>修建高速公路 打造购物中心</p>
-<p>森林面积不断减少 稀有物种濒临灭绝</p>
-<p>终有一天这里会变得和一般的城市一样</p>
-<p>于是他们一边缅怀过去 一边伤感唏嘘</p>
-<p>但是大家都想这样做 多棒啊</p>
-<p>这就是人类</p>
-<p>—— LEGAL HIGH.S02E08</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>观点&amp;感想</category>
-      </categories>
-      <tags>
-        <tag>观点</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>//2016/09/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
@@ -55,34 +28,30 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
       </categories>
   </entry>
   <entry>
-    <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
-    <url>//2019/01/30/can-based-optimization/</url>
-    <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
-CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
-<p>运动控制系统对于通信的实时性要求很高，这就间接地要求系统的通信必须使用时间触发。CAN总线从本质上来说是一种事件触发总线协议，对于这种极高的硬实时性要求很难满足。文章中展示了基础的时间触发CAN协议在运动控制中的传输误差，实验结果表明：传输速率较低时，系统的跟踪误差较好；当传输速率提高后，系统的传输实时性就差强人意了。</p>
-<p>为了解决这一问题，文章中提出了一种对CAN运动控制的优化，这个优化涉及两个方面。</p>
-<span id="more"></span>
-<h2 id="优化一">优化一</h2>
-<p>本文提出在时间触发中嵌入事件触发，将传统的通信触发结构改为事件/时间触发结构，如图1所示。</p>
-<figure>
-<img data-src="./1884776264.jpg" alt="图1">
-<figcaption aria-hidden="true">图1</figcaption>
-</figure>
-<h2 id="优化二">优化二</h2>
-<p>除了优化时间触发结构，文章还提出了预估器优化方案。如果系统在一段时间内没有接收到运动控制指令，系统就会将之前的位置数据带入泰勒二阶展开式计算丢失的控制指令。</p>
-<p>系统的最终结构框图如图2所示。</p>
-<figure>
-<img data-src="./122056196.jpg" alt="图2">
-<figcaption aria-hidden="true">图2</figcaption>
-</figure>
+    <title>是什么驱动着无限进步？</title>
+    <url>//2021/08/05/driver-of-development/</url>
+    <content><![CDATA[<span id="more"></span>
+<blockquote>
+<p>崇高的理念在欲望面前根本无能为力</p>
+<p>说到底 人类不过是充满欲望的生物</p>
+<p>人活着就不能否定这一点</p>
+<p>正因为这份欲望文明才进化至今</p>
+<p>今后也会继续进化 绝不会倒退</p>
+<p>建造燃料废物处理厂</p>
+<p>修建高速公路 打造购物中心</p>
+<p>森林面积不断减少 稀有物种濒临灭绝</p>
+<p>终有一天这里会变得和一般的城市一样</p>
+<p>于是他们一边缅怀过去 一边伤感唏嘘</p>
+<p>但是大家都想这样做 多棒啊</p>
+<p>这就是人类</p>
+<p>—— LEGAL HIGH.S02E08</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>观点&amp;感想</category>
       </categories>
       <tags>
-        <tag>控制</tag>
-        <tag>summary</tag>
-        <tag>总线</tag>
+        <tag>观点</tag>
       </tags>
   </entry>
   <entry>
@@ -372,28 +341,34 @@ As"为仿真配置的名称，"Description"中可以选填一些配置信息，�
       </tags>
   </entry>
   <entry>
-    <title>从零开始的客制化87键机械键盘_1_立项</title>
-    <url>//2018/12/25/keyboard87-1/</url>
-    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
-type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+    <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
+    <url>//2019/01/30/can-based-optimization/</url>
+    <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
+CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
+<p>运动控制系统对于通信的实时性要求很高，这就间接地要求系统的通信必须使用时间触发。CAN总线从本质上来说是一种事件触发总线协议，对于这种极高的硬实时性要求很难满足。文章中展示了基础的时间触发CAN协议在运动控制中的传输误差，实验结果表明：传输速率较低时，系统的跟踪误差较好；当传输速率提高后，系统的传输实时性就差强人意了。</p>
+<p>为了解决这一问题，文章中提出了一种对CAN运动控制的优化，这个优化涉及两个方面。</p>
 <span id="more"></span>
-<h2 id="项目初衷">项目初衷</h2>
-<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<h2 id="优化一">优化一</h2>
+<p>本文提出在时间触发中嵌入事件触发，将传统的通信触发结构改为事件/时间触发结构，如图1所示。</p>
 <figure>
-<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
-<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+<img data-src="./1884776264.jpg" alt="图1">
+<figcaption aria-hidden="true">图1</figcaption>
 </figure>
-<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
-<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
-<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
+<h2 id="优化二">优化二</h2>
+<p>除了优化时间触发结构，文章还提出了预估器优化方案。如果系统在一段时间内没有接收到运动控制指令，系统就会将之前的位置数据带入泰勒二阶展开式计算丢失的控制指令。</p>
+<p>系统的最终结构框图如图2所示。</p>
+<figure>
+<img data-src="./122056196.jpg" alt="图2">
+<figcaption aria-hidden="true">图2</figcaption>
+</figure>
 ]]></content>
       <categories>
-        <category>硬件</category>
+        <category>算法</category>
       </categories>
       <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
+        <tag>控制</tag>
+        <tag>summary</tag>
+        <tag>总线</tag>
       </tags>
   </entry>
   <entry>
@@ -767,6 +742,59 @@ C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四�
       </tags>
   </entry>
   <entry>
+    <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
+    <url>//2019/01/28/keyboard87-3/</url>
+    <content><![CDATA[<blockquote>
+<p>前文：<br>
+<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a><br>
+<a href="/2019/01/22/keyboard87-2/">从零开始的客制化87键机械键盘_2_硬件设计</a></p>
+</blockquote>
+<p>机械键盘的原理图搞定之后就投去打样了，这次体验还是不错。</p>
+<span id="more"></span>
+<h2 id="pcb打样">PCB打样</h2>
+<p>PCB打样就交给嘉立创了，下单系统虽然UI做的不怎么样，但系统操作和服务看上去特别高大上。而且最近嘉立创对自己的SMT进行了升级，添加了很多可贴元器件，这样一来，板子一拿回来就只要焊四个0805的贴片和直插的按键轴体。</p>
+<p>下单大概四天，板子就寄到了。一层一层的红色气泡纸把五块板子包得严严实实。</p>
+<figure>
+<img data-src="./1443212437.jpg" alt="pcb_package.jpg">
+<figcaption aria-hidden="true">pcb_package.jpg</figcaption>
+</figure>
+<p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_1_立项</title>
+    <url>//2018/12/25/keyboard87-1/</url>
+    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
+type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+<span id="more"></span>
+<h2 id="项目初衷">项目初衷</h2>
+<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<figure>
+<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
+<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+</figure>
+<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
+<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
+<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux笔记之VNC配置</title>
     <url>//2021/06/21/linux-note-vnc-config/</url>
     <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
@@ -860,34 +888,6 @@ C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四�
       <tags>
         <tag>VNC</tag>
         <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
-    <url>//2019/01/28/keyboard87-3/</url>
-    <content><![CDATA[<blockquote>
-<p>前文：<br>
-<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a><br>
-<a href="/2019/01/22/keyboard87-2/">从零开始的客制化87键机械键盘_2_硬件设计</a></p>
-</blockquote>
-<p>机械键盘的原理图搞定之后就投去打样了，这次体验还是不错。</p>
-<span id="more"></span>
-<h2 id="pcb打样">PCB打样</h2>
-<p>PCB打样就交给嘉立创了，下单系统虽然UI做的不怎么样，但系统操作和服务看上去特别高大上。而且最近嘉立创对自己的SMT进行了升级，添加了很多可贴元器件，这样一来，板子一拿回来就只要焊四个0805的贴片和直插的按键轴体。</p>
-<p>下单大概四天，板子就寄到了。一层一层的红色气泡纸把五块板子包得严严实实。</p>
-<figure>
-<img data-src="./1443212437.jpg" alt="pcb_package.jpg">
-<figcaption aria-hidden="true">pcb_package.jpg</figcaption>
-</figure>
-<p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -1018,26 +1018,6 @@ manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行�
         <tag>CentOS</tag>
         <tag>XDMCP</tag>
         <tag>Xmanager</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Spring框架的IOC和DI的理解</title>
-    <url>//2018/01/26/spring-ioc-di/</url>
-    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
-<p>下面来说说我，一个初学者，对DI的理解。</p>
-<span id="more"></span>
-<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
-2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
-<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
-<p>这个是我今天看了Spring框架之后的理解。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -1323,6 +1303,49 @@ G）</h3>
       </tags>
   </entry>
   <entry>
+    <title>关于Spring框架的IOC和DI的理解</title>
+    <url>//2018/01/26/spring-ioc-di/</url>
+    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
+<p>下面来说说我，一个初学者，对DI的理解。</p>
+<span id="more"></span>
+<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
+2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
+<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
+<p>这个是我今天看了Spring框架之后的理解。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>斯普林格Springer免费书籍</title>
+    <url>//2020/06/24/springer-free-books-2020/</url>
+    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
+<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
+<span id="more"></span>
+<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
+<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
+<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
+<hr>
+<blockquote>
+<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
+最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+        <tag>书籍</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>STM32基础_GPIO流水灯</title>
     <url>//2017/07/28/stm32-gpio-led/</url>
     <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
@@ -1409,6 +1432,112 @@ G）</h3>
       </categories>
       <tags>
         <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tiny Tiny RSS再次搭建</title>
+    <url>//2021/07/22/ttrss-build-2/</url>
+    <content><![CDATA[<p>贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github
+Pages上了，阿里云的服务器就空出来了。</p>
+<p>但是，不幸再次降临，TTRSS官方把原来的安装方式取消了，推荐使用docker安装。经过一番摸索，终于完成了docker安装TTRSS，并搞定fever。</p>
+<p>环境说明：所使用的是Aliyun服务器（1C2G），系统为CentOS 7.9。</p>
+<span id="more"></span>
+<h2 id="安装docker">1 安装Docker</h2>
+<p>Docker是...啥？我也不是特别清楚，我把它看作是独立的运行环境，和虚拟机类似。详细的请找Docker官方文档和百度。</p>
+<p>首先确保系统内没有预安装旧版本的docker，使用命令卸载旧版本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
+<p>配置yum源，参考了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">TUNA
+CentOS镜像使用帮助</a>。使用云服务器一般不需要配置。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sed -e &#x27;s|^mirrorlist=|#mirrorlist=|g&#x27; \</span><br><span class="line">         -e &#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27; \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
+<p>配置docker的yum源。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>安装docker相关依赖包。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+<p>安装docker</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
+<p>启动docker，并设置开机自启。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
+<p>验证docker安装。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+<h2 id="安装docker-compose">2 安装Docker Compose</h2>
+<p>Docker Compose是基于Docker的多容器运行管理工具。</p>
+<p>下载Docker
+Compose的Release包。下面的命令使用的是1.29.2版本的Release，可前往<a href="https://github.com/docker/compose/releases">软件发布页</a>查看最新的版本号，然后修改下面命令的版本号即可。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>为文件夹添加可执行权限。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>为Docker Compose在<code>/usr/bin/</code>创建链接。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件copy到/usr/bin/目录下</span></span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>验证Docker Compose安装。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+<h2 id="安装ttrss">3 安装TTRSS</h2>
+<p>TTRSS是啥就不再次介绍了，需要了解的可以看看之前写的<a href="/2020/04/23/ttrss-build/">那篇文章</a>，或者直接访问<a href="https://tt-rss.org/">TTRSS官网</a>。</p>
+<h3 id="获取docker安装所需文件">3.1 获取docker安装所需文件</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://git.tt-rss.org/fox/ttrss-docker-compose.git ttrss-docker</span><br><span class="line">cd ttrss-docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git checkout命令为切换static-dockerhub分支，也可以不切换使用master分支</span></span><br><span class="line">git checkout static-dockerhub</span><br></pre></td></tr></table></figure>
+<h3 id="修改.env配置文件">3.2 修改<code>.env</code>配置文件</h3>
+<p>首先需要将<code>ttrss-docker</code>文件夹中的<code>.env-dist</code>复制为<code>.env</code>。（注：<code>.env-dist</code>和<code>.env</code>均为隐藏文件，需要使用<code>ls -a</code>才能看到。）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp .env-dist .env</span><br></pre></td></tr></table></figure>
+<p>打开<code>.env</code>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim .env</span><br></pre></td></tr></table></figure>
+<p>修改端口<code>HTTP_PORT</code>。默认为8280端口，可以配置为自定义端口。配置完成后，还需要Aliyun控制台开放端口访问，其它云平台类似，自建服务器那就自己搞定。</p>
+<p>修改URL<code>TTRSS_SELF_URL_PATH</code>。如果简单使用ip进行访问，只需要将<code>localhost</code>修改为服务器的ip地址即可。</p>
+<h3 id="拉取并启动容器">3.3 拉取并启动容器</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up -d</span><br></pre></td></tr></table></figure>
+<p>验证容器运行。 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure></p>
+<h3 id="登录ttrss">3.4 登录TTRSS</h3>
+<p>使用浏览器访问<code>TTRSS_SELF_URL_PATH</code>配置的URL。默认账号密码为<code>admin</code>和<code>password</code>。<strong>进入前台系统后，请先通过界面右上角的<code>偏好设置</code>修改密码。</strong></p>
+<p>有需要的可以新建普通用户，将<code>admin</code>仅作为管理员用户。</p>
+<p><img data-src="./ttrss-setting-1.png"></p>
+<p>注：文章编写时，TTRSS的前台系统由于使用<code>window.requestIdleCallback</code>API，该API并不受Safari支持，所以前台系统不能使用Safari<del>应该都知道我为什么知道吧</del>。</p>
+<p><img data-src="./ttrss-safari-bug.jpg"></p>
+<h2 id="ttrss后续配置">4 TTRSS后续配置</h2>
+<h3 id="fever">4.1 Fever</h3>
+<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
+API。因此，需要配置fever插件。</p>
+<p>获取TTRSS fever插件，仓库地址为<a href="https://github.com/DigitalDJ/tinytinyrss-fever-plugin">DigitalDJ/tinytinyrss-fever-plugin</a>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin fever</span><br></pre></td></tr></table></figure>
+<p>由于ttrss是通过docker-compose安装的，所以具体的安装路径就不清楚了；虽然普通使用不需要知道安装路径，但是使用官方仓库以外的插件时，安装路径至关重要。下面先来确定TTRSS的安装路径。</p>
+<p>安装mlocate。为什么要安装mlocate呢？因为<code>find</code>的搜索速度堪忧啊。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y mlocate</span><br></pre></td></tr></table></figure>
+<p>初始化文件索引。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">updatedb</span><br></pre></td></tr></table></figure>
+<p>确定TTRSS安装路径。由于插件目录名称为<code>plugins.local</code>，为了简化搜索，直接搜索<code>plugins.local</code>即可。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">locate plugins.local</span><br></pre></td></tr></table></figure>
+<p>搜索后，TTRSS的安装路径就一目了然了，我的路径为<code>/var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/</code>。</p>
+<p><img data-src="./locate-plugins-folder.png"></p>
+<p>之后将插件复制到TTRSS的<code>plugins.local</code>目录下。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
+<p>登录到TTRSS前台界面，进入偏好设置，勾选<code>启用API:外部客户端通过API来访问账户</code>。同时，页面底部会有<code>Fever Emulation</code>的条目。</p>
+<p><img data-src="./ttrss-fever-1.png"></p>
+<p>选择<code>插件</code>条目，勾选<code>fever</code>。</p>
+<p><img data-src="./ttrss-fever-2.png"></p>
+<p>选择<code>Fever Emulation</code>的条目，在文本框中输入fever连接密码（可以与ttrss账号密码相同）。点击<code>Set Password</code>，设置成功后会有浮窗。另外，记住红框内的地址，这是客户端连接fever的地址。</p>
+<p><img data-src="./ttrss-fever-3.png"></p>
+<p>到这里，ttrss fever插件就搞定了。</p>
+<p>关于ttrss fever插件的更新。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
+<p>客户端连接可以参考下图。</p>
+<p><img data-src="./ttrss-reeder-setting.jpg"></p>
+<h3 id="ttrss工具更新">4.2 TTRSS工具更新</h3>
+<p>停止TTRSS相关容器。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose down &amp;&amp; docker-compose rm</span><br></pre></td></tr></table></figure>
+<p>拉取最新安装文件，根据需要选取分支。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取static-dockerhub分支</span></span><br><span class="line">git pull origin static-dockerhub</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取master分支</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<p>依据新的<code>.env-dist</code>修改<code>.env</code>。</p>
+<p>再起用docker-compose拉取、启动。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up</span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结</h2>
+<p>写文章时，我的TTRSS已经稳定运行了两周了，没有出什么幺蛾子。</p>
+<p><img data-src="./ttrss-reeder-done.jpg"></p>
+<p>有TTRSS安装需求的同学可以参考上面的安装步骤，搭建自己的、可靠的RSS订阅服务。</p>
+]]></content>
+      <categories>
+        <category>DIY</category>
+      </categories>
+      <tags>
+        <tag>DIY</tag>
+        <tag>RSS</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -1559,135 +1688,6 @@ Emulation"页面设置的密码。</p>
         <tag>DIY</tag>
         <tag>RSS</tag>
         <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tiny Tiny RSS再次搭建</title>
-    <url>//2021/07/22/ttrss-build-2/</url>
-    <content><![CDATA[<p>贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github
-Pages上了，阿里云的服务器就空出来了。</p>
-<p>但是，不幸再次降临，TTRSS官方把原来的安装方式取消了，推荐使用docker安装。经过一番摸索，终于完成了docker安装TTRSS，并搞定fever。</p>
-<p>环境说明：所使用的是Aliyun服务器（1C2G），系统为CentOS 7.9。</p>
-<span id="more"></span>
-<h2 id="安装docker">1 安装Docker</h2>
-<p>Docker是...啥？我也不是特别清楚，我把它看作是独立的运行环境，和虚拟机类似。详细的请找Docker官方文档和百度。</p>
-<p>首先确保系统内没有预安装旧版本的docker，使用命令卸载旧版本。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
-<p>配置yum源，参考了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">TUNA
-CentOS镜像使用帮助</a>。使用云服务器一般不需要配置。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sed -e &#x27;s|^mirrorlist=|#mirrorlist=|g&#x27; \</span><br><span class="line">         -e &#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27; \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
-<p>配置docker的yum源。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-<p>安装docker相关依赖包。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-<p>安装docker</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
-<p>启动docker，并设置开机自启。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
-<p>验证docker安装。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
-<h2 id="安装docker-compose">2 安装Docker Compose</h2>
-<p>Docker Compose是基于Docker的多容器运行管理工具。</p>
-<p>下载Docker
-Compose的Release包。下面的命令使用的是1.29.2版本的Release，可前往<a href="https://github.com/docker/compose/releases">软件发布页</a>查看最新的版本号，然后修改下面命令的版本号即可。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>为文件夹添加可执行权限。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>为Docker Compose在<code>/usr/bin/</code>创建链接。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件copy到/usr/bin/目录下</span></span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>验证Docker Compose安装。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
-<h2 id="安装ttrss">3 安装TTRSS</h2>
-<p>TTRSS是啥就不再次介绍了，需要了解的可以看看之前写的<a href="/2020/04/23/ttrss-build/">那篇文章</a>，或者直接访问<a href="https://tt-rss.org/">TTRSS官网</a>。</p>
-<h3 id="获取docker安装所需文件">3.1 获取docker安装所需文件</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://git.tt-rss.org/fox/ttrss-docker-compose.git ttrss-docker</span><br><span class="line">cd ttrss-docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git checkout命令为切换static-dockerhub分支，也可以不切换使用master分支</span></span><br><span class="line">git checkout static-dockerhub</span><br></pre></td></tr></table></figure>
-<h3 id="修改.env配置文件">3.2 修改<code>.env</code>配置文件</h3>
-<p>首先需要将<code>ttrss-docker</code>文件夹中的<code>.env-dist</code>复制为<code>.env</code>。（注：<code>.env-dist</code>和<code>.env</code>均为隐藏文件，需要使用<code>ls -a</code>才能看到。）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp .env-dist .env</span><br></pre></td></tr></table></figure>
-<p>打开<code>.env</code>。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim .env</span><br></pre></td></tr></table></figure>
-<p>修改端口<code>HTTP_PORT</code>。默认为8280端口，可以配置为自定义端口。配置完成后，还需要Aliyun控制台开放端口访问，其它云平台类似，自建服务器那就自己搞定。</p>
-<p>修改URL<code>TTRSS_SELF_URL_PATH</code>。如果简单使用ip进行访问，只需要将<code>localhost</code>修改为服务器的ip地址即可。</p>
-<h3 id="拉取并启动容器">3.3 拉取并启动容器</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up -d</span><br></pre></td></tr></table></figure>
-<p>验证容器运行。 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure></p>
-<h3 id="登录ttrss">3.4 登录TTRSS</h3>
-<p>使用浏览器访问<code>TTRSS_SELF_URL_PATH</code>配置的URL。默认账号密码为<code>admin</code>和<code>password</code>。<strong>进入前台系统后，请先通过界面右上角的<code>偏好设置</code>修改密码。</strong></p>
-<p>有需要的可以新建普通用户，将<code>admin</code>仅作为管理员用户。</p>
-<p><img data-src="./ttrss-setting-1.png"></p>
-<p>注：文章编写时，TTRSS的前台系统由于使用<code>window.requestIdleCallback</code>API，该API并不受Safari支持，所以前台系统不能使用Safari<del>应该都知道我为什么知道吧</del>。</p>
-<p><img data-src="./ttrss-safari-bug.jpg"></p>
-<h2 id="ttrss后续配置">4 TTRSS后续配置</h2>
-<h3 id="fever">4.1 Fever</h3>
-<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
-API。因此，需要配置fever插件。</p>
-<p>获取TTRSS fever插件，仓库地址为<a href="https://github.com/DigitalDJ/tinytinyrss-fever-plugin">DigitalDJ/tinytinyrss-fever-plugin</a>。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin fever</span><br></pre></td></tr></table></figure>
-<p>由于ttrss是通过docker-compose安装的，所以具体的安装路径就不清楚了；虽然普通使用不需要知道安装路径，但是使用官方仓库以外的插件时，安装路径至关重要。下面先来确定TTRSS的安装路径。</p>
-<p>安装mlocate。为什么要安装mlocate呢？因为<code>find</code>的搜索速度堪忧啊。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y mlocate</span><br></pre></td></tr></table></figure>
-<p>初始化文件索引。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">updatedb</span><br></pre></td></tr></table></figure>
-<p>确定TTRSS安装路径。由于插件目录名称为<code>plugins.local</code>，为了简化搜索，直接搜索<code>plugins.local</code>即可。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">locate plugins.local</span><br></pre></td></tr></table></figure>
-<p>搜索后，TTRSS的安装路径就一目了然了，我的路径为<code>/var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/</code>。</p>
-<p><img data-src="./locate-plugins-folder.png"></p>
-<p>之后将插件复制到TTRSS的<code>plugins.local</code>目录下。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
-<p>登录到TTRSS前台界面，进入偏好设置，勾选<code>启用API:外部客户端通过API来访问账户</code>。同时，页面底部会有<code>Fever Emulation</code>的条目。</p>
-<p><img data-src="./ttrss-fever-1.png"></p>
-<p>选择<code>插件</code>条目，勾选<code>fever</code>。</p>
-<p><img data-src="./ttrss-fever-2.png"></p>
-<p>选择<code>Fever Emulation</code>的条目，在文本框中输入fever连接密码（可以与ttrss账号密码相同）。点击<code>Set Password</code>，设置成功后会有浮窗。另外，记住红框内的地址，这是客户端连接fever的地址。</p>
-<p><img data-src="./ttrss-fever-3.png"></p>
-<p>到这里，ttrss fever插件就搞定了。</p>
-<p>关于ttrss fever插件的更新。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
-<p>客户端连接可以参考下图。</p>
-<p><img data-src="./ttrss-reeder-setting.jpg"></p>
-<h3 id="ttrss工具更新">4.2 TTRSS工具更新</h3>
-<p>停止TTRSS相关容器。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose down &amp;&amp; docker-compose rm</span><br></pre></td></tr></table></figure>
-<p>拉取最新安装文件，根据需要选取分支。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取static-dockerhub分支</span></span><br><span class="line">git pull origin static-dockerhub</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取master分支</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
-<p>依据新的<code>.env-dist</code>修改<code>.env</code>。</p>
-<p>再起用docker-compose拉取、启动。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up</span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>写文章时，我的TTRSS已经稳定运行了两周了，没有出什么幺蛾子。</p>
-<p><img data-src="./ttrss-reeder-done.jpg"></p>
-<p>有TTRSS安装需求的同学可以参考上面的安装步骤，搭建自己的、可靠的RSS订阅服务。</p>
-]]></content>
-      <categories>
-        <category>DIY</category>
-      </categories>
-      <tags>
-        <tag>DIY</tag>
-        <tag>RSS</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>斯普林格Springer免费书籍</title>
-    <url>//2020/06/24/springer-free-books-2020/</url>
-    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
-<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
-<span id="more"></span>
-<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
-<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
-<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
-<hr>
-<blockquote>
-<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
-最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>资源</tag>
-        <tag>书籍</tag>
       </tags>
   </entry>
   <entry>
@@ -1852,6 +1852,47 @@ NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至�
       <tags>
         <tag>视频</tag>
         <tag>视频编码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code笔记之可自动更新的Markdown目录</title>
+    <url>//2020/05/05/vscode-note-tableofcontents/</url>
+    <content><![CDATA[<p>Markdown语法支持自己编写目录，但是碰到中文标题就捉襟见肘了。不久前在写项目README的时候，我一时兴起准备给文章编写一个目录，却发现一开始编写的目录竟然可以自动更新。照着目录的格式摸索了几次，终于总结出快速编写目录的方法。</p>
+<span id="more"></span>
+<p>可自动更新目录需要在VS Code中安装插件<a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown
+All in One</a>。</p>
+<p>以本文为例，编写可自动更新的目录的步骤如下：</p>
+<h2 id="步骤1">步骤1</h2>
+<p>创建Markdown文件后，先输入一个标题。如：<br>
+<code># VS Code笔记之快速插入Markdown目录</code></p>
+<h2 id="步骤2">步骤2</h2>
+<p>在需要创建目录的地方输入<code>- [](#</code><del>注意空格和英文半角括号</del>，这时会有自动补全列表弹出，选择"VS
+Code笔记之快速插入Markdown目录"的标题，如图1。</p>
+<figure>
+<img data-src="./3134778940.png" alt="图1">
+<figcaption aria-hidden="true">图1</figcaption>
+</figure>
+<p>选择标题后，目录的最上方会有灰色的小字<code>Table of Contents (up to date)</code>，效果如图2所示。</p>
+<figure>
+<img data-src="./4154552605.png#vwid=649&amp;vhei=127" alt="图2">
+<figcaption aria-hidden="true">图2</figcaption>
+</figure>
+<p>此时，插件就已经把这一块列表识别为文章的目录了。对于已经创建的Markdown文档，在步骤2输入列表时，有时需要输入两级标题才可以被插件识别为目录。</p>
+<h2 id="步骤3">步骤3</h2>
+<p>保存文件，插件会自动补全连接的内容，见图3所示。之后，插件就会在保存文件时自动获取文章的各级标题，并添加到目录列表中。</p>
+<figure>
+<img data-src="./362785527.png#vwid=646&amp;vhei=120" alt="图3">
+<figcaption aria-hidden="true">图3</figcaption>
+</figure>
+<hr>
+<p>如果这篇可自动更新的Markdown目录编写指南对你有帮助，请别忘了<del>一键三连</del>收藏分享哦。</p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -2113,47 +2154,6 @@ MHz，所以信道与信道之间必定会有重叠，图示如下。</p>
       <tags>
         <tag>Wi-Fi</tag>
         <tag>IEEE 802.11</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS Code笔记之可自动更新的Markdown目录</title>
-    <url>//2020/05/05/vscode-note-tableofcontents/</url>
-    <content><![CDATA[<p>Markdown语法支持自己编写目录，但是碰到中文标题就捉襟见肘了。不久前在写项目README的时候，我一时兴起准备给文章编写一个目录，却发现一开始编写的目录竟然可以自动更新。照着目录的格式摸索了几次，终于总结出快速编写目录的方法。</p>
-<span id="more"></span>
-<p>可自动更新目录需要在VS Code中安装插件<a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown
-All in One</a>。</p>
-<p>以本文为例，编写可自动更新的目录的步骤如下：</p>
-<h2 id="步骤1">步骤1</h2>
-<p>创建Markdown文件后，先输入一个标题。如：<br>
-<code># VS Code笔记之快速插入Markdown目录</code></p>
-<h2 id="步骤2">步骤2</h2>
-<p>在需要创建目录的地方输入<code>- [](#</code><del>注意空格和英文半角括号</del>，这时会有自动补全列表弹出，选择"VS
-Code笔记之快速插入Markdown目录"的标题，如图1。</p>
-<figure>
-<img data-src="./3134778940.png" alt="图1">
-<figcaption aria-hidden="true">图1</figcaption>
-</figure>
-<p>选择标题后，目录的最上方会有灰色的小字<code>Table of Contents (up to date)</code>，效果如图2所示。</p>
-<figure>
-<img data-src="./4154552605.png#vwid=649&amp;vhei=127" alt="图2">
-<figcaption aria-hidden="true">图2</figcaption>
-</figure>
-<p>此时，插件就已经把这一块列表识别为文章的目录了。对于已经创建的Markdown文档，在步骤2输入列表时，有时需要输入两级标题才可以被插件识别为目录。</p>
-<h2 id="步骤3">步骤3</h2>
-<p>保存文件，插件会自动补全连接的内容，见图3所示。之后，插件就会在保存文件时自动获取文章的各级标题，并添加到目录列表中。</p>
-<figure>
-<img data-src="./362785527.png#vwid=646&amp;vhei=120" alt="图3">
-<figcaption aria-hidden="true">图3</figcaption>
-</figure>
-<hr>
-<p>如果这篇可自动更新的Markdown目录编写指南对你有帮助，请别忘了<del>一键三连</del>收藏分享哦。</p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
