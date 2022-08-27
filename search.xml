@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>//2016/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
+    <url>//2019/01/30/can-based-optimization/</url>
+    <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
+CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
+<p>运动控制系统对于通信的实时性要求很高，这就间接地要求系统的通信必须使用时间触发。CAN总线从本质上来说是一种事件触发总线协议，对于这种极高的硬实时性要求很难满足。文章中展示了基础的时间触发CAN协议在运动控制中的传输误差，实验结果表明：传输速率较低时，系统的跟踪误差较好；当传输速率提高后，系统的传输实时性就差强人意了。</p>
+<p>为了解决这一问题，文章中提出了一种对CAN运动控制的优化，这个优化涉及两个方面。</p>
 <span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="优化一">优化一</h2>
+<p>本文提出在时间触发中嵌入事件触发，将传统的通信触发结构改为事件/时间触发结构，如图1所示。</p>
+<figure>
+<img data-src="./1884776264.jpg" alt="图1">
+<figcaption aria-hidden="true">图1</figcaption>
+</figure>
+<h2 id="优化二">优化二</h2>
+<p>除了优化时间触发结构，文章还提出了预估器优化方案。如果系统在一段时间内没有接收到运动控制指令，系统就会将之前的位置数据带入泰勒二阶展开式计算丢失的控制指令。</p>
+<p>系统的最终结构框图如图2所示。</p>
+<figure>
+<img data-src="./122056196.jpg" alt="图2">
+<figcaption aria-hidden="true">图2</figcaption>
+</figure>
 ]]></content>
       <categories>
-        <category>杂项</category>
+        <category>算法</category>
       </categories>
+      <tags>
+        <tag>控制</tag>
+        <tag>summary</tag>
+        <tag>总线</tag>
+      </tags>
   </entry>
   <entry>
     <title>是什么驱动着无限进步？</title>
@@ -53,6 +57,33 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
       <tags>
         <tag>观点</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>//2016/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
   </entry>
   <entry>
     <title>IC笔记之反相器仿真</title>
@@ -338,37 +369,6 @@ As"为仿真配置的名称，"Description"中可以选填一些配置信息，�
       <tags>
         <tag>IC</tag>
         <tag>IC618</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
-    <url>//2019/01/30/can-based-optimization/</url>
-    <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
-CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
-<p>运动控制系统对于通信的实时性要求很高，这就间接地要求系统的通信必须使用时间触发。CAN总线从本质上来说是一种事件触发总线协议，对于这种极高的硬实时性要求很难满足。文章中展示了基础的时间触发CAN协议在运动控制中的传输误差，实验结果表明：传输速率较低时，系统的跟踪误差较好；当传输速率提高后，系统的传输实时性就差强人意了。</p>
-<p>为了解决这一问题，文章中提出了一种对CAN运动控制的优化，这个优化涉及两个方面。</p>
-<span id="more"></span>
-<h2 id="优化一">优化一</h2>
-<p>本文提出在时间触发中嵌入事件触发，将传统的通信触发结构改为事件/时间触发结构，如图1所示。</p>
-<figure>
-<img data-src="./1884776264.jpg" alt="图1">
-<figcaption aria-hidden="true">图1</figcaption>
-</figure>
-<h2 id="优化二">优化二</h2>
-<p>除了优化时间触发结构，文章还提出了预估器优化方案。如果系统在一段时间内没有接收到运动控制指令，系统就会将之前的位置数据带入泰勒二阶展开式计算丢失的控制指令。</p>
-<p>系统的最终结构框图如图2所示。</p>
-<figure>
-<img data-src="./122056196.jpg" alt="图2">
-<figcaption aria-hidden="true">图2</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>控制</tag>
-        <tag>summary</tag>
-        <tag>总线</tag>
       </tags>
   </entry>
   <entry>
@@ -742,6 +742,31 @@ C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四�
       </tags>
   </entry>
   <entry>
+    <title>从零开始的客制化87键机械键盘_1_立项</title>
+    <url>//2018/12/25/keyboard87-1/</url>
+    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
+type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+<span id="more"></span>
+<h2 id="项目初衷">项目初衷</h2>
+<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<figure>
+<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
+<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+</figure>
+<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
+<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
+<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
     <url>//2019/01/28/keyboard87-3/</url>
     <content><![CDATA[<blockquote>
@@ -759,31 +784,6 @@ C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四�
 <figcaption aria-hidden="true">pcb_package.jpg</figcaption>
 </figure>
 <p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_1_立项</title>
-    <url>//2018/12/25/keyboard87-1/</url>
-    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
-type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
-<span id="more"></span>
-<h2 id="项目初衷">项目初衷</h2>
-<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
-<figure>
-<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
-<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
-</figure>
-<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
-<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
-<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
 ]]></content>
       <categories>
         <category>硬件</category>
@@ -888,136 +888,6 @@ type-C做接口，以基本操作为最低目标。当然了，由于主专业�
       <tags>
         <tag>VNC</tag>
         <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux笔记之XDMCP配置</title>
-    <url>//2021/04/08/linux-note-xdmcp-config/</url>
-    <content><![CDATA[<p>恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。</p>
-<p>XDMCP配置主要是XDMCP
-Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。</p>
-<span id="more"></span>
-<blockquote>
-<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
-</blockquote>
-<h2 id="概述">1 概述</h2>
-<p>首先简单地介绍一下目前的问题。</p>
-<ol type="1">
-<li>需要在局域网内访问服务器，并实现远程桌面。</li>
-<li>CentOS
-7默认桌面为Gnome。虽说没什么问题，但是7开始的Gnome据说开始使用硬件加速，如果使用XDMCP协议来远程与gdm会有冲突，会出现奇奇怪怪的问题，Xmanager官方提到了<a href="http://blog.netsarang.com/89/connecting-to-centos-7/">这个问题</a>，建议更换显示管理（display
-manager）和桌面环境（desktop environment）。</li>
-</ol>
-<blockquote>
-<p>这里顺嘴说一下CentOS的版本。下面我是用的是CentOS
-7的虚拟机，没有使用CentOS 8。原因嘛，大家可以看一下CentOS官网<a href="https://www.centos.org/centos-linux/">下载页面</a>看一下这两个版本的支持时间。CentOS之前明明说好了对CentOS
-8有10年支持的，结果RedHat为了推CentOS Stream就把CentOS
-8在今年（2021年）年底提前结束了。这个博客还跑在CentOS
-8上面，就挺难受的。</p>
-</blockquote>
-<h2 id="更换镜像源">2 更换镜像源</h2>
-<p>众所周知啊，CentOS的服务器经常因为一些问题访问非常缓慢，下载速度堪忧。所以，更换镜像源是非常直接的解决方案。目前推荐使用清华TUNA或者北外BFSU（广度优先搜索大学）的镜像。当然用阿里或者华为的也不是不行。</p>
-<p>更换镜像源指令很简单，共两个，依次执行就可以。<del>当然，你的账号需要有或者通过sudo可以拿到root的权限，直接使用root账号的可以忽略sudo，下同</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sed -e <span class="string">&#x27;s|^mirrorlist=|#mirrorlist=|g&#x27;</span> \</span><br><span class="line">         -e <span class="string">&#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27;</span> \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果之前对于镜像源进行过更改，还需要检查一下修改过的镜像源文件是否启用，再执行makecache。</p>
-</blockquote>
-<p>这部分内容参考了TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
-<h2 id="更换display-manager和desktop-environment">3 更换display
-manager和desktop environment</h2>
-<p>display manager更换为lightdm，不再使用gdm；desktop
-environment可以使用MATE desktop、Xfce、KDE等等。MATE desktop是基于Gnome
-2.x的桌面环境，资源占用极小。</p>
-<ul>
-<li>安装EPEL（Extra Package for Enterprise Linux），这是Fedora Special
-Interest Group维护的Enterprise Linux（RHEL、CentOS）中常用的包。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
-<ul>
-<li>安装lightdm。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install lightdm</span><br></pre></td></tr></table></figure>
-<ul>
-<li>安装X Windows System。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;X Window system&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;X Window system&quot;</span></span><br></pre></td></tr></table></figure>
-<p>接下来展示的桌面环境安装只需要选择一个，反正我就用META了。<del>当然都选了我也不知道，你开心就好</del></p>
-<ul>
-<li>META desktop安装。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;MATE Desktop&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;MATE Desktop&quot;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Xfce安装。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum groupinstall xfce</span><br></pre></td></tr></table></figure>
-<h3 id="使用lightdm配置xdmcp-server">3.1使用lightdm配置XDMCP Server</h3>
-<p>通过vim打开lightdm配置文件。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
-<p>在文件中找到<code>[XDMCPServer]</code>，修改其下方被注释的代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">···</span><br><span class="line">[XDMCPServer]</span><br><span class="line">···</span><br><span class="line">enabled=true</span><br><span class="line">port=177</span><br><span class="line">···</span><br></pre></td></tr></table></figure>
-<h3 id="配置lightdm为默认桌面环境">3.2 配置lightdm为默认桌面环境</h3>
-<p>切换display
-manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行，同时，如果是图形界面执行该命令，需要重新登录一下系统再继续下一步；<code>init 5</code>是将系统的运行再次切换到UI桌面。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">disable</span> gdm &amp;&amp; systemctl <span class="built_in">enable</span> lightdm</span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
-<p>这时我们第二次重新登录后，就进入了META desktop了。</p>
-<p>接着，还需要讲META设置为默认桌面环境。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/share/xsessions/ &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> back</span><br><span class="line">sudo <span class="built_in">mv</span> gnome* back &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
-<h2 id="打开177端口">4 打开177端口</h2>
-<p>XDMCP默认的端口是177端口，可以在lightdm配置文件根据需求中更改。系统默认是不会放开177端口的，需要进一步配置。</p>
-<p>另外，为了测试端口是否可用，需要实现准备可以ping端口的程序。Linux环境可以安装telnet；Windows环境建议使用<a href="https://elifulkerson.com/projects/tcping.php">tcping</a>，使用时务必在程序所在文件夹中打开终端执行命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># telnet Ping 192.168.58.130的177端口</span></span><br><span class="line">telnet 192.168.58.130 177</span><br><span class="line"></span><br><span class="line"><span class="comment"># tcping Ping 192.168.58.130的177端口</span></span><br><span class="line">.\tcping.exe 192.168.58.130 177</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">.\tcping64.exe 192.168.58.130 177</span><br></pre></td></tr></table></figure>
-<p>好，接下来解决端口开放问题。</p>
-<p>防火墙设置部分。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置防火墙，将177端口永久开放给所有用户</span></span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/udp</span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新防火墙规则</span></span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有打开的端口</span></span><br><span class="line">sudo firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
-<p>端口监听部分。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置177端口tcp协议永久监听</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目前177端口状态</span></span><br><span class="line">netstat -tunlp | grep 177</span><br></pre></td></tr></table></figure>
-<p>CentOS部分的端口配置基本结束，接下来就用telnet或者tcping来ping服务器的177端口。</p>
-<figure>
-<img data-src="./tcping_ip_port.png" alt="tcping Ping端口177">
-<figcaption aria-hidden="true">tcping Ping端口177</figcaption>
-</figure>
-<p>你以为这么简单就结束了？ :&amp;(蛆音娘_摊手)
-一旦SSH连接断开或系统重启<del>当然生产用的服务器没有特殊情况是不会重启的</del>，监听就自动结束了。这时候有两个解决方案了。</p>
-<h3 id="方案一使用tmux针对不重启的系统">4.1
-方案一：使用tmux，针对不重启的系统</h3>
-<p>tmux可以实现终端复用，即使表面上终端结束了，但是跑在tmux中的指令不会就此结束，非常适合目前的需求。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装tmux</span></span><br><span class="line">sudo yum install tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建tmux会话</span></span><br><span class="line">tmux new -s xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入会话后开始监听177端口</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 离开tmux会话，返回主终端</span></span><br><span class="line">tmux detach</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其它tmux相关操作</span></span><br><span class="line"><span class="comment"># 列出已有tmux会话</span></span><br><span class="line">tmux <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新进入会话</span></span><br><span class="line">tmux attach-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭会话（需在会话中）</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 或（无需在会话中）</span></span><br><span class="line">tmux kill-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名会话xdmcp_listen_177为xdmcp_listen</span></span><br><span class="line">tmux rename -t xdmcp_listen_177 xdmcp_listen</span><br></pre></td></tr></table></figure>
-<p>下图是我关闭终端后进行的测试（测试端口178），可以满足目标需求。</p>
-<figure>
-<img data-src="./tmux_listen_177.png" alt="使用tmux实现端口永久监听">
-<figcaption aria-hidden="true">使用tmux实现端口永久监听</figcaption>
-</figure>
-<h3 id="方案二配置自启动">4.2 方案二：配置自启动</h3>
-<p>这是我最开始想到的方案，只适用于个人使用的、没有重启限制的服务器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建需要自启动的文件</span></span><br><span class="line">vim listen177.sh</span><br></pre></td></tr></table></figure>
-<p>在文件中编写以下内容，用<code>:wq</code>保存并关闭。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#chkconfig:5 80 90</span></span><br><span class="line"><span class="comment">#decription:autostart</span></span><br><span class="line"></span><br><span class="line">nc -lk 177</span><br></pre></td></tr></table></figure>
-<p>然后进行自启动配置。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> listen177.sh /etc/rc.d/init.d/</span><br><span class="line"><span class="built_in">cd</span> /etc/rc.d/init.d</span><br><span class="line"><span class="built_in">chmod</span> +x  /etc/rc.d/init.d/listen177.sh</span><br><span class="line">chkconfig --add listen177.sh</span><br><span class="line">chkconfig listen177.sh</span><br></pre></td></tr></table></figure>
-<p>到此，端口监听才全部结束。上面两种方案就看自己的需求选取吧。</p>
-<h2 id="xdmcp客户端">5 XDMCP客户端</h2>
-<p>这里就是各显神通的地方了。</p>
-<p>Windows端当然是推荐Xmanager，macOS可以使用XQuartz。我就放一下我自己的Xmanager效果图。</p>
-<figure>
-<img data-src="./xmanager_config.png" alt="Xmanager配置">
-<figcaption aria-hidden="true">Xmanager配置</figcaption>
-</figure>
-<figure>
-<img data-src="./xdmcp_res.png" alt="最终效果图">
-<figcaption aria-hidden="true">最终效果图</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>XDMCP配置到此结束，希望有需求的各位同学能有点收获吧。</p>
-<p>最后，预告一下服务器挂上公网的笔记。<del>只要我的宽带不是传说的虚拟IP</del></p>
-<p>最后的最后，日常求<del>一键三连</del>收藏分享。 :@(击掌)</p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>CentOS</tag>
-        <tag>XDMCP</tag>
-        <tag>Xmanager</tag>
       </tags>
   </entry>
   <entry>
@@ -1166,10 +1036,390 @@ century”。这就让我想起了RACFM这篇文章，以及经常遇见的“�
       </tags>
   </entry>
   <entry>
+    <title>Sigma 100-400mm f5-6.3 DG DN OS Contemporary_by SonyAlphaBlog</title>
+    <url>//2022/08/27/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2020/07/21/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/">Sigma
+100-400mm f5-6.3 DG DN OS Contemporary_by SonyAlphaBlog</a></p>
+</blockquote>
+<h2 id="结论">1 结论</h2>
+<p>对于A7M3、A9或者A7R3来说，Sigma 100-400mm F5-F6.3 DG DN OS
+Contemporary（<span class="math inline">\(\small{5800_{TB,
+20220818}}\)</span>）是一只非常有性价比的好镜头；尤其是可以和Sony FE
+24-105 F4 G OSS配合使用。</p>
+<span id="more"></span>
+<p>这只镜头的焦距范围非常适合运动、肖像、风景和动物的摄影。如果你主要使用400mm左右的焦端来拍摄动物，<span class="math inline">\(\mathbf{SONY}\)</span> FE 200-600mm F5.6-6.3 G
+OSS（<span class="math inline">\(\small{12700_{\mathbf{SONY},20220827}}\)</span>）可能更加适合你。
+在A7R4上使用时，适马的100400还是没办法和索尼的100400竞争，不管时锐度还是对焦速度都有一定差距。但是在像素稍微低一点的相机上，比如A7M3和A7R3，锐度上的差距就不是肉眼可察的了。
+拍摄静物时，自动对焦还是挺不错的，但是拍摄运动物体就不太行了。你还是得用索尼的100400（<span class="math inline">\(\small{17500_{\mathbf{SONY},202208227}}\)</span>）。
+所以，对于使用A7R4进行动物和体育摄影，还是推荐<span class="math inline">\(\mathbf{SONY}\)</span> FE 200-600mm F5.6-6.3 G
+OSS。其他拍摄题材上，或者说预算有限，Sigma 100-400mm F5-F6.3 DG DN OS
+Contemporary可以说是非常不错的平替了。</p>
+<ul>
+<li>优势
+<ul>
+<li>价格比较低（<span class="math inline">\(\small{5800_{TB,
+20220818}}\)</span>）</li>
+<li>重量比较轻</li>
+<li>在2400万像素的A7M3和4200万像素的A7R3上妥妥够用，锐度在这两台机器上可以达到非常极致的体验</li>
+<li>非常好的色彩还原度</li>
+<li>非常柔和的背景虚化表现相当好</li>
+<li>焦外光斑挺好</li>
+<li>色散控制比较好</li>
+<li>静物的自动对焦还是不错的</li>
+<li>防抖效果挺好</li>
+<li>做工非常棒</li>
+<li>非常棒的人体工学设计</li>
+</ul></li>
+<li>一般
+<ul>
+<li>无法使用E卡口增距镜</li>
+<li>在6100万像素的A7R4上只能达到Very Good级别的锐度</li>
+<li>抗眩光一般</li>
+<li>暗角和畸变需要后期调整</li>
+<li>对于移动物体的连续自动对焦还是没办法和索尼比</li>
+<li>脚架环需要另外购买，第三方价格为<span class="math inline">\(\small{200_{TB, 20220818}}\)</span></li>
+<li>边角锐度一般</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>视频拍摄中，自动对焦无法时刻保持精准快速的性能</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<h3 id="spec">2.1 SPEC</h3>
+<ul>
+<li>光圈
+<ul>
+<li>100mm端F5</li>
+<li>400mm端F6.3</li>
+</ul></li>
+<li>重量
+<ul>
+<li>1180g</li>
+<li>1210g（加上官方脚架环）</li>
+</ul></li>
+<li>长度
+<ul>
+<li>100mm端197mm</li>
+<li>400mm端299mm</li>
+</ul></li>
+<li>直径86mm</li>
+<li>9片光圈叶片</li>
+<li>最近对焦距离
+<ul>
+<li>100mm端112cm</li>
+<li>400mm端160cm</li>
+</ul></li>
+<li>放大倍率0.24</li>
+<li>67mm滤镜口径</li>
+<li>不支持E卡口增距镜</li>
+<li>步进电机自动对焦</li>
+<li>有光学防抖</li>
+<li>镜身按钮
+<ul>
+<li>AF/MF切换</li>
+<li>对焦范围限制</li>
+<li>防抖模式切换</li>
+<li>自动对焦锁定</li>
+</ul></li>
+<li>防尘防滴</li>
+</ul>
+<p>适马100-400mm的做工是挺好的，但和索尼的100400GM还是有差距的。大小和重量都是在可接受范围内，甚至比<span class="math inline">\(\mathbf{SONY}\)</span> 100400GM还要小。</p>
+<p>适马100-400mm是首次在E卡口上使用光学防抖，手持体验不错。上三脚架时，需要手动关闭，否则出来的照片会糊掉。这一点上，索尼的镜头就做的比较好，会自动关闭光学防抖。官方标配不附带脚架环，需要另外购买官方脚架环；第三方脚架环<span class="math inline">\(\small{200_{TB, 20220818}}\)</span>左右。</p>
+<p>最近对焦距离110cm@100mmm、160cm@400mm，放大倍率0.23。这方面要比<span class="math inline">\(\mathbf{SONY}\)</span>
+100400GM差（最近对焦距离98cm，0.35放大倍率）。</p>
+<p>另外，适马（包括腾龙）时不能使用索尼的增距镜的；即使装上去没有问题，但是没办法调节光圈和自动对焦。适马官方也有出增距镜，但是针对L卡口的，E卡口无法使用。这里的</p>
+<h3 id="自动对焦">2.2 自动对焦</h3>
+<p>静物拍摄的自动对焦性能非常好，且可以调用眼控对焦。移动物体（运动、动物等）的拍摄就差强人意了，自动对焦和<span class="math inline">\(\mathbf{SONY}\)</span>
+100400GM比不了，使用A7R4有30%几率会对不上焦。</p>
+<h2 id="光学性能">3 光学性能</h2>
+<h3 id="锐度">3.1 锐度</h3>
+<p>测试使用6100万像素的A7R4。</p>
+<ul>
+<li>在A7R4上，锐度基本表现为Very
+Good级别，但是很难达到Excellent级别。但在A7M3或者A7R3上，锐度肯定是爆表的，可以达到Excellent级别。</li>
+<li>边角的锐度要比中心锐度低一个级别。</li>
+</ul>
+<p><img data-src="./Pasted%20image%2020220819100951.png"></p>
+<h3 id="暗角畸变色差抗眩光">3.2 暗角/畸变/色差/抗眩光</h3>
+<ul>
+<li>光圈全开会有暗角，焦距增加后更加明显。</li>
+<li>畸变表现为枕形畸变，100mm端表现得不是很明显，焦距扩展到400mm端会逐渐增加</li>
+<li>色差非常小</li>
+<li>眩光对于长焦来说不是什么问题，毕竟没有大聪明会一直怼着太阳拍。但是吧，这只镜头直对太阳时确实有不小的眩光。</li>
+</ul>
+<h3 id="虚化色彩还原度"> 3.3 虚化/色彩还原度</h3>
+<ul>
+<li>色彩还原度很好，对比度很高</li>
+<li>背景虚化非常柔美</li>
+<li>焦外光斑非常柔和，没有散射，没有洋葱圈。所有焦端范围内，光圈全开的光斑都挺圆的；收缩光圈之后，会有九边形出现。</li>
+</ul>
+<h2 id="对比sony-100-400mm">4 对比Sony 100-400mm</h2>
+<h3 id="spec和自动对焦">4.1 SPEC和自动对焦</h3>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 100-400mm GM
+OSS F4.5-F5.6</p>
+<ul>
+<li>更重，更粗，做工更好</li>
+<li>操控性更好，尤其还官方标配了脚架环。镜身有3个自定义按钮，可以使用增距镜，预留了一个小缺口以便直接调节可变滤镜。</li>
+<li>最近对焦距离比适马更近，尤其是400mm端只有98cm，而适马有160cm；放大倍率也更好。</li>
+<li>GM的自动对焦不论是纸面参数还是实际表现都是碾压级别的，且在捕捉快速运动对相识出现丢焦。</li>
+<li>当然了，碾压的代价就是三倍的价格。</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Sigma</th>
+<th style="text-align: center;">Sony</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">光圈</td>
+<td style="text-align: center;">F5-6.3</td>
+<td style="text-align: center;">F4.5-F.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">重量</td>
+<td style="text-align: center;">1180g-1210g</td>
+<td style="text-align: center;">1395g-1586g</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">长度</td>
+<td style="text-align: center;">197-299mm</td>
+<td style="text-align: center;">205-307mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">直径</td>
+<td style="text-align: center;">86mm</td>
+<td style="text-align: center;">93,9mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">光圈叶片数</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">最近对焦距离</td>
+<td style="text-align: center;">112-160cm</td>
+<td style="text-align: center;">98cm-98cm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">放大倍率</td>
+<td style="text-align: center;">0.24x</td>
+<td style="text-align: center;">0.35</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">滤镜直径</td>
+<td style="text-align: center;">67mm</td>
+<td style="text-align: center;">77mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">增距镜</td>
+<td style="text-align: center;">不支持E卡口</td>
+<td style="text-align: center;">支持TC1.4和TC2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">自动对焦</td>
+<td style="text-align: center;">步进电机</td>
+<td style="text-align: center;">双线性直驱SSM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">光学防抖</td>
+<td style="text-align: center;">支持</td>
+<td style="text-align: center;">支持</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">镜身按钮</td>
+<td style="text-align: center;">AF/MF切换，对焦距离限制，防抖模式，自定义</td>
+<td style="text-align: center;">AF/MF切换，对焦距离限制，防抖模式，自定义</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">防尘防滴</td>
+<td style="text-align: center;">支持</td>
+<td style="text-align: center;">支持</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">附件</td>
+<td style="text-align: center;">镜头包；另购脚架环</td>
+<td style="text-align: center;">镜头包；脚架环</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">价格</td>
+<td style="text-align: center;"><span class="math inline">\(\small{5800_{TB, 20220818}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\small{17500_{\mathbf{SONY},20220827}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="锐度-1">4.2 锐度</h3>
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span>的100-400mm在A7R4上可以提供更好的锐度。</li>
+</ul>
+<p><img data-src="./Pasted%20image%2020220819102131.png"></p>
+<h3 id="畸变色差抗眩光">4.3 畸变/色差/抗眩光</h3>
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 100-400mm GM
+OSS F4.5-F5.6畸变抑制和暗角控制做得更好，并且在LR中已有矫正文件。</li>
+<li>两只镜头的暗角都不明显</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span>的抗眩光更好</li>
+</ul>
+<h3 id="虚化色彩还原度-1">4.4 虚化/色彩还原度</h3>
+<ul>
+<li>两只镜头的背景虚化、焦外光斑、色彩还原度都是顶级的存在。</li>
+</ul>
+<h2 id="视频">5 视频</h2>
+<p>适马100-400mm在拍照上时挺不错的，但是视频拍摄时，会出现自动对焦慢和抽搐的情况。</p>
+]]></content>
+      <categories>
+        <category>镜头</category>
+      </categories>
+      <tags>
+        <tag>镜头</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux笔记之XDMCP配置</title>
+    <url>//2021/04/08/linux-note-xdmcp-config/</url>
+    <content><![CDATA[<p>恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。</p>
+<p>XDMCP配置主要是XDMCP
+Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。</p>
+<span id="more"></span>
+<blockquote>
+<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
+</blockquote>
+<h2 id="概述">1 概述</h2>
+<p>首先简单地介绍一下目前的问题。</p>
+<ol type="1">
+<li>需要在局域网内访问服务器，并实现远程桌面。</li>
+<li>CentOS
+7默认桌面为Gnome。虽说没什么问题，但是7开始的Gnome据说开始使用硬件加速，如果使用XDMCP协议来远程与gdm会有冲突，会出现奇奇怪怪的问题，Xmanager官方提到了<a href="http://blog.netsarang.com/89/connecting-to-centos-7/">这个问题</a>，建议更换显示管理（display
+manager）和桌面环境（desktop environment）。</li>
+</ol>
+<blockquote>
+<p>这里顺嘴说一下CentOS的版本。下面我是用的是CentOS
+7的虚拟机，没有使用CentOS 8。原因嘛，大家可以看一下CentOS官网<a href="https://www.centos.org/centos-linux/">下载页面</a>看一下这两个版本的支持时间。CentOS之前明明说好了对CentOS
+8有10年支持的，结果RedHat为了推CentOS Stream就把CentOS
+8在今年（2021年）年底提前结束了。这个博客还跑在CentOS
+8上面，就挺难受的。</p>
+</blockquote>
+<h2 id="更换镜像源">2 更换镜像源</h2>
+<p>众所周知啊，CentOS的服务器经常因为一些问题访问非常缓慢，下载速度堪忧。所以，更换镜像源是非常直接的解决方案。目前推荐使用清华TUNA或者北外BFSU（广度优先搜索大学）的镜像。当然用阿里或者华为的也不是不行。</p>
+<p>更换镜像源指令很简单，共两个，依次执行就可以。<del>当然，你的账号需要有或者通过sudo可以拿到root的权限，直接使用root账号的可以忽略sudo，下同</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sed -e <span class="string">&#x27;s|^mirrorlist=|#mirrorlist=|g&#x27;</span> \</span><br><span class="line">         -e <span class="string">&#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27;</span> \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果之前对于镜像源进行过更改，还需要检查一下修改过的镜像源文件是否启用，再执行makecache。</p>
+</blockquote>
+<p>这部分内容参考了TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
+<h2 id="更换display-manager和desktop-environment">3 更换display
+manager和desktop environment</h2>
+<p>display manager更换为lightdm，不再使用gdm；desktop
+environment可以使用MATE desktop、Xfce、KDE等等。MATE desktop是基于Gnome
+2.x的桌面环境，资源占用极小。</p>
+<ul>
+<li>安装EPEL（Extra Package for Enterprise Linux），这是Fedora Special
+Interest Group维护的Enterprise Linux（RHEL、CentOS）中常用的包。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装lightdm。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install lightdm</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装X Windows System。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;X Window system&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;X Window system&quot;</span></span><br></pre></td></tr></table></figure>
+<p>接下来展示的桌面环境安装只需要选择一个，反正我就用META了。<del>当然都选了我也不知道，你开心就好</del></p>
+<ul>
+<li>META desktop安装。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;MATE Desktop&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;MATE Desktop&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Xfce安装。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum groupinstall xfce</span><br></pre></td></tr></table></figure>
+<h3 id="使用lightdm配置xdmcp-server">3.1使用lightdm配置XDMCP Server</h3>
+<p>通过vim打开lightdm配置文件。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
+<p>在文件中找到<code>[XDMCPServer]</code>，修改其下方被注释的代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">···</span><br><span class="line">[XDMCPServer]</span><br><span class="line">···</span><br><span class="line">enabled=true</span><br><span class="line">port=177</span><br><span class="line">···</span><br></pre></td></tr></table></figure>
+<h3 id="配置lightdm为默认桌面环境">3.2 配置lightdm为默认桌面环境</h3>
+<p>切换display
+manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行，同时，如果是图形界面执行该命令，需要重新登录一下系统再继续下一步；<code>init 5</code>是将系统的运行再次切换到UI桌面。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">disable</span> gdm &amp;&amp; systemctl <span class="built_in">enable</span> lightdm</span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
+<p>这时我们第二次重新登录后，就进入了META desktop了。</p>
+<p>接着，还需要讲META设置为默认桌面环境。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/share/xsessions/ &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> back</span><br><span class="line">sudo <span class="built_in">mv</span> gnome* back &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
+<h2 id="打开177端口">4 打开177端口</h2>
+<p>XDMCP默认的端口是177端口，可以在lightdm配置文件根据需求中更改。系统默认是不会放开177端口的，需要进一步配置。</p>
+<p>另外，为了测试端口是否可用，需要实现准备可以ping端口的程序。Linux环境可以安装telnet；Windows环境建议使用<a href="https://elifulkerson.com/projects/tcping.php">tcping</a>，使用时务必在程序所在文件夹中打开终端执行命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># telnet Ping 192.168.58.130的177端口</span></span><br><span class="line">telnet 192.168.58.130 177</span><br><span class="line"></span><br><span class="line"><span class="comment"># tcping Ping 192.168.58.130的177端口</span></span><br><span class="line">.\tcping.exe 192.168.58.130 177</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">.\tcping64.exe 192.168.58.130 177</span><br></pre></td></tr></table></figure>
+<p>好，接下来解决端口开放问题。</p>
+<p>防火墙设置部分。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置防火墙，将177端口永久开放给所有用户</span></span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/udp</span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新防火墙规则</span></span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有打开的端口</span></span><br><span class="line">sudo firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
+<p>端口监听部分。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置177端口tcp协议永久监听</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目前177端口状态</span></span><br><span class="line">netstat -tunlp | grep 177</span><br></pre></td></tr></table></figure>
+<p>CentOS部分的端口配置基本结束，接下来就用telnet或者tcping来ping服务器的177端口。</p>
+<figure>
+<img data-src="./tcping_ip_port.png" alt="tcping Ping端口177">
+<figcaption aria-hidden="true">tcping Ping端口177</figcaption>
+</figure>
+<p>你以为这么简单就结束了？ :&amp;(蛆音娘_摊手)
+一旦SSH连接断开或系统重启<del>当然生产用的服务器没有特殊情况是不会重启的</del>，监听就自动结束了。这时候有两个解决方案了。</p>
+<h3 id="方案一使用tmux针对不重启的系统">4.1
+方案一：使用tmux，针对不重启的系统</h3>
+<p>tmux可以实现终端复用，即使表面上终端结束了，但是跑在tmux中的指令不会就此结束，非常适合目前的需求。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装tmux</span></span><br><span class="line">sudo yum install tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建tmux会话</span></span><br><span class="line">tmux new -s xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入会话后开始监听177端口</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 离开tmux会话，返回主终端</span></span><br><span class="line">tmux detach</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其它tmux相关操作</span></span><br><span class="line"><span class="comment"># 列出已有tmux会话</span></span><br><span class="line">tmux <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新进入会话</span></span><br><span class="line">tmux attach-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭会话（需在会话中）</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 或（无需在会话中）</span></span><br><span class="line">tmux kill-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名会话xdmcp_listen_177为xdmcp_listen</span></span><br><span class="line">tmux rename -t xdmcp_listen_177 xdmcp_listen</span><br></pre></td></tr></table></figure>
+<p>下图是我关闭终端后进行的测试（测试端口178），可以满足目标需求。</p>
+<figure>
+<img data-src="./tmux_listen_177.png" alt="使用tmux实现端口永久监听">
+<figcaption aria-hidden="true">使用tmux实现端口永久监听</figcaption>
+</figure>
+<h3 id="方案二配置自启动">4.2 方案二：配置自启动</h3>
+<p>这是我最开始想到的方案，只适用于个人使用的、没有重启限制的服务器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建需要自启动的文件</span></span><br><span class="line">vim listen177.sh</span><br></pre></td></tr></table></figure>
+<p>在文件中编写以下内容，用<code>:wq</code>保存并关闭。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#chkconfig:5 80 90</span></span><br><span class="line"><span class="comment">#decription:autostart</span></span><br><span class="line"></span><br><span class="line">nc -lk 177</span><br></pre></td></tr></table></figure>
+<p>然后进行自启动配置。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> listen177.sh /etc/rc.d/init.d/</span><br><span class="line"><span class="built_in">cd</span> /etc/rc.d/init.d</span><br><span class="line"><span class="built_in">chmod</span> +x  /etc/rc.d/init.d/listen177.sh</span><br><span class="line">chkconfig --add listen177.sh</span><br><span class="line">chkconfig listen177.sh</span><br></pre></td></tr></table></figure>
+<p>到此，端口监听才全部结束。上面两种方案就看自己的需求选取吧。</p>
+<h2 id="xdmcp客户端">5 XDMCP客户端</h2>
+<p>这里就是各显神通的地方了。</p>
+<p>Windows端当然是推荐Xmanager，macOS可以使用XQuartz。我就放一下我自己的Xmanager效果图。</p>
+<figure>
+<img data-src="./xmanager_config.png" alt="Xmanager配置">
+<figcaption aria-hidden="true">Xmanager配置</figcaption>
+</figure>
+<figure>
+<img data-src="./xdmcp_res.png" alt="最终效果图">
+<figcaption aria-hidden="true">最终效果图</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>XDMCP配置到此结束，希望有需求的各位同学能有点收获吧。</p>
+<p>最后，预告一下服务器挂上公网的笔记。<del>只要我的宽带不是传说的虚拟IP</del></p>
+<p>最后的最后，日常求<del>一键三连</del>收藏分享。 :@(击掌)</p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>CentOS</tag>
+        <tag>XDMCP</tag>
+        <tag>Xmanager</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog</title>
     <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
     <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/</a></p>
+<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
+14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
 </blockquote>
 <h2 id="结论">1 结论</h2>
 <p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
@@ -1343,95 +1593,6 @@ G）</h3>
       <tags>
         <tag>资源</tag>
         <tag>书籍</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>STM32基础_GPIO流水灯</title>
-    <url>//2017/07/28/stm32-gpio-led/</url>
-    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
-<span id="more"></span>
-<h2 id="目录">目录</h2>
-<ul>
-<li><a href="#目录">目录</a></li>
-<li><a href="#流水灯实验原理">流水灯实验原理</a></li>
-<li><a href="#管脚配置">管脚配置</a></li>
-<li><a href="#code">CODE</a></li>
-<li><a href="#总结">总结</a></li>
-</ul>
-<h2 id="流水灯实验原理">流水灯实验原理</h2>
-<p>LED模块的原理图如图1所示：</p>
-<figure>
-<img data-src="./1646673628.png" alt="图1 LED模块原理图">
-<figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
-</figure>
-<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。
-因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
-<h2 id="管脚配置">管脚配置</h2>
-<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
-<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">模式名称</th>
-<th style="text-align: center;">标识</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">浮空输入</td>
-<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">带上拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPU</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">带下拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">模拟输入</td>
-<td style="text-align: center;">GPIO_MODE_AIN</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">复用_推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_PP</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">复用_开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_OD</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:
-初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
-</blockquote>
-<h2 id="code">CODE</h2>
-<p>下面就贴一下代码。</p>
-<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1
-.pdf第三章。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">uint32_t</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(__IO <span class="type">uint32_t</span> nCount)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -1691,74 +1852,6 @@ Emulation"页面设置的密码。</p>
       </tags>
   </entry>
   <entry>
-    <title>VHDL学习笔记之元件递归</title>
-    <url>//2020/08/05/vhdl-note-component-recursion/</url>
-    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
-<blockquote>
-<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
-</blockquote>
-<span id="more"></span>
-<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
-<h2 id="元件递归设计">元件递归设计</h2>
-<blockquote>
-<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
-</blockquote>
-<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://gitee.com/blueschwarz/blog_attachment/raw/master/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
-Std 1076-2019</a>。</p>
-<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
-为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
-\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
-方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>简单写了个仿真文件，仿真结果如下。</p>
-<figure>
-<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
-<figcaption aria-hidden="true">综合前仿真结果</figcaption>
-</figure>
-<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
-<figure>
-<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
-<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
-</figure>
-<h2 id="正常的n输入与门设计">正常的n输入与门设计</h2>
-<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
-<figure>
-<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
-<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
-</figure>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
-<figure>
-<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
-<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
-</figure>
-<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
-<figure>
-<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
-<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
-</figure>
-<figure>
-<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
-<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
-:&amp;(蛆音娘_扶额)
-，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
-:@(击掌)</p>
-<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
-]]></content>
-      <categories>
-        <category>集成电路</category>
-      </categories>
-      <tags>
-        <tag>VHDL</tag>
-        <tag>FPGA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>视频相关术语</title>
     <url>//2020/02/12/video-terms/</url>
     <content><![CDATA[<p>今天在人人影视上找资源的时候，突然对文件名上的HEVC、10bit等感到疑惑，就花了一下午时间研究了一下视频相关的术语，在下面分享一下。</p>
@@ -1852,6 +1945,163 @@ NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至�
       <tags>
         <tag>视频</tag>
         <tag>视频编码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VHDL学习笔记之元件递归</title>
+    <url>//2020/08/05/vhdl-note-component-recursion/</url>
+    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
+<blockquote>
+<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
+</blockquote>
+<span id="more"></span>
+<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
+<h2 id="元件递归设计">元件递归设计</h2>
+<blockquote>
+<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
+</blockquote>
+<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://gitee.com/blueschwarz/blog_attachment/raw/master/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
+Std 1076-2019</a>。</p>
+<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
+为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
+\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
+方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>简单写了个仿真文件，仿真结果如下。</p>
+<figure>
+<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
+<figcaption aria-hidden="true">综合前仿真结果</figcaption>
+</figure>
+<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
+<figure>
+<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
+<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
+</figure>
+<h2 id="正常的n输入与门设计">正常的n输入与门设计</h2>
+<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
+<figure>
+<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
+<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
+</figure>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
+<figure>
+<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
+<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
+</figure>
+<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
+<figure>
+<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
+<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
+</figure>
+<figure>
+<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
+<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
+:&amp;(蛆音娘_扶额)
+，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
+:@(击掌)</p>
+<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
+]]></content>
+      <categories>
+        <category>集成电路</category>
+      </categories>
+      <tags>
+        <tag>VHDL</tag>
+        <tag>FPGA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32基础_GPIO流水灯</title>
+    <url>//2017/07/28/stm32-gpio-led/</url>
+    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
+<span id="more"></span>
+<h2 id="目录">目录</h2>
+<ul>
+<li><a href="#目录">目录</a></li>
+<li><a href="#流水灯实验原理">流水灯实验原理</a></li>
+<li><a href="#管脚配置">管脚配置</a></li>
+<li><a href="#code">CODE</a></li>
+<li><a href="#总结">总结</a></li>
+</ul>
+<h2 id="流水灯实验原理">流水灯实验原理</h2>
+<p>LED模块的原理图如图1所示：</p>
+<figure>
+<img data-src="./1646673628.png" alt="图1 LED模块原理图">
+<figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
+</figure>
+<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。
+因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
+<h2 id="管脚配置">管脚配置</h2>
+<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
+<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">模式名称</th>
+<th style="text-align: center;">标识</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">浮空输入</td>
+<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">带上拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPU</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">带下拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">模拟输入</td>
+<td style="text-align: center;">GPIO_MODE_AIN</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">复用_推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_PP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">复用_开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_OD</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:
+初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
+</blockquote>
+<h2 id="code">CODE</h2>
+<p>下面就贴一下代码。</p>
+<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1
+.pdf第三章。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">uint32_t</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(__IO <span class="type">uint32_t</span> nCount)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结</h2>
+<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
