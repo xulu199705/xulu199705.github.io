@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>是什么驱动着无限进步？</title>
-    <url>//2021/08/05/driver-of-development/</url>
-    <content><![CDATA[<span id="more"></span>
-<blockquote>
-<p>崇高的理念在欲望面前根本无能为力</p>
-<p>说到底 人类不过是充满欲望的生物</p>
-<p>人活着就不能否定这一点</p>
-<p>正因为这份欲望文明才进化至今</p>
-<p>今后也会继续进化 绝不会倒退</p>
-<p>建造燃料废物处理厂</p>
-<p>修建高速公路 打造购物中心</p>
-<p>森林面积不断减少 稀有物种濒临灭绝</p>
-<p>终有一天这里会变得和一般的城市一样</p>
-<p>于是他们一边缅怀过去 一边伤感唏嘘</p>
-<p>但是大家都想这样做 多棒啊</p>
-<p>这就是人类</p>
-<p>—— LEGAL HIGH.S02E08</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>观点&amp;感想</category>
-      </categories>
-      <tags>
-        <tag>观点</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
     <url>//2019/01/30/can-based-optimization/</url>
     <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
@@ -56,6 +29,60 @@ CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
         <tag>控制</tag>
         <tag>summary</tag>
         <tag>总线</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>//2016/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>是什么驱动着无限进步？</title>
+    <url>//2021/08/05/driver-of-development/</url>
+    <content><![CDATA[<span id="more"></span>
+<blockquote>
+<p>崇高的理念在欲望面前根本无能为力</p>
+<p>说到底 人类不过是充满欲望的生物</p>
+<p>人活着就不能否定这一点</p>
+<p>正因为这份欲望文明才进化至今</p>
+<p>今后也会继续进化 绝不会倒退</p>
+<p>建造燃料废物处理厂</p>
+<p>修建高速公路 打造购物中心</p>
+<p>森林面积不断减少 稀有物种濒临灭绝</p>
+<p>终有一天这里会变得和一般的城市一样</p>
+<p>于是他们一边缅怀过去 一边伤感唏嘘</p>
+<p>但是大家都想这样做 多棒啊</p>
+<p>这就是人类</p>
+<p>—— LEGAL HIGH.S02E08</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>观点&amp;感想</category>
+      </categories>
+      <tags>
+        <tag>观点</tag>
       </tags>
   </entry>
   <entry>
@@ -345,264 +372,6 @@ As"为仿真配置的名称，"Description"中可以选填一些配置信息，�
       </tags>
   </entry>
   <entry>
-    <title>从零开始的客制化87键机械键盘_1_立项</title>
-    <url>//2018/12/25/keyboard87-1/</url>
-    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
-type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
-<span id="more"></span>
-<h2 id="项目初衷">项目初衷</h2>
-<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
-<figure>
-<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
-<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
-</figure>
-<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
-<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
-<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>//2016/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
-    <url>//2019/01/28/keyboard87-3/</url>
-    <content><![CDATA[<blockquote>
-<p>前文：<br>
-<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a><br>
-<a href="/2019/01/22/keyboard87-2/">从零开始的客制化87键机械键盘_2_硬件设计</a></p>
-</blockquote>
-<p>机械键盘的原理图搞定之后就投去打样了，这次体验还是不错。</p>
-<span id="more"></span>
-<h2 id="pcb打样">PCB打样</h2>
-<p>PCB打样就交给嘉立创了，下单系统虽然UI做的不怎么样，但系统操作和服务看上去特别高大上。而且最近嘉立创对自己的SMT进行了升级，添加了很多可贴元器件，这样一来，板子一拿回来就只要焊四个0805的贴片和直插的按键轴体。</p>
-<p>下单大概四天，板子就寄到了。一层一层的红色气泡纸把五块板子包得严严实实。</p>
-<figure>
-<img data-src="./1443212437.jpg" alt="pcb_package.jpg">
-<figcaption aria-hidden="true">pcb_package.jpg</figcaption>
-</figure>
-<p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_2_硬件设计</title>
-    <url>//2019/01/22/keyboard87-2/</url>
-    <content><![CDATA[<blockquote>
-<p>前文：<br>
-<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a></p>
-</blockquote>
-<p>从这个项目立项以来已经快一个月了，终于在师傅和同学的帮助下，搞定了硬件设计。下面我就器件选型简单介绍一下，最后贴了一下渲染图。</p>
-<span id="more"></span>
-<h2 id="硬件设计">硬件设计</h2>
-<p>这一章介绍一下客制化键盘的硬件设计，包括以下4项：主控芯片、传输接口、轴体选择、键盘布局。</p>
-<h3 id="主控芯片">主控芯片</h3>
-<p>在确定STM32作为主控芯片之前，我在网上搜了一下，也拆了手上的ikbc
-C87，ATMEL的ATMEGA32芯片使用的比较多。我最终还是选择了STM32，主要原因是对STM32比较熟悉。</p>
-<p>当然，作为32位的MCU，STM32不管是在IO数量、USB接口支持，还是程序运算速度，都能满足机械键盘的需求。</p>
-<ul>
-<li>USB接口</li>
-</ul>
-<p>机械键盘使用时是作为USB
-Slave使用的，所以只需要芯片支持USB就行，不需要OTG。STM32F1的所有芯片都支持全速USB
-2.0，所以随便选一款就行。</p>
-<ul>
-<li>IO数量</li>
-</ul>
-<p>简单计算一下机械键盘需要的IO口，见下表（实际IO分配以实际原理图为准）。</p>
-<table>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>序号</th>
-<th>用途</th>
-<th>数量</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>键盘列</td>
-<td>17</td>
-<td>87键键盘布局，最多的一行（第2行）共17个按键</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>键盘行</td>
-<td>6</td>
-<td>87键键盘布局，共6行</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>USB接口</td>
-<td>2</td>
-<td>USBDN和USBDP</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>调试接口</td>
-<td>2</td>
-<td>使用STLink连接，仅需JTMS-SWDIO、JTCK-SWCLK和GND三个接口</td>
-</tr>
-</tbody>
-</table>
-<p>简单计算一下，键盘需求的IO口为27个。</p>
-<ul>
-<li>运算速度</li>
-</ul>
-<p>STM32有四个时钟源：</p>
-<table>
-<thead>
-<tr class="header">
-<th>时钟源</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>高速外部时钟(HSE)</td>
-<td>可取4-16MHz，一般采用8MHz</td>
-</tr>
-<tr class="even">
-<td>高速内部时钟(HSI)</td>
-<td>8MHz，内部RC振荡器产生，不稳定</td>
-</tr>
-<tr class="odd">
-<td>低速外部时钟(LSE)</td>
-<td>外部晶振，一般采用32.768KHz</td>
-</tr>
-<tr class="even">
-<td>低速内部时钟(LSI)</td>
-<td>内部RC振荡器产生，约40KHz</td>
-</tr>
-</tbody>
-</table>
-<p>机械键盘用8MHz外部晶振，内部的系统时钟最高为72MHz，满足机械键盘的输入精度要求。</p>
-<h3 id="传输接口">传输接口</h3>
-<p>机械键盘的传输接口已经确定为USB。一般来说，USB有以下几种接口类型：</p>
-<table>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Type A</th>
-<th style="text-align: center;">Type B</th>
-<th style="text-align: center;">Mini</th>
-<th style="text-align: center;">Micro</th>
-<th style="text-align: center;">Type C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img data-src="./3082159515.jpg" alt="type_a"></td>
-<td style="text-align: center;"><img data-src="./3927602725.jpg" alt="type_b"></td>
-<td style="text-align: center;"><img data-src="./1301417559.jpg" alt="miniusb"></td>
-<td style="text-align: center;"><img data-src="./3726218615.jpg" alt="microusb"></td>
-<td style="text-align: center;"><img data-src="./1494934121.jpg" alt="type_c"></td>
-</tr>
-</tbody>
-</table>
-<p>目前现在市面上键线分离的机械键盘一般用的是miniUSB或microUSB接口。最近半年来，USB
-C-type特别流行。这个接口不仅提供大功率传输，而且支持正反随便插，大大降低了插第二次的郁闷。机械键盘就决定用USB
-C-type。</p>
-<h3 id="轴体选择">轴体选择</h3>
-<p>在选择机械键盘的轴体时，因为正在使用的ikbc
-C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四种，茶轴肯定是我的首选，不管用做什么，都可以满足要求。</p>
-<p>MX轴的封装尺寸：<a href="https://github.com/xulu199705/KeyBoard87/tree/master/Reference/Cherry_MX/Cherry_MX_sw.pdf">PDF</a></p>
-<h3 id="键盘布局">键盘布局</h3>
-<p>键盘布局选择和手头使用的ikbc c87一样的87键布局，在<a href="http://www.keyboard-layout-editor.com/">这里</a>可以将需要的布局信息生成一堆文本，将文本复制到<a href="http://builder.swillkb.com/">这里</a>，生成定位板文件，方面在PCB中定位每个键轴的位置。</p>
-<p>布线图 <img data-src="./1178723672.png" alt="pcb_2d_bottomlayer.png"></p>
-<table>
-<thead>
-<tr class="header">
-<th>3D顶部视图</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img data-src="./1617787578.png" alt="2.PNG"></td>
-<td><img data-src="./2508825578.png" alt="pcb_3d_top.png"></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th>3D底部视图</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img data-src="./784997014.png" alt="1.PNG"></td>
-<td><img data-src="./210904615.png" alt="pcb_3d_bottom.png"></td>
-</tr>
-</tbody>
-</table>
-<p>LOGO视图 <img data-src="./2778683646.png" alt="pcb_3d_logo.png"></p>
-<p>P.S. PCB文件已上传<a href="https://github.com/xulu199705/KeyBoard87">github</a>，过一会儿就投板给嘉立创打样。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IC笔记之瞬态仿真</title>
     <url>//2021/04/06/ic-note-simu-tran/</url>
     <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
@@ -795,99 +564,234 @@ allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最�
       </tags>
   </entry>
   <entry>
-    <title>Linux笔记之VNC配置</title>
-    <url>//2021/06/21/linux-note-vnc-config/</url>
-    <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
-<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
-<span id="more"></span>
-<blockquote>
-<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
+    <title>从零开始的客制化87键机械键盘_2_硬件设计</title>
+    <url>//2019/01/22/keyboard87-2/</url>
+    <content><![CDATA[<blockquote>
+<p>前文：<br>
+<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a></p>
 </blockquote>
-<h2 id="预备知识">1 预备知识</h2>
-<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
-<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
-<p>wikipedia上有详细介绍<a href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
-<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
-<h2 id="安装vnc">2 安装VNC</h2>
-<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
-<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="./linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
-<figcaption aria-hidden="true">yum grouplist结果</figcaption>
-</figure>
-<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y <span class="string">&quot;GNOME Desktop&quot;</span></span><br></pre></td></tr></table></figure>
-<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="comment"># 切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
-<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
-<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="comment"># 验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="./linux_note_vnc_config_vnc.png" alt="验证VNC安装">
-<figcaption aria-hidden="true">验证VNC安装</figcaption>
-</figure>
-<h2 id="配置vnc">3 配置VNC</h2>
-<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
-<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从sample创建VNC启动脚本</span></span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
-<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
-<p>接着，需要小小处理一下刚刚复制的脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system</span><br><span class="line"><span class="comment"># 给权限x</span></span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:1.service</span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
-<p>接着打开2个脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
-<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_script_1.png" alt="脚本修改前">
-<figcaption aria-hidden="true">脚本修改前</figcaption>
-</figure>
-<figure>
-<img data-src="./linux_note_vnc_config_script_2.png" alt="脚本修改后">
-<figcaption aria-hidden="true">脚本修改后</figcaption>
-</figure>
-<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
-<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
-<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
-<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
-<p>下面是VNC服务的启动和开机自启的配置。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="comment"># 配置开机自启</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:1.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:2.service</span><br></pre></td></tr></table></figure>
-<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="./linux_note_vnc_config_port.png" alt="端口监听状态">
-<figcaption aria-hidden="true">端口监听状态</figcaption>
-</figure>
-<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
-<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
-ツ )_/¯</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
-<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_selinux.png" alt="端口监听状态">
-<figcaption aria-hidden="true">端口监听状态</figcaption>
-</figure>
-<h2 id="连接vnc">5 连接VNC</h2>
-<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
-<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
-</figure>
-<figure>
-<img data-src="./linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
-<figcaption aria-hidden="true">连接VNC演示</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
-<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
+<p>从这个项目立项以来已经快一个月了，终于在师傅和同学的帮助下，搞定了硬件设计。下面我就器件选型简单介绍一下，最后贴了一下渲染图。</p>
+<span id="more"></span>
+<h2 id="硬件设计">硬件设计</h2>
+<p>这一章介绍一下客制化键盘的硬件设计，包括以下4项：主控芯片、传输接口、轴体选择、键盘布局。</p>
+<h3 id="主控芯片">主控芯片</h3>
+<p>在确定STM32作为主控芯片之前，我在网上搜了一下，也拆了手上的ikbc
+C87，ATMEL的ATMEGA32芯片使用的比较多。我最终还是选择了STM32，主要原因是对STM32比较熟悉。</p>
+<p>当然，作为32位的MCU，STM32不管是在IO数量、USB接口支持，还是程序运算速度，都能满足机械键盘的需求。</p>
+<ul>
+<li>USB接口</li>
+</ul>
+<p>机械键盘使用时是作为USB
+Slave使用的，所以只需要芯片支持USB就行，不需要OTG。STM32F1的所有芯片都支持全速USB
+2.0，所以随便选一款就行。</p>
+<ul>
+<li>IO数量</li>
+</ul>
+<p>简单计算一下机械键盘需要的IO口，见下表（实际IO分配以实际原理图为准）。</p>
+<table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>序号</th>
+<th>用途</th>
+<th>数量</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>键盘列</td>
+<td>17</td>
+<td>87键键盘布局，最多的一行（第2行）共17个按键</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>键盘行</td>
+<td>6</td>
+<td>87键键盘布局，共6行</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>USB接口</td>
+<td>2</td>
+<td>USBDN和USBDP</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>调试接口</td>
+<td>2</td>
+<td>使用STLink连接，仅需JTMS-SWDIO、JTCK-SWCLK和GND三个接口</td>
+</tr>
+</tbody>
+</table>
+<p>简单计算一下，键盘需求的IO口为27个。</p>
+<ul>
+<li>运算速度</li>
+</ul>
+<p>STM32有四个时钟源：</p>
+<table>
+<thead>
+<tr class="header">
+<th>时钟源</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>高速外部时钟(HSE)</td>
+<td>可取4-16MHz，一般采用8MHz</td>
+</tr>
+<tr class="even">
+<td>高速内部时钟(HSI)</td>
+<td>8MHz，内部RC振荡器产生，不稳定</td>
+</tr>
+<tr class="odd">
+<td>低速外部时钟(LSE)</td>
+<td>外部晶振，一般采用32.768KHz</td>
+</tr>
+<tr class="even">
+<td>低速内部时钟(LSI)</td>
+<td>内部RC振荡器产生，约40KHz</td>
+</tr>
+</tbody>
+</table>
+<p>机械键盘用8MHz外部晶振，内部的系统时钟最高为72MHz，满足机械键盘的输入精度要求。</p>
+<h3 id="传输接口">传输接口</h3>
+<p>机械键盘的传输接口已经确定为USB。一般来说，USB有以下几种接口类型：</p>
+<table>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type A</th>
+<th style="text-align: center;">Type B</th>
+<th style="text-align: center;">Mini</th>
+<th style="text-align: center;">Micro</th>
+<th style="text-align: center;">Type C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img data-src="./3082159515.jpg" alt="type_a"></td>
+<td style="text-align: center;"><img data-src="./3927602725.jpg" alt="type_b"></td>
+<td style="text-align: center;"><img data-src="./1301417559.jpg" alt="miniusb"></td>
+<td style="text-align: center;"><img data-src="./3726218615.jpg" alt="microusb"></td>
+<td style="text-align: center;"><img data-src="./1494934121.jpg" alt="type_c"></td>
+</tr>
+</tbody>
+</table>
+<p>目前现在市面上键线分离的机械键盘一般用的是miniUSB或microUSB接口。最近半年来，USB
+C-type特别流行。这个接口不仅提供大功率传输，而且支持正反随便插，大大降低了插第二次的郁闷。机械键盘就决定用USB
+C-type。</p>
+<h3 id="轴体选择">轴体选择</h3>
+<p>在选择机械键盘的轴体时，因为正在使用的ikbc
+C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四种，茶轴肯定是我的首选，不管用做什么，都可以满足要求。</p>
+<p>MX轴的封装尺寸：<a href="https://github.com/xulu199705/KeyBoard87/tree/master/Reference/Cherry_MX/Cherry_MX_sw.pdf">PDF</a></p>
+<h3 id="键盘布局">键盘布局</h3>
+<p>键盘布局选择和手头使用的ikbc c87一样的87键布局，在<a href="http://www.keyboard-layout-editor.com/">这里</a>可以将需要的布局信息生成一堆文本，将文本复制到<a href="http://builder.swillkb.com/">这里</a>，生成定位板文件，方面在PCB中定位每个键轴的位置。</p>
+<p>布线图 <img data-src="./1178723672.png" alt="pcb_2d_bottomlayer.png"></p>
+<table>
+<thead>
+<tr class="header">
+<th>3D顶部视图</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="./1617787578.png" alt="2.PNG"></td>
+<td><img data-src="./2508825578.png" alt="pcb_3d_top.png"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>3D底部视图</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="./784997014.png" alt="1.PNG"></td>
+<td><img data-src="./210904615.png" alt="pcb_3d_bottom.png"></td>
+</tr>
+</tbody>
+</table>
+<p>LOGO视图 <img data-src="./2778683646.png" alt="pcb_3d_logo.png"></p>
+<p>P.S. PCB文件已上传<a href="https://github.com/xulu199705/KeyBoard87">github</a>，过一会儿就投板给嘉立创打样。</p>
 ]]></content>
       <categories>
-        <category>软件</category>
+        <category>硬件</category>
       </categories>
       <tags>
-        <tag>VNC</tag>
-        <tag>CentOS</tag>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_1_立项</title>
+    <url>//2018/12/25/keyboard87-1/</url>
+    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
+type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+<span id="more"></span>
+<h2 id="项目初衷">项目初衷</h2>
+<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<figure>
+<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
+<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+</figure>
+<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
+<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
+<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
+    <url>//2019/01/28/keyboard87-3/</url>
+    <content><![CDATA[<blockquote>
+<p>前文：<br>
+<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a><br>
+<a href="/2019/01/22/keyboard87-2/">从零开始的客制化87键机械键盘_2_硬件设计</a></p>
+</blockquote>
+<p>机械键盘的原理图搞定之后就投去打样了，这次体验还是不错。</p>
+<span id="more"></span>
+<h2 id="pcb打样">PCB打样</h2>
+<p>PCB打样就交给嘉立创了，下单系统虽然UI做的不怎么样，但系统操作和服务看上去特别高大上。而且最近嘉立创对自己的SMT进行了升级，添加了很多可贴元器件，这样一来，板子一拿回来就只要焊四个0805的贴片和直插的按键轴体。</p>
+<p>下单大概四天，板子就寄到了。一层一层的红色气泡纸把五块板子包得严严实实。</p>
+<figure>
+<img data-src="./1443212437.jpg" alt="pcb_package.jpg">
+<figcaption aria-hidden="true">pcb_package.jpg</figcaption>
+</figure>
+<p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -1015,174 +919,9 @@ manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行�
         <category>软件</category>
       </categories>
       <tags>
-        <tag>CentOS</tag>
         <tag>XDMCP</tag>
         <tag>Xmanager</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ACFM裂纹检测改进——RACFM</title>
-    <url>//2020/04/03/racfm-summary/</url>
-    <content><![CDATA[<p>之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。</p>
-<p>针对交变电场检测（ACFM）的方向性局限，文章<em>High sensitivity
-rotating alternating current field measurement for arbitrary-angle
-underwater
-cracks</em>（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环境实验验证了RACFM
-对任意角度裂纹的灵敏性。</p>
-<span id="more"></span>
-<h2 id="论文背景">1 论文背景</h2>
-<p>原文以离岸油气开采行业为实际应用背景，列举了当时水下管道裂纹检测的几种方法，并分析这些方法的特点和缺陷，请参见表1。针对当时普遍使用的交变电场检测（ACFM）的方向性局限，原文提出了一种新型的旋转交变电场检测（RACFM）在保证相对较高的灵敏度的前提下，克服方向性的局限。</p>
-<table>
-<tr>
-<th colspan="3">
-表1 多种裂纹检测比较
-</th>
-</tr>
-<tr>
-<th>
-</th>
-<th>
-特点
-</th>
-<th>
-缺陷
-</th>
-</tr>
-<tr>
-<th>
-肉眼检查
-</th>
-<th>
-实用、廉价
-</th>
-<th>
-<ol type="1">
-<li>高度依赖使用者的经验和能力<br>2. 不借助工具无法发现应力腐蚀开裂(SCC)
-</li></ol></th>
-</tr>
-<tr>
-<th>
-磁粉探伤(MPI)
-</th>
-<th>
-<ol type="1">
-<li>使用最广泛<br>2. 使用铁屑探查裂纹
-</li></ol></th>
-<th>
-MPI的检测性能依赖于结构体表面的平整程度，而水下表面清洁成本高昂
-</th>
-</tr>
-<tr>
-<th>
-漏磁检测(MFL)
-</th>
-<th>
-无接触检测，无需表面清洁
-</th>
-<th>
-无法检测排列紧密的裂纹
-</th>
-</tr>
-<tr>
-<th>
-涡流检测(ECT)
-</th>
-<th>
-检测导电材料表面和亚表面的裂缝
-</th>
-<th>
-水下结构体表面不规则，难以做到匀速检测装置离开，影响ECT精准性
-</th>
-</tr>
-<tr>
-<th>
-交流电场检测(ACFM)
-</th>
-<th>
-<ol type="1">
-<li>无需表面清洁<br>2. 数学模型精确<br>3. 对检测装置移动具有高容忍度
-</li></ol></th>
-<th>
-裂纹与感应电流垂直时，感应电流的扰动最大，与感应电流平行时最小，实际使用时需对同一位置多次检测，增加检测成本
-</th>
-</tr>
-</table>
-
-
-
-<h2 id="理论分析">2 理论分析</h2>
-<p>ACFM
-是一种基于交流电位差的裂纹检测手段。通以交流电的线圈在其周围产生变化的交流磁场，被测表面感应出感生电动势，产生变化的感生交流电场。当被测表面出现裂纹时，感生交流电场就会被干扰，同时交流磁场也会受到轻微的扰动。ACFM
-就是通过检测交流磁场的扰动来检测裂纹的长度和深度，其原理框图请参见图1。</p>
-<figure>
-<img data-src="./2779082017.png" alt="图1 ACFM原理框图">
-<figcaption aria-hidden="true">图1 ACFM原理框图</figcaption>
-</figure>
-<p>图2-a和图2-b分别为被测表面的裂纹与交流电场垂直和平行的示意图。显而易见，当交流电场的方向与裂纹垂直时，裂纹对交流电场的影响就会更加明显；反之，两者平行时，裂纹对交流电场的影响明显降低。原文针对这一局限，RACFM
-使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM
-感生交流电场方向理论示意图如图3所示。</p>
-<p>原文针对这一局限，RACFM使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM感生交流电场方向理论示意图如图3所示。</p>
-<figure>
-<img data-src="./3338828193.jpg" alt="图2 裂纹角度对交流电场的影响">
-<figcaption aria-hidden="true">图2 裂纹角度对交流电场的影响</figcaption>
-</figure>
-<figure>
-<img data-src="./3045871072.jpg" alt="图3 周期内RACFM感生交流电场方向理论示意图">
-<figcaption aria-hidden="true">图3
-周期内RACFM感生交流电场方向理论示意图</figcaption>
-</figure>
-<h2 id="实验验证">3 实验验证</h2>
-<p>原文使用RACFM与传统ACFM对照试验，除电感器的激励电流外，其余均相同。</p>
-<p>探测器直线移动经过裂纹，通过改变路径与裂纹的夹角(0°-90°)来模拟任意角度的裂纹，记录<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>两个方向的磁感应强度，实验结果如图4所示。在夹角为0°时，RACFM和ACFM得到的扰动都有明显的波动，可以作为裂纹的依据。随着夹角不断变大，ACFM得到的磁感应强度扰动不断衰减，当夹角过大时，扰动被噪声覆盖。而RACFM得到的扰动则一直比较明显，不会随着夹角变化产生明显的衰减。</p>
-<figure>
-<img data-src="./1016029282.jpg" alt="图4 B_x和B_z实验数据">
-<figcaption aria-hidden="true">图4 <span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>实验数据</figcaption>
-</figure>
-<p>为了量化RACFM的性能，原文定义了x和z方向磁感应强度的灵敏度，见下方公式。</p>
-<p><span class="math display">\[
-\left\{ \begin{array}{l}
-{S_x} = \frac{ {M{X_{max} } } }{ {M{X_0} } } \times 100\% \\
-{S_z} = \frac{ {M{Z_{max} } } }{ {M{X_0} } } \times 100\%
-\end{array} \right.
-\]</span></p>
-<p>其中，<span class="math inline">\(MX_0\)</span>表示无裂纹时，<span class="math inline">\(B_x\)</span>的幅度；<span class="math inline">\(M{X_{max}}\)</span>和<span class="math inline">\(M{Z_{max}}\)</span>分别表示<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>扰动的最大值。灵敏度与角度变化的关系如图5所示。随着路径与裂纹夹角不断变大，ACFM的灵敏度急剧降低，当夹角大于50°时，ACFM的两个方向灵敏度接近0；RACFM的灵敏度<span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>虽然有衰减，但依旧处于较高的灵敏范围内，可以作为裂纹检测的依据。</p>
-<figure>
-<img data-src="./2353434411.jpg" alt="图5 S_x和S_z变化趋势">
-<figcaption aria-hidden="true">图5 <span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>变化趋势</figcaption>
-</figure>
-<p>根据实验结果，RACFM能克服传统ACFM的方向性局限，同时，RACFM还保持了较高的裂纹检测灵敏度，可以应用在实际的离岸油气开采行业的管道裂纹检测场景中。</p>
-<hr>
-<p>其实这篇文章提出的RACFM其实就是将ACFM从线到面，从单一角度扩展到多个角度，并不是特别深奥难懂的点子。甚至这样的例子也发生在平时的生活中，我们也许会写下“就这？”。前几天开始看<em>Talk
-Like TED</em>，开篇第一句就是“Ideas are the currency of the twenty-first
-century”。这就让我想起了RACFM这篇文章，以及经常遇见的“就这？”。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>summary</tag>
-        <tag>检测</tag>
-        <tag>电磁感应</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Spring框架的IOC和DI的理解</title>
-    <url>//2018/01/26/spring-ioc-di/</url>
-    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
-<p>下面来说说我，一个初学者，对DI的理解。</p>
-<span id="more"></span>
-<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
-2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
-<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
-<p>这个是我今天看了Spring框架之后的理解。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>前端</tag>
+        <tag>CentOS</tag>
       </tags>
   </entry>
   <entry>
@@ -1573,6 +1312,151 @@ G）</h3>
       </tags>
   </entry>
   <entry>
+    <title>ACFM裂纹检测改进——RACFM</title>
+    <url>//2020/04/03/racfm-summary/</url>
+    <content><![CDATA[<p>之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。</p>
+<p>针对交变电场检测（ACFM）的方向性局限，文章<em>High sensitivity
+rotating alternating current field measurement for arbitrary-angle
+underwater
+cracks</em>（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环境实验验证了RACFM
+对任意角度裂纹的灵敏性。</p>
+<span id="more"></span>
+<h2 id="论文背景">1 论文背景</h2>
+<p>原文以离岸油气开采行业为实际应用背景，列举了当时水下管道裂纹检测的几种方法，并分析这些方法的特点和缺陷，请参见表1。针对当时普遍使用的交变电场检测（ACFM）的方向性局限，原文提出了一种新型的旋转交变电场检测（RACFM）在保证相对较高的灵敏度的前提下，克服方向性的局限。</p>
+<table>
+<tr>
+<th colspan="3">
+表1 多种裂纹检测比较
+</th>
+</tr>
+<tr>
+<th>
+</th>
+<th>
+特点
+</th>
+<th>
+缺陷
+</th>
+</tr>
+<tr>
+<th>
+肉眼检查
+</th>
+<th>
+实用、廉价
+</th>
+<th>
+<ol type="1">
+<li>高度依赖使用者的经验和能力<br>2. 不借助工具无法发现应力腐蚀开裂(SCC)
+</li></ol></th>
+</tr>
+<tr>
+<th>
+磁粉探伤(MPI)
+</th>
+<th>
+<ol type="1">
+<li>使用最广泛<br>2. 使用铁屑探查裂纹
+</li></ol></th>
+<th>
+MPI的检测性能依赖于结构体表面的平整程度，而水下表面清洁成本高昂
+</th>
+</tr>
+<tr>
+<th>
+漏磁检测(MFL)
+</th>
+<th>
+无接触检测，无需表面清洁
+</th>
+<th>
+无法检测排列紧密的裂纹
+</th>
+</tr>
+<tr>
+<th>
+涡流检测(ECT)
+</th>
+<th>
+检测导电材料表面和亚表面的裂缝
+</th>
+<th>
+水下结构体表面不规则，难以做到匀速检测装置离开，影响ECT精准性
+</th>
+</tr>
+<tr>
+<th>
+交流电场检测(ACFM)
+</th>
+<th>
+<ol type="1">
+<li>无需表面清洁<br>2. 数学模型精确<br>3. 对检测装置移动具有高容忍度
+</li></ol></th>
+<th>
+裂纹与感应电流垂直时，感应电流的扰动最大，与感应电流平行时最小，实际使用时需对同一位置多次检测，增加检测成本
+</th>
+</tr>
+</table>
+
+
+
+<h2 id="理论分析">2 理论分析</h2>
+<p>ACFM
+是一种基于交流电位差的裂纹检测手段。通以交流电的线圈在其周围产生变化的交流磁场，被测表面感应出感生电动势，产生变化的感生交流电场。当被测表面出现裂纹时，感生交流电场就会被干扰，同时交流磁场也会受到轻微的扰动。ACFM
+就是通过检测交流磁场的扰动来检测裂纹的长度和深度，其原理框图请参见图1。</p>
+<figure>
+<img data-src="./2779082017.png" alt="图1 ACFM原理框图">
+<figcaption aria-hidden="true">图1 ACFM原理框图</figcaption>
+</figure>
+<p>图2-a和图2-b分别为被测表面的裂纹与交流电场垂直和平行的示意图。显而易见，当交流电场的方向与裂纹垂直时，裂纹对交流电场的影响就会更加明显；反之，两者平行时，裂纹对交流电场的影响明显降低。原文针对这一局限，RACFM
+使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM
+感生交流电场方向理论示意图如图3所示。</p>
+<p>原文针对这一局限，RACFM使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM感生交流电场方向理论示意图如图3所示。</p>
+<figure>
+<img data-src="./3338828193.jpg" alt="图2 裂纹角度对交流电场的影响">
+<figcaption aria-hidden="true">图2 裂纹角度对交流电场的影响</figcaption>
+</figure>
+<figure>
+<img data-src="./3045871072.jpg" alt="图3 周期内RACFM感生交流电场方向理论示意图">
+<figcaption aria-hidden="true">图3
+周期内RACFM感生交流电场方向理论示意图</figcaption>
+</figure>
+<h2 id="实验验证">3 实验验证</h2>
+<p>原文使用RACFM与传统ACFM对照试验，除电感器的激励电流外，其余均相同。</p>
+<p>探测器直线移动经过裂纹，通过改变路径与裂纹的夹角(0°-90°)来模拟任意角度的裂纹，记录<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>两个方向的磁感应强度，实验结果如图4所示。在夹角为0°时，RACFM和ACFM得到的扰动都有明显的波动，可以作为裂纹的依据。随着夹角不断变大，ACFM得到的磁感应强度扰动不断衰减，当夹角过大时，扰动被噪声覆盖。而RACFM得到的扰动则一直比较明显，不会随着夹角变化产生明显的衰减。</p>
+<figure>
+<img data-src="./1016029282.jpg" alt="图4 B_x和B_z实验数据">
+<figcaption aria-hidden="true">图4 <span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>实验数据</figcaption>
+</figure>
+<p>为了量化RACFM的性能，原文定义了x和z方向磁感应强度的灵敏度，见下方公式。</p>
+<p><span class="math display">\[
+\left\{ \begin{array}{l}
+{S_x} = \frac{ {M{X_{max} } } }{ {M{X_0} } } \times 100\% \\
+{S_z} = \frac{ {M{Z_{max} } } }{ {M{X_0} } } \times 100\%
+\end{array} \right.
+\]</span></p>
+<p>其中，<span class="math inline">\(MX_0\)</span>表示无裂纹时，<span class="math inline">\(B_x\)</span>的幅度；<span class="math inline">\(M{X_{max}}\)</span>和<span class="math inline">\(M{Z_{max}}\)</span>分别表示<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>扰动的最大值。灵敏度与角度变化的关系如图5所示。随着路径与裂纹夹角不断变大，ACFM的灵敏度急剧降低，当夹角大于50°时，ACFM的两个方向灵敏度接近0；RACFM的灵敏度<span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>虽然有衰减，但依旧处于较高的灵敏范围内，可以作为裂纹检测的依据。</p>
+<figure>
+<img data-src="./2353434411.jpg" alt="图5 S_x和S_z变化趋势">
+<figcaption aria-hidden="true">图5 <span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>变化趋势</figcaption>
+</figure>
+<p>根据实验结果，RACFM能克服传统ACFM的方向性局限，同时，RACFM还保持了较高的裂纹检测灵敏度，可以应用在实际的离岸油气开采行业的管道裂纹检测场景中。</p>
+<hr>
+<p>其实这篇文章提出的RACFM其实就是将ACFM从线到面，从单一角度扩展到多个角度，并不是特别深奥难懂的点子。甚至这样的例子也发生在平时的生活中，我们也许会写下“就这？”。前几天开始看<em>Talk
+Like TED</em>，开篇第一句就是“Ideas are the currency of the twenty-first
+century”。这就让我想起了RACFM这篇文章，以及经常遇见的“就这？”。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>summary</tag>
+        <tag>检测</tag>
+        <tag>电磁感应</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>斯普林格Springer免费书籍</title>
     <url>//2020/06/24/springer-free-books-2020/</url>
     <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
@@ -1593,6 +1477,26 @@ G）</h3>
       <tags>
         <tag>资源</tag>
         <tag>书籍</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Spring框架的IOC和DI的理解</title>
+    <url>//2018/01/26/spring-ioc-di/</url>
+    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
+<p>下面来说说我，一个初学者，对DI的理解。</p>
+<span id="more"></span>
+<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
+2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
+<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
+<p>这个是我今天看了Spring框架之后的理解。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -1682,112 +1586,6 @@ G）</h3>
       </categories>
       <tags>
         <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tiny Tiny RSS再次搭建</title>
-    <url>//2021/07/22/ttrss-build-2/</url>
-    <content><![CDATA[<p>贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github
-Pages上了，阿里云的服务器就空出来了。</p>
-<p>但是，不幸再次降临，TTRSS官方把原来的安装方式取消了，推荐使用docker安装。经过一番摸索，终于完成了docker安装TTRSS，并搞定fever。</p>
-<p>环境说明：所使用的是Aliyun服务器（1C2G），系统为CentOS 7.9。</p>
-<span id="more"></span>
-<h2 id="安装docker">1 安装Docker</h2>
-<p>Docker是...啥？我也不是特别清楚，我把它看作是独立的运行环境，和虚拟机类似。详细的请找Docker官方文档和百度。</p>
-<p>首先确保系统内没有预安装旧版本的docker，使用命令卸载旧版本。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
-<p>配置yum源，参考了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">TUNA
-CentOS镜像使用帮助</a>。使用云服务器一般不需要配置。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sed -e &#x27;s|^mirrorlist=|#mirrorlist=|g&#x27; \</span><br><span class="line">         -e &#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27; \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
-<p>配置docker的yum源。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-<p>安装docker相关依赖包。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-<p>安装docker</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
-<p>启动docker，并设置开机自启。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
-<p>验证docker安装。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
-<h2 id="安装docker-compose">2 安装Docker Compose</h2>
-<p>Docker Compose是基于Docker的多容器运行管理工具。</p>
-<p>下载Docker
-Compose的Release包。下面的命令使用的是1.29.2版本的Release，可前往<a href="https://github.com/docker/compose/releases">软件发布页</a>查看最新的版本号，然后修改下面命令的版本号即可。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>为文件夹添加可执行权限。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>为Docker Compose在<code>/usr/bin/</code>创建链接。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件copy到/usr/bin/目录下</span></span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>验证Docker Compose安装。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
-<h2 id="安装ttrss">3 安装TTRSS</h2>
-<p>TTRSS是啥就不再次介绍了，需要了解的可以看看之前写的<a href="/2020/04/23/ttrss-build/">那篇文章</a>，或者直接访问<a href="https://tt-rss.org/">TTRSS官网</a>。</p>
-<h3 id="获取docker安装所需文件">3.1 获取docker安装所需文件</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://git.tt-rss.org/fox/ttrss-docker-compose.git ttrss-docker</span><br><span class="line">cd ttrss-docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git checkout命令为切换static-dockerhub分支，也可以不切换使用master分支</span></span><br><span class="line">git checkout static-dockerhub</span><br></pre></td></tr></table></figure>
-<h3 id="修改.env配置文件">3.2 修改<code>.env</code>配置文件</h3>
-<p>首先需要将<code>ttrss-docker</code>文件夹中的<code>.env-dist</code>复制为<code>.env</code>。（注：<code>.env-dist</code>和<code>.env</code>均为隐藏文件，需要使用<code>ls -a</code>才能看到。）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp .env-dist .env</span><br></pre></td></tr></table></figure>
-<p>打开<code>.env</code>。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim .env</span><br></pre></td></tr></table></figure>
-<p>修改端口<code>HTTP_PORT</code>。默认为8280端口，可以配置为自定义端口。配置完成后，还需要Aliyun控制台开放端口访问，其它云平台类似，自建服务器那就自己搞定。</p>
-<p>修改URL<code>TTRSS_SELF_URL_PATH</code>。如果简单使用ip进行访问，只需要将<code>localhost</code>修改为服务器的ip地址即可。</p>
-<h3 id="拉取并启动容器">3.3 拉取并启动容器</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up -d</span><br></pre></td></tr></table></figure>
-<p>验证容器运行。 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure></p>
-<h3 id="登录ttrss">3.4 登录TTRSS</h3>
-<p>使用浏览器访问<code>TTRSS_SELF_URL_PATH</code>配置的URL。默认账号密码为<code>admin</code>和<code>password</code>。<strong>进入前台系统后，请先通过界面右上角的<code>偏好设置</code>修改密码。</strong></p>
-<p>有需要的可以新建普通用户，将<code>admin</code>仅作为管理员用户。</p>
-<p><img data-src="./ttrss-setting-1.png"></p>
-<p>注：文章编写时，TTRSS的前台系统由于使用<code>window.requestIdleCallback</code>API，该API并不受Safari支持，所以前台系统不能使用Safari<del>应该都知道我为什么知道吧</del>。</p>
-<p><img data-src="./ttrss-safari-bug.jpg"></p>
-<h2 id="ttrss后续配置">4 TTRSS后续配置</h2>
-<h3 id="fever">4.1 Fever</h3>
-<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
-API。因此，需要配置fever插件。</p>
-<p>获取TTRSS fever插件，仓库地址为<a href="https://github.com/DigitalDJ/tinytinyrss-fever-plugin">DigitalDJ/tinytinyrss-fever-plugin</a>。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin fever</span><br></pre></td></tr></table></figure>
-<p>由于ttrss是通过docker-compose安装的，所以具体的安装路径就不清楚了；虽然普通使用不需要知道安装路径，但是使用官方仓库以外的插件时，安装路径至关重要。下面先来确定TTRSS的安装路径。</p>
-<p>安装mlocate。为什么要安装mlocate呢？因为<code>find</code>的搜索速度堪忧啊。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y mlocate</span><br></pre></td></tr></table></figure>
-<p>初始化文件索引。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">updatedb</span><br></pre></td></tr></table></figure>
-<p>确定TTRSS安装路径。由于插件目录名称为<code>plugins.local</code>，为了简化搜索，直接搜索<code>plugins.local</code>即可。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">locate plugins.local</span><br></pre></td></tr></table></figure>
-<p>搜索后，TTRSS的安装路径就一目了然了，我的路径为<code>/var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/</code>。</p>
-<p><img data-src="./locate-plugins-folder.png"></p>
-<p>之后将插件复制到TTRSS的<code>plugins.local</code>目录下。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
-<p>登录到TTRSS前台界面，进入偏好设置，勾选<code>启用API:外部客户端通过API来访问账户</code>。同时，页面底部会有<code>Fever Emulation</code>的条目。</p>
-<p><img data-src="./ttrss-fever-1.png"></p>
-<p>选择<code>插件</code>条目，勾选<code>fever</code>。</p>
-<p><img data-src="./ttrss-fever-2.png"></p>
-<p>选择<code>Fever Emulation</code>的条目，在文本框中输入fever连接密码（可以与ttrss账号密码相同）。点击<code>Set Password</code>，设置成功后会有浮窗。另外，记住红框内的地址，这是客户端连接fever的地址。</p>
-<p><img data-src="./ttrss-fever-3.png"></p>
-<p>到这里，ttrss fever插件就搞定了。</p>
-<p>关于ttrss fever插件的更新。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
-<p>客户端连接可以参考下图。</p>
-<p><img data-src="./ttrss-reeder-setting.jpg"></p>
-<h3 id="ttrss工具更新">4.2 TTRSS工具更新</h3>
-<p>停止TTRSS相关容器。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose down &amp;&amp; docker-compose rm</span><br></pre></td></tr></table></figure>
-<p>拉取最新安装文件，根据需要选取分支。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取static-dockerhub分支</span></span><br><span class="line">git pull origin static-dockerhub</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取master分支</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
-<p>依据新的<code>.env-dist</code>修改<code>.env</code>。</p>
-<p>再起用docker-compose拉取、启动。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up</span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>写文章时，我的TTRSS已经稳定运行了两周了，没有出什么幺蛾子。</p>
-<p><img data-src="./ttrss-reeder-done.jpg"></p>
-<p>有TTRSS安装需求的同学可以参考上面的安装步骤，搭建自己的、可靠的RSS订阅服务。</p>
-]]></content>
-      <categories>
-        <category>DIY</category>
-      </categories>
-      <tags>
-        <tag>DIY</tag>
-        <tag>RSS</tag>
-        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -1941,151 +1739,99 @@ Emulation"页面设置的密码。</p>
       </tags>
   </entry>
   <entry>
-    <title>VS Code笔记之可自动更新的Markdown目录</title>
-    <url>//2020/05/05/vscode-note-tableofcontents/</url>
-    <content><![CDATA[<p>Markdown语法支持自己编写目录，但是碰到中文标题就捉襟见肘了。不久前在写项目README的时候，我一时兴起准备给文章编写一个目录，却发现一开始编写的目录竟然可以自动更新。照着目录的格式摸索了几次，终于总结出快速编写目录的方法。</p>
+    <title>Linux笔记之VNC配置</title>
+    <url>//2021/06/21/linux-note-vnc-config/</url>
+    <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
+<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
 <span id="more"></span>
-<p>可自动更新目录需要在VS Code中安装插件<a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown
-All in One</a>。</p>
-<p>以本文为例，编写可自动更新的目录的步骤如下：</p>
-<h2 id="步骤1">步骤1</h2>
-<p>创建Markdown文件后，先输入一个标题。如：<br>
-<code># VS Code笔记之快速插入Markdown目录</code></p>
-<h2 id="步骤2">步骤2</h2>
-<p>在需要创建目录的地方输入<code>- [](#</code><del>注意空格和英文半角括号</del>，这时会有自动补全列表弹出，选择"VS
-Code笔记之快速插入Markdown目录"的标题，如图1。</p>
-<figure>
-<img data-src="./3134778940.png" alt="图1">
-<figcaption aria-hidden="true">图1</figcaption>
-</figure>
-<p>选择标题后，目录的最上方会有灰色的小字<code>Table of Contents (up to date)</code>，效果如图2所示。</p>
-<figure>
-<img data-src="./4154552605.png#vwid=649&amp;vhei=127" alt="图2">
-<figcaption aria-hidden="true">图2</figcaption>
-</figure>
-<p>此时，插件就已经把这一块列表识别为文章的目录了。对于已经创建的Markdown文档，在步骤2输入列表时，有时需要输入两级标题才可以被插件识别为目录。</p>
-<h2 id="步骤3">步骤3</h2>
-<p>保存文件，插件会自动补全连接的内容，见图3所示。之后，插件就会在保存文件时自动获取文章的各级标题，并添加到目录列表中。</p>
-<figure>
-<img data-src="./362785527.png#vwid=646&amp;vhei=120" alt="图3">
-<figcaption aria-hidden="true">图3</figcaption>
-</figure>
-<hr>
-<p>如果这篇可自动更新的Markdown目录编写指南对你有帮助，请别忘了<del>一键三连</del>收藏分享哦。</p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS Code笔记之根据语言选择性删除行末空格</title>
-    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
-    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
-Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
-Workshop、Markdown+Math和Markdown Preview
-Enhanced配合来写东西，用着特别顺手。</p>
-<p>平时用VS
-Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
-<span id="more"></span>
-<h2 id="问题">问题</h2>
-<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
-样例一：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1</p>
-<p>para-2</p>
-<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
-样例二：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1<br>
-para-2</p>
-<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
-<h2 id="解决方案">解决方案</h2>
-<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-<p>VS
-Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VHDL学习笔记之元件递归</title>
-    <url>//2020/08/05/vhdl-note-component-recursion/</url>
-    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
 <blockquote>
-<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
+<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
 </blockquote>
-<span id="more"></span>
-<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
-<h2 id="元件递归设计">元件递归设计</h2>
-<blockquote>
-<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
-</blockquote>
-<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://gitee.com/blueschwarz/blog_attachment/raw/master/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
-Std 1076-2019</a>。</p>
-<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
-为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
-\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
-方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>简单写了个仿真文件，仿真结果如下。</p>
+<h2 id="预备知识">1 预备知识</h2>
+<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
+<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
+<p>wikipedia上有详细介绍<a href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
+<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
+<h2 id="安装vnc">2 安装VNC</h2>
+<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
+<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
-<figcaption aria-hidden="true">综合前仿真结果</figcaption>
+<img data-src="./linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
+<figcaption aria-hidden="true">yum grouplist结果</figcaption>
 </figure>
-<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
+<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y <span class="string">&quot;GNOME Desktop&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="comment"># 切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
+<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
+<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="comment"># 验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
-<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
+<img data-src="./linux_note_vnc_config_vnc.png" alt="验证VNC安装">
+<figcaption aria-hidden="true">验证VNC安装</figcaption>
 </figure>
-<h2 id="正常的n输入与门设计">正常的n输入与门设计</h2>
-<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
+<h2 id="配置vnc">3 配置VNC</h2>
+<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
+<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从sample创建VNC启动脚本</span></span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
+<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
+<p>接着，需要小小处理一下刚刚复制的脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system</span><br><span class="line"><span class="comment"># 给权限x</span></span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:1.service</span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>接着打开2个脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
+<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
 <figure>
-<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
-<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
-</figure>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
-<figure>
-<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
-<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
-</figure>
-<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
-<figure>
-<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
-<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
+<img data-src="./linux_note_vnc_config_script_1.png" alt="脚本修改前">
+<figcaption aria-hidden="true">脚本修改前</figcaption>
 </figure>
 <figure>
-<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
-<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
+<img data-src="./linux_note_vnc_config_script_2.png" alt="脚本修改后">
+<figcaption aria-hidden="true">脚本修改后</figcaption>
+</figure>
+<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
+<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
+<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
+<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
+<p>下面是VNC服务的启动和开机自启的配置。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="comment"># 配置开机自启</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:1.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="./linux_note_vnc_config_port.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
+<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
+ツ )_/¯</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
+<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
+<figure>
+<img data-src="./linux_note_vnc_config_selinux.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<h2 id="连接vnc">5 连接VNC</h2>
+<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
+<figure>
+<img data-src="./linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
+<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
+</figure>
+<figure>
+<img data-src="./linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
+<figcaption aria-hidden="true">连接VNC演示</figcaption>
 </figure>
 <h2 id="总结">总结</h2>
-<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
-:&amp;(蛆音娘_扶额)
-，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
-:@(击掌)</p>
-<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
+<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
+<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
 ]]></content>
       <categories>
-        <category>集成电路</category>
+        <category>软件</category>
       </categories>
       <tags>
-        <tag>VHDL</tag>
-        <tag>FPGA</tag>
+        <tag>CentOS</tag>
+        <tag>VNC</tag>
       </tags>
   </entry>
   <entry>
@@ -2182,6 +1928,260 @@ NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至�
       <tags>
         <tag>视频</tag>
         <tag>视频编码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tiny Tiny RSS再次搭建</title>
+    <url>//2021/07/22/ttrss-build-2/</url>
+    <content><![CDATA[<p>贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github
+Pages上了，阿里云的服务器就空出来了。</p>
+<p>但是，不幸再次降临，TTRSS官方把原来的安装方式取消了，推荐使用docker安装。经过一番摸索，终于完成了docker安装TTRSS，并搞定fever。</p>
+<p>环境说明：所使用的是Aliyun服务器（1C2G），系统为CentOS 7.9。</p>
+<span id="more"></span>
+<h2 id="安装docker">1 安装Docker</h2>
+<p>Docker是...啥？我也不是特别清楚，我把它看作是独立的运行环境，和虚拟机类似。详细的请找Docker官方文档和百度。</p>
+<p>首先确保系统内没有预安装旧版本的docker，使用命令卸载旧版本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
+<p>配置yum源，参考了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">TUNA
+CentOS镜像使用帮助</a>。使用云服务器一般不需要配置。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sed -e &#x27;s|^mirrorlist=|#mirrorlist=|g&#x27; \</span><br><span class="line">         -e &#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27; \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
+<p>配置docker的yum源。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>安装docker相关依赖包。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+<p>安装docker</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
+<p>启动docker，并设置开机自启。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
+<p>验证docker安装。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+<h2 id="安装docker-compose">2 安装Docker Compose</h2>
+<p>Docker Compose是基于Docker的多容器运行管理工具。</p>
+<p>下载Docker
+Compose的Release包。下面的命令使用的是1.29.2版本的Release，可前往<a href="https://github.com/docker/compose/releases">软件发布页</a>查看最新的版本号，然后修改下面命令的版本号即可。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>为文件夹添加可执行权限。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>为Docker Compose在<code>/usr/bin/</code>创建链接。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件copy到/usr/bin/目录下</span></span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>验证Docker Compose安装。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+<h2 id="安装ttrss">3 安装TTRSS</h2>
+<p>TTRSS是啥就不再次介绍了，需要了解的可以看看之前写的<a href="/2020/04/23/ttrss-build/">那篇文章</a>，或者直接访问<a href="https://tt-rss.org/">TTRSS官网</a>。</p>
+<h3 id="获取docker安装所需文件">3.1 获取docker安装所需文件</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://git.tt-rss.org/fox/ttrss-docker-compose.git ttrss-docker</span><br><span class="line">cd ttrss-docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git checkout命令为切换static-dockerhub分支，也可以不切换使用master分支</span></span><br><span class="line">git checkout static-dockerhub</span><br></pre></td></tr></table></figure>
+<h3 id="修改.env配置文件">3.2 修改<code>.env</code>配置文件</h3>
+<p>首先需要将<code>ttrss-docker</code>文件夹中的<code>.env-dist</code>复制为<code>.env</code>。（注：<code>.env-dist</code>和<code>.env</code>均为隐藏文件，需要使用<code>ls -a</code>才能看到。）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp .env-dist .env</span><br></pre></td></tr></table></figure>
+<p>打开<code>.env</code>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim .env</span><br></pre></td></tr></table></figure>
+<p>修改端口<code>HTTP_PORT</code>。默认为8280端口，可以配置为自定义端口。配置完成后，还需要Aliyun控制台开放端口访问，其它云平台类似，自建服务器那就自己搞定。</p>
+<p>修改URL<code>TTRSS_SELF_URL_PATH</code>。如果简单使用ip进行访问，只需要将<code>localhost</code>修改为服务器的ip地址即可。</p>
+<h3 id="拉取并启动容器">3.3 拉取并启动容器</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up -d</span><br></pre></td></tr></table></figure>
+<p>验证容器运行。 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure></p>
+<h3 id="登录ttrss">3.4 登录TTRSS</h3>
+<p>使用浏览器访问<code>TTRSS_SELF_URL_PATH</code>配置的URL。默认账号密码为<code>admin</code>和<code>password</code>。<strong>进入前台系统后，请先通过界面右上角的<code>偏好设置</code>修改密码。</strong></p>
+<p>有需要的可以新建普通用户，将<code>admin</code>仅作为管理员用户。</p>
+<p><img data-src="./ttrss-setting-1.png"></p>
+<p>注：文章编写时，TTRSS的前台系统由于使用<code>window.requestIdleCallback</code>API，该API并不受Safari支持，所以前台系统不能使用Safari<del>应该都知道我为什么知道吧</del>。</p>
+<p><img data-src="./ttrss-safari-bug.jpg"></p>
+<h2 id="ttrss后续配置">4 TTRSS后续配置</h2>
+<h3 id="fever">4.1 Fever</h3>
+<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
+API。因此，需要配置fever插件。</p>
+<p>获取TTRSS fever插件，仓库地址为<a href="https://github.com/DigitalDJ/tinytinyrss-fever-plugin">DigitalDJ/tinytinyrss-fever-plugin</a>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin fever</span><br></pre></td></tr></table></figure>
+<p>由于ttrss是通过docker-compose安装的，所以具体的安装路径就不清楚了；虽然普通使用不需要知道安装路径，但是使用官方仓库以外的插件时，安装路径至关重要。下面先来确定TTRSS的安装路径。</p>
+<p>安装mlocate。为什么要安装mlocate呢？因为<code>find</code>的搜索速度堪忧啊。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y mlocate</span><br></pre></td></tr></table></figure>
+<p>初始化文件索引。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">updatedb</span><br></pre></td></tr></table></figure>
+<p>确定TTRSS安装路径。由于插件目录名称为<code>plugins.local</code>，为了简化搜索，直接搜索<code>plugins.local</code>即可。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">locate plugins.local</span><br></pre></td></tr></table></figure>
+<p>搜索后，TTRSS的安装路径就一目了然了，我的路径为<code>/var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/</code>。</p>
+<p><img data-src="./locate-plugins-folder.png"></p>
+<p>之后将插件复制到TTRSS的<code>plugins.local</code>目录下。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
+<p>登录到TTRSS前台界面，进入偏好设置，勾选<code>启用API:外部客户端通过API来访问账户</code>。同时，页面底部会有<code>Fever Emulation</code>的条目。</p>
+<p><img data-src="./ttrss-fever-1.png"></p>
+<p>选择<code>插件</code>条目，勾选<code>fever</code>。</p>
+<p><img data-src="./ttrss-fever-2.png"></p>
+<p>选择<code>Fever Emulation</code>的条目，在文本框中输入fever连接密码（可以与ttrss账号密码相同）。点击<code>Set Password</code>，设置成功后会有浮窗。另外，记住红框内的地址，这是客户端连接fever的地址。</p>
+<p><img data-src="./ttrss-fever-3.png"></p>
+<p>到这里，ttrss fever插件就搞定了。</p>
+<p>关于ttrss fever插件的更新。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
+<p>客户端连接可以参考下图。</p>
+<p><img data-src="./ttrss-reeder-setting.jpg"></p>
+<h3 id="ttrss工具更新">4.2 TTRSS工具更新</h3>
+<p>停止TTRSS相关容器。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose down &amp;&amp; docker-compose rm</span><br></pre></td></tr></table></figure>
+<p>拉取最新安装文件，根据需要选取分支。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取static-dockerhub分支</span></span><br><span class="line">git pull origin static-dockerhub</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取master分支</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<p>依据新的<code>.env-dist</code>修改<code>.env</code>。</p>
+<p>再起用docker-compose拉取、启动。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up</span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结</h2>
+<p>写文章时，我的TTRSS已经稳定运行了两周了，没有出什么幺蛾子。</p>
+<p><img data-src="./ttrss-reeder-done.jpg"></p>
+<p>有TTRSS安装需求的同学可以参考上面的安装步骤，搭建自己的、可靠的RSS订阅服务。</p>
+]]></content>
+      <categories>
+        <category>DIY</category>
+      </categories>
+      <tags>
+        <tag>DIY</tag>
+        <tag>RSS</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code笔记之根据语言选择性删除行末空格</title>
+    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
+    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
+Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
+Workshop、Markdown+Math和Markdown Preview
+Enhanced配合来写东西，用着特别顺手。</p>
+<p>平时用VS
+Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
+<span id="more"></span>
+<h2 id="问题">问题</h2>
+<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
+样例一：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1</p>
+<p>para-2</p>
+<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
+样例二：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1<br>
+para-2</p>
+<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<p>VS
+Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code笔记之可自动更新的Markdown目录</title>
+    <url>//2020/05/05/vscode-note-tableofcontents/</url>
+    <content><![CDATA[<p>Markdown语法支持自己编写目录，但是碰到中文标题就捉襟见肘了。不久前在写项目README的时候，我一时兴起准备给文章编写一个目录，却发现一开始编写的目录竟然可以自动更新。照着目录的格式摸索了几次，终于总结出快速编写目录的方法。</p>
+<span id="more"></span>
+<p>可自动更新目录需要在VS Code中安装插件<a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown
+All in One</a>。</p>
+<p>以本文为例，编写可自动更新的目录的步骤如下：</p>
+<h2 id="步骤1">步骤1</h2>
+<p>创建Markdown文件后，先输入一个标题。如：<br>
+<code># VS Code笔记之快速插入Markdown目录</code></p>
+<h2 id="步骤2">步骤2</h2>
+<p>在需要创建目录的地方输入<code>- [](#</code><del>注意空格和英文半角括号</del>，这时会有自动补全列表弹出，选择"VS
+Code笔记之快速插入Markdown目录"的标题，如图1。</p>
+<figure>
+<img data-src="./3134778940.png" alt="图1">
+<figcaption aria-hidden="true">图1</figcaption>
+</figure>
+<p>选择标题后，目录的最上方会有灰色的小字<code>Table of Contents (up to date)</code>，效果如图2所示。</p>
+<figure>
+<img data-src="./4154552605.png#vwid=649&amp;vhei=127" alt="图2">
+<figcaption aria-hidden="true">图2</figcaption>
+</figure>
+<p>此时，插件就已经把这一块列表识别为文章的目录了。对于已经创建的Markdown文档，在步骤2输入列表时，有时需要输入两级标题才可以被插件识别为目录。</p>
+<h2 id="步骤3">步骤3</h2>
+<p>保存文件，插件会自动补全连接的内容，见图3所示。之后，插件就会在保存文件时自动获取文章的各级标题，并添加到目录列表中。</p>
+<figure>
+<img data-src="./362785527.png#vwid=646&amp;vhei=120" alt="图3">
+<figcaption aria-hidden="true">图3</figcaption>
+</figure>
+<hr>
+<p>如果这篇可自动更新的Markdown目录编写指南对你有帮助，请别忘了<del>一键三连</del>收藏分享哦。</p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VHDL学习笔记之元件递归</title>
+    <url>//2020/08/05/vhdl-note-component-recursion/</url>
+    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
+<blockquote>
+<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
+</blockquote>
+<span id="more"></span>
+<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
+<h2 id="元件递归设计">元件递归设计</h2>
+<blockquote>
+<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
+</blockquote>
+<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://gitee.com/blueschwarz/blog_attachment/raw/master/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
+Std 1076-2019</a>。</p>
+<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
+为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
+\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
+方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>简单写了个仿真文件，仿真结果如下。</p>
+<figure>
+<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
+<figcaption aria-hidden="true">综合前仿真结果</figcaption>
+</figure>
+<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
+<figure>
+<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
+<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
+</figure>
+<h2 id="正常的n输入与门设计">正常的n输入与门设计</h2>
+<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
+<figure>
+<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
+<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
+</figure>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
+<figure>
+<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
+<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
+</figure>
+<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
+<figure>
+<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
+<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
+</figure>
+<figure>
+<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
+<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
+:&amp;(蛆音娘_扶额)
+，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
+:@(击掌)</p>
+<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
+]]></content>
+      <categories>
+        <category>集成电路</category>
+      </categories>
+      <tags>
+        <tag>VHDL</tag>
+        <tag>FPGA</tag>
       </tags>
   </entry>
   <entry>
