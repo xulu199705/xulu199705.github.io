@@ -86,6 +86,401 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
       </categories>
   </entry>
   <entry>
+    <title>IC笔记之瞬态仿真</title>
+    <url>//2021/04/06/ic-note-simu-tran/</url>
+    <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
+<span id="more"></span>
+<h2 id="概述">1 概述</h2>
+<p>瞬态仿真是什么？</p>
+<blockquote>
+<p>瞬态仿真是电路在给定的输入激励下，在设定的时间范围内计算电路时域瞬态响应性能的一种仿真手段。</p>
+</blockquote>
+<p>瞬态仿真一般是集成电路的第一个仿真，是年轻人的第一个仿真手段；通常是验证稳定性、速度、精度等等，需要在多次不同的瞬态分析过程才能得出结论。</p>
+<h3 id="基本设置">1.1 基本设置</h3>
+<p>在"ADE"中选择"Analyses"-"Choose"，可以选择仿真功能选择。点击"tran"后，可以看到如下图的基本设置界面。</p>
+<figure>
+<img data-src="./tran_ade_settings_1.png" alt="图1-1">
+<figcaption aria-hidden="true">图1-1</figcaption>
+</figure>
+<ol type="1">
+<li>"Stop Time"，设置仿真时间<br>
+仿真时间默认从0时刻开始，这里只设置停止时间。时间单位为可以是"s"（秒）、"m"（毫秒）和"u"（微秒）。</li>
+<li>"Accuracy Defaults(errpreset)"，设置仿真精度和速度<br>
+软件内置有三种仿真精度："conservative"、"moderate"、"liberal"。"conservative"具有最高的精度，但速度较慢，用于高精度模拟电路和混合信号电路；"liberal"则是速度最快，精度较差，用于数字电路和变化率不高的模拟电路；"moderate"是比较折衷的模式，用于绝大多数模拟电路。如果需要更高的精度，则要在高级设置中配置参数。</li>
+<li>"Transient Noise"，设置瞬态噪声</li>
+<li>"Dynamic Parameter"，设置动态参数</li>
+<li>"Enabled"，设置瞬态仿真启用</li>
+</ol>
+<h3 id="高级设置">1.2 高级设置</h3>
+<p>在图1-1中点击右下角的"Options"可进入高级设置。</p>
+<h4 id="time-step标签页">1.2.1 Time Step标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_timestep.png" alt="图1-2">
+<figcaption aria-hidden="true">图1-2</figcaption>
+</figure>
+<p>Simulation Interval Parameters</p>
+<ul>
+<li>"start"：仿真起始时刻。仿真器默认起始时间为0s。</li>
+<li>"outputstart"：输出波形时间。如果设计者的仿真时间较长，而只需观察某个时间点或者部分时间段内的电路瞬态特性输出，则可以通过该参数控制数据输出。</li>
+</ul>
+<p>Time Step Parameters</p>
+<ul>
+<li>"step"：最小的时间步长。</li>
+<li>"maxstep"：最大时间步长，根据"errpreset"中的精度设定取得默认值。</li>
+</ul>
+<h4 id="algorithm标签页">1.2.2 Algorithm标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_algorithm.png" alt="图1-3">
+<figcaption aria-hidden="true">图1-3</figcaption>
+</figure>
+<p>Initial Condition Parameters</p>
+<p>用户可以利用设置电路节点状态的初始化语句（ic
+statement）或电容、电感等模型内的初始条件参数（ic
+parameters）两种方式为瞬态仿真设置初始条件。其中电容中设置的是初始电压值，电感中设置的是初始电流值。如果没有进行设置，仿真器将默认采用直流分析的结果作为初始条件。对这个参数进行设置时要格外注意，如果对电路分析不明，贸然设置电路节点的初始值，极易造成电路瞬态仿真出现收敛性问题，并产生错误结果。</p>
+<ul>
+<li>"ic"：设定通过何种方式设置初始条件。
+<ul>
+<li>ic=dc：忽略任何设置的初始条件，直接采用直流分析的结果。</li>
+<li>ic=node：忽略电容、电感等器件上设置的初始条件，而采用"ic
+statement"设置的初始条件。</li>
+<li>ic=dev：忽略由"ic
+statement"设置的初始条件，采用电容、电感上的初始条件。</li>
+<li>ic=all：两种初始条件都将被采用。当设置条件发生冲突时，"ic
+parameters"比"ic statement"的优先级更高。<br>
+&gt; "ic statement"的格式是ic NodeName=value。<br>
+&gt; 例：ic V1=1 M1:int_d=3.3 L1:1=10u<br>
+&gt;
+上句表示的是：在节点V1上的初始电压是1V；在MOS管M1的漏极电压是3.3V；在电感L1
+上流过的初始电流是10μA。</li>
+</ul></li>
+<li>"skipdc"：最小的时间步长。
+选择跳过直流分析。在没有直流分析的情况下，电路的初始解将采用通解，或是从由"readic"定义的文件中读取初始条件。如果"readic"中没有定义，则将从"ic
+statement"中获取初始条件。无论是否跳过直流分析，器件上的初始条件肯定都会被采用。如果一个节点没有被赋予初始条件，将自动被仿真器设置为零。</li>
+<li>"readic"：从文件中读取初始条件。</li>
+</ul>
+<p>Initial Condition Parameters For Oscillator</p>
+<p>用户可以手动配置振荡器的初始条件，也可以选择使用软件自动配置。</p>
+<p>Convergence Parameters</p>
+<p>当电路在仿真时存在无限快的响应速度（如一个电路节点不存在任何电容），仿真器可能会产生收敛性问题。为了避免出现这种问题，需要设置"cmin"参数，给该节点设置一个合理的对地电容值。</p>
+<ul>
+<li>"readns"：从文件中读取电路瞬态仿真的初始解。</li>
+<li>"cmin"：设定每个节点对地的最小电容</li>
+</ul>
+<p>Integration Method Parameters</p>
+<p>该参数用于设计者根据仿真速度和仿真精确度选择合适的积分方式。仿真器提供3种不同的积分方式："backward-Euler"，"Trapezoidal"，"Second-order
+Gear"。根据这3种方式一共组合出6种模式，分别为"euler"、"traponly"、"trap"、"gear2only"、gear2"、"trapgear2"。<br>
+如果设计者需要高精度仿真，可以选择"trapezoidal"积分方式。但是，这种积分方式对前一时刻计算产生的误差非常敏感，因此在容差很大时并不是一种很好的选择。在容差很大而且要求速度较快的情况下，通常选择"Second-order
+Gear"积分法。"Second-order
+Gear"积分法比"backward-Euler"积分法更加精确。</p>
+<p>Accuracy Parameters -
+"relref"：相对收敛标准的参考，默认值从"errpreset"得到。包括以下几个选项。<br>
+"relref =
+pointlocal"：即relref=局部点，这个设置用来定量比较每个节点的值相对于待分析节点上当前数值的相对误差。<br>
+"relref =
+alllocal"：即relref=局部所有点，定量比较过去所有时间点的值相对于最大节点值的相对误差。<br>
+"relref =
+sigglobal"：即relref=所有信号点，定量比较每个电路上信号值相对于电路中所有信号中的最大值的相对误差。<br>
+"relref =
+allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最大悬浮电流值设定比较方程，此时不能满足基尔霍夫电流方程。
+- "lteratio"：比例系数，用于计算Newton容差中的LTE 容差。</p>
+<p>Newton Parameters</p>
+<ul>
+<li>"maxiters"：在每个时间步长内最多的迭代次数。</li>
+<li>"restart"：如果有任何条件发生变化，是否从最开始重新计算直流解。如果不重新计算，将直接采用上一次的初始值。</li>
+</ul>
+<h4 id="state-file标签页">1.2.3 State File标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_statefile.png" alt="图1-4">
+<figcaption aria-hidden="true">图1-4</figcaption>
+</figure>
+<p>StateFile Parameters</p>
+<p>状态文件（State File）主要有两个用处： 1.
+将保存下来的状态文件用于后续的仿真分析中。如在一次瞬态分析中保存下结束时刻的信息，在下一次瞬态分析中能够以该时刻作为起始点继续完成后续时间段的分析。
+2.
+用户能够利用状态文件自动完成初始条件的更新。设计者能够利用仿真器将一次分析的初始时刻工作点或终止时刻工作点生成状态文件。同时，设计者也能手动编写一个状态文件。</p>
+<ul>
+<li>"write"：将瞬态分析的初始状态解写到指定的文件中。</li>
+<li>"writefinal"：将瞬态分析的最终解写到指定的文件中。</li>
+</ul>
+<p>Save-Restart Parameters</p>
+<p>该参数用于配置保存和载入的频率等参数。</p>
+<h4 id="output标签页">1.2.3 Output标签页</h4>
+<p><img data-src="./tran_ade_settings_2_output_1.png" alt="图1-5"> <img data-src="./tran_ade_settings_2_output_2.png" alt="图1-6"></p>
+<p>Output Parameters</p>
+<p>仿真器默认情况下会把所有仿真数据都保存下来，但有时并不需要所有的数据量。仿真器允许设计者选择保存需要的数据。如果需要得到更精确的结果，也可以增大数据输出量。<br>
+该参数配置"compression"输出模式，将恒定信号的重复记录删除。</p>
+<p>Strobing Parameters</p>
+<p>该参数配置"strobing"输出模式。在保存点之间设置一个时间间隔。虽然仿真器计算过这些数据，但是并没有将其保存输出。</p>
+<p>Final OP Point Settings</p>
+<p>该参数配置静态工作点的保存等参数。</p>
+<p>Infotimes Settings</p>
+<p>该参数配置"infotimes"输出模式。允许设计者保存某些自定义时刻的工作点数据。如果需要保存多个时刻的工作点，填入时间矢量之间以空格隔开。</p>
+<p>Actimes Settings</p>
+<p>未找到相关资料，待补充。</p>
+<h4 id="emir-output标签页">1.2.5 EM/IR Output标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_emiroutput.png" alt="图1-7">
+<figcaption aria-hidden="true">图1-7</figcaption>
+</figure>
+<p>该标签页涉及EM（电子迁移）和IR（IR压降）。<del>恕我直言，不会。</del></p>
+<h4 id="misc标签页">1.2.6 Misc标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_misc.png" alt="图1-7">
+<figcaption aria-hidden="true">图1-7</figcaption>
+</figure>
+<p>该标签页为一些难以分类的配置，毕竟都写了是misc了。</p>
+<ol type="1">
+<li>Annotation Parameters，注释。</li>
+<li>Captab Parameters，电容列表参数。</li>
+<li>Additional Parameters，额外参数。</li>
+</ol>
+<h2 id="实例">2 实例</h2>
+<p>仿真电路如图。瞬态仿真实例选择了使用二极管连接方式的PMOS作为负载的共源极电路。</p>
+<figure>
+<img data-src="./circuit_opa.png" alt="图2-1">
+<figcaption aria-hidden="true">图2-1</figcaption>
+</figure>
+<h3 id="配置激励源">2.1 配置激励源</h3>
+<p>与前一篇关于<a href="/2021/03/30/ic-note-inv-simu/">反相器仿真</a>中对于激励信号的配置不同，这次选择直接对端口进行激励源配置。</p>
+<p>在ADE窗口中选择"Setup"-"Stimuli"。</p>
+<figure>
+<img data-src="./tran_ade_stimuli_1.png" alt="图2-2">
+<figcaption aria-hidden="true">图2-2</figcaption>
+</figure>
+<p>按照下面三张图片依次对三个端口的输入信号进行配置。</p>
+<p><img data-src="./tran_ade_stimuli_2_vin.png" alt="图2-3"> <img data-src="./tran_ade_stimuli_2_vdda.png" alt="图2-4"> <img data-src="./tran_ade_stimuli_2_gnda.png" alt="图2-5"></p>
+<h3 id="配置瞬态仿真">2.2 配置瞬态仿真</h3>
+<p>选择瞬态仿真模式，并选择仿真时间和精度。</p>
+<figure>
+<img data-src="./tran_ade_mode.png" alt="图2-6">
+<figcaption aria-hidden="true">图2-6</figcaption>
+</figure>
+<p>选取观测信号后，仿真配置结束。</p>
+<figure>
+<img data-src="./tran_ade_settings.png" alt="图2-7">
+<figcaption aria-hidden="true">图2-7</figcaption>
+</figure>
+<h3 id="仿真结果">2.3 仿真结果</h3>
+<p>下图是仿真结果。局部放大后，可以通过"M"键选取曲线上的点，对信号进行进一步分析。</p>
+<figure>
+<img data-src="./tran_ade_results.png" alt="图2-8">
+<figcaption aria-hidden="true">图2-8</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>以上就是ADE中瞬态仿真的大部分介绍。本次笔记结束。 :@(击掌)</p>
+]]></content>
+      <categories>
+        <category>集成电路</category>
+      </categories>
+      <tags>
+        <tag>瞬态仿真</tag>
+        <tag>仿真</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_1_立项</title>
+    <url>//2018/12/25/keyboard87-1/</url>
+    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
+type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+<span id="more"></span>
+<h2 id="项目初衷">项目初衷</h2>
+<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<figure>
+<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
+<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+</figure>
+<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
+<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
+<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_2_硬件设计</title>
+    <url>//2019/01/22/keyboard87-2/</url>
+    <content><![CDATA[<blockquote>
+<p>前文：<br>
+<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a></p>
+</blockquote>
+<p>从这个项目立项以来已经快一个月了，终于在师傅和同学的帮助下，搞定了硬件设计。下面我就器件选型简单介绍一下，最后贴了一下渲染图。</p>
+<span id="more"></span>
+<h2 id="硬件设计">硬件设计</h2>
+<p>这一章介绍一下客制化键盘的硬件设计，包括以下4项：主控芯片、传输接口、轴体选择、键盘布局。</p>
+<h3 id="主控芯片">主控芯片</h3>
+<p>在确定STM32作为主控芯片之前，我在网上搜了一下，也拆了手上的ikbc
+C87，ATMEL的ATMEGA32芯片使用的比较多。我最终还是选择了STM32，主要原因是对STM32比较熟悉。</p>
+<p>当然，作为32位的MCU，STM32不管是在IO数量、USB接口支持，还是程序运算速度，都能满足机械键盘的需求。</p>
+<ul>
+<li>USB接口</li>
+</ul>
+<p>机械键盘使用时是作为USB
+Slave使用的，所以只需要芯片支持USB就行，不需要OTG。STM32F1的所有芯片都支持全速USB
+2.0，所以随便选一款就行。</p>
+<ul>
+<li>IO数量</li>
+</ul>
+<p>简单计算一下机械键盘需要的IO口，见下表（实际IO分配以实际原理图为准）。</p>
+<table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>序号</th>
+<th>用途</th>
+<th>数量</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>键盘列</td>
+<td>17</td>
+<td>87键键盘布局，最多的一行（第2行）共17个按键</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>键盘行</td>
+<td>6</td>
+<td>87键键盘布局，共6行</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>USB接口</td>
+<td>2</td>
+<td>USBDN和USBDP</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>调试接口</td>
+<td>2</td>
+<td>使用STLink连接，仅需JTMS-SWDIO、JTCK-SWCLK和GND三个接口</td>
+</tr>
+</tbody>
+</table>
+<p>简单计算一下，键盘需求的IO口为27个。</p>
+<ul>
+<li>运算速度</li>
+</ul>
+<p>STM32有四个时钟源：</p>
+<table>
+<thead>
+<tr class="header">
+<th>时钟源</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>高速外部时钟(HSE)</td>
+<td>可取4-16MHz，一般采用8MHz</td>
+</tr>
+<tr class="even">
+<td>高速内部时钟(HSI)</td>
+<td>8MHz，内部RC振荡器产生，不稳定</td>
+</tr>
+<tr class="odd">
+<td>低速外部时钟(LSE)</td>
+<td>外部晶振，一般采用32.768KHz</td>
+</tr>
+<tr class="even">
+<td>低速内部时钟(LSI)</td>
+<td>内部RC振荡器产生，约40KHz</td>
+</tr>
+</tbody>
+</table>
+<p>机械键盘用8MHz外部晶振，内部的系统时钟最高为72MHz，满足机械键盘的输入精度要求。</p>
+<h3 id="传输接口">传输接口</h3>
+<p>机械键盘的传输接口已经确定为USB。一般来说，USB有以下几种接口类型：</p>
+<table>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type A</th>
+<th style="text-align: center;">Type B</th>
+<th style="text-align: center;">Mini</th>
+<th style="text-align: center;">Micro</th>
+<th style="text-align: center;">Type C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img data-src="./3082159515.jpg" alt="type_a"></td>
+<td style="text-align: center;"><img data-src="./3927602725.jpg" alt="type_b"></td>
+<td style="text-align: center;"><img data-src="./1301417559.jpg" alt="miniusb"></td>
+<td style="text-align: center;"><img data-src="./3726218615.jpg" alt="microusb"></td>
+<td style="text-align: center;"><img data-src="./1494934121.jpg" alt="type_c"></td>
+</tr>
+</tbody>
+</table>
+<p>目前现在市面上键线分离的机械键盘一般用的是miniUSB或microUSB接口。最近半年来，USB
+C-type特别流行。这个接口不仅提供大功率传输，而且支持正反随便插，大大降低了插第二次的郁闷。机械键盘就决定用USB
+C-type。</p>
+<h3 id="轴体选择">轴体选择</h3>
+<p>在选择机械键盘的轴体时，因为正在使用的ikbc
+C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四种，茶轴肯定是我的首选，不管用做什么，都可以满足要求。</p>
+<p>MX轴的封装尺寸：<a href="https://github.com/xulu199705/KeyBoard87/tree/master/Reference/Cherry_MX/Cherry_MX_sw.pdf">PDF</a></p>
+<h3 id="键盘布局">键盘布局</h3>
+<p>键盘布局选择和手头使用的ikbc c87一样的87键布局，在<a href="http://www.keyboard-layout-editor.com/">这里</a>可以将需要的布局信息生成一堆文本，将文本复制到<a href="http://builder.swillkb.com/">这里</a>，生成定位板文件，方面在PCB中定位每个键轴的位置。</p>
+<p>布线图 <img data-src="./1178723672.png" alt="pcb_2d_bottomlayer.png"></p>
+<table>
+<thead>
+<tr class="header">
+<th>3D顶部视图</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="./1617787578.png" alt="2.PNG"></td>
+<td><img data-src="./2508825578.png" alt="pcb_3d_top.png"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>3D底部视图</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="./784997014.png" alt="1.PNG"></td>
+<td><img data-src="./210904615.png" alt="pcb_3d_bottom.png"></td>
+</tr>
+</tbody>
+</table>
+<p>LOGO视图 <img data-src="./2778683646.png" alt="pcb_3d_logo.png"></p>
+<p>P.S. PCB文件已上传<a href="https://github.com/xulu199705/KeyBoard87">github</a>，过一会儿就投板给嘉立创打样。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IC笔记之反相器仿真</title>
     <url>//2021/03/30/ic-note-inv-simu/</url>
     <content><![CDATA[<p>2021第一次更新啦！！！</p>
@@ -369,209 +764,6 @@ As"为仿真配置的名称，"Description"中可以选填一些配置信息，�
       <tags>
         <tag>IC</tag>
         <tag>IC618</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_1_立项</title>
-    <url>//2018/12/25/keyboard87-1/</url>
-    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
-type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
-<span id="more"></span>
-<h2 id="项目初衷">项目初衷</h2>
-<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
-<figure>
-<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
-<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
-</figure>
-<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
-<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
-<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_2_硬件设计</title>
-    <url>//2019/01/22/keyboard87-2/</url>
-    <content><![CDATA[<blockquote>
-<p>前文：<br>
-<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a></p>
-</blockquote>
-<p>从这个项目立项以来已经快一个月了，终于在师傅和同学的帮助下，搞定了硬件设计。下面我就器件选型简单介绍一下，最后贴了一下渲染图。</p>
-<span id="more"></span>
-<h2 id="硬件设计">硬件设计</h2>
-<p>这一章介绍一下客制化键盘的硬件设计，包括以下4项：主控芯片、传输接口、轴体选择、键盘布局。</p>
-<h3 id="主控芯片">主控芯片</h3>
-<p>在确定STM32作为主控芯片之前，我在网上搜了一下，也拆了手上的ikbc
-C87，ATMEL的ATMEGA32芯片使用的比较多。我最终还是选择了STM32，主要原因是对STM32比较熟悉。</p>
-<p>当然，作为32位的MCU，STM32不管是在IO数量、USB接口支持，还是程序运算速度，都能满足机械键盘的需求。</p>
-<ul>
-<li>USB接口</li>
-</ul>
-<p>机械键盘使用时是作为USB
-Slave使用的，所以只需要芯片支持USB就行，不需要OTG。STM32F1的所有芯片都支持全速USB
-2.0，所以随便选一款就行。</p>
-<ul>
-<li>IO数量</li>
-</ul>
-<p>简单计算一下机械键盘需要的IO口，见下表（实际IO分配以实际原理图为准）。</p>
-<table>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>序号</th>
-<th>用途</th>
-<th>数量</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>键盘列</td>
-<td>17</td>
-<td>87键键盘布局，最多的一行（第2行）共17个按键</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>键盘行</td>
-<td>6</td>
-<td>87键键盘布局，共6行</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>USB接口</td>
-<td>2</td>
-<td>USBDN和USBDP</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>调试接口</td>
-<td>2</td>
-<td>使用STLink连接，仅需JTMS-SWDIO、JTCK-SWCLK和GND三个接口</td>
-</tr>
-</tbody>
-</table>
-<p>简单计算一下，键盘需求的IO口为27个。</p>
-<ul>
-<li>运算速度</li>
-</ul>
-<p>STM32有四个时钟源：</p>
-<table>
-<thead>
-<tr class="header">
-<th>时钟源</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>高速外部时钟(HSE)</td>
-<td>可取4-16MHz，一般采用8MHz</td>
-</tr>
-<tr class="even">
-<td>高速内部时钟(HSI)</td>
-<td>8MHz，内部RC振荡器产生，不稳定</td>
-</tr>
-<tr class="odd">
-<td>低速外部时钟(LSE)</td>
-<td>外部晶振，一般采用32.768KHz</td>
-</tr>
-<tr class="even">
-<td>低速内部时钟(LSI)</td>
-<td>内部RC振荡器产生，约40KHz</td>
-</tr>
-</tbody>
-</table>
-<p>机械键盘用8MHz外部晶振，内部的系统时钟最高为72MHz，满足机械键盘的输入精度要求。</p>
-<h3 id="传输接口">传输接口</h3>
-<p>机械键盘的传输接口已经确定为USB。一般来说，USB有以下几种接口类型：</p>
-<table>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Type A</th>
-<th style="text-align: center;">Type B</th>
-<th style="text-align: center;">Mini</th>
-<th style="text-align: center;">Micro</th>
-<th style="text-align: center;">Type C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img data-src="./3082159515.jpg" alt="type_a"></td>
-<td style="text-align: center;"><img data-src="./3927602725.jpg" alt="type_b"></td>
-<td style="text-align: center;"><img data-src="./1301417559.jpg" alt="miniusb"></td>
-<td style="text-align: center;"><img data-src="./3726218615.jpg" alt="microusb"></td>
-<td style="text-align: center;"><img data-src="./1494934121.jpg" alt="type_c"></td>
-</tr>
-</tbody>
-</table>
-<p>目前现在市面上键线分离的机械键盘一般用的是miniUSB或microUSB接口。最近半年来，USB
-C-type特别流行。这个接口不仅提供大功率传输，而且支持正反随便插，大大降低了插第二次的郁闷。机械键盘就决定用USB
-C-type。</p>
-<h3 id="轴体选择">轴体选择</h3>
-<p>在选择机械键盘的轴体时，因为正在使用的ikbc
-C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四种，茶轴肯定是我的首选，不管用做什么，都可以满足要求。</p>
-<p>MX轴的封装尺寸：<a href="https://github.com/xulu199705/KeyBoard87/tree/master/Reference/Cherry_MX/Cherry_MX_sw.pdf">PDF</a></p>
-<h3 id="键盘布局">键盘布局</h3>
-<p>键盘布局选择和手头使用的ikbc c87一样的87键布局，在<a href="http://www.keyboard-layout-editor.com/">这里</a>可以将需要的布局信息生成一堆文本，将文本复制到<a href="http://builder.swillkb.com/">这里</a>，生成定位板文件，方面在PCB中定位每个键轴的位置。</p>
-<p>布线图 <img data-src="./1178723672.png" alt="pcb_2d_bottomlayer.png"></p>
-<table>
-<thead>
-<tr class="header">
-<th>3D顶部视图</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img data-src="./1617787578.png" alt="2.PNG"></td>
-<td><img data-src="./2508825578.png" alt="pcb_3d_top.png"></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th>3D底部视图</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img data-src="./784997014.png" alt="1.PNG"></td>
-<td><img data-src="./210904615.png" alt="pcb_3d_bottom.png"></td>
-</tr>
-</tbody>
-</table>
-<p>LOGO视图 <img data-src="./2778683646.png" alt="pcb_3d_logo.png"></p>
-<p>P.S. PCB文件已上传<a href="https://github.com/xulu199705/KeyBoard87">github</a>，过一会儿就投板给嘉立创打样。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -974,6 +1166,147 @@ century”。这就让我想起了RACFM这篇文章，以及经常遇见的“�
       </tags>
   </entry>
   <entry>
+    <title>Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog</title>
+    <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
+14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
+</blockquote>
+<h2 id="结论">1 结论</h2>
+<p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
+<span id="more"></span>
+<p><img data-src="Pasted%20image%2020220830195252.png"></p>
+<ul>
+<li>优势
+<ul>
+<li>14mm端在F5.6光圈时有Outstanding级别的锐度</li>
+<li>边角表现非常好</li>
+<li>非常自然的色彩还原度</li>
+<li>对于一只广角来说，背景虚化非常好；焦外光斑表现不错</li>
+<li>Lightroom可以修正广角带来的畸变</li>
+<li>14mm端暗角不明显</li>
+<li>无慧差，很适合夜观星像</li>
+<li>顶级的手感</li>
+<li>有防尘防滴特性</li>
+<li>照片的自动对焦非常好</li>
+<li>比Sony FE 12-24mm F4 G（<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span>）便宜</li>
+</ul></li>
+<li>一般
+<ul>
+<li>2.8光圈全开情况下，锐度只能达到Very Good的等级</li>
+<li>光圈缩小至F5.6时，24mm端锐度只能达到Very
+Good级别，与14mm端的Outstanding级别的锐度差距加大</li>
+<li>如果要平衡边角和中心锐度，光圈需要缩小至F8</li>
+<li>滤镜系统后置，使用时需要根据其形状进行选购或裁剪</li>
+<li>体积和重量有进步，达到了其它竞品的平均水平</li>
+<li>不可拆卸遮光罩，这一点和其它超广角镜头一样</li>
+<li>没有镜身光学防抖，但可以依靠机身防抖</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>焦距范围受限</li>
+<li>视频拍摄时，画面会出现闪烁</li>
+<li>必须使用150mm滤镜系统</li>
+</ul></li>
+<li>镜头比较
+<ul>
+<li>可替换镜头
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35mm F2.8
+GM</li>
+<li>Tamron 17-28mm F2.8 Di III RXD</li>
+</ul></li>
+<li>其实，真的说起来，还是只有<span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G是同一等级比较的镜头。其他两只的焦距范围还是有点区别的。</li>
+<li>这两只镜头其实都是非常不错的镜头。适马1424F2.8有着2.8的光圈，更加适合暗光环境和星空的摄影；索尼1224F4则有着12mm的广角端，这2mm的差距在取景范围上其实是有非常巨大的差别的。</li>
+<li>锐度方面，适马1424F2.8在14mm端的中心锐度会有略微优势；索尼1224F4在24mm端稍微领先。边角情况，两只镜头表现差不多。</li>
+<li>至于到底选哪一只，就要看你的更想要2.8光圈还是12mm广角了。毕竟，这两支镜头在各方面的表现都是非常不错的。</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<h3 id="spec">2.1 SPEC</h3>
+<ul>
+<li>重量：795克</li>
+<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span></li>
+<li>长度：131mm</li>
+<li>几乎没有使用通用滤镜的可能性</li>
+<li>AF/MF切换按钮</li>
+<li>可自定义的对焦保持按钮</li>
+<li>11片光圈叶片</li>
+<li>防尘防潮设计</li>
+<li>最近对焦距离：28cm</li>
+<li>后置滤镜插槽</li>
+<li>不可拆卸遮光罩</li>
+<li>遮光罩预留镜头盖槽</li>
+<li>自带镜头盒</li>
+<li>The build construction is excellent</li>
+<li>自动对焦快速精准，非常安静</li>
+<li>内变焦</li>
+</ul>
+<h3 id="后置滤镜系统">2.2 后置滤镜系统</h3>
+<p>镜头尾部有后置滤镜插槽，并配有防掉落锁定。</p>
+<p>按照官方的用户手册的说法，必须将滤镜裁剪成对应的形状才能在后置滤镜插槽中使用。
+当然你也可以选择前置滤镜，但是得使用150mm的滤镜支架。</p>
+<p>P.S. 目前已有厂商发布了定制的后置滤镜片。</p>
+<h3 id="与sony-12-24mm-f4-g对比">2.3 与Sony 12-24mm F4 G对比</h3>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G</p>
+<ul>
+<li>重量：565克</li>
+<li>长度：117mm</li>
+<li>价格：<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span></li>
+<li>7片光圈叶片</li>
+</ul>
+<p>Sigma 14-24mm F2.8 DG DN Art</p>
+<ul>
+<li>重量：795克（重40%）</li>
+<li>长度：131mm（长14mm）</li>
+<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>（便宜34%）</li>
+<li>11片光圈叶片</li>
+</ul>
+<h2 id="光学性能">3 光学性能</h2>
+<h3 id="锐度">3.1 锐度</h3>
+<p>测试使用6100像素的A7R4。</p>
+<p>14mm端，光圈全开时中心锐度为Very
+Good级别；在F5.6光圈达到最佳锐度，为Outstanding级别。边角的锐度表现稍有不足。光圈F8时，中心和边角锐度一致，为Excellent级别。在F11时，开始出现衍射现象，锐度开始降低。</p>
+<p>24mm端，锐度就有点差强人意了，中心和边角的锐度都只能达到Very
+Good级别。</p>
+<h3 id="锐度对比sony-12-24mm-f4-g">3.2 锐度（对比Sony 12-24mm F4
+G）</h3>
+<p>适马1424F2.8在14mm端表现稍好，24mm端则稍微落后。边角锐度相当。</p>
+<p><img data-src="./Pasted%20image%2020220817171714.png"></p>
+<h3 id="暗角色差畸变眩光星芒">3.3 暗角/色差/畸变/眩光/星芒</h3>
+<ul>
+<li>14mm端有明显的桶形畸变，24mm端有轻微的枕形畸变</li>
+<li>暗角可见，尤其是14mm端，但毕竟是超广角嘛</li>
+<li>色差非常微小，但在14mm会有出现</li>
+<li>抗眩光非常好，但依旧无法完全消除，毕竟这是一只超广角镜头</li>
+<li>在光圈F16至F22时，可以拍摄到不错的星芒</li>
+<li>没有明显的慧差，适合夜观星象</li>
+<li>Lightroom可以非常完美地校正畸变</li>
+</ul>
+<h3 id="焦外光斑色彩还原度">3.4 焦外光斑/色彩还原度</h3>
+<ul>
+<li>非常近的对焦距离（28cm）和F2.8的光圈可以获得一定程度的背景虚化。考虑到这是一只广角镜头，虚化的效果不算差</li>
+<li>焦外光斑非常好</li>
+<li>色彩还原度非常自然，表现非常好</li>
+</ul>
+<h2 id="视频">4 视频</h2>
+<p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
+]]></content>
+      <categories>
+        <category>镜头</category>
+      </categories>
+      <tags>
+        <tag>镜头 - 适马Sigma</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Sony FE PZ 16-35mm f4 G_by SonyAlphaBlog</title>
     <url>//2022/08/30/sony-pz-16-35mm-f4-g/</url>
     <content><![CDATA[<blockquote>
@@ -1316,146 +1649,30 @@ GM只会在5000万和6100万像素的变焦有优势。</p>
         <category>镜头</category>
       </categories>
       <tags>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
         <tag>镜头</tag>
+        <tag>索尼Sony</tag>
       </tags>
   </entry>
   <entry>
-    <title>Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog</title>
-    <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
-    <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
-14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
-</blockquote>
-<h2 id="结论">1 结论</h2>
-<p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
+    <title>关于Spring框架的IOC和DI的理解</title>
+    <url>//2018/01/26/spring-ioc-di/</url>
+    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
+<p>下面来说说我，一个初学者，对DI的理解。</p>
 <span id="more"></span>
-<p><img data-src="Pasted%20image%2020220830195252.png"></p>
-<ul>
-<li>优势
-<ul>
-<li>14mm端在F5.6光圈时有Outstanding级别的锐度</li>
-<li>边角表现非常好</li>
-<li>非常自然的色彩还原度</li>
-<li>对于一只广角来说，背景虚化非常好；焦外光斑表现不错</li>
-<li>Lightroom可以修正广角带来的畸变</li>
-<li>14mm端暗角不明显</li>
-<li>无慧差，很适合夜观星像</li>
-<li>顶级的手感</li>
-<li>有防尘防滴特性</li>
-<li>照片的自动对焦非常好</li>
-<li>比Sony FE 12-24mm F4 G（<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span>）便宜</li>
-</ul></li>
-<li>一般
-<ul>
-<li>2.8光圈全开情况下，锐度只能达到Very Good的等级</li>
-<li>光圈缩小至F5.6时，24mm端锐度只能达到Very
-Good级别，与14mm端的Outstanding级别的锐度差距加大</li>
-<li>如果要平衡边角和中心锐度，光圈需要缩小至F8</li>
-<li>滤镜系统后置，使用时需要根据其形状进行选购或裁剪</li>
-<li>体积和重量有进步，达到了其它竞品的平均水平</li>
-<li>不可拆卸遮光罩，这一点和其它超广角镜头一样</li>
-<li>没有镜身光学防抖，但可以依靠机身防抖</li>
-</ul></li>
-<li>缺陷
-<ul>
-<li>焦距范围受限</li>
-<li>视频拍摄时，画面会出现闪烁</li>
-<li>必须使用150mm滤镜系统</li>
-</ul></li>
-<li>镜头比较
-<ul>
-<li>可替换镜头
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35mm F2.8
-GM</li>
-<li>Tamron 17-28mm F2.8 Di III RXD</li>
-</ul></li>
-<li>其实，真的说起来，还是只有<span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G是同一等级比较的镜头。其他两只的焦距范围还是有点区别的。</li>
-<li>这两只镜头其实都是非常不错的镜头。适马1424F2.8有着2.8的光圈，更加适合暗光环境和星空的摄影；索尼1224F4则有着12mm的广角端，这2mm的差距在取景范围上其实是有非常巨大的差别的。</li>
-<li>锐度方面，适马1424F2.8在14mm端的中心锐度会有略微优势；索尼1224F4在24mm端稍微领先。边角情况，两只镜头表现差不多。</li>
-<li>至于到底选哪一只，就要看你的更想要2.8光圈还是12mm广角了。毕竟，这两支镜头在各方面的表现都是非常不错的。</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="总体信息">2 总体信息</h2>
-<h3 id="spec">2.1 SPEC</h3>
-<ul>
-<li>重量：795克</li>
-<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span></li>
-<li>长度：131mm</li>
-<li>几乎没有使用通用滤镜的可能性</li>
-<li>AF/MF切换按钮</li>
-<li>可自定义的对焦保持按钮</li>
-<li>11片光圈叶片</li>
-<li>防尘防潮设计</li>
-<li>最近对焦距离：28cm</li>
-<li>后置滤镜插槽</li>
-<li>不可拆卸遮光罩</li>
-<li>遮光罩预留镜头盖槽</li>
-<li>自带镜头盒</li>
-<li>The build construction is excellent</li>
-<li>自动对焦快速精准，非常安静</li>
-<li>内变焦</li>
-</ul>
-<h3 id="后置滤镜系统">2.2 后置滤镜系统</h3>
-<p>镜头尾部有后置滤镜插槽，并配有防掉落锁定。</p>
-<p>按照官方的用户手册的说法，必须将滤镜裁剪成对应的形状才能在后置滤镜插槽中使用。
-当然你也可以选择前置滤镜，但是得使用150mm的滤镜支架。</p>
-<p>P.S. 目前已有厂商发布了定制的后置滤镜片。</p>
-<h3 id="与sony-12-24mm-f4-g对比">2.3 与Sony 12-24mm F4 G对比</h3>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G</p>
-<ul>
-<li>重量：565克</li>
-<li>长度：117mm</li>
-<li>价格：<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span></li>
-<li>7片光圈叶片</li>
-</ul>
-<p>Sigma 14-24mm F2.8 DG DN Art</p>
-<ul>
-<li>重量：795克（重40%）</li>
-<li>长度：131mm（长14mm）</li>
-<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>（便宜34%）</li>
-<li>11片光圈叶片</li>
-</ul>
-<h2 id="光学性能">3 光学性能</h2>
-<h3 id="锐度">3.1 锐度</h3>
-<p>测试使用6100像素的A7R4。</p>
-<p>14mm端，光圈全开时中心锐度为Very
-Good级别；在F5.6光圈达到最佳锐度，为Outstanding级别。边角的锐度表现稍有不足。光圈F8时，中心和边角锐度一致，为Excellent级别。在F11时，开始出现衍射现象，锐度开始降低。</p>
-<p>24mm端，锐度就有点差强人意了，中心和边角的锐度都只能达到Very
-Good级别。</p>
-<h3 id="锐度对比sony-12-24mm-f4-g">3.2 锐度（对比Sony 12-24mm F4
-G）</h3>
-<p>适马1424F2.8在14mm端表现稍好，24mm端则稍微落后。边角锐度相当。</p>
-<p><img data-src="./Pasted%20image%2020220817171714.png"></p>
-<h3 id="暗角色差畸变眩光星芒">3.3 暗角/色差/畸变/眩光/星芒</h3>
-<ul>
-<li>14mm端有明显的桶形畸变，24mm端有轻微的枕形畸变</li>
-<li>暗角可见，尤其是14mm端，但毕竟是超广角嘛</li>
-<li>色差非常微小，但在14mm会有出现</li>
-<li>抗眩光非常好，但依旧无法完全消除，毕竟这是一只超广角镜头</li>
-<li>在光圈F16至F22时，可以拍摄到不错的星芒</li>
-<li>没有明显的慧差，适合夜观星象</li>
-<li>Lightroom可以非常完美地校正畸变</li>
-</ul>
-<h3 id="焦外光斑色彩还原度">3.4 焦外光斑/色彩还原度</h3>
-<ul>
-<li>非常近的对焦距离（28cm）和F2.8的光圈可以获得一定程度的背景虚化。考虑到这是一只广角镜头，虚化的效果不算差</li>
-<li>焦外光斑非常好</li>
-<li>色彩还原度非常自然，表现非常好</li>
-</ul>
-<h2 id="视频">4 视频</h2>
-<p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
+<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
+2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
+<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
+<p>这个是我今天看了Spring框架之后的理解。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>镜头</category>
+        <category>杂项</category>
       </categories>
       <tags>
-        <tag>镜头</tag>
+        <tag>Spring</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -1705,27 +1922,9 @@ OSS F4.5-F5.6畸变抑制和暗角控制做得更好，并且在LR中已有矫�
         <category>镜头</category>
       </categories>
       <tags>
-        <tag>镜头</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Spring框架的IOC和DI的理解</title>
-    <url>//2018/01/26/spring-ioc-di/</url>
-    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
-<p>下面来说说我，一个初学者，对DI的理解。</p>
-<span id="more"></span>
-<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
-2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
-<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
-<p>这个是我今天看了Spring框架之后的理解。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>前端</tag>
+        <tag>镜头 - 适马Sigma</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
       </tags>
   </entry>
   <entry>
@@ -1749,6 +1948,95 @@ OSS F4.5-F5.6畸变抑制和暗角控制做得更好，并且在LR中已有矫�
       <tags>
         <tag>资源</tag>
         <tag>书籍</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32基础_GPIO流水灯</title>
+    <url>//2017/07/28/stm32-gpio-led/</url>
+    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
+<span id="more"></span>
+<h2 id="目录">目录</h2>
+<ul>
+<li><a href="#目录">目录</a></li>
+<li><a href="#流水灯实验原理">流水灯实验原理</a></li>
+<li><a href="#管脚配置">管脚配置</a></li>
+<li><a href="#code">CODE</a></li>
+<li><a href="#总结">总结</a></li>
+</ul>
+<h2 id="流水灯实验原理">流水灯实验原理</h2>
+<p>LED模块的原理图如图1所示：</p>
+<figure>
+<img data-src="./1646673628.png" alt="图1 LED模块原理图">
+<figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
+</figure>
+<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。
+因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
+<h2 id="管脚配置">管脚配置</h2>
+<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
+<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">模式名称</th>
+<th style="text-align: center;">标识</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">浮空输入</td>
+<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">带上拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPU</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">带下拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">模拟输入</td>
+<td style="text-align: center;">GPIO_MODE_AIN</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">复用_推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_PP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">复用_开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_OD</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:
+初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
+</blockquote>
+<h2 id="code">CODE</h2>
+<p>下面就贴一下代码。</p>
+<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1
+.pdf第三章。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">uint32_t</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(__IO <span class="type">uint32_t</span> nCount)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结</h2>
+<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -2008,163 +2296,6 @@ Emulation"页面设置的密码。</p>
       </tags>
   </entry>
   <entry>
-    <title>VHDL学习笔记之元件递归</title>
-    <url>//2020/08/05/vhdl-note-component-recursion/</url>
-    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
-<blockquote>
-<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
-</blockquote>
-<span id="more"></span>
-<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
-<h2 id="元件递归设计">元件递归设计</h2>
-<blockquote>
-<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
-</blockquote>
-<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://gitee.com/blueschwarz/blog_attachment/raw/master/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
-Std 1076-2019</a>。</p>
-<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
-为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
-\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
-方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>简单写了个仿真文件，仿真结果如下。</p>
-<figure>
-<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
-<figcaption aria-hidden="true">综合前仿真结果</figcaption>
-</figure>
-<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
-<figure>
-<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
-<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
-</figure>
-<h2 id="正常的n输入与门设计">正常的n输入与门设计</h2>
-<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
-<figure>
-<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
-<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
-</figure>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
-<figure>
-<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
-<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
-</figure>
-<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
-<figure>
-<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
-<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
-</figure>
-<figure>
-<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
-<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
-:&amp;(蛆音娘_扶额)
-，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
-:@(击掌)</p>
-<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
-]]></content>
-      <categories>
-        <category>集成电路</category>
-      </categories>
-      <tags>
-        <tag>VHDL</tag>
-        <tag>FPGA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>STM32基础_GPIO流水灯</title>
-    <url>//2017/07/28/stm32-gpio-led/</url>
-    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
-<span id="more"></span>
-<h2 id="目录">目录</h2>
-<ul>
-<li><a href="#目录">目录</a></li>
-<li><a href="#流水灯实验原理">流水灯实验原理</a></li>
-<li><a href="#管脚配置">管脚配置</a></li>
-<li><a href="#code">CODE</a></li>
-<li><a href="#总结">总结</a></li>
-</ul>
-<h2 id="流水灯实验原理">流水灯实验原理</h2>
-<p>LED模块的原理图如图1所示：</p>
-<figure>
-<img data-src="./1646673628.png" alt="图1 LED模块原理图">
-<figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
-</figure>
-<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。
-因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
-<h2 id="管脚配置">管脚配置</h2>
-<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
-<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">模式名称</th>
-<th style="text-align: center;">标识</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">浮空输入</td>
-<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">带上拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPU</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">带下拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">模拟输入</td>
-<td style="text-align: center;">GPIO_MODE_AIN</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">复用_推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_PP</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">复用_开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_OD</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:
-初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
-</blockquote>
-<h2 id="code">CODE</h2>
-<p>下面就贴一下代码。</p>
-<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1
-.pdf第三章。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">uint32_t</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(__IO <span class="type">uint32_t</span> nCount)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>视频相关术语</title>
     <url>//2020/02/12/video-terms/</url>
     <content><![CDATA[<p>今天在人人影视上找资源的时候，突然对文件名上的HEVC、10bit等感到疑惑，就花了一下午时间研究了一下视频相关的术语，在下面分享一下。</p>
@@ -2261,195 +2392,71 @@ NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至�
       </tags>
   </entry>
   <entry>
-    <title>IC笔记之瞬态仿真</title>
-    <url>//2021/04/06/ic-note-simu-tran/</url>
-    <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
-<span id="more"></span>
-<h2 id="概述">1 概述</h2>
-<p>瞬态仿真是什么？</p>
+    <title>VHDL学习笔记之元件递归</title>
+    <url>//2020/08/05/vhdl-note-component-recursion/</url>
+    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
 <blockquote>
-<p>瞬态仿真是电路在给定的输入激励下，在设定的时间范围内计算电路时域瞬态响应性能的一种仿真手段。</p>
+<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
 </blockquote>
-<p>瞬态仿真一般是集成电路的第一个仿真，是年轻人的第一个仿真手段；通常是验证稳定性、速度、精度等等，需要在多次不同的瞬态分析过程才能得出结论。</p>
-<h3 id="基本设置">1.1 基本设置</h3>
-<p>在"ADE"中选择"Analyses"-"Choose"，可以选择仿真功能选择。点击"tran"后，可以看到如下图的基本设置界面。</p>
+<span id="more"></span>
+<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
+<h2 id="元件递归设计">元件递归设计</h2>
+<blockquote>
+<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
+</blockquote>
+<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://gitee.com/blueschwarz/blog_attachment/raw/master/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
+Std 1076-2019</a>。</p>
+<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
+为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
+\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
+方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>简单写了个仿真文件，仿真结果如下。</p>
 <figure>
-<img data-src="./tran_ade_settings_1.png" alt="图1-1">
-<figcaption aria-hidden="true">图1-1</figcaption>
+<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
+<figcaption aria-hidden="true">综合前仿真结果</figcaption>
 </figure>
-<ol type="1">
-<li>"Stop Time"，设置仿真时间<br>
-仿真时间默认从0时刻开始，这里只设置停止时间。时间单位为可以是"s"（秒）、"m"（毫秒）和"u"（微秒）。</li>
-<li>"Accuracy Defaults(errpreset)"，设置仿真精度和速度<br>
-软件内置有三种仿真精度："conservative"、"moderate"、"liberal"。"conservative"具有最高的精度，但速度较慢，用于高精度模拟电路和混合信号电路；"liberal"则是速度最快，精度较差，用于数字电路和变化率不高的模拟电路；"moderate"是比较折衷的模式，用于绝大多数模拟电路。如果需要更高的精度，则要在高级设置中配置参数。</li>
-<li>"Transient Noise"，设置瞬态噪声</li>
-<li>"Dynamic Parameter"，设置动态参数</li>
-<li>"Enabled"，设置瞬态仿真启用</li>
-</ol>
-<h3 id="高级设置">1.2 高级设置</h3>
-<p>在图1-1中点击右下角的"Options"可进入高级设置。</p>
-<h4 id="time-step标签页">1.2.1 Time Step标签页</h4>
+<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
 <figure>
-<img data-src="./tran_ade_settings_2_timestep.png" alt="图1-2">
-<figcaption aria-hidden="true">图1-2</figcaption>
+<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
+<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
 </figure>
-<p>Simulation Interval Parameters</p>
-<ul>
-<li>"start"：仿真起始时刻。仿真器默认起始时间为0s。</li>
-<li>"outputstart"：输出波形时间。如果设计者的仿真时间较长，而只需观察某个时间点或者部分时间段内的电路瞬态特性输出，则可以通过该参数控制数据输出。</li>
-</ul>
-<p>Time Step Parameters</p>
-<ul>
-<li>"step"：最小的时间步长。</li>
-<li>"maxstep"：最大时间步长，根据"errpreset"中的精度设定取得默认值。</li>
-</ul>
-<h4 id="algorithm标签页">1.2.2 Algorithm标签页</h4>
+<h2 id="正常的n输入与门设计">正常的n输入与门设计</h2>
+<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
 <figure>
-<img data-src="./tran_ade_settings_2_algorithm.png" alt="图1-3">
-<figcaption aria-hidden="true">图1-3</figcaption>
+<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
+<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
 </figure>
-<p>Initial Condition Parameters</p>
-<p>用户可以利用设置电路节点状态的初始化语句（ic
-statement）或电容、电感等模型内的初始条件参数（ic
-parameters）两种方式为瞬态仿真设置初始条件。其中电容中设置的是初始电压值，电感中设置的是初始电流值。如果没有进行设置，仿真器将默认采用直流分析的结果作为初始条件。对这个参数进行设置时要格外注意，如果对电路分析不明，贸然设置电路节点的初始值，极易造成电路瞬态仿真出现收敛性问题，并产生错误结果。</p>
-<ul>
-<li>"ic"：设定通过何种方式设置初始条件。
-<ul>
-<li>ic=dc：忽略任何设置的初始条件，直接采用直流分析的结果。</li>
-<li>ic=node：忽略电容、电感等器件上设置的初始条件，而采用"ic
-statement"设置的初始条件。</li>
-<li>ic=dev：忽略由"ic
-statement"设置的初始条件，采用电容、电感上的初始条件。</li>
-<li>ic=all：两种初始条件都将被采用。当设置条件发生冲突时，"ic
-parameters"比"ic statement"的优先级更高。<br>
-&gt; "ic statement"的格式是ic NodeName=value。<br>
-&gt; 例：ic V1=1 M1:int_d=3.3 L1:1=10u<br>
-&gt;
-上句表示的是：在节点V1上的初始电压是1V；在MOS管M1的漏极电压是3.3V；在电感L1
-上流过的初始电流是10μA。</li>
-</ul></li>
-<li>"skipdc"：最小的时间步长。
-选择跳过直流分析。在没有直流分析的情况下，电路的初始解将采用通解，或是从由"readic"定义的文件中读取初始条件。如果"readic"中没有定义，则将从"ic
-statement"中获取初始条件。无论是否跳过直流分析，器件上的初始条件肯定都会被采用。如果一个节点没有被赋予初始条件，将自动被仿真器设置为零。</li>
-<li>"readic"：从文件中读取初始条件。</li>
-</ul>
-<p>Initial Condition Parameters For Oscillator</p>
-<p>用户可以手动配置振荡器的初始条件，也可以选择使用软件自动配置。</p>
-<p>Convergence Parameters</p>
-<p>当电路在仿真时存在无限快的响应速度（如一个电路节点不存在任何电容），仿真器可能会产生收敛性问题。为了避免出现这种问题，需要设置"cmin"参数，给该节点设置一个合理的对地电容值。</p>
-<ul>
-<li>"readns"：从文件中读取电路瞬态仿真的初始解。</li>
-<li>"cmin"：设定每个节点对地的最小电容</li>
-</ul>
-<p>Integration Method Parameters</p>
-<p>该参数用于设计者根据仿真速度和仿真精确度选择合适的积分方式。仿真器提供3种不同的积分方式："backward-Euler"，"Trapezoidal"，"Second-order
-Gear"。根据这3种方式一共组合出6种模式，分别为"euler"、"traponly"、"trap"、"gear2only"、gear2"、"trapgear2"。<br>
-如果设计者需要高精度仿真，可以选择"trapezoidal"积分方式。但是，这种积分方式对前一时刻计算产生的误差非常敏感，因此在容差很大时并不是一种很好的选择。在容差很大而且要求速度较快的情况下，通常选择"Second-order
-Gear"积分法。"Second-order
-Gear"积分法比"backward-Euler"积分法更加精确。</p>
-<p>Accuracy Parameters -
-"relref"：相对收敛标准的参考，默认值从"errpreset"得到。包括以下几个选项。<br>
-"relref =
-pointlocal"：即relref=局部点，这个设置用来定量比较每个节点的值相对于待分析节点上当前数值的相对误差。<br>
-"relref =
-alllocal"：即relref=局部所有点，定量比较过去所有时间点的值相对于最大节点值的相对误差。<br>
-"relref =
-sigglobal"：即relref=所有信号点，定量比较每个电路上信号值相对于电路中所有信号中的最大值的相对误差。<br>
-"relref =
-allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最大悬浮电流值设定比较方程，此时不能满足基尔霍夫电流方程。
-- "lteratio"：比例系数，用于计算Newton容差中的LTE 容差。</p>
-<p>Newton Parameters</p>
-<ul>
-<li>"maxiters"：在每个时间步长内最多的迭代次数。</li>
-<li>"restart"：如果有任何条件发生变化，是否从最开始重新计算直流解。如果不重新计算，将直接采用上一次的初始值。</li>
-</ul>
-<h4 id="state-file标签页">1.2.3 State File标签页</h4>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
 <figure>
-<img data-src="./tran_ade_settings_2_statefile.png" alt="图1-4">
-<figcaption aria-hidden="true">图1-4</figcaption>
+<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
+<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
 </figure>
-<p>StateFile Parameters</p>
-<p>状态文件（State File）主要有两个用处： 1.
-将保存下来的状态文件用于后续的仿真分析中。如在一次瞬态分析中保存下结束时刻的信息，在下一次瞬态分析中能够以该时刻作为起始点继续完成后续时间段的分析。
-2.
-用户能够利用状态文件自动完成初始条件的更新。设计者能够利用仿真器将一次分析的初始时刻工作点或终止时刻工作点生成状态文件。同时，设计者也能手动编写一个状态文件。</p>
-<ul>
-<li>"write"：将瞬态分析的初始状态解写到指定的文件中。</li>
-<li>"writefinal"：将瞬态分析的最终解写到指定的文件中。</li>
-</ul>
-<p>Save-Restart Parameters</p>
-<p>该参数用于配置保存和载入的频率等参数。</p>
-<h4 id="output标签页">1.2.3 Output标签页</h4>
-<p><img data-src="./tran_ade_settings_2_output_1.png" alt="图1-5"> <img data-src="./tran_ade_settings_2_output_2.png" alt="图1-6"></p>
-<p>Output Parameters</p>
-<p>仿真器默认情况下会把所有仿真数据都保存下来，但有时并不需要所有的数据量。仿真器允许设计者选择保存需要的数据。如果需要得到更精确的结果，也可以增大数据输出量。<br>
-该参数配置"compression"输出模式，将恒定信号的重复记录删除。</p>
-<p>Strobing Parameters</p>
-<p>该参数配置"strobing"输出模式。在保存点之间设置一个时间间隔。虽然仿真器计算过这些数据，但是并没有将其保存输出。</p>
-<p>Final OP Point Settings</p>
-<p>该参数配置静态工作点的保存等参数。</p>
-<p>Infotimes Settings</p>
-<p>该参数配置"infotimes"输出模式。允许设计者保存某些自定义时刻的工作点数据。如果需要保存多个时刻的工作点，填入时间矢量之间以空格隔开。</p>
-<p>Actimes Settings</p>
-<p>未找到相关资料，待补充。</p>
-<h4 id="emir-output标签页">1.2.5 EM/IR Output标签页</h4>
+<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
 <figure>
-<img data-src="./tran_ade_settings_2_emiroutput.png" alt="图1-7">
-<figcaption aria-hidden="true">图1-7</figcaption>
+<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
+<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
 </figure>
-<p>该标签页涉及EM（电子迁移）和IR（IR压降）。<del>恕我直言，不会。</del></p>
-<h4 id="misc标签页">1.2.6 Misc标签页</h4>
 <figure>
-<img data-src="./tran_ade_settings_2_misc.png" alt="图1-7">
-<figcaption aria-hidden="true">图1-7</figcaption>
-</figure>
-<p>该标签页为一些难以分类的配置，毕竟都写了是misc了。</p>
-<ol type="1">
-<li>Annotation Parameters，注释。</li>
-<li>Captab Parameters，电容列表参数。</li>
-<li>Additional Parameters，额外参数。</li>
-</ol>
-<h2 id="实例">2 实例</h2>
-<p>仿真电路如图。瞬态仿真实例选择了使用二极管连接方式的PMOS作为负载的共源极电路。</p>
-<figure>
-<img data-src="./circuit_opa.png" alt="图2-1">
-<figcaption aria-hidden="true">图2-1</figcaption>
-</figure>
-<h3 id="配置激励源">2.1 配置激励源</h3>
-<p>与前一篇关于<a href="/2021/03/30/ic-note-inv-simu/">反相器仿真</a>中对于激励信号的配置不同，这次选择直接对端口进行激励源配置。</p>
-<p>在ADE窗口中选择"Setup"-"Stimuli"。</p>
-<figure>
-<img data-src="./tran_ade_stimuli_1.png" alt="图2-2">
-<figcaption aria-hidden="true">图2-2</figcaption>
-</figure>
-<p>按照下面三张图片依次对三个端口的输入信号进行配置。</p>
-<p><img data-src="./tran_ade_stimuli_2_vin.png" alt="图2-3"> <img data-src="./tran_ade_stimuli_2_vdda.png" alt="图2-4"> <img data-src="./tran_ade_stimuli_2_gnda.png" alt="图2-5"></p>
-<h3 id="配置瞬态仿真">2.2 配置瞬态仿真</h3>
-<p>选择瞬态仿真模式，并选择仿真时间和精度。</p>
-<figure>
-<img data-src="./tran_ade_mode.png" alt="图2-6">
-<figcaption aria-hidden="true">图2-6</figcaption>
-</figure>
-<p>选取观测信号后，仿真配置结束。</p>
-<figure>
-<img data-src="./tran_ade_settings.png" alt="图2-7">
-<figcaption aria-hidden="true">图2-7</figcaption>
-</figure>
-<h3 id="仿真结果">2.3 仿真结果</h3>
-<p>下图是仿真结果。局部放大后，可以通过"M"键选取曲线上的点，对信号进行进一步分析。</p>
-<figure>
-<img data-src="./tran_ade_results.png" alt="图2-8">
-<figcaption aria-hidden="true">图2-8</figcaption>
+<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
+<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
 </figure>
 <h2 id="总结">总结</h2>
-<p>以上就是ADE中瞬态仿真的大部分介绍。本次笔记结束。 :@(击掌)</p>
+<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
+:&amp;(蛆音娘_扶额)
+，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
+:@(击掌)</p>
+<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
 ]]></content>
       <categories>
         <category>集成电路</category>
       </categories>
       <tags>
-        <tag>瞬态仿真</tag>
-        <tag>仿真</tag>
+        <tag>VHDL</tag>
+        <tag>FPGA</tag>
       </tags>
   </entry>
   <entry>
