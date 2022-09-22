@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
+    <url>//2019/01/30/can-based-optimization/</url>
+    <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
+CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
+<p>运动控制系统对于通信的实时性要求很高，这就间接地要求系统的通信必须使用时间触发。CAN总线从本质上来说是一种事件触发总线协议，对于这种极高的硬实时性要求很难满足。文章中展示了基础的时间触发CAN协议在运动控制中的传输误差，实验结果表明：传输速率较低时，系统的跟踪误差较好；当传输速率提高后，系统的传输实时性就差强人意了。</p>
+<p>为了解决这一问题，文章中提出了一种对CAN运动控制的优化，这个优化涉及两个方面。</p>
+<span id="more"></span>
+<h2 id="优化一">优化一</h2>
+<p>本文提出在时间触发中嵌入事件触发，将传统的通信触发结构改为事件/时间触发结构，如图1所示。</p>
+<figure>
+<img data-src="./1884776264.jpg" alt="图1">
+<figcaption aria-hidden="true">图1</figcaption>
+</figure>
+<h2 id="优化二">优化二</h2>
+<p>除了优化时间触发结构，文章还提出了预估器优化方案。如果系统在一段时间内没有接收到运动控制指令，系统就会将之前的位置数据带入泰勒二阶展开式计算丢失的控制指令。</p>
+<p>系统的最终结构框图如图2所示。</p>
+<figure>
+<img data-src="./122056196.jpg" alt="图2">
+<figcaption aria-hidden="true">图2</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>控制</tag>
+        <tag>summary</tag>
+        <tag>总线</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>是什么驱动着无限进步？</title>
     <url>//2021/08/05/driver-of-development/</url>
     <content><![CDATA[<span id="more"></span>
@@ -53,6 +84,223 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
       <categories>
         <category>杂项</category>
       </categories>
+  </entry>
+  <entry>
+    <title>IC笔记之瞬态仿真</title>
+    <url>//2021/04/06/ic-note-simu-tran/</url>
+    <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
+<span id="more"></span>
+<h2 id="概述">1 概述</h2>
+<p>瞬态仿真是什么？</p>
+<blockquote>
+<p>瞬态仿真是电路在给定的输入激励下，在设定的时间范围内计算电路时域瞬态响应性能的一种仿真手段。</p>
+</blockquote>
+<p>瞬态仿真一般是集成电路的第一个仿真，是年轻人的第一个仿真手段；通常是验证稳定性、速度、精度等等，需要在多次不同的瞬态分析过程才能得出结论。</p>
+<h3 id="基本设置">1.1 基本设置</h3>
+<p>在"ADE"中选择"Analyses"-"Choose"，可以选择仿真功能选择。点击"tran"后，可以看到如下图的基本设置界面。</p>
+<figure>
+<img data-src="./tran_ade_settings_1.png" alt="图1-1">
+<figcaption aria-hidden="true">图1-1</figcaption>
+</figure>
+<ol type="1">
+<li>"Stop Time"，设置仿真时间<br>
+仿真时间默认从0时刻开始，这里只设置停止时间。时间单位为可以是"s"（秒）、"m"（毫秒）和"u"（微秒）。</li>
+<li>"Accuracy Defaults(errpreset)"，设置仿真精度和速度<br>
+软件内置有三种仿真精度："conservative"、"moderate"、"liberal"。"conservative"具有最高的精度，但速度较慢，用于高精度模拟电路和混合信号电路；"liberal"则是速度最快，精度较差，用于数字电路和变化率不高的模拟电路；"moderate"是比较折衷的模式，用于绝大多数模拟电路。如果需要更高的精度，则要在高级设置中配置参数。</li>
+<li>"Transient Noise"，设置瞬态噪声</li>
+<li>"Dynamic Parameter"，设置动态参数</li>
+<li>"Enabled"，设置瞬态仿真启用</li>
+</ol>
+<h3 id="高级设置">1.2 高级设置</h3>
+<p>在图1-1中点击右下角的"Options"可进入高级设置。</p>
+<h4 id="time-step标签页">1.2.1 Time Step标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_timestep.png" alt="图1-2">
+<figcaption aria-hidden="true">图1-2</figcaption>
+</figure>
+<p>Simulation Interval Parameters</p>
+<ul>
+<li>"start"：仿真起始时刻。仿真器默认起始时间为0s。</li>
+<li>"outputstart"：输出波形时间。如果设计者的仿真时间较长，而只需观察某个时间点或者部分时间段内的电路瞬态特性输出，则可以通过该参数控制数据输出。</li>
+</ul>
+<p>Time Step Parameters</p>
+<ul>
+<li>"step"：最小的时间步长。</li>
+<li>"maxstep"：最大时间步长，根据"errpreset"中的精度设定取得默认值。</li>
+</ul>
+<h4 id="algorithm标签页">1.2.2 Algorithm标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_algorithm.png" alt="图1-3">
+<figcaption aria-hidden="true">图1-3</figcaption>
+</figure>
+<p>Initial Condition Parameters</p>
+<p>用户可以利用设置电路节点状态的初始化语句（ic
+statement）或电容、电感等模型内的初始条件参数（ic
+parameters）两种方式为瞬态仿真设置初始条件。其中电容中设置的是初始电压值，电感中设置的是初始电流值。如果没有进行设置，仿真器将默认采用直流分析的结果作为初始条件。对这个参数进行设置时要格外注意，如果对电路分析不明，贸然设置电路节点的初始值，极易造成电路瞬态仿真出现收敛性问题，并产生错误结果。</p>
+<ul>
+<li>"ic"：设定通过何种方式设置初始条件。
+<ul>
+<li>ic=dc：忽略任何设置的初始条件，直接采用直流分析的结果。</li>
+<li>ic=node：忽略电容、电感等器件上设置的初始条件，而采用"ic
+statement"设置的初始条件。</li>
+<li>ic=dev：忽略由"ic
+statement"设置的初始条件，采用电容、电感上的初始条件。</li>
+<li>ic=all：两种初始条件都将被采用。当设置条件发生冲突时，"ic
+parameters"比"ic statement"的优先级更高。<br>
+&gt; "ic statement"的格式是ic NodeName=value。<br>
+&gt; 例：ic V1=1 M1:int_d=3.3 L1:1=10u<br>
+&gt;
+上句表示的是：在节点V1上的初始电压是1V；在MOS管M1的漏极电压是3.3V；在电感L1
+上流过的初始电流是10μA。</li>
+</ul></li>
+<li>"skipdc"：最小的时间步长。
+选择跳过直流分析。在没有直流分析的情况下，电路的初始解将采用通解，或是从由"readic"定义的文件中读取初始条件。如果"readic"中没有定义，则将从"ic
+statement"中获取初始条件。无论是否跳过直流分析，器件上的初始条件肯定都会被采用。如果一个节点没有被赋予初始条件，将自动被仿真器设置为零。</li>
+<li>"readic"：从文件中读取初始条件。</li>
+</ul>
+<p>Initial Condition Parameters For Oscillator</p>
+<p>用户可以手动配置振荡器的初始条件，也可以选择使用软件自动配置。</p>
+<p>Convergence Parameters</p>
+<p>当电路在仿真时存在无限快的响应速度（如一个电路节点不存在任何电容），仿真器可能会产生收敛性问题。为了避免出现这种问题，需要设置"cmin"参数，给该节点设置一个合理的对地电容值。</p>
+<ul>
+<li>"readns"：从文件中读取电路瞬态仿真的初始解。</li>
+<li>"cmin"：设定每个节点对地的最小电容</li>
+</ul>
+<p>Integration Method Parameters</p>
+<p>该参数用于设计者根据仿真速度和仿真精确度选择合适的积分方式。仿真器提供3种不同的积分方式："backward-Euler"，"Trapezoidal"，"Second-order
+Gear"。根据这3种方式一共组合出6种模式，分别为"euler"、"traponly"、"trap"、"gear2only"、gear2"、"trapgear2"。<br>
+如果设计者需要高精度仿真，可以选择"trapezoidal"积分方式。但是，这种积分方式对前一时刻计算产生的误差非常敏感，因此在容差很大时并不是一种很好的选择。在容差很大而且要求速度较快的情况下，通常选择"Second-order
+Gear"积分法。"Second-order
+Gear"积分法比"backward-Euler"积分法更加精确。</p>
+<p>Accuracy Parameters -
+"relref"：相对收敛标准的参考，默认值从"errpreset"得到。包括以下几个选项。<br>
+"relref =
+pointlocal"：即relref=局部点，这个设置用来定量比较每个节点的值相对于待分析节点上当前数值的相对误差。<br>
+"relref =
+alllocal"：即relref=局部所有点，定量比较过去所有时间点的值相对于最大节点值的相对误差。<br>
+"relref =
+sigglobal"：即relref=所有信号点，定量比较每个电路上信号值相对于电路中所有信号中的最大值的相对误差。<br>
+"relref =
+allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最大悬浮电流值设定比较方程，此时不能满足基尔霍夫电流方程。
+- "lteratio"：比例系数，用于计算Newton容差中的LTE 容差。</p>
+<p>Newton Parameters</p>
+<ul>
+<li>"maxiters"：在每个时间步长内最多的迭代次数。</li>
+<li>"restart"：如果有任何条件发生变化，是否从最开始重新计算直流解。如果不重新计算，将直接采用上一次的初始值。</li>
+</ul>
+<h4 id="state-file标签页">1.2.3 State File标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_statefile.png" alt="图1-4">
+<figcaption aria-hidden="true">图1-4</figcaption>
+</figure>
+<p>StateFile Parameters</p>
+<p>状态文件（State File）主要有两个用处： 1.
+将保存下来的状态文件用于后续的仿真分析中。如在一次瞬态分析中保存下结束时刻的信息，在下一次瞬态分析中能够以该时刻作为起始点继续完成后续时间段的分析。
+2.
+用户能够利用状态文件自动完成初始条件的更新。设计者能够利用仿真器将一次分析的初始时刻工作点或终止时刻工作点生成状态文件。同时，设计者也能手动编写一个状态文件。</p>
+<ul>
+<li>"write"：将瞬态分析的初始状态解写到指定的文件中。</li>
+<li>"writefinal"：将瞬态分析的最终解写到指定的文件中。</li>
+</ul>
+<p>Save-Restart Parameters</p>
+<p>该参数用于配置保存和载入的频率等参数。</p>
+<h4 id="output标签页">1.2.3 Output标签页</h4>
+<p><img data-src="./tran_ade_settings_2_output_1.png" alt="图1-5"> <img data-src="./tran_ade_settings_2_output_2.png" alt="图1-6"></p>
+<p>Output Parameters</p>
+<p>仿真器默认情况下会把所有仿真数据都保存下来，但有时并不需要所有的数据量。仿真器允许设计者选择保存需要的数据。如果需要得到更精确的结果，也可以增大数据输出量。<br>
+该参数配置"compression"输出模式，将恒定信号的重复记录删除。</p>
+<p>Strobing Parameters</p>
+<p>该参数配置"strobing"输出模式。在保存点之间设置一个时间间隔。虽然仿真器计算过这些数据，但是并没有将其保存输出。</p>
+<p>Final OP Point Settings</p>
+<p>该参数配置静态工作点的保存等参数。</p>
+<p>Infotimes Settings</p>
+<p>该参数配置"infotimes"输出模式。允许设计者保存某些自定义时刻的工作点数据。如果需要保存多个时刻的工作点，填入时间矢量之间以空格隔开。</p>
+<p>Actimes Settings</p>
+<p>未找到相关资料，待补充。</p>
+<h4 id="emir-output标签页">1.2.5 EM/IR Output标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_emiroutput.png" alt="图1-7">
+<figcaption aria-hidden="true">图1-7</figcaption>
+</figure>
+<p>该标签页涉及EM（电子迁移）和IR（IR压降）。<del>恕我直言，不会。</del></p>
+<h4 id="misc标签页">1.2.6 Misc标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_misc.png" alt="图1-7">
+<figcaption aria-hidden="true">图1-7</figcaption>
+</figure>
+<p>该标签页为一些难以分类的配置，毕竟都写了是misc了。</p>
+<ol type="1">
+<li>Annotation Parameters，注释。</li>
+<li>Captab Parameters，电容列表参数。</li>
+<li>Additional Parameters，额外参数。</li>
+</ol>
+<h2 id="实例">2 实例</h2>
+<p>仿真电路如图。瞬态仿真实例选择了使用二极管连接方式的PMOS作为负载的共源极电路。</p>
+<figure>
+<img data-src="./circuit_opa.png" alt="图2-1">
+<figcaption aria-hidden="true">图2-1</figcaption>
+</figure>
+<h3 id="配置激励源">2.1 配置激励源</h3>
+<p>与前一篇关于<a href="/2021/03/30/ic-note-inv-simu/">反相器仿真</a>中对于激励信号的配置不同，这次选择直接对端口进行激励源配置。</p>
+<p>在ADE窗口中选择"Setup"-"Stimuli"。</p>
+<figure>
+<img data-src="./tran_ade_stimuli_1.png" alt="图2-2">
+<figcaption aria-hidden="true">图2-2</figcaption>
+</figure>
+<p>按照下面三张图片依次对三个端口的输入信号进行配置。</p>
+<p><img data-src="./tran_ade_stimuli_2_vin.png" alt="图2-3"> <img data-src="./tran_ade_stimuli_2_vdda.png" alt="图2-4"> <img data-src="./tran_ade_stimuli_2_gnda.png" alt="图2-5"></p>
+<h3 id="配置瞬态仿真">2.2 配置瞬态仿真</h3>
+<p>选择瞬态仿真模式，并选择仿真时间和精度。</p>
+<figure>
+<img data-src="./tran_ade_mode.png" alt="图2-6">
+<figcaption aria-hidden="true">图2-6</figcaption>
+</figure>
+<p>选取观测信号后，仿真配置结束。</p>
+<figure>
+<img data-src="./tran_ade_settings.png" alt="图2-7">
+<figcaption aria-hidden="true">图2-7</figcaption>
+</figure>
+<h3 id="仿真结果">2.3 仿真结果</h3>
+<p>下图是仿真结果。局部放大后，可以通过"M"键选取曲线上的点，对信号进行进一步分析。</p>
+<figure>
+<img data-src="./tran_ade_results.png" alt="图2-8">
+<figcaption aria-hidden="true">图2-8</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>以上就是ADE中瞬态仿真的大部分介绍。本次笔记结束。 :@(击掌)</p>
+]]></content>
+      <categories>
+        <category>集成电路</category>
+      </categories>
+      <tags>
+        <tag>瞬态仿真</tag>
+        <tag>仿真</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_1_立项</title>
+    <url>//2018/12/25/keyboard87-1/</url>
+    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
+type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+<span id="more"></span>
+<h2 id="项目初衷">项目初衷</h2>
+<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<figure>
+<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
+<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+</figure>
+<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
+<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
+<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
   </entry>
   <entry>
     <title>IC笔记之反相器仿真</title>
@@ -341,229 +589,6 @@ As"为仿真配置的名称，"Description"中可以选填一些配置信息，�
       </tags>
   </entry>
   <entry>
-    <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
-    <url>//2019/01/30/can-based-optimization/</url>
-    <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
-CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
-<p>运动控制系统对于通信的实时性要求很高，这就间接地要求系统的通信必须使用时间触发。CAN总线从本质上来说是一种事件触发总线协议，对于这种极高的硬实时性要求很难满足。文章中展示了基础的时间触发CAN协议在运动控制中的传输误差，实验结果表明：传输速率较低时，系统的跟踪误差较好；当传输速率提高后，系统的传输实时性就差强人意了。</p>
-<p>为了解决这一问题，文章中提出了一种对CAN运动控制的优化，这个优化涉及两个方面。</p>
-<span id="more"></span>
-<h2 id="优化一">优化一</h2>
-<p>本文提出在时间触发中嵌入事件触发，将传统的通信触发结构改为事件/时间触发结构，如图1所示。</p>
-<figure>
-<img data-src="./1884776264.jpg" alt="图1">
-<figcaption aria-hidden="true">图1</figcaption>
-</figure>
-<h2 id="优化二">优化二</h2>
-<p>除了优化时间触发结构，文章还提出了预估器优化方案。如果系统在一段时间内没有接收到运动控制指令，系统就会将之前的位置数据带入泰勒二阶展开式计算丢失的控制指令。</p>
-<p>系统的最终结构框图如图2所示。</p>
-<figure>
-<img data-src="./122056196.jpg" alt="图2">
-<figcaption aria-hidden="true">图2</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>控制</tag>
-        <tag>summary</tag>
-        <tag>总线</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IC笔记之瞬态仿真</title>
-    <url>//2021/04/06/ic-note-simu-tran/</url>
-    <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
-<span id="more"></span>
-<h2 id="概述">1 概述</h2>
-<p>瞬态仿真是什么？</p>
-<blockquote>
-<p>瞬态仿真是电路在给定的输入激励下，在设定的时间范围内计算电路时域瞬态响应性能的一种仿真手段。</p>
-</blockquote>
-<p>瞬态仿真一般是集成电路的第一个仿真，是年轻人的第一个仿真手段；通常是验证稳定性、速度、精度等等，需要在多次不同的瞬态分析过程才能得出结论。</p>
-<h3 id="基本设置">1.1 基本设置</h3>
-<p>在"ADE"中选择"Analyses"-"Choose"，可以选择仿真功能选择。点击"tran"后，可以看到如下图的基本设置界面。</p>
-<figure>
-<img data-src="./tran_ade_settings_1.png" alt="图1-1">
-<figcaption aria-hidden="true">图1-1</figcaption>
-</figure>
-<ol type="1">
-<li>"Stop Time"，设置仿真时间<br>
-仿真时间默认从0时刻开始，这里只设置停止时间。时间单位为可以是"s"（秒）、"m"（毫秒）和"u"（微秒）。</li>
-<li>"Accuracy Defaults(errpreset)"，设置仿真精度和速度<br>
-软件内置有三种仿真精度："conservative"、"moderate"、"liberal"。"conservative"具有最高的精度，但速度较慢，用于高精度模拟电路和混合信号电路；"liberal"则是速度最快，精度较差，用于数字电路和变化率不高的模拟电路；"moderate"是比较折衷的模式，用于绝大多数模拟电路。如果需要更高的精度，则要在高级设置中配置参数。</li>
-<li>"Transient Noise"，设置瞬态噪声</li>
-<li>"Dynamic Parameter"，设置动态参数</li>
-<li>"Enabled"，设置瞬态仿真启用</li>
-</ol>
-<h3 id="高级设置">1.2 高级设置</h3>
-<p>在图1-1中点击右下角的"Options"可进入高级设置。</p>
-<h4 id="time-step标签页">1.2.1 Time Step标签页</h4>
-<figure>
-<img data-src="./tran_ade_settings_2_timestep.png" alt="图1-2">
-<figcaption aria-hidden="true">图1-2</figcaption>
-</figure>
-<p>Simulation Interval Parameters</p>
-<ul>
-<li>"start"：仿真起始时刻。仿真器默认起始时间为0s。</li>
-<li>"outputstart"：输出波形时间。如果设计者的仿真时间较长，而只需观察某个时间点或者部分时间段内的电路瞬态特性输出，则可以通过该参数控制数据输出。</li>
-</ul>
-<p>Time Step Parameters</p>
-<ul>
-<li>"step"：最小的时间步长。</li>
-<li>"maxstep"：最大时间步长，根据"errpreset"中的精度设定取得默认值。</li>
-</ul>
-<h4 id="algorithm标签页">1.2.2 Algorithm标签页</h4>
-<figure>
-<img data-src="./tran_ade_settings_2_algorithm.png" alt="图1-3">
-<figcaption aria-hidden="true">图1-3</figcaption>
-</figure>
-<p>Initial Condition Parameters</p>
-<p>用户可以利用设置电路节点状态的初始化语句（ic
-statement）或电容、电感等模型内的初始条件参数（ic
-parameters）两种方式为瞬态仿真设置初始条件。其中电容中设置的是初始电压值，电感中设置的是初始电流值。如果没有进行设置，仿真器将默认采用直流分析的结果作为初始条件。对这个参数进行设置时要格外注意，如果对电路分析不明，贸然设置电路节点的初始值，极易造成电路瞬态仿真出现收敛性问题，并产生错误结果。</p>
-<ul>
-<li>"ic"：设定通过何种方式设置初始条件。
-<ul>
-<li>ic=dc：忽略任何设置的初始条件，直接采用直流分析的结果。</li>
-<li>ic=node：忽略电容、电感等器件上设置的初始条件，而采用"ic
-statement"设置的初始条件。</li>
-<li>ic=dev：忽略由"ic
-statement"设置的初始条件，采用电容、电感上的初始条件。</li>
-<li>ic=all：两种初始条件都将被采用。当设置条件发生冲突时，"ic
-parameters"比"ic statement"的优先级更高。<br>
-&gt; "ic statement"的格式是ic NodeName=value。<br>
-&gt; 例：ic V1=1 M1:int_d=3.3 L1:1=10u<br>
-&gt;
-上句表示的是：在节点V1上的初始电压是1V；在MOS管M1的漏极电压是3.3V；在电感L1
-上流过的初始电流是10μA。</li>
-</ul></li>
-<li>"skipdc"：最小的时间步长。
-选择跳过直流分析。在没有直流分析的情况下，电路的初始解将采用通解，或是从由"readic"定义的文件中读取初始条件。如果"readic"中没有定义，则将从"ic
-statement"中获取初始条件。无论是否跳过直流分析，器件上的初始条件肯定都会被采用。如果一个节点没有被赋予初始条件，将自动被仿真器设置为零。</li>
-<li>"readic"：从文件中读取初始条件。</li>
-</ul>
-<p>Initial Condition Parameters For Oscillator</p>
-<p>用户可以手动配置振荡器的初始条件，也可以选择使用软件自动配置。</p>
-<p>Convergence Parameters</p>
-<p>当电路在仿真时存在无限快的响应速度（如一个电路节点不存在任何电容），仿真器可能会产生收敛性问题。为了避免出现这种问题，需要设置"cmin"参数，给该节点设置一个合理的对地电容值。</p>
-<ul>
-<li>"readns"：从文件中读取电路瞬态仿真的初始解。</li>
-<li>"cmin"：设定每个节点对地的最小电容</li>
-</ul>
-<p>Integration Method Parameters</p>
-<p>该参数用于设计者根据仿真速度和仿真精确度选择合适的积分方式。仿真器提供3种不同的积分方式："backward-Euler"，"Trapezoidal"，"Second-order
-Gear"。根据这3种方式一共组合出6种模式，分别为"euler"、"traponly"、"trap"、"gear2only"、gear2"、"trapgear2"。<br>
-如果设计者需要高精度仿真，可以选择"trapezoidal"积分方式。但是，这种积分方式对前一时刻计算产生的误差非常敏感，因此在容差很大时并不是一种很好的选择。在容差很大而且要求速度较快的情况下，通常选择"Second-order
-Gear"积分法。"Second-order
-Gear"积分法比"backward-Euler"积分法更加精确。</p>
-<p>Accuracy Parameters -
-"relref"：相对收敛标准的参考，默认值从"errpreset"得到。包括以下几个选项。<br>
-"relref =
-pointlocal"：即relref=局部点，这个设置用来定量比较每个节点的值相对于待分析节点上当前数值的相对误差。<br>
-"relref =
-alllocal"：即relref=局部所有点，定量比较过去所有时间点的值相对于最大节点值的相对误差。<br>
-"relref =
-sigglobal"：即relref=所有信号点，定量比较每个电路上信号值相对于电路中所有信号中的最大值的相对误差。<br>
-"relref =
-allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最大悬浮电流值设定比较方程，此时不能满足基尔霍夫电流方程。
-- "lteratio"：比例系数，用于计算Newton容差中的LTE 容差。</p>
-<p>Newton Parameters</p>
-<ul>
-<li>"maxiters"：在每个时间步长内最多的迭代次数。</li>
-<li>"restart"：如果有任何条件发生变化，是否从最开始重新计算直流解。如果不重新计算，将直接采用上一次的初始值。</li>
-</ul>
-<h4 id="state-file标签页">1.2.3 State File标签页</h4>
-<figure>
-<img data-src="./tran_ade_settings_2_statefile.png" alt="图1-4">
-<figcaption aria-hidden="true">图1-4</figcaption>
-</figure>
-<p>StateFile Parameters</p>
-<p>状态文件（State File）主要有两个用处： 1.
-将保存下来的状态文件用于后续的仿真分析中。如在一次瞬态分析中保存下结束时刻的信息，在下一次瞬态分析中能够以该时刻作为起始点继续完成后续时间段的分析。
-2.
-用户能够利用状态文件自动完成初始条件的更新。设计者能够利用仿真器将一次分析的初始时刻工作点或终止时刻工作点生成状态文件。同时，设计者也能手动编写一个状态文件。</p>
-<ul>
-<li>"write"：将瞬态分析的初始状态解写到指定的文件中。</li>
-<li>"writefinal"：将瞬态分析的最终解写到指定的文件中。</li>
-</ul>
-<p>Save-Restart Parameters</p>
-<p>该参数用于配置保存和载入的频率等参数。</p>
-<h4 id="output标签页">1.2.3 Output标签页</h4>
-<p><img data-src="./tran_ade_settings_2_output_1.png" alt="图1-5"> <img data-src="./tran_ade_settings_2_output_2.png" alt="图1-6"></p>
-<p>Output Parameters</p>
-<p>仿真器默认情况下会把所有仿真数据都保存下来，但有时并不需要所有的数据量。仿真器允许设计者选择保存需要的数据。如果需要得到更精确的结果，也可以增大数据输出量。<br>
-该参数配置"compression"输出模式，将恒定信号的重复记录删除。</p>
-<p>Strobing Parameters</p>
-<p>该参数配置"strobing"输出模式。在保存点之间设置一个时间间隔。虽然仿真器计算过这些数据，但是并没有将其保存输出。</p>
-<p>Final OP Point Settings</p>
-<p>该参数配置静态工作点的保存等参数。</p>
-<p>Infotimes Settings</p>
-<p>该参数配置"infotimes"输出模式。允许设计者保存某些自定义时刻的工作点数据。如果需要保存多个时刻的工作点，填入时间矢量之间以空格隔开。</p>
-<p>Actimes Settings</p>
-<p>未找到相关资料，待补充。</p>
-<h4 id="emir-output标签页">1.2.5 EM/IR Output标签页</h4>
-<figure>
-<img data-src="./tran_ade_settings_2_emiroutput.png" alt="图1-7">
-<figcaption aria-hidden="true">图1-7</figcaption>
-</figure>
-<p>该标签页涉及EM（电子迁移）和IR（IR压降）。<del>恕我直言，不会。</del></p>
-<h4 id="misc标签页">1.2.6 Misc标签页</h4>
-<figure>
-<img data-src="./tran_ade_settings_2_misc.png" alt="图1-7">
-<figcaption aria-hidden="true">图1-7</figcaption>
-</figure>
-<p>该标签页为一些难以分类的配置，毕竟都写了是misc了。</p>
-<ol type="1">
-<li>Annotation Parameters，注释。</li>
-<li>Captab Parameters，电容列表参数。</li>
-<li>Additional Parameters，额外参数。</li>
-</ol>
-<h2 id="实例">2 实例</h2>
-<p>仿真电路如图。瞬态仿真实例选择了使用二极管连接方式的PMOS作为负载的共源极电路。</p>
-<figure>
-<img data-src="./circuit_opa.png" alt="图2-1">
-<figcaption aria-hidden="true">图2-1</figcaption>
-</figure>
-<h3 id="配置激励源">2.1 配置激励源</h3>
-<p>与前一篇关于<a href="/2021/03/30/ic-note-inv-simu/">反相器仿真</a>中对于激励信号的配置不同，这次选择直接对端口进行激励源配置。</p>
-<p>在ADE窗口中选择"Setup"-"Stimuli"。</p>
-<figure>
-<img data-src="./tran_ade_stimuli_1.png" alt="图2-2">
-<figcaption aria-hidden="true">图2-2</figcaption>
-</figure>
-<p>按照下面三张图片依次对三个端口的输入信号进行配置。</p>
-<p><img data-src="./tran_ade_stimuli_2_vin.png" alt="图2-3"> <img data-src="./tran_ade_stimuli_2_vdda.png" alt="图2-4"> <img data-src="./tran_ade_stimuli_2_gnda.png" alt="图2-5"></p>
-<h3 id="配置瞬态仿真">2.2 配置瞬态仿真</h3>
-<p>选择瞬态仿真模式，并选择仿真时间和精度。</p>
-<figure>
-<img data-src="./tran_ade_mode.png" alt="图2-6">
-<figcaption aria-hidden="true">图2-6</figcaption>
-</figure>
-<p>选取观测信号后，仿真配置结束。</p>
-<figure>
-<img data-src="./tran_ade_settings.png" alt="图2-7">
-<figcaption aria-hidden="true">图2-7</figcaption>
-</figure>
-<h3 id="仿真结果">2.3 仿真结果</h3>
-<p>下图是仿真结果。局部放大后，可以通过"M"键选取曲线上的点，对信号进行进一步分析。</p>
-<figure>
-<img data-src="./tran_ade_results.png" alt="图2-8">
-<figcaption aria-hidden="true">图2-8</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>以上就是ADE中瞬态仿真的大部分介绍。本次笔记结束。 :@(击掌)</p>
-]]></content>
-      <categories>
-        <category>集成电路</category>
-      </categories>
-      <tags>
-        <tag>瞬态仿真</tag>
-        <tag>仿真</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
     <url>//2019/01/28/keyboard87-3/</url>
     <content><![CDATA[<blockquote>
@@ -589,6 +614,102 @@ allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最�
         <tag>STM32</tag>
         <tag>键盘</tag>
         <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux笔记之VNC配置</title>
+    <url>//2021/06/21/linux-note-vnc-config/</url>
+    <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
+<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
+<span id="more"></span>
+<blockquote>
+<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
+</blockquote>
+<h2 id="预备知识">1 预备知识</h2>
+<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
+<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
+<p>wikipedia上有详细介绍<a href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
+<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
+<h2 id="安装vnc">2 安装VNC</h2>
+<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
+<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="./linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
+<figcaption aria-hidden="true">yum grouplist结果</figcaption>
+</figure>
+<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y <span class="string">&quot;GNOME Desktop&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="comment"># 切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
+<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
+<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="comment"># 验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="./linux_note_vnc_config_vnc.png" alt="验证VNC安装">
+<figcaption aria-hidden="true">验证VNC安装</figcaption>
+</figure>
+<h2 id="配置vnc">3 配置VNC</h2>
+<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
+<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从sample创建VNC启动脚本</span></span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
+<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
+<p>接着，需要小小处理一下刚刚复制的脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system</span><br><span class="line"><span class="comment"># 给权限x</span></span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:1.service</span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>接着打开2个脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
+<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
+<figure>
+<img data-src="./linux_note_vnc_config_script_1.png" alt="脚本修改前">
+<figcaption aria-hidden="true">脚本修改前</figcaption>
+</figure>
+<figure>
+<img data-src="./linux_note_vnc_config_script_2.png" alt="脚本修改后">
+<figcaption aria-hidden="true">脚本修改后</figcaption>
+</figure>
+<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
+<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
+<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
+<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
+<p>下面是VNC服务的启动和开机自启的配置。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="comment"># 配置开机自启</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:1.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="./linux_note_vnc_config_port.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
+<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
+ツ )_/¯</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
+<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
+<figure>
+<img data-src="./linux_note_vnc_config_selinux.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<h2 id="连接vnc">5 连接VNC</h2>
+<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
+<figure>
+<img data-src="./linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
+<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
+</figure>
+<figure>
+<img data-src="./linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
+<figcaption aria-hidden="true">连接VNC演示</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
+<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>VNC</tag>
+        <tag>CentOS</tag>
       </tags>
   </entry>
   <entry>
@@ -770,102 +891,6 @@ C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四�
       </tags>
   </entry>
   <entry>
-    <title>Linux笔记之VNC配置</title>
-    <url>//2021/06/21/linux-note-vnc-config/</url>
-    <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
-<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
-<span id="more"></span>
-<blockquote>
-<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
-</blockquote>
-<h2 id="预备知识">1 预备知识</h2>
-<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
-<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
-<p>wikipedia上有详细介绍<a href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
-<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
-<h2 id="安装vnc">2 安装VNC</h2>
-<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
-<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="./linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
-<figcaption aria-hidden="true">yum grouplist结果</figcaption>
-</figure>
-<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y <span class="string">&quot;GNOME Desktop&quot;</span></span><br></pre></td></tr></table></figure>
-<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="comment"># 切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
-<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
-<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="comment"># 验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="./linux_note_vnc_config_vnc.png" alt="验证VNC安装">
-<figcaption aria-hidden="true">验证VNC安装</figcaption>
-</figure>
-<h2 id="配置vnc">3 配置VNC</h2>
-<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
-<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从sample创建VNC启动脚本</span></span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
-<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
-<p>接着，需要小小处理一下刚刚复制的脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system</span><br><span class="line"><span class="comment"># 给权限x</span></span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:1.service</span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
-<p>接着打开2个脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
-<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_script_1.png" alt="脚本修改前">
-<figcaption aria-hidden="true">脚本修改前</figcaption>
-</figure>
-<figure>
-<img data-src="./linux_note_vnc_config_script_2.png" alt="脚本修改后">
-<figcaption aria-hidden="true">脚本修改后</figcaption>
-</figure>
-<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
-<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
-<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
-<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
-<p>下面是VNC服务的启动和开机自启的配置。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="comment"># 配置开机自启</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:1.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:2.service</span><br></pre></td></tr></table></figure>
-<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="./linux_note_vnc_config_port.png" alt="端口监听状态">
-<figcaption aria-hidden="true">端口监听状态</figcaption>
-</figure>
-<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
-<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
-ツ )_/¯</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
-<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_selinux.png" alt="端口监听状态">
-<figcaption aria-hidden="true">端口监听状态</figcaption>
-</figure>
-<h2 id="连接vnc">5 连接VNC</h2>
-<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
-<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
-</figure>
-<figure>
-<img data-src="./linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
-<figcaption aria-hidden="true">连接VNC演示</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
-<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>VNC</tag>
-        <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux笔记之XDMCP配置</title>
     <url>//2021/04/08/linux-note-xdmcp-config/</url>
     <content><![CDATA[<p>恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。</p>
@@ -993,31 +1018,6 @@ manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行�
         <tag>CentOS</tag>
         <tag>XDMCP</tag>
         <tag>Xmanager</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_1_立项</title>
-    <url>//2018/12/25/keyboard87-1/</url>
-    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
-type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
-<span id="more"></span>
-<h2 id="项目初衷">项目初衷</h2>
-<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
-<figure>
-<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
-<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
-</figure>
-<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
-<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
-<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -1166,7 +1166,750 @@ century”。这就让我想起了RACFM这篇文章，以及经常遇见的“�
       </tags>
   </entry>
   <entry>
-    <title>Sony FE 200-600mm F5.6-6.3 G OSS</title>
+    <title>Sigma 100-400mm f5-6.3 DG DN OS Contemporary_by SonyAlphaBlog</title>
+    <url>//2022/08/27/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2020/07/21/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/">Sigma
+100-400mm f5-6.3 DG DN OS Contemporary_by SonyAlphaBlog</a></p>
+</blockquote>
+<h2 id="结论">1 结论</h2>
+<p>对于A7M3、A9或者A7R3来说，Sigma 100-400mm F5-F6.3 DG DN OS
+Contemporary（<span class="math inline">\(\small{5800_{TB,
+20220818}}\)</span>）是一只非常有性价比的好镜头；尤其是可以和Sony FE
+24-105 F4 G OSS配合使用。</p>
+<span id="more"></span>
+<p><img data-src="./Pasted%20image%2020220830195148.png"></p>
+<p>这只镜头的焦距范围非常适合运动、肖像、风景和动物的摄影。如果你主要使用400mm左右的焦端来拍摄动物，<span class="math inline">\(\mathbf{SONY}\)</span> FE 200-600mm F5.6-6.3 G
+OSS（<span class="math inline">\(\small{12700_{\mathbf{SONY},20220827}}\)</span>）可能更加适合你。
+在A7R4上使用时，适马的100400还是没办法和索尼的100400竞争，不管时锐度还是对焦速度都有一定差距。但是在像素稍微低一点的相机上，比如A7M3和A7R3，锐度上的差距就不是肉眼可察的了。
+拍摄静物时，自动对焦还是挺不错的，但是拍摄运动物体就不太行了。你还是得用索尼的100400（<span class="math inline">\(\small{17500_{\mathbf{SONY},202208227}}\)</span>）。
+所以，对于使用A7R4进行动物和体育摄影，还是推荐<span class="math inline">\(\mathbf{SONY}\)</span> FE 200-600mm F5.6-6.3 G
+OSS。其他拍摄题材上，或者说预算有限，Sigma 100-400mm F5-F6.3 DG DN OS
+Contemporary可以说是非常不错的平替了。</p>
+<ul>
+<li>优势
+<ul>
+<li>价格比较低（<span class="math inline">\(\small{5800_{TB,
+20220818}}\)</span>）</li>
+<li>重量比较轻</li>
+<li>在2400万像素的A7M3和4200万像素的A7R3上妥妥够用，锐度在这两台机器上可以达到非常极致的体验</li>
+<li>非常好的色彩还原度</li>
+<li>非常柔和的背景虚化表现相当好</li>
+<li>焦外光斑挺好</li>
+<li>色散控制比较好</li>
+<li>静物的自动对焦还是不错的</li>
+<li>防抖效果挺好</li>
+<li>做工非常棒</li>
+<li>非常棒的人体工学设计</li>
+</ul></li>
+<li>一般
+<ul>
+<li>无法使用E卡口增距镜</li>
+<li>在6100万像素的A7R4上只能达到Very Good级别的锐度</li>
+<li>抗眩光一般</li>
+<li>暗角和畸变需要后期调整</li>
+<li>对于移动物体的连续自动对焦还是没办法和索尼比</li>
+<li>脚架环需要另外购买，第三方价格为<span class="math inline">\(\small{200_{TB, 20220818}}\)</span></li>
+<li>边角锐度一般</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>视频拍摄中，自动对焦无法时刻保持精准快速的性能</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<h3 id="spec">2.1 SPEC</h3>
+<ul>
+<li>光圈
+<ul>
+<li>100mm端F5</li>
+<li>400mm端F6.3</li>
+</ul></li>
+<li>重量
+<ul>
+<li>1180g</li>
+<li>1210g（加上官方脚架环）</li>
+</ul></li>
+<li>长度
+<ul>
+<li>100mm端197mm</li>
+<li>400mm端299mm</li>
+</ul></li>
+<li>直径86mm</li>
+<li>9片光圈叶片</li>
+<li>最近对焦距离
+<ul>
+<li>100mm端112cm</li>
+<li>400mm端160cm</li>
+</ul></li>
+<li>放大倍率0.24</li>
+<li>67mm滤镜口径</li>
+<li>不支持E卡口增距镜</li>
+<li>步进电机自动对焦</li>
+<li>有光学防抖</li>
+<li>镜身按钮
+<ul>
+<li>AF/MF切换</li>
+<li>对焦范围限制</li>
+<li>防抖模式切换</li>
+<li>自动对焦锁定</li>
+</ul></li>
+<li>防尘防滴</li>
+</ul>
+<p>适马100-400mm的做工是挺好的，但和索尼的100400GM还是有差距的。大小和重量都是在可接受范围内，甚至比<span class="math inline">\(\mathbf{SONY}\)</span> 100400GM还要小。</p>
+<p>适马100-400mm是首次在E卡口上使用光学防抖，手持体验不错。上三脚架时，需要手动关闭，否则出来的照片会糊掉。这一点上，索尼的镜头就做的比较好，会自动关闭光学防抖。官方标配不附带脚架环，需要另外购买官方脚架环；第三方脚架环<span class="math inline">\(\small{200_{TB, 20220818}}\)</span>左右。</p>
+<p>最近对焦距离110cm@100mmm、160cm@400mm，放大倍率0.23。这方面要比<span class="math inline">\(\mathbf{SONY}\)</span>
+100400GM差（最近对焦距离98cm，0.35放大倍率）。</p>
+<p>另外，适马（包括腾龙）是不能使用索尼的增距镜的；即使装上去没有问题，但是没办法调节光圈和自动对焦。适马官方也有出增距镜，但是针对L卡口的，E卡口无法使用。</p>
+<h3 id="自动对焦">2.2 自动对焦</h3>
+<p>静物拍摄的自动对焦性能非常好，且可以调用眼控对焦。移动物体（运动、动物等）的拍摄就差强人意了，自动对焦和<span class="math inline">\(\mathbf{SONY}\)</span>
+100400GM比不了，使用A7R4有30%几率会对不上焦。</p>
+<h2 id="光学性能">3 光学性能</h2>
+<h3 id="锐度">3.1 锐度</h3>
+<p>测试使用6100万像素的A7R4。</p>
+<ul>
+<li>在A7R4上，锐度基本表现为Very
+Good级别，但是很难达到Excellent级别。但在A7M3或者A7R3上，锐度肯定是爆表的，可以达到Excellent级别。</li>
+<li>边角的锐度要比中心锐度低一个级别。</li>
+</ul>
+<p><img data-src="./Pasted%20image%2020220819100951.png"></p>
+<h3 id="暗角畸变色差抗眩光">3.2 暗角/畸变/色差/抗眩光</h3>
+<ul>
+<li>光圈全开会有暗角，焦距增加后更加明显。</li>
+<li>畸变表现为枕形畸变，100mm端表现得不是很明显，焦距扩展到400mm端会逐渐增加</li>
+<li>色差非常小</li>
+<li>眩光对于长焦来说不是什么问题，毕竟没有大聪明会一直怼着太阳拍。但是吧，这只镜头直对太阳时确实有不小的眩光。</li>
+</ul>
+<h3 id="虚化色彩还原度"> 3.3 虚化/色彩还原度</h3>
+<ul>
+<li>色彩还原度很好，对比度很高</li>
+<li>背景虚化非常柔美</li>
+<li>焦外光斑非常柔和，没有散射，没有洋葱圈。所有焦端范围内，光圈全开的光斑都挺圆的；收缩光圈之后，会有九边形出现。</li>
+</ul>
+<h2 id="对比sony-100-400mm">4 对比Sony 100-400mm</h2>
+<h3 id="spec和自动对焦">4.1 SPEC和自动对焦</h3>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 100-400mm GM
+OSS F4.5-F5.6</p>
+<ul>
+<li>更重，更粗，做工更好</li>
+<li>操控性更好，尤其还官方标配了脚架环。镜身有3个自定义按钮，可以使用增距镜，预留了一个小缺口以便直接调节可变滤镜。</li>
+<li>最近对焦距离比适马更近，尤其是400mm端只有98cm，而适马有160cm；放大倍率也更好。</li>
+<li>GM的自动对焦不论是纸面参数还是实际表现都是碾压级别的，且在捕捉快速运动对相识出现丢焦。</li>
+<li>当然了，碾压的代价就是三倍的价格。</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Sigma</th>
+<th style="text-align: center;">Sony</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">光圈</td>
+<td style="text-align: center;">F5-6.3</td>
+<td style="text-align: center;">F4.5-F.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">重量</td>
+<td style="text-align: center;">1180g-1210g</td>
+<td style="text-align: center;">1395g-1586g</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">长度</td>
+<td style="text-align: center;">197-299mm</td>
+<td style="text-align: center;">205-307mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">直径</td>
+<td style="text-align: center;">86mm</td>
+<td style="text-align: center;">93,9mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">光圈叶片数</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">最近对焦距离</td>
+<td style="text-align: center;">112-160cm</td>
+<td style="text-align: center;">98cm-98cm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">放大倍率</td>
+<td style="text-align: center;">0.24x</td>
+<td style="text-align: center;">0.35</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">滤镜直径</td>
+<td style="text-align: center;">67mm</td>
+<td style="text-align: center;">77mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">增距镜</td>
+<td style="text-align: center;">不支持E卡口</td>
+<td style="text-align: center;">支持TC1.4和TC2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">自动对焦</td>
+<td style="text-align: center;">步进电机</td>
+<td style="text-align: center;">双线性直驱SSM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">光学防抖</td>
+<td style="text-align: center;">支持</td>
+<td style="text-align: center;">支持</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">镜身按钮</td>
+<td style="text-align: center;">AF/MF切换，对焦距离限制，防抖模式，自定义</td>
+<td style="text-align: center;">AF/MF切换，对焦距离限制，防抖模式，自定义</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">防尘防滴</td>
+<td style="text-align: center;">支持</td>
+<td style="text-align: center;">支持</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">附件</td>
+<td style="text-align: center;">镜头包；另购脚架环</td>
+<td style="text-align: center;">镜头包；脚架环</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">价格</td>
+<td style="text-align: center;"><span class="math inline">\(\small{5800_{TB, 20220818}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\small{17500_{\mathbf{SONY},20220827}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="锐度-1">4.2 锐度</h3>
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span>的100-400mm在A7R4上可以提供更好的锐度。</li>
+</ul>
+<p><img data-src="./Pasted%20image%2020220819102131.png"></p>
+<h3 id="畸变色差抗眩光">4.3 畸变/色差/抗眩光</h3>
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 100-400mm GM
+OSS F4.5-F5.6畸变抑制和暗角控制做得更好，并且在LR中已有矫正文件。</li>
+<li>两只镜头的暗角都不明显</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span>的抗眩光更好</li>
+</ul>
+<h3 id="虚化色彩还原度-1">4.4 虚化/色彩还原度</h3>
+<ul>
+<li>两只镜头的背景虚化、焦外光斑、色彩还原度都是顶级的存在。</li>
+</ul>
+<h2 id="视频">5 视频</h2>
+<p>适马100-400mm在拍照上时挺不错的，但是视频拍摄时，会出现自动对焦慢和抽搐的情况。</p>
+]]></content>
+      <categories>
+        <category>镜头</category>
+      </categories>
+      <tags>
+        <tag>镜头</tag>
+        <tag>适马Sigma</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog</title>
+    <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
+14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
+</blockquote>
+<h2 id="结论">1 结论</h2>
+<p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
+<span id="more"></span>
+<p><img data-src="Pasted%20image%2020220830195252.png"></p>
+<ul>
+<li>优势
+<ul>
+<li>14mm端在F5.6光圈时有Outstanding级别的锐度</li>
+<li>边角表现非常好</li>
+<li>非常自然的色彩还原度</li>
+<li>对于一只广角来说，背景虚化非常好；焦外光斑表现不错</li>
+<li>Lightroom可以修正广角带来的畸变</li>
+<li>14mm端暗角不明显</li>
+<li>无慧差，很适合夜观星像</li>
+<li>顶级的手感</li>
+<li>有防尘防滴特性</li>
+<li>照片的自动对焦非常好</li>
+<li>比Sony FE 12-24mm F4 G（<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span>）便宜</li>
+</ul></li>
+<li>一般
+<ul>
+<li>2.8光圈全开情况下，锐度只能达到Very Good的等级</li>
+<li>光圈缩小至F5.6时，24mm端锐度只能达到Very
+Good级别，与14mm端的Outstanding级别的锐度差距加大</li>
+<li>如果要平衡边角和中心锐度，光圈需要缩小至F8</li>
+<li>滤镜系统后置，使用时需要根据其形状进行选购或裁剪</li>
+<li>体积和重量有进步，达到了其它竞品的平均水平</li>
+<li>不可拆卸遮光罩，这一点和其它超广角镜头一样</li>
+<li>没有镜身光学防抖，但可以依靠机身防抖</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>焦距范围受限</li>
+<li>视频拍摄时，画面会出现闪烁</li>
+<li>必须使用150mm滤镜系统</li>
+</ul></li>
+<li>镜头比较
+<ul>
+<li>可替换镜头
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35mm F2.8
+GM</li>
+<li>Tamron 17-28mm F2.8 Di III RXD</li>
+</ul></li>
+<li>其实，真的说起来，还是只有<span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G是同一等级比较的镜头。其他两只的焦距范围还是有点区别的。</li>
+<li>这两只镜头其实都是非常不错的镜头。适马1424F2.8有着2.8的光圈，更加适合暗光环境和星空的摄影；索尼1224F4则有着12mm的广角端，这2mm的差距在取景范围上其实是有非常巨大的差别的。</li>
+<li>锐度方面，适马1424F2.8在14mm端的中心锐度会有略微优势；索尼1224F4在24mm端稍微领先。边角情况，两只镜头表现差不多。</li>
+<li>至于到底选哪一只，就要看你的更想要2.8光圈还是12mm广角了。毕竟，这两支镜头在各方面的表现都是非常不错的。</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<h3 id="spec">2.1 SPEC</h3>
+<ul>
+<li>重量：795克</li>
+<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span></li>
+<li>长度：131mm</li>
+<li>几乎没有使用通用滤镜的可能性</li>
+<li>AF/MF切换按钮</li>
+<li>可自定义的对焦保持按钮</li>
+<li>11片光圈叶片</li>
+<li>防尘防潮设计</li>
+<li>最近对焦距离：28cm</li>
+<li>后置滤镜插槽</li>
+<li>不可拆卸遮光罩</li>
+<li>遮光罩预留镜头盖槽</li>
+<li>自带镜头盒</li>
+<li>The build construction is excellent</li>
+<li>自动对焦快速精准，非常安静</li>
+<li>内变焦</li>
+</ul>
+<h3 id="后置滤镜系统">2.2 后置滤镜系统</h3>
+<p>镜头尾部有后置滤镜插槽，并配有防掉落锁定。</p>
+<p>按照官方的用户手册的说法，必须将滤镜裁剪成对应的形状才能在后置滤镜插槽中使用。
+当然你也可以选择前置滤镜，但是得使用150mm的滤镜支架。</p>
+<p>P.S. 目前已有厂商发布了定制的后置滤镜片。</p>
+<h3 id="与sony-12-24mm-f4-g对比">2.3 与Sony 12-24mm F4 G对比</h3>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G</p>
+<ul>
+<li>重量：565克</li>
+<li>长度：117mm</li>
+<li>价格：<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span></li>
+<li>7片光圈叶片</li>
+</ul>
+<p>Sigma 14-24mm F2.8 DG DN Art</p>
+<ul>
+<li>重量：795克（重40%）</li>
+<li>长度：131mm（长14mm）</li>
+<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>（便宜34%）</li>
+<li>11片光圈叶片</li>
+</ul>
+<h2 id="光学性能">3 光学性能</h2>
+<h3 id="锐度">3.1 锐度</h3>
+<p>测试使用6100像素的A7R4。</p>
+<p>14mm端，光圈全开时中心锐度为Very
+Good级别；在F5.6光圈达到最佳锐度，为Outstanding级别。边角的锐度表现稍有不足。光圈F8时，中心和边角锐度一致，为Excellent级别。在F11时，开始出现衍射现象，锐度开始降低。</p>
+<p>24mm端，锐度就有点差强人意了，中心和边角的锐度都只能达到Very
+Good级别。</p>
+<h3 id="锐度对比sony-12-24mm-f4-g">3.2 锐度（对比Sony 12-24mm F4
+G）</h3>
+<p>适马1424F2.8在14mm端表现稍好，24mm端则稍微落后。边角锐度相当。</p>
+<p><img data-src="./Pasted%20image%2020220817171714.png"></p>
+<h3 id="暗角色差畸变眩光星芒">3.3 暗角/色差/畸变/眩光/星芒</h3>
+<ul>
+<li>14mm端有明显的桶形畸变，24mm端有轻微的枕形畸变</li>
+<li>暗角可见，尤其是14mm端，但毕竟是超广角嘛</li>
+<li>色差非常微小，但在14mm会有出现</li>
+<li>抗眩光非常好，但依旧无法完全消除，毕竟这是一只超广角镜头</li>
+<li>在光圈F16至F22时，可以拍摄到不错的星芒</li>
+<li>没有明显的慧差，适合夜观星象</li>
+<li>Lightroom可以非常完美地校正畸变</li>
+</ul>
+<h3 id="焦外光斑色彩还原度">3.4 焦外光斑/色彩还原度</h3>
+<ul>
+<li>非常近的对焦距离（28cm）和F2.8的光圈可以获得一定程度的背景虚化。考虑到这是一只广角镜头，虚化的效果不算差</li>
+<li>焦外光斑非常好</li>
+<li>色彩还原度非常自然，表现非常好</li>
+</ul>
+<h2 id="视频">4 视频</h2>
+<p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
+]]></content>
+      <categories>
+        <category>镜头</category>
+      </categories>
+      <tags>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
+        <tag>镜头 - 适马Sigma</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sony FE PZ 16-35mm f4 G_by SonyAlphaBlog</title>
+    <url>//2022/08/30/sony-pz-16-35mm-f4-g/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/">https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/</a></p>
+</blockquote>
+<h2 id="结论">1 结论</h2>
+<p><span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE PZ
+16-35mm F4 G（<span class="math inline">\(\small{8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}}\)</span>）是一只非常棒的广角视频镜头，也可以说是<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC 16-35mm
+T3.1（<span class="math inline">\(\small{41999_{\mathbf{SONY},20220829}}\)</span>）这只电影镜头的“青春版”。新的PZ
+1635 G做工非常棒，非常紧凑，非常轻，上稳定器简直完美。同时，PZ 1635
+G专为视频拍摄设计的人体工学设计也超级棒，拥有你们想要的所有按钮和调节环。</p>
+<span id="more"></span>
+<p><img data-src="./Pasted%20image%2020220830194913.png"></p>
+<p>当然了，PZ 1635
+G的性能也是巅峰级别的。拍照的锐度表现上，有Excellent级别的中心锐度，Very
+Good级别的边角锐度。色彩还原度、对比度、焦外光斑都是顶尖水平；35mm端近摄的背景虚化非常好；抗眩光表现也非常好。</p>
+<p>PZ 1635
+G有专为视频拍摄的顶尖人体工学设计：电动变焦（可使用镜身、机身、遥控器）、线性对焦环、有级/无极光圈环、变焦环。</p>
+<p>可以使用<span class="math inline">\(\small{\mathbf{SONY}}\)</span>
+GP-VPT2BT遥控器进行远程控制，PZ 1635
+G拍摄非常便利，真的是“本当に上手”。</p>
+<ul>
+<li>对比<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE
+16-35 mm F2.8 GM（<span class="math inline">\(\small{15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}}\)</span>），PZ
+1635 G只有在4800万和6100万像素下，边角有一点点小缺点。</li>
+<li>对比<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC
+16-35mm T3.1（<span class="math inline">\(\small{41999_{\mathbf{SONY},20220829}}\)</span>），PZ
+1635
+G缺少了变焦速度调节、遮光斗接口、对焦环和变焦环的机械限位和刻度。但是，我要说但是了，你看看FEC电影头的价格和重量，还要什么自行车啊？！</li>
+<li>对比<span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario
+Tessar T FE 16-35mm F4 ZA OSS（<span class="math inline">\(\small{7100_{\mathbf{SONY},20220829}}\)</span>），PZ
+1635 G全方位碾压，完胜！</li>
+<li>对比Tamron 17-28mm F2.8 Di III RXD（<span class="math inline">\(\small{5980_{TB,20220829}}\)</span>），PZ 1635
+G画质更锐，对焦更快，虚化更好，色彩还原度更佳，焦段更大，人体工学设计更棒，体积更小，重量更轻；只是光圈也小了一点。</li>
+</ul>
+<p>如果你只是进行风光和建筑摄影，那么<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE 16-35 mm F2.8
+GM（<span class="math inline">\(\small{15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}}\)</span>）在边角依然有优势。其他的场景下，新的PZ
+16-35mm F4 G是非常推荐的选择，甚至值得给一个GM的橙色标。</p>
+<p><strong>墙裂推荐</strong></p>
+<ul>
+<li>优势
+<ul>
+<li>Excellent级别的中心锐度</li>
+<li>Very Good级别边角锐度非常</li>
+<li>为视频设计的极致人体工学设计
+<ul>
+<li>Power Zoom电动变焦可以在镜头和相机上调节，甚至可以远程操控</li>
+<li>有级/无极光圈环</li>
+<li>线性对焦环</li>
+</ul></li>
+<li>呼吸效应微乎其微</li>
+<li>变焦时不会失焦</li>
+<li>小巧的镜身非常适合上稳定器拍Vlog</li>
+<li>极致的色彩还原度</li>
+<li>极致的对比度</li>
+<li>抗眩光非常好</li>
+<li>焦外光斑非常好</li>
+<li>防尘防滴</li>
+<li>做工超级棒</li>
+<li>低色散</li>
+<li>巅峰级别的自动对焦</li>
+</ul></li>
+<li>一般
+<ul>
+<li>价格</li>
+<li>背景虚化有一点busy</li>
+<li>变焦环没有机械限位，也没有变焦标记</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>16mm端畸变和暗角</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<ul>
+<li>重量：353g</li>
+<li>价格：<span class="math inline">\(\small{8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}}\)</span></li>
+<li>光圈：F4 – F22</li>
+<li>长度：88.1mm</li>
+<li>滤镜口径：72mm</li>
+<li>7片光圈叶片</li>
+<li>有级/无极光圈环</li>
+<li>速度可调节的电动变焦</li>
+<li>双XD线性马达</li>
+<li>按键：AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆</li>
+<li>防尘防潮</li>
+<li>最近对焦距离：
+<ul>
+<li>16mm端：28cm</li>
+<li>35mm端：24 cm</li>
+</ul></li>
+<li>官方标配遮光罩</li>
+</ul>
+<p><span class="math inline">\(\small{\mathbf{SONY}}\)</span> PZ 16-35mm
+F4 G是一只新出的紧凑的广角镜头，可以替代非常古早的<span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario Tessar T FE
+16-35mm F4 ZA
+OSS。虽然价格有一点提高，但是功能和性能上的提升要大得多，完全对得起这点差价。</p>
+<p>这只新的变焦镜头专为视频而生，配备了</p>
+<ul>
+<li>可以平滑变焦的电动变焦拨杆，变焦速度根据拨动力度可调。搭配原厂的RMT-P1BT或者GP-VPT2BT可以实现远程电动变焦控制。</li>
+<li>有级/无极光圈环，镜身自动光圈档位。</li>
+<li>线性对焦环。</li>
+<li>变焦不丢焦，且没有呼吸效应</li>
+</ul>
+<p>做工和人体工学设计极为优秀：镜身有对角、变焦、光圈三个调节环；镜身紧凑、轻巧但依旧有丰富的按钮。</p>
+<p>PZ 1635 G同样可以和又大又重又贵的<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC 16-35mm
+T3.1电影头一较高下。FEC 1635的焦段与PZ 1635
+G相同，但拥有更大更精准的通光量，同时又齿轮组为跟焦提供便利。</p>
+<p>PZ 1635 G采用内变焦设计，非常适合手持上稳定器和Vlog。</p>
+<p>PZ 1635
+G的主要缺点实在拍照上面。变焦环和对焦环没有机械限位，也没有标记，不利于快速调整到特定的焦距。</p>
+<p><strong>自动对焦性能</strong></p>
+<ul>
+<li>拍照和视频的自动对焦都非常快速、精准、安静。连拍模式下，对焦性能依旧非常棒，有95%的几率对焦到主体。</li>
+<li>可以完美配合相机的眼控对焦/追焦功能。</li>
+<li>镜头支持A1的30fps连拍</li>
+</ul>
+<h2 id="光学性能">3 光学性能</h2>
+<p>测试使用6100万像素的A7R4。</p>
+<h3 id="锐度">3.1 锐度</h3>
+<figure>
+<img data-src="./Pasted%20image%2020220830194427.png" alt="PZ 1635 G锐度表现">
+<figcaption aria-hidden="true">PZ 1635 G锐度表现</figcaption>
+</figure>
+<ul>
+<li>F4光圈时，中心锐度都可以达到Excellent级别，在16mm端可以达到Outstanding级别。</li>
+<li>在6100万像素下，边角锐度稍差，只能达到Very Good级别。</li>
+<li>最佳焦距为35mm。</li>
+</ul>
+<p>对于这样一只如此轻便、紧凑的镜头来说，这样的锐度表现是非常不错的。</p>
+<p><strong>人像锐度</strong></p>
+<ul>
+<li>这只镜头拍摄人像是锐不可当，只看锐度可以说有点过分了。色彩还原度非常好，对比度真的非常不错。</li>
+</ul>
+<h3 id="暗角色散畸变抗眩光星芒">3.2 暗角/色散/畸变/抗眩光/星芒</h3>
+<ul>
+<li>16mm端的畸变是真的非常巨大。机内会有自动校正，后期也可以使用自动校正文件。</li>
+<li>35mm端的畸变就好很多了，但是依旧肉眼可见。</li>
+<li>16mm端会出现暗角，35mm端则没有。</li>
+<li>色散非常轻微。</li>
+<li>抗眩光在全焦段都做的非常好，大多数情况下都不会出现眩光，只有在一些极为严苛的条件下才略微有一点眩光。</li>
+<li>光圈缩小到F16至F22可以获得很不错的星芒。</li>
+</ul>
+<h3 id="焦外光斑色彩还原度">3.3 焦外光斑/色彩还原度</h3>
+<ul>
+<li>焦外光斑非常不错，主要出现在35mm端。光斑非常完美，非常圆，在光圈大于F8时肉眼无法看到7片光圈叶片带来的多边形。</li>
+<li>对于1635来说，背景虚化算是好的。静距离拍摄时，虚化柔和；主体稍远时，就显得不太足够了。</li>
+<li>色彩还原度非常好，色彩饱和度非常好，对比度很高，用来风光摄影和建筑摄影非常合适。</li>
+</ul>
+<h2 id="视频">4 视频</h2>
+<ul>
+<li>不管是视频拍摄的锐度还是色彩还原度，都是顶尖水平；风光、建筑、街拍、人像都可以很好地适应，也适合Vlog、稳定器、访谈等场景。</li>
+<li>自动对焦完美契合相机，简直是杰作。</li>
+<li>人体工程学设计非常棒，丝滑的电动变焦不仅可以调节变焦速度，还能通过<span class="math inline">\(\small{\mathbf{SONY}}\)</span>
+GP-VPT2BT远程控制。</li>
+<li>无级光圈环在视频拍摄中非常顶。</li>
+<li>手动对焦时，线性对焦环使用体验非常好。</li>
+<li>内变焦设计，电动变焦没有很大的移动，这部分的平衡做得很好。</li>
+<li>呼吸效应微不可察。</li>
+<li>齐焦镜头：变焦时，对焦点不变。</li>
+</ul>
+<p>PZ 1635 G绝对是视频拍摄的主宰者。</p>
+<h2 id="对比其它1635">5 对比其它1635</h2>
+<p>主要的竞争者是</p>
+<ul>
+<li><span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario
+Tessar T FE 16-35mm F4 ZA OSS</li>
+<li><span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC
+16-35mm T3.1</li>
+<li><span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE 16-35
+mm F2.8 GM</li>
+<li>Tamron 17-28mm F2.8 Di III RXD</li>
+</ul>
+<p>直接的对手是SPEC类似的<span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario Tessar T FE
+16-35mm F4 ZA OSS，另一个是有电子变焦的<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC 16-35mm
+T3.1，可以看做是<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE 16-35 mm F2.8
+GM的电影版本。</p>
+<p>Tamron 17-28mm F2.8 Di III
+RXD价格很赞，就是焦段少了很多，当然光圈挺大，不太适合视频拍摄。</p>
+<h3 id="spec">5.1 SPEC</h3>
+<p>E卡口1635变焦竞品对比</p>
+<table>
+<colgroup>
+<col style="width: 2%">
+<col style="width: 26%">
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 26%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(\small{\mathbf{SONY}}\)</span>
+<strong>PZ 16-35mm F4 G</strong></th>
+<th><span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario
+Tessar T FE 16-35mm F4 ZA OSS</th>
+<th><span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC
+16-35mm T3.1</th>
+<th><span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE 16-35
+mm F2.8 GM</th>
+<th>Tamron 17-28mm F2.8 Di III RXD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>价格</td>
+<td><span class="math inline">\(\small{\begin{aligned}&amp;8299_{\mathbf{SONY},20220829}\\&amp;7599_{JD,20220829}\end{aligned}}\)</span></td>
+<td><span class="math inline">\(\small{7100_{\mathbf{SONY},20220829}}\)</span></td>
+<td><span class="math inline">\(\small{41999_{\mathbf{SONY},20220829}}\)</span></td>
+<td><span class="math inline">\(\small{\begin{aligned}&amp;15499_{\mathbf{SONY},20220829}\\&amp;10800_{TB,20220829}\end{aligned}}\)</span></td>
+<td><span class="math inline">\(\small{7100_{\mathbf{SONY},20220829}}\)</span></td>
+</tr>
+<tr class="even">
+<td>重量</td>
+<td><strong>353g</strong></td>
+<td>518g</td>
+<td>1390g</td>
+<td>686g</td>
+<td>420g</td>
+</tr>
+<tr class="odd">
+<td>长度</td>
+<td><strong>88.1mm</strong></td>
+<td>98.5mm</td>
+<td>147mm</td>
+<td>125mm</td>
+<td>99mm</td>
+</tr>
+<tr class="even">
+<td>自动对焦性能</td>
+<td><strong>很棒</strong></td>
+<td>很棒</td>
+<td>还行</td>
+<td>很棒</td>
+<td>还行</td>
+</tr>
+<tr class="odd">
+<td>镜身按钮/调节环</td>
+<td><strong>AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆，有级/无极光圈环</strong></td>
+<td>变焦环，对焦环</td>
+<td>跟焦齿轮组，有级/无极光圈，光圈环，带对焦标记的对焦环，带变焦标记的变焦环，对焦保持，光圈锁定，电动变焦拨杆</td>
+<td>AF/MF切换，对焦保持</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td>最近对焦距离</td>
+<td><strong>24-28cm</strong></td>
+<td>28cm</td>
+<td>28cm</td>
+<td>28cm</td>
+<td>19-26cm</td>
+</tr>
+<tr class="odd">
+<td>做工</td>
+<td><strong>很棒</strong></td>
+<td>还行</td>
+<td>很棒</td>
+<td>很棒</td>
+<td>还行</td>
+</tr>
+<tr class="even">
+<td>光圈叶片</td>
+<td><strong>7</strong></td>
+<td>7</td>
+<td>11</td>
+<td>11</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>滤镜口径</td>
+<td><strong>72</strong></td>
+<td>72</td>
+<td>114</td>
+<td>82</td>
+<td>67</td>
+</tr>
+<tr class="even">
+<td>防尘防滴</td>
+<td><strong>有</strong></td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>从SPEC比较来看，PZ 1635 G是最轻最小的；它和FEC
+1635电影头一样，操控性拉满（电动对焦、有极/无极光圈环等）。</li>
+<li>自动对焦方面，PZ 1635 G是这几只中最快的一只。</li>
+</ul>
+<h3 id="锐度-1">5.2 锐度</h3>
+<ul>
+<li>对比<span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario
+Tessar T FE 16-35mm F4 ZA OSS，没什么可比性，PZ 1635 G全面碾压。</li>
+<li>对比<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE
+16-35 mm F2.8
+GM，两者中心锐度基本相当，但是GM的边角可以达到Excellent级别，PZ 1635
+G只能达到Very Good级别。</li>
+<li>对比Tamron 17-28mm F2.8 Di III RXD，PZ 1635会略微强于1728。</li>
+</ul>
+<figure>
+<img data-src="./Pasted%20image%2020220830194647.png" alt="锐度对比">
+<figcaption aria-hidden="true">锐度对比</figcaption>
+</figure>
+<h3 id="背景虚化和焦外光斑">5.3 背景虚化和焦外光斑</h3>
+<ul>
+<li>背景虚化：除了F2.8那几只镜头在虚化质量上有些优势，其实1635这个焦段的虚化表现都不是非常优秀，尤其是在近距离拍摄中。</li>
+<li>焦外光斑：索蔡的光斑不太圆；PZ 1635 G更好一点；1635
+GM凭借11片光圈叶片可以获得最好的效果。</li>
+<li>色彩还原度/对比度：PZ 1635 G这两方面要比1635
+GM更甚一筹，可以提供更加生动、对比度更高的图像。</li>
+</ul>
+<h3 id="人像">5.4 人像</h3>
+<ul>
+<li>1635 GM毋庸置疑是最适合人像的，其次就是新的PZ 16-35 G。</li>
+<li>1728最大焦距只有28mm，是个不可忽视的缺陷。</li>
+</ul>
+<h3 id="畸变色散暗角抗眩光">5.5 畸变/色散/暗角/抗眩光</h3>
+<ul>
+<li>PZ 1635
+G的畸变和暗角控制是这几只最差的，尤其是在16mm端，但是都可以后期自动矫正。</li>
+<li>抗眩光和色散是顶尖水平。</li>
+</ul>
+<h3 id="视频-1">5.6 视频</h3>
+<p>PZ 1635 G和超贵的FEC 1635电影头一样，是最好的视频镜头。FEC
+1635电影头有特制的视频控制控件、适配跟焦器的调节环、变焦标记和对焦标记；但是超重、超大的镜身只能安装在脚架上用于电影拍摄。PZ
+1635
+G则非常适合手持Vlog。其它几支镜头就没什么可说的了，光为视频拍摄的人体工学设计这块就远远落后于这两只了。</p>
+<h3 id="对比结论">5.7 对比结论</h3>
+<p>PZ 1635 G是一只非常不错的1635变焦，在视频拍摄上是顶尖水平。</p>
+<p>对于照片拍摄，<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE 16-35 mm F2.8
+GM只会在5000万和6100万像素的变焦有优势。</p>
+<p>对于视频拍摄，PZ 1635 G更加适合日常使用，又贵又大又重的FEC
+1635电影头还是在非动态场景中更加适用。</p>
+]]></content>
+      <categories>
+        <category>镜头</category>
+      </categories>
+      <tags>
+        <tag>镜头</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
+        <tag>索尼Sony</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sony FE 200-600mm F5.6-6.3 G OSS_by SonyAlphaBlog</title>
     <url>//2022/09/22/sony-fe-200-600mm-f5-6-6-3-g-oss/</url>
     <content><![CDATA[<blockquote>
 <p>源：<a href="https://sonyalpha.blog/2019/08/14/sony-fe-200-600mm-f5-6-6-3-g-oss/">https://sonyalpha.blog/2019/08/14/sony-fe-200-600mm-f5-6-6-3-g-oss/</a></p>
@@ -1607,794 +2350,9 @@ G拥有可靠的自动对焦和漂亮的背景虚化，视频拍摄的表现相�
       </categories>
       <tags>
         <tag>镜头</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
         <tag>索尼Sony</tag>
-        <tag>E卡口</tag>
-        <tag>全画幅</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sigma 100-400mm f5-6.3 DG DN OS Contemporary_by SonyAlphaBlog</title>
-    <url>//2022/08/27/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/</url>
-    <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2020/07/21/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/">Sigma
-100-400mm f5-6.3 DG DN OS Contemporary_by SonyAlphaBlog</a></p>
-</blockquote>
-<h2 id="结论">1 结论</h2>
-<p>对于A7M3、A9或者A7R3来说，Sigma 100-400mm F5-F6.3 DG DN OS
-Contemporary（<span class="math inline">\(\small{5800_{TB,
-20220818}}\)</span>）是一只非常有性价比的好镜头；尤其是可以和Sony FE
-24-105 F4 G OSS配合使用。</p>
-<span id="more"></span>
-<p><img data-src="./Pasted%20image%2020220830195148.png"></p>
-<p>这只镜头的焦距范围非常适合运动、肖像、风景和动物的摄影。如果你主要使用400mm左右的焦端来拍摄动物，<span class="math inline">\(\mathbf{SONY}\)</span> FE 200-600mm F5.6-6.3 G
-OSS（<span class="math inline">\(\small{12700_{\mathbf{SONY},20220827}}\)</span>）可能更加适合你。
-在A7R4上使用时，适马的100400还是没办法和索尼的100400竞争，不管时锐度还是对焦速度都有一定差距。但是在像素稍微低一点的相机上，比如A7M3和A7R3，锐度上的差距就不是肉眼可察的了。
-拍摄静物时，自动对焦还是挺不错的，但是拍摄运动物体就不太行了。你还是得用索尼的100400（<span class="math inline">\(\small{17500_{\mathbf{SONY},202208227}}\)</span>）。
-所以，对于使用A7R4进行动物和体育摄影，还是推荐<span class="math inline">\(\mathbf{SONY}\)</span> FE 200-600mm F5.6-6.3 G
-OSS。其他拍摄题材上，或者说预算有限，Sigma 100-400mm F5-F6.3 DG DN OS
-Contemporary可以说是非常不错的平替了。</p>
-<ul>
-<li>优势
-<ul>
-<li>价格比较低（<span class="math inline">\(\small{5800_{TB,
-20220818}}\)</span>）</li>
-<li>重量比较轻</li>
-<li>在2400万像素的A7M3和4200万像素的A7R3上妥妥够用，锐度在这两台机器上可以达到非常极致的体验</li>
-<li>非常好的色彩还原度</li>
-<li>非常柔和的背景虚化表现相当好</li>
-<li>焦外光斑挺好</li>
-<li>色散控制比较好</li>
-<li>静物的自动对焦还是不错的</li>
-<li>防抖效果挺好</li>
-<li>做工非常棒</li>
-<li>非常棒的人体工学设计</li>
-</ul></li>
-<li>一般
-<ul>
-<li>无法使用E卡口增距镜</li>
-<li>在6100万像素的A7R4上只能达到Very Good级别的锐度</li>
-<li>抗眩光一般</li>
-<li>暗角和畸变需要后期调整</li>
-<li>对于移动物体的连续自动对焦还是没办法和索尼比</li>
-<li>脚架环需要另外购买，第三方价格为<span class="math inline">\(\small{200_{TB, 20220818}}\)</span></li>
-<li>边角锐度一般</li>
-</ul></li>
-<li>缺陷
-<ul>
-<li>视频拍摄中，自动对焦无法时刻保持精准快速的性能</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="总体信息">2 总体信息</h2>
-<h3 id="spec">2.1 SPEC</h3>
-<ul>
-<li>光圈
-<ul>
-<li>100mm端F5</li>
-<li>400mm端F6.3</li>
-</ul></li>
-<li>重量
-<ul>
-<li>1180g</li>
-<li>1210g（加上官方脚架环）</li>
-</ul></li>
-<li>长度
-<ul>
-<li>100mm端197mm</li>
-<li>400mm端299mm</li>
-</ul></li>
-<li>直径86mm</li>
-<li>9片光圈叶片</li>
-<li>最近对焦距离
-<ul>
-<li>100mm端112cm</li>
-<li>400mm端160cm</li>
-</ul></li>
-<li>放大倍率0.24</li>
-<li>67mm滤镜口径</li>
-<li>不支持E卡口增距镜</li>
-<li>步进电机自动对焦</li>
-<li>有光学防抖</li>
-<li>镜身按钮
-<ul>
-<li>AF/MF切换</li>
-<li>对焦范围限制</li>
-<li>防抖模式切换</li>
-<li>自动对焦锁定</li>
-</ul></li>
-<li>防尘防滴</li>
-</ul>
-<p>适马100-400mm的做工是挺好的，但和索尼的100400GM还是有差距的。大小和重量都是在可接受范围内，甚至比<span class="math inline">\(\mathbf{SONY}\)</span> 100400GM还要小。</p>
-<p>适马100-400mm是首次在E卡口上使用光学防抖，手持体验不错。上三脚架时，需要手动关闭，否则出来的照片会糊掉。这一点上，索尼的镜头就做的比较好，会自动关闭光学防抖。官方标配不附带脚架环，需要另外购买官方脚架环；第三方脚架环<span class="math inline">\(\small{200_{TB, 20220818}}\)</span>左右。</p>
-<p>最近对焦距离110cm@100mmm、160cm@400mm，放大倍率0.23。这方面要比<span class="math inline">\(\mathbf{SONY}\)</span>
-100400GM差（最近对焦距离98cm，0.35放大倍率）。</p>
-<p>另外，适马（包括腾龙）是不能使用索尼的增距镜的；即使装上去没有问题，但是没办法调节光圈和自动对焦。适马官方也有出增距镜，但是针对L卡口的，E卡口无法使用。</p>
-<h3 id="自动对焦">2.2 自动对焦</h3>
-<p>静物拍摄的自动对焦性能非常好，且可以调用眼控对焦。移动物体（运动、动物等）的拍摄就差强人意了，自动对焦和<span class="math inline">\(\mathbf{SONY}\)</span>
-100400GM比不了，使用A7R4有30%几率会对不上焦。</p>
-<h2 id="光学性能">3 光学性能</h2>
-<h3 id="锐度">3.1 锐度</h3>
-<p>测试使用6100万像素的A7R4。</p>
-<ul>
-<li>在A7R4上，锐度基本表现为Very
-Good级别，但是很难达到Excellent级别。但在A7M3或者A7R3上，锐度肯定是爆表的，可以达到Excellent级别。</li>
-<li>边角的锐度要比中心锐度低一个级别。</li>
-</ul>
-<p><img data-src="./Pasted%20image%2020220819100951.png"></p>
-<h3 id="暗角畸变色差抗眩光">3.2 暗角/畸变/色差/抗眩光</h3>
-<ul>
-<li>光圈全开会有暗角，焦距增加后更加明显。</li>
-<li>畸变表现为枕形畸变，100mm端表现得不是很明显，焦距扩展到400mm端会逐渐增加</li>
-<li>色差非常小</li>
-<li>眩光对于长焦来说不是什么问题，毕竟没有大聪明会一直怼着太阳拍。但是吧，这只镜头直对太阳时确实有不小的眩光。</li>
-</ul>
-<h3 id="虚化色彩还原度"> 3.3 虚化/色彩还原度</h3>
-<ul>
-<li>色彩还原度很好，对比度很高</li>
-<li>背景虚化非常柔美</li>
-<li>焦外光斑非常柔和，没有散射，没有洋葱圈。所有焦端范围内，光圈全开的光斑都挺圆的；收缩光圈之后，会有九边形出现。</li>
-</ul>
-<h2 id="对比sony-100-400mm">4 对比Sony 100-400mm</h2>
-<h3 id="spec和自动对焦">4.1 SPEC和自动对焦</h3>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 100-400mm GM
-OSS F4.5-F5.6</p>
-<ul>
-<li>更重，更粗，做工更好</li>
-<li>操控性更好，尤其还官方标配了脚架环。镜身有3个自定义按钮，可以使用增距镜，预留了一个小缺口以便直接调节可变滤镜。</li>
-<li>最近对焦距离比适马更近，尤其是400mm端只有98cm，而适马有160cm；放大倍率也更好。</li>
-<li>GM的自动对焦不论是纸面参数还是实际表现都是碾压级别的，且在捕捉快速运动对相识出现丢焦。</li>
-<li>当然了，碾压的代价就是三倍的价格。</li>
-</ul>
-<table>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Sigma</th>
-<th style="text-align: center;">Sony</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">光圈</td>
-<td style="text-align: center;">F5-6.3</td>
-<td style="text-align: center;">F4.5-F.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">重量</td>
-<td style="text-align: center;">1180g-1210g</td>
-<td style="text-align: center;">1395g-1586g</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">长度</td>
-<td style="text-align: center;">197-299mm</td>
-<td style="text-align: center;">205-307mm</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">直径</td>
-<td style="text-align: center;">86mm</td>
-<td style="text-align: center;">93,9mm</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">光圈叶片数</td>
-<td style="text-align: center;">9</td>
-<td style="text-align: center;">9</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">最近对焦距离</td>
-<td style="text-align: center;">112-160cm</td>
-<td style="text-align: center;">98cm-98cm</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">放大倍率</td>
-<td style="text-align: center;">0.24x</td>
-<td style="text-align: center;">0.35</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">滤镜直径</td>
-<td style="text-align: center;">67mm</td>
-<td style="text-align: center;">77mm</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">增距镜</td>
-<td style="text-align: center;">不支持E卡口</td>
-<td style="text-align: center;">支持TC1.4和TC2.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">自动对焦</td>
-<td style="text-align: center;">步进电机</td>
-<td style="text-align: center;">双线性直驱SSM</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">光学防抖</td>
-<td style="text-align: center;">支持</td>
-<td style="text-align: center;">支持</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">镜身按钮</td>
-<td style="text-align: center;">AF/MF切换，对焦距离限制，防抖模式，自定义</td>
-<td style="text-align: center;">AF/MF切换，对焦距离限制，防抖模式，自定义</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">防尘防滴</td>
-<td style="text-align: center;">支持</td>
-<td style="text-align: center;">支持</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">附件</td>
-<td style="text-align: center;">镜头包；另购脚架环</td>
-<td style="text-align: center;">镜头包；脚架环</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">价格</td>
-<td style="text-align: center;"><span class="math inline">\(\small{5800_{TB, 20220818}}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\small{17500_{\mathbf{SONY},20220827}}\)</span></td>
-</tr>
-</tbody>
-</table>
-<h3 id="锐度-1">4.2 锐度</h3>
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span>的100-400mm在A7R4上可以提供更好的锐度。</li>
-</ul>
-<p><img data-src="./Pasted%20image%2020220819102131.png"></p>
-<h3 id="畸变色差抗眩光">4.3 畸变/色差/抗眩光</h3>
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 100-400mm GM
-OSS F4.5-F5.6畸变抑制和暗角控制做得更好，并且在LR中已有矫正文件。</li>
-<li>两只镜头的暗角都不明显</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span>的抗眩光更好</li>
-</ul>
-<h3 id="虚化色彩还原度-1">4.4 虚化/色彩还原度</h3>
-<ul>
-<li>两只镜头的背景虚化、焦外光斑、色彩还原度都是顶级的存在。</li>
-</ul>
-<h2 id="视频">5 视频</h2>
-<p>适马100-400mm在拍照上时挺不错的，但是视频拍摄时，会出现自动对焦慢和抽搐的情况。</p>
-]]></content>
-      <categories>
-        <category>镜头</category>
-      </categories>
-      <tags>
-        <tag>E卡口</tag>
-        <tag>全画幅</tag>
-        <tag>镜头 - 适马Sigma</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sony FE PZ 16-35mm f4 G_by SonyAlphaBlog</title>
-    <url>//2022/08/30/sony-pz-16-35mm-f4-g/</url>
-    <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/">https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/</a></p>
-</blockquote>
-<h2 id="结论">1 结论</h2>
-<p><span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE PZ
-16-35mm F4 G（<span class="math inline">\(\small{8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}}\)</span>）是一只非常棒的广角视频镜头，也可以说是<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC 16-35mm
-T3.1（<span class="math inline">\(\small{41999_{\mathbf{SONY},20220829}}\)</span>）这只电影镜头的“青春版”。新的PZ
-1635 G做工非常棒，非常紧凑，非常轻，上稳定器简直完美。同时，PZ 1635
-G专为视频拍摄设计的人体工学设计也超级棒，拥有你们想要的所有按钮和调节环。</p>
-<span id="more"></span>
-<p><img data-src="./Pasted%20image%2020220830194913.png"></p>
-<p>当然了，PZ 1635
-G的性能也是巅峰级别的。拍照的锐度表现上，有Excellent级别的中心锐度，Very
-Good级别的边角锐度。色彩还原度、对比度、焦外光斑都是顶尖水平；35mm端近摄的背景虚化非常好；抗眩光表现也非常好。</p>
-<p>PZ 1635
-G有专为视频拍摄的顶尖人体工学设计：电动变焦（可使用镜身、机身、遥控器）、线性对焦环、有级/无极光圈环、变焦环。</p>
-<p>可以使用<span class="math inline">\(\small{\mathbf{SONY}}\)</span>
-GP-VPT2BT遥控器进行远程控制，PZ 1635
-G拍摄非常便利，真的是“本当に上手”。</p>
-<ul>
-<li>对比<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE
-16-35 mm F2.8 GM（<span class="math inline">\(\small{15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}}\)</span>），PZ
-1635 G只有在4800万和6100万像素下，边角有一点点小缺点。</li>
-<li>对比<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC
-16-35mm T3.1（<span class="math inline">\(\small{41999_{\mathbf{SONY},20220829}}\)</span>），PZ
-1635
-G缺少了变焦速度调节、遮光斗接口、对焦环和变焦环的机械限位和刻度。但是，我要说但是了，你看看FEC电影头的价格和重量，还要什么自行车啊？！</li>
-<li>对比<span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario
-Tessar T FE 16-35mm F4 ZA OSS（<span class="math inline">\(\small{7100_{\mathbf{SONY},20220829}}\)</span>），PZ
-1635 G全方位碾压，完胜！</li>
-<li>对比Tamron 17-28mm F2.8 Di III RXD（<span class="math inline">\(\small{5980_{TB,20220829}}\)</span>），PZ 1635
-G画质更锐，对焦更快，虚化更好，色彩还原度更佳，焦段更大，人体工学设计更棒，体积更小，重量更轻；只是光圈也小了一点。</li>
-</ul>
-<p>如果你只是进行风光和建筑摄影，那么<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE 16-35 mm F2.8
-GM（<span class="math inline">\(\small{15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}}\)</span>）在边角依然有优势。其他的场景下，新的PZ
-16-35mm F4 G是非常推荐的选择，甚至值得给一个GM的橙色标。</p>
-<p><strong>墙裂推荐</strong></p>
-<ul>
-<li>优势
-<ul>
-<li>Excellent级别的中心锐度</li>
-<li>Very Good级别边角锐度非常</li>
-<li>为视频设计的极致人体工学设计
-<ul>
-<li>Power Zoom电动变焦可以在镜头和相机上调节，甚至可以远程操控</li>
-<li>有级/无极光圈环</li>
-<li>线性对焦环</li>
-</ul></li>
-<li>呼吸效应微乎其微</li>
-<li>变焦时不会失焦</li>
-<li>小巧的镜身非常适合上稳定器拍Vlog</li>
-<li>极致的色彩还原度</li>
-<li>极致的对比度</li>
-<li>抗眩光非常好</li>
-<li>焦外光斑非常好</li>
-<li>防尘防滴</li>
-<li>做工超级棒</li>
-<li>低色散</li>
-<li>巅峰级别的自动对焦</li>
-</ul></li>
-<li>一般
-<ul>
-<li>价格</li>
-<li>背景虚化有一点busy</li>
-<li>变焦环没有机械限位，也没有变焦标记</li>
-</ul></li>
-<li>缺陷
-<ul>
-<li>16mm端畸变和暗角</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="总体信息">2 总体信息</h2>
-<ul>
-<li>重量：353g</li>
-<li>价格：<span class="math inline">\(\small{8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}}\)</span></li>
-<li>光圈：F4 – F22</li>
-<li>长度：88.1mm</li>
-<li>滤镜口径：72mm</li>
-<li>7片光圈叶片</li>
-<li>有级/无极光圈环</li>
-<li>速度可调节的电动变焦</li>
-<li>双XD线性马达</li>
-<li>按键：AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆</li>
-<li>防尘防潮</li>
-<li>最近对焦距离：
-<ul>
-<li>16mm端：28cm</li>
-<li>35mm端：24 cm</li>
-</ul></li>
-<li>官方标配遮光罩</li>
-</ul>
-<p><span class="math inline">\(\small{\mathbf{SONY}}\)</span> PZ 16-35mm
-F4 G是一只新出的紧凑的广角镜头，可以替代非常古早的<span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario Tessar T FE
-16-35mm F4 ZA
-OSS。虽然价格有一点提高，但是功能和性能上的提升要大得多，完全对得起这点差价。</p>
-<p>这只新的变焦镜头专为视频而生，配备了</p>
-<ul>
-<li>可以平滑变焦的电动变焦拨杆，变焦速度根据拨动力度可调。搭配原厂的RMT-P1BT或者GP-VPT2BT可以实现远程电动变焦控制。</li>
-<li>有级/无极光圈环，镜身自动光圈档位。</li>
-<li>线性对焦环。</li>
-<li>变焦不丢焦，且没有呼吸效应</li>
-</ul>
-<p>做工和人体工学设计极为优秀：镜身有对角、变焦、光圈三个调节环；镜身紧凑、轻巧但依旧有丰富的按钮。</p>
-<p>PZ 1635 G同样可以和又大又重又贵的<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC 16-35mm
-T3.1电影头一较高下。FEC 1635的焦段与PZ 1635
-G相同，但拥有更大更精准的通光量，同时又齿轮组为跟焦提供便利。</p>
-<p>PZ 1635 G采用内变焦设计，非常适合手持上稳定器和Vlog。</p>
-<p>PZ 1635
-G的主要缺点实在拍照上面。变焦环和对焦环没有机械限位，也没有标记，不利于快速调整到特定的焦距。</p>
-<p><strong>自动对焦性能</strong></p>
-<ul>
-<li>拍照和视频的自动对焦都非常快速、精准、安静。连拍模式下，对焦性能依旧非常棒，有95%的几率对焦到主体。</li>
-<li>可以完美配合相机的眼控对焦/追焦功能。</li>
-<li>镜头支持A1的30fps连拍</li>
-</ul>
-<h2 id="光学性能">3 光学性能</h2>
-<p>测试使用6100万像素的A7R4。</p>
-<h3 id="锐度">3.1 锐度</h3>
-<figure>
-<img data-src="./Pasted%20image%2020220830194427.png" alt="PZ 1635 G锐度表现">
-<figcaption aria-hidden="true">PZ 1635 G锐度表现</figcaption>
-</figure>
-<ul>
-<li>F4光圈时，中心锐度都可以达到Excellent级别，在16mm端可以达到Outstanding级别。</li>
-<li>在6100万像素下，边角锐度稍差，只能达到Very Good级别。</li>
-<li>最佳焦距为35mm。</li>
-</ul>
-<p>对于这样一只如此轻便、紧凑的镜头来说，这样的锐度表现是非常不错的。</p>
-<p><strong>人像锐度</strong></p>
-<ul>
-<li>这只镜头拍摄人像是锐不可当，只看锐度可以说有点过分了。色彩还原度非常好，对比度真的非常不错。</li>
-</ul>
-<h3 id="暗角色散畸变抗眩光星芒">3.2 暗角/色散/畸变/抗眩光/星芒</h3>
-<ul>
-<li>16mm端的畸变是真的非常巨大。机内会有自动校正，后期也可以使用自动校正文件。</li>
-<li>35mm端的畸变就好很多了，但是依旧肉眼可见。</li>
-<li>16mm端会出现暗角，35mm端则没有。</li>
-<li>色散非常轻微。</li>
-<li>抗眩光在全焦段都做的非常好，大多数情况下都不会出现眩光，只有在一些极为严苛的条件下才略微有一点眩光。</li>
-<li>光圈缩小到F16至F22可以获得很不错的星芒。</li>
-</ul>
-<h3 id="焦外光斑色彩还原度">3.3 焦外光斑/色彩还原度</h3>
-<ul>
-<li>焦外光斑非常不错，主要出现在35mm端。光斑非常完美，非常圆，在光圈大于F8时肉眼无法看到7片光圈叶片带来的多边形。</li>
-<li>对于1635来说，背景虚化算是好的。静距离拍摄时，虚化柔和；主体稍远时，就显得不太足够了。</li>
-<li>色彩还原度非常好，色彩饱和度非常好，对比度很高，用来风光摄影和建筑摄影非常合适。</li>
-</ul>
-<h2 id="视频">4 视频</h2>
-<ul>
-<li>不管是视频拍摄的锐度还是色彩还原度，都是顶尖水平；风光、建筑、街拍、人像都可以很好地适应，也适合Vlog、稳定器、访谈等场景。</li>
-<li>自动对焦完美契合相机，简直是杰作。</li>
-<li>人体工程学设计非常棒，丝滑的电动变焦不仅可以调节变焦速度，还能通过<span class="math inline">\(\small{\mathbf{SONY}}\)</span>
-GP-VPT2BT远程控制。</li>
-<li>无级光圈环在视频拍摄中非常顶。</li>
-<li>手动对焦时，线性对焦环使用体验非常好。</li>
-<li>内变焦设计，电动变焦没有很大的移动，这部分的平衡做得很好。</li>
-<li>呼吸效应微不可察。</li>
-<li>齐焦镜头：变焦时，对焦点不变。</li>
-</ul>
-<p>PZ 1635 G绝对是视频拍摄的主宰者。</p>
-<h2 id="对比其它1635">5 对比其它1635</h2>
-<p>主要的竞争者是</p>
-<ul>
-<li><span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario
-Tessar T FE 16-35mm F4 ZA OSS</li>
-<li><span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC
-16-35mm T3.1</li>
-<li><span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE 16-35
-mm F2.8 GM</li>
-<li>Tamron 17-28mm F2.8 Di III RXD</li>
-</ul>
-<p>直接的对手是SPEC类似的<span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario Tessar T FE
-16-35mm F4 ZA OSS，另一个是有电子变焦的<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC 16-35mm
-T3.1，可以看做是<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE 16-35 mm F2.8
-GM的电影版本。</p>
-<p>Tamron 17-28mm F2.8 Di III
-RXD价格很赞，就是焦段少了很多，当然光圈挺大，不太适合视频拍摄。</p>
-<h3 id="spec">5.1 SPEC</h3>
-<p>E卡口1635变焦竞品对比</p>
-<table>
-<colgroup>
-<col style="width: 2%">
-<col style="width: 26%">
-<col style="width: 17%">
-<col style="width: 15%">
-<col style="width: 26%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th><span class="math inline">\(\small{\mathbf{SONY}}\)</span>
-<strong>PZ 16-35mm F4 G</strong></th>
-<th><span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario
-Tessar T FE 16-35mm F4 ZA OSS</th>
-<th><span class="math inline">\(\small{\mathbf{SONY}}\)</span> FEC
-16-35mm T3.1</th>
-<th><span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE 16-35
-mm F2.8 GM</th>
-<th>Tamron 17-28mm F2.8 Di III RXD</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>价格</td>
-<td><span class="math inline">\(\small{\begin{aligned}&amp;8299_{\mathbf{SONY},20220829}\\&amp;7599_{JD,20220829}\end{aligned}}\)</span></td>
-<td><span class="math inline">\(\small{7100_{\mathbf{SONY},20220829}}\)</span></td>
-<td><span class="math inline">\(\small{41999_{\mathbf{SONY},20220829}}\)</span></td>
-<td><span class="math inline">\(\small{\begin{aligned}&amp;15499_{\mathbf{SONY},20220829}\\&amp;10800_{TB,20220829}\end{aligned}}\)</span></td>
-<td><span class="math inline">\(\small{7100_{\mathbf{SONY},20220829}}\)</span></td>
-</tr>
-<tr class="even">
-<td>重量</td>
-<td><strong>353g</strong></td>
-<td>518g</td>
-<td>1390g</td>
-<td>686g</td>
-<td>420g</td>
-</tr>
-<tr class="odd">
-<td>长度</td>
-<td><strong>88.1mm</strong></td>
-<td>98.5mm</td>
-<td>147mm</td>
-<td>125mm</td>
-<td>99mm</td>
-</tr>
-<tr class="even">
-<td>自动对焦性能</td>
-<td><strong>很棒</strong></td>
-<td>很棒</td>
-<td>还行</td>
-<td>很棒</td>
-<td>还行</td>
-</tr>
-<tr class="odd">
-<td>镜身按钮/调节环</td>
-<td><strong>AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆，有级/无极光圈环</strong></td>
-<td>变焦环，对焦环</td>
-<td>跟焦齿轮组，有级/无极光圈，光圈环，带对焦标记的对焦环，带变焦标记的变焦环，对焦保持，光圈锁定，电动变焦拨杆</td>
-<td>AF/MF切换，对焦保持</td>
-<td>None</td>
-</tr>
-<tr class="even">
-<td>最近对焦距离</td>
-<td><strong>24-28cm</strong></td>
-<td>28cm</td>
-<td>28cm</td>
-<td>28cm</td>
-<td>19-26cm</td>
-</tr>
-<tr class="odd">
-<td>做工</td>
-<td><strong>很棒</strong></td>
-<td>还行</td>
-<td>很棒</td>
-<td>很棒</td>
-<td>还行</td>
-</tr>
-<tr class="even">
-<td>光圈叶片</td>
-<td><strong>7</strong></td>
-<td>7</td>
-<td>11</td>
-<td>11</td>
-<td>9</td>
-</tr>
-<tr class="odd">
-<td>滤镜口径</td>
-<td><strong>72</strong></td>
-<td>72</td>
-<td>114</td>
-<td>82</td>
-<td>67</td>
-</tr>
-<tr class="even">
-<td>防尘防滴</td>
-<td><strong>有</strong></td>
-<td>有</td>
-<td>有</td>
-<td>有</td>
-<td>有</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>从SPEC比较来看，PZ 1635 G是最轻最小的；它和FEC
-1635电影头一样，操控性拉满（电动对焦、有极/无极光圈环等）。</li>
-<li>自动对焦方面，PZ 1635 G是这几只中最快的一只。</li>
-</ul>
-<h3 id="锐度-1">5.2 锐度</h3>
-<ul>
-<li>对比<span class="math inline">\(\small{\mathbf{SONY}}\)</span> Vario
-Tessar T FE 16-35mm F4 ZA OSS，没什么可比性，PZ 1635 G全面碾压。</li>
-<li>对比<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE
-16-35 mm F2.8
-GM，两者中心锐度基本相当，但是GM的边角可以达到Excellent级别，PZ 1635
-G只能达到Very Good级别。</li>
-<li>对比Tamron 17-28mm F2.8 Di III RXD，PZ 1635会略微强于1728。</li>
-</ul>
-<figure>
-<img data-src="./Pasted%20image%2020220830194647.png" alt="锐度对比">
-<figcaption aria-hidden="true">锐度对比</figcaption>
-</figure>
-<h3 id="背景虚化和焦外光斑">5.3 背景虚化和焦外光斑</h3>
-<ul>
-<li>背景虚化：除了F2.8那几只镜头在虚化质量上有些优势，其实1635这个焦段的虚化表现都不是非常优秀，尤其是在近距离拍摄中。</li>
-<li>焦外光斑：索蔡的光斑不太圆；PZ 1635 G更好一点；1635
-GM凭借11片光圈叶片可以获得最好的效果。</li>
-<li>色彩还原度/对比度：PZ 1635 G这两方面要比1635
-GM更甚一筹，可以提供更加生动、对比度更高的图像。</li>
-</ul>
-<h3 id="人像">5.4 人像</h3>
-<ul>
-<li>1635 GM毋庸置疑是最适合人像的，其次就是新的PZ 16-35 G。</li>
-<li>1728最大焦距只有28mm，是个不可忽视的缺陷。</li>
-</ul>
-<h3 id="畸变色散暗角抗眩光">5.5 畸变/色散/暗角/抗眩光</h3>
-<ul>
-<li>PZ 1635
-G的畸变和暗角控制是这几只最差的，尤其是在16mm端，但是都可以后期自动矫正。</li>
-<li>抗眩光和色散是顶尖水平。</li>
-</ul>
-<h3 id="视频-1">5.6 视频</h3>
-<p>PZ 1635 G和超贵的FEC 1635电影头一样，是最好的视频镜头。FEC
-1635电影头有特制的视频控制控件、适配跟焦器的调节环、变焦标记和对焦标记；但是超重、超大的镜身只能安装在脚架上用于电影拍摄。PZ
-1635
-G则非常适合手持Vlog。其它几支镜头就没什么可说的了，光为视频拍摄的人体工学设计这块就远远落后于这两只了。</p>
-<h3 id="对比结论">5.7 对比结论</h3>
-<p>PZ 1635 G是一只非常不错的1635变焦，在视频拍摄上是顶尖水平。</p>
-<p>对于照片拍摄，<span class="math inline">\(\small{\mathbf{SONY}}\)</span> FE 16-35 mm F2.8
-GM只会在5000万和6100万像素的变焦有优势。</p>
-<p>对于视频拍摄，PZ 1635 G更加适合日常使用，又贵又大又重的FEC
-1635电影头还是在非动态场景中更加适用。</p>
-]]></content>
-      <categories>
-        <category>镜头</category>
-      </categories>
-      <tags>
-        <tag>镜头</tag>
-        <tag>索尼Sony</tag>
-        <tag>E卡口</tag>
-        <tag>全画幅</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Spring框架的IOC和DI的理解</title>
-    <url>//2018/01/26/spring-ioc-di/</url>
-    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
-<p>下面来说说我，一个初学者，对DI的理解。</p>
-<span id="more"></span>
-<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
-2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
-<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
-<p>这个是我今天看了Spring框架之后的理解。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>斯普林格Springer免费书籍</title>
-    <url>//2020/06/24/springer-free-books-2020/</url>
-    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
-<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
-<span id="more"></span>
-<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
-<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
-<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
-<hr>
-<blockquote>
-<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
-最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>资源</tag>
-        <tag>书籍</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog</title>
-    <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
-    <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
-14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
-</blockquote>
-<h2 id="结论">1 结论</h2>
-<p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
-<span id="more"></span>
-<p><img data-src="Pasted%20image%2020220830195252.png"></p>
-<ul>
-<li>优势
-<ul>
-<li>14mm端在F5.6光圈时有Outstanding级别的锐度</li>
-<li>边角表现非常好</li>
-<li>非常自然的色彩还原度</li>
-<li>对于一只广角来说，背景虚化非常好；焦外光斑表现不错</li>
-<li>Lightroom可以修正广角带来的畸变</li>
-<li>14mm端暗角不明显</li>
-<li>无慧差，很适合夜观星像</li>
-<li>顶级的手感</li>
-<li>有防尘防滴特性</li>
-<li>照片的自动对焦非常好</li>
-<li>比Sony FE 12-24mm F4 G（<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span>）便宜</li>
-</ul></li>
-<li>一般
-<ul>
-<li>2.8光圈全开情况下，锐度只能达到Very Good的等级</li>
-<li>光圈缩小至F5.6时，24mm端锐度只能达到Very
-Good级别，与14mm端的Outstanding级别的锐度差距加大</li>
-<li>如果要平衡边角和中心锐度，光圈需要缩小至F8</li>
-<li>滤镜系统后置，使用时需要根据其形状进行选购或裁剪</li>
-<li>体积和重量有进步，达到了其它竞品的平均水平</li>
-<li>不可拆卸遮光罩，这一点和其它超广角镜头一样</li>
-<li>没有镜身光学防抖，但可以依靠机身防抖</li>
-</ul></li>
-<li>缺陷
-<ul>
-<li>焦距范围受限</li>
-<li>视频拍摄时，画面会出现闪烁</li>
-<li>必须使用150mm滤镜系统</li>
-</ul></li>
-<li>镜头比较
-<ul>
-<li>可替换镜头
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35mm F2.8
-GM</li>
-<li>Tamron 17-28mm F2.8 Di III RXD</li>
-</ul></li>
-<li>其实，真的说起来，还是只有<span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G是同一等级比较的镜头。其他两只的焦距范围还是有点区别的。</li>
-<li>这两只镜头其实都是非常不错的镜头。适马1424F2.8有着2.8的光圈，更加适合暗光环境和星空的摄影；索尼1224F4则有着12mm的广角端，这2mm的差距在取景范围上其实是有非常巨大的差别的。</li>
-<li>锐度方面，适马1424F2.8在14mm端的中心锐度会有略微优势；索尼1224F4在24mm端稍微领先。边角情况，两只镜头表现差不多。</li>
-<li>至于到底选哪一只，就要看你的更想要2.8光圈还是12mm广角了。毕竟，这两支镜头在各方面的表现都是非常不错的。</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="总体信息">2 总体信息</h2>
-<h3 id="spec">2.1 SPEC</h3>
-<ul>
-<li>重量：795克</li>
-<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span></li>
-<li>长度：131mm</li>
-<li>几乎没有使用通用滤镜的可能性</li>
-<li>AF/MF切换按钮</li>
-<li>可自定义的对焦保持按钮</li>
-<li>11片光圈叶片</li>
-<li>防尘防潮设计</li>
-<li>最近对焦距离：28cm</li>
-<li>后置滤镜插槽</li>
-<li>不可拆卸遮光罩</li>
-<li>遮光罩预留镜头盖槽</li>
-<li>自带镜头盒</li>
-<li>The build construction is excellent</li>
-<li>自动对焦快速精准，非常安静</li>
-<li>内变焦</li>
-</ul>
-<h3 id="后置滤镜系统">2.2 后置滤镜系统</h3>
-<p>镜头尾部有后置滤镜插槽，并配有防掉落锁定。</p>
-<p>按照官方的用户手册的说法，必须将滤镜裁剪成对应的形状才能在后置滤镜插槽中使用。
-当然你也可以选择前置滤镜，但是得使用150mm的滤镜支架。</p>
-<p>P.S. 目前已有厂商发布了定制的后置滤镜片。</p>
-<h3 id="与sony-12-24mm-f4-g对比">2.3 与Sony 12-24mm F4 G对比</h3>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G</p>
-<ul>
-<li>重量：565克</li>
-<li>长度：117mm</li>
-<li>价格：<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span></li>
-<li>7片光圈叶片</li>
-</ul>
-<p>Sigma 14-24mm F2.8 DG DN Art</p>
-<ul>
-<li>重量：795克（重40%）</li>
-<li>长度：131mm（长14mm）</li>
-<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>（便宜34%）</li>
-<li>11片光圈叶片</li>
-</ul>
-<h2 id="光学性能">3 光学性能</h2>
-<h3 id="锐度">3.1 锐度</h3>
-<p>测试使用6100像素的A7R4。</p>
-<p>14mm端，光圈全开时中心锐度为Very
-Good级别；在F5.6光圈达到最佳锐度，为Outstanding级别。边角的锐度表现稍有不足。光圈F8时，中心和边角锐度一致，为Excellent级别。在F11时，开始出现衍射现象，锐度开始降低。</p>
-<p>24mm端，锐度就有点差强人意了，中心和边角的锐度都只能达到Very
-Good级别。</p>
-<h3 id="锐度对比sony-12-24mm-f4-g">3.2 锐度（对比Sony 12-24mm F4
-G）</h3>
-<p>适马1424F2.8在14mm端表现稍好，24mm端则稍微落后。边角锐度相当。</p>
-<p><img data-src="./Pasted%20image%2020220817171714.png"></p>
-<h3 id="暗角色差畸变眩光星芒">3.3 暗角/色差/畸变/眩光/星芒</h3>
-<ul>
-<li>14mm端有明显的桶形畸变，24mm端有轻微的枕形畸变</li>
-<li>暗角可见，尤其是14mm端，但毕竟是超广角嘛</li>
-<li>色差非常微小，但在14mm会有出现</li>
-<li>抗眩光非常好，但依旧无法完全消除，毕竟这是一只超广角镜头</li>
-<li>在光圈F16至F22时，可以拍摄到不错的星芒</li>
-<li>没有明显的慧差，适合夜观星象</li>
-<li>Lightroom可以非常完美地校正畸变</li>
-</ul>
-<h3 id="焦外光斑色彩还原度">3.4 焦外光斑/色彩还原度</h3>
-<ul>
-<li>非常近的对焦距离（28cm）和F2.8的光圈可以获得一定程度的背景虚化。考虑到这是一只广角镜头，虚化的效果不算差</li>
-<li>焦外光斑非常好</li>
-<li>色彩还原度非常自然，表现非常好</li>
-</ul>
-<h2 id="视频">4 视频</h2>
-<p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
-]]></content>
-      <categories>
-        <category>镜头</category>
-      </categories>
-      <tags>
-        <tag>E卡口</tag>
-        <tag>全画幅</tag>
-        <tag>镜头 - 适马Sigma</tag>
       </tags>
   </entry>
   <entry>
@@ -2590,6 +2548,26 @@ API。因此，需要配置fever插件。</p>
         <tag>DIY</tag>
         <tag>RSS</tag>
         <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Spring框架的IOC和DI的理解</title>
+    <url>//2018/01/26/spring-ioc-di/</url>
+    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
+<p>下面来说说我，一个初学者，对DI的理解。</p>
+<span id="more"></span>
+<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
+2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
+<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
+<p>这个是我今天看了Spring框架之后的理解。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -2808,6 +2786,29 @@ Std 1076-2019</a>。</p>
       <tags>
         <tag>VHDL</tag>
         <tag>FPGA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>斯普林格Springer免费书籍</title>
+    <url>//2020/06/24/springer-free-books-2020/</url>
+    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
+<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
+<span id="more"></span>
+<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
+<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
+<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
+<hr>
+<blockquote>
+<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
+最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+        <tag>书籍</tag>
       </tags>
   </entry>
   <entry>
