@@ -2,16 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hexo.leonxu.top/2022/09/22/sony-fe-200-600mm-f5-6-6-3-g-oss/</loc>
-    
-    <lastmod>2022-09-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.leonxu.top/2022/08/30/sony-pz-16-35mm-f4-g/</loc>
+    <loc>https://hexo.leonxu.top/2022/08/27/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/</loc>
     
     <lastmod>2022-09-22</lastmod>
     
@@ -29,7 +20,16 @@
   </url>
   
   <url>
-    <loc>https://hexo.leonxu.top/2022/08/27/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/</loc>
+    <loc>https://hexo.leonxu.top/2022/09/22/sony-fe-200-600mm-f5-6-6-3-g-oss/</loc>
+    
+    <lastmod>2022-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.leonxu.top/2022/08/30/sony-pz-16-35mm-f4-g/</loc>
     
     <lastmod>2022-09-22</lastmod>
     
@@ -311,6 +311,20 @@
   </url>
   
   <url>
+    <loc>https://hexo.leonxu.top/tags/IC/</loc>
+    <lastmod>2022-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.leonxu.top/tags/IC618/</loc>
+    <lastmod>2022-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://hexo.leonxu.top/tags/%E8%A7%82%E7%82%B9/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -347,20 +361,6 @@
   
   <url>
     <loc>https://hexo.leonxu.top/tags/DIY/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.leonxu.top/tags/IC/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.leonxu.top/tags/IC618/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -437,28 +437,7 @@
   </url>
   
   <url>
-    <loc>https://hexo.leonxu.top/tags/%E9%95%9C%E5%A4%B4-%E9%80%82%E9%A9%ACSigma/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hexo.leonxu.top/tags/%E7%B4%A2%E5%B0%BCSony/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.leonxu.top/tags/RSS/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.leonxu.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -479,20 +458,6 @@
   </url>
   
   <url>
-    <loc>https://hexo.leonxu.top/tags/VHDL/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.leonxu.top/tags/FPGA/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hexo.leonxu.top/tags/%E8%B5%84%E6%BA%90/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -507,14 +472,28 @@
   </url>
   
   <url>
-    <loc>https://hexo.leonxu.top/tags/%E8%A7%86%E9%A2%91/</loc>
+    <loc>https://hexo.leonxu.top/tags/RSS/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://hexo.leonxu.top/tags/%E8%A7%86%E9%A2%91%E7%BC%96%E7%A0%81/</loc>
+    <loc>https://hexo.leonxu.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2022-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.leonxu.top/tags/VHDL/</loc>
+    <lastmod>2022-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.leonxu.top/tags/FPGA/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -548,17 +527,24 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://hexo.leonxu.top/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://hexo.leonxu.top/tags/%E8%A7%86%E9%A2%91/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://hexo.leonxu.top/categories/%E8%A7%82%E7%82%B9-%E6%84%9F%E6%83%B3/</loc>
+    <loc>https://hexo.leonxu.top/tags/%E8%A7%86%E9%A2%91%E7%BC%96%E7%A0%81/</loc>
+    <lastmod>2022-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://hexo.leonxu.top/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -573,6 +559,13 @@
   
   <url>
     <loc>https://hexo.leonxu.top/categories/%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF/</loc>
+    <lastmod>2022-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.leonxu.top/categories/%E8%A7%82%E7%82%B9-%E6%84%9F%E6%83%B3/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
