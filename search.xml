@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>//2016/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-  </entry>
-  <entry>
     <title>是什么驱动着无限进步？</title>
     <url>//2021/08/05/driver-of-development/</url>
     <content><![CDATA[<span id="more"></span>
@@ -83,6 +56,198 @@ CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
         <tag>控制</tag>
         <tag>summary</tag>
         <tag>总线</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IC笔记之瞬态仿真</title>
+    <url>//2021/04/06/ic-note-simu-tran/</url>
+    <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
+<span id="more"></span>
+<h2 id="概述">1 概述</h2>
+<p>瞬态仿真是什么？</p>
+<blockquote>
+<p>瞬态仿真是电路在给定的输入激励下，在设定的时间范围内计算电路时域瞬态响应性能的一种仿真手段。</p>
+</blockquote>
+<p>瞬态仿真一般是集成电路的第一个仿真，是年轻人的第一个仿真手段；通常是验证稳定性、速度、精度等等，需要在多次不同的瞬态分析过程才能得出结论。</p>
+<h3 id="基本设置">1.1 基本设置</h3>
+<p>在"ADE"中选择"Analyses"-"Choose"，可以选择仿真功能选择。点击"tran"后，可以看到如下图的基本设置界面。</p>
+<figure>
+<img data-src="./tran_ade_settings_1.png" alt="图1-1">
+<figcaption aria-hidden="true">图1-1</figcaption>
+</figure>
+<ol type="1">
+<li>"Stop Time"，设置仿真时间<br>
+仿真时间默认从0时刻开始，这里只设置停止时间。时间单位为可以是"s"（秒）、"m"（毫秒）和"u"（微秒）。</li>
+<li>"Accuracy Defaults(errpreset)"，设置仿真精度和速度<br>
+软件内置有三种仿真精度："conservative"、"moderate"、"liberal"。"conservative"具有最高的精度，但速度较慢，用于高精度模拟电路和混合信号电路；"liberal"则是速度最快，精度较差，用于数字电路和变化率不高的模拟电路；"moderate"是比较折衷的模式，用于绝大多数模拟电路。如果需要更高的精度，则要在高级设置中配置参数。</li>
+<li>"Transient Noise"，设置瞬态噪声</li>
+<li>"Dynamic Parameter"，设置动态参数</li>
+<li>"Enabled"，设置瞬态仿真启用</li>
+</ol>
+<h3 id="高级设置">1.2 高级设置</h3>
+<p>在图1-1中点击右下角的"Options"可进入高级设置。</p>
+<h4 id="time-step标签页">1.2.1 Time Step标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_timestep.png" alt="图1-2">
+<figcaption aria-hidden="true">图1-2</figcaption>
+</figure>
+<p>Simulation Interval Parameters</p>
+<ul>
+<li>"start"：仿真起始时刻。仿真器默认起始时间为0s。</li>
+<li>"outputstart"：输出波形时间。如果设计者的仿真时间较长，而只需观察某个时间点或者部分时间段内的电路瞬态特性输出，则可以通过该参数控制数据输出。</li>
+</ul>
+<p>Time Step Parameters</p>
+<ul>
+<li>"step"：最小的时间步长。</li>
+<li>"maxstep"：最大时间步长，根据"errpreset"中的精度设定取得默认值。</li>
+</ul>
+<h4 id="algorithm标签页">1.2.2 Algorithm标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_algorithm.png" alt="图1-3">
+<figcaption aria-hidden="true">图1-3</figcaption>
+</figure>
+<p>Initial Condition Parameters</p>
+<p>用户可以利用设置电路节点状态的初始化语句（ic
+statement）或电容、电感等模型内的初始条件参数（ic
+parameters）两种方式为瞬态仿真设置初始条件。其中电容中设置的是初始电压值，电感中设置的是初始电流值。如果没有进行设置，仿真器将默认采用直流分析的结果作为初始条件。对这个参数进行设置时要格外注意，如果对电路分析不明，贸然设置电路节点的初始值，极易造成电路瞬态仿真出现收敛性问题，并产生错误结果。</p>
+<ul>
+<li>"ic"：设定通过何种方式设置初始条件。
+<ul>
+<li>ic=dc：忽略任何设置的初始条件，直接采用直流分析的结果。</li>
+<li>ic=node：忽略电容、电感等器件上设置的初始条件，而采用"ic
+statement"设置的初始条件。</li>
+<li>ic=dev：忽略由"ic
+statement"设置的初始条件，采用电容、电感上的初始条件。</li>
+<li>ic=all：两种初始条件都将被采用。当设置条件发生冲突时，"ic
+parameters"比"ic statement"的优先级更高。<br>
+&gt; "ic statement"的格式是ic NodeName=value。<br>
+&gt; 例：ic V1=1 M1:int_d=3.3 L1:1=10u<br>
+&gt;
+上句表示的是：在节点V1上的初始电压是1V；在MOS管M1的漏极电压是3.3V；在电感L1
+上流过的初始电流是10μA。</li>
+</ul></li>
+<li>"skipdc"：最小的时间步长。
+选择跳过直流分析。在没有直流分析的情况下，电路的初始解将采用通解，或是从由"readic"定义的文件中读取初始条件。如果"readic"中没有定义，则将从"ic
+statement"中获取初始条件。无论是否跳过直流分析，器件上的初始条件肯定都会被采用。如果一个节点没有被赋予初始条件，将自动被仿真器设置为零。</li>
+<li>"readic"：从文件中读取初始条件。</li>
+</ul>
+<p>Initial Condition Parameters For Oscillator</p>
+<p>用户可以手动配置振荡器的初始条件，也可以选择使用软件自动配置。</p>
+<p>Convergence Parameters</p>
+<p>当电路在仿真时存在无限快的响应速度（如一个电路节点不存在任何电容），仿真器可能会产生收敛性问题。为了避免出现这种问题，需要设置"cmin"参数，给该节点设置一个合理的对地电容值。</p>
+<ul>
+<li>"readns"：从文件中读取电路瞬态仿真的初始解。</li>
+<li>"cmin"：设定每个节点对地的最小电容</li>
+</ul>
+<p>Integration Method Parameters</p>
+<p>该参数用于设计者根据仿真速度和仿真精确度选择合适的积分方式。仿真器提供3种不同的积分方式："backward-Euler"，"Trapezoidal"，"Second-order
+Gear"。根据这3种方式一共组合出6种模式，分别为"euler"、"traponly"、"trap"、"gear2only"、gear2"、"trapgear2"。<br>
+如果设计者需要高精度仿真，可以选择"trapezoidal"积分方式。但是，这种积分方式对前一时刻计算产生的误差非常敏感，因此在容差很大时并不是一种很好的选择。在容差很大而且要求速度较快的情况下，通常选择"Second-order
+Gear"积分法。"Second-order
+Gear"积分法比"backward-Euler"积分法更加精确。</p>
+<p>Accuracy Parameters -
+"relref"：相对收敛标准的参考，默认值从"errpreset"得到。包括以下几个选项。<br>
+"relref =
+pointlocal"：即relref=局部点，这个设置用来定量比较每个节点的值相对于待分析节点上当前数值的相对误差。<br>
+"relref =
+alllocal"：即relref=局部所有点，定量比较过去所有时间点的值相对于最大节点值的相对误差。<br>
+"relref =
+sigglobal"：即relref=所有信号点，定量比较每个电路上信号值相对于电路中所有信号中的最大值的相对误差。<br>
+"relref =
+allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最大悬浮电流值设定比较方程，此时不能满足基尔霍夫电流方程。
+- "lteratio"：比例系数，用于计算Newton容差中的LTE 容差。</p>
+<p>Newton Parameters</p>
+<ul>
+<li>"maxiters"：在每个时间步长内最多的迭代次数。</li>
+<li>"restart"：如果有任何条件发生变化，是否从最开始重新计算直流解。如果不重新计算，将直接采用上一次的初始值。</li>
+</ul>
+<h4 id="state-file标签页">1.2.3 State File标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_statefile.png" alt="图1-4">
+<figcaption aria-hidden="true">图1-4</figcaption>
+</figure>
+<p>StateFile Parameters</p>
+<p>状态文件（State File）主要有两个用处： 1.
+将保存下来的状态文件用于后续的仿真分析中。如在一次瞬态分析中保存下结束时刻的信息，在下一次瞬态分析中能够以该时刻作为起始点继续完成后续时间段的分析。
+2.
+用户能够利用状态文件自动完成初始条件的更新。设计者能够利用仿真器将一次分析的初始时刻工作点或终止时刻工作点生成状态文件。同时，设计者也能手动编写一个状态文件。</p>
+<ul>
+<li>"write"：将瞬态分析的初始状态解写到指定的文件中。</li>
+<li>"writefinal"：将瞬态分析的最终解写到指定的文件中。</li>
+</ul>
+<p>Save-Restart Parameters</p>
+<p>该参数用于配置保存和载入的频率等参数。</p>
+<h4 id="output标签页">1.2.3 Output标签页</h4>
+<p><img data-src="./tran_ade_settings_2_output_1.png" alt="图1-5"> <img data-src="./tran_ade_settings_2_output_2.png" alt="图1-6"></p>
+<p>Output Parameters</p>
+<p>仿真器默认情况下会把所有仿真数据都保存下来，但有时并不需要所有的数据量。仿真器允许设计者选择保存需要的数据。如果需要得到更精确的结果，也可以增大数据输出量。<br>
+该参数配置"compression"输出模式，将恒定信号的重复记录删除。</p>
+<p>Strobing Parameters</p>
+<p>该参数配置"strobing"输出模式。在保存点之间设置一个时间间隔。虽然仿真器计算过这些数据，但是并没有将其保存输出。</p>
+<p>Final OP Point Settings</p>
+<p>该参数配置静态工作点的保存等参数。</p>
+<p>Infotimes Settings</p>
+<p>该参数配置"infotimes"输出模式。允许设计者保存某些自定义时刻的工作点数据。如果需要保存多个时刻的工作点，填入时间矢量之间以空格隔开。</p>
+<p>Actimes Settings</p>
+<p>未找到相关资料，待补充。</p>
+<h4 id="emir-output标签页">1.2.5 EM/IR Output标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_emiroutput.png" alt="图1-7">
+<figcaption aria-hidden="true">图1-7</figcaption>
+</figure>
+<p>该标签页涉及EM（电子迁移）和IR（IR压降）。<del>恕我直言，不会。</del></p>
+<h4 id="misc标签页">1.2.6 Misc标签页</h4>
+<figure>
+<img data-src="./tran_ade_settings_2_misc.png" alt="图1-7">
+<figcaption aria-hidden="true">图1-7</figcaption>
+</figure>
+<p>该标签页为一些难以分类的配置，毕竟都写了是misc了。</p>
+<ol type="1">
+<li>Annotation Parameters，注释。</li>
+<li>Captab Parameters，电容列表参数。</li>
+<li>Additional Parameters，额外参数。</li>
+</ol>
+<h2 id="实例">2 实例</h2>
+<p>仿真电路如图。瞬态仿真实例选择了使用二极管连接方式的PMOS作为负载的共源极电路。</p>
+<figure>
+<img data-src="./circuit_opa.png" alt="图2-1">
+<figcaption aria-hidden="true">图2-1</figcaption>
+</figure>
+<h3 id="配置激励源">2.1 配置激励源</h3>
+<p>与前一篇关于<a href="/2021/03/30/ic-note-inv-simu/">反相器仿真</a>中对于激励信号的配置不同，这次选择直接对端口进行激励源配置。</p>
+<p>在ADE窗口中选择"Setup"-"Stimuli"。</p>
+<figure>
+<img data-src="./tran_ade_stimuli_1.png" alt="图2-2">
+<figcaption aria-hidden="true">图2-2</figcaption>
+</figure>
+<p>按照下面三张图片依次对三个端口的输入信号进行配置。</p>
+<p><img data-src="./tran_ade_stimuli_2_vin.png" alt="图2-3"> <img data-src="./tran_ade_stimuli_2_vdda.png" alt="图2-4"> <img data-src="./tran_ade_stimuli_2_gnda.png" alt="图2-5"></p>
+<h3 id="配置瞬态仿真">2.2 配置瞬态仿真</h3>
+<p>选择瞬态仿真模式，并选择仿真时间和精度。</p>
+<figure>
+<img data-src="./tran_ade_mode.png" alt="图2-6">
+<figcaption aria-hidden="true">图2-6</figcaption>
+</figure>
+<p>选取观测信号后，仿真配置结束。</p>
+<figure>
+<img data-src="./tran_ade_settings.png" alt="图2-7">
+<figcaption aria-hidden="true">图2-7</figcaption>
+</figure>
+<h3 id="仿真结果">2.3 仿真结果</h3>
+<p>下图是仿真结果。局部放大后，可以通过"M"键选取曲线上的点，对信号进行进一步分析。</p>
+<figure>
+<img data-src="./tran_ade_results.png" alt="图2-8">
+<figcaption aria-hidden="true">图2-8</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>以上就是ADE中瞬态仿真的大部分介绍。本次笔记结束。 :@(击掌)</p>
+]]></content>
+      <categories>
+        <category>集成电路</category>
+      </categories>
+      <tags>
+        <tag>瞬态仿真</tag>
+        <tag>仿真</tag>
       </tags>
   </entry>
   <entry>
@@ -372,6 +537,59 @@ As"为仿真配置的名称，"Description"中可以选填一些配置信息，�
       </tags>
   </entry>
   <entry>
+    <title>从零开始的客制化87键机械键盘_1_立项</title>
+    <url>//2018/12/25/keyboard87-1/</url>
+    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
+type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+<span id="more"></span>
+<h2 id="项目初衷">项目初衷</h2>
+<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<figure>
+<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
+<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+</figure>
+<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
+<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
+<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
+    <url>//2019/01/28/keyboard87-3/</url>
+    <content><![CDATA[<blockquote>
+<p>前文：<br>
+<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a><br>
+<a href="/2019/01/22/keyboard87-2/">从零开始的客制化87键机械键盘_2_硬件设计</a></p>
+</blockquote>
+<p>机械键盘的原理图搞定之后就投去打样了，这次体验还是不错。</p>
+<span id="more"></span>
+<h2 id="pcb打样">PCB打样</h2>
+<p>PCB打样就交给嘉立创了，下单系统虽然UI做的不怎么样，但系统操作和服务看上去特别高大上。而且最近嘉立创对自己的SMT进行了升级，添加了很多可贴元器件，这样一来，板子一拿回来就只要焊四个0805的贴片和直插的按键轴体。</p>
+<p>下单大概四天，板子就寄到了。一层一层的红色气泡纸把五块板子包得严严实实。</p>
+<figure>
+<img data-src="./1443212437.jpg" alt="pcb_package.jpg">
+<figcaption aria-hidden="true">pcb_package.jpg</figcaption>
+</figure>
+<p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从零开始的客制化87键机械键盘_2_硬件设计</title>
     <url>//2019/01/22/keyboard87-2/</url>
     <content><![CDATA[<blockquote>
@@ -550,292 +768,31 @@ C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四�
       </tags>
   </entry>
   <entry>
-    <title>IC笔记之瞬态仿真</title>
-    <url>//2021/04/06/ic-note-simu-tran/</url>
-    <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
+    <title>Hello World</title>
+    <url>//2016/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
-<h2 id="概述">1 概述</h2>
-<p>瞬态仿真是什么？</p>
-<blockquote>
-<p>瞬态仿真是电路在给定的输入激励下，在设定的时间范围内计算电路时域瞬态响应性能的一种仿真手段。</p>
-</blockquote>
-<p>瞬态仿真一般是集成电路的第一个仿真，是年轻人的第一个仿真手段；通常是验证稳定性、速度、精度等等，需要在多次不同的瞬态分析过程才能得出结论。</p>
-<h3 id="基本设置">1.1 基本设置</h3>
-<p>在"ADE"中选择"Analyses"-"Choose"，可以选择仿真功能选择。点击"tran"后，可以看到如下图的基本设置界面。</p>
-<figure>
-<img data-src="./tran_ade_settings_1.png" alt="图1-1">
-<figcaption aria-hidden="true">图1-1</figcaption>
-</figure>
-<ol type="1">
-<li>"Stop Time"，设置仿真时间<br>
-仿真时间默认从0时刻开始，这里只设置停止时间。时间单位为可以是"s"（秒）、"m"（毫秒）和"u"（微秒）。</li>
-<li>"Accuracy Defaults(errpreset)"，设置仿真精度和速度<br>
-软件内置有三种仿真精度："conservative"、"moderate"、"liberal"。"conservative"具有最高的精度，但速度较慢，用于高精度模拟电路和混合信号电路；"liberal"则是速度最快，精度较差，用于数字电路和变化率不高的模拟电路；"moderate"是比较折衷的模式，用于绝大多数模拟电路。如果需要更高的精度，则要在高级设置中配置参数。</li>
-<li>"Transient Noise"，设置瞬态噪声</li>
-<li>"Dynamic Parameter"，设置动态参数</li>
-<li>"Enabled"，设置瞬态仿真启用</li>
-</ol>
-<h3 id="高级设置">1.2 高级设置</h3>
-<p>在图1-1中点击右下角的"Options"可进入高级设置。</p>
-<h4 id="time-step标签页">1.2.1 Time Step标签页</h4>
-<figure>
-<img data-src="./tran_ade_settings_2_timestep.png" alt="图1-2">
-<figcaption aria-hidden="true">图1-2</figcaption>
-</figure>
-<p>Simulation Interval Parameters</p>
-<ul>
-<li>"start"：仿真起始时刻。仿真器默认起始时间为0s。</li>
-<li>"outputstart"：输出波形时间。如果设计者的仿真时间较长，而只需观察某个时间点或者部分时间段内的电路瞬态特性输出，则可以通过该参数控制数据输出。</li>
-</ul>
-<p>Time Step Parameters</p>
-<ul>
-<li>"step"：最小的时间步长。</li>
-<li>"maxstep"：最大时间步长，根据"errpreset"中的精度设定取得默认值。</li>
-</ul>
-<h4 id="algorithm标签页">1.2.2 Algorithm标签页</h4>
-<figure>
-<img data-src="./tran_ade_settings_2_algorithm.png" alt="图1-3">
-<figcaption aria-hidden="true">图1-3</figcaption>
-</figure>
-<p>Initial Condition Parameters</p>
-<p>用户可以利用设置电路节点状态的初始化语句（ic
-statement）或电容、电感等模型内的初始条件参数（ic
-parameters）两种方式为瞬态仿真设置初始条件。其中电容中设置的是初始电压值，电感中设置的是初始电流值。如果没有进行设置，仿真器将默认采用直流分析的结果作为初始条件。对这个参数进行设置时要格外注意，如果对电路分析不明，贸然设置电路节点的初始值，极易造成电路瞬态仿真出现收敛性问题，并产生错误结果。</p>
-<ul>
-<li>"ic"：设定通过何种方式设置初始条件。
-<ul>
-<li>ic=dc：忽略任何设置的初始条件，直接采用直流分析的结果。</li>
-<li>ic=node：忽略电容、电感等器件上设置的初始条件，而采用"ic
-statement"设置的初始条件。</li>
-<li>ic=dev：忽略由"ic
-statement"设置的初始条件，采用电容、电感上的初始条件。</li>
-<li>ic=all：两种初始条件都将被采用。当设置条件发生冲突时，"ic
-parameters"比"ic statement"的优先级更高。<br>
-&gt; "ic statement"的格式是ic NodeName=value。<br>
-&gt; 例：ic V1=1 M1:int_d=3.3 L1:1=10u<br>
-&gt;
-上句表示的是：在节点V1上的初始电压是1V；在MOS管M1的漏极电压是3.3V；在电感L1
-上流过的初始电流是10μA。</li>
-</ul></li>
-<li>"skipdc"：最小的时间步长。
-选择跳过直流分析。在没有直流分析的情况下，电路的初始解将采用通解，或是从由"readic"定义的文件中读取初始条件。如果"readic"中没有定义，则将从"ic
-statement"中获取初始条件。无论是否跳过直流分析，器件上的初始条件肯定都会被采用。如果一个节点没有被赋予初始条件，将自动被仿真器设置为零。</li>
-<li>"readic"：从文件中读取初始条件。</li>
-</ul>
-<p>Initial Condition Parameters For Oscillator</p>
-<p>用户可以手动配置振荡器的初始条件，也可以选择使用软件自动配置。</p>
-<p>Convergence Parameters</p>
-<p>当电路在仿真时存在无限快的响应速度（如一个电路节点不存在任何电容），仿真器可能会产生收敛性问题。为了避免出现这种问题，需要设置"cmin"参数，给该节点设置一个合理的对地电容值。</p>
-<ul>
-<li>"readns"：从文件中读取电路瞬态仿真的初始解。</li>
-<li>"cmin"：设定每个节点对地的最小电容</li>
-</ul>
-<p>Integration Method Parameters</p>
-<p>该参数用于设计者根据仿真速度和仿真精确度选择合适的积分方式。仿真器提供3种不同的积分方式："backward-Euler"，"Trapezoidal"，"Second-order
-Gear"。根据这3种方式一共组合出6种模式，分别为"euler"、"traponly"、"trap"、"gear2only"、gear2"、"trapgear2"。<br>
-如果设计者需要高精度仿真，可以选择"trapezoidal"积分方式。但是，这种积分方式对前一时刻计算产生的误差非常敏感，因此在容差很大时并不是一种很好的选择。在容差很大而且要求速度较快的情况下，通常选择"Second-order
-Gear"积分法。"Second-order
-Gear"积分法比"backward-Euler"积分法更加精确。</p>
-<p>Accuracy Parameters -
-"relref"：相对收敛标准的参考，默认值从"errpreset"得到。包括以下几个选项。<br>
-"relref =
-pointlocal"：即relref=局部点，这个设置用来定量比较每个节点的值相对于待分析节点上当前数值的相对误差。<br>
-"relref =
-alllocal"：即relref=局部所有点，定量比较过去所有时间点的值相对于最大节点值的相对误差。<br>
-"relref =
-sigglobal"：即relref=所有信号点，定量比较每个电路上信号值相对于电路中所有信号中的最大值的相对误差。<br>
-"relref =
-allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最大悬浮电流值设定比较方程，此时不能满足基尔霍夫电流方程。
-- "lteratio"：比例系数，用于计算Newton容差中的LTE 容差。</p>
-<p>Newton Parameters</p>
-<ul>
-<li>"maxiters"：在每个时间步长内最多的迭代次数。</li>
-<li>"restart"：如果有任何条件发生变化，是否从最开始重新计算直流解。如果不重新计算，将直接采用上一次的初始值。</li>
-</ul>
-<h4 id="state-file标签页">1.2.3 State File标签页</h4>
-<figure>
-<img data-src="./tran_ade_settings_2_statefile.png" alt="图1-4">
-<figcaption aria-hidden="true">图1-4</figcaption>
-</figure>
-<p>StateFile Parameters</p>
-<p>状态文件（State File）主要有两个用处： 1.
-将保存下来的状态文件用于后续的仿真分析中。如在一次瞬态分析中保存下结束时刻的信息，在下一次瞬态分析中能够以该时刻作为起始点继续完成后续时间段的分析。
-2.
-用户能够利用状态文件自动完成初始条件的更新。设计者能够利用仿真器将一次分析的初始时刻工作点或终止时刻工作点生成状态文件。同时，设计者也能手动编写一个状态文件。</p>
-<ul>
-<li>"write"：将瞬态分析的初始状态解写到指定的文件中。</li>
-<li>"writefinal"：将瞬态分析的最终解写到指定的文件中。</li>
-</ul>
-<p>Save-Restart Parameters</p>
-<p>该参数用于配置保存和载入的频率等参数。</p>
-<h4 id="output标签页">1.2.3 Output标签页</h4>
-<p><img data-src="./tran_ade_settings_2_output_1.png" alt="图1-5"> <img data-src="./tran_ade_settings_2_output_2.png" alt="图1-6"></p>
-<p>Output Parameters</p>
-<p>仿真器默认情况下会把所有仿真数据都保存下来，但有时并不需要所有的数据量。仿真器允许设计者选择保存需要的数据。如果需要得到更精确的结果，也可以增大数据输出量。<br>
-该参数配置"compression"输出模式，将恒定信号的重复记录删除。</p>
-<p>Strobing Parameters</p>
-<p>该参数配置"strobing"输出模式。在保存点之间设置一个时间间隔。虽然仿真器计算过这些数据，但是并没有将其保存输出。</p>
-<p>Final OP Point Settings</p>
-<p>该参数配置静态工作点的保存等参数。</p>
-<p>Infotimes Settings</p>
-<p>该参数配置"infotimes"输出模式。允许设计者保存某些自定义时刻的工作点数据。如果需要保存多个时刻的工作点，填入时间矢量之间以空格隔开。</p>
-<p>Actimes Settings</p>
-<p>未找到相关资料，待补充。</p>
-<h4 id="emir-output标签页">1.2.5 EM/IR Output标签页</h4>
-<figure>
-<img data-src="./tran_ade_settings_2_emiroutput.png" alt="图1-7">
-<figcaption aria-hidden="true">图1-7</figcaption>
-</figure>
-<p>该标签页涉及EM（电子迁移）和IR（IR压降）。<del>恕我直言，不会。</del></p>
-<h4 id="misc标签页">1.2.6 Misc标签页</h4>
-<figure>
-<img data-src="./tran_ade_settings_2_misc.png" alt="图1-7">
-<figcaption aria-hidden="true">图1-7</figcaption>
-</figure>
-<p>该标签页为一些难以分类的配置，毕竟都写了是misc了。</p>
-<ol type="1">
-<li>Annotation Parameters，注释。</li>
-<li>Captab Parameters，电容列表参数。</li>
-<li>Additional Parameters，额外参数。</li>
-</ol>
-<h2 id="实例">2 实例</h2>
-<p>仿真电路如图。瞬态仿真实例选择了使用二极管连接方式的PMOS作为负载的共源极电路。</p>
-<figure>
-<img data-src="./circuit_opa.png" alt="图2-1">
-<figcaption aria-hidden="true">图2-1</figcaption>
-</figure>
-<h3 id="配置激励源">2.1 配置激励源</h3>
-<p>与前一篇关于<a href="/2021/03/30/ic-note-inv-simu/">反相器仿真</a>中对于激励信号的配置不同，这次选择直接对端口进行激励源配置。</p>
-<p>在ADE窗口中选择"Setup"-"Stimuli"。</p>
-<figure>
-<img data-src="./tran_ade_stimuli_1.png" alt="图2-2">
-<figcaption aria-hidden="true">图2-2</figcaption>
-</figure>
-<p>按照下面三张图片依次对三个端口的输入信号进行配置。</p>
-<p><img data-src="./tran_ade_stimuli_2_vin.png" alt="图2-3"> <img data-src="./tran_ade_stimuli_2_vdda.png" alt="图2-4"> <img data-src="./tran_ade_stimuli_2_gnda.png" alt="图2-5"></p>
-<h3 id="配置瞬态仿真">2.2 配置瞬态仿真</h3>
-<p>选择瞬态仿真模式，并选择仿真时间和精度。</p>
-<figure>
-<img data-src="./tran_ade_mode.png" alt="图2-6">
-<figcaption aria-hidden="true">图2-6</figcaption>
-</figure>
-<p>选取观测信号后，仿真配置结束。</p>
-<figure>
-<img data-src="./tran_ade_settings.png" alt="图2-7">
-<figcaption aria-hidden="true">图2-7</figcaption>
-</figure>
-<h3 id="仿真结果">2.3 仿真结果</h3>
-<p>下图是仿真结果。局部放大后，可以通过"M"键选取曲线上的点，对信号进行进一步分析。</p>
-<figure>
-<img data-src="./tran_ade_results.png" alt="图2-8">
-<figcaption aria-hidden="true">图2-8</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>以上就是ADE中瞬态仿真的大部分介绍。本次笔记结束。 :@(击掌)</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
-        <category>集成电路</category>
+        <category>杂项</category>
       </categories>
-      <tags>
-        <tag>瞬态仿真</tag>
-        <tag>仿真</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux笔记之VNC配置</title>
-    <url>//2021/06/21/linux-note-vnc-config/</url>
-    <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
-<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
-<span id="more"></span>
-<blockquote>
-<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
-</blockquote>
-<h2 id="预备知识">1 预备知识</h2>
-<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
-<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
-<p>wikipedia上有详细介绍<a href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
-<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
-<h2 id="安装vnc">2 安装VNC</h2>
-<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
-<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="./linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
-<figcaption aria-hidden="true">yum grouplist结果</figcaption>
-</figure>
-<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y <span class="string">&quot;GNOME Desktop&quot;</span></span><br></pre></td></tr></table></figure>
-<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="comment"># 切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
-<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
-<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="comment"># 验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="./linux_note_vnc_config_vnc.png" alt="验证VNC安装">
-<figcaption aria-hidden="true">验证VNC安装</figcaption>
-</figure>
-<h2 id="配置vnc">3 配置VNC</h2>
-<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
-<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从sample创建VNC启动脚本</span></span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
-<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
-<p>接着，需要小小处理一下刚刚复制的脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system</span><br><span class="line"><span class="comment"># 给权限x</span></span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:1.service</span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
-<p>接着打开2个脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
-<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_script_1.png" alt="脚本修改前">
-<figcaption aria-hidden="true">脚本修改前</figcaption>
-</figure>
-<figure>
-<img data-src="./linux_note_vnc_config_script_2.png" alt="脚本修改后">
-<figcaption aria-hidden="true">脚本修改后</figcaption>
-</figure>
-<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
-<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
-<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
-<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
-<p>下面是VNC服务的启动和开机自启的配置。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="comment"># 配置开机自启</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:1.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:2.service</span><br></pre></td></tr></table></figure>
-<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="./linux_note_vnc_config_port.png" alt="端口监听状态">
-<figcaption aria-hidden="true">端口监听状态</figcaption>
-</figure>
-<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
-<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
-ツ )_/¯</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
-<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_selinux.png" alt="端口监听状态">
-<figcaption aria-hidden="true">端口监听状态</figcaption>
-</figure>
-<h2 id="连接vnc">5 连接VNC</h2>
-<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
-<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
-</figure>
-<figure>
-<img data-src="./linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
-<figcaption aria-hidden="true">连接VNC演示</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
-<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>VNC</tag>
-        <tag>CentOS</tag>
-      </tags>
   </entry>
   <entry>
     <title>Linux笔记之XDMCP配置</title>
@@ -962,9 +919,9 @@ manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行�
         <category>软件</category>
       </categories>
       <tags>
-        <tag>CentOS</tag>
         <tag>XDMCP</tag>
         <tag>Xmanager</tag>
+        <tag>CentOS</tag>
       </tags>
   </entry>
   <entry>
@@ -1113,31 +1070,99 @@ century”。这就让我想起了RACFM这篇文章，以及经常遇见的“�
       </tags>
   </entry>
   <entry>
-    <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
-    <url>//2019/01/28/keyboard87-3/</url>
-    <content><![CDATA[<blockquote>
-<p>前文：<br>
-<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a><br>
-<a href="/2019/01/22/keyboard87-2/">从零开始的客制化87键机械键盘_2_硬件设计</a></p>
-</blockquote>
-<p>机械键盘的原理图搞定之后就投去打样了，这次体验还是不错。</p>
+    <title>Linux笔记之VNC配置</title>
+    <url>//2021/06/21/linux-note-vnc-config/</url>
+    <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
+<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
 <span id="more"></span>
-<h2 id="pcb打样">PCB打样</h2>
-<p>PCB打样就交给嘉立创了，下单系统虽然UI做的不怎么样，但系统操作和服务看上去特别高大上。而且最近嘉立创对自己的SMT进行了升级，添加了很多可贴元器件，这样一来，板子一拿回来就只要焊四个0805的贴片和直插的按键轴体。</p>
-<p>下单大概四天，板子就寄到了。一层一层的红色气泡纸把五块板子包得严严实实。</p>
+<blockquote>
+<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
+</blockquote>
+<h2 id="预备知识">1 预备知识</h2>
+<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
+<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
+<p>wikipedia上有详细介绍<a href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
+<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
+<h2 id="安装vnc">2 安装VNC</h2>
+<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
+<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="./1443212437.jpg" alt="pcb_package.jpg">
-<figcaption aria-hidden="true">pcb_package.jpg</figcaption>
+<img data-src="./linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
+<figcaption aria-hidden="true">yum grouplist结果</figcaption>
 </figure>
-<p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>
+<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y <span class="string">&quot;GNOME Desktop&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="comment"># 切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
+<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
+<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="comment"># 验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="./linux_note_vnc_config_vnc.png" alt="验证VNC安装">
+<figcaption aria-hidden="true">验证VNC安装</figcaption>
+</figure>
+<h2 id="配置vnc">3 配置VNC</h2>
+<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
+<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从sample创建VNC启动脚本</span></span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
+<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
+<p>接着，需要小小处理一下刚刚复制的脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system</span><br><span class="line"><span class="comment"># 给权限x</span></span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:1.service</span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>接着打开2个脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
+<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
+<figure>
+<img data-src="./linux_note_vnc_config_script_1.png" alt="脚本修改前">
+<figcaption aria-hidden="true">脚本修改前</figcaption>
+</figure>
+<figure>
+<img data-src="./linux_note_vnc_config_script_2.png" alt="脚本修改后">
+<figcaption aria-hidden="true">脚本修改后</figcaption>
+</figure>
+<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
+<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
+<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
+<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
+<p>下面是VNC服务的启动和开机自启的配置。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="comment"># 配置开机自启</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:1.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="./linux_note_vnc_config_port.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
+<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
+ツ )_/¯</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
+<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
+<figure>
+<img data-src="./linux_note_vnc_config_selinux.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<h2 id="连接vnc">5 连接VNC</h2>
+<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
+<figure>
+<img data-src="./linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
+<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
+</figure>
+<figure>
+<img data-src="./linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
+<figcaption aria-hidden="true">连接VNC演示</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
+<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
 ]]></content>
       <categories>
-        <category>硬件</category>
+        <category>软件</category>
       </categories>
       <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
+        <tag>CentOS</tag>
+        <tag>VNC</tag>
       </tags>
   </entry>
   <entry>
@@ -1394,173 +1419,6 @@ OSS F4.5-F5.6畸变抑制和暗角控制做得更好，并且在LR中已有矫�
       </tags>
   </entry>
   <entry>
-    <title>从零开始的客制化87键机械键盘_1_立项</title>
-    <url>//2018/12/25/keyboard87-1/</url>
-    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
-type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
-<span id="more"></span>
-<h2 id="项目初衷">项目初衷</h2>
-<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
-<figure>
-<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
-<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
-</figure>
-<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
-<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
-<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog</title>
-    <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
-    <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
-14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
-</blockquote>
-<h2 id="结论">1 结论</h2>
-<p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
-<span id="more"></span>
-<p><img data-src="Pasted%20image%2020220830195252.png"></p>
-<ul>
-<li>优势
-<ul>
-<li>14mm端在F5.6光圈时有Outstanding级别的锐度</li>
-<li>边角表现非常好</li>
-<li>非常自然的色彩还原度</li>
-<li>对于一只广角来说，背景虚化非常好；焦外光斑表现不错</li>
-<li>Lightroom可以修正广角带来的畸变</li>
-<li>14mm端暗角不明显</li>
-<li>无慧差，很适合夜观星像</li>
-<li>顶级的手感</li>
-<li>有防尘防滴特性</li>
-<li>照片的自动对焦非常好</li>
-<li>比Sony FE 12-24mm F4 G（<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span>）便宜</li>
-</ul></li>
-<li>一般
-<ul>
-<li>2.8光圈全开情况下，锐度只能达到Very Good的等级</li>
-<li>光圈缩小至F5.6时，24mm端锐度只能达到Very
-Good级别，与14mm端的Outstanding级别的锐度差距加大</li>
-<li>如果要平衡边角和中心锐度，光圈需要缩小至F8</li>
-<li>滤镜系统后置，使用时需要根据其形状进行选购或裁剪</li>
-<li>体积和重量有进步，达到了其它竞品的平均水平</li>
-<li>不可拆卸遮光罩，这一点和其它超广角镜头一样</li>
-<li>没有镜身光学防抖，但可以依靠机身防抖</li>
-</ul></li>
-<li>缺陷
-<ul>
-<li>焦距范围受限</li>
-<li>视频拍摄时，画面会出现闪烁</li>
-<li>必须使用150mm滤镜系统</li>
-</ul></li>
-<li>镜头比较
-<ul>
-<li>可替换镜头
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35mm F2.8
-GM</li>
-<li>Tamron 17-28mm F2.8 Di III RXD</li>
-</ul></li>
-<li>其实，真的说起来，还是只有<span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G是同一等级比较的镜头。其他两只的焦距范围还是有点区别的。</li>
-<li>这两只镜头其实都是非常不错的镜头。适马1424F2.8有着2.8的光圈，更加适合暗光环境和星空的摄影；索尼1224F4则有着12mm的广角端，这2mm的差距在取景范围上其实是有非常巨大的差别的。</li>
-<li>锐度方面，适马1424F2.8在14mm端的中心锐度会有略微优势；索尼1224F4在24mm端稍微领先。边角情况，两只镜头表现差不多。</li>
-<li>至于到底选哪一只，就要看你的更想要2.8光圈还是12mm广角了。毕竟，这两支镜头在各方面的表现都是非常不错的。</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="总体信息">2 总体信息</h2>
-<h3 id="spec">2.1 SPEC</h3>
-<ul>
-<li>重量：795克</li>
-<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span></li>
-<li>长度：131mm</li>
-<li>几乎没有使用通用滤镜的可能性</li>
-<li>AF/MF切换按钮</li>
-<li>可自定义的对焦保持按钮</li>
-<li>11片光圈叶片</li>
-<li>防尘防潮设计</li>
-<li>最近对焦距离：28cm</li>
-<li>后置滤镜插槽</li>
-<li>不可拆卸遮光罩</li>
-<li>遮光罩预留镜头盖槽</li>
-<li>自带镜头盒</li>
-<li>The build construction is excellent</li>
-<li>自动对焦快速精准，非常安静</li>
-<li>内变焦</li>
-</ul>
-<h3 id="后置滤镜系统">2.2 后置滤镜系统</h3>
-<p>镜头尾部有后置滤镜插槽，并配有防掉落锁定。</p>
-<p>按照官方的用户手册的说法，必须将滤镜裁剪成对应的形状才能在后置滤镜插槽中使用。
-当然你也可以选择前置滤镜，但是得使用150mm的滤镜支架。</p>
-<p>P.S. 目前已有厂商发布了定制的后置滤镜片。</p>
-<h3 id="与sony-12-24mm-f4-g对比">2.3 与Sony 12-24mm F4 G对比</h3>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G</p>
-<ul>
-<li>重量：565克</li>
-<li>长度：117mm</li>
-<li>价格：<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span></li>
-<li>7片光圈叶片</li>
-</ul>
-<p>Sigma 14-24mm F2.8 DG DN Art</p>
-<ul>
-<li>重量：795克（重40%）</li>
-<li>长度：131mm（长14mm）</li>
-<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>（便宜34%）</li>
-<li>11片光圈叶片</li>
-</ul>
-<h2 id="光学性能">3 光学性能</h2>
-<h3 id="锐度">3.1 锐度</h3>
-<p>测试使用6100像素的A7R4。</p>
-<p>14mm端，光圈全开时中心锐度为Very
-Good级别；在F5.6光圈达到最佳锐度，为Outstanding级别。边角的锐度表现稍有不足。光圈F8时，中心和边角锐度一致，为Excellent级别。在F11时，开始出现衍射现象，锐度开始降低。</p>
-<p>24mm端，锐度就有点差强人意了，中心和边角的锐度都只能达到Very
-Good级别。</p>
-<h3 id="锐度对比sony-12-24mm-f4-g">3.2 锐度（对比Sony 12-24mm F4
-G）</h3>
-<p>适马1424F2.8在14mm端表现稍好，24mm端则稍微落后。边角锐度相当。</p>
-<p><img data-src="./Pasted%20image%2020220817171714.png"></p>
-<h3 id="暗角色差畸变眩光星芒">3.3 暗角/色差/畸变/眩光/星芒</h3>
-<ul>
-<li>14mm端有明显的桶形畸变，24mm端有轻微的枕形畸变</li>
-<li>暗角可见，尤其是14mm端，但毕竟是超广角嘛</li>
-<li>色差非常微小，但在14mm会有出现</li>
-<li>抗眩光非常好，但依旧无法完全消除，毕竟这是一只超广角镜头</li>
-<li>在光圈F16至F22时，可以拍摄到不错的星芒</li>
-<li>没有明显的慧差，适合夜观星象</li>
-<li>Lightroom可以非常完美地校正畸变</li>
-</ul>
-<h3 id="焦外光斑色彩还原度">3.4 焦外光斑/色彩还原度</h3>
-<ul>
-<li>非常近的对焦距离（28cm）和F2.8的光圈可以获得一定程度的背景虚化。考虑到这是一只广角镜头，虚化的效果不算差</li>
-<li>焦外光斑非常好</li>
-<li>色彩还原度非常自然，表现非常好</li>
-</ul>
-<h2 id="视频">4 视频</h2>
-<p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
-]]></content>
-      <categories>
-        <category>镜头</category>
-      </categories>
-      <tags>
-        <tag>镜头</tag>
-        <tag>适马Sigma</tag>
-        <tag>E卡口</tag>
-        <tag>全画幅</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Sony FE 200-600mm F5.6-6.3 G OSS_by SonyAlphaBlog</title>
     <url>//2022/09/22/sony-fe-200-600mm-f5-6-6-3-g-oss/</url>
     <content><![CDATA[<blockquote>
@@ -1573,6 +1431,7 @@ GM OSS F5.6-F6.3（<span class="math inline">\(\small{12700_{\mathbf{SONY},20220
 GM（<span class="math inline">\(\small{95000_{\mathbf{SONY},20220831}}\)</span>）和<span class="math inline">\(\small{\mathbf{SONY}}\)</span> 600mm F4 GM（<span class="math inline">\(\small{105000_{\mathbf{SONY},20220831}}\)</span>），那么，这只镜头将会是运动和动物摄影的完美工具。由于其出色的内变焦设计，200600
 G的锐度和可用性上要比100400 GM更高。</p>
 <span id="more"></span>
+<p><img data-src="./sel200600g_01_190620.jpg"></p>
 <p>另外，你得关注一下你手头的焦端配置。如果你只有<span class="math inline">\(\small{\mathbf{SONY}}\)</span> 24-70 F2.8
 GM或者<span class="math inline">\(\small{\mathbf{SONY}}\)</span>
 24-105mm F4 G，70mm到200mm之间的焦端缺失需要用<span class="math inline">\(\small{\mathbf{SONY}}\)</span> 70-200mm F4
@@ -2008,6 +1867,29 @@ G拥有可靠的自动对焦和漂亮的背景虚化，视频拍摄的表现相�
       </tags>
   </entry>
   <entry>
+    <title>斯普林格Springer免费书籍</title>
+    <url>//2020/06/24/springer-free-books-2020/</url>
+    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
+<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
+<span id="more"></span>
+<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
+<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
+<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
+<hr>
+<blockquote>
+<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
+最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+        <tag>书籍</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Sony FE PZ 16-35mm f4 G_by SonyAlphaBlog</title>
     <url>//2022/08/30/sony-pz-16-35mm-f4-g/</url>
     <content><![CDATA[<blockquote>
@@ -2357,6 +2239,148 @@ GM只会在5000万和6100万像素的变焦有优势。</p>
       </tags>
   </entry>
   <entry>
+    <title>Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog</title>
+    <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
+14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
+</blockquote>
+<h2 id="结论">1 结论</h2>
+<p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
+<span id="more"></span>
+<p><img data-src="Pasted%20image%2020220830195252.png"></p>
+<ul>
+<li>优势
+<ul>
+<li>14mm端在F5.6光圈时有Outstanding级别的锐度</li>
+<li>边角表现非常好</li>
+<li>非常自然的色彩还原度</li>
+<li>对于一只广角来说，背景虚化非常好；焦外光斑表现不错</li>
+<li>Lightroom可以修正广角带来的畸变</li>
+<li>14mm端暗角不明显</li>
+<li>无慧差，很适合夜观星像</li>
+<li>顶级的手感</li>
+<li>有防尘防滴特性</li>
+<li>照片的自动对焦非常好</li>
+<li>比Sony FE 12-24mm F4 G（<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span>）便宜</li>
+</ul></li>
+<li>一般
+<ul>
+<li>2.8光圈全开情况下，锐度只能达到Very Good的等级</li>
+<li>光圈缩小至F5.6时，24mm端锐度只能达到Very
+Good级别，与14mm端的Outstanding级别的锐度差距加大</li>
+<li>如果要平衡边角和中心锐度，光圈需要缩小至F8</li>
+<li>滤镜系统后置，使用时需要根据其形状进行选购或裁剪</li>
+<li>体积和重量有进步，达到了其它竞品的平均水平</li>
+<li>不可拆卸遮光罩，这一点和其它超广角镜头一样</li>
+<li>没有镜身光学防抖，但可以依靠机身防抖</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>焦距范围受限</li>
+<li>视频拍摄时，画面会出现闪烁</li>
+<li>必须使用150mm滤镜系统</li>
+</ul></li>
+<li>镜头比较
+<ul>
+<li>可替换镜头
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35mm F2.8
+GM</li>
+<li>Tamron 17-28mm F2.8 Di III RXD</li>
+</ul></li>
+<li>其实，真的说起来，还是只有<span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G是同一等级比较的镜头。其他两只的焦距范围还是有点区别的。</li>
+<li>这两只镜头其实都是非常不错的镜头。适马1424F2.8有着2.8的光圈，更加适合暗光环境和星空的摄影；索尼1224F4则有着12mm的广角端，这2mm的差距在取景范围上其实是有非常巨大的差别的。</li>
+<li>锐度方面，适马1424F2.8在14mm端的中心锐度会有略微优势；索尼1224F4在24mm端稍微领先。边角情况，两只镜头表现差不多。</li>
+<li>至于到底选哪一只，就要看你的更想要2.8光圈还是12mm广角了。毕竟，这两支镜头在各方面的表现都是非常不错的。</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<h3 id="spec">2.1 SPEC</h3>
+<ul>
+<li>重量：795克</li>
+<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span></li>
+<li>长度：131mm</li>
+<li>几乎没有使用通用滤镜的可能性</li>
+<li>AF/MF切换按钮</li>
+<li>可自定义的对焦保持按钮</li>
+<li>11片光圈叶片</li>
+<li>防尘防潮设计</li>
+<li>最近对焦距离：28cm</li>
+<li>后置滤镜插槽</li>
+<li>不可拆卸遮光罩</li>
+<li>遮光罩预留镜头盖槽</li>
+<li>自带镜头盒</li>
+<li>The build construction is excellent</li>
+<li>自动对焦快速精准，非常安静</li>
+<li>内变焦</li>
+</ul>
+<h3 id="后置滤镜系统">2.2 后置滤镜系统</h3>
+<p>镜头尾部有后置滤镜插槽，并配有防掉落锁定。</p>
+<p>按照官方的用户手册的说法，必须将滤镜裁剪成对应的形状才能在后置滤镜插槽中使用。
+当然你也可以选择前置滤镜，但是得使用150mm的滤镜支架。</p>
+<p>P.S. 目前已有厂商发布了定制的后置滤镜片。</p>
+<h3 id="与sony-12-24mm-f4-g对比">2.3 与Sony 12-24mm F4 G对比</h3>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G</p>
+<ul>
+<li>重量：565克</li>
+<li>长度：117mm</li>
+<li>价格：<span class="math inline">\(\small{11543_{\mathbf{SONY},20220816}}\)</span></li>
+<li>7片光圈叶片</li>
+</ul>
+<p>Sigma 14-24mm F2.8 DG DN Art</p>
+<ul>
+<li>重量：795克（重40%）</li>
+<li>长度：131mm（长14mm）</li>
+<li>价格：<span class="math inline">\(\small{7599_{JD,20220816}}\)</span>（便宜34%）</li>
+<li>11片光圈叶片</li>
+</ul>
+<h2 id="光学性能">3 光学性能</h2>
+<h3 id="锐度">3.1 锐度</h3>
+<p>测试使用6100像素的A7R4。</p>
+<p>14mm端，光圈全开时中心锐度为Very
+Good级别；在F5.6光圈达到最佳锐度，为Outstanding级别。边角的锐度表现稍有不足。光圈F8时，中心和边角锐度一致，为Excellent级别。在F11时，开始出现衍射现象，锐度开始降低。</p>
+<p>24mm端，锐度就有点差强人意了，中心和边角的锐度都只能达到Very
+Good级别。</p>
+<h3 id="锐度对比sony-12-24mm-f4-g">3.2 锐度（对比Sony 12-24mm F4
+G）</h3>
+<p>适马1424F2.8在14mm端表现稍好，24mm端则稍微落后。边角锐度相当。</p>
+<p><img data-src="./Pasted%20image%2020220817171714.png"></p>
+<h3 id="暗角色差畸变眩光星芒">3.3 暗角/色差/畸变/眩光/星芒</h3>
+<ul>
+<li>14mm端有明显的桶形畸变，24mm端有轻微的枕形畸变</li>
+<li>暗角可见，尤其是14mm端，但毕竟是超广角嘛</li>
+<li>色差非常微小，但在14mm会有出现</li>
+<li>抗眩光非常好，但依旧无法完全消除，毕竟这是一只超广角镜头</li>
+<li>在光圈F16至F22时，可以拍摄到不错的星芒</li>
+<li>没有明显的慧差，适合夜观星象</li>
+<li>Lightroom可以非常完美地校正畸变</li>
+</ul>
+<h3 id="焦外光斑色彩还原度">3.4 焦外光斑/色彩还原度</h3>
+<ul>
+<li>非常近的对焦距离（28cm）和F2.8的光圈可以获得一定程度的背景虚化。考虑到这是一只广角镜头，虚化的效果不算差</li>
+<li>焦外光斑非常好</li>
+<li>色彩还原度非常自然，表现非常好</li>
+</ul>
+<h2 id="视频">4 视频</h2>
+<p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
+]]></content>
+      <categories>
+        <category>镜头</category>
+      </categories>
+      <tags>
+        <tag>镜头</tag>
+        <tag>适马Sigma</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于Spring框架的IOC和DI的理解</title>
     <url>//2018/01/26/spring-ioc-di/</url>
     <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
@@ -2374,95 +2398,6 @@ GM只会在5000万和6100万像素的变焦有优势。</p>
       <tags>
         <tag>Spring</tag>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>STM32基础_GPIO流水灯</title>
-    <url>//2017/07/28/stm32-gpio-led/</url>
-    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
-<span id="more"></span>
-<h2 id="目录">目录</h2>
-<ul>
-<li><a href="#目录">目录</a></li>
-<li><a href="#流水灯实验原理">流水灯实验原理</a></li>
-<li><a href="#管脚配置">管脚配置</a></li>
-<li><a href="#code">CODE</a></li>
-<li><a href="#总结">总结</a></li>
-</ul>
-<h2 id="流水灯实验原理">流水灯实验原理</h2>
-<p>LED模块的原理图如图1所示：</p>
-<figure>
-<img data-src="./1646673628.png" alt="图1 LED模块原理图">
-<figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
-</figure>
-<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。
-因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
-<h2 id="管脚配置">管脚配置</h2>
-<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
-<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">模式名称</th>
-<th style="text-align: center;">标识</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">浮空输入</td>
-<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">带上拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPU</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">带下拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">模拟输入</td>
-<td style="text-align: center;">GPIO_MODE_AIN</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">复用_推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_PP</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">复用_开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_OD</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:
-初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
-</blockquote>
-<h2 id="code">CODE</h2>
-<p>下面就贴一下代码。</p>
-<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1
-.pdf第三章。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">uint32_t</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(__IO <span class="type">uint32_t</span> nCount)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -2569,6 +2504,95 @@ API。因此，需要配置fever插件。</p>
         <tag>DIY</tag>
         <tag>RSS</tag>
         <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32基础_GPIO流水灯</title>
+    <url>//2017/07/28/stm32-gpio-led/</url>
+    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
+<span id="more"></span>
+<h2 id="目录">目录</h2>
+<ul>
+<li><a href="#目录">目录</a></li>
+<li><a href="#流水灯实验原理">流水灯实验原理</a></li>
+<li><a href="#管脚配置">管脚配置</a></li>
+<li><a href="#code">CODE</a></li>
+<li><a href="#总结">总结</a></li>
+</ul>
+<h2 id="流水灯实验原理">流水灯实验原理</h2>
+<p>LED模块的原理图如图1所示：</p>
+<figure>
+<img data-src="./1646673628.png" alt="图1 LED模块原理图">
+<figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
+</figure>
+<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。
+因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
+<h2 id="管脚配置">管脚配置</h2>
+<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
+<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">模式名称</th>
+<th style="text-align: center;">标识</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">浮空输入</td>
+<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">带上拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPU</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">带下拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">模拟输入</td>
+<td style="text-align: center;">GPIO_MODE_AIN</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">复用_推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_PP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">复用_开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_OD</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:
+初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
+</blockquote>
+<h2 id="code">CODE</h2>
+<p>下面就贴一下代码。</p>
+<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1
+.pdf第三章。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">uint32_t</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(__IO <span class="type">uint32_t</span> nCount)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结</h2>
+<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -2722,99 +2746,110 @@ Emulation"页面设置的密码。</p>
       </tags>
   </entry>
   <entry>
-    <title>视频相关术语</title>
-    <url>//2020/02/12/video-terms/</url>
-    <content><![CDATA[<p>今天在人人影视上找资源的时候，突然对文件名上的HEVC、10bit等感到疑惑，就花了一下午时间研究了一下视频相关的术语，在下面分享一下。</p>
+    <title>VHDL学习笔记之元件递归</title>
+    <url>//2020/08/05/vhdl-note-component-recursion/</url>
+    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
+<blockquote>
+<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
+</blockquote>
 <span id="more"></span>
-<ul>
-<li><a href="#%e8%a7%86%e9%a2%91%e7%9b%b8%e5%85%b3%e6%9c%af%e8%af%ad">视频相关术语</a>
-<ul>
-<li><a href="#%e7%9b%ae%e5%bd%95">目录</a></li>
-<li><a href="#%e5%88%86%e8%be%a8%e7%8e%87">分辨率</a></li>
-<li><a href="#%e5%ae%bd%e9%ab%98%e6%af%94">宽高比</a>
-<ul>
-<li><a href="#%e5%bd%b1%e5%83%8f%e5%ae%bd%e9%ab%98%e6%af%94">影像宽高比</a></li>
-<li><a href="#%e5%83%8f%e7%b4%a0%e5%ae%bd%e9%ab%98%e6%af%94">像素宽高比</a></li>
-</ul></li>
-<li><a href="#%e5%b8%a7%e7%8e%87">帧率</a>
-<ul>
-<li><a href="#%e8%a7%86%e9%a2%91%e5%88%b6%e5%bc%8fpalntsc">视频制式(PAL&amp;NTSC)</a></li>
-</ul></li>
-<li><a href="#%e4%bd%8d%e6%b7%b1">位深</a></li>
-<li><a href="#%e7%bc%96%e7%a0%81">编码</a></li>
-</ul></li>
-</ul>
-<h2 id="分辨率">1 分辨率</h2>
-<p>分辨率(Resolution)指影像的尺寸大小。衡量视频分辨率的基本单位为像素(Pixel,px)。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">┌-------------┐┄┄┄┄┄</span><br><span class="line">|             |   ↑</span><br><span class="line">|    Video    | Height</span><br><span class="line">|             |   ↓</span><br><span class="line">└-------------┘┄┄┄┄┄</span><br><span class="line">┆←   Width   →┆</span><br></pre></td></tr></table></figure>
-<p>分辨率一般用宽(Width) * 高(Height)来表示。</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">常见分辨率</th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">720P</td>
-<td style="text-align: center;">1280px * 720px</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1080P</td>
-<td style="text-align: center;">1920px * 1080px</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">4K</td>
-<td style="text-align: center;">3840px * 2160px</td>
-</tr>
-</tbody>
-</table>
-<p>对于宽/宽为16:9的分辨率，通常可以用720P、1080P等简称来表示。其中，P(Progressive)表示逐行扫描。1080P即表示每一次刷新都需要对1080行像素进行刷新(当然，最新的屏幕刷新技术已经可以对局部进行更新，以实现更高的刷新率)。</p>
-<h2 id="宽高比">2 宽高比</h2>
-<p>宽高比(Aspect Ratio)表示为宽(Width)和高(Height)的比例。</p>
-<h3 id="影像宽高比">2.1 影像宽高比</h3>
-<p>常见的影像宽高比(Video Aspect
-Ratio)有16:9、4:3、21:9、16:10。不同的使用场景和需求需要不同的宽高比，比如电视、电影或“带鱼屏”等。</p>
-<h3 id="像素宽高比">2.2 像素宽高比</h3>
-<p>像素宽高比(Pixel Aspect
-Ratio)与影像宽高比类似，表示像素的宽高之比。</p>
-<p>目前，方形像素(Square Pixel)比较常用。但是，非方形像素(Non-Square
-Pixel)仍然存在于某些场合中，并且发挥着一定的作用。我们需要能够辨别这些非方形像素，否则，图像显示会出现扭曲，信息传达会出现错误。</p>
-<h2 id="帧率">3 帧率</h2>
-<p>帧率(Frame Rate)是视频实现影像从静止到运动转变的关键。</p>
-<p>在视频中，一幅静止的画面被称为帧(Frame)。视频播放实质上就是许多帧连续展示在屏幕上，当帧展示的间隔不断缩小，也就是每秒展示的帧不断增加，人眼看到的图案就变得连续起来(原理可自行搜索视觉暂留)。</p>
-<p>帧率就是视频在一秒内展示的帧的数量。帧率单位是fps(frame pre
-second)。一般来说，电影的帧率为24fps，当然最近也有120fps拍的电影(片名忘记了，只记得是李安导演的)；流媒体的帧率则需要根据你的网速和你的会员级别确定了；而电视的帧率则有所在地区的视频制式决定。</p>
-<h3 id="视频制式palntsc">3.1 视频制式(PAL&amp;NTSC)</h3>
-<p>这是一个存在于传统的电视广播行业的问题。</p>
-<p>NTSC普遍用于北美和南美，每秒30帧隔行；而其他地区，比如中国、欧洲，则使用每秒25帧隔行的PAL。在电视广播行业中工作，就需要考虑到这个问题；如果是上传到网站的视频，就可以忽略这个问题。</p>
-<h2 id="位深">4 位深</h2>
-<p>位深(Bit
-Depth)可以表示图像或者影像系统中可以使用的独立色彩的个数。如果系统的位深为10，那么需要三个10bit数码来分别表示R、G、B(当然还有其他色彩表示方式)，那么，系统就可以使用30bit的数码表示混合后的颜色，共有2^30=1.07*10^9种。</p>
-<p>位深越多的系统，色彩就越丰富，图像或影像的色彩表现力就越强。目前，8位和10位的位深常见于各种场合中。当然，在部分对色彩显示要求不高的场合中，使用8位或10位RGB码来表示颜色也屡见不鲜。</p>
-<h2 id="编码">5 编码</h2>
-<p>编码(CODEC)可以看做编码器(Coder) + 解码器(DeCoder)。</p>
-<p>首先，来看一下编码出现的原因。</p>
-<p>对于一段无压缩的、8bitRGB、4K、24fps的视频，暂且不考虑音频，它的码率
-= 3840 * 2160 * 8 * 3 * 24 bps = 4777574400bps =
-570MB/s，即如果要实现24fps播放这段视频，硬盘或网络需要传输570MB数据，GPU每秒需要处理570MB数据。以目前主流的硬件状况来看，5400rpm机械硬盘最高读取速度为130MB/s，(虽然m.2
-NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至少需要570MB的存储空间，反正我是没有这么多钱)，IEEE
-802.11 ac(WiFi
-5)能实现的最高无线传输速度在300-400MBPS之间，硬盘和网络都完全无法承受无压缩4K视频的码率。也因此，视频的压制和编码就应运而生。</p>
-<p>一般我们看见的视频文件后缀名MOV、MP4、MKV是是视频的封装格式(Format)，可以理解为一个容器，里面包含了视频的帧信息、音频信息、媒体信息、字幕及其他信息。</p>
-<p>目前，常见编码有H.264、H.265/HEVC等，编码信息记录着帧与帧之间的变化，虽然有效地压缩了视频体积，但却大大增加了处理器压力。</p>
-<p>在视频处理过程中，编码通常有拍摄编码、剪辑编码、输出编码三种使用场景。</p>
-<p>拍摄编码，顾名思义，是指使用相机进行拍摄时所使用的的编码，索尼、松下等相机在存储获取的影像时就会使用帧间编码对每一帧进行存储。</p>
-<p>剪辑编码，指对素材进行剪辑时使用的编码。举个栗子，由于帧间编码需要强大的处理能力，如果剪辑使用的设备性能欠缺，剪辑时素材的播放就会出现卡顿，使用体验极差；这时就可以将素材重编码为低分辨率视频进行编辑，再用源素材进行输出。</p>
-<p>输出编码，指剪辑软件根据需求输出的视频的编码。对于网络视频来说，网络平台会对码率过高的视频进行二次压缩。为了解决这个问题，要么将上传的视频压制到平台限定码率之下；要么尽量减少复杂移动画面的拍摄、调整曝光减少噪点等。</p>
+<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
+<h2 id="元件递归设计">元件递归设计</h2>
+<blockquote>
+<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
+</blockquote>
+<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://gitee.com/blueschwarz/blog_attachment/raw/master/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
+Std 1076-2019</a>。</p>
+<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
+为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
+\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
+方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>简单写了个仿真文件，仿真结果如下。</p>
+<figure>
+<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
+<figcaption aria-hidden="true">综合前仿真结果</figcaption>
+</figure>
+<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
+<figure>
+<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
+<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
+</figure>
+<h2 id="正常的n输入与门设计">正常的n输入与门设计</h2>
+<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
+<figure>
+<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
+<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
+</figure>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
+<figure>
+<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
+<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
+</figure>
+<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
+<figure>
+<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
+<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
+</figure>
+<figure>
+<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
+<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
+:&amp;(蛆音娘_扶额)
+，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
+:@(击掌)</p>
+<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
 ]]></content>
       <categories>
-        <category>杂项</category>
+        <category>集成电路</category>
       </categories>
       <tags>
-        <tag>视频</tag>
-        <tag>视频编码</tag>
+        <tag>VHDL</tag>
+        <tag>FPGA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code笔记之根据语言选择性删除行末空格</title>
+    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
+    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
+Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
+Workshop、Markdown+Math和Markdown Preview
+Enhanced配合来写东西，用着特别顺手。</p>
+<p>平时用VS
+Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
+<span id="more"></span>
+<h2 id="问题">问题</h2>
+<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
+样例一：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1</p>
+<p>para-2</p>
+<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
+样例二：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1<br>
+para-2</p>
+<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<p>VS
+Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -3120,133 +3155,99 @@ MHz，所以信道与信道之间必定会有重叠，图示如下。</p>
       </tags>
   </entry>
   <entry>
-    <title>斯普林格Springer免费书籍</title>
-    <url>//2020/06/24/springer-free-books-2020/</url>
-    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
-<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
+    <title>视频相关术语</title>
+    <url>//2020/02/12/video-terms/</url>
+    <content><![CDATA[<p>今天在人人影视上找资源的时候，突然对文件名上的HEVC、10bit等感到疑惑，就花了一下午时间研究了一下视频相关的术语，在下面分享一下。</p>
 <span id="more"></span>
-<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
-<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
-<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
-<hr>
-<blockquote>
-<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
-最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
-</blockquote>
+<ul>
+<li><a href="#%e8%a7%86%e9%a2%91%e7%9b%b8%e5%85%b3%e6%9c%af%e8%af%ad">视频相关术语</a>
+<ul>
+<li><a href="#%e7%9b%ae%e5%bd%95">目录</a></li>
+<li><a href="#%e5%88%86%e8%be%a8%e7%8e%87">分辨率</a></li>
+<li><a href="#%e5%ae%bd%e9%ab%98%e6%af%94">宽高比</a>
+<ul>
+<li><a href="#%e5%bd%b1%e5%83%8f%e5%ae%bd%e9%ab%98%e6%af%94">影像宽高比</a></li>
+<li><a href="#%e5%83%8f%e7%b4%a0%e5%ae%bd%e9%ab%98%e6%af%94">像素宽高比</a></li>
+</ul></li>
+<li><a href="#%e5%b8%a7%e7%8e%87">帧率</a>
+<ul>
+<li><a href="#%e8%a7%86%e9%a2%91%e5%88%b6%e5%bc%8fpalntsc">视频制式(PAL&amp;NTSC)</a></li>
+</ul></li>
+<li><a href="#%e4%bd%8d%e6%b7%b1">位深</a></li>
+<li><a href="#%e7%bc%96%e7%a0%81">编码</a></li>
+</ul></li>
+</ul>
+<h2 id="分辨率">1 分辨率</h2>
+<p>分辨率(Resolution)指影像的尺寸大小。衡量视频分辨率的基本单位为像素(Pixel,px)。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">┌-------------┐┄┄┄┄┄</span><br><span class="line">|             |   ↑</span><br><span class="line">|    Video    | Height</span><br><span class="line">|             |   ↓</span><br><span class="line">└-------------┘┄┄┄┄┄</span><br><span class="line">┆←   Width   →┆</span><br></pre></td></tr></table></figure>
+<p>分辨率一般用宽(Width) * 高(Height)来表示。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">常见分辨率</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">720P</td>
+<td style="text-align: center;">1280px * 720px</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1080P</td>
+<td style="text-align: center;">1920px * 1080px</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4K</td>
+<td style="text-align: center;">3840px * 2160px</td>
+</tr>
+</tbody>
+</table>
+<p>对于宽/宽为16:9的分辨率，通常可以用720P、1080P等简称来表示。其中，P(Progressive)表示逐行扫描。1080P即表示每一次刷新都需要对1080行像素进行刷新(当然，最新的屏幕刷新技术已经可以对局部进行更新，以实现更高的刷新率)。</p>
+<h2 id="宽高比">2 宽高比</h2>
+<p>宽高比(Aspect Ratio)表示为宽(Width)和高(Height)的比例。</p>
+<h3 id="影像宽高比">2.1 影像宽高比</h3>
+<p>常见的影像宽高比(Video Aspect
+Ratio)有16:9、4:3、21:9、16:10。不同的使用场景和需求需要不同的宽高比，比如电视、电影或“带鱼屏”等。</p>
+<h3 id="像素宽高比">2.2 像素宽高比</h3>
+<p>像素宽高比(Pixel Aspect
+Ratio)与影像宽高比类似，表示像素的宽高之比。</p>
+<p>目前，方形像素(Square Pixel)比较常用。但是，非方形像素(Non-Square
+Pixel)仍然存在于某些场合中，并且发挥着一定的作用。我们需要能够辨别这些非方形像素，否则，图像显示会出现扭曲，信息传达会出现错误。</p>
+<h2 id="帧率">3 帧率</h2>
+<p>帧率(Frame Rate)是视频实现影像从静止到运动转变的关键。</p>
+<p>在视频中，一幅静止的画面被称为帧(Frame)。视频播放实质上就是许多帧连续展示在屏幕上，当帧展示的间隔不断缩小，也就是每秒展示的帧不断增加，人眼看到的图案就变得连续起来(原理可自行搜索视觉暂留)。</p>
+<p>帧率就是视频在一秒内展示的帧的数量。帧率单位是fps(frame pre
+second)。一般来说，电影的帧率为24fps，当然最近也有120fps拍的电影(片名忘记了，只记得是李安导演的)；流媒体的帧率则需要根据你的网速和你的会员级别确定了；而电视的帧率则有所在地区的视频制式决定。</p>
+<h3 id="视频制式palntsc">3.1 视频制式(PAL&amp;NTSC)</h3>
+<p>这是一个存在于传统的电视广播行业的问题。</p>
+<p>NTSC普遍用于北美和南美，每秒30帧隔行；而其他地区，比如中国、欧洲，则使用每秒25帧隔行的PAL。在电视广播行业中工作，就需要考虑到这个问题；如果是上传到网站的视频，就可以忽略这个问题。</p>
+<h2 id="位深">4 位深</h2>
+<p>位深(Bit
+Depth)可以表示图像或者影像系统中可以使用的独立色彩的个数。如果系统的位深为10，那么需要三个10bit数码来分别表示R、G、B(当然还有其他色彩表示方式)，那么，系统就可以使用30bit的数码表示混合后的颜色，共有2^30=1.07*10^9种。</p>
+<p>位深越多的系统，色彩就越丰富，图像或影像的色彩表现力就越强。目前，8位和10位的位深常见于各种场合中。当然，在部分对色彩显示要求不高的场合中，使用8位或10位RGB码来表示颜色也屡见不鲜。</p>
+<h2 id="编码">5 编码</h2>
+<p>编码(CODEC)可以看做编码器(Coder) + 解码器(DeCoder)。</p>
+<p>首先，来看一下编码出现的原因。</p>
+<p>对于一段无压缩的、8bitRGB、4K、24fps的视频，暂且不考虑音频，它的码率
+= 3840 * 2160 * 8 * 3 * 24 bps = 4777574400bps =
+570MB/s，即如果要实现24fps播放这段视频，硬盘或网络需要传输570MB数据，GPU每秒需要处理570MB数据。以目前主流的硬件状况来看，5400rpm机械硬盘最高读取速度为130MB/s，(虽然m.2
+NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至少需要570MB的存储空间，反正我是没有这么多钱)，IEEE
+802.11 ac(WiFi
+5)能实现的最高无线传输速度在300-400MBPS之间，硬盘和网络都完全无法承受无压缩4K视频的码率。也因此，视频的压制和编码就应运而生。</p>
+<p>一般我们看见的视频文件后缀名MOV、MP4、MKV是是视频的封装格式(Format)，可以理解为一个容器，里面包含了视频的帧信息、音频信息、媒体信息、字幕及其他信息。</p>
+<p>目前，常见编码有H.264、H.265/HEVC等，编码信息记录着帧与帧之间的变化，虽然有效地压缩了视频体积，但却大大增加了处理器压力。</p>
+<p>在视频处理过程中，编码通常有拍摄编码、剪辑编码、输出编码三种使用场景。</p>
+<p>拍摄编码，顾名思义，是指使用相机进行拍摄时所使用的的编码，索尼、松下等相机在存储获取的影像时就会使用帧间编码对每一帧进行存储。</p>
+<p>剪辑编码，指对素材进行剪辑时使用的编码。举个栗子，由于帧间编码需要强大的处理能力，如果剪辑使用的设备性能欠缺，剪辑时素材的播放就会出现卡顿，使用体验极差；这时就可以将素材重编码为低分辨率视频进行编辑，再用源素材进行输出。</p>
+<p>输出编码，指剪辑软件根据需求输出的视频的编码。对于网络视频来说，网络平台会对码率过高的视频进行二次压缩。为了解决这个问题，要么将上传的视频压制到平台限定码率之下；要么尽量减少复杂移动画面的拍摄、调整曝光减少噪点等。</p>
 ]]></content>
       <categories>
         <category>杂项</category>
       </categories>
       <tags>
-        <tag>资源</tag>
-        <tag>书籍</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VHDL学习笔记之元件递归</title>
-    <url>//2020/08/05/vhdl-note-component-recursion/</url>
-    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
-<blockquote>
-<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
-</blockquote>
-<span id="more"></span>
-<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
-<h2 id="元件递归设计">元件递归设计</h2>
-<blockquote>
-<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
-</blockquote>
-<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://gitee.com/blueschwarz/blog_attachment/raw/master/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
-Std 1076-2019</a>。</p>
-<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
-为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
-\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
-方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>简单写了个仿真文件，仿真结果如下。</p>
-<figure>
-<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
-<figcaption aria-hidden="true">综合前仿真结果</figcaption>
-</figure>
-<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
-<figure>
-<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
-<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
-</figure>
-<h2 id="正常的n输入与门设计">正常的n输入与门设计</h2>
-<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
-<figure>
-<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
-<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
-</figure>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
-<figure>
-<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
-<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
-</figure>
-<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
-<figure>
-<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
-<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
-</figure>
-<figure>
-<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
-<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
-:&amp;(蛆音娘_扶额)
-，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
-:@(击掌)</p>
-<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
-]]></content>
-      <categories>
-        <category>集成电路</category>
-      </categories>
-      <tags>
-        <tag>VHDL</tag>
-        <tag>FPGA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS Code笔记之根据语言选择性删除行末空格</title>
-    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
-    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
-Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
-Workshop、Markdown+Math和Markdown Preview
-Enhanced配合来写东西，用着特别顺手。</p>
-<p>平时用VS
-Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
-<span id="more"></span>
-<h2 id="问题">问题</h2>
-<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
-样例一：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1</p>
-<p>para-2</p>
-<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
-样例二：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1<br>
-para-2</p>
-<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
-<h2 id="解决方案">解决方案</h2>
-<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-<p>VS
-Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Markdown</tag>
+        <tag>视频</tag>
+        <tag>视频编码</tag>
       </tags>
   </entry>
 </search>
