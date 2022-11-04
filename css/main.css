@@ -18,10 +18,10 @@
   --btn-default-hover-bg: #222;
   --btn-default-hover-color: #fff;
   --btn-default-hover-border-color: #222;
-  --highlight-background: #f0f0f0;
-  --highlight-foreground: #444;
-  --highlight-gutter-background: #dedede;
-  --highlight-gutter-foreground: #555;
+  --highlight-background: #fff;
+  --highlight-foreground: #000;
+  --highlight-gutter-background: #e5e5e5;
+  --highlight-gutter-foreground: #191919;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -45,10 +45,10 @@
     --btn-default-hover-bg: #666;
     --btn-default-hover-color: #ccc;
     --btn-default-hover-border-color: #666;
-    --highlight-background: #1d1f21;
-    --highlight-foreground: #c5c8c6;
-    --highlight-gutter-background: #2d2f31;
-    --highlight-gutter-foreground: #b4b7b5;
+    --highlight-background: #fff;
+    --highlight-foreground: #000;
+    --highlight-gutter-background: #e5e5e5;
+    --highlight-gutter-foreground: #191919;
     color-scheme: dark;
   }
   img {
@@ -401,7 +401,7 @@ td {
 }
 /*
 
-Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
 
 */
 
@@ -409,174 +409,101 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #F0F0F0;
+  background: #fff;
+  color: black;
 }
 
-
-/* Base color: saturation 0; */
-
-.hljs,
-.hljs-subst {
-  color: #444;
+/* Gray DOCTYPE selectors like WebKit */
+.xml .hljs-meta {
+  color: #c0c0c0;
 }
 
-.hljs-comment {
-  color: #888888;
-}
-
-.hljs-keyword,
-.hljs-attribute,
-.hljs-selector-tag,
-.hljs-meta-keyword,
-.hljs-doctag,
-.hljs-name {
-  font-weight: bold;
-}
-
-
-/* User color: hue: 0 */
-
-.hljs-type,
-.hljs-string,
-.hljs-number,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
-  color: #880000;
-}
-
-.hljs-title,
-.hljs-section {
-  color: #880000;
-  font-weight: bold;
-}
-
-.hljs-regexp,
-.hljs-symbol,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-link,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-  color: #BC6060;
-}
-
-
-/* Language color: hue: 90; */
-
-.hljs-literal {
-  color: #78A960;
-}
-
-.hljs-built_in,
-.hljs-bullet,
-.hljs-code,
-.hljs-addition {
-  color: #397300;
-}
-
-
-/* Meta color: hue: 200 */
-
-.hljs-meta {
-  color: #1f7199;
-}
-
-.hljs-meta-string {
-  color: #4d99bf;
-}
-
-
-/* Misc effects */
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-@media (prefers-color-scheme: dark) {
-/* Tomorrow Night Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-
-/* Tomorrow Comment */
 .hljs-comment,
 .hljs-quote {
-  color: #969896;
+  color: #007400;
 }
 
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
 .hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-  color: #cc6666;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
+.hljs-attribute,
+.hljs-keyword,
+.hljs-selector-tag,
 .hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-  color: #de935f;
+.hljs-name {
+  color: #aa0d91;
 }
 
-/* Tomorrow Yellow */
-.hljs-attribute {
-  color: #f0c674;
+.hljs-variable,
+.hljs-template-variable {
+  color: #3F6E74;
 }
 
-/* Tomorrow Green */
+.hljs-code,
 .hljs-string,
+.hljs-meta-string {
+  color: #c41a16;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #0E0EFF;
+}
+
+.hljs-title,
 .hljs-symbol,
 .hljs-bullet,
+.hljs-number {
+  color: #1c00cf;
+}
+
+.hljs-section,
+.hljs-meta {
+  color: #643820;
+}
+
+
+.hljs-class .hljs-title,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-params {
+  color: #5c2699;
+}
+
+.hljs-attr {
+  color: #836C28;
+}
+
+.hljs-subst {
+  color: #000;
+}
+
+.hljs-formula {
+  background-color: #eee;
+  font-style: italic;
+}
+
 .hljs-addition {
-  color: #b5bd68;
+  background-color: #baeeba;
 }
 
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-  color: #81a2be;
+.hljs-deletion {
+  background-color: #ffc8bd;
 }
 
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #b294bb;
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #9b703f;
 }
 
-.hljs {
-  display: block;
-  overflow-x: auto;
-  background: #1d1f21;
-  color: #c5c8c6;
-  padding: 0.5em;
+.hljs-doctag,
+.hljs-strong {
+  font-weight: bold;
 }
 
 .hljs-emphasis {
   font-style: italic;
 }
 
-.hljs-strong {
-  font-weight: bold;
-}
-
-}
 .highlight:hover .copy-btn,
 pre:hover .copy-btn {
   opacity: 1;
