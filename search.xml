@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>//2016/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>是什么驱动着无限进步？</title>
-    <url>//2021/08/05/driver-of-development/</url>
-    <content><![CDATA[<span id="more"></span>
-<blockquote>
-<p>崇高的理念在欲望面前根本无能为力 说到底 人类不过是充满欲望的生物
-人活着就不能否定这一点 正因为这份欲望文明才进化至今 今后也会继续进化
-绝不会倒退 建造燃料废物处理厂 修建高速公路 打造购物中心 森林面积不断减少
-稀有物种濒临灭绝 终有一天这里会变得和一般的城市一样 于是他们一边缅怀过去
-一边伤感唏嘘 但是大家都想这样做 多棒啊 这就是人类</p>
-<p>—— LEGAL HIGH.S02E08</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>观点&amp;感想</category>
-      </categories>
-      <tags>
-        <tag>观点</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
     <url>//2019/01/30/can-based-optimization/</url>
     <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
@@ -77,6 +30,53 @@ CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
         <tag>summary</tag>
         <tag>总线</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>是什么驱动着无限进步？</title>
+    <url>//2021/08/05/driver-of-development/</url>
+    <content><![CDATA[<span id="more"></span>
+<blockquote>
+<p>崇高的理念在欲望面前根本无能为力 说到底 人类不过是充满欲望的生物
+人活着就不能否定这一点 正因为这份欲望文明才进化至今 今后也会继续进化
+绝不会倒退 建造燃料废物处理厂 修建高速公路 打造购物中心 森林面积不断减少
+稀有物种濒临灭绝 终有一天这里会变得和一般的城市一样 于是他们一边缅怀过去
+一边伤感唏嘘 但是大家都想这样做 多棒啊 这就是人类</p>
+<p>—— LEGAL HIGH.S02E08</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>观点&amp;感想</category>
+      </categories>
+      <tags>
+        <tag>观点</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>//2016/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
   </entry>
   <entry>
     <title>IC笔记之反相器仿真</title>
@@ -365,209 +365,6 @@ As"为仿真配置的名称，"Description"中可以选填一些配置信息，�
       </tags>
   </entry>
   <entry>
-    <title>从零开始的客制化87键机械键盘_1_立项</title>
-    <url>//2018/12/25/keyboard87-1/</url>
-    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
-type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
-<span id="more"></span>
-<h2 id="项目初衷">1 项目初衷</h2>
-<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
-<figure>
-<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
-<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
-</figure>
-<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
-<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
-<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_2_硬件设计</title>
-    <url>//2019/01/22/keyboard87-2/</url>
-    <content><![CDATA[<blockquote>
-<p>前文：<br>
-<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a></p>
-</blockquote>
-<p>从这个项目立项以来已经快一个月了，终于在师傅和同学的帮助下，搞定了硬件设计。下面我就器件选型简单介绍一下，最后贴了一下渲染图。</p>
-<span id="more"></span>
-<h2 id="硬件设计">1 硬件设计</h2>
-<p>这一章介绍一下客制化键盘的硬件设计，包括以下4项：主控芯片、传输接口、轴体选择、键盘布局。</p>
-<h3 id="主控芯片">1.1 主控芯片</h3>
-<p>在确定STM32作为主控芯片之前，我在网上搜了一下，也拆了手上的ikbc
-C87，ATMEL的ATMEGA32芯片使用的比较多。我最终还是选择了STM32，主要原因是对STM32比较熟悉。</p>
-<p>当然，作为32位的MCU，STM32不管是在IO数量、USB接口支持，还是程序运算速度，都能满足机械键盘的需求。</p>
-<ul>
-<li>USB接口</li>
-</ul>
-<p>机械键盘使用时是作为USB
-Slave使用的，所以只需要芯片支持USB就行，不需要OTG。STM32F1的所有芯片都支持全速USB
-2.0，所以随便选一款就行。</p>
-<ul>
-<li>IO数量</li>
-</ul>
-<p>简单计算一下机械键盘需要的IO口，见下表（实际IO分配以实际原理图为准）。</p>
-<table>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>序号</th>
-<th>用途</th>
-<th>数量</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>键盘列</td>
-<td>17</td>
-<td>87键键盘布局，最多的一行（第2行）共17个按键</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>键盘行</td>
-<td>6</td>
-<td>87键键盘布局，共6行</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>USB接口</td>
-<td>2</td>
-<td>USBDN和USBDP</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>调试接口</td>
-<td>2</td>
-<td>使用STLink连接，仅需JTMS-SWDIO、JTCK-SWCLK和GND三个接口</td>
-</tr>
-</tbody>
-</table>
-<p>简单计算一下，键盘需求的IO口为27个。</p>
-<ul>
-<li>运算速度</li>
-</ul>
-<p>STM32有四个时钟源：</p>
-<table>
-<thead>
-<tr class="header">
-<th>时钟源</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>高速外部时钟(HSE)</td>
-<td>可取4-16MHz，一般采用8MHz</td>
-</tr>
-<tr class="even">
-<td>高速内部时钟(HSI)</td>
-<td>8MHz，内部RC振荡器产生，不稳定</td>
-</tr>
-<tr class="odd">
-<td>低速外部时钟(LSE)</td>
-<td>外部晶振，一般采用32.768KHz</td>
-</tr>
-<tr class="even">
-<td>低速内部时钟(LSI)</td>
-<td>内部RC振荡器产生，约40KHz</td>
-</tr>
-</tbody>
-</table>
-<p>机械键盘用8MHz外部晶振，内部的系统时钟最高为72MHz，满足机械键盘的输入精度要求。</p>
-<h3 id="传输接口">1.2 传输接口</h3>
-<p>机械键盘的传输接口已经确定为USB。一般来说，USB有以下几种接口类型：</p>
-<table>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Type A</th>
-<th style="text-align: center;">Type B</th>
-<th style="text-align: center;">Mini</th>
-<th style="text-align: center;">Micro</th>
-<th style="text-align: center;">Type C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img data-src="./3082159515.jpg" alt="type_a"></td>
-<td style="text-align: center;"><img data-src="./3927602725.jpg" alt="type_b"></td>
-<td style="text-align: center;"><img data-src="./1301417559.jpg" alt="miniusb"></td>
-<td style="text-align: center;"><img data-src="./3726218615.jpg" alt="microusb"></td>
-<td style="text-align: center;"><img data-src="./1494934121.jpg" alt="type_c"></td>
-</tr>
-</tbody>
-</table>
-<p>目前现在市面上键线分离的机械键盘一般用的是miniUSB或microUSB接口。最近半年来，USB
-C-type特别流行。这个接口不仅提供大功率传输，而且支持正反随便插，大大降低了插第二次的郁闷。机械键盘就决定用USB
-C-type。</p>
-<h3 id="轴体选择">1.3 轴体选择</h3>
-<p>在选择机械键盘的轴体时，因为正在使用的ikbc
-C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四种，茶轴肯定是我的首选，不管用做什么，都可以满足要求。</p>
-<p>MX轴的封装尺寸：<a href="https://github.com/xulu199705/KeyBoard87/tree/master/Reference/Cherry_MX/Cherry_MX_sw.pdf">PDF</a></p>
-<h3 id="键盘布局">1.4 键盘布局</h3>
-<p>键盘布局选择和手头使用的ikbc c87一样的87键布局，在<a href="http://www.keyboard-layout-editor.com/">这里</a>可以将需要的布局信息生成一堆文本，将文本复制到<a href="http://builder.swillkb.com/">这里</a>，生成定位板文件，方面在PCB中定位每个键轴的位置。</p>
-<p>布线图 <img data-src="./1178723672.png" alt="pcb_2d_bottomlayer.png"></p>
-<table>
-<thead>
-<tr class="header">
-<th>3D顶部视图</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img data-src="./1617787578.png" alt="2.PNG"></td>
-<td><img data-src="./2508825578.png" alt="pcb_3d_top.png"></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th>3D底部视图</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img data-src="./784997014.png" alt="1.PNG"></td>
-<td><img data-src="./210904615.png" alt="pcb_3d_bottom.png"></td>
-</tr>
-</tbody>
-</table>
-<p>LOGO视图 <img data-src="./2778683646.png" alt="pcb_3d_logo.png"></p>
-<p>P.S. PCB文件已上传<a href="https://github.com/xulu199705/KeyBoard87">github</a>，过一会儿就投板给嘉立创打样。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IC笔记之瞬态仿真</title>
     <url>//2021/04/06/ic-note-simu-tran/</url>
     <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
@@ -760,6 +557,184 @@ allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最�
       </tags>
   </entry>
   <entry>
+    <title>从零开始的客制化87键机械键盘_2_硬件设计</title>
+    <url>//2019/01/22/keyboard87-2/</url>
+    <content><![CDATA[<blockquote>
+<p>前文：<br>
+<a href="/2018/12/25/keyboard87-1/">从零开始的客制化87键机械键盘_1_立项</a></p>
+</blockquote>
+<p>从这个项目立项以来已经快一个月了，终于在师傅和同学的帮助下，搞定了硬件设计。下面我就器件选型简单介绍一下，最后贴了一下渲染图。</p>
+<span id="more"></span>
+<h2 id="硬件设计">1 硬件设计</h2>
+<p>这一章介绍一下客制化键盘的硬件设计，包括以下4项：主控芯片、传输接口、轴体选择、键盘布局。</p>
+<h3 id="主控芯片">1.1 主控芯片</h3>
+<p>在确定STM32作为主控芯片之前，我在网上搜了一下，也拆了手上的ikbc
+C87，ATMEL的ATMEGA32芯片使用的比较多。我最终还是选择了STM32，主要原因是对STM32比较熟悉。</p>
+<p>当然，作为32位的MCU，STM32不管是在IO数量、USB接口支持，还是程序运算速度，都能满足机械键盘的需求。</p>
+<ul>
+<li>USB接口</li>
+</ul>
+<p>机械键盘使用时是作为USB
+Slave使用的，所以只需要芯片支持USB就行，不需要OTG。STM32F1的所有芯片都支持全速USB
+2.0，所以随便选一款就行。</p>
+<ul>
+<li>IO数量</li>
+</ul>
+<p>简单计算一下机械键盘需要的IO口，见下表（实际IO分配以实际原理图为准）。</p>
+<table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>序号</th>
+<th>用途</th>
+<th>数量</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>键盘列</td>
+<td>17</td>
+<td>87键键盘布局，最多的一行（第2行）共17个按键</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>键盘行</td>
+<td>6</td>
+<td>87键键盘布局，共6行</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>USB接口</td>
+<td>2</td>
+<td>USBDN和USBDP</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>调试接口</td>
+<td>2</td>
+<td>使用STLink连接，仅需JTMS-SWDIO、JTCK-SWCLK和GND三个接口</td>
+</tr>
+</tbody>
+</table>
+<p>简单计算一下，键盘需求的IO口为27个。</p>
+<ul>
+<li>运算速度</li>
+</ul>
+<p>STM32有四个时钟源：</p>
+<table>
+<thead>
+<tr class="header">
+<th>时钟源</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>高速外部时钟(HSE)</td>
+<td>可取4-16MHz，一般采用8MHz</td>
+</tr>
+<tr class="even">
+<td>高速内部时钟(HSI)</td>
+<td>8MHz，内部RC振荡器产生，不稳定</td>
+</tr>
+<tr class="odd">
+<td>低速外部时钟(LSE)</td>
+<td>外部晶振，一般采用32.768KHz</td>
+</tr>
+<tr class="even">
+<td>低速内部时钟(LSI)</td>
+<td>内部RC振荡器产生，约40KHz</td>
+</tr>
+</tbody>
+</table>
+<p>机械键盘用8MHz外部晶振，内部的系统时钟最高为72MHz，满足机械键盘的输入精度要求。</p>
+<h3 id="传输接口">1.2 传输接口</h3>
+<p>机械键盘的传输接口已经确定为USB。一般来说，USB有以下几种接口类型：</p>
+<table>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type A</th>
+<th style="text-align: center;">Type B</th>
+<th style="text-align: center;">Mini</th>
+<th style="text-align: center;">Micro</th>
+<th style="text-align: center;">Type C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img data-src="./3082159515.jpg" alt="type_a"></td>
+<td style="text-align: center;"><img data-src="./3927602725.jpg" alt="type_b"></td>
+<td style="text-align: center;"><img data-src="./1301417559.jpg" alt="miniusb"></td>
+<td style="text-align: center;"><img data-src="./3726218615.jpg" alt="microusb"></td>
+<td style="text-align: center;"><img data-src="./1494934121.jpg" alt="type_c"></td>
+</tr>
+</tbody>
+</table>
+<p>目前现在市面上键线分离的机械键盘一般用的是miniUSB或microUSB接口。最近半年来，USB
+C-type特别流行。这个接口不仅提供大功率传输，而且支持正反随便插，大大降低了插第二次的郁闷。机械键盘就决定用USB
+C-type。</p>
+<h3 id="轴体选择">1.3 轴体选择</h3>
+<p>在选择机械键盘的轴体时，因为正在使用的ikbc
+C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四种，茶轴肯定是我的首选，不管用做什么，都可以满足要求。</p>
+<p>MX轴的封装尺寸：<a href="https://github.com/xulu199705/KeyBoard87/tree/master/Reference/Cherry_MX/Cherry_MX_sw.pdf">PDF</a></p>
+<h3 id="键盘布局">1.4 键盘布局</h3>
+<p>键盘布局选择和手头使用的ikbc c87一样的87键布局，在<a href="http://www.keyboard-layout-editor.com/">这里</a>可以将需要的布局信息生成一堆文本，将文本复制到<a href="http://builder.swillkb.com/">这里</a>，生成定位板文件，方面在PCB中定位每个键轴的位置。</p>
+<p>布线图 <img data-src="./1178723672.png" alt="pcb_2d_bottomlayer.png"></p>
+<table>
+<thead>
+<tr class="header">
+<th>3D顶部视图</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="./1617787578.png" alt="2.PNG"></td>
+<td><img data-src="./2508825578.png" alt="pcb_3d_top.png"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>3D底部视图</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="./784997014.png" alt="1.PNG"></td>
+<td><img data-src="./210904615.png" alt="pcb_3d_bottom.png"></td>
+</tr>
+</tbody>
+</table>
+<p>LOGO视图 <img data-src="./2778683646.png" alt="pcb_3d_logo.png"></p>
+<p>P.S. PCB文件已上传<a href="https://github.com/xulu199705/KeyBoard87">github</a>，过一会儿就投板给嘉立创打样。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从零开始的客制化87键机械键盘_3_PCB打样</title>
     <url>//2019/01/28/keyboard87-3/</url>
     <content><![CDATA[<blockquote>
@@ -777,6 +752,31 @@ allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最�
 <figcaption aria-hidden="true">pcb_package.jpg</figcaption>
 </figure>
 <p>板子那绿油油的照片忘记拍了，等全部搞定再拍吧。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始的客制化87键机械键盘_1_立项</title>
+    <url>//2018/12/25/keyboard87-1/</url>
+    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
+type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+<span id="more"></span>
+<h2 id="项目初衷">1 项目初衷</h2>
+<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<figure>
+<img data-src="./3841195344.jpg" alt="USB-to-Bluetooth Convertor">
+<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+</figure>
+<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
+<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
+<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
 ]]></content>
       <categories>
         <category>硬件</category>
@@ -881,261 +881,6 @@ allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最�
       <tags>
         <tag>VNC</tag>
         <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sigma 100-400mm f5-6.3 DG DN OS Contemporary_by SonyAlphaBlog</title>
-    <url>//2022/08/27/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/</url>
-    <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2020/07/21/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/">Sigma
-100-400mm f5-6.3 DG DN OS Contemporary_by SonyAlphaBlog</a></p>
-</blockquote>
-<h2 id="结论">1 结论</h2>
-<p>对于A7M3、A9或者A7R3来说，Sigma 100-400mm F5-F6.3 DG DN OS
-Contemporary（<span class="math inline">\(5800_{TB,
-20220818}\)</span>）是一只非常有性价比的好镜头；尤其是可以和Sony FE
-24-105 F4 G OSS配合使用。</p>
-<span id="more"></span>
-<p><img data-src="./Pasted%20image%2020220830195148.png"></p>
-<p>这只镜头的焦距范围非常适合运动、肖像、风景和动物的摄影。如果你主要使用400mm左右的焦端来拍摄动物，<span class="math inline">\(\mathbf{SONY}\)</span> FE 200-600mm F5.6-6.3 G
-OSS（<span class="math inline">\(12700_{\mathbf{SONY},20220827}\)</span>）可能更加适合你。
-在A7R4上使用时，适马的100400还是没办法和索尼的100400竞争，不管时锐度还是对焦速度都有一定差距。但是在像素稍微低一点的相机上，比如A7M3和A7R3，锐度上的差距就不是肉眼可察的了。
-拍摄静物时，自动对焦还是挺不错的，但是拍摄运动物体就不太行了。你还是得用索尼的100400（<span class="math inline">\(17500_{\mathbf{SONY},20220827}\)</span>）。
-所以，对于使用A7R4进行动物和体育摄影，还是推荐<span class="math inline">\(\mathbf{SONY}\)</span> FE 200-600mm F5.6-6.3 G
-OSS。其他拍摄题材上，或者说预算有限，Sigma 100-400mm F5-F6.3 DG DN OS
-Contemporary可以说是非常不错的平替了。</p>
-<ul>
-<li>优势
-<ul>
-<li>价格比较低（<span class="math inline">\(5800_{TB,
-20220818}\)</span>）</li>
-<li>重量比较轻</li>
-<li>在2400万像素的A7M3和4200万像素的A7R3上妥妥够用，锐度在这两台机器上可以达到非常极致的体验</li>
-<li>非常好的色彩还原度</li>
-<li>非常柔和的背景虚化表现相当好</li>
-<li>焦外光斑挺好</li>
-<li>色散控制比较好</li>
-<li>静物的自动对焦还是不错的</li>
-<li>防抖效果挺好</li>
-<li>做工非常棒</li>
-<li>非常棒的人体工学设计</li>
-</ul></li>
-<li>一般
-<ul>
-<li>无法使用E卡口增距镜</li>
-<li>在6100万像素的A7R4上只能达到Very Good级别的锐度</li>
-<li>抗眩光一般</li>
-<li>暗角和畸变需要后期调整</li>
-<li>对于移动物体的连续自动对焦还是没办法和索尼比</li>
-<li>脚架环需要另外购买，第三方价格为<span class="math inline">\(200_{TB,
-20220818}\)</span></li>
-<li>边角锐度一般</li>
-</ul></li>
-<li>缺陷
-<ul>
-<li>视频拍摄中，自动对焦无法时刻保持精准快速的性能</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="总体信息">2 总体信息</h2>
-<h3 id="spec">2.1 SPEC</h3>
-<ul>
-<li>光圈
-<ul>
-<li>100mm端F5</li>
-<li>400mm端F6.3</li>
-</ul></li>
-<li>重量
-<ul>
-<li>1180g</li>
-<li>1210g（加上官方脚架环）</li>
-</ul></li>
-<li>长度
-<ul>
-<li>100mm端197mm</li>
-<li>400mm端299mm</li>
-</ul></li>
-<li>直径86mm</li>
-<li>9片光圈叶片</li>
-<li>最近对焦距离
-<ul>
-<li>100mm端112cm</li>
-<li>400mm端160cm</li>
-</ul></li>
-<li>放大倍率0.24</li>
-<li>67mm滤镜口径</li>
-<li>不支持E卡口增距镜</li>
-<li>步进电机自动对焦</li>
-<li>有光学防抖</li>
-<li>镜身按钮
-<ul>
-<li>AF/MF切换</li>
-<li>对焦范围限制</li>
-<li>防抖模式切换</li>
-<li>自动对焦锁定</li>
-</ul></li>
-<li>防尘防滴</li>
-</ul>
-<p>适马100-400mm的做工是挺好的，但和索尼的100400GM还是有差距的。大小和重量都是在可接受范围内，甚至比<span class="math inline">\(\mathbf{SONY}\)</span> 100400GM还要小。</p>
-<p>适马100-400mm是首次在E卡口上使用光学防抖，手持体验不错。上三脚架时，需要手动关闭，否则出来的照片会糊掉。这一点上，索尼的镜头就做的比较好，会自动关闭光学防抖。官方标配不附带脚架环，需要另外购买官方脚架环；第三方脚架环<span class="math inline">\(200_{TB, 20220818}\)</span>左右。</p>
-<p>最近对焦距离110cm@100mmm、160cm@400mm，放大倍率0.23。这方面要比<span class="math inline">\(\mathbf{SONY}\)</span>
-100400GM差（最近对焦距离98cm，0.35放大倍率）。</p>
-<p>另外，适马（包括腾龙）是不能使用索尼的增距镜的；即使装上去没有问题，但是没办法调节光圈和自动对焦。适马官方也有出增距镜，但是针对L卡口的，E卡口无法使用。</p>
-<h3 id="自动对焦">2.2 自动对焦</h3>
-<p>静物拍摄的自动对焦性能非常好，且可以调用眼控对焦。移动物体（运动、动物等）的拍摄就差强人意了，自动对焦和<span class="math inline">\(\mathbf{SONY}\)</span>
-100400GM比不了，使用A7R4有30%几率会对不上焦。</p>
-<h2 id="光学性能">3 光学性能</h2>
-<h3 id="锐度">3.1 锐度</h3>
-<p>测试使用6100万像素的A7R4。</p>
-<ul>
-<li>在A7R4上，锐度基本表现为Very
-Good级别，但是很难达到Excellent级别。但在A7M3或者A7R3上，锐度肯定是爆表的，可以达到Excellent级别。</li>
-<li>边角的锐度要比中心锐度低一个级别。</li>
-</ul>
-<p><img data-src="./Pasted%20image%2020220819100951.png"></p>
-<h3 id="暗角畸变色差抗眩光">3.2 暗角/畸变/色差/抗眩光</h3>
-<ul>
-<li>光圈全开会有暗角，焦距增加后更加明显。</li>
-<li>畸变表现为枕形畸变，100mm端表现得不是很明显，焦距扩展到400mm端会逐渐增加</li>
-<li>色差非常小</li>
-<li>眩光对于长焦来说不是什么问题，毕竟没有大聪明会一直怼着太阳拍。但是吧，这只镜头直对太阳时确实有不小的眩光。</li>
-</ul>
-<h3 id="虚化色彩还原度"> 3.3 虚化/色彩还原度</h3>
-<ul>
-<li>色彩还原度很好，对比度很高</li>
-<li>背景虚化非常柔美</li>
-<li>焦外光斑非常柔和，没有散射，没有洋葱圈。所有焦端范围内，光圈全开的光斑都挺圆的；收缩光圈之后，会有九边形出现。</li>
-</ul>
-<h2 id="对比sony-100-400mm">4 对比Sony 100-400mm</h2>
-<h3 id="spec和自动对焦">4.1 SPEC和自动对焦</h3>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 100-400mm GM
-OSS F4.5-F5.6</p>
-<ul>
-<li>更重，更粗，做工更好</li>
-<li>操控性更好，尤其还官方标配了脚架环。镜身有3个自定义按钮，可以使用增距镜，预留了一个小缺口以便直接调节可变滤镜。</li>
-<li>最近对焦距离比适马更近，尤其是400mm端只有98cm，而适马有160cm；放大倍率也更好。</li>
-<li>GM的自动对焦不论是纸面参数还是实际表现都是碾压级别的，且在捕捉快速运动对相识出现丢焦。</li>
-<li>当然了，碾压的代价就是三倍的价格。</li>
-</ul>
-<table>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Sigma</th>
-<th style="text-align: center;">Sony</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">光圈</td>
-<td style="text-align: center;">F5-6.3</td>
-<td style="text-align: center;">F4.5-F.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">重量</td>
-<td style="text-align: center;">1180g-1210g</td>
-<td style="text-align: center;">1395g-1586g</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">长度</td>
-<td style="text-align: center;">197-299mm</td>
-<td style="text-align: center;">205-307mm</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">直径</td>
-<td style="text-align: center;">86mm</td>
-<td style="text-align: center;">93,9mm</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">光圈叶片数</td>
-<td style="text-align: center;">9</td>
-<td style="text-align: center;">9</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">最近对焦距离</td>
-<td style="text-align: center;">112-160cm</td>
-<td style="text-align: center;">98cm-98cm</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">放大倍率</td>
-<td style="text-align: center;">0.24x</td>
-<td style="text-align: center;">0.35</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">滤镜直径</td>
-<td style="text-align: center;">67mm</td>
-<td style="text-align: center;">77mm</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">增距镜</td>
-<td style="text-align: center;">不支持E卡口</td>
-<td style="text-align: center;">支持TC1.4和TC2.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">自动对焦</td>
-<td style="text-align: center;">步进电机</td>
-<td style="text-align: center;">双线性直驱SSM</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">光学防抖</td>
-<td style="text-align: center;">支持</td>
-<td style="text-align: center;">支持</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">镜身按钮</td>
-<td style="text-align: center;">AF/MF切换，对焦距离限制，防抖模式，自定义</td>
-<td style="text-align: center;">AF/MF切换，对焦距离限制，防抖模式，自定义</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">防尘防滴</td>
-<td style="text-align: center;">支持</td>
-<td style="text-align: center;">支持</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">附件</td>
-<td style="text-align: center;">镜头包；另购脚架环</td>
-<td style="text-align: center;">镜头包；脚架环</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">价格</td>
-<td style="text-align: center;"><span class="math inline">\(5800_{TB,
-20220818}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(17500_{\mathbf{SONY},20220827}\)</span></td>
-</tr>
-</tbody>
-</table>
-<h3 id="锐度-1">4.2 锐度</h3>
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span>的100-400mm在A7R4上可以提供更好的锐度。</li>
-</ul>
-<p><img data-src="./Pasted%20image%2020220819102131.png"></p>
-<h3 id="畸变色差抗眩光">4.3 畸变/色差/抗眩光</h3>
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 100-400mm GM
-OSS F4.5-F5.6畸变抑制和暗角控制做得更好，并且在LR中已有矫正文件。</li>
-<li>两只镜头的暗角都不明显</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span>的抗眩光更好</li>
-</ul>
-<h3 id="虚化色彩还原度-1">4.4 虚化/色彩还原度</h3>
-<ul>
-<li>两只镜头的背景虚化、焦外光斑、色彩还原度都是顶级的存在。</li>
-</ul>
-<h2 id="视频">5 视频</h2>
-<p>适马100-400mm在拍照上时挺不错的，但是视频拍摄时，会出现自动对焦慢和抽搐的情况。</p>
-]]></content>
-      <categories>
-        <category>镜头</category>
-      </categories>
-      <tags>
-        <tag>镜头</tag>
-        <tag>适马Sigma</tag>
-        <tag>E卡口</tag>
-        <tag>全画幅</tag>
       </tags>
   </entry>
   <entry>
@@ -1414,6 +1159,261 @@ century”。这就让我想起了RACFM这篇文章，以及经常遇见的“�
       </tags>
   </entry>
   <entry>
+    <title>Sigma 100-400mm f5-6.3 DG DN OS Contemporary_by SonyAlphaBlog</title>
+    <url>//2022/08/27/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2020/07/21/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/">Sigma
+100-400mm f5-6.3 DG DN OS Contemporary_by SonyAlphaBlog</a></p>
+</blockquote>
+<h2 id="结论">1 结论</h2>
+<p>对于A7M3、A9或者A7R3来说，Sigma 100-400mm F5-F6.3 DG DN OS
+Contemporary（<span class="math inline">\(5800_{TB,
+20220818}\)</span>）是一只非常有性价比的好镜头；尤其是可以和Sony FE
+24-105 F4 G OSS配合使用。</p>
+<span id="more"></span>
+<p><img data-src="./Pasted%20image%2020220830195148.png"></p>
+<p>这只镜头的焦距范围非常适合运动、肖像、风景和动物的摄影。如果你主要使用400mm左右的焦端来拍摄动物，<span class="math inline">\(\mathbf{SONY}\)</span> FE 200-600mm F5.6-6.3 G
+OSS（<span class="math inline">\(12700_{\mathbf{SONY},20220827}\)</span>）可能更加适合你。
+在A7R4上使用时，适马的100400还是没办法和索尼的100400竞争，不管时锐度还是对焦速度都有一定差距。但是在像素稍微低一点的相机上，比如A7M3和A7R3，锐度上的差距就不是肉眼可察的了。
+拍摄静物时，自动对焦还是挺不错的，但是拍摄运动物体就不太行了。你还是得用索尼的100400（<span class="math inline">\(17500_{\mathbf{SONY},20220827}\)</span>）。
+所以，对于使用A7R4进行动物和体育摄影，还是推荐<span class="math inline">\(\mathbf{SONY}\)</span> FE 200-600mm F5.6-6.3 G
+OSS。其他拍摄题材上，或者说预算有限，Sigma 100-400mm F5-F6.3 DG DN OS
+Contemporary可以说是非常不错的平替了。</p>
+<ul>
+<li>优势
+<ul>
+<li>价格比较低（<span class="math inline">\(5800_{TB,
+20220818}\)</span>）</li>
+<li>重量比较轻</li>
+<li>在2400万像素的A7M3和4200万像素的A7R3上妥妥够用，锐度在这两台机器上可以达到非常极致的体验</li>
+<li>非常好的色彩还原度</li>
+<li>非常柔和的背景虚化表现相当好</li>
+<li>焦外光斑挺好</li>
+<li>色散控制比较好</li>
+<li>静物的自动对焦还是不错的</li>
+<li>防抖效果挺好</li>
+<li>做工非常棒</li>
+<li>非常棒的人体工学设计</li>
+</ul></li>
+<li>一般
+<ul>
+<li>无法使用E卡口增距镜</li>
+<li>在6100万像素的A7R4上只能达到Very Good级别的锐度</li>
+<li>抗眩光一般</li>
+<li>暗角和畸变需要后期调整</li>
+<li>对于移动物体的连续自动对焦还是没办法和索尼比</li>
+<li>脚架环需要另外购买，第三方价格为<span class="math inline">\(200_{TB,
+20220818}\)</span></li>
+<li>边角锐度一般</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>视频拍摄中，自动对焦无法时刻保持精准快速的性能</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<h3 id="spec">2.1 SPEC</h3>
+<ul>
+<li>光圈
+<ul>
+<li>100mm端F5</li>
+<li>400mm端F6.3</li>
+</ul></li>
+<li>重量
+<ul>
+<li>1180g</li>
+<li>1210g（加上官方脚架环）</li>
+</ul></li>
+<li>长度
+<ul>
+<li>100mm端197mm</li>
+<li>400mm端299mm</li>
+</ul></li>
+<li>直径86mm</li>
+<li>9片光圈叶片</li>
+<li>最近对焦距离
+<ul>
+<li>100mm端112cm</li>
+<li>400mm端160cm</li>
+</ul></li>
+<li>放大倍率0.24</li>
+<li>67mm滤镜口径</li>
+<li>不支持E卡口增距镜</li>
+<li>步进电机自动对焦</li>
+<li>有光学防抖</li>
+<li>镜身按钮
+<ul>
+<li>AF/MF切换</li>
+<li>对焦范围限制</li>
+<li>防抖模式切换</li>
+<li>自动对焦锁定</li>
+</ul></li>
+<li>防尘防滴</li>
+</ul>
+<p>适马100-400mm的做工是挺好的，但和索尼的100400GM还是有差距的。大小和重量都是在可接受范围内，甚至比<span class="math inline">\(\mathbf{SONY}\)</span> 100400GM还要小。</p>
+<p>适马100-400mm是首次在E卡口上使用光学防抖，手持体验不错。上三脚架时，需要手动关闭，否则出来的照片会糊掉。这一点上，索尼的镜头就做的比较好，会自动关闭光学防抖。官方标配不附带脚架环，需要另外购买官方脚架环；第三方脚架环<span class="math inline">\(200_{TB, 20220818}\)</span>左右。</p>
+<p>最近对焦距离110cm@100mmm、160cm@400mm，放大倍率0.23。这方面要比<span class="math inline">\(\mathbf{SONY}\)</span>
+100400GM差（最近对焦距离98cm，0.35放大倍率）。</p>
+<p>另外，适马（包括腾龙）是不能使用索尼的增距镜的；即使装上去没有问题，但是没办法调节光圈和自动对焦。适马官方也有出增距镜，但是针对L卡口的，E卡口无法使用。</p>
+<h3 id="自动对焦">2.2 自动对焦</h3>
+<p>静物拍摄的自动对焦性能非常好，且可以调用眼控对焦。移动物体（运动、动物等）的拍摄就差强人意了，自动对焦和<span class="math inline">\(\mathbf{SONY}\)</span>
+100400GM比不了，使用A7R4有30%几率会对不上焦。</p>
+<h2 id="光学性能">3 光学性能</h2>
+<h3 id="锐度">3.1 锐度</h3>
+<p>测试使用6100万像素的A7R4。</p>
+<ul>
+<li>在A7R4上，锐度基本表现为Very
+Good级别，但是很难达到Excellent级别。但在A7M3或者A7R3上，锐度肯定是爆表的，可以达到Excellent级别。</li>
+<li>边角的锐度要比中心锐度低一个级别。</li>
+</ul>
+<p><img data-src="./Pasted%20image%2020220819100951.png"></p>
+<h3 id="暗角畸变色差抗眩光">3.2 暗角/畸变/色差/抗眩光</h3>
+<ul>
+<li>光圈全开会有暗角，焦距增加后更加明显。</li>
+<li>畸变表现为枕形畸变，100mm端表现得不是很明显，焦距扩展到400mm端会逐渐增加</li>
+<li>色差非常小</li>
+<li>眩光对于长焦来说不是什么问题，毕竟没有大聪明会一直怼着太阳拍。但是吧，这只镜头直对太阳时确实有不小的眩光。</li>
+</ul>
+<h3 id="虚化色彩还原度"> 3.3 虚化/色彩还原度</h3>
+<ul>
+<li>色彩还原度很好，对比度很高</li>
+<li>背景虚化非常柔美</li>
+<li>焦外光斑非常柔和，没有散射，没有洋葱圈。所有焦端范围内，光圈全开的光斑都挺圆的；收缩光圈之后，会有九边形出现。</li>
+</ul>
+<h2 id="对比sony-100-400mm">4 对比Sony 100-400mm</h2>
+<h3 id="spec和自动对焦">4.1 SPEC和自动对焦</h3>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 100-400mm GM
+OSS F4.5-F5.6</p>
+<ul>
+<li>更重，更粗，做工更好</li>
+<li>操控性更好，尤其还官方标配了脚架环。镜身有3个自定义按钮，可以使用增距镜，预留了一个小缺口以便直接调节可变滤镜。</li>
+<li>最近对焦距离比适马更近，尤其是400mm端只有98cm，而适马有160cm；放大倍率也更好。</li>
+<li>GM的自动对焦不论是纸面参数还是实际表现都是碾压级别的，且在捕捉快速运动对相识出现丢焦。</li>
+<li>当然了，碾压的代价就是三倍的价格。</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Sigma</th>
+<th style="text-align: center;">Sony</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">光圈</td>
+<td style="text-align: center;">F5-6.3</td>
+<td style="text-align: center;">F4.5-F.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">重量</td>
+<td style="text-align: center;">1180g-1210g</td>
+<td style="text-align: center;">1395g-1586g</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">长度</td>
+<td style="text-align: center;">197-299mm</td>
+<td style="text-align: center;">205-307mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">直径</td>
+<td style="text-align: center;">86mm</td>
+<td style="text-align: center;">93,9mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">光圈叶片数</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">最近对焦距离</td>
+<td style="text-align: center;">112-160cm</td>
+<td style="text-align: center;">98cm-98cm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">放大倍率</td>
+<td style="text-align: center;">0.24x</td>
+<td style="text-align: center;">0.35</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">滤镜直径</td>
+<td style="text-align: center;">67mm</td>
+<td style="text-align: center;">77mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">增距镜</td>
+<td style="text-align: center;">不支持E卡口</td>
+<td style="text-align: center;">支持TC1.4和TC2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">自动对焦</td>
+<td style="text-align: center;">步进电机</td>
+<td style="text-align: center;">双线性直驱SSM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">光学防抖</td>
+<td style="text-align: center;">支持</td>
+<td style="text-align: center;">支持</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">镜身按钮</td>
+<td style="text-align: center;">AF/MF切换，对焦距离限制，防抖模式，自定义</td>
+<td style="text-align: center;">AF/MF切换，对焦距离限制，防抖模式，自定义</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">防尘防滴</td>
+<td style="text-align: center;">支持</td>
+<td style="text-align: center;">支持</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">附件</td>
+<td style="text-align: center;">镜头包；另购脚架环</td>
+<td style="text-align: center;">镜头包；脚架环</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">价格</td>
+<td style="text-align: center;"><span class="math inline">\(5800_{TB,
+20220818}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(17500_{\mathbf{SONY},20220827}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="锐度-1">4.2 锐度</h3>
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span>的100-400mm在A7R4上可以提供更好的锐度。</li>
+</ul>
+<p><img data-src="./Pasted%20image%2020220819102131.png"></p>
+<h3 id="畸变色差抗眩光">4.3 畸变/色差/抗眩光</h3>
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 100-400mm GM
+OSS F4.5-F5.6畸变抑制和暗角控制做得更好，并且在LR中已有矫正文件。</li>
+<li>两只镜头的暗角都不明显</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span>的抗眩光更好</li>
+</ul>
+<h3 id="虚化色彩还原度-1">4.4 虚化/色彩还原度</h3>
+<ul>
+<li>两只镜头的背景虚化、焦外光斑、色彩还原度都是顶级的存在。</li>
+</ul>
+<h2 id="视频">5 视频</h2>
+<p>适马100-400mm在拍照上时挺不错的，但是视频拍摄时，会出现自动对焦慢和抽搐的情况。</p>
+]]></content>
+      <categories>
+        <category>镜头</category>
+      </categories>
+      <tags>
+        <tag>镜头</tag>
+        <tag>适马Sigma</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog</title>
     <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
     <content><![CDATA[<blockquote>
@@ -1553,370 +1553,6 @@ G）</h3>
         <tag>适马Sigma</tag>
         <tag>E卡口</tag>
         <tag>全画幅</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Spring框架的IOC和DI的理解</title>
-    <url>//2018/01/26/spring-ioc-di/</url>
-    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
-<p>下面来说说我，一个初学者，对DI的理解。</p>
-<span id="more"></span>
-<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
-2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
-<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
-<p>这个是我今天看了Spring框架之后的理解。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sony FE PZ 16-35mm f4 G_by SonyAlphaBlog</title>
-    <url>//2022/08/30/sony-pz-16-35mm-f4-g/</url>
-    <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/">https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/</a></p>
-</blockquote>
-<h2 id="结论">1 结论</h2>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> FE PZ 16-35mm F4
-G（<span class="math inline">\(8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}\)</span>）是一只非常棒的广角视频镜头，也可以说是<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm T3.1（<span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span>）这只电影镜头的“青春版”。新的PZ
-1635 G做工非常棒，非常紧凑，非常轻，上稳定器简直完美。同时，PZ 1635
-G专为视频拍摄设计的人体工学设计也超级棒，拥有你们想要的所有按钮和调节环。</p>
-<span id="more"></span>
-<p><img data-src="./Pasted%20image%2020220830194913.png"></p>
-<p>当然了，PZ 1635
-G的性能也是巅峰级别的。拍照的锐度表现上，有Excellent级别的中心锐度，Very
-Good级别的边角锐度。色彩还原度、对比度、焦外光斑都是顶尖水平；35mm端近摄的背景虚化非常好；抗眩光表现也非常好。</p>
-<p>PZ 1635
-G有专为视频拍摄的顶尖人体工学设计：电动变焦（可使用镜身、机身、遥控器）、线性对焦环、有级/无极光圈环、变焦环。</p>
-<p>可以使用<span class="math inline">\(\mathbf{SONY}\)</span>
-GP-VPT2BT遥控器进行远程控制，PZ 1635
-G拍摄非常便利，真的是“本当に上手”。</p>
-<ul>
-<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm
-F2.8 GM（<span class="math inline">\(15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}\)</span>），PZ
-1635 G只有在4800万和6100万像素下，边角有一点点小缺点。</li>
-<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
-T3.1（<span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span>），PZ 1635
-G缺少了变焦速度调节、遮光斗接口、对焦环和变焦环的机械限位和刻度。但是，我要说但是了，你看看FEC电影头的价格和重量，还要什么自行车啊？！</li>
-<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar
-T FE 16-35mm F4 ZA OSS（<span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span>），PZ 1635
-G全方位碾压，完胜！</li>
-<li>对比Tamron 17-28mm F2.8 Di III RXD（<span class="math inline">\(5980_{TB,20220829}\)</span>），PZ 1635
-G画质更锐，对焦更快，虚化更好，色彩还原度更佳，焦段更大，人体工学设计更棒，体积更小，重量更轻；只是光圈也小了一点。</li>
-</ul>
-<p>如果你只是进行风光和建筑摄影，那么<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8 GM（<span class="math inline">\(15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}\)</span>）在边角依然有优势。其他的场景下，新的PZ
-16-35mm F4 G是非常推荐的选择，甚至值得给一个GM的橙色标。</p>
-<p><strong>墙裂推荐</strong></p>
-<ul>
-<li>优势
-<ul>
-<li>Excellent级别的中心锐度</li>
-<li>Very Good级别边角锐度非常</li>
-<li>为视频设计的极致人体工学设计
-<ul>
-<li>Power Zoom电动变焦可以在镜头和相机上调节，甚至可以远程操控</li>
-<li>有级/无极光圈环</li>
-<li>线性对焦环</li>
-</ul></li>
-<li>呼吸效应微乎其微</li>
-<li>变焦时不会失焦</li>
-<li>小巧的镜身非常适合上稳定器拍Vlog</li>
-<li>极致的色彩还原度</li>
-<li>极致的对比度</li>
-<li>抗眩光非常好</li>
-<li>焦外光斑非常好</li>
-<li>防尘防滴</li>
-<li>做工超级棒</li>
-<li>低色散</li>
-<li>巅峰级别的自动对焦</li>
-</ul></li>
-<li>一般
-<ul>
-<li>价格</li>
-<li>背景虚化有一点busy</li>
-<li>变焦环没有机械限位，也没有变焦标记</li>
-</ul></li>
-<li>缺陷
-<ul>
-<li>16mm端畸变和暗角</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="总体信息">2 总体信息</h2>
-<ul>
-<li>重量：353g</li>
-<li>价格：<span class="math inline">\(8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}\)</span></li>
-<li>光圈：F4 – F22</li>
-<li>长度：88.1mm</li>
-<li>滤镜口径：72mm</li>
-<li>7片光圈叶片</li>
-<li>有级/无极光圈环</li>
-<li>速度可调节的电动变焦</li>
-<li>双XD线性马达</li>
-<li>按键：AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆</li>
-<li>防尘防潮</li>
-<li>最近对焦距离：
-<ul>
-<li>16mm端：28cm</li>
-<li>35mm端：24 cm</li>
-</ul></li>
-<li>官方标配遮光罩</li>
-</ul>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> PZ 16-35mm F4
-G是一只新出的紧凑的广角镜头，可以替代非常古早的<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE 16-35mm
-F4 ZA
-OSS。虽然价格有一点提高，但是功能和性能上的提升要大得多，完全对得起这点差价。</p>
-<p>这只新的变焦镜头专为视频而生，配备了</p>
-<ul>
-<li>可以平滑变焦的电动变焦拨杆，变焦速度根据拨动力度可调。搭配原厂的RMT-P1BT或者GP-VPT2BT可以实现远程电动变焦控制。</li>
-<li>有级/无极光圈环，镜身自动光圈档位。</li>
-<li>线性对焦环。</li>
-<li>变焦不丢焦，且没有呼吸效应</li>
-</ul>
-<p>做工和人体工学设计极为优秀：镜身有对角、变焦、光圈三个调节环；镜身紧凑、轻巧但依旧有丰富的按钮。</p>
-<p>PZ 1635 G同样可以和又大又重又贵的<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
-T3.1电影头一较高下。FEC 1635的焦段与PZ 1635
-G相同，但拥有更大更精准的通光量，同时又齿轮组为跟焦提供便利。</p>
-<p>PZ 1635 G采用内变焦设计，非常适合手持上稳定器和Vlog。</p>
-<p>PZ 1635
-G的主要缺点实在拍照上面。变焦环和对焦环没有机械限位，也没有标记，不利于快速调整到特定的焦距。</p>
-<p><strong>自动对焦性能</strong></p>
-<ul>
-<li>拍照和视频的自动对焦都非常快速、精准、安静。连拍模式下，对焦性能依旧非常棒，有95%的几率对焦到主体。</li>
-<li>可以完美配合相机的眼控对焦/追焦功能。</li>
-<li>镜头支持A1的30fps连拍</li>
-</ul>
-<h2 id="光学性能">3 光学性能</h2>
-<p>测试使用6100万像素的A7R4。</p>
-<h3 id="锐度">3.1 锐度</h3>
-<figure>
-<img data-src="./Pasted%20image%2020220830194427.png" alt="PZ 1635 G锐度表现">
-<figcaption aria-hidden="true">PZ 1635 G锐度表现</figcaption>
-</figure>
-<ul>
-<li>F4光圈时，中心锐度都可以达到Excellent级别，在16mm端可以达到Outstanding级别。</li>
-<li>在6100万像素下，边角锐度稍差，只能达到Very Good级别。</li>
-<li>最佳焦距为35mm。</li>
-</ul>
-<p>对于这样一只如此轻便、紧凑的镜头来说，这样的锐度表现是非常不错的。</p>
-<p><strong>人像锐度</strong></p>
-<ul>
-<li>这只镜头拍摄人像是锐不可当，只看锐度可以说有点过分了。色彩还原度非常好，对比度真的非常不错。</li>
-</ul>
-<h3 id="暗角色散畸变抗眩光星芒">3.2 暗角/色散/畸变/抗眩光/星芒</h3>
-<ul>
-<li>16mm端的畸变是真的非常巨大。机内会有自动校正，后期也可以使用自动校正文件。</li>
-<li>35mm端的畸变就好很多了，但是依旧肉眼可见。</li>
-<li>16mm端会出现暗角，35mm端则没有。</li>
-<li>色散非常轻微。</li>
-<li>抗眩光在全焦段都做的非常好，大多数情况下都不会出现眩光，只有在一些极为严苛的条件下才略微有一点眩光。</li>
-<li>光圈缩小到F16至F22可以获得很不错的星芒。</li>
-</ul>
-<h3 id="焦外光斑色彩还原度">3.3 焦外光斑/色彩还原度</h3>
-<ul>
-<li>焦外光斑非常不错，主要出现在35mm端。光斑非常完美，非常圆，在光圈大于F8时肉眼无法看到7片光圈叶片带来的多边形。</li>
-<li>对于1635来说，背景虚化算是好的。静距离拍摄时，虚化柔和；主体稍远时，就显得不太足够了。</li>
-<li>色彩还原度非常好，色彩饱和度非常好，对比度很高，用来风光摄影和建筑摄影非常合适。</li>
-</ul>
-<h2 id="视频">4 视频</h2>
-<ul>
-<li>不管是视频拍摄的锐度还是色彩还原度，都是顶尖水平；风光、建筑、街拍、人像都可以很好地适应，也适合Vlog、稳定器、访谈等场景。</li>
-<li>自动对焦完美契合相机，简直是杰作。</li>
-<li>人体工程学设计非常棒，丝滑的电动变焦不仅可以调节变焦速度，还能通过<span class="math inline">\(\mathbf{SONY}\)</span> GP-VPT2BT远程控制。</li>
-<li>无级光圈环在视频拍摄中非常顶。</li>
-<li>手动对焦时，线性对焦环使用体验非常好。</li>
-<li>内变焦设计，电动变焦没有很大的移动，这部分的平衡做得很好。</li>
-<li>呼吸效应微不可察。</li>
-<li>齐焦镜头：变焦时，对焦点不变。</li>
-</ul>
-<p>PZ 1635 G绝对是视频拍摄的主宰者。</p>
-<h2 id="对比其它1635">5 对比其它1635</h2>
-<p>主要的竞争者是</p>
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE
-16-35mm F4 ZA OSS</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
-T3.1</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8
-GM</li>
-<li>Tamron 17-28mm F2.8 Di III RXD</li>
-</ul>
-<p>直接的对手是SPEC类似的<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE 16-35mm
-F4 ZA OSS，另一个是有电子变焦的<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
-T3.1，可以看做是<span class="math inline">\(\mathbf{SONY}\)</span> FE
-16-35 mm F2.8 GM的电影版本。</p>
-<p>Tamron 17-28mm F2.8 Di III
-RXD价格很赞，就是焦段少了很多，当然光圈挺大，不太适合视频拍摄。</p>
-<h3 id="spec">5.1 SPEC</h3>
-<p>E卡口1635变焦竞品对比</p>
-<table>
-<colgroup>
-<col style="width: 2%">
-<col style="width: 26%">
-<col style="width: 17%">
-<col style="width: 15%">
-<col style="width: 26%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th><span class="math inline">\(\mathbf{SONY}\)</span> <strong>PZ
-16-35mm F4 G</strong></th>
-<th><span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE
-16-35mm F4 ZA OSS</th>
-<th><span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
-T3.1</th>
-<th><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8
-GM</th>
-<th>Tamron 17-28mm F2.8 Di III RXD</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>价格</td>
-<td><span class="math inline">\(\begin{aligned}&amp;8299_{\mathbf{SONY},20220829}\\&amp;7599_{JD,20220829}\end{aligned}\)</span></td>
-<td><span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span></td>
-<td><span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span></td>
-<td><span class="math inline">\(\begin{aligned}&amp;15499_{\mathbf{SONY},20220829}\\&amp;10800_{TB,20220829}\end{aligned}\)</span></td>
-<td><span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span></td>
-</tr>
-<tr class="even">
-<td>重量</td>
-<td><strong>353g</strong></td>
-<td>518g</td>
-<td>1390g</td>
-<td>686g</td>
-<td>420g</td>
-</tr>
-<tr class="odd">
-<td>长度</td>
-<td><strong>88.1mm</strong></td>
-<td>98.5mm</td>
-<td>147mm</td>
-<td>125mm</td>
-<td>99mm</td>
-</tr>
-<tr class="even">
-<td>自动对焦性能</td>
-<td><strong>很棒</strong></td>
-<td>很棒</td>
-<td>还行</td>
-<td>很棒</td>
-<td>还行</td>
-</tr>
-<tr class="odd">
-<td>镜身按钮/调节环</td>
-<td><strong>AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆，有级/无极光圈环</strong></td>
-<td>变焦环，对焦环</td>
-<td>跟焦齿轮组，有级/无极光圈，光圈环，带对焦标记的对焦环，带变焦标记的变焦环，对焦保持，光圈锁定，电动变焦拨杆</td>
-<td>AF/MF切换，对焦保持</td>
-<td>None</td>
-</tr>
-<tr class="even">
-<td>最近对焦距离</td>
-<td><strong>24-28cm</strong></td>
-<td>28cm</td>
-<td>28cm</td>
-<td>28cm</td>
-<td>19-26cm</td>
-</tr>
-<tr class="odd">
-<td>做工</td>
-<td><strong>很棒</strong></td>
-<td>还行</td>
-<td>很棒</td>
-<td>很棒</td>
-<td>还行</td>
-</tr>
-<tr class="even">
-<td>光圈叶片</td>
-<td><strong>7</strong></td>
-<td>7</td>
-<td>11</td>
-<td>11</td>
-<td>9</td>
-</tr>
-<tr class="odd">
-<td>滤镜口径</td>
-<td><strong>72</strong></td>
-<td>72</td>
-<td>114</td>
-<td>82</td>
-<td>67</td>
-</tr>
-<tr class="even">
-<td>防尘防滴</td>
-<td><strong>有</strong></td>
-<td>有</td>
-<td>有</td>
-<td>有</td>
-<td>有</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>从SPEC比较来看，PZ 1635 G是最轻最小的；它和FEC
-1635电影头一样，操控性拉满（电动对焦、有极/无极光圈环等）。</li>
-<li>自动对焦方面，PZ 1635 G是这几只中最快的一只。</li>
-</ul>
-<h3 id="锐度-1">5.2 锐度</h3>
-<ul>
-<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar
-T FE 16-35mm F4 ZA OSS，没什么可比性，PZ 1635 G全面碾压。</li>
-<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm
-F2.8 GM，两者中心锐度基本相当，但是GM的边角可以达到Excellent级别，PZ
-1635 G只能达到Very Good级别。</li>
-<li>对比Tamron 17-28mm F2.8 Di III RXD，PZ 1635会略微强于1728。</li>
-</ul>
-<figure>
-<img data-src="./Pasted%20image%2020220830194647.png" alt="锐度对比">
-<figcaption aria-hidden="true">锐度对比</figcaption>
-</figure>
-<h3 id="背景虚化和焦外光斑">5.3 背景虚化和焦外光斑</h3>
-<ul>
-<li>背景虚化：除了F2.8那几只镜头在虚化质量上有些优势，其实1635这个焦段的虚化表现都不是非常优秀，尤其是在近距离拍摄中。</li>
-<li>焦外光斑：索蔡的光斑不太圆；PZ 1635 G更好一点；1635
-GM凭借11片光圈叶片可以获得最好的效果。</li>
-<li>色彩还原度/对比度：PZ 1635 G这两方面要比1635
-GM更甚一筹，可以提供更加生动、对比度更高的图像。</li>
-</ul>
-<h3 id="人像">5.4 人像</h3>
-<ul>
-<li>1635 GM毋庸置疑是最适合人像的，其次就是新的PZ 16-35 G。</li>
-<li>1728最大焦距只有28mm，是个不可忽视的缺陷。</li>
-</ul>
-<h3 id="畸变色散暗角抗眩光">5.5 畸变/色散/暗角/抗眩光</h3>
-<ul>
-<li>PZ 1635
-G的畸变和暗角控制是这几只最差的，尤其是在16mm端，但是都可以后期自动矫正。</li>
-<li>抗眩光和色散是顶尖水平。</li>
-</ul>
-<h3 id="视频-1">5.6 视频</h3>
-<p>PZ 1635 G和超贵的FEC 1635电影头一样，是最好的视频镜头。FEC
-1635电影头有特制的视频控制控件、适配跟焦器的调节环、变焦标记和对焦标记；但是超重、超大的镜身只能安装在脚架上用于电影拍摄。PZ
-1635
-G则非常适合手持Vlog。其它几支镜头就没什么可说的了，光为视频拍摄的人体工学设计这块就远远落后于这两只了。</p>
-<h3 id="对比结论">5.7 对比结论</h3>
-<p>PZ 1635 G是一只非常不错的1635变焦，在视频拍摄上是顶尖水平。</p>
-<p>对于照片拍摄，<span class="math inline">\(\mathbf{SONY}\)</span> FE
-16-35 mm F2.8 GM只会在5000万和6100万像素的变焦有优势。</p>
-<p>对于视频拍摄，PZ 1635 G更加适合日常使用，又贵又大又重的FEC
-1635电影头还是在非动态场景中更加适用。</p>
-]]></content>
-      <categories>
-        <category>镜头</category>
-      </categories>
-      <tags>
-        <tag>镜头</tag>
-        <tag>E卡口</tag>
-        <tag>全画幅</tag>
-        <tag>索尼Sony</tag>
       </tags>
   </entry>
   <entry>
@@ -2365,6 +2001,431 @@ G拥有可靠的自动对焦和漂亮的背景虚化，视频拍摄的表现相�
       </tags>
   </entry>
   <entry>
+    <title>Sony FE PZ 16-35mm f4 G_by SonyAlphaBlog</title>
+    <url>//2022/08/30/sony-pz-16-35mm-f4-g/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/">https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/</a></p>
+</blockquote>
+<h2 id="结论">1 结论</h2>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> FE PZ 16-35mm F4
+G（<span class="math inline">\(8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}\)</span>）是一只非常棒的广角视频镜头，也可以说是<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm T3.1（<span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span>）这只电影镜头的“青春版”。新的PZ
+1635 G做工非常棒，非常紧凑，非常轻，上稳定器简直完美。同时，PZ 1635
+G专为视频拍摄设计的人体工学设计也超级棒，拥有你们想要的所有按钮和调节环。</p>
+<span id="more"></span>
+<p><img data-src="./Pasted%20image%2020220830194913.png"></p>
+<p>当然了，PZ 1635
+G的性能也是巅峰级别的。拍照的锐度表现上，有Excellent级别的中心锐度，Very
+Good级别的边角锐度。色彩还原度、对比度、焦外光斑都是顶尖水平；35mm端近摄的背景虚化非常好；抗眩光表现也非常好。</p>
+<p>PZ 1635
+G有专为视频拍摄的顶尖人体工学设计：电动变焦（可使用镜身、机身、遥控器）、线性对焦环、有级/无极光圈环、变焦环。</p>
+<p>可以使用<span class="math inline">\(\mathbf{SONY}\)</span>
+GP-VPT2BT遥控器进行远程控制，PZ 1635
+G拍摄非常便利，真的是“本当に上手”。</p>
+<ul>
+<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm
+F2.8 GM（<span class="math inline">\(15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}\)</span>），PZ
+1635 G只有在4800万和6100万像素下，边角有一点点小缺点。</li>
+<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
+T3.1（<span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span>），PZ 1635
+G缺少了变焦速度调节、遮光斗接口、对焦环和变焦环的机械限位和刻度。但是，我要说但是了，你看看FEC电影头的价格和重量，还要什么自行车啊？！</li>
+<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar
+T FE 16-35mm F4 ZA OSS（<span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span>），PZ 1635
+G全方位碾压，完胜！</li>
+<li>对比Tamron 17-28mm F2.8 Di III RXD（<span class="math inline">\(5980_{TB,20220829}\)</span>），PZ 1635
+G画质更锐，对焦更快，虚化更好，色彩还原度更佳，焦段更大，人体工学设计更棒，体积更小，重量更轻；只是光圈也小了一点。</li>
+</ul>
+<p>如果你只是进行风光和建筑摄影，那么<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8 GM（<span class="math inline">\(15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}\)</span>）在边角依然有优势。其他的场景下，新的PZ
+16-35mm F4 G是非常推荐的选择，甚至值得给一个GM的橙色标。</p>
+<p><strong>墙裂推荐</strong></p>
+<ul>
+<li>优势
+<ul>
+<li>Excellent级别的中心锐度</li>
+<li>Very Good级别边角锐度非常</li>
+<li>为视频设计的极致人体工学设计
+<ul>
+<li>Power Zoom电动变焦可以在镜头和相机上调节，甚至可以远程操控</li>
+<li>有级/无极光圈环</li>
+<li>线性对焦环</li>
+</ul></li>
+<li>呼吸效应微乎其微</li>
+<li>变焦时不会失焦</li>
+<li>小巧的镜身非常适合上稳定器拍Vlog</li>
+<li>极致的色彩还原度</li>
+<li>极致的对比度</li>
+<li>抗眩光非常好</li>
+<li>焦外光斑非常好</li>
+<li>防尘防滴</li>
+<li>做工超级棒</li>
+<li>低色散</li>
+<li>巅峰级别的自动对焦</li>
+</ul></li>
+<li>一般
+<ul>
+<li>价格</li>
+<li>背景虚化有一点busy</li>
+<li>变焦环没有机械限位，也没有变焦标记</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>16mm端畸变和暗角</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<ul>
+<li>重量：353g</li>
+<li>价格：<span class="math inline">\(8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}\)</span></li>
+<li>光圈：F4 – F22</li>
+<li>长度：88.1mm</li>
+<li>滤镜口径：72mm</li>
+<li>7片光圈叶片</li>
+<li>有级/无极光圈环</li>
+<li>速度可调节的电动变焦</li>
+<li>双XD线性马达</li>
+<li>按键：AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆</li>
+<li>防尘防潮</li>
+<li>最近对焦距离：
+<ul>
+<li>16mm端：28cm</li>
+<li>35mm端：24 cm</li>
+</ul></li>
+<li>官方标配遮光罩</li>
+</ul>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> PZ 16-35mm F4
+G是一只新出的紧凑的广角镜头，可以替代非常古早的<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE 16-35mm
+F4 ZA
+OSS。虽然价格有一点提高，但是功能和性能上的提升要大得多，完全对得起这点差价。</p>
+<p>这只新的变焦镜头专为视频而生，配备了</p>
+<ul>
+<li>可以平滑变焦的电动变焦拨杆，变焦速度根据拨动力度可调。搭配原厂的RMT-P1BT或者GP-VPT2BT可以实现远程电动变焦控制。</li>
+<li>有级/无极光圈环，镜身自动光圈档位。</li>
+<li>线性对焦环。</li>
+<li>变焦不丢焦，且没有呼吸效应</li>
+</ul>
+<p>做工和人体工学设计极为优秀：镜身有对角、变焦、光圈三个调节环；镜身紧凑、轻巧但依旧有丰富的按钮。</p>
+<p>PZ 1635 G同样可以和又大又重又贵的<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
+T3.1电影头一较高下。FEC 1635的焦段与PZ 1635
+G相同，但拥有更大更精准的通光量，同时又齿轮组为跟焦提供便利。</p>
+<p>PZ 1635 G采用内变焦设计，非常适合手持上稳定器和Vlog。</p>
+<p>PZ 1635
+G的主要缺点实在拍照上面。变焦环和对焦环没有机械限位，也没有标记，不利于快速调整到特定的焦距。</p>
+<p><strong>自动对焦性能</strong></p>
+<ul>
+<li>拍照和视频的自动对焦都非常快速、精准、安静。连拍模式下，对焦性能依旧非常棒，有95%的几率对焦到主体。</li>
+<li>可以完美配合相机的眼控对焦/追焦功能。</li>
+<li>镜头支持A1的30fps连拍</li>
+</ul>
+<h2 id="光学性能">3 光学性能</h2>
+<p>测试使用6100万像素的A7R4。</p>
+<h3 id="锐度">3.1 锐度</h3>
+<figure>
+<img data-src="./Pasted%20image%2020220830194427.png" alt="PZ 1635 G锐度表现">
+<figcaption aria-hidden="true">PZ 1635 G锐度表现</figcaption>
+</figure>
+<ul>
+<li>F4光圈时，中心锐度都可以达到Excellent级别，在16mm端可以达到Outstanding级别。</li>
+<li>在6100万像素下，边角锐度稍差，只能达到Very Good级别。</li>
+<li>最佳焦距为35mm。</li>
+</ul>
+<p>对于这样一只如此轻便、紧凑的镜头来说，这样的锐度表现是非常不错的。</p>
+<p><strong>人像锐度</strong></p>
+<ul>
+<li>这只镜头拍摄人像是锐不可当，只看锐度可以说有点过分了。色彩还原度非常好，对比度真的非常不错。</li>
+</ul>
+<h3 id="暗角色散畸变抗眩光星芒">3.2 暗角/色散/畸变/抗眩光/星芒</h3>
+<ul>
+<li>16mm端的畸变是真的非常巨大。机内会有自动校正，后期也可以使用自动校正文件。</li>
+<li>35mm端的畸变就好很多了，但是依旧肉眼可见。</li>
+<li>16mm端会出现暗角，35mm端则没有。</li>
+<li>色散非常轻微。</li>
+<li>抗眩光在全焦段都做的非常好，大多数情况下都不会出现眩光，只有在一些极为严苛的条件下才略微有一点眩光。</li>
+<li>光圈缩小到F16至F22可以获得很不错的星芒。</li>
+</ul>
+<h3 id="焦外光斑色彩还原度">3.3 焦外光斑/色彩还原度</h3>
+<ul>
+<li>焦外光斑非常不错，主要出现在35mm端。光斑非常完美，非常圆，在光圈大于F8时肉眼无法看到7片光圈叶片带来的多边形。</li>
+<li>对于1635来说，背景虚化算是好的。静距离拍摄时，虚化柔和；主体稍远时，就显得不太足够了。</li>
+<li>色彩还原度非常好，色彩饱和度非常好，对比度很高，用来风光摄影和建筑摄影非常合适。</li>
+</ul>
+<h2 id="视频">4 视频</h2>
+<ul>
+<li>不管是视频拍摄的锐度还是色彩还原度，都是顶尖水平；风光、建筑、街拍、人像都可以很好地适应，也适合Vlog、稳定器、访谈等场景。</li>
+<li>自动对焦完美契合相机，简直是杰作。</li>
+<li>人体工程学设计非常棒，丝滑的电动变焦不仅可以调节变焦速度，还能通过<span class="math inline">\(\mathbf{SONY}\)</span> GP-VPT2BT远程控制。</li>
+<li>无级光圈环在视频拍摄中非常顶。</li>
+<li>手动对焦时，线性对焦环使用体验非常好。</li>
+<li>内变焦设计，电动变焦没有很大的移动，这部分的平衡做得很好。</li>
+<li>呼吸效应微不可察。</li>
+<li>齐焦镜头：变焦时，对焦点不变。</li>
+</ul>
+<p>PZ 1635 G绝对是视频拍摄的主宰者。</p>
+<h2 id="对比其它1635">5 对比其它1635</h2>
+<p>主要的竞争者是</p>
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE
+16-35mm F4 ZA OSS</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
+T3.1</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8
+GM</li>
+<li>Tamron 17-28mm F2.8 Di III RXD</li>
+</ul>
+<p>直接的对手是SPEC类似的<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE 16-35mm
+F4 ZA OSS，另一个是有电子变焦的<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
+T3.1，可以看做是<span class="math inline">\(\mathbf{SONY}\)</span> FE
+16-35 mm F2.8 GM的电影版本。</p>
+<p>Tamron 17-28mm F2.8 Di III
+RXD价格很赞，就是焦段少了很多，当然光圈挺大，不太适合视频拍摄。</p>
+<h3 id="spec">5.1 SPEC</h3>
+<p>E卡口1635变焦竞品对比</p>
+<table>
+<colgroup>
+<col style="width: 2%">
+<col style="width: 26%">
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 26%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(\mathbf{SONY}\)</span> <strong>PZ
+16-35mm F4 G</strong></th>
+<th><span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE
+16-35mm F4 ZA OSS</th>
+<th><span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
+T3.1</th>
+<th><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8
+GM</th>
+<th>Tamron 17-28mm F2.8 Di III RXD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>价格</td>
+<td><span class="math inline">\(\begin{aligned}&amp;8299_{\mathbf{SONY},20220829}\\&amp;7599_{JD,20220829}\end{aligned}\)</span></td>
+<td><span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span></td>
+<td><span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span></td>
+<td><span class="math inline">\(\begin{aligned}&amp;15499_{\mathbf{SONY},20220829}\\&amp;10800_{TB,20220829}\end{aligned}\)</span></td>
+<td><span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span></td>
+</tr>
+<tr class="even">
+<td>重量</td>
+<td><strong>353g</strong></td>
+<td>518g</td>
+<td>1390g</td>
+<td>686g</td>
+<td>420g</td>
+</tr>
+<tr class="odd">
+<td>长度</td>
+<td><strong>88.1mm</strong></td>
+<td>98.5mm</td>
+<td>147mm</td>
+<td>125mm</td>
+<td>99mm</td>
+</tr>
+<tr class="even">
+<td>自动对焦性能</td>
+<td><strong>很棒</strong></td>
+<td>很棒</td>
+<td>还行</td>
+<td>很棒</td>
+<td>还行</td>
+</tr>
+<tr class="odd">
+<td>镜身按钮/调节环</td>
+<td><strong>AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆，有级/无极光圈环</strong></td>
+<td>变焦环，对焦环</td>
+<td>跟焦齿轮组，有级/无极光圈，光圈环，带对焦标记的对焦环，带变焦标记的变焦环，对焦保持，光圈锁定，电动变焦拨杆</td>
+<td>AF/MF切换，对焦保持</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td>最近对焦距离</td>
+<td><strong>24-28cm</strong></td>
+<td>28cm</td>
+<td>28cm</td>
+<td>28cm</td>
+<td>19-26cm</td>
+</tr>
+<tr class="odd">
+<td>做工</td>
+<td><strong>很棒</strong></td>
+<td>还行</td>
+<td>很棒</td>
+<td>很棒</td>
+<td>还行</td>
+</tr>
+<tr class="even">
+<td>光圈叶片</td>
+<td><strong>7</strong></td>
+<td>7</td>
+<td>11</td>
+<td>11</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>滤镜口径</td>
+<td><strong>72</strong></td>
+<td>72</td>
+<td>114</td>
+<td>82</td>
+<td>67</td>
+</tr>
+<tr class="even">
+<td>防尘防滴</td>
+<td><strong>有</strong></td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>从SPEC比较来看，PZ 1635 G是最轻最小的；它和FEC
+1635电影头一样，操控性拉满（电动对焦、有极/无极光圈环等）。</li>
+<li>自动对焦方面，PZ 1635 G是这几只中最快的一只。</li>
+</ul>
+<h3 id="锐度-1">5.2 锐度</h3>
+<ul>
+<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar
+T FE 16-35mm F4 ZA OSS，没什么可比性，PZ 1635 G全面碾压。</li>
+<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm
+F2.8 GM，两者中心锐度基本相当，但是GM的边角可以达到Excellent级别，PZ
+1635 G只能达到Very Good级别。</li>
+<li>对比Tamron 17-28mm F2.8 Di III RXD，PZ 1635会略微强于1728。</li>
+</ul>
+<figure>
+<img data-src="./Pasted%20image%2020220830194647.png" alt="锐度对比">
+<figcaption aria-hidden="true">锐度对比</figcaption>
+</figure>
+<h3 id="背景虚化和焦外光斑">5.3 背景虚化和焦外光斑</h3>
+<ul>
+<li>背景虚化：除了F2.8那几只镜头在虚化质量上有些优势，其实1635这个焦段的虚化表现都不是非常优秀，尤其是在近距离拍摄中。</li>
+<li>焦外光斑：索蔡的光斑不太圆；PZ 1635 G更好一点；1635
+GM凭借11片光圈叶片可以获得最好的效果。</li>
+<li>色彩还原度/对比度：PZ 1635 G这两方面要比1635
+GM更甚一筹，可以提供更加生动、对比度更高的图像。</li>
+</ul>
+<h3 id="人像">5.4 人像</h3>
+<ul>
+<li>1635 GM毋庸置疑是最适合人像的，其次就是新的PZ 16-35 G。</li>
+<li>1728最大焦距只有28mm，是个不可忽视的缺陷。</li>
+</ul>
+<h3 id="畸变色散暗角抗眩光">5.5 畸变/色散/暗角/抗眩光</h3>
+<ul>
+<li>PZ 1635
+G的畸变和暗角控制是这几只最差的，尤其是在16mm端，但是都可以后期自动矫正。</li>
+<li>抗眩光和色散是顶尖水平。</li>
+</ul>
+<h3 id="视频-1">5.6 视频</h3>
+<p>PZ 1635 G和超贵的FEC 1635电影头一样，是最好的视频镜头。FEC
+1635电影头有特制的视频控制控件、适配跟焦器的调节环、变焦标记和对焦标记；但是超重、超大的镜身只能安装在脚架上用于电影拍摄。PZ
+1635
+G则非常适合手持Vlog。其它几支镜头就没什么可说的了，光为视频拍摄的人体工学设计这块就远远落后于这两只了。</p>
+<h3 id="对比结论">5.7 对比结论</h3>
+<p>PZ 1635 G是一只非常不错的1635变焦，在视频拍摄上是顶尖水平。</p>
+<p>对于照片拍摄，<span class="math inline">\(\mathbf{SONY}\)</span> FE
+16-35 mm F2.8 GM只会在5000万和6100万像素的变焦有优势。</p>
+<p>对于视频拍摄，PZ 1635 G更加适合日常使用，又贵又大又重的FEC
+1635电影头还是在非动态场景中更加适用。</p>
+]]></content>
+      <categories>
+        <category>镜头</category>
+      </categories>
+      <tags>
+        <tag>镜头</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
+        <tag>索尼Sony</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32基础_GPIO流水灯</title>
+    <url>//2017/07/28/stm32-gpio-led/</url>
+    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
+<span id="more"></span>
+<h2 id="流水灯实验原理">1 流水灯实验原理</h2>
+<p>LED模块的原理图如图1所示：</p>
+<figure>
+<img data-src="./1646673628.png" alt="图1 LED模块原理图">
+<figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
+</figure>
+<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。
+因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
+<h2 id="管脚配置">2 管脚配置</h2>
+<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
+<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">模式名称</th>
+<th style="text-align: center;">标识</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">浮空输入</td>
+<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">带上拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPU</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">带下拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">模拟输入</td>
+<td style="text-align: center;">GPIO_MODE_AIN</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">复用_推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_PP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">复用_开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_OD</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:
+初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
+</blockquote>
+<h2 id="code">3 CODE</h2>
+<p>下面就贴一下代码。</p>
+<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1
+.pdf第三章。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">uint32_t</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(__IO <span class="type">uint32_t</span> nCount)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结">4 总结</h2>
+<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>斯普林格Springer免费书籍</title>
     <url>//2020/06/24/springer-free-books-2020/</url>
     <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
@@ -2385,6 +2446,26 @@ G拥有可靠的自动对焦和漂亮的背景虚化，视频拍摄的表现相�
       <tags>
         <tag>资源</tag>
         <tag>书籍</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Spring框架的IOC和DI的理解</title>
+    <url>//2018/01/26/spring-ioc-di/</url>
+    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
+<p>下面来说说我，一个初学者，对DI的理解。</p>
+<span id="more"></span>
+<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
+2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
+<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
+<p>这个是我今天看了Spring框架之后的理解。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -2989,87 +3070,6 @@ F1.4非移轴版本同样有好得多的锐度表现。锐度上，铭匠TTArtis
       </tags>
   </entry>
   <entry>
-    <title>STM32基础_GPIO流水灯</title>
-    <url>//2017/07/28/stm32-gpio-led/</url>
-    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
-<span id="more"></span>
-<h2 id="流水灯实验原理">1 流水灯实验原理</h2>
-<p>LED模块的原理图如图1所示：</p>
-<figure>
-<img data-src="./1646673628.png" alt="图1 LED模块原理图">
-<figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
-</figure>
-<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。
-因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
-<h2 id="管脚配置">2 管脚配置</h2>
-<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
-<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">模式名称</th>
-<th style="text-align: center;">标识</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">浮空输入</td>
-<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">带上拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPU</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">带下拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">模拟输入</td>
-<td style="text-align: center;">GPIO_MODE_AIN</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">复用_推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_PP</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">复用_开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_OD</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:
-初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
-</blockquote>
-<h2 id="code">3 CODE</h2>
-<p>下面就贴一下代码。</p>
-<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1
-.pdf第三章。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">uint32_t</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(__IO <span class="type">uint32_t</span> nCount)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结">4 总结</h2>
-<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Tiny Tiny RSS再次搭建</title>
     <url>//2021/07/22/ttrss-build-2/</url>
     <content><![CDATA[<p>贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github
@@ -3326,6 +3326,74 @@ Emulation"页面设置的密码。</p>
       </tags>
   </entry>
   <entry>
+    <title>VHDL学习笔记之元件递归</title>
+    <url>//2020/08/05/vhdl-note-component-recursion/</url>
+    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
+<blockquote>
+<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
+</blockquote>
+<span id="more"></span>
+<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
+<h2 id="元件递归设计">1 元件递归设计</h2>
+<blockquote>
+<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
+</blockquote>
+<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://github.com/xulu199705/blog-attachment/blob/main/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
+Std 1076-2019</a>。</p>
+<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
+为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
+\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
+方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>简单写了个仿真文件，仿真结果如下。</p>
+<figure>
+<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
+<figcaption aria-hidden="true">综合前仿真结果</figcaption>
+</figure>
+<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
+<figure>
+<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
+<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
+</figure>
+<h2 id="正常的n输入与门设计">2 正常的n输入与门设计</h2>
+<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
+<figure>
+<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
+<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
+</figure>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
+<figure>
+<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
+<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
+</figure>
+<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
+<figure>
+<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
+<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
+</figure>
+<figure>
+<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
+<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
+</figure>
+<h2 id="总结">3 总结</h2>
+<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
+:&amp;(蛆音娘_扶额)
+，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
+:@(击掌)</p>
+<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
+]]></content>
+      <categories>
+        <category>集成电路</category>
+      </categories>
+      <tags>
+        <tag>VHDL</tag>
+        <tag>FPGA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>视频相关术语</title>
     <url>//2020/02/12/video-terms/</url>
     <content><![CDATA[<p>今天在人人影视上找资源的时候，突然对文件名上的HEVC、10bit等感到疑惑，就花了一下午时间研究了一下视频相关的术语，在下面分享一下。</p>
@@ -3422,103 +3490,37 @@ NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至�
       </tags>
   </entry>
   <entry>
-    <title>VHDL学习笔记之元件递归</title>
-    <url>//2020/08/05/vhdl-note-component-recursion/</url>
-    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
-<blockquote>
-<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
-</blockquote>
+    <title>VS Code笔记之可自动更新的Markdown目录</title>
+    <url>//2020/05/05/vscode-note-tableofcontents/</url>
+    <content><![CDATA[<p>Markdown语法支持自己编写目录，但是碰到中文标题就捉襟见肘了。不久前在写项目README的时候，我一时兴起准备给文章编写一个目录，却发现一开始编写的目录竟然可以自动更新。照着目录的格式摸索了几次，终于总结出快速编写目录的方法。</p>
 <span id="more"></span>
-<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
-<h2 id="元件递归设计">1 元件递归设计</h2>
-<blockquote>
-<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
-</blockquote>
-<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://github.com/xulu199705/blog-attachment/blob/main/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
-Std 1076-2019</a>。</p>
-<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
-为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
-\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
-方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>简单写了个仿真文件，仿真结果如下。</p>
+<p>可自动更新目录需要在VS Code中安装插件<a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown
+All in One</a>。</p>
+<p>以本文为例，编写可自动更新的目录的步骤如下：</p>
+<h2 id="步骤1">步骤1</h2>
+<p>创建Markdown文件后，先输入一个标题。如：<br>
+<code># VS Code笔记之快速插入Markdown目录</code></p>
+<h2 id="步骤2">步骤2</h2>
+<p>在需要创建目录的地方输入<code>- [](#</code><del>注意空格和英文半角括号</del>，这时会有自动补全列表弹出，选择"VS
+Code笔记之快速插入Markdown目录"的标题，如图1。</p>
 <figure>
-<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
-<figcaption aria-hidden="true">综合前仿真结果</figcaption>
+<img data-src="./3134778940.png" alt="图1">
+<figcaption aria-hidden="true">图1</figcaption>
 </figure>
-<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
+<p>选择标题后，目录的最上方会有灰色的小字<code>Table of Contents (up to date)</code>，效果如图2所示。</p>
 <figure>
-<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
-<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
+<img data-src="./4154552605.png#vwid=649&amp;vhei=127" alt="图2">
+<figcaption aria-hidden="true">图2</figcaption>
 </figure>
-<h2 id="正常的n输入与门设计">2 正常的n输入与门设计</h2>
-<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
+<p>此时，插件就已经把这一块列表识别为文章的目录了。对于已经创建的Markdown文档，在步骤2输入列表时，有时需要输入两级标题才可以被插件识别为目录。</p>
+<h2 id="步骤3">步骤3</h2>
+<p>保存文件，插件会自动补全连接的内容，见图3所示。之后，插件就会在保存文件时自动获取文章的各级标题，并添加到目录列表中。</p>
 <figure>
-<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
-<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
+<img data-src="./362785527.png#vwid=646&amp;vhei=120" alt="图3">
+<figcaption aria-hidden="true">图3</figcaption>
 </figure>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
-<figure>
-<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
-<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
-</figure>
-<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
-<figure>
-<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
-<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
-</figure>
-<figure>
-<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
-<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
-</figure>
-<h2 id="总结">3 总结</h2>
-<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
-:&amp;(蛆音娘_扶额)
-，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
-:@(击掌)</p>
-<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
-]]></content>
-      <categories>
-        <category>集成电路</category>
-      </categories>
-      <tags>
-        <tag>VHDL</tag>
-        <tag>FPGA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS Code笔记之根据语言选择性删除行末空格</title>
-    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
-    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
-Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
-Workshop、Markdown+Math和Markdown Preview
-Enhanced配合来写东西，用着特别顺手。</p>
-<p>平时用VS
-Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
-<span id="more"></span>
-<h2 id="问题">1 问题</h2>
-<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
-样例一：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1</p>
-<p>para-2</p>
-<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
-样例二：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1<br>
-para-2</p>
-<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
-<h2 id="解决方案">2 解决方案</h2>
-<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-<p>VS
-Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>如果这篇可自动更新的Markdown目录编写指南对你有帮助，请别忘了<del>一键三连</del>收藏分享哦。</p>
 ]]></content>
       <categories>
         <category>软件</category>
@@ -3790,37 +3792,35 @@ MHz，所以信道与信道之间必定会有重叠，图示如下。</p>
       </tags>
   </entry>
   <entry>
-    <title>VS Code笔记之可自动更新的Markdown目录</title>
-    <url>//2020/05/05/vscode-note-tableofcontents/</url>
-    <content><![CDATA[<p>Markdown语法支持自己编写目录，但是碰到中文标题就捉襟见肘了。不久前在写项目README的时候，我一时兴起准备给文章编写一个目录，却发现一开始编写的目录竟然可以自动更新。照着目录的格式摸索了几次，终于总结出快速编写目录的方法。</p>
+    <title>VS Code笔记之根据语言选择性删除行末空格</title>
+    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
+    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
+Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
+Workshop、Markdown+Math和Markdown Preview
+Enhanced配合来写东西，用着特别顺手。</p>
+<p>平时用VS
+Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
 <span id="more"></span>
-<p>可自动更新目录需要在VS Code中安装插件<a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown
-All in One</a>。</p>
-<p>以本文为例，编写可自动更新的目录的步骤如下：</p>
-<h2 id="步骤1">步骤1</h2>
-<p>创建Markdown文件后，先输入一个标题。如：<br>
-<code># VS Code笔记之快速插入Markdown目录</code></p>
-<h2 id="步骤2">步骤2</h2>
-<p>在需要创建目录的地方输入<code>- [](#</code><del>注意空格和英文半角括号</del>，这时会有自动补全列表弹出，选择"VS
-Code笔记之快速插入Markdown目录"的标题，如图1。</p>
-<figure>
-<img data-src="./3134778940.png" alt="图1">
-<figcaption aria-hidden="true">图1</figcaption>
-</figure>
-<p>选择标题后，目录的最上方会有灰色的小字<code>Table of Contents (up to date)</code>，效果如图2所示。</p>
-<figure>
-<img data-src="./4154552605.png#vwid=649&amp;vhei=127" alt="图2">
-<figcaption aria-hidden="true">图2</figcaption>
-</figure>
-<p>此时，插件就已经把这一块列表识别为文章的目录了。对于已经创建的Markdown文档，在步骤2输入列表时，有时需要输入两级标题才可以被插件识别为目录。</p>
-<h2 id="步骤3">步骤3</h2>
-<p>保存文件，插件会自动补全连接的内容，见图3所示。之后，插件就会在保存文件时自动获取文章的各级标题，并添加到目录列表中。</p>
-<figure>
-<img data-src="./362785527.png#vwid=646&amp;vhei=120" alt="图3">
-<figcaption aria-hidden="true">图3</figcaption>
-</figure>
-<hr>
-<p>如果这篇可自动更新的Markdown目录编写指南对你有帮助，请别忘了<del>一键三连</del>收藏分享哦。</p>
+<h2 id="问题">1 问题</h2>
+<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
+样例一：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1</p>
+<p>para-2</p>
+<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
+样例二：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1<br>
+para-2</p>
+<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
+<h2 id="解决方案">2 解决方案</h2>
+<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<p>VS
+Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>软件</category>
