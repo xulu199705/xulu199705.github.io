@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>是什么驱动着无限进步？</title>
+    <url>//2021/08/05/driver-of-development/</url>
+    <content><![CDATA[<span id="more"></span>
+<blockquote>
+<p>崇高的理念在欲望面前根本无能为力 说到底 人类不过是充满欲望的生物
+人活着就不能否定这一点 正因为这份欲望文明才进化至今 今后也会继续进化
+绝不会倒退 建造燃料废物处理厂 修建高速公路 打造购物中心 森林面积不断减少
+稀有物种濒临灭绝 终有一天这里会变得和一般的城市一样 于是他们一边缅怀过去
+一边伤感唏嘘 但是大家都想这样做 多棒啊 这就是人类</p>
+<p>—— LEGAL HIGH.S02E08</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>观点&amp;感想</category>
+      </categories>
+      <tags>
+        <tag>观点</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>//2016/09/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
@@ -26,26 +46,6 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
       <categories>
         <category>杂项</category>
       </categories>
-  </entry>
-  <entry>
-    <title>是什么驱动着无限进步？</title>
-    <url>//2021/08/05/driver-of-development/</url>
-    <content><![CDATA[<span id="more"></span>
-<blockquote>
-<p>崇高的理念在欲望面前根本无能为力 说到底 人类不过是充满欲望的生物
-人活着就不能否定这一点 正因为这份欲望文明才进化至今 今后也会继续进化
-绝不会倒退 建造燃料废物处理厂 修建高速公路 打造购物中心 森林面积不断减少
-稀有物种濒临灭绝 终有一天这里会变得和一般的城市一样 于是他们一边缅怀过去
-一边伤感唏嘘 但是大家都想这样做 多棒啊 这就是人类</p>
-<p>—— LEGAL HIGH.S02E08</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>观点&amp;感想</category>
-      </categories>
-      <tags>
-        <tag>观点</tag>
-      </tags>
   </entry>
   <entry>
     <title>IC笔记之反相器仿真</title>
@@ -526,37 +526,6 @@ allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最�
       </tags>
   </entry>
   <entry>
-    <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
-    <url>//2019/01/30/can-based-optimization/</url>
-    <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
-CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
-<p>运动控制系统对于通信的实时性要求很高，这就间接地要求系统的通信必须使用时间触发。CAN总线从本质上来说是一种事件触发总线协议，对于这种极高的硬实时性要求很难满足。文章中展示了基础的时间触发CAN协议在运动控制中的传输误差，实验结果表明：传输速率较低时，系统的跟踪误差较好；当传输速率提高后，系统的传输实时性就差强人意了。</p>
-<p>为了解决这一问题，文章中提出了一种对CAN运动控制的优化，这个优化涉及两个方面。</p>
-<span id="more"></span>
-<h2 id="优化一">优化一</h2>
-<p>本文提出在时间触发中嵌入事件触发，将传统的通信触发结构改为事件/时间触发结构，如图1所示。</p>
-<figure>
-<img data-src="./1884776264.jpg" alt="图1">
-<figcaption aria-hidden="true">图1</figcaption>
-</figure>
-<h2 id="优化二">优化二</h2>
-<p>除了优化时间触发结构，文章还提出了预估器优化方案。如果系统在一段时间内没有接收到运动控制指令，系统就会将之前的位置数据带入泰勒二阶展开式计算丢失的控制指令。</p>
-<p>系统的最终结构框图如图2所示。</p>
-<figure>
-<img data-src="./122056196.jpg" alt="图2">
-<figcaption aria-hidden="true">图2</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>控制</tag>
-        <tag>summary</tag>
-        <tag>总线</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>从零开始的客制化87键机械键盘_1_立项</title>
     <url>//2018/12/25/keyboard87-1/</url>
     <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
@@ -610,98 +579,132 @@ type-C做接口，以基本操作为最低目标。当然了，由于主专业�
       </tags>
   </entry>
   <entry>
-    <title>Linux笔记之VNC配置</title>
-    <url>//2021/06/21/linux-note-vnc-config/</url>
-    <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
-<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
+    <title>Linux笔记之XDMCP配置</title>
+    <url>//2021/04/08/linux-note-xdmcp-config/</url>
+    <content><![CDATA[<p>恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。</p>
+<p>XDMCP配置主要是XDMCP
+Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。</p>
 <span id="more"></span>
 <blockquote>
 <p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
 </blockquote>
-<h2 id="预备知识">1 预备知识</h2>
-<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
-<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
-<p>wikipedia上有详细介绍<a href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
-<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
-<h2 id="安装vnc">2 安装VNC</h2>
-<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
-<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
+<h2 id="概述">1 概述</h2>
+<p>首先简单地介绍一下目前的问题。</p>
+<ol type="1">
+<li>需要在局域网内访问服务器，并实现远程桌面。</li>
+<li>CentOS
+7默认桌面为Gnome。虽说没什么问题，但是7开始的Gnome据说开始使用硬件加速，如果使用XDMCP协议来远程与gdm会有冲突，会出现奇奇怪怪的问题，Xmanager官方提到了<a href="http://blog.netsarang.com/89/connecting-to-centos-7/">这个问题</a>，建议更换显示管理（display
+manager）和桌面环境（desktop environment）。</li>
+</ol>
+<blockquote>
+<p>这里顺嘴说一下CentOS的版本。下面我是用的是CentOS
+7的虚拟机，没有使用CentOS 8。原因嘛，大家可以看一下CentOS官网<a href="https://www.centos.org/centos-linux/">下载页面</a>看一下这两个版本的支持时间。CentOS之前明明说好了对CentOS
+8有10年支持的，结果RedHat为了推CentOS Stream就把CentOS
+8在今年（2021年）年底提前结束了。这个博客还跑在CentOS
+8上面，就挺难受的。</p>
+</blockquote>
+<h2 id="更换镜像源">2 更换镜像源</h2>
+<p>众所周知啊，CentOS的服务器经常因为一些问题访问非常缓慢，下载速度堪忧。所以，更换镜像源是非常直接的解决方案。目前推荐使用清华TUNA或者北外BFSU（广度优先搜索大学）的镜像。当然用阿里或者华为的也不是不行。</p>
+<p>更换镜像源指令很简单，共两个，依次执行就可以。<del>当然，你的账号需要有或者通过sudo可以拿到root的权限，直接使用root账号的可以忽略sudo，下同</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sed -e <span class="string">&#x27;s|^mirrorlist=|#mirrorlist=|g&#x27;</span> \</span><br><span class="line">         -e <span class="string">&#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27;</span> \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果之前对于镜像源进行过更改，还需要检查一下修改过的镜像源文件是否启用，再执行makecache。</p>
+</blockquote>
+<p>这部分内容参考了TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
+<h2 id="更换display-manager和desktop-environment">3 更换display
+manager和desktop environment</h2>
+<p>display manager更换为lightdm，不再使用gdm；desktop
+environment可以使用MATE desktop、Xfce、KDE等等。MATE desktop是基于Gnome
+2.x的桌面环境，资源占用极小。</p>
+<ul>
+<li>安装EPEL（Extra Package for Enterprise Linux），这是Fedora Special
+Interest Group维护的Enterprise Linux（RHEL、CentOS）中常用的包。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装lightdm。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install lightdm</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装X Windows System。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;X Window system&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;X Window system&quot;</span></span><br></pre></td></tr></table></figure>
+<p>接下来展示的桌面环境安装只需要选择一个，反正我就用META了。<del>当然都选了我也不知道，你开心就好</del></p>
+<ul>
+<li>META desktop安装。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;MATE Desktop&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;MATE Desktop&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Xfce安装。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum groupinstall xfce</span><br></pre></td></tr></table></figure>
+<h3 id="使用lightdm配置xdmcp-server">3.1使用lightdm配置XDMCP Server</h3>
+<p>通过vim打开lightdm配置文件。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
+<p>在文件中找到<code>[XDMCPServer]</code>，修改其下方被注释的代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">···</span><br><span class="line">[XDMCPServer]</span><br><span class="line">···</span><br><span class="line">enabled=true</span><br><span class="line">port=177</span><br><span class="line">···</span><br></pre></td></tr></table></figure>
+<h3 id="配置lightdm为默认桌面环境">3.2 配置lightdm为默认桌面环境</h3>
+<p>切换display
+manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行，同时，如果是图形界面执行该命令，需要重新登录一下系统再继续下一步；<code>init 5</code>是将系统的运行再次切换到UI桌面。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">disable</span> gdm &amp;&amp; systemctl <span class="built_in">enable</span> lightdm</span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
+<p>这时我们第二次重新登录后，就进入了META desktop了。</p>
+<p>接着，还需要讲META设置为默认桌面环境。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/share/xsessions/ &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> back</span><br><span class="line">sudo <span class="built_in">mv</span> gnome* back &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
+<h2 id="打开177端口">4 打开177端口</h2>
+<p>XDMCP默认的端口是177端口，可以在lightdm配置文件根据需求中更改。系统默认是不会放开177端口的，需要进一步配置。</p>
+<p>另外，为了测试端口是否可用，需要实现准备可以ping端口的程序。Linux环境可以安装telnet；Windows环境建议使用<a href="https://elifulkerson.com/projects/tcping.php">tcping</a>，使用时务必在程序所在文件夹中打开终端执行命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># telnet Ping 192.168.58.130的177端口</span></span><br><span class="line">telnet 192.168.58.130 177</span><br><span class="line"></span><br><span class="line"><span class="comment"># tcping Ping 192.168.58.130的177端口</span></span><br><span class="line">.\tcping.exe 192.168.58.130 177</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">.\tcping64.exe 192.168.58.130 177</span><br></pre></td></tr></table></figure>
+<p>好，接下来解决端口开放问题。</p>
+<p>防火墙设置部分。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置防火墙，将177端口永久开放给所有用户</span></span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/udp</span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新防火墙规则</span></span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有打开的端口</span></span><br><span class="line">sudo firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
+<p>端口监听部分。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置177端口tcp协议永久监听</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目前177端口状态</span></span><br><span class="line">netstat -tunlp | grep 177</span><br></pre></td></tr></table></figure>
+<p>CentOS部分的端口配置基本结束，接下来就用telnet或者tcping来ping服务器的177端口。</p>
 <figure>
-<img data-src="./linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
-<figcaption aria-hidden="true">yum grouplist结果</figcaption>
+<img data-src="./tcping_ip_port.png" alt="tcping Ping端口177">
+<figcaption aria-hidden="true">tcping Ping端口177</figcaption>
 </figure>
-<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y <span class="string">&quot;GNOME Desktop&quot;</span></span><br></pre></td></tr></table></figure>
-<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="comment"># 切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
-<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
-<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="comment"># 验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
+<p>你以为这么简单就结束了？ :&amp;(蛆音娘_摊手)
+一旦SSH连接断开或系统重启<del>当然生产用的服务器没有特殊情况是不会重启的</del>，监听就自动结束了。这时候有两个解决方案了。</p>
+<h3 id="方案一使用tmux针对不重启的系统">4.1
+方案一：使用tmux，针对不重启的系统</h3>
+<p>tmux可以实现终端复用，即使表面上终端结束了，但是跑在tmux中的指令不会就此结束，非常适合目前的需求。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装tmux</span></span><br><span class="line">sudo yum install tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建tmux会话</span></span><br><span class="line">tmux new -s xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入会话后开始监听177端口</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 离开tmux会话，返回主终端</span></span><br><span class="line">tmux detach</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其它tmux相关操作</span></span><br><span class="line"><span class="comment"># 列出已有tmux会话</span></span><br><span class="line">tmux <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新进入会话</span></span><br><span class="line">tmux attach-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭会话（需在会话中）</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 或（无需在会话中）</span></span><br><span class="line">tmux kill-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名会话xdmcp_listen_177为xdmcp_listen</span></span><br><span class="line">tmux rename -t xdmcp_listen_177 xdmcp_listen</span><br></pre></td></tr></table></figure>
+<p>下图是我关闭终端后进行的测试（测试端口178），可以满足目标需求。</p>
 <figure>
-<img data-src="./linux_note_vnc_config_vnc.png" alt="验证VNC安装">
-<figcaption aria-hidden="true">验证VNC安装</figcaption>
+<img data-src="./tmux_listen_177.png" alt="使用tmux实现端口永久监听">
+<figcaption aria-hidden="true">使用tmux实现端口永久监听</figcaption>
 </figure>
-<h2 id="配置vnc">3 配置VNC</h2>
-<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
-<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从sample创建VNC启动脚本</span></span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
-<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
-<p>接着，需要小小处理一下刚刚复制的脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system</span><br><span class="line"><span class="comment"># 给权限x</span></span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:1.service</span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
-<p>接着打开2个脚本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
-<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
+<h3 id="方案二配置自启动">4.2 方案二：配置自启动</h3>
+<p>这是我最开始想到的方案，只适用于个人使用的、没有重启限制的服务器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建需要自启动的文件</span></span><br><span class="line">vim listen177.sh</span><br></pre></td></tr></table></figure>
+<p>在文件中编写以下内容，用<code>:wq</code>保存并关闭。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#chkconfig:5 80 90</span></span><br><span class="line"><span class="comment">#decription:autostart</span></span><br><span class="line"></span><br><span class="line">nc -lk 177</span><br></pre></td></tr></table></figure>
+<p>然后进行自启动配置。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> listen177.sh /etc/rc.d/init.d/</span><br><span class="line"><span class="built_in">cd</span> /etc/rc.d/init.d</span><br><span class="line"><span class="built_in">chmod</span> +x  /etc/rc.d/init.d/listen177.sh</span><br><span class="line">chkconfig --add listen177.sh</span><br><span class="line">chkconfig listen177.sh</span><br></pre></td></tr></table></figure>
+<p>到此，端口监听才全部结束。上面两种方案就看自己的需求选取吧。</p>
+<h2 id="xdmcp客户端">5 XDMCP客户端</h2>
+<p>这里就是各显神通的地方了。</p>
+<p>Windows端当然是推荐Xmanager，macOS可以使用XQuartz。我就放一下我自己的Xmanager效果图。</p>
 <figure>
-<img data-src="./linux_note_vnc_config_script_1.png" alt="脚本修改前">
-<figcaption aria-hidden="true">脚本修改前</figcaption>
-</figure>
-<figure>
-<img data-src="./linux_note_vnc_config_script_2.png" alt="脚本修改后">
-<figcaption aria-hidden="true">脚本修改后</figcaption>
-</figure>
-<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
-<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
-<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
-<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
-<p>下面是VNC服务的启动和开机自启的配置。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="comment"># 配置开机自启</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:1.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:2.service</span><br></pre></td></tr></table></figure>
-<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="./linux_note_vnc_config_port.png" alt="端口监听状态">
-<figcaption aria-hidden="true">端口监听状态</figcaption>
-</figure>
-<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
-<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
-ツ )_/¯</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
-<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_selinux.png" alt="端口监听状态">
-<figcaption aria-hidden="true">端口监听状态</figcaption>
-</figure>
-<h2 id="连接vnc">5 连接VNC</h2>
-<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
-<figure>
-<img data-src="./linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
-<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
+<img data-src="./xmanager_config.png" alt="Xmanager配置">
+<figcaption aria-hidden="true">Xmanager配置</figcaption>
 </figure>
 <figure>
-<img data-src="./linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
-<figcaption aria-hidden="true">连接VNC演示</figcaption>
+<img data-src="./xdmcp_res.png" alt="最终效果图">
+<figcaption aria-hidden="true">最终效果图</figcaption>
 </figure>
-<h2 id="总结">6 总结</h2>
-<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
-<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
+<h2 id="总结">总结</h2>
+<p>XDMCP配置到此结束，希望有需求的各位同学能有点收获吧。</p>
+<p>最后，预告一下服务器挂上公网的笔记。<del>只要我的宽带不是传说的虚拟IP</del></p>
+<p>最后的最后，日常求<del>一键三连</del>收藏分享。 :@(击掌)</p>
 ]]></content>
       <categories>
         <category>软件</category>
       </categories>
       <tags>
-        <tag>VNC</tag>
+        <tag>XDMCP</tag>
+        <tag>Xmanager</tag>
         <tag>CentOS</tag>
       </tags>
   </entry>
@@ -884,133 +887,99 @@ C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四�
       </tags>
   </entry>
   <entry>
-    <title>Linux笔记之XDMCP配置</title>
-    <url>//2021/04/08/linux-note-xdmcp-config/</url>
-    <content><![CDATA[<p>恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。</p>
-<p>XDMCP配置主要是XDMCP
-Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。</p>
+    <title>Linux笔记之VNC配置</title>
+    <url>//2021/06/21/linux-note-vnc-config/</url>
+    <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
+<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
 <span id="more"></span>
 <blockquote>
 <p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
 </blockquote>
-<h2 id="概述">1 概述</h2>
-<p>首先简单地介绍一下目前的问题。</p>
-<ol type="1">
-<li>需要在局域网内访问服务器，并实现远程桌面。</li>
-<li>CentOS
-7默认桌面为Gnome。虽说没什么问题，但是7开始的Gnome据说开始使用硬件加速，如果使用XDMCP协议来远程与gdm会有冲突，会出现奇奇怪怪的问题，Xmanager官方提到了<a href="http://blog.netsarang.com/89/connecting-to-centos-7/">这个问题</a>，建议更换显示管理（display
-manager）和桌面环境（desktop environment）。</li>
-</ol>
-<blockquote>
-<p>这里顺嘴说一下CentOS的版本。下面我是用的是CentOS
-7的虚拟机，没有使用CentOS 8。原因嘛，大家可以看一下CentOS官网<a href="https://www.centos.org/centos-linux/">下载页面</a>看一下这两个版本的支持时间。CentOS之前明明说好了对CentOS
-8有10年支持的，结果RedHat为了推CentOS Stream就把CentOS
-8在今年（2021年）年底提前结束了。这个博客还跑在CentOS
-8上面，就挺难受的。</p>
-</blockquote>
-<h2 id="更换镜像源">2 更换镜像源</h2>
-<p>众所周知啊，CentOS的服务器经常因为一些问题访问非常缓慢，下载速度堪忧。所以，更换镜像源是非常直接的解决方案。目前推荐使用清华TUNA或者北外BFSU（广度优先搜索大学）的镜像。当然用阿里或者华为的也不是不行。</p>
-<p>更换镜像源指令很简单，共两个，依次执行就可以。<del>当然，你的账号需要有或者通过sudo可以拿到root的权限，直接使用root账号的可以忽略sudo，下同</del></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sed -e <span class="string">&#x27;s|^mirrorlist=|#mirrorlist=|g&#x27;</span> \</span><br><span class="line">         -e <span class="string">&#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27;</span> \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果之前对于镜像源进行过更改，还需要检查一下修改过的镜像源文件是否启用，再执行makecache。</p>
-</blockquote>
-<p>这部分内容参考了TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
-<h2 id="更换display-manager和desktop-environment">3 更换display
-manager和desktop environment</h2>
-<p>display manager更换为lightdm，不再使用gdm；desktop
-environment可以使用MATE desktop、Xfce、KDE等等。MATE desktop是基于Gnome
-2.x的桌面环境，资源占用极小。</p>
-<ul>
-<li>安装EPEL（Extra Package for Enterprise Linux），这是Fedora Special
-Interest Group维护的Enterprise Linux（RHEL、CentOS）中常用的包。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
-<ul>
-<li>安装lightdm。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install lightdm</span><br></pre></td></tr></table></figure>
-<ul>
-<li>安装X Windows System。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;X Window system&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;X Window system&quot;</span></span><br></pre></td></tr></table></figure>
-<p>接下来展示的桌面环境安装只需要选择一个，反正我就用META了。<del>当然都选了我也不知道，你开心就好</del></p>
-<ul>
-<li>META desktop安装。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="built_in">groups</span> mark convert <span class="string">&quot;MATE Desktop&quot;</span></span><br><span class="line">sudo yum groupinstall <span class="string">&quot;MATE Desktop&quot;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Xfce安装。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum groupinstall xfce</span><br></pre></td></tr></table></figure>
-<h3 id="使用lightdm配置xdmcp-server">3.1使用lightdm配置XDMCP Server</h3>
-<p>通过vim打开lightdm配置文件。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
-<p>在文件中找到<code>[XDMCPServer]</code>，修改其下方被注释的代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">···</span><br><span class="line">[XDMCPServer]</span><br><span class="line">···</span><br><span class="line">enabled=true</span><br><span class="line">port=177</span><br><span class="line">···</span><br></pre></td></tr></table></figure>
-<h3 id="配置lightdm为默认桌面环境">3.2 配置lightdm为默认桌面环境</h3>
-<p>切换display
-manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行，同时，如果是图形界面执行该命令，需要重新登录一下系统再继续下一步；<code>init 5</code>是将系统的运行再次切换到UI桌面。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">disable</span> gdm &amp;&amp; systemctl <span class="built_in">enable</span> lightdm</span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
-<p>这时我们第二次重新登录后，就进入了META desktop了。</p>
-<p>接着，还需要讲META设置为默认桌面环境。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/share/xsessions/ &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> back</span><br><span class="line">sudo <span class="built_in">mv</span> gnome* back &amp;&amp; <span class="built_in">ls</span></span><br><span class="line">sudo init 3</span><br><span class="line">sudo init 5</span><br></pre></td></tr></table></figure>
-<h2 id="打开177端口">4 打开177端口</h2>
-<p>XDMCP默认的端口是177端口，可以在lightdm配置文件根据需求中更改。系统默认是不会放开177端口的，需要进一步配置。</p>
-<p>另外，为了测试端口是否可用，需要实现准备可以ping端口的程序。Linux环境可以安装telnet；Windows环境建议使用<a href="https://elifulkerson.com/projects/tcping.php">tcping</a>，使用时务必在程序所在文件夹中打开终端执行命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># telnet Ping 192.168.58.130的177端口</span></span><br><span class="line">telnet 192.168.58.130 177</span><br><span class="line"></span><br><span class="line"><span class="comment"># tcping Ping 192.168.58.130的177端口</span></span><br><span class="line">.\tcping.exe 192.168.58.130 177</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">.\tcping64.exe 192.168.58.130 177</span><br></pre></td></tr></table></figure>
-<p>好，接下来解决端口开放问题。</p>
-<p>防火墙设置部分。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置防火墙，将177端口永久开放给所有用户</span></span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/udp</span><br><span class="line">sudo firewall-cmd --permanent --add-port=177/tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新防火墙规则</span></span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有打开的端口</span></span><br><span class="line">sudo firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
-<p>端口监听部分。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置177端口tcp协议永久监听</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目前177端口状态</span></span><br><span class="line">netstat -tunlp | grep 177</span><br></pre></td></tr></table></figure>
-<p>CentOS部分的端口配置基本结束，接下来就用telnet或者tcping来ping服务器的177端口。</p>
+<h2 id="预备知识">1 预备知识</h2>
+<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
+<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
+<p>wikipedia上有详细介绍<a href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
+<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
+<h2 id="安装vnc">2 安装VNC</h2>
+<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
+<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="./tcping_ip_port.png" alt="tcping Ping端口177">
-<figcaption aria-hidden="true">tcping Ping端口177</figcaption>
+<img data-src="./linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
+<figcaption aria-hidden="true">yum grouplist结果</figcaption>
 </figure>
-<p>你以为这么简单就结束了？ :&amp;(蛆音娘_摊手)
-一旦SSH连接断开或系统重启<del>当然生产用的服务器没有特殊情况是不会重启的</del>，监听就自动结束了。这时候有两个解决方案了。</p>
-<h3 id="方案一使用tmux针对不重启的系统">4.1
-方案一：使用tmux，针对不重启的系统</h3>
-<p>tmux可以实现终端复用，即使表面上终端结束了，但是跑在tmux中的指令不会就此结束，非常适合目前的需求。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装tmux</span></span><br><span class="line">sudo yum install tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建tmux会话</span></span><br><span class="line">tmux new -s xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入会话后开始监听177端口</span></span><br><span class="line">sudo nc -lk 177 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 离开tmux会话，返回主终端</span></span><br><span class="line">tmux detach</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其它tmux相关操作</span></span><br><span class="line"><span class="comment"># 列出已有tmux会话</span></span><br><span class="line">tmux <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新进入会话</span></span><br><span class="line">tmux attach-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭会话（需在会话中）</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 或（无需在会话中）</span></span><br><span class="line">tmux kill-session -t xdmcp_listen_177</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名会话xdmcp_listen_177为xdmcp_listen</span></span><br><span class="line">tmux rename -t xdmcp_listen_177 xdmcp_listen</span><br></pre></td></tr></table></figure>
-<p>下图是我关闭终端后进行的测试（测试端口178），可以满足目标需求。</p>
+<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y <span class="string">&quot;GNOME Desktop&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="comment"># 切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
+<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
+<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="comment"># 验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="./tmux_listen_177.png" alt="使用tmux实现端口永久监听">
-<figcaption aria-hidden="true">使用tmux实现端口永久监听</figcaption>
+<img data-src="./linux_note_vnc_config_vnc.png" alt="验证VNC安装">
+<figcaption aria-hidden="true">验证VNC安装</figcaption>
 </figure>
-<h3 id="方案二配置自启动">4.2 方案二：配置自启动</h3>
-<p>这是我最开始想到的方案，只适用于个人使用的、没有重启限制的服务器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建需要自启动的文件</span></span><br><span class="line">vim listen177.sh</span><br></pre></td></tr></table></figure>
-<p>在文件中编写以下内容，用<code>:wq</code>保存并关闭。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#chkconfig:5 80 90</span></span><br><span class="line"><span class="comment">#decription:autostart</span></span><br><span class="line"></span><br><span class="line">nc -lk 177</span><br></pre></td></tr></table></figure>
-<p>然后进行自启动配置。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> listen177.sh /etc/rc.d/init.d/</span><br><span class="line"><span class="built_in">cd</span> /etc/rc.d/init.d</span><br><span class="line"><span class="built_in">chmod</span> +x  /etc/rc.d/init.d/listen177.sh</span><br><span class="line">chkconfig --add listen177.sh</span><br><span class="line">chkconfig listen177.sh</span><br></pre></td></tr></table></figure>
-<p>到此，端口监听才全部结束。上面两种方案就看自己的需求选取吧。</p>
-<h2 id="xdmcp客户端">5 XDMCP客户端</h2>
-<p>这里就是各显神通的地方了。</p>
-<p>Windows端当然是推荐Xmanager，macOS可以使用XQuartz。我就放一下我自己的Xmanager效果图。</p>
+<h2 id="配置vnc">3 配置VNC</h2>
+<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
+<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从sample创建VNC启动脚本</span></span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo <span class="built_in">cp</span> /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
+<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
+<p>接着，需要小小处理一下刚刚复制的脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/systemd/system</span><br><span class="line"><span class="comment"># 给权限x</span></span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:1.service</span><br><span class="line">sudo <span class="built_in">chmod</span> +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>接着打开2个脚本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
+<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
 <figure>
-<img data-src="./xmanager_config.png" alt="Xmanager配置">
-<figcaption aria-hidden="true">Xmanager配置</figcaption>
+<img data-src="./linux_note_vnc_config_script_1.png" alt="脚本修改前">
+<figcaption aria-hidden="true">脚本修改前</figcaption>
 </figure>
 <figure>
-<img data-src="./xdmcp_res.png" alt="最终效果图">
-<figcaption aria-hidden="true">最终效果图</figcaption>
+<img data-src="./linux_note_vnc_config_script_2.png" alt="脚本修改后">
+<figcaption aria-hidden="true">脚本修改后</figcaption>
 </figure>
-<h2 id="总结">总结</h2>
-<p>XDMCP配置到此结束，希望有需求的各位同学能有点收获吧。</p>
-<p>最后，预告一下服务器挂上公网的笔记。<del>只要我的宽带不是传说的虚拟IP</del></p>
-<p>最后的最后，日常求<del>一键三连</del>收藏分享。 :@(击掌)</p>
+<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
+<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
+<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
+<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
+<p>下面是VNC服务的启动和开机自启的配置。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="comment"># 配置开机自启</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:1.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="./linux_note_vnc_config_port.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
+<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
+ツ )_/¯</del></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
+<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
+<figure>
+<img data-src="./linux_note_vnc_config_selinux.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<h2 id="连接vnc">5 连接VNC</h2>
+<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
+<figure>
+<img data-src="./linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
+<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
+</figure>
+<figure>
+<img data-src="./linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
+<figcaption aria-hidden="true">连接VNC演示</figcaption>
+</figure>
+<h2 id="总结">6 总结</h2>
+<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
+<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
 ]]></content>
       <categories>
         <category>软件</category>
       </categories>
       <tags>
         <tag>CentOS</tag>
-        <tag>XDMCP</tag>
-        <tag>Xmanager</tag>
+        <tag>VNC</tag>
       </tags>
   </entry>
   <entry>
@@ -1153,151 +1122,9 @@ century”。这就让我想起了RACFM这篇文章，以及经常遇见的“�
         <category>硬件</category>
       </categories>
       <tags>
-        <tag>summary</tag>
         <tag>检测</tag>
+        <tag>summary</tag>
         <tag>电磁感应</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog</title>
-    <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
-    <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
-14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
-</blockquote>
-<h2 id="结论">1 结论</h2>
-<p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(7599_{JD,20220816}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
-<span id="more"></span>
-<p><img data-src="Pasted%20image%2020220830195252.png"></p>
-<ul>
-<li>优势
-<ul>
-<li>14mm端在F5.6光圈时有Outstanding级别的锐度</li>
-<li>边角表现非常好</li>
-<li>非常自然的色彩还原度</li>
-<li>对于一只广角来说，背景虚化非常好；焦外光斑表现不错</li>
-<li>Lightroom可以修正广角带来的畸变</li>
-<li>14mm端暗角不明显</li>
-<li>无慧差，很适合夜观星像</li>
-<li>顶级的手感</li>
-<li>有防尘防滴特性</li>
-<li>照片的自动对焦非常好</li>
-<li>比Sony FE 12-24mm F4 G（<span class="math inline">\(11543_{\mathbf{SONY},20220816}\)</span>）便宜</li>
-</ul></li>
-<li>一般
-<ul>
-<li>2.8光圈全开情况下，锐度只能达到Very Good的等级</li>
-<li>光圈缩小至F5.6时，24mm端锐度只能达到Very
-Good级别，与14mm端的Outstanding级别的锐度差距加大</li>
-<li>如果要平衡边角和中心锐度，光圈需要缩小至F8</li>
-<li>滤镜系统后置，使用时需要根据其形状进行选购或裁剪</li>
-<li>体积和重量有进步，达到了其它竞品的平均水平</li>
-<li>不可拆卸遮光罩，这一点和其它超广角镜头一样</li>
-<li>没有镜身光学防抖，但可以依靠机身防抖</li>
-</ul></li>
-<li>缺陷
-<ul>
-<li>焦距范围受限</li>
-<li>视频拍摄时，画面会出现闪烁</li>
-<li>必须使用150mm滤镜系统</li>
-</ul></li>
-<li>镜头比较
-<ul>
-<li>可替换镜头
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35mm F2.8
-GM</li>
-<li>Tamron 17-28mm F2.8 Di III RXD</li>
-</ul></li>
-<li>其实，真的说起来，还是只有<span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G是同一等级比较的镜头。其他两只的焦距范围还是有点区别的。</li>
-<li>这两只镜头其实都是非常不错的镜头。适马1424F2.8有着2.8的光圈，更加适合暗光环境和星空的摄影；索尼1224F4则有着12mm的广角端，这2mm的差距在取景范围上其实是有非常巨大的差别的。</li>
-<li>锐度方面，适马1424F2.8在14mm端的中心锐度会有略微优势；索尼1224F4在24mm端稍微领先。边角情况，两只镜头表现差不多。</li>
-<li>至于到底选哪一只，就要看你的更想要2.8光圈还是12mm广角了。毕竟，这两支镜头在各方面的表现都是非常不错的。</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="总体信息">2 总体信息</h2>
-<h3 id="spec">2.1 SPEC</h3>
-<ul>
-<li>重量：795克</li>
-<li>价格：<span class="math inline">\(7599_{JD,20220816}\)</span></li>
-<li>长度：131mm</li>
-<li>几乎没有使用通用滤镜的可能性</li>
-<li>AF/MF切换按钮</li>
-<li>可自定义的对焦保持按钮</li>
-<li>11片光圈叶片</li>
-<li>防尘防潮设计</li>
-<li>最近对焦距离：28cm</li>
-<li>后置滤镜插槽</li>
-<li>不可拆卸遮光罩</li>
-<li>遮光罩预留镜头盖槽</li>
-<li>自带镜头盒</li>
-<li>The build construction is excellent</li>
-<li>自动对焦快速精准，非常安静</li>
-<li>内变焦</li>
-</ul>
-<h3 id="后置滤镜系统">2.2 后置滤镜系统</h3>
-<p>镜头尾部有后置滤镜插槽，并配有防掉落锁定。</p>
-<p>按照官方的用户手册的说法，必须将滤镜裁剪成对应的形状才能在后置滤镜插槽中使用。
-当然你也可以选择前置滤镜，但是得使用150mm的滤镜支架。</p>
-<p>P.S. 目前已有厂商发布了定制的后置滤镜片。</p>
-<h3 id="与sony-12-24mm-f4-g对比">2.3 与Sony 12-24mm F4 G对比</h3>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G</p>
-<ul>
-<li>重量：565克</li>
-<li>长度：117mm</li>
-<li>价格：<span class="math inline">\(11543_{\mathbf{SONY},20220816}\)</span></li>
-<li>7片光圈叶片</li>
-</ul>
-<p>Sigma 14-24mm F2.8 DG DN Art</p>
-<ul>
-<li>重量：795克（重40%）</li>
-<li>长度：131mm（长14mm）</li>
-<li>价格：<span class="math inline">\(7599_{JD,20220816}\)</span>（便宜34%）</li>
-<li>11片光圈叶片</li>
-</ul>
-<h2 id="光学性能">3 光学性能</h2>
-<h3 id="锐度">3.1 锐度</h3>
-<p>测试使用6100像素的A7R4。</p>
-<p>14mm端，光圈全开时中心锐度为Very
-Good级别；在F5.6光圈达到最佳锐度，为Outstanding级别。边角的锐度表现稍有不足。光圈F8时，中心和边角锐度一致，为Excellent级别。在F11时，开始出现衍射现象，锐度开始降低。</p>
-<p>24mm端，锐度就有点差强人意了，中心和边角的锐度都只能达到Very
-Good级别。</p>
-<h3 id="锐度对比sony-12-24mm-f4-g">3.2 锐度（对比Sony 12-24mm F4
-G）</h3>
-<p>适马1424F2.8在14mm端表现稍好，24mm端则稍微落后。边角锐度相当。</p>
-<p><img data-src="./Pasted%20image%2020220817171714.png"></p>
-<h3 id="暗角色差畸变眩光星芒">3.3 暗角/色差/畸变/眩光/星芒</h3>
-<ul>
-<li>14mm端有明显的桶形畸变，24mm端有轻微的枕形畸变</li>
-<li>暗角可见，尤其是14mm端，但毕竟是超广角嘛</li>
-<li>色差非常微小，但在14mm会有出现</li>
-<li>抗眩光非常好，但依旧无法完全消除，毕竟这是一只超广角镜头</li>
-<li>在光圈F16至F22时，可以拍摄到不错的星芒</li>
-<li>没有明显的慧差，适合夜观星象</li>
-<li>Lightroom可以非常完美地校正畸变</li>
-</ul>
-<h3 id="焦外光斑色彩还原度">3.4 焦外光斑/色彩还原度</h3>
-<ul>
-<li>非常近的对焦距离（28cm）和F2.8的光圈可以获得一定程度的背景虚化。考虑到这是一只广角镜头，虚化的效果不算差</li>
-<li>焦外光斑非常好</li>
-<li>色彩还原度非常自然，表现非常好</li>
-</ul>
-<h2 id="视频">4 视频</h2>
-<p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
-]]></content>
-      <categories>
-        <category>镜头</category>
-      </categories>
-      <tags>
-        <tag>镜头</tag>
-        <tag>适马Sigma</tag>
-        <tag>E卡口</tag>
-        <tag>全画幅</tag>
       </tags>
   </entry>
   <entry>
@@ -1553,6 +1380,616 @@ OSS F4.5-F5.6畸变抑制和暗角控制做得更好，并且在LR中已有矫�
         <tag>适马Sigma</tag>
         <tag>E卡口</tag>
         <tag>全画幅</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sony FE PZ 16-35mm f4 G_by SonyAlphaBlog</title>
+    <url>//2022/08/30/sony-pz-16-35mm-f4-g/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/">https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/</a></p>
+</blockquote>
+<h2 id="结论">1 结论</h2>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> FE PZ 16-35mm F4
+G（<span class="math inline">\(8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}\)</span>）是一只非常棒的广角视频镜头，也可以说是<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm T3.1（<span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span>）这只电影镜头的“青春版”。新的PZ
+1635 G做工非常棒，非常紧凑，非常轻，上稳定器简直完美。同时，PZ 1635
+G专为视频拍摄设计的人体工学设计也超级棒，拥有你们想要的所有按钮和调节环。</p>
+<span id="more"></span>
+<p><img data-src="./Pasted%20image%2020220830194913.png"></p>
+<p>当然了，PZ 1635
+G的性能也是巅峰级别的。拍照的锐度表现上，有Excellent级别的中心锐度，Very
+Good级别的边角锐度。色彩还原度、对比度、焦外光斑都是顶尖水平；35mm端近摄的背景虚化非常好；抗眩光表现也非常好。</p>
+<p>PZ 1635
+G有专为视频拍摄的顶尖人体工学设计：电动变焦（可使用镜身、机身、遥控器）、线性对焦环、有级/无极光圈环、变焦环。</p>
+<p>可以使用<span class="math inline">\(\mathbf{SONY}\)</span>
+GP-VPT2BT遥控器进行远程控制，PZ 1635
+G拍摄非常便利，真的是“本当に上手”。</p>
+<ul>
+<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm
+F2.8 GM（<span class="math inline">\(15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}\)</span>），PZ
+1635 G只有在4800万和6100万像素下，边角有一点点小缺点。</li>
+<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
+T3.1（<span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span>），PZ 1635
+G缺少了变焦速度调节、遮光斗接口、对焦环和变焦环的机械限位和刻度。但是，我要说但是了，你看看FEC电影头的价格和重量，还要什么自行车啊？！</li>
+<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar
+T FE 16-35mm F4 ZA OSS（<span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span>），PZ 1635
+G全方位碾压，完胜！</li>
+<li>对比Tamron 17-28mm F2.8 Di III RXD（<span class="math inline">\(5980_{TB,20220829}\)</span>），PZ 1635
+G画质更锐，对焦更快，虚化更好，色彩还原度更佳，焦段更大，人体工学设计更棒，体积更小，重量更轻；只是光圈也小了一点。</li>
+</ul>
+<p>如果你只是进行风光和建筑摄影，那么<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8 GM（<span class="math inline">\(15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}\)</span>）在边角依然有优势。其他的场景下，新的PZ
+16-35mm F4 G是非常推荐的选择，甚至值得给一个GM的橙色标。</p>
+<p><strong>墙裂推荐</strong></p>
+<ul>
+<li>优势
+<ul>
+<li>Excellent级别的中心锐度</li>
+<li>Very Good级别边角锐度非常</li>
+<li>为视频设计的极致人体工学设计
+<ul>
+<li>Power Zoom电动变焦可以在镜头和相机上调节，甚至可以远程操控</li>
+<li>有级/无极光圈环</li>
+<li>线性对焦环</li>
+</ul></li>
+<li>呼吸效应微乎其微</li>
+<li>变焦时不会失焦</li>
+<li>小巧的镜身非常适合上稳定器拍Vlog</li>
+<li>极致的色彩还原度</li>
+<li>极致的对比度</li>
+<li>抗眩光非常好</li>
+<li>焦外光斑非常好</li>
+<li>防尘防滴</li>
+<li>做工超级棒</li>
+<li>低色散</li>
+<li>巅峰级别的自动对焦</li>
+</ul></li>
+<li>一般
+<ul>
+<li>价格</li>
+<li>背景虚化有一点busy</li>
+<li>变焦环没有机械限位，也没有变焦标记</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>16mm端畸变和暗角</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<ul>
+<li>重量：353g</li>
+<li>价格：<span class="math inline">\(8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}\)</span></li>
+<li>光圈：F4 – F22</li>
+<li>长度：88.1mm</li>
+<li>滤镜口径：72mm</li>
+<li>7片光圈叶片</li>
+<li>有级/无极光圈环</li>
+<li>速度可调节的电动变焦</li>
+<li>双XD线性马达</li>
+<li>按键：AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆</li>
+<li>防尘防潮</li>
+<li>最近对焦距离：
+<ul>
+<li>16mm端：28cm</li>
+<li>35mm端：24 cm</li>
+</ul></li>
+<li>官方标配遮光罩</li>
+</ul>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> PZ 16-35mm F4
+G是一只新出的紧凑的广角镜头，可以替代非常古早的<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE 16-35mm
+F4 ZA
+OSS。虽然价格有一点提高，但是功能和性能上的提升要大得多，完全对得起这点差价。</p>
+<p>这只新的变焦镜头专为视频而生，配备了</p>
+<ul>
+<li>可以平滑变焦的电动变焦拨杆，变焦速度根据拨动力度可调。搭配原厂的RMT-P1BT或者GP-VPT2BT可以实现远程电动变焦控制。</li>
+<li>有级/无极光圈环，镜身自动光圈档位。</li>
+<li>线性对焦环。</li>
+<li>变焦不丢焦，且没有呼吸效应</li>
+</ul>
+<p>做工和人体工学设计极为优秀：镜身有对角、变焦、光圈三个调节环；镜身紧凑、轻巧但依旧有丰富的按钮。</p>
+<p>PZ 1635 G同样可以和又大又重又贵的<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
+T3.1电影头一较高下。FEC 1635的焦段与PZ 1635
+G相同，但拥有更大更精准的通光量，同时又齿轮组为跟焦提供便利。</p>
+<p>PZ 1635 G采用内变焦设计，非常适合手持上稳定器和Vlog。</p>
+<p>PZ 1635
+G的主要缺点实在拍照上面。变焦环和对焦环没有机械限位，也没有标记，不利于快速调整到特定的焦距。</p>
+<p><strong>自动对焦性能</strong></p>
+<ul>
+<li>拍照和视频的自动对焦都非常快速、精准、安静。连拍模式下，对焦性能依旧非常棒，有95%的几率对焦到主体。</li>
+<li>可以完美配合相机的眼控对焦/追焦功能。</li>
+<li>镜头支持A1的30fps连拍</li>
+</ul>
+<h2 id="光学性能">3 光学性能</h2>
+<p>测试使用6100万像素的A7R4。</p>
+<h3 id="锐度">3.1 锐度</h3>
+<figure>
+<img data-src="./Pasted%20image%2020220830194427.png" alt="PZ 1635 G锐度表现">
+<figcaption aria-hidden="true">PZ 1635 G锐度表现</figcaption>
+</figure>
+<ul>
+<li>F4光圈时，中心锐度都可以达到Excellent级别，在16mm端可以达到Outstanding级别。</li>
+<li>在6100万像素下，边角锐度稍差，只能达到Very Good级别。</li>
+<li>最佳焦距为35mm。</li>
+</ul>
+<p>对于这样一只如此轻便、紧凑的镜头来说，这样的锐度表现是非常不错的。</p>
+<p><strong>人像锐度</strong></p>
+<ul>
+<li>这只镜头拍摄人像是锐不可当，只看锐度可以说有点过分了。色彩还原度非常好，对比度真的非常不错。</li>
+</ul>
+<h3 id="暗角色散畸变抗眩光星芒">3.2 暗角/色散/畸变/抗眩光/星芒</h3>
+<ul>
+<li>16mm端的畸变是真的非常巨大。机内会有自动校正，后期也可以使用自动校正文件。</li>
+<li>35mm端的畸变就好很多了，但是依旧肉眼可见。</li>
+<li>16mm端会出现暗角，35mm端则没有。</li>
+<li>色散非常轻微。</li>
+<li>抗眩光在全焦段都做的非常好，大多数情况下都不会出现眩光，只有在一些极为严苛的条件下才略微有一点眩光。</li>
+<li>光圈缩小到F16至F22可以获得很不错的星芒。</li>
+</ul>
+<h3 id="焦外光斑色彩还原度">3.3 焦外光斑/色彩还原度</h3>
+<ul>
+<li>焦外光斑非常不错，主要出现在35mm端。光斑非常完美，非常圆，在光圈大于F8时肉眼无法看到7片光圈叶片带来的多边形。</li>
+<li>对于1635来说，背景虚化算是好的。静距离拍摄时，虚化柔和；主体稍远时，就显得不太足够了。</li>
+<li>色彩还原度非常好，色彩饱和度非常好，对比度很高，用来风光摄影和建筑摄影非常合适。</li>
+</ul>
+<h2 id="视频">4 视频</h2>
+<ul>
+<li>不管是视频拍摄的锐度还是色彩还原度，都是顶尖水平；风光、建筑、街拍、人像都可以很好地适应，也适合Vlog、稳定器、访谈等场景。</li>
+<li>自动对焦完美契合相机，简直是杰作。</li>
+<li>人体工程学设计非常棒，丝滑的电动变焦不仅可以调节变焦速度，还能通过<span class="math inline">\(\mathbf{SONY}\)</span> GP-VPT2BT远程控制。</li>
+<li>无级光圈环在视频拍摄中非常顶。</li>
+<li>手动对焦时，线性对焦环使用体验非常好。</li>
+<li>内变焦设计，电动变焦没有很大的移动，这部分的平衡做得很好。</li>
+<li>呼吸效应微不可察。</li>
+<li>齐焦镜头：变焦时，对焦点不变。</li>
+</ul>
+<p>PZ 1635 G绝对是视频拍摄的主宰者。</p>
+<h2 id="对比其它1635">5 对比其它1635</h2>
+<p>主要的竞争者是</p>
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE
+16-35mm F4 ZA OSS</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
+T3.1</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8
+GM</li>
+<li>Tamron 17-28mm F2.8 Di III RXD</li>
+</ul>
+<p>直接的对手是SPEC类似的<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE 16-35mm
+F4 ZA OSS，另一个是有电子变焦的<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
+T3.1，可以看做是<span class="math inline">\(\mathbf{SONY}\)</span> FE
+16-35 mm F2.8 GM的电影版本。</p>
+<p>Tamron 17-28mm F2.8 Di III
+RXD价格很赞，就是焦段少了很多，当然光圈挺大，不太适合视频拍摄。</p>
+<h3 id="spec">5.1 SPEC</h3>
+<p>E卡口1635变焦竞品对比</p>
+<table>
+<colgroup>
+<col style="width: 2%">
+<col style="width: 26%">
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 26%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(\mathbf{SONY}\)</span> <strong>PZ
+16-35mm F4 G</strong></th>
+<th><span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE
+16-35mm F4 ZA OSS</th>
+<th><span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
+T3.1</th>
+<th><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8
+GM</th>
+<th>Tamron 17-28mm F2.8 Di III RXD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>价格</td>
+<td><span class="math inline">\(\begin{aligned}&amp;8299_{\mathbf{SONY},20220829}\\&amp;7599_{JD,20220829}\end{aligned}\)</span></td>
+<td><span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span></td>
+<td><span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span></td>
+<td><span class="math inline">\(\begin{aligned}&amp;15499_{\mathbf{SONY},20220829}\\&amp;10800_{TB,20220829}\end{aligned}\)</span></td>
+<td><span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span></td>
+</tr>
+<tr class="even">
+<td>重量</td>
+<td><strong>353g</strong></td>
+<td>518g</td>
+<td>1390g</td>
+<td>686g</td>
+<td>420g</td>
+</tr>
+<tr class="odd">
+<td>长度</td>
+<td><strong>88.1mm</strong></td>
+<td>98.5mm</td>
+<td>147mm</td>
+<td>125mm</td>
+<td>99mm</td>
+</tr>
+<tr class="even">
+<td>自动对焦性能</td>
+<td><strong>很棒</strong></td>
+<td>很棒</td>
+<td>还行</td>
+<td>很棒</td>
+<td>还行</td>
+</tr>
+<tr class="odd">
+<td>镜身按钮/调节环</td>
+<td><strong>AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆，有级/无极光圈环</strong></td>
+<td>变焦环，对焦环</td>
+<td>跟焦齿轮组，有级/无极光圈，光圈环，带对焦标记的对焦环，带变焦标记的变焦环，对焦保持，光圈锁定，电动变焦拨杆</td>
+<td>AF/MF切换，对焦保持</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td>最近对焦距离</td>
+<td><strong>24-28cm</strong></td>
+<td>28cm</td>
+<td>28cm</td>
+<td>28cm</td>
+<td>19-26cm</td>
+</tr>
+<tr class="odd">
+<td>做工</td>
+<td><strong>很棒</strong></td>
+<td>还行</td>
+<td>很棒</td>
+<td>很棒</td>
+<td>还行</td>
+</tr>
+<tr class="even">
+<td>光圈叶片</td>
+<td><strong>7</strong></td>
+<td>7</td>
+<td>11</td>
+<td>11</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>滤镜口径</td>
+<td><strong>72</strong></td>
+<td>72</td>
+<td>114</td>
+<td>82</td>
+<td>67</td>
+</tr>
+<tr class="even">
+<td>防尘防滴</td>
+<td><strong>有</strong></td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>从SPEC比较来看，PZ 1635 G是最轻最小的；它和FEC
+1635电影头一样，操控性拉满（电动对焦、有极/无极光圈环等）。</li>
+<li>自动对焦方面，PZ 1635 G是这几只中最快的一只。</li>
+</ul>
+<h3 id="锐度-1">5.2 锐度</h3>
+<ul>
+<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar
+T FE 16-35mm F4 ZA OSS，没什么可比性，PZ 1635 G全面碾压。</li>
+<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm
+F2.8 GM，两者中心锐度基本相当，但是GM的边角可以达到Excellent级别，PZ
+1635 G只能达到Very Good级别。</li>
+<li>对比Tamron 17-28mm F2.8 Di III RXD，PZ 1635会略微强于1728。</li>
+</ul>
+<figure>
+<img data-src="./Pasted%20image%2020220830194647.png" alt="锐度对比">
+<figcaption aria-hidden="true">锐度对比</figcaption>
+</figure>
+<h3 id="背景虚化和焦外光斑">5.3 背景虚化和焦外光斑</h3>
+<ul>
+<li>背景虚化：除了F2.8那几只镜头在虚化质量上有些优势，其实1635这个焦段的虚化表现都不是非常优秀，尤其是在近距离拍摄中。</li>
+<li>焦外光斑：索蔡的光斑不太圆；PZ 1635 G更好一点；1635
+GM凭借11片光圈叶片可以获得最好的效果。</li>
+<li>色彩还原度/对比度：PZ 1635 G这两方面要比1635
+GM更甚一筹，可以提供更加生动、对比度更高的图像。</li>
+</ul>
+<h3 id="人像">5.4 人像</h3>
+<ul>
+<li>1635 GM毋庸置疑是最适合人像的，其次就是新的PZ 16-35 G。</li>
+<li>1728最大焦距只有28mm，是个不可忽视的缺陷。</li>
+</ul>
+<h3 id="畸变色散暗角抗眩光">5.5 畸变/色散/暗角/抗眩光</h3>
+<ul>
+<li>PZ 1635
+G的畸变和暗角控制是这几只最差的，尤其是在16mm端，但是都可以后期自动矫正。</li>
+<li>抗眩光和色散是顶尖水平。</li>
+</ul>
+<h3 id="视频-1">5.6 视频</h3>
+<p>PZ 1635 G和超贵的FEC 1635电影头一样，是最好的视频镜头。FEC
+1635电影头有特制的视频控制控件、适配跟焦器的调节环、变焦标记和对焦标记；但是超重、超大的镜身只能安装在脚架上用于电影拍摄。PZ
+1635
+G则非常适合手持Vlog。其它几支镜头就没什么可说的了，光为视频拍摄的人体工学设计这块就远远落后于这两只了。</p>
+<h3 id="对比结论">5.7 对比结论</h3>
+<p>PZ 1635 G是一只非常不错的1635变焦，在视频拍摄上是顶尖水平。</p>
+<p>对于照片拍摄，<span class="math inline">\(\mathbf{SONY}\)</span> FE
+16-35 mm F2.8 GM只会在5000万和6100万像素的变焦有优势。</p>
+<p>对于视频拍摄，PZ 1635 G更加适合日常使用，又贵又大又重的FEC
+1635电影头还是在非动态场景中更加适用。</p>
+]]></content>
+      <categories>
+        <category>镜头</category>
+      </categories>
+      <tags>
+        <tag>镜头</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
+        <tag>索尼Sony</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog</title>
+    <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
+14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
+</blockquote>
+<h2 id="结论">1 结论</h2>
+<p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(7599_{JD,20220816}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
+<span id="more"></span>
+<p><img data-src="Pasted%20image%2020220830195252.png"></p>
+<ul>
+<li>优势
+<ul>
+<li>14mm端在F5.6光圈时有Outstanding级别的锐度</li>
+<li>边角表现非常好</li>
+<li>非常自然的色彩还原度</li>
+<li>对于一只广角来说，背景虚化非常好；焦外光斑表现不错</li>
+<li>Lightroom可以修正广角带来的畸变</li>
+<li>14mm端暗角不明显</li>
+<li>无慧差，很适合夜观星像</li>
+<li>顶级的手感</li>
+<li>有防尘防滴特性</li>
+<li>照片的自动对焦非常好</li>
+<li>比Sony FE 12-24mm F4 G（<span class="math inline">\(11543_{\mathbf{SONY},20220816}\)</span>）便宜</li>
+</ul></li>
+<li>一般
+<ul>
+<li>2.8光圈全开情况下，锐度只能达到Very Good的等级</li>
+<li>光圈缩小至F5.6时，24mm端锐度只能达到Very
+Good级别，与14mm端的Outstanding级别的锐度差距加大</li>
+<li>如果要平衡边角和中心锐度，光圈需要缩小至F8</li>
+<li>滤镜系统后置，使用时需要根据其形状进行选购或裁剪</li>
+<li>体积和重量有进步，达到了其它竞品的平均水平</li>
+<li>不可拆卸遮光罩，这一点和其它超广角镜头一样</li>
+<li>没有镜身光学防抖，但可以依靠机身防抖</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>焦距范围受限</li>
+<li>视频拍摄时，画面会出现闪烁</li>
+<li>必须使用150mm滤镜系统</li>
+</ul></li>
+<li>镜头比较
+<ul>
+<li>可替换镜头
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35mm F2.8
+GM</li>
+<li>Tamron 17-28mm F2.8 Di III RXD</li>
+</ul></li>
+<li>其实，真的说起来，还是只有<span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G是同一等级比较的镜头。其他两只的焦距范围还是有点区别的。</li>
+<li>这两只镜头其实都是非常不错的镜头。适马1424F2.8有着2.8的光圈，更加适合暗光环境和星空的摄影；索尼1224F4则有着12mm的广角端，这2mm的差距在取景范围上其实是有非常巨大的差别的。</li>
+<li>锐度方面，适马1424F2.8在14mm端的中心锐度会有略微优势；索尼1224F4在24mm端稍微领先。边角情况，两只镜头表现差不多。</li>
+<li>至于到底选哪一只，就要看你的更想要2.8光圈还是12mm广角了。毕竟，这两支镜头在各方面的表现都是非常不错的。</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<h3 id="spec">2.1 SPEC</h3>
+<ul>
+<li>重量：795克</li>
+<li>价格：<span class="math inline">\(7599_{JD,20220816}\)</span></li>
+<li>长度：131mm</li>
+<li>几乎没有使用通用滤镜的可能性</li>
+<li>AF/MF切换按钮</li>
+<li>可自定义的对焦保持按钮</li>
+<li>11片光圈叶片</li>
+<li>防尘防潮设计</li>
+<li>最近对焦距离：28cm</li>
+<li>后置滤镜插槽</li>
+<li>不可拆卸遮光罩</li>
+<li>遮光罩预留镜头盖槽</li>
+<li>自带镜头盒</li>
+<li>The build construction is excellent</li>
+<li>自动对焦快速精准，非常安静</li>
+<li>内变焦</li>
+</ul>
+<h3 id="后置滤镜系统">2.2 后置滤镜系统</h3>
+<p>镜头尾部有后置滤镜插槽，并配有防掉落锁定。</p>
+<p>按照官方的用户手册的说法，必须将滤镜裁剪成对应的形状才能在后置滤镜插槽中使用。
+当然你也可以选择前置滤镜，但是得使用150mm的滤镜支架。</p>
+<p>P.S. 目前已有厂商发布了定制的后置滤镜片。</p>
+<h3 id="与sony-12-24mm-f4-g对比">2.3 与Sony 12-24mm F4 G对比</h3>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G</p>
+<ul>
+<li>重量：565克</li>
+<li>长度：117mm</li>
+<li>价格：<span class="math inline">\(11543_{\mathbf{SONY},20220816}\)</span></li>
+<li>7片光圈叶片</li>
+</ul>
+<p>Sigma 14-24mm F2.8 DG DN Art</p>
+<ul>
+<li>重量：795克（重40%）</li>
+<li>长度：131mm（长14mm）</li>
+<li>价格：<span class="math inline">\(7599_{JD,20220816}\)</span>（便宜34%）</li>
+<li>11片光圈叶片</li>
+</ul>
+<h2 id="光学性能">3 光学性能</h2>
+<h3 id="锐度">3.1 锐度</h3>
+<p>测试使用6100像素的A7R4。</p>
+<p>14mm端，光圈全开时中心锐度为Very
+Good级别；在F5.6光圈达到最佳锐度，为Outstanding级别。边角的锐度表现稍有不足。光圈F8时，中心和边角锐度一致，为Excellent级别。在F11时，开始出现衍射现象，锐度开始降低。</p>
+<p>24mm端，锐度就有点差强人意了，中心和边角的锐度都只能达到Very
+Good级别。</p>
+<h3 id="锐度对比sony-12-24mm-f4-g">3.2 锐度（对比Sony 12-24mm F4
+G）</h3>
+<p>适马1424F2.8在14mm端表现稍好，24mm端则稍微落后。边角锐度相当。</p>
+<p><img data-src="./Pasted%20image%2020220817171714.png"></p>
+<h3 id="暗角色差畸变眩光星芒">3.3 暗角/色差/畸变/眩光/星芒</h3>
+<ul>
+<li>14mm端有明显的桶形畸变，24mm端有轻微的枕形畸变</li>
+<li>暗角可见，尤其是14mm端，但毕竟是超广角嘛</li>
+<li>色差非常微小，但在14mm会有出现</li>
+<li>抗眩光非常好，但依旧无法完全消除，毕竟这是一只超广角镜头</li>
+<li>在光圈F16至F22时，可以拍摄到不错的星芒</li>
+<li>没有明显的慧差，适合夜观星象</li>
+<li>Lightroom可以非常完美地校正畸变</li>
+</ul>
+<h3 id="焦外光斑色彩还原度">3.4 焦外光斑/色彩还原度</h3>
+<ul>
+<li>非常近的对焦距离（28cm）和F2.8的光圈可以获得一定程度的背景虚化。考虑到这是一只广角镜头，虚化的效果不算差</li>
+<li>焦外光斑非常好</li>
+<li>色彩还原度非常自然，表现非常好</li>
+</ul>
+<h2 id="视频">4 视频</h2>
+<p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
+]]></content>
+      <categories>
+        <category>镜头</category>
+      </categories>
+      <tags>
+        <tag>镜头</tag>
+        <tag>适马Sigma</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Spring框架的IOC和DI的理解</title>
+    <url>//2018/01/26/spring-ioc-di/</url>
+    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
+<p>下面来说说我，一个初学者，对DI的理解。</p>
+<span id="more"></span>
+<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
+2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
+<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
+<p>这个是我今天看了Spring框架之后的理解。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>斯普林格Springer免费书籍</title>
+    <url>//2020/06/24/springer-free-books-2020/</url>
+    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
+<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
+<span id="more"></span>
+<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
+<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
+<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
+<hr>
+<blockquote>
+<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
+最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+        <tag>书籍</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32基础_GPIO流水灯</title>
+    <url>//2017/07/28/stm32-gpio-led/</url>
+    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
+<span id="more"></span>
+<h2 id="流水灯实验原理">1 流水灯实验原理</h2>
+<p>LED模块的原理图如图1所示：</p>
+<figure>
+<img data-src="./1646673628.png" alt="图1 LED模块原理图">
+<figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
+</figure>
+<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。
+因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
+<h2 id="管脚配置">2 管脚配置</h2>
+<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
+<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">模式名称</th>
+<th style="text-align: center;">标识</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">浮空输入</td>
+<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">带上拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPU</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">带下拉输入</td>
+<td style="text-align: center;">GPIO_MODE_IPD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">模拟输入</td>
+<td style="text-align: center;">GPIO_MODE_AIN</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">复用_推挽输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_PP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">复用_开漏输出</td>
+<td style="text-align: center;">GPIO_MODE_AF_OD</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:
+初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
+</blockquote>
+<h2 id="code">3 CODE</h2>
+<p>下面就贴一下代码。</p>
+<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1
+.pdf第三章。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">uint32_t</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(__IO <span class="type">uint32_t</span> nCount)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结">4 总结</h2>
+<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -2001,474 +2438,6 @@ G拥有可靠的自动对焦和漂亮的背景虚化，视频拍摄的表现相�
       </tags>
   </entry>
   <entry>
-    <title>关于Spring框架的IOC和DI的理解</title>
-    <url>//2018/01/26/spring-ioc-di/</url>
-    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
-<p>下面来说说我，一个初学者，对DI的理解。</p>
-<span id="more"></span>
-<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
-2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
-<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
-<p>这个是我今天看了Spring框架之后的理解。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sony FE PZ 16-35mm f4 G_by SonyAlphaBlog</title>
-    <url>//2022/08/30/sony-pz-16-35mm-f4-g/</url>
-    <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/">https://sonyalpha.blog/2022/05/10/sony-pz-16-35mm-f4-g/</a></p>
-</blockquote>
-<h2 id="结论">1 结论</h2>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> FE PZ 16-35mm F4
-G（<span class="math inline">\(8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}\)</span>）是一只非常棒的广角视频镜头，也可以说是<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm T3.1（<span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span>）这只电影镜头的“青春版”。新的PZ
-1635 G做工非常棒，非常紧凑，非常轻，上稳定器简直完美。同时，PZ 1635
-G专为视频拍摄设计的人体工学设计也超级棒，拥有你们想要的所有按钮和调节环。</p>
-<span id="more"></span>
-<p><img data-src="./Pasted%20image%2020220830194913.png"></p>
-<p>当然了，PZ 1635
-G的性能也是巅峰级别的。拍照的锐度表现上，有Excellent级别的中心锐度，Very
-Good级别的边角锐度。色彩还原度、对比度、焦外光斑都是顶尖水平；35mm端近摄的背景虚化非常好；抗眩光表现也非常好。</p>
-<p>PZ 1635
-G有专为视频拍摄的顶尖人体工学设计：电动变焦（可使用镜身、机身、遥控器）、线性对焦环、有级/无极光圈环、变焦环。</p>
-<p>可以使用<span class="math inline">\(\mathbf{SONY}\)</span>
-GP-VPT2BT遥控器进行远程控制，PZ 1635
-G拍摄非常便利，真的是“本当に上手”。</p>
-<ul>
-<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm
-F2.8 GM（<span class="math inline">\(15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}\)</span>），PZ
-1635 G只有在4800万和6100万像素下，边角有一点点小缺点。</li>
-<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
-T3.1（<span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span>），PZ 1635
-G缺少了变焦速度调节、遮光斗接口、对焦环和变焦环的机械限位和刻度。但是，我要说但是了，你看看FEC电影头的价格和重量，还要什么自行车啊？！</li>
-<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar
-T FE 16-35mm F4 ZA OSS（<span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span>），PZ 1635
-G全方位碾压，完胜！</li>
-<li>对比Tamron 17-28mm F2.8 Di III RXD（<span class="math inline">\(5980_{TB,20220829}\)</span>），PZ 1635
-G画质更锐，对焦更快，虚化更好，色彩还原度更佳，焦段更大，人体工学设计更棒，体积更小，重量更轻；只是光圈也小了一点。</li>
-</ul>
-<p>如果你只是进行风光和建筑摄影，那么<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8 GM（<span class="math inline">\(15499_{\mathbf{SONY},20220829}\;10800_{TB,20220829}\)</span>）在边角依然有优势。其他的场景下，新的PZ
-16-35mm F4 G是非常推荐的选择，甚至值得给一个GM的橙色标。</p>
-<p><strong>墙裂推荐</strong></p>
-<ul>
-<li>优势
-<ul>
-<li>Excellent级别的中心锐度</li>
-<li>Very Good级别边角锐度非常</li>
-<li>为视频设计的极致人体工学设计
-<ul>
-<li>Power Zoom电动变焦可以在镜头和相机上调节，甚至可以远程操控</li>
-<li>有级/无极光圈环</li>
-<li>线性对焦环</li>
-</ul></li>
-<li>呼吸效应微乎其微</li>
-<li>变焦时不会失焦</li>
-<li>小巧的镜身非常适合上稳定器拍Vlog</li>
-<li>极致的色彩还原度</li>
-<li>极致的对比度</li>
-<li>抗眩光非常好</li>
-<li>焦外光斑非常好</li>
-<li>防尘防滴</li>
-<li>做工超级棒</li>
-<li>低色散</li>
-<li>巅峰级别的自动对焦</li>
-</ul></li>
-<li>一般
-<ul>
-<li>价格</li>
-<li>背景虚化有一点busy</li>
-<li>变焦环没有机械限位，也没有变焦标记</li>
-</ul></li>
-<li>缺陷
-<ul>
-<li>16mm端畸变和暗角</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="总体信息">2 总体信息</h2>
-<ul>
-<li>重量：353g</li>
-<li>价格：<span class="math inline">\(8299_{\mathbf{SONY},20220829}\;7599_{JD,20220829}\)</span></li>
-<li>光圈：F4 – F22</li>
-<li>长度：88.1mm</li>
-<li>滤镜口径：72mm</li>
-<li>7片光圈叶片</li>
-<li>有级/无极光圈环</li>
-<li>速度可调节的电动变焦</li>
-<li>双XD线性马达</li>
-<li>按键：AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆</li>
-<li>防尘防潮</li>
-<li>最近对焦距离：
-<ul>
-<li>16mm端：28cm</li>
-<li>35mm端：24 cm</li>
-</ul></li>
-<li>官方标配遮光罩</li>
-</ul>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> PZ 16-35mm F4
-G是一只新出的紧凑的广角镜头，可以替代非常古早的<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE 16-35mm
-F4 ZA
-OSS。虽然价格有一点提高，但是功能和性能上的提升要大得多，完全对得起这点差价。</p>
-<p>这只新的变焦镜头专为视频而生，配备了</p>
-<ul>
-<li>可以平滑变焦的电动变焦拨杆，变焦速度根据拨动力度可调。搭配原厂的RMT-P1BT或者GP-VPT2BT可以实现远程电动变焦控制。</li>
-<li>有级/无极光圈环，镜身自动光圈档位。</li>
-<li>线性对焦环。</li>
-<li>变焦不丢焦，且没有呼吸效应</li>
-</ul>
-<p>做工和人体工学设计极为优秀：镜身有对角、变焦、光圈三个调节环；镜身紧凑、轻巧但依旧有丰富的按钮。</p>
-<p>PZ 1635 G同样可以和又大又重又贵的<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
-T3.1电影头一较高下。FEC 1635的焦段与PZ 1635
-G相同，但拥有更大更精准的通光量，同时又齿轮组为跟焦提供便利。</p>
-<p>PZ 1635 G采用内变焦设计，非常适合手持上稳定器和Vlog。</p>
-<p>PZ 1635
-G的主要缺点实在拍照上面。变焦环和对焦环没有机械限位，也没有标记，不利于快速调整到特定的焦距。</p>
-<p><strong>自动对焦性能</strong></p>
-<ul>
-<li>拍照和视频的自动对焦都非常快速、精准、安静。连拍模式下，对焦性能依旧非常棒，有95%的几率对焦到主体。</li>
-<li>可以完美配合相机的眼控对焦/追焦功能。</li>
-<li>镜头支持A1的30fps连拍</li>
-</ul>
-<h2 id="光学性能">3 光学性能</h2>
-<p>测试使用6100万像素的A7R4。</p>
-<h3 id="锐度">3.1 锐度</h3>
-<figure>
-<img data-src="./Pasted%20image%2020220830194427.png" alt="PZ 1635 G锐度表现">
-<figcaption aria-hidden="true">PZ 1635 G锐度表现</figcaption>
-</figure>
-<ul>
-<li>F4光圈时，中心锐度都可以达到Excellent级别，在16mm端可以达到Outstanding级别。</li>
-<li>在6100万像素下，边角锐度稍差，只能达到Very Good级别。</li>
-<li>最佳焦距为35mm。</li>
-</ul>
-<p>对于这样一只如此轻便、紧凑的镜头来说，这样的锐度表现是非常不错的。</p>
-<p><strong>人像锐度</strong></p>
-<ul>
-<li>这只镜头拍摄人像是锐不可当，只看锐度可以说有点过分了。色彩还原度非常好，对比度真的非常不错。</li>
-</ul>
-<h3 id="暗角色散畸变抗眩光星芒">3.2 暗角/色散/畸变/抗眩光/星芒</h3>
-<ul>
-<li>16mm端的畸变是真的非常巨大。机内会有自动校正，后期也可以使用自动校正文件。</li>
-<li>35mm端的畸变就好很多了，但是依旧肉眼可见。</li>
-<li>16mm端会出现暗角，35mm端则没有。</li>
-<li>色散非常轻微。</li>
-<li>抗眩光在全焦段都做的非常好，大多数情况下都不会出现眩光，只有在一些极为严苛的条件下才略微有一点眩光。</li>
-<li>光圈缩小到F16至F22可以获得很不错的星芒。</li>
-</ul>
-<h3 id="焦外光斑色彩还原度">3.3 焦外光斑/色彩还原度</h3>
-<ul>
-<li>焦外光斑非常不错，主要出现在35mm端。光斑非常完美，非常圆，在光圈大于F8时肉眼无法看到7片光圈叶片带来的多边形。</li>
-<li>对于1635来说，背景虚化算是好的。静距离拍摄时，虚化柔和；主体稍远时，就显得不太足够了。</li>
-<li>色彩还原度非常好，色彩饱和度非常好，对比度很高，用来风光摄影和建筑摄影非常合适。</li>
-</ul>
-<h2 id="视频">4 视频</h2>
-<ul>
-<li>不管是视频拍摄的锐度还是色彩还原度，都是顶尖水平；风光、建筑、街拍、人像都可以很好地适应，也适合Vlog、稳定器、访谈等场景。</li>
-<li>自动对焦完美契合相机，简直是杰作。</li>
-<li>人体工程学设计非常棒，丝滑的电动变焦不仅可以调节变焦速度，还能通过<span class="math inline">\(\mathbf{SONY}\)</span> GP-VPT2BT远程控制。</li>
-<li>无级光圈环在视频拍摄中非常顶。</li>
-<li>手动对焦时，线性对焦环使用体验非常好。</li>
-<li>内变焦设计，电动变焦没有很大的移动，这部分的平衡做得很好。</li>
-<li>呼吸效应微不可察。</li>
-<li>齐焦镜头：变焦时，对焦点不变。</li>
-</ul>
-<p>PZ 1635 G绝对是视频拍摄的主宰者。</p>
-<h2 id="对比其它1635">5 对比其它1635</h2>
-<p>主要的竞争者是</p>
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE
-16-35mm F4 ZA OSS</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
-T3.1</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8
-GM</li>
-<li>Tamron 17-28mm F2.8 Di III RXD</li>
-</ul>
-<p>直接的对手是SPEC类似的<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE 16-35mm
-F4 ZA OSS，另一个是有电子变焦的<span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
-T3.1，可以看做是<span class="math inline">\(\mathbf{SONY}\)</span> FE
-16-35 mm F2.8 GM的电影版本。</p>
-<p>Tamron 17-28mm F2.8 Di III
-RXD价格很赞，就是焦段少了很多，当然光圈挺大，不太适合视频拍摄。</p>
-<h3 id="spec">5.1 SPEC</h3>
-<p>E卡口1635变焦竞品对比</p>
-<table>
-<colgroup>
-<col style="width: 2%">
-<col style="width: 26%">
-<col style="width: 17%">
-<col style="width: 15%">
-<col style="width: 26%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th><span class="math inline">\(\mathbf{SONY}\)</span> <strong>PZ
-16-35mm F4 G</strong></th>
-<th><span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar T FE
-16-35mm F4 ZA OSS</th>
-<th><span class="math inline">\(\mathbf{SONY}\)</span> FEC 16-35mm
-T3.1</th>
-<th><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm F2.8
-GM</th>
-<th>Tamron 17-28mm F2.8 Di III RXD</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>价格</td>
-<td><span class="math inline">\(\begin{aligned}&amp;8299_{\mathbf{SONY},20220829}\\&amp;7599_{JD,20220829}\end{aligned}\)</span></td>
-<td><span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span></td>
-<td><span class="math inline">\(41999_{\mathbf{SONY},20220829}\)</span></td>
-<td><span class="math inline">\(\begin{aligned}&amp;15499_{\mathbf{SONY},20220829}\\&amp;10800_{TB,20220829}\end{aligned}\)</span></td>
-<td><span class="math inline">\(7100_{\mathbf{SONY},20220829}\)</span></td>
-</tr>
-<tr class="even">
-<td>重量</td>
-<td><strong>353g</strong></td>
-<td>518g</td>
-<td>1390g</td>
-<td>686g</td>
-<td>420g</td>
-</tr>
-<tr class="odd">
-<td>长度</td>
-<td><strong>88.1mm</strong></td>
-<td>98.5mm</td>
-<td>147mm</td>
-<td>125mm</td>
-<td>99mm</td>
-</tr>
-<tr class="even">
-<td>自动对焦性能</td>
-<td><strong>很棒</strong></td>
-<td>很棒</td>
-<td>还行</td>
-<td>很棒</td>
-<td>还行</td>
-</tr>
-<tr class="odd">
-<td>镜身按钮/调节环</td>
-<td><strong>AF/MF切换，光圈锁定，对焦保持，电动变焦拨杆，有级/无极光圈环</strong></td>
-<td>变焦环，对焦环</td>
-<td>跟焦齿轮组，有级/无极光圈，光圈环，带对焦标记的对焦环，带变焦标记的变焦环，对焦保持，光圈锁定，电动变焦拨杆</td>
-<td>AF/MF切换，对焦保持</td>
-<td>None</td>
-</tr>
-<tr class="even">
-<td>最近对焦距离</td>
-<td><strong>24-28cm</strong></td>
-<td>28cm</td>
-<td>28cm</td>
-<td>28cm</td>
-<td>19-26cm</td>
-</tr>
-<tr class="odd">
-<td>做工</td>
-<td><strong>很棒</strong></td>
-<td>还行</td>
-<td>很棒</td>
-<td>很棒</td>
-<td>还行</td>
-</tr>
-<tr class="even">
-<td>光圈叶片</td>
-<td><strong>7</strong></td>
-<td>7</td>
-<td>11</td>
-<td>11</td>
-<td>9</td>
-</tr>
-<tr class="odd">
-<td>滤镜口径</td>
-<td><strong>72</strong></td>
-<td>72</td>
-<td>114</td>
-<td>82</td>
-<td>67</td>
-</tr>
-<tr class="even">
-<td>防尘防滴</td>
-<td><strong>有</strong></td>
-<td>有</td>
-<td>有</td>
-<td>有</td>
-<td>有</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>从SPEC比较来看，PZ 1635 G是最轻最小的；它和FEC
-1635电影头一样，操控性拉满（电动对焦、有极/无极光圈环等）。</li>
-<li>自动对焦方面，PZ 1635 G是这几只中最快的一只。</li>
-</ul>
-<h3 id="锐度-1">5.2 锐度</h3>
-<ul>
-<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> Vario Tessar
-T FE 16-35mm F4 ZA OSS，没什么可比性，PZ 1635 G全面碾压。</li>
-<li>对比<span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35 mm
-F2.8 GM，两者中心锐度基本相当，但是GM的边角可以达到Excellent级别，PZ
-1635 G只能达到Very Good级别。</li>
-<li>对比Tamron 17-28mm F2.8 Di III RXD，PZ 1635会略微强于1728。</li>
-</ul>
-<figure>
-<img data-src="./Pasted%20image%2020220830194647.png" alt="锐度对比">
-<figcaption aria-hidden="true">锐度对比</figcaption>
-</figure>
-<h3 id="背景虚化和焦外光斑">5.3 背景虚化和焦外光斑</h3>
-<ul>
-<li>背景虚化：除了F2.8那几只镜头在虚化质量上有些优势，其实1635这个焦段的虚化表现都不是非常优秀，尤其是在近距离拍摄中。</li>
-<li>焦外光斑：索蔡的光斑不太圆；PZ 1635 G更好一点；1635
-GM凭借11片光圈叶片可以获得最好的效果。</li>
-<li>色彩还原度/对比度：PZ 1635 G这两方面要比1635
-GM更甚一筹，可以提供更加生动、对比度更高的图像。</li>
-</ul>
-<h3 id="人像">5.4 人像</h3>
-<ul>
-<li>1635 GM毋庸置疑是最适合人像的，其次就是新的PZ 16-35 G。</li>
-<li>1728最大焦距只有28mm，是个不可忽视的缺陷。</li>
-</ul>
-<h3 id="畸变色散暗角抗眩光">5.5 畸变/色散/暗角/抗眩光</h3>
-<ul>
-<li>PZ 1635
-G的畸变和暗角控制是这几只最差的，尤其是在16mm端，但是都可以后期自动矫正。</li>
-<li>抗眩光和色散是顶尖水平。</li>
-</ul>
-<h3 id="视频-1">5.6 视频</h3>
-<p>PZ 1635 G和超贵的FEC 1635电影头一样，是最好的视频镜头。FEC
-1635电影头有特制的视频控制控件、适配跟焦器的调节环、变焦标记和对焦标记；但是超重、超大的镜身只能安装在脚架上用于电影拍摄。PZ
-1635
-G则非常适合手持Vlog。其它几支镜头就没什么可说的了，光为视频拍摄的人体工学设计这块就远远落后于这两只了。</p>
-<h3 id="对比结论">5.7 对比结论</h3>
-<p>PZ 1635 G是一只非常不错的1635变焦，在视频拍摄上是顶尖水平。</p>
-<p>对于照片拍摄，<span class="math inline">\(\mathbf{SONY}\)</span> FE
-16-35 mm F2.8 GM只会在5000万和6100万像素的变焦有优势。</p>
-<p>对于视频拍摄，PZ 1635 G更加适合日常使用，又贵又大又重的FEC
-1635电影头还是在非动态场景中更加适用。</p>
-]]></content>
-      <categories>
-        <category>镜头</category>
-      </categories>
-      <tags>
-        <tag>镜头</tag>
-        <tag>E卡口</tag>
-        <tag>全画幅</tag>
-        <tag>索尼Sony</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>斯普林格Springer免费书籍</title>
-    <url>//2020/06/24/springer-free-books-2020/</url>
-    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
-<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
-<span id="more"></span>
-<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
-<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
-<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
-<hr>
-<blockquote>
-<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
-最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>资源</tag>
-        <tag>书籍</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>STM32基础_GPIO流水灯</title>
-    <url>//2017/07/28/stm32-gpio-led/</url>
-    <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
-<span id="more"></span>
-<h2 id="流水灯实验原理">1 流水灯实验原理</h2>
-<p>LED模块的原理图如图1所示：</p>
-<figure>
-<img data-src="./1646673628.png" alt="图1 LED模块原理图">
-<figcaption aria-hidden="true">图1 LED模块原理图</figcaption>
-</figure>
-<p>从原理图中可以很清楚地看出来，只有把左边引脚设成低电平，LED灯就会被点亮，否则，LED灯处于熄灭状态。
-因此，STM32的作用就是按一定规律把GPIOD的2、3、4、7引脚拉低拉高。</p>
-<h2 id="管脚配置">2 管脚配置</h2>
-<p>STM32的管脚和8051MCU相比，功能更加丰富。STM32的管脚可以设置成不同的功能，成为“分时复用”，具体请移步ST提供的<a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/e4/f3/1a/89/5a/02/46/ae/CD00220364.pdf/files/CD00220364.pdf/jcr:content/translations/en.CD00220364.pdf">DataSheet</a>和<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/59/b9/ba/7f/11/af/43/d5/CD00171190.pdf/files/CD00171190.pdf/jcr:content/translations/en.CD00171190.pdf">参考手册</a>。</p>
-<p>同时，不同于51MCU的流水灯程序（以AT89S52为例）：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    P1 = <span class="number">0xfe</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P1 = _crol_ (P1,<span class="number">1</span>); <span class="comment">//循环左移函数，在intrins.h中定义</span></span><br><span class="line">        delay(<span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> nCount)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将STM32的管脚拉低拉高需要配置STM32管脚的输入输出模式，详见下表：</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">模式名称</th>
-<th style="text-align: center;">标识</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">浮空输入</td>
-<td style="text-align: center;">GPIO_MODE_IN_FLOATING</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">带上拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPU</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">带下拉输入</td>
-<td style="text-align: center;">GPIO_MODE_IPD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">模拟输入</td>
-<td style="text-align: center;">GPIO_MODE_AIN</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_OD</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_OUT_PP</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">复用_推挽输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_PP</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">复用_开漏输出</td>
-<td style="text-align: center;">GPIO_MODE_AF_OD</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>另外，还要提一点，关于STM32的所有外设（包括管脚)的使用流程:
-初始化(Initialization)--&gt;配置(Configuation)--&gt;调用(Call)</p>
-</blockquote>
-<h2 id="code">3 CODE</h2>
-<p>下面就贴一下代码。</p>
-<p>关于STM32项目的建立，可参考STM32F1开发指南-库函数版本_V3.1
-.pdf第三章。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//LED.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);</span><br><span class="line">    <span class="comment">//使能对应GPIO的Clock时钟</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 |</span><br><span class="line">    GPIO_Pin_4 | GPIO_Pin_7;</span><br><span class="line">    <span class="comment">//设置端口</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    <span class="comment">//设置端口模式 推挽输出（Push-Pull）</span></span><br><span class="line"></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    <span class="comment">//最大输出速度50MHz</span></span><br><span class="line"></span><br><span class="line">    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);</span><br><span class="line">    <span class="comment">//调用GPIO初始化函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;led.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">uint32_t</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉低</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_2); <span class="comment">//将GPIOD的Pin2拉高</span></span><br><span class="line">        delay(<span class="number">1600000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_3);</span><br><span class="line">        delay(<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_4);</span><br><span class="line">        delay(<span class="number">400000</span>);</span><br><span class="line"></span><br><span class="line">        GPIO_ResetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">200000</span>);</span><br><span class="line">        GPIO_SetBits(GPIOD, GPIO_Pin_7);</span><br><span class="line">        delay(<span class="number">20000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(__IO <span class="type">uint32_t</span> nCount)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(; nCount != <span class="number">0</span>; nCount--);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结">4 总结</h2>
-<p>GPIO管脚配置+软件延时实现流水灯是学习STM32过程中最基础外设，也是最重要的资源之一，需要深入的了解。本文趋向实用性，对于GPIO管脚的复用和寄存器配置未进行详细说明，请移步相关文档继续研究。</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Tamron 50-400mm F4.5-6.3 Di III VC VXD A067_by SonyAlphaBlog</title>
     <url>//2022/11/14/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/</url>
     <content><![CDATA[<blockquote>
@@ -2873,6 +2842,293 @@ GM的，更别说还提供了其它100400无法提供的、独家的50-100mm焦�
       </tags>
   </entry>
   <entry>
+    <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
+    <url>//2019/01/30/can-based-optimization/</url>
+    <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
+CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
+<p>运动控制系统对于通信的实时性要求很高，这就间接地要求系统的通信必须使用时间触发。CAN总线从本质上来说是一种事件触发总线协议，对于这种极高的硬实时性要求很难满足。文章中展示了基础的时间触发CAN协议在运动控制中的传输误差，实验结果表明：传输速率较低时，系统的跟踪误差较好；当传输速率提高后，系统的传输实时性就差强人意了。</p>
+<p>为了解决这一问题，文章中提出了一种对CAN运动控制的优化，这个优化涉及两个方面。</p>
+<span id="more"></span>
+<h2 id="优化一">优化一</h2>
+<p>本文提出在时间触发中嵌入事件触发，将传统的通信触发结构改为事件/时间触发结构，如图1所示。</p>
+<figure>
+<img data-src="./1884776264.jpg" alt="图1">
+<figcaption aria-hidden="true">图1</figcaption>
+</figure>
+<h2 id="优化二">优化二</h2>
+<p>除了优化时间触发结构，文章还提出了预估器优化方案。如果系统在一段时间内没有接收到运动控制指令，系统就会将之前的位置数据带入泰勒二阶展开式计算丢失的控制指令。</p>
+<p>系统的最终结构框图如图2所示。</p>
+<figure>
+<img data-src="./122056196.jpg" alt="图2">
+<figcaption aria-hidden="true">图2</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>summary</tag>
+        <tag>控制</tag>
+        <tag>总线</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tiny Tiny RSS再次搭建</title>
+    <url>//2021/07/22/ttrss-build-2/</url>
+    <content><![CDATA[<p>贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github
+Pages上了，阿里云的服务器就空出来了。</p>
+<p>但是，不幸再次降临，TTRSS官方把原来的安装方式取消了，推荐使用docker安装。经过一番摸索，终于完成了docker安装TTRSS，并搞定fever。</p>
+<p>环境说明：所使用的是Aliyun服务器（1C2G），系统为CentOS 7.9。</p>
+<span id="more"></span>
+<h2 id="安装docker">1 安装Docker</h2>
+<p>Docker是...啥？我也不是特别清楚，我把它看作是独立的运行环境，和虚拟机类似。详细的请找Docker官方文档和百度。</p>
+<p>首先确保系统内没有预安装旧版本的docker，使用命令卸载旧版本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
+<p>配置yum源，参考了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">TUNA
+CentOS镜像使用帮助</a>。使用云服务器一般不需要配置。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sed -e &#x27;s|^mirrorlist=|#mirrorlist=|g&#x27; \</span><br><span class="line">         -e &#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27; \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
+<p>配置docker的yum源。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>安装docker相关依赖包。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+<p>安装docker</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
+<p>启动docker，并设置开机自启。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
+<p>验证docker安装。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+<h2 id="安装docker-compose">2 安装Docker Compose</h2>
+<p>Docker Compose是基于Docker的多容器运行管理工具。</p>
+<p>下载Docker
+Compose的Release包。下面的命令使用的是1.29.2版本的Release，可前往<a href="https://github.com/docker/compose/releases">软件发布页</a>查看最新的版本号，然后修改下面命令的版本号即可。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>为文件夹添加可执行权限。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>为Docker Compose在<code>/usr/bin/</code>创建链接。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件copy到/usr/bin/目录下</span></span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>验证Docker Compose安装。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+<h2 id="安装ttrss">3 安装TTRSS</h2>
+<p>TTRSS是啥就不再次介绍了，需要了解的可以看看之前写的<a href="/2020/04/23/ttrss-build/">那篇文章</a>，或者直接访问<a href="https://tt-rss.org/">TTRSS官网</a>。</p>
+<h3 id="获取docker安装所需文件">3.1 获取docker安装所需文件</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://git.tt-rss.org/fox/ttrss-docker-compose.git ttrss-docker</span><br><span class="line">cd ttrss-docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git checkout命令为切换static-dockerhub分支，也可以不切换使用master分支</span></span><br><span class="line">git checkout static-dockerhub</span><br></pre></td></tr></table></figure>
+<h3 id="修改.env配置文件">3.2 修改<code>.env</code>配置文件</h3>
+<p>首先需要将<code>ttrss-docker</code>文件夹中的<code>.env-dist</code>复制为<code>.env</code>。（注：<code>.env-dist</code>和<code>.env</code>均为隐藏文件，需要使用<code>ls -a</code>才能看到。）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp .env-dist .env</span><br></pre></td></tr></table></figure>
+<p>打开<code>.env</code>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim .env</span><br></pre></td></tr></table></figure>
+<p>修改端口<code>HTTP_PORT</code>。默认为8280端口，可以配置为自定义端口。配置完成后，还需要Aliyun控制台开放端口访问，其它云平台类似，自建服务器那就自己搞定。</p>
+<p>修改URL<code>TTRSS_SELF_URL_PATH</code>。如果简单使用ip进行访问，只需要将<code>localhost</code>修改为服务器的ip地址即可。</p>
+<h3 id="拉取并启动容器">3.3 拉取并启动容器</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up -d</span><br></pre></td></tr></table></figure>
+<p>验证容器运行。 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure></p>
+<h3 id="登录ttrss">3.4 登录TTRSS</h3>
+<p>使用浏览器访问<code>TTRSS_SELF_URL_PATH</code>配置的URL。默认账号密码为<code>admin</code>和<code>password</code>。<strong>进入前台系统后，请先通过界面右上角的<code>偏好设置</code>修改密码。</strong></p>
+<p>有需要的可以新建普通用户，将<code>admin</code>仅作为管理员用户。</p>
+<p><img data-src="./ttrss-setting-1.png"></p>
+<p>注：文章编写时，TTRSS的前台系统由于使用<code>window.requestIdleCallback</code>API，该API并不受Safari支持，所以前台系统不能使用Safari<del>应该都知道我为什么知道吧</del>。</p>
+<p><img data-src="./ttrss-safari-bug.jpg"></p>
+<h2 id="ttrss后续配置">4 TTRSS后续配置</h2>
+<h3 id="fever">4.1 Fever</h3>
+<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
+API。因此，需要配置fever插件。</p>
+<p>获取TTRSS fever插件，仓库地址为<a href="https://github.com/DigitalDJ/tinytinyrss-fever-plugin">DigitalDJ/tinytinyrss-fever-plugin</a>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin fever</span><br></pre></td></tr></table></figure>
+<p>由于ttrss是通过docker-compose安装的，所以具体的安装路径就不清楚了；虽然普通使用不需要知道安装路径，但是使用官方仓库以外的插件时，安装路径至关重要。下面先来确定TTRSS的安装路径。</p>
+<p>安装mlocate。为什么要安装mlocate呢？因为<code>find</code>的搜索速度堪忧啊。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y mlocate</span><br></pre></td></tr></table></figure>
+<p>初始化文件索引。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">updatedb</span><br></pre></td></tr></table></figure>
+<p>确定TTRSS安装路径。由于插件目录名称为<code>plugins.local</code>，为了简化搜索，直接搜索<code>plugins.local</code>即可。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">locate plugins.local</span><br></pre></td></tr></table></figure>
+<p>搜索后，TTRSS的安装路径就一目了然了，我的路径为<code>/var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/</code>。</p>
+<p><img data-src="./locate-plugins-folder.png"></p>
+<p>之后将插件复制到TTRSS的<code>plugins.local</code>目录下。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
+<p>登录到TTRSS前台界面，进入偏好设置，勾选<code>启用API:外部客户端通过API来访问账户</code>。同时，页面底部会有<code>Fever Emulation</code>的条目。</p>
+<p><img data-src="./ttrss-fever-1.png"></p>
+<p>选择<code>插件</code>条目，勾选<code>fever</code>。</p>
+<p><img data-src="./ttrss-fever-2.png"></p>
+<p>选择<code>Fever Emulation</code>的条目，在文本框中输入fever连接密码（可以与ttrss账号密码相同）。点击<code>Set Password</code>，设置成功后会有浮窗。另外，记住红框内的地址，这是客户端连接fever的地址。</p>
+<p><img data-src="./ttrss-fever-3.png"></p>
+<p>到这里，ttrss fever插件就搞定了。</p>
+<p>关于ttrss fever插件的更新。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
+<p>客户端连接可以参考下图。</p>
+<p><img data-src="./ttrss-reeder-setting.jpg"></p>
+<h3 id="ttrss工具更新">4.2 TTRSS工具更新</h3>
+<p>停止TTRSS相关容器。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose down &amp;&amp; docker-compose rm</span><br></pre></td></tr></table></figure>
+<p>拉取最新安装文件，根据需要选取分支。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取static-dockerhub分支</span></span><br><span class="line">git pull origin static-dockerhub</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取master分支</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<p>依据新的<code>.env-dist</code>修改<code>.env</code>。</p>
+<p>再起用docker-compose拉取、启动。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up</span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结</h2>
+<p>写文章时，我的TTRSS已经稳定运行了两周了，没有出什么幺蛾子。</p>
+<p><img data-src="./ttrss-reeder-done.jpg"></p>
+<p>有TTRSS安装需求的同学可以参考上面的安装步骤，搭建自己的、可靠的RSS订阅服务。</p>
+]]></content>
+      <categories>
+        <category>DIY</category>
+      </categories>
+      <tags>
+        <tag>DIY</tag>
+        <tag>RSS</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自建RSS服务——Tiny Tiny RSS</title>
+    <url>//2020/04/23/ttrss-build/</url>
+    <content><![CDATA[<p><strong>这篇文章使用的是TTRSS老版本安装方式，新版的Docker安装请参考最新的文章<a href="/2021/07/22/ttrss-build-2/">Tiny Tiny
+RSS再次搭建</a>。</strong></p>
+<p>很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder
+3停更了。<br>
+为了解决日常的RSS阅读，自建RSS服务就提上了日程<del>从冒出想法到搞定实际只花了半天时间</del>。</p>
+<p>本文我就来详细介绍一下搭建多平台RSS服务——Tiny Tiny RSS(TTRSS)。</p>
+<span id="more"></span>
+<blockquote>
+<p><strong>最新版的TTRSS更新了安装方式，目前官方推荐使用docker方式安装，具体的安装和迁移请等待相关文章的更新。</strong></p>
+</blockquote>
+<h2 id="ttrss">1 TTRSS</h2>
+<p>冒出自建RSS服务之前，我其实已经删掉Reeder准备放弃移动端了。网上推荐的Win平台RSS阅读器，发现大多都是Outlook、ThunderMail之类的邮件客户端；虽然我也用"宇宙最强的邮件客户端"——Outlook，但我并不想把娱乐消遣和工作搅和在一起。<br>
+在小众软件的一篇文章的评论里面，我发现了Tiny Tiny
+RSS(TTRSS)，一下子就发现它非常符合我的情况： 1. 国内有闲置的服务器可用；
+2. 订阅源偏重国内(国外源较多建议使用国外的服务器)； 3.
+时间较多的白嫖党。</p>
+<p>说干就干。花了一下午把TTRSS给搞定了，并已经成功在Reeder上登录、阅读、标记。</p>
+<h2 id="服务器配置">2 服务器配置</h2>
+<p>闲置的服务器是在两年前买的腾讯云"1C+2G+1Mbps"，无域名，一直没有利用起来。</p>
+<p>首先，在腾讯云控制台重装系统，这是清空系统防止出现程序冲突。如果服务器已经运行其它任务，可以无视，但出现问题需要考虑会不会是已运行任务的冲突。因为比较偏爱CentOS，所以操作系统选择了CentOS。</p>
+<figure>
+<img data-src="./3506696871.png" alt="服务器系统重装">
+<figcaption aria-hidden="true">服务器系统重装</figcaption>
+</figure>
+<p>重装完服务器的系统先不要关掉控制台，在左侧找到"安全组"，新建一个安全组规则。<br>
+我开通了3个端口： 1. 8888 --&gt; 宝塔面板默认端口； 2. 2333 --&gt;
+预留给宝塔面板的端口； 3. 9999 --&gt; 预留给TTRSS的端口。<br>
+注：宝塔面板和TTRSS的端口可以选自己喜欢的，只要不和现有的冲突就行。</p>
+<p>新建安全组规则后，将这个规则绑定到服务器。</p>
+<figure>
+<img data-src="./2662962289.png" alt="配置安全组">
+<figcaption aria-hidden="true">配置安全组</figcaption>
+</figure>
+<h2 id="服务器环境安装">3 服务器环境安装</h2>
+<h3 id="宝塔面板安装">3.1 宝塔面板安装</h3>
+<p>云服务器的配置结束后，就可以使用SSH工具登录服务器了(别告诉我你把密码给忘记了)。<br>
+SSH工具(如XShell)使用教程自行百度(喜欢谷歌的可以选择番羽土啬)。</p>
+<p>使用SSH登录服务器后，根据系统使用下面的命令安装宝塔面板，其它操作系统的安装命令请到<a href="https://www.bt.cn/download/linux.html">宝塔面板官网</a>查看。<br>
+使用宝塔面板的目的是为了安装LNMP并为TTRSS建立站点，已经安装过或者对此精通的大佬请自觉跳至<a href="#ttrss%e7%ab%99%e7%82%b9%e5%bb%ba%e7%ab%8b">TTRSS站点建立</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># CentOS 安装命令</span></span><br><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh</span><br><span class="line"><span class="comment"># Ubuntu/Deepin 安装命令</span></span><br><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+<p>安装过程不是特别慢，大概几分钟就搞定了。宝塔面板安装成功后会在最后有"Completed"字样，并在字样上方有访问宝塔面板的默认URL及账号密码，请务必将这几行字符复制出来并暂时保存起来。这里的图片没有截，请仔细阅读这段文字。</p>
+<h3 id="lnmp安装">3.2 LNMP安装</h3>
+<p>使用宝塔面板安装后输出的URL和账号密码登录宝塔面板，然后在弹出的框内选择LNMP进行安装。<br>
+如果你看到这篇文章的时候PHP没有更新8.0的话，PHP版本选择最新的；服务器配置如果是1核1G，MySQL版本请自觉选用5.6及以下；phpMyAdmin可以不选。我安装时没有截图，这张图是官方论坛里截取的，使用图里的版本也可以。</p>
+<figure>
+<img data-src="./2780109685.png" alt="安装LNMP">
+<figcaption aria-hidden="true">安装LNMP</figcaption>
+</figure>
+<p>安装过程看具体服务器配置，我的2G内存的跑了十分钟左右。等任务队列全部跑完就说明环境安装好了。</p>
+<p>接下来需要安装PHP的扩展fileinfo，否则TTRSS的初始化会出错。几年前我搭建我的WordPress的时候就因为没安装fileinfo，一直初始化失败。<br>
+在左侧边栏中选择"软件商店"，选择分类"已安装"，点击PHP的"设置"。</p>
+<figure>
+<img data-src="./1674883902.png" alt="安装fileinfo插件-1">
+<figcaption aria-hidden="true">安装fileinfo插件-1</figcaption>
+</figure>
+<p>在弹出的界面中选择左侧的"安装扩展"，找到fileinfo并点击安装，安装需要等待几秒钟。</p>
+<figure>
+<img data-src="./3460819832.png" alt="安装fileinfo插件-2">
+<figcaption aria-hidden="true">安装fileinfo插件-2</figcaption>
+</figure>
+<p>到这里，LNMP的环境就搭建好了，但我还是要多说一句，<strong>请务必在左侧边栏的"面板设置"中修改面板登录端口、账号密码以及安全入口</strong>，端口使用安全组预留给宝塔面板的端口。</p>
+<h3 id="ttrss站点建立">3.3 TTRSS站点建立</h3>
+<p>在左侧边栏中选择"网站"，点击"添加站点"。</p>
+<figure>
+<img data-src="./2348240304.png" alt="建立站点">
+<figcaption aria-hidden="true">建立站点</figcaption>
+</figure>
+<p>在弹出的界面中填写站点的信息。</p>
+<blockquote>
+<p>填写要求：<br>
+域名 -
+使用"http://服务器外网ip:端口号"的格式，端口号使用安全组预留给TTRSS使用的端口；可以使用域名代替外网ip，甚至使用https<br>
+根目录 - 为了方便，我使用了"/www/wwwroot/ttrss"<br>
+数据库 - 选择"MySQL"，编码为"utf-8"，用户名与密码自己输入并记住</p>
+</blockquote>
+<h2 id="ttrss安装及配置">4 TTRSS安装及配置</h2>
+<p>此时服务器上的站点还是空的网站，需要从<a href="https://tt-rss.org/">TTRSS官网</a>下载TTRSS并进行配置。</p>
+<h3 id="ttrss下载">4.1 TTRSS下载</h3>
+<p>虽然使用服务器也可以获取TTRSS，但下载速度太感人，还是在PC上下好了传上去吧。不信邪的可以使用下面的命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.tt-rss.org/fox/tt-rss.git ttrss</span><br></pre></td></tr></table></figure>
+<p>建议大家使用浏览器访问TTRSS的<a href="https://git.tt-rss.org/git/tt-rss/src/master">仓库</a>，下载zip包。如果这个仓库失效可以访问<a href="https://tt-rss.org/">TTRSS官网</a>，再进入仓库下载。</p>
+<p>成功下载TTRSS后，使用宝塔面板将zip包上传到服务器的/www/wwwroot/目录下；<br>
+解压这个zip包，将tt-rss文件夹内的所有文件剪切到/www/wwwroot/ttrss/目录下。<br>
+小文件上传速度堪忧，请务必在服务器解压zip包。</p>
+<figure>
+<img data-src="./2606487638.png" alt="上传TTRSS">
+<figcaption aria-hidden="true">上传TTRSS</figcaption>
+</figure>
+<h3 id="ttrss初始化">4.2 TTRSS初始化</h3>
+<p>打开浏览器，访问"http://服务器外网ip:端口号/install"，进入TTRSS的初始化。<br>
+数据库选择MySQL，端口选择3306，用户名密码是建立站点时设置的，希望没有忘记。然后点击"Test
+configuration"。</p>
+<figure>
+<img data-src="./301425375.png" alt="TTRSS初始化-1">
+<figcaption aria-hidden="true">TTRSS初始化-1</figcaption>
+</figure>
+<p>网页下方出现下图的内容，点击"Initialize database"。</p>
+<figure>
+<img data-src="./3081491383.png" alt="TTRSS初始化-2">
+<figcaption aria-hidden="true">TTRSS初始化-2</figcaption>
+</figure>
+<p>接着，在出现的内容中点击"Save
+configuration"，让系统自己保存配置。</p>
+<figure>
+<img data-src="./3023230390.png" alt="TTRSS初始化-3">
+<figcaption aria-hidden="true">TTRSS初始化-3</figcaption>
+</figure>
+<p>到此，TTRSS就配置结束了，访问"http://服务器外网ip:端口号"即可登录TTRSS了。<br>
+使用默认用户名及密码(admin,password)即可登录TTRSS，第一次登录时系统会提示重设密码。</p>
+<h3 id="ttrss配置自动更新">4.3 TTRSS配置——自动更新</h3>
+<p>可能是因为bug的原因，目前的TTRSS通过"偏好设置"无法自动更新，需要使用服务器的非root用户的crontab进行自动更新。配置过程如下。</p>
+<p>使用SSH登录服务器，输入下面这个命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">crontab -u www -e</span><br></pre></td></tr></table></figure>
+<p>然后，点击"i"进入编辑模式，插入以下命令实现1小时更新一下信息源。请注意php后的路径和命令中的空格。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* */1 * * * php /www/wwwroot/ttrss/update.php  --feeds  &gt; /dev/null</span><br></pre></td></tr></table></figure>
+<p>最后，使用"Esc"和":wq"退出vim编辑，TTRSS就可以自动更新了。</p>
+<p>至于订阅源的配置步骤就不赘述了。</p>
+<h3 id="ttrss配置多平台支持fever">4.4 TTRSS配置——多平台支持/fever</h3>
+<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
+API。因此，需要配置fever插件。</p>
+<ol type="1">
+<li>下载<a href="./3738853280.7z">fever插件</a>并解压，使用宝塔面板将<strong>整个fever文件夹</strong>上传到/www/wwwroot/ttrss/plugins/目录下。注意：<strong>整个fever文件夹</strong>。</li>
+<li>在TTRSS的偏好设置中，勾选"允许外部客户端通过API来访问该账户"。</li>
+<li>在TTRSS的偏好设置中，选择"插件"页面，勾选fever，点击"启用选择的插件"。</li>
+<li>刷新页面，在TTRSS的偏好设置中，选择"Fever
+Emulation"页面，设置密码。密码可与TTRSS账户密码相同，用于客户端访问TTRSS。</li>
+</ol>
+<p>下面就可以在客户端使用Fever访问TTRSS了。下面是Reeder 3的配置页面。
+服务器填写"http://服务器外网ip:端口号/plugins/fever"；邮箱填写TTRSS账号用户名，不一定要邮箱；密码是在"Fever
+Emulation"页面设置的密码。</p>
+<figure>
+<img data-src="./3057100732.png#vhei=800" alt="Reeder 3配置界面">
+<figcaption aria-hidden="true">Reeder 3配置界面</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>整篇文章写下来花了两天时间，有几张图片因为搭建时遗忘而没有截图，但整个搭建描述还是挺清晰的(自我评价的)。</p>
+<p>如果参考了这篇TTRSS搭建教程，请别忘了<del>一键三连</del>收藏分享哦。</p>
+]]></content>
+      <categories>
+        <category>DIY</category>
+      </categories>
+      <tags>
+        <tag>DIY</tag>
+        <tag>RSS</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>铭匠TTArtisan 50mm F1.4 Tilt_by SonyAlphaBlog</title>
     <url>//2022/10/27/ttartisan-50mm-f1-4-tilt/</url>
     <content><![CDATA[<blockquote>
@@ -3070,219 +3326,6 @@ F1.4非移轴版本同样有好得多的锐度表现。锐度上，铭匠TTArtis
       </tags>
   </entry>
   <entry>
-    <title>Tiny Tiny RSS再次搭建</title>
-    <url>//2021/07/22/ttrss-build-2/</url>
-    <content><![CDATA[<p>贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github
-Pages上了，阿里云的服务器就空出来了。</p>
-<p>但是，不幸再次降临，TTRSS官方把原来的安装方式取消了，推荐使用docker安装。经过一番摸索，终于完成了docker安装TTRSS，并搞定fever。</p>
-<p>环境说明：所使用的是Aliyun服务器（1C2G），系统为CentOS 7.9。</p>
-<span id="more"></span>
-<h2 id="安装docker">1 安装Docker</h2>
-<p>Docker是...啥？我也不是特别清楚，我把它看作是独立的运行环境，和虚拟机类似。详细的请找Docker官方文档和百度。</p>
-<p>首先确保系统内没有预安装旧版本的docker，使用命令卸载旧版本。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
-<p>配置yum源，参考了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">TUNA
-CentOS镜像使用帮助</a>。使用云服务器一般不需要配置。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sed -e &#x27;s|^mirrorlist=|#mirrorlist=|g&#x27; \</span><br><span class="line">         -e &#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27; \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
-<p>配置docker的yum源。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-<p>安装docker相关依赖包。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-<p>安装docker</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
-<p>启动docker，并设置开机自启。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
-<p>验证docker安装。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
-<h2 id="安装docker-compose">2 安装Docker Compose</h2>
-<p>Docker Compose是基于Docker的多容器运行管理工具。</p>
-<p>下载Docker
-Compose的Release包。下面的命令使用的是1.29.2版本的Release，可前往<a href="https://github.com/docker/compose/releases">软件发布页</a>查看最新的版本号，然后修改下面命令的版本号即可。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>为文件夹添加可执行权限。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>为Docker Compose在<code>/usr/bin/</code>创建链接。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件copy到/usr/bin/目录下</span></span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>验证Docker Compose安装。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
-<h2 id="安装ttrss">3 安装TTRSS</h2>
-<p>TTRSS是啥就不再次介绍了，需要了解的可以看看之前写的<a href="/2020/04/23/ttrss-build/">那篇文章</a>，或者直接访问<a href="https://tt-rss.org/">TTRSS官网</a>。</p>
-<h3 id="获取docker安装所需文件">3.1 获取docker安装所需文件</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://git.tt-rss.org/fox/ttrss-docker-compose.git ttrss-docker</span><br><span class="line">cd ttrss-docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git checkout命令为切换static-dockerhub分支，也可以不切换使用master分支</span></span><br><span class="line">git checkout static-dockerhub</span><br></pre></td></tr></table></figure>
-<h3 id="修改.env配置文件">3.2 修改<code>.env</code>配置文件</h3>
-<p>首先需要将<code>ttrss-docker</code>文件夹中的<code>.env-dist</code>复制为<code>.env</code>。（注：<code>.env-dist</code>和<code>.env</code>均为隐藏文件，需要使用<code>ls -a</code>才能看到。）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp .env-dist .env</span><br></pre></td></tr></table></figure>
-<p>打开<code>.env</code>。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim .env</span><br></pre></td></tr></table></figure>
-<p>修改端口<code>HTTP_PORT</code>。默认为8280端口，可以配置为自定义端口。配置完成后，还需要Aliyun控制台开放端口访问，其它云平台类似，自建服务器那就自己搞定。</p>
-<p>修改URL<code>TTRSS_SELF_URL_PATH</code>。如果简单使用ip进行访问，只需要将<code>localhost</code>修改为服务器的ip地址即可。</p>
-<h3 id="拉取并启动容器">3.3 拉取并启动容器</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up -d</span><br></pre></td></tr></table></figure>
-<p>验证容器运行。 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure></p>
-<h3 id="登录ttrss">3.4 登录TTRSS</h3>
-<p>使用浏览器访问<code>TTRSS_SELF_URL_PATH</code>配置的URL。默认账号密码为<code>admin</code>和<code>password</code>。<strong>进入前台系统后，请先通过界面右上角的<code>偏好设置</code>修改密码。</strong></p>
-<p>有需要的可以新建普通用户，将<code>admin</code>仅作为管理员用户。</p>
-<p><img data-src="./ttrss-setting-1.png"></p>
-<p>注：文章编写时，TTRSS的前台系统由于使用<code>window.requestIdleCallback</code>API，该API并不受Safari支持，所以前台系统不能使用Safari<del>应该都知道我为什么知道吧</del>。</p>
-<p><img data-src="./ttrss-safari-bug.jpg"></p>
-<h2 id="ttrss后续配置">4 TTRSS后续配置</h2>
-<h3 id="fever">4.1 Fever</h3>
-<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
-API。因此，需要配置fever插件。</p>
-<p>获取TTRSS fever插件，仓库地址为<a href="https://github.com/DigitalDJ/tinytinyrss-fever-plugin">DigitalDJ/tinytinyrss-fever-plugin</a>。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin fever</span><br></pre></td></tr></table></figure>
-<p>由于ttrss是通过docker-compose安装的，所以具体的安装路径就不清楚了；虽然普通使用不需要知道安装路径，但是使用官方仓库以外的插件时，安装路径至关重要。下面先来确定TTRSS的安装路径。</p>
-<p>安装mlocate。为什么要安装mlocate呢？因为<code>find</code>的搜索速度堪忧啊。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y mlocate</span><br></pre></td></tr></table></figure>
-<p>初始化文件索引。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">updatedb</span><br></pre></td></tr></table></figure>
-<p>确定TTRSS安装路径。由于插件目录名称为<code>plugins.local</code>，为了简化搜索，直接搜索<code>plugins.local</code>即可。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">locate plugins.local</span><br></pre></td></tr></table></figure>
-<p>搜索后，TTRSS的安装路径就一目了然了，我的路径为<code>/var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/</code>。</p>
-<p><img data-src="./locate-plugins-folder.png"></p>
-<p>之后将插件复制到TTRSS的<code>plugins.local</code>目录下。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
-<p>登录到TTRSS前台界面，进入偏好设置，勾选<code>启用API:外部客户端通过API来访问账户</code>。同时，页面底部会有<code>Fever Emulation</code>的条目。</p>
-<p><img data-src="./ttrss-fever-1.png"></p>
-<p>选择<code>插件</code>条目，勾选<code>fever</code>。</p>
-<p><img data-src="./ttrss-fever-2.png"></p>
-<p>选择<code>Fever Emulation</code>的条目，在文本框中输入fever连接密码（可以与ttrss账号密码相同）。点击<code>Set Password</code>，设置成功后会有浮窗。另外，记住红框内的地址，这是客户端连接fever的地址。</p>
-<p><img data-src="./ttrss-fever-3.png"></p>
-<p>到这里，ttrss fever插件就搞定了。</p>
-<p>关于ttrss fever插件的更新。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
-<p>客户端连接可以参考下图。</p>
-<p><img data-src="./ttrss-reeder-setting.jpg"></p>
-<h3 id="ttrss工具更新">4.2 TTRSS工具更新</h3>
-<p>停止TTRSS相关容器。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose down &amp;&amp; docker-compose rm</span><br></pre></td></tr></table></figure>
-<p>拉取最新安装文件，根据需要选取分支。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取static-dockerhub分支</span></span><br><span class="line">git pull origin static-dockerhub</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取master分支</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
-<p>依据新的<code>.env-dist</code>修改<code>.env</code>。</p>
-<p>再起用docker-compose拉取、启动。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up</span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>写文章时，我的TTRSS已经稳定运行了两周了，没有出什么幺蛾子。</p>
-<p><img data-src="./ttrss-reeder-done.jpg"></p>
-<p>有TTRSS安装需求的同学可以参考上面的安装步骤，搭建自己的、可靠的RSS订阅服务。</p>
-]]></content>
-      <categories>
-        <category>DIY</category>
-      </categories>
-      <tags>
-        <tag>DIY</tag>
-        <tag>RSS</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VHDL学习笔记之元件递归</title>
-    <url>//2020/08/05/vhdl-note-component-recursion/</url>
-    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
-<blockquote>
-<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
-</blockquote>
-<span id="more"></span>
-<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
-<h2 id="元件递归设计">1 元件递归设计</h2>
-<blockquote>
-<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
-</blockquote>
-<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://github.com/xulu199705/blog-attachment/blob/main/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
-Std 1076-2019</a>。</p>
-<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
-为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
-\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
-方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>简单写了个仿真文件，仿真结果如下。</p>
-<figure>
-<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
-<figcaption aria-hidden="true">综合前仿真结果</figcaption>
-</figure>
-<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
-<figure>
-<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
-<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
-</figure>
-<h2 id="正常的n输入与门设计">2 正常的n输入与门设计</h2>
-<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
-<figure>
-<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
-<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
-</figure>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
-<figure>
-<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
-<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
-</figure>
-<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
-<figure>
-<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
-<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
-</figure>
-<figure>
-<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
-<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
-</figure>
-<h2 id="总结">3 总结</h2>
-<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
-:&amp;(蛆音娘_扶额)
-，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
-:@(击掌)</p>
-<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
-]]></content>
-      <categories>
-        <category>集成电路</category>
-      </categories>
-      <tags>
-        <tag>VHDL</tag>
-        <tag>FPGA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS Code笔记之根据语言选择性删除行末空格</title>
-    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
-    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
-Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
-Workshop、Markdown+Math和Markdown Preview
-Enhanced配合来写东西，用着特别顺手。</p>
-<p>平时用VS
-Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
-<span id="more"></span>
-<h2 id="问题">1 问题</h2>
-<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
-样例一：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1</p>
-<p>para-2</p>
-<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
-样例二：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1<br>
-para-2</p>
-<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
-<h2 id="解决方案">2 解决方案</h2>
-<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-<p>VS
-Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>VS Code笔记之可自动更新的Markdown目录</title>
     <url>//2020/05/05/vscode-note-tableofcontents/</url>
     <content><![CDATA[<p>Markdown语法支持自己编写目录，但是碰到中文标题就捉襟见肘了。不久前在写项目README的时候，我一时兴起准备给文章编写一个目录，却发现一开始编写的目录竟然可以自动更新。照着目录的格式摸索了几次，终于总结出快速编写目录的方法。</p>
@@ -3321,252 +3364,6 @@ Code笔记之快速插入Markdown目录"的标题，如图1。</p>
       <tags>
         <tag>VS Code</tag>
         <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>视频相关术语</title>
-    <url>//2020/02/12/video-terms/</url>
-    <content><![CDATA[<p>今天在人人影视上找资源的时候，突然对文件名上的HEVC、10bit等感到疑惑，就花了一下午时间研究了一下视频相关的术语，在下面分享一下。</p>
-<span id="more"></span>
-<ul>
-<li><a href="#%e8%a7%86%e9%a2%91%e7%9b%b8%e5%85%b3%e6%9c%af%e8%af%ad">视频相关术语</a>
-<ul>
-<li><a href="#%e7%9b%ae%e5%bd%95">目录</a></li>
-<li><a href="#%e5%88%86%e8%be%a8%e7%8e%87">分辨率</a></li>
-<li><a href="#%e5%ae%bd%e9%ab%98%e6%af%94">宽高比</a>
-<ul>
-<li><a href="#%e5%bd%b1%e5%83%8f%e5%ae%bd%e9%ab%98%e6%af%94">影像宽高比</a></li>
-<li><a href="#%e5%83%8f%e7%b4%a0%e5%ae%bd%e9%ab%98%e6%af%94">像素宽高比</a></li>
-</ul></li>
-<li><a href="#%e5%b8%a7%e7%8e%87">帧率</a>
-<ul>
-<li><a href="#%e8%a7%86%e9%a2%91%e5%88%b6%e5%bc%8fpalntsc">视频制式(PAL&amp;NTSC)</a></li>
-</ul></li>
-<li><a href="#%e4%bd%8d%e6%b7%b1">位深</a></li>
-<li><a href="#%e7%bc%96%e7%a0%81">编码</a></li>
-</ul></li>
-</ul>
-<h2 id="分辨率">1 分辨率</h2>
-<p>分辨率(Resolution)指影像的尺寸大小。衡量视频分辨率的基本单位为像素(Pixel,px)。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">┌-------------┐┄┄┄┄┄</span><br><span class="line">|             |   ↑</span><br><span class="line">|    Video    | Height</span><br><span class="line">|             |   ↓</span><br><span class="line">└-------------┘┄┄┄┄┄</span><br><span class="line">┆←   Width   →┆</span><br></pre></td></tr></table></figure>
-<p>分辨率一般用宽(Width) * 高(Height)来表示。</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">常见分辨率</th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">720P</td>
-<td style="text-align: center;">1280px * 720px</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1080P</td>
-<td style="text-align: center;">1920px * 1080px</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">4K</td>
-<td style="text-align: center;">3840px * 2160px</td>
-</tr>
-</tbody>
-</table>
-<p>对于宽/宽为16:9的分辨率，通常可以用720P、1080P等简称来表示。其中，P(Progressive)表示逐行扫描。1080P即表示每一次刷新都需要对1080行像素进行刷新(当然，最新的屏幕刷新技术已经可以对局部进行更新，以实现更高的刷新率)。</p>
-<h2 id="宽高比">2 宽高比</h2>
-<p>宽高比(Aspect Ratio)表示为宽(Width)和高(Height)的比例。</p>
-<h3 id="影像宽高比">2.1 影像宽高比</h3>
-<p>常见的影像宽高比(Video Aspect
-Ratio)有16:9、4:3、21:9、16:10。不同的使用场景和需求需要不同的宽高比，比如电视、电影或“带鱼屏”等。</p>
-<h3 id="像素宽高比">2.2 像素宽高比</h3>
-<p>像素宽高比(Pixel Aspect
-Ratio)与影像宽高比类似，表示像素的宽高之比。</p>
-<p>目前，方形像素(Square Pixel)比较常用。但是，非方形像素(Non-Square
-Pixel)仍然存在于某些场合中，并且发挥着一定的作用。我们需要能够辨别这些非方形像素，否则，图像显示会出现扭曲，信息传达会出现错误。</p>
-<h2 id="帧率">3 帧率</h2>
-<p>帧率(Frame Rate)是视频实现影像从静止到运动转变的关键。</p>
-<p>在视频中，一幅静止的画面被称为帧(Frame)。视频播放实质上就是许多帧连续展示在屏幕上，当帧展示的间隔不断缩小，也就是每秒展示的帧不断增加，人眼看到的图案就变得连续起来(原理可自行搜索视觉暂留)。</p>
-<p>帧率就是视频在一秒内展示的帧的数量。帧率单位是fps(frame pre
-second)。一般来说，电影的帧率为24fps，当然最近也有120fps拍的电影(片名忘记了，只记得是李安导演的)；流媒体的帧率则需要根据你的网速和你的会员级别确定了；而电视的帧率则有所在地区的视频制式决定。</p>
-<h3 id="视频制式palntsc">3.1 视频制式(PAL&amp;NTSC)</h3>
-<p>这是一个存在于传统的电视广播行业的问题。</p>
-<p>NTSC普遍用于北美和南美，每秒30帧隔行；而其他地区，比如中国、欧洲，则使用每秒25帧隔行的PAL。在电视广播行业中工作，就需要考虑到这个问题；如果是上传到网站的视频，就可以忽略这个问题。</p>
-<h2 id="位深">4 位深</h2>
-<p>位深(Bit
-Depth)可以表示图像或者影像系统中可以使用的独立色彩的个数。如果系统的位深为10，那么需要三个10bit数码来分别表示R、G、B(当然还有其他色彩表示方式)，那么，系统就可以使用30bit的数码表示混合后的颜色，共有2^30=1.07*10^9种。</p>
-<p>位深越多的系统，色彩就越丰富，图像或影像的色彩表现力就越强。目前，8位和10位的位深常见于各种场合中。当然，在部分对色彩显示要求不高的场合中，使用8位或10位RGB码来表示颜色也屡见不鲜。</p>
-<h2 id="编码">5 编码</h2>
-<p>编码(CODEC)可以看做编码器(Coder) + 解码器(DeCoder)。</p>
-<p>首先，来看一下编码出现的原因。</p>
-<p>对于一段无压缩的、8bitRGB、4K、24fps的视频，暂且不考虑音频，它的码率
-= 3840 * 2160 * 8 * 3 * 24 bps = 4777574400bps =
-570MB/s，即如果要实现24fps播放这段视频，硬盘或网络需要传输570MB数据，GPU每秒需要处理570MB数据。以目前主流的硬件状况来看，5400rpm机械硬盘最高读取速度为130MB/s，(虽然m.2
-NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至少需要570MB的存储空间，反正我是没有这么多钱)，IEEE
-802.11 ac(WiFi
-5)能实现的最高无线传输速度在300-400MBPS之间，硬盘和网络都完全无法承受无压缩4K视频的码率。也因此，视频的压制和编码就应运而生。</p>
-<p>一般我们看见的视频文件后缀名MOV、MP4、MKV是是视频的封装格式(Format)，可以理解为一个容器，里面包含了视频的帧信息、音频信息、媒体信息、字幕及其他信息。</p>
-<p>目前，常见编码有H.264、H.265/HEVC等，编码信息记录着帧与帧之间的变化，虽然有效地压缩了视频体积，但却大大增加了处理器压力。</p>
-<p>在视频处理过程中，编码通常有拍摄编码、剪辑编码、输出编码三种使用场景。</p>
-<p>拍摄编码，顾名思义，是指使用相机进行拍摄时所使用的的编码，索尼、松下等相机在存储获取的影像时就会使用帧间编码对每一帧进行存储。</p>
-<p>剪辑编码，指对素材进行剪辑时使用的编码。举个栗子，由于帧间编码需要强大的处理能力，如果剪辑使用的设备性能欠缺，剪辑时素材的播放就会出现卡顿，使用体验极差；这时就可以将素材重编码为低分辨率视频进行编辑，再用源素材进行输出。</p>
-<p>输出编码，指剪辑软件根据需求输出的视频的编码。对于网络视频来说，网络平台会对码率过高的视频进行二次压缩。为了解决这个问题，要么将上传的视频压制到平台限定码率之下；要么尽量减少复杂移动画面的拍摄、调整曝光减少噪点等。</p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>视频</tag>
-        <tag>视频编码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自建RSS服务——Tiny Tiny RSS</title>
-    <url>//2020/04/23/ttrss-build/</url>
-    <content><![CDATA[<p><strong>这篇文章使用的是TTRSS老版本安装方式，新版的Docker安装请参考最新的文章<a href="/2021/07/22/ttrss-build-2/">Tiny Tiny
-RSS再次搭建</a>。</strong></p>
-<p>很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder
-3停更了。<br>
-为了解决日常的RSS阅读，自建RSS服务就提上了日程<del>从冒出想法到搞定实际只花了半天时间</del>。</p>
-<p>本文我就来详细介绍一下搭建多平台RSS服务——Tiny Tiny RSS(TTRSS)。</p>
-<span id="more"></span>
-<blockquote>
-<p><strong>最新版的TTRSS更新了安装方式，目前官方推荐使用docker方式安装，具体的安装和迁移请等待相关文章的更新。</strong></p>
-</blockquote>
-<h2 id="ttrss">1 TTRSS</h2>
-<p>冒出自建RSS服务之前，我其实已经删掉Reeder准备放弃移动端了。网上推荐的Win平台RSS阅读器，发现大多都是Outlook、ThunderMail之类的邮件客户端；虽然我也用"宇宙最强的邮件客户端"——Outlook，但我并不想把娱乐消遣和工作搅和在一起。<br>
-在小众软件的一篇文章的评论里面，我发现了Tiny Tiny
-RSS(TTRSS)，一下子就发现它非常符合我的情况： 1. 国内有闲置的服务器可用；
-2. 订阅源偏重国内(国外源较多建议使用国外的服务器)； 3.
-时间较多的白嫖党。</p>
-<p>说干就干。花了一下午把TTRSS给搞定了，并已经成功在Reeder上登录、阅读、标记。</p>
-<h2 id="服务器配置">2 服务器配置</h2>
-<p>闲置的服务器是在两年前买的腾讯云"1C+2G+1Mbps"，无域名，一直没有利用起来。</p>
-<p>首先，在腾讯云控制台重装系统，这是清空系统防止出现程序冲突。如果服务器已经运行其它任务，可以无视，但出现问题需要考虑会不会是已运行任务的冲突。因为比较偏爱CentOS，所以操作系统选择了CentOS。</p>
-<figure>
-<img data-src="./3506696871.png" alt="服务器系统重装">
-<figcaption aria-hidden="true">服务器系统重装</figcaption>
-</figure>
-<p>重装完服务器的系统先不要关掉控制台，在左侧找到"安全组"，新建一个安全组规则。<br>
-我开通了3个端口： 1. 8888 --&gt; 宝塔面板默认端口； 2. 2333 --&gt;
-预留给宝塔面板的端口； 3. 9999 --&gt; 预留给TTRSS的端口。<br>
-注：宝塔面板和TTRSS的端口可以选自己喜欢的，只要不和现有的冲突就行。</p>
-<p>新建安全组规则后，将这个规则绑定到服务器。</p>
-<figure>
-<img data-src="./2662962289.png" alt="配置安全组">
-<figcaption aria-hidden="true">配置安全组</figcaption>
-</figure>
-<h2 id="服务器环境安装">3 服务器环境安装</h2>
-<h3 id="宝塔面板安装">3.1 宝塔面板安装</h3>
-<p>云服务器的配置结束后，就可以使用SSH工具登录服务器了(别告诉我你把密码给忘记了)。<br>
-SSH工具(如XShell)使用教程自行百度(喜欢谷歌的可以选择番羽土啬)。</p>
-<p>使用SSH登录服务器后，根据系统使用下面的命令安装宝塔面板，其它操作系统的安装命令请到<a href="https://www.bt.cn/download/linux.html">宝塔面板官网</a>查看。<br>
-使用宝塔面板的目的是为了安装LNMP并为TTRSS建立站点，已经安装过或者对此精通的大佬请自觉跳至<a href="#ttrss%e7%ab%99%e7%82%b9%e5%bb%ba%e7%ab%8b">TTRSS站点建立</a>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># CentOS 安装命令</span></span><br><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh</span><br><span class="line"><span class="comment"># Ubuntu/Deepin 安装命令</span></span><br><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
-<p>安装过程不是特别慢，大概几分钟就搞定了。宝塔面板安装成功后会在最后有"Completed"字样，并在字样上方有访问宝塔面板的默认URL及账号密码，请务必将这几行字符复制出来并暂时保存起来。这里的图片没有截，请仔细阅读这段文字。</p>
-<h3 id="lnmp安装">3.2 LNMP安装</h3>
-<p>使用宝塔面板安装后输出的URL和账号密码登录宝塔面板，然后在弹出的框内选择LNMP进行安装。<br>
-如果你看到这篇文章的时候PHP没有更新8.0的话，PHP版本选择最新的；服务器配置如果是1核1G，MySQL版本请自觉选用5.6及以下；phpMyAdmin可以不选。我安装时没有截图，这张图是官方论坛里截取的，使用图里的版本也可以。</p>
-<figure>
-<img data-src="./2780109685.png" alt="安装LNMP">
-<figcaption aria-hidden="true">安装LNMP</figcaption>
-</figure>
-<p>安装过程看具体服务器配置，我的2G内存的跑了十分钟左右。等任务队列全部跑完就说明环境安装好了。</p>
-<p>接下来需要安装PHP的扩展fileinfo，否则TTRSS的初始化会出错。几年前我搭建我的WordPress的时候就因为没安装fileinfo，一直初始化失败。<br>
-在左侧边栏中选择"软件商店"，选择分类"已安装"，点击PHP的"设置"。</p>
-<figure>
-<img data-src="./1674883902.png" alt="安装fileinfo插件-1">
-<figcaption aria-hidden="true">安装fileinfo插件-1</figcaption>
-</figure>
-<p>在弹出的界面中选择左侧的"安装扩展"，找到fileinfo并点击安装，安装需要等待几秒钟。</p>
-<figure>
-<img data-src="./3460819832.png" alt="安装fileinfo插件-2">
-<figcaption aria-hidden="true">安装fileinfo插件-2</figcaption>
-</figure>
-<p>到这里，LNMP的环境就搭建好了，但我还是要多说一句，<strong>请务必在左侧边栏的"面板设置"中修改面板登录端口、账号密码以及安全入口</strong>，端口使用安全组预留给宝塔面板的端口。</p>
-<h3 id="ttrss站点建立">3.3 TTRSS站点建立</h3>
-<p>在左侧边栏中选择"网站"，点击"添加站点"。</p>
-<figure>
-<img data-src="./2348240304.png" alt="建立站点">
-<figcaption aria-hidden="true">建立站点</figcaption>
-</figure>
-<p>在弹出的界面中填写站点的信息。</p>
-<blockquote>
-<p>填写要求：<br>
-域名 -
-使用"http://服务器外网ip:端口号"的格式，端口号使用安全组预留给TTRSS使用的端口；可以使用域名代替外网ip，甚至使用https<br>
-根目录 - 为了方便，我使用了"/www/wwwroot/ttrss"<br>
-数据库 - 选择"MySQL"，编码为"utf-8"，用户名与密码自己输入并记住</p>
-</blockquote>
-<h2 id="ttrss安装及配置">4 TTRSS安装及配置</h2>
-<p>此时服务器上的站点还是空的网站，需要从<a href="https://tt-rss.org/">TTRSS官网</a>下载TTRSS并进行配置。</p>
-<h3 id="ttrss下载">4.1 TTRSS下载</h3>
-<p>虽然使用服务器也可以获取TTRSS，但下载速度太感人，还是在PC上下好了传上去吧。不信邪的可以使用下面的命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.tt-rss.org/fox/tt-rss.git ttrss</span><br></pre></td></tr></table></figure>
-<p>建议大家使用浏览器访问TTRSS的<a href="https://git.tt-rss.org/git/tt-rss/src/master">仓库</a>，下载zip包。如果这个仓库失效可以访问<a href="https://tt-rss.org/">TTRSS官网</a>，再进入仓库下载。</p>
-<p>成功下载TTRSS后，使用宝塔面板将zip包上传到服务器的/www/wwwroot/目录下；<br>
-解压这个zip包，将tt-rss文件夹内的所有文件剪切到/www/wwwroot/ttrss/目录下。<br>
-小文件上传速度堪忧，请务必在服务器解压zip包。</p>
-<figure>
-<img data-src="./2606487638.png" alt="上传TTRSS">
-<figcaption aria-hidden="true">上传TTRSS</figcaption>
-</figure>
-<h3 id="ttrss初始化">4.2 TTRSS初始化</h3>
-<p>打开浏览器，访问"http://服务器外网ip:端口号/install"，进入TTRSS的初始化。<br>
-数据库选择MySQL，端口选择3306，用户名密码是建立站点时设置的，希望没有忘记。然后点击"Test
-configuration"。</p>
-<figure>
-<img data-src="./301425375.png" alt="TTRSS初始化-1">
-<figcaption aria-hidden="true">TTRSS初始化-1</figcaption>
-</figure>
-<p>网页下方出现下图的内容，点击"Initialize database"。</p>
-<figure>
-<img data-src="./3081491383.png" alt="TTRSS初始化-2">
-<figcaption aria-hidden="true">TTRSS初始化-2</figcaption>
-</figure>
-<p>接着，在出现的内容中点击"Save
-configuration"，让系统自己保存配置。</p>
-<figure>
-<img data-src="./3023230390.png" alt="TTRSS初始化-3">
-<figcaption aria-hidden="true">TTRSS初始化-3</figcaption>
-</figure>
-<p>到此，TTRSS就配置结束了，访问"http://服务器外网ip:端口号"即可登录TTRSS了。<br>
-使用默认用户名及密码(admin,password)即可登录TTRSS，第一次登录时系统会提示重设密码。</p>
-<h3 id="ttrss配置自动更新">4.3 TTRSS配置——自动更新</h3>
-<p>可能是因为bug的原因，目前的TTRSS通过"偏好设置"无法自动更新，需要使用服务器的非root用户的crontab进行自动更新。配置过程如下。</p>
-<p>使用SSH登录服务器，输入下面这个命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">crontab -u www -e</span><br></pre></td></tr></table></figure>
-<p>然后，点击"i"进入编辑模式，插入以下命令实现1小时更新一下信息源。请注意php后的路径和命令中的空格。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* */1 * * * php /www/wwwroot/ttrss/update.php  --feeds  &gt; /dev/null</span><br></pre></td></tr></table></figure>
-<p>最后，使用"Esc"和":wq"退出vim编辑，TTRSS就可以自动更新了。</p>
-<p>至于订阅源的配置步骤就不赘述了。</p>
-<h3 id="ttrss配置多平台支持fever">4.4 TTRSS配置——多平台支持/fever</h3>
-<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
-API。因此，需要配置fever插件。</p>
-<ol type="1">
-<li>下载<a href="./3738853280.7z">fever插件</a>并解压，使用宝塔面板将<strong>整个fever文件夹</strong>上传到/www/wwwroot/ttrss/plugins/目录下。注意：<strong>整个fever文件夹</strong>。</li>
-<li>在TTRSS的偏好设置中，勾选"允许外部客户端通过API来访问该账户"。</li>
-<li>在TTRSS的偏好设置中，选择"插件"页面，勾选fever，点击"启用选择的插件"。</li>
-<li>刷新页面，在TTRSS的偏好设置中，选择"Fever
-Emulation"页面，设置密码。密码可与TTRSS账户密码相同，用于客户端访问TTRSS。</li>
-</ol>
-<p>下面就可以在客户端使用Fever访问TTRSS了。下面是Reeder 3的配置页面。
-服务器填写"http://服务器外网ip:端口号/plugins/fever"；邮箱填写TTRSS账号用户名，不一定要邮箱；密码是在"Fever
-Emulation"页面设置的密码。</p>
-<figure>
-<img data-src="./3057100732.png#vhei=800" alt="Reeder 3配置界面">
-<figcaption aria-hidden="true">Reeder 3配置界面</figcaption>
-</figure>
-<h2 id="总结">总结</h2>
-<p>整篇文章写下来花了两天时间，有几张图片因为搭建时遗忘而没有截图，但整个搭建描述还是挺清晰的(自我评价的)。</p>
-<p>如果参考了这篇TTRSS搭建教程，请别忘了<del>一键三连</del>收藏分享哦。</p>
-]]></content>
-      <categories>
-        <category>DIY</category>
-      </categories>
-      <tags>
-        <tag>DIY</tag>
-        <tag>RSS</tag>
-        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -3828,6 +3625,209 @@ MHz，所以信道与信道之间必定会有重叠，图示如下。</p>
       <tags>
         <tag>Wi-Fi</tag>
         <tag>IEEE 802.11</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VHDL学习笔记之元件递归</title>
+    <url>//2020/08/05/vhdl-note-component-recursion/</url>
+    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
+<blockquote>
+<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
+</blockquote>
+<span id="more"></span>
+<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
+<h2 id="元件递归设计">1 元件递归设计</h2>
+<blockquote>
+<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
+</blockquote>
+<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://github.com/xulu199705/blog-attachment/blob/main/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
+Std 1076-2019</a>。</p>
+<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
+为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
+\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
+方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>简单写了个仿真文件，仿真结果如下。</p>
+<figure>
+<img data-src="./3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
+<figcaption aria-hidden="true">综合前仿真结果</figcaption>
+</figure>
+<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
+<figure>
+<img data-src="./4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
+<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
+</figure>
+<h2 id="正常的n输入与门设计">2 正常的n输入与门设计</h2>
+<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
+<figure>
+<img data-src="./590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
+<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
+</figure>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
+<figure>
+<img data-src="./2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
+<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
+</figure>
+<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
+<figure>
+<img data-src="./2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
+<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
+</figure>
+<figure>
+<img data-src="./350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
+<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
+</figure>
+<h2 id="总结">3 总结</h2>
+<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
+:&amp;(蛆音娘_扶额)
+，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
+:@(击掌)</p>
+<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
+]]></content>
+      <categories>
+        <category>集成电路</category>
+      </categories>
+      <tags>
+        <tag>VHDL</tag>
+        <tag>FPGA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code笔记之根据语言选择性删除行末空格</title>
+    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
+    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
+Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
+Workshop、Markdown+Math和Markdown Preview
+Enhanced配合来写东西，用着特别顺手。</p>
+<p>平时用VS
+Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
+<span id="more"></span>
+<h2 id="问题">1 问题</h2>
+<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
+样例一：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1</p>
+<p>para-2</p>
+<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
+样例二：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1<br>
+para-2</p>
+<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
+<h2 id="解决方案">2 解决方案</h2>
+<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<p>VS
+Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>视频相关术语</title>
+    <url>//2020/02/12/video-terms/</url>
+    <content><![CDATA[<p>今天在人人影视上找资源的时候，突然对文件名上的HEVC、10bit等感到疑惑，就花了一下午时间研究了一下视频相关的术语，在下面分享一下。</p>
+<span id="more"></span>
+<ul>
+<li><a href="#%e8%a7%86%e9%a2%91%e7%9b%b8%e5%85%b3%e6%9c%af%e8%af%ad">视频相关术语</a>
+<ul>
+<li><a href="#%e7%9b%ae%e5%bd%95">目录</a></li>
+<li><a href="#%e5%88%86%e8%be%a8%e7%8e%87">分辨率</a></li>
+<li><a href="#%e5%ae%bd%e9%ab%98%e6%af%94">宽高比</a>
+<ul>
+<li><a href="#%e5%bd%b1%e5%83%8f%e5%ae%bd%e9%ab%98%e6%af%94">影像宽高比</a></li>
+<li><a href="#%e5%83%8f%e7%b4%a0%e5%ae%bd%e9%ab%98%e6%af%94">像素宽高比</a></li>
+</ul></li>
+<li><a href="#%e5%b8%a7%e7%8e%87">帧率</a>
+<ul>
+<li><a href="#%e8%a7%86%e9%a2%91%e5%88%b6%e5%bc%8fpalntsc">视频制式(PAL&amp;NTSC)</a></li>
+</ul></li>
+<li><a href="#%e4%bd%8d%e6%b7%b1">位深</a></li>
+<li><a href="#%e7%bc%96%e7%a0%81">编码</a></li>
+</ul></li>
+</ul>
+<h2 id="分辨率">1 分辨率</h2>
+<p>分辨率(Resolution)指影像的尺寸大小。衡量视频分辨率的基本单位为像素(Pixel,px)。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">┌-------------┐┄┄┄┄┄</span><br><span class="line">|             |   ↑</span><br><span class="line">|    Video    | Height</span><br><span class="line">|             |   ↓</span><br><span class="line">└-------------┘┄┄┄┄┄</span><br><span class="line">┆←   Width   →┆</span><br></pre></td></tr></table></figure>
+<p>分辨率一般用宽(Width) * 高(Height)来表示。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">常见分辨率</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">720P</td>
+<td style="text-align: center;">1280px * 720px</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1080P</td>
+<td style="text-align: center;">1920px * 1080px</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4K</td>
+<td style="text-align: center;">3840px * 2160px</td>
+</tr>
+</tbody>
+</table>
+<p>对于宽/宽为16:9的分辨率，通常可以用720P、1080P等简称来表示。其中，P(Progressive)表示逐行扫描。1080P即表示每一次刷新都需要对1080行像素进行刷新(当然，最新的屏幕刷新技术已经可以对局部进行更新，以实现更高的刷新率)。</p>
+<h2 id="宽高比">2 宽高比</h2>
+<p>宽高比(Aspect Ratio)表示为宽(Width)和高(Height)的比例。</p>
+<h3 id="影像宽高比">2.1 影像宽高比</h3>
+<p>常见的影像宽高比(Video Aspect
+Ratio)有16:9、4:3、21:9、16:10。不同的使用场景和需求需要不同的宽高比，比如电视、电影或“带鱼屏”等。</p>
+<h3 id="像素宽高比">2.2 像素宽高比</h3>
+<p>像素宽高比(Pixel Aspect
+Ratio)与影像宽高比类似，表示像素的宽高之比。</p>
+<p>目前，方形像素(Square Pixel)比较常用。但是，非方形像素(Non-Square
+Pixel)仍然存在于某些场合中，并且发挥着一定的作用。我们需要能够辨别这些非方形像素，否则，图像显示会出现扭曲，信息传达会出现错误。</p>
+<h2 id="帧率">3 帧率</h2>
+<p>帧率(Frame Rate)是视频实现影像从静止到运动转变的关键。</p>
+<p>在视频中，一幅静止的画面被称为帧(Frame)。视频播放实质上就是许多帧连续展示在屏幕上，当帧展示的间隔不断缩小，也就是每秒展示的帧不断增加，人眼看到的图案就变得连续起来(原理可自行搜索视觉暂留)。</p>
+<p>帧率就是视频在一秒内展示的帧的数量。帧率单位是fps(frame pre
+second)。一般来说，电影的帧率为24fps，当然最近也有120fps拍的电影(片名忘记了，只记得是李安导演的)；流媒体的帧率则需要根据你的网速和你的会员级别确定了；而电视的帧率则有所在地区的视频制式决定。</p>
+<h3 id="视频制式palntsc">3.1 视频制式(PAL&amp;NTSC)</h3>
+<p>这是一个存在于传统的电视广播行业的问题。</p>
+<p>NTSC普遍用于北美和南美，每秒30帧隔行；而其他地区，比如中国、欧洲，则使用每秒25帧隔行的PAL。在电视广播行业中工作，就需要考虑到这个问题；如果是上传到网站的视频，就可以忽略这个问题。</p>
+<h2 id="位深">4 位深</h2>
+<p>位深(Bit
+Depth)可以表示图像或者影像系统中可以使用的独立色彩的个数。如果系统的位深为10，那么需要三个10bit数码来分别表示R、G、B(当然还有其他色彩表示方式)，那么，系统就可以使用30bit的数码表示混合后的颜色，共有2^30=1.07*10^9种。</p>
+<p>位深越多的系统，色彩就越丰富，图像或影像的色彩表现力就越强。目前，8位和10位的位深常见于各种场合中。当然，在部分对色彩显示要求不高的场合中，使用8位或10位RGB码来表示颜色也屡见不鲜。</p>
+<h2 id="编码">5 编码</h2>
+<p>编码(CODEC)可以看做编码器(Coder) + 解码器(DeCoder)。</p>
+<p>首先，来看一下编码出现的原因。</p>
+<p>对于一段无压缩的、8bitRGB、4K、24fps的视频，暂且不考虑音频，它的码率
+= 3840 * 2160 * 8 * 3 * 24 bps = 4777574400bps =
+570MB/s，即如果要实现24fps播放这段视频，硬盘或网络需要传输570MB数据，GPU每秒需要处理570MB数据。以目前主流的硬件状况来看，5400rpm机械硬盘最高读取速度为130MB/s，(虽然m.2
+NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至少需要570MB的存储空间，反正我是没有这么多钱)，IEEE
+802.11 ac(WiFi
+5)能实现的最高无线传输速度在300-400MBPS之间，硬盘和网络都完全无法承受无压缩4K视频的码率。也因此，视频的压制和编码就应运而生。</p>
+<p>一般我们看见的视频文件后缀名MOV、MP4、MKV是是视频的封装格式(Format)，可以理解为一个容器，里面包含了视频的帧信息、音频信息、媒体信息、字幕及其他信息。</p>
+<p>目前，常见编码有H.264、H.265/HEVC等，编码信息记录着帧与帧之间的变化，虽然有效地压缩了视频体积，但却大大增加了处理器压力。</p>
+<p>在视频处理过程中，编码通常有拍摄编码、剪辑编码、输出编码三种使用场景。</p>
+<p>拍摄编码，顾名思义，是指使用相机进行拍摄时所使用的的编码，索尼、松下等相机在存储获取的影像时就会使用帧间编码对每一帧进行存储。</p>
+<p>剪辑编码，指对素材进行剪辑时使用的编码。举个栗子，由于帧间编码需要强大的处理能力，如果剪辑使用的设备性能欠缺，剪辑时素材的播放就会出现卡顿，使用体验极差；这时就可以将素材重编码为低分辨率视频进行编辑，再用源素材进行输出。</p>
+<p>输出编码，指剪辑软件根据需求输出的视频的编码。对于网络视频来说，网络平台会对码率过高的视频进行二次压缩。为了解决这个问题，要么将上传的视频压制到平台限定码率之下；要么尽量减少复杂移动画面的拍摄、调整曝光减少噪点等。</p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>视频</tag>
+        <tag>视频编码</tag>
       </tags>
   </entry>
 </search>
