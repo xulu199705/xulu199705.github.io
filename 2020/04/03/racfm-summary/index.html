@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/logo_180px.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/logo_180px.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon.ico">
+  <link rel="mask-icon" href="/favicon/logo_180px.png" color="#222">
+  <link rel="manifest" href="/favicon/logo_180px.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.css" integrity="sha256-RvRHGSuWAxZpXKV9lLDt2e+rZ+btzn48Wp4ueS3NZKs=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/silver/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hexo.leonxu.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":{"utterances":{"order":-1}},"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。 针对交变电场检测（ACFM）的方向性局限，文章High sensitivity rotating alternating current field measurement for arbitrary-angle underwater cracks（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACFM裂纹检测改进——RACFM">
+<meta property="og:url" content="https://hexo.leonxu.top/2020/04/03/racfm-summary/index.html">
+<meta property="og:site_name" content="Leon的网络日志">
+<meta property="og:description" content="之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。 针对交变电场检测（ACFM）的方向性局限，文章High sensitivity rotating alternating current field measurement for arbitrary-angle underwater cracks（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/03/racfm-summary/2779082017.png">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/03/racfm-summary/3338828193.jpg">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/03/racfm-summary/3045871072.jpg">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/03/racfm-summary/1016029282.jpg">
+<meta property="og:image" content="https://hexo.leonxu.top/2020/04/03/racfm-summary/2353434411.jpg">
+<meta property="article:published_time" content="2020-04-03T03:03:17.000Z">
+<meta property="article:modified_time" content="2022-08-18T03:10:52.085Z">
+<meta property="article:author" content="Leon">
+<meta property="article:tag" content="summary">
+<meta property="article:tag" content="检测">
+<meta property="article:tag" content="电磁感应">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hexo.leonxu.top/2020/04/03/racfm-summary/2779082017.png">
+
+
+<link rel="canonical" href="https://hexo.leonxu.top/2020/04/03/racfm-summary/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hexo.leonxu.top/2020/04/03/racfm-summary/","path":"/2020/04/03/racfm-summary/","title":"ACFM裂纹检测改进——RACFM"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ACFM裂纹检测改进——RACFM | Leon的网络日志</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Leon的网络日志" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Leon的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-闲言碎语"><a href="/dailyword/" rel="section"><i class="fas fa-book fa-fw"></i>闲言碎语</a></li><li class="menu-item menu-item-时光留影"><a href="/photograph/" rel="section"><i class="fas fa-camera-retro fa-fw"></i>时光留影</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E8%83%8C%E6%99%AF"><span class="nav-text">1 论文背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%AE%BA%E5%88%86%E6%9E%90"><span class="nav-text">2 理论分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81"><span class="nav-text">3 实验验证</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leon"
+      src="https://avatars.githubusercontent.com/u/17242727?s=60&v=4">
+  <p class="site-author-name" itemprop="name">Leon</p>
+  <div class="site-description" itemprop="description">这里是爱研究各种问题、立许多flag的Leon的网络日志</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xulu199705" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xulu199705" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xulu199705@163.com" title="E-Mail → mailto:xulu199705@163.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_nd.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hexo.leonxu.top/2020/04/03/racfm-summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/17242727?s=60&v=4">
+      <meta itemprop="name" content="Leon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leon的网络日志">
+      <meta itemprop="description" content="这里是爱研究各种问题、立许多flag的Leon的网络日志">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ACFM裂纹检测改进——RACFM | Leon的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ACFM裂纹检测改进——RACFM
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-04-03 11:03:17" itemprop="dateCreated datePublished" datetime="2020-04-03T11:03:17+08:00">2020-04-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.6k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。</p>
+<p>针对交变电场检测（ACFM）的方向性局限，文章<em>High sensitivity
+rotating alternating current field measurement for arbitrary-angle
+underwater
+cracks</em>（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环境实验验证了RACFM
+对任意角度裂纹的灵敏性。</p>
+<span id="more"></span>
+<h2 id="论文背景">1 论文背景</h2>
+<p>原文以离岸油气开采行业为实际应用背景，列举了当时水下管道裂纹检测的几种方法，并分析这些方法的特点和缺陷，请参见表1。针对当时普遍使用的交变电场检测（ACFM）的方向性局限，原文提出了一种新型的旋转交变电场检测（RACFM）在保证相对较高的灵敏度的前提下，克服方向性的局限。</p>
+<table>
+<tr>
+<th colspan="3">
+表1 多种裂纹检测比较
+</th>
+</tr>
+<tr>
+<th>
+</th>
+<th>
+特点
+</th>
+<th>
+缺陷
+</th>
+</tr>
+<tr>
+<th>
+肉眼检查
+</th>
+<th>
+实用、廉价
+</th>
+<th>
+<ol type="1">
+<li>高度依赖使用者的经验和能力<br>2. 不借助工具无法发现应力腐蚀开裂(SCC)
+</li></ol></th>
+</tr>
+<tr>
+<th>
+磁粉探伤(MPI)
+</th>
+<th>
+<ol type="1">
+<li>使用最广泛<br>2. 使用铁屑探查裂纹
+</li></ol></th>
+<th>
+MPI的检测性能依赖于结构体表面的平整程度，而水下表面清洁成本高昂
+</th>
+</tr>
+<tr>
+<th>
+漏磁检测(MFL)
+</th>
+<th>
+无接触检测，无需表面清洁
+</th>
+<th>
+无法检测排列紧密的裂纹
+</th>
+</tr>
+<tr>
+<th>
+涡流检测(ECT)
+</th>
+<th>
+检测导电材料表面和亚表面的裂缝
+</th>
+<th>
+水下结构体表面不规则，难以做到匀速检测装置离开，影响ECT精准性
+</th>
+</tr>
+<tr>
+<th>
+交流电场检测(ACFM)
+</th>
+<th>
+<ol type="1">
+<li>无需表面清洁<br>2. 数学模型精确<br>3. 对检测装置移动具有高容忍度
+</li></ol></th>
+<th>
+裂纹与感应电流垂直时，感应电流的扰动最大，与感应电流平行时最小，实际使用时需对同一位置多次检测，增加检测成本
+</th>
+</tr>
+</table>
+
+
+
+<h2 id="理论分析">2 理论分析</h2>
+<p>ACFM
+是一种基于交流电位差的裂纹检测手段。通以交流电的线圈在其周围产生变化的交流磁场，被测表面感应出感生电动势，产生变化的感生交流电场。当被测表面出现裂纹时，感生交流电场就会被干扰，同时交流磁场也会受到轻微的扰动。ACFM
+就是通过检测交流磁场的扰动来检测裂纹的长度和深度，其原理框图请参见图1。</p>
+<figure>
+<img data-src="./2779082017.png" alt="图1 ACFM原理框图">
+<figcaption aria-hidden="true">图1 ACFM原理框图</figcaption>
+</figure>
+<p>图2-a和图2-b分别为被测表面的裂纹与交流电场垂直和平行的示意图。显而易见，当交流电场的方向与裂纹垂直时，裂纹对交流电场的影响就会更加明显；反之，两者平行时，裂纹对交流电场的影响明显降低。原文针对这一局限，RACFM
+使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM
+感生交流电场方向理论示意图如图3所示。</p>
+<p>原文针对这一局限，RACFM使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM感生交流电场方向理论示意图如图3所示。</p>
+<figure>
+<img data-src="./3338828193.jpg" alt="图2 裂纹角度对交流电场的影响">
+<figcaption aria-hidden="true">图2 裂纹角度对交流电场的影响</figcaption>
+</figure>
+<figure>
+<img data-src="./3045871072.jpg" alt="图3 周期内RACFM感生交流电场方向理论示意图">
+<figcaption aria-hidden="true">图3
+周期内RACFM感生交流电场方向理论示意图</figcaption>
+</figure>
+<h2 id="实验验证">3 实验验证</h2>
+<p>原文使用RACFM与传统ACFM对照试验，除电感器的激励电流外，其余均相同。</p>
+<p>探测器直线移动经过裂纹，通过改变路径与裂纹的夹角(0°-90°)来模拟任意角度的裂纹，记录<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>两个方向的磁感应强度，实验结果如图4所示。在夹角为0°时，RACFM和ACFM得到的扰动都有明显的波动，可以作为裂纹的依据。随着夹角不断变大，ACFM得到的磁感应强度扰动不断衰减，当夹角过大时，扰动被噪声覆盖。而RACFM得到的扰动则一直比较明显，不会随着夹角变化产生明显的衰减。</p>
+<figure>
+<img data-src="./1016029282.jpg" alt="图4 B_x和B_z实验数据">
+<figcaption aria-hidden="true">图4 <span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>实验数据</figcaption>
+</figure>
+<p>为了量化RACFM的性能，原文定义了x和z方向磁感应强度的灵敏度，见下方公式。</p>
+<p><span class="math display">\[
+\left\{ \begin{array}{l}
+{S_x} = \frac{ {M{X_{max} } } }{ {M{X_0} } } \times 100\% \\
+{S_z} = \frac{ {M{Z_{max} } } }{ {M{X_0} } } \times 100\%
+\end{array} \right.
+\]</span></p>
+<p>其中，<span class="math inline">\(MX_0\)</span>表示无裂纹时，<span class="math inline">\(B_x\)</span>的幅度；<span class="math inline">\(M{X_{max}}\)</span>和<span class="math inline">\(M{Z_{max}}\)</span>分别表示<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>扰动的最大值。灵敏度与角度变化的关系如图5所示。随着路径与裂纹夹角不断变大，ACFM的灵敏度急剧降低，当夹角大于50°时，ACFM的两个方向灵敏度接近0；RACFM的灵敏度<span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>虽然有衰减，但依旧处于较高的灵敏范围内，可以作为裂纹检测的依据。</p>
+<figure>
+<img data-src="./2353434411.jpg" alt="图5 S_x和S_z变化趋势">
+<figcaption aria-hidden="true">图5 <span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>变化趋势</figcaption>
+</figure>
+<p>根据实验结果，RACFM能克服传统ACFM的方向性局限，同时，RACFM还保持了较高的裂纹检测灵敏度，可以应用在实际的离岸油气开采行业的管道裂纹检测场景中。</p>
+<hr>
+<p>其实这篇文章提出的RACFM其实就是将ACFM从线到面，从单一角度扩展到多个角度，并不是特别深奥难懂的点子。甚至这样的例子也发生在平时的生活中，我们也许会写下“就这？”。前几天开始看<em>Talk
+Like TED</em>，开篇第一句就是“Ideas are the currency of the twenty-first
+century”。这就让我想起了RACFM这篇文章，以及经常遇见的“就这？”。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Leon
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hexo.leonxu.top/2020/04/03/racfm-summary/" title="ACFM裂纹检测改进——RACFM">https://hexo.leonxu.top/2020/04/03/racfm-summary/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://space.bilibili.com/13184431">
+            <span class="icon">
+              <i class="fab fa-bilibili"></i>
+            </span>
+
+            <span class="label">BiliBili</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/summary/" rel="tag"><i class="fa fa-tag"></i> summary</a>
+              <a href="/tags/%E6%A3%80%E6%B5%8B/" rel="tag"><i class="fa fa-tag"></i> 检测</a>
+              <a href="/tags/%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94/" rel="tag"><i class="fa fa-tag"></i> 电磁感应</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/03/19/wifi-6/" rel="prev" title="Wi-Fi 6简析">
+                  <i class="fa fa-angle-left"></i> Wi-Fi 6简析
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/04/08/vscode-note-trimTrailingWhitespace/" rel="next" title="VS Code笔记之根据语言选择性删除行末空格">
+                  VS Code笔记之根据语言选择性删除行末空格 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">苏 ICP 备 17063385 号 </a>
+  </div>
+  <div class="copyright">
+    &copy; 2017 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Leon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/xulu199705" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.umd.js" integrity="sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"xulu199705/blog-attachment","issue_term":"title","theme":"github-light","label":"comment"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>
