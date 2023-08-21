@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>//2016/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-  </entry>
-  <entry>
     <title>基于CAN总线的多轴运动控制系统的一种优化方案</title>
     <url>//2019/01/30/can-based-optimization/</url>
     <content><![CDATA[<p>昨天从学校毕设系统里面下载了要做的英文翻译的原文，论文名称是<em>The
@@ -57,6 +30,33 @@ CAN-Based Synchronized Structure for Multi-Axis</em>。</p>
         <tag>summary</tag>
         <tag>总线</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>//2016/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
   </entry>
   <entry>
     <title>IC笔记之反相器仿真</title>
@@ -345,6 +345,31 @@ As"为仿真配置的名称，"Description"中可以选填一些配置信息，�
       </tags>
   </entry>
   <entry>
+    <title>从零开始的客制化87键机械键盘_1_立项</title>
+    <url>//2018/12/25/keyboard87-1/</url>
+    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
+type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
+<span id="more"></span>
+<h2 id="项目初衷">1 项目初衷</h2>
+<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
+<figure>
+<img src="/2018/12/25/keyboard87-1/3841195344.jpg" alt="USB-to-Bluetooth Convertor">
+<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
+</figure>
+<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
+<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
+<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>键盘</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IC笔记之瞬态仿真</title>
     <url>//2021/04/06/ic-note-simu-tran/</url>
     <content><![CDATA[<p>IC笔记系列再次更新，这次介绍一下瞬态仿真。</p>
@@ -534,31 +559,6 @@ allgolbal"：功能与sigglobal选项基本相同。另外，对每个节点最�
       <tags>
         <tag>瞬态仿真</tag>
         <tag>仿真</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从零开始的客制化87键机械键盘_1_立项</title>
-    <url>//2018/12/25/keyboard87-1/</url>
-    <content><![CDATA[<p>还有半年就要毕业了，在做毕业设计之余，我准备客制化一个87键机械键盘。键盘用STM32做主控，USB
-type-C做接口，以基本操作为最低目标。当然了，由于主专业的毕业设计和第二专业的毕业论文，留给这个项目的时间不会太多，项目的开发周期会(geng)有(xin)半(wan)年(quan)之(sui)久(yuan)。</p>
-<span id="more"></span>
-<h2 id="项目初衷">1 项目初衷</h2>
-<p>最初决定做键盘是在1月初的时候。当然，一开始想做的并不是键盘，而是一个USB-to-Bluetooth的转换器（如下图），这样就可以在iPad上用机械键盘了。</p>
-<figure>
-<img src="/2018/12/25/keyboard87-1/3841195344.jpg" alt="USB-to-Bluetooth Convertor">
-<figcaption aria-hidden="true">USB-to-Bluetooth Convertor</figcaption>
-</figure>
-<p>转换器的主控同样是准备采用STM32，毕竟STM32作为我比较熟悉的MCU，不仅功能强大，而且有过几次基于STM32系统的制作经验。</p>
-<p>这时候，本着“不如搞个大事情”的原则，我就想着不如直接做个机械键盘吧。<del>就这样，我踏上了从零开始的客制化87键机械键盘不归路</del>。</p>
-<p>项目软件调通之后会将硬件原理图、封装库和STM32的程序发布到我的<a href="https://github.com/xulu199705/KeyBoard87">GitHub</a>，敬请期待···</p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>键盘</tag>
-        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -768,6 +768,102 @@ C87，所以直接就决定用樱桃的MX轴。常用的MX轴有黑青茶红四�
       </tags>
   </entry>
   <entry>
+    <title>Linux笔记之VNC配置</title>
+    <url>//2021/06/21/linux-note-vnc-config/</url>
+    <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
+<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
+<span id="more"></span>
+<blockquote>
+<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
+</blockquote>
+<h2 id="预备知识">1 预备知识</h2>
+<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
+<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
+<p>wikipedia上有详细介绍<a href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
+<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
+<h2 id="安装vnc">2 安装VNC</h2>
+<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
+<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
+<figcaption aria-hidden="true">yum grouplist结果</figcaption>
+</figure>
+<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y &quot;GNOME Desktop&quot;</span><br></pre></td></tr></table></figure>
+<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
+<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
+<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_vnc.png" alt="验证VNC安装">
+<figcaption aria-hidden="true">验证VNC安装</figcaption>
+</figure>
+<h2 id="配置vnc">3 配置VNC</h2>
+<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
+<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从sample创建VNC启动脚本</span></span><br><span class="line">sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
+<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
+<p>接着，需要小小处理一下刚刚复制的脚本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /etc/systemd/system</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">给权限x</span></span><br><span class="line">sudo chmod +x vncserver@\:1.service</span><br><span class="line">sudo chmod +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>接着打开2个脚本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
+<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
+<figure>
+<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_script_1.png" alt="脚本修改前">
+<figcaption aria-hidden="true">脚本修改前</figcaption>
+</figure>
+<figure>
+<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_script_2.png" alt="脚本修改后">
+<figcaption aria-hidden="true">脚本修改后</figcaption>
+</figure>
+<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
+<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
+<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
+<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
+<p>下面是VNC服务的启动和开机自启的配置。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置开机自启</span></span><br><span class="line">sudo systemctl enable vncserver@\:1.service</span><br><span class="line">sudo systemctl enable vncserver@\:2.service</span><br></pre></td></tr></table></figure>
+<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_port.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
+<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
+ツ )_/¯</del></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
+<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
+<figure>
+<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_selinux.png" alt="端口监听状态">
+<figcaption aria-hidden="true">端口监听状态</figcaption>
+</figure>
+<h2 id="连接vnc">5 连接VNC</h2>
+<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
+<figure>
+<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
+<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
+</figure>
+<figure>
+<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
+<figcaption aria-hidden="true">连接VNC演示</figcaption>
+</figure>
+<h2 id="总结">6 总结</h2>
+<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
+<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>VNC</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux笔记之XDMCP配置</title>
     <url>//2021/04/08/linux-note-xdmcp-config/</url>
     <content><![CDATA[<p>恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。</p>
@@ -892,9 +988,9 @@ manager为lightdm。<code>init 3</code>是将系统的运行切换为命令行�
         <category>软件</category>
       </categories>
       <tags>
+        <tag>CentOS</tag>
         <tag>XDMCP</tag>
         <tag>Xmanager</tag>
-        <tag>CentOS</tag>
       </tags>
   </entry>
   <entry>
@@ -1298,23 +1394,145 @@ OSS F4.5-F5.6畸变抑制和暗角控制做得更好，并且在LR中已有矫�
       </tags>
   </entry>
   <entry>
-    <title>关于Spring框架的IOC和DI的理解</title>
-    <url>//2018/01/26/spring-ioc-di/</url>
-    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
-<p>下面来说说我，一个初学者，对DI的理解。</p>
-<span id="more"></span>
-<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
-2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
-<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
-<p>这个是我今天看了Spring框架之后的理解。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>Sigma 14-24mm f2.8 DG DN ART</title>
+    <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
+    <content><![CDATA[<blockquote>
+<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
+14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
+</blockquote>
+<p><img src="/2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/Pasted%20image%2020220830195252.png"></p>
+<h2 id="结论">1 结论</h2>
+<p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(7599_{JD,20220816}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
+<ul>
+<li>优势
+<ul>
+<li>14mm端在F5.6光圈时有Outstanding级别的锐度</li>
+<li>边角表现非常好</li>
+<li>非常自然的色彩还原度</li>
+<li>对于一只广角来说，背景虚化非常好；焦外光斑表现不错</li>
+<li>Lightroom可以修正广角带来的畸变</li>
+<li>14mm端暗角不明显</li>
+<li>无慧差，很适合夜观星像</li>
+<li>顶级的手感</li>
+<li>有防尘防滴特性</li>
+<li>照片的自动对焦非常好</li>
+<li>比Sony FE 12-24mm F4 G（<span class="math inline">\(11543_{\mathbf{SONY},20220816}\)</span>）便宜</li>
+</ul></li>
+<li>一般
+<ul>
+<li>2.8光圈全开情况下，锐度只能达到Very Good的等级</li>
+<li>光圈缩小至F5.6时，24mm端锐度只能达到Very
+Good级别，与14mm端的Outstanding级别的锐度差距加大</li>
+<li>如果要平衡边角和中心锐度，光圈需要缩小至F8</li>
+<li>滤镜系统后置，使用时需要根据其形状进行选购或裁剪</li>
+<li>体积和重量有进步，达到了其它竞品的平均水平</li>
+<li>不可拆卸遮光罩，这一点和其它超广角镜头一样</li>
+<li>没有镜身光学防抖，但可以依靠机身防抖</li>
+</ul></li>
+<li>缺陷
+<ul>
+<li>焦距范围受限</li>
+<li>视频拍摄时，画面会出现闪烁</li>
+<li>必须使用150mm滤镜系统</li>
+</ul></li>
+<li>镜头比较
+<ul>
+<li>可替换镜头
+<ul>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G</li>
+<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35mm F2.8
+GM</li>
+<li>Tamron 17-28mm F2.8 Di III RXD</li>
+</ul></li>
+<li>其实，真的说起来，还是只有<span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G是同一等级比较的镜头。其他两只的焦距范围还是有点区别的。</li>
+<li>这两只镜头其实都是非常不错的镜头。适马1424F2.8有着2.8的光圈，更加适合暗光环境和星空的摄影；索尼1224F4则有着12mm的广角端，这2mm的差距在取景范围上其实是有非常巨大的差别的。</li>
+<li>锐度方面，适马1424F2.8在14mm端的中心锐度会有略微优势；索尼1224F4在24mm端稍微领先。边角情况，两只镜头表现差不多。</li>
+<li>至于到底选哪一只，就要看你的更想要2.8光圈还是12mm广角了。毕竟，这两支镜头在各方面的表现都是非常不错的。</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="总体信息">2 总体信息</h2>
+<h3 id="spec">2.1 SPEC</h3>
+<ul>
+<li>重量：795克</li>
+<li>价格：<span class="math inline">\(7599_{JD,20220816}\)</span></li>
+<li>长度：131mm</li>
+<li>几乎没有使用通用滤镜的可能性</li>
+<li>AF/MF切换按钮</li>
+<li>可自定义的对焦保持按钮</li>
+<li>11片光圈叶片</li>
+<li>防尘防潮设计</li>
+<li>最近对焦距离：28cm</li>
+<li>后置滤镜插槽</li>
+<li>不可拆卸遮光罩</li>
+<li>遮光罩预留镜头盖槽</li>
+<li>自带镜头盒</li>
+<li>The build construction is excellent</li>
+<li>自动对焦快速精准，非常安静</li>
+<li>内变焦</li>
+</ul>
+<h3 id="后置滤镜系统">2.2 后置滤镜系统</h3>
+<p>镜头尾部有后置滤镜插槽，并配有防掉落锁定。</p>
+<p>按照官方的用户手册的说法，必须将滤镜裁剪成对应的形状才能在后置滤镜插槽中使用。
+当然你也可以选择前置滤镜，但是得使用150mm的滤镜支架。</p>
+<p>P.S. 目前已有厂商发布了定制的后置滤镜片。</p>
+<h3 id="与sony-12-24mm-f4-g对比">2.3 与Sony 12-24mm F4 G对比</h3>
+<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
+G</p>
+<ul>
+<li>重量：565克</li>
+<li>长度：117mm</li>
+<li>价格：<span class="math inline">\(11543_{\mathbf{SONY},20220816}\)</span></li>
+<li>7片光圈叶片</li>
+</ul>
+<p>Sigma 14-24mm F2.8 DG DN Art</p>
+<ul>
+<li>重量：795克（重40%）</li>
+<li>长度：131mm（长14mm）</li>
+<li>价格：<span class="math inline">\(7599_{JD,20220816}\)</span>（便宜34%）</li>
+<li>11片光圈叶片</li>
+</ul>
+<h2 id="光学性能">3 光学性能</h2>
+<h3 id="锐度">3.1 锐度</h3>
+<p>测试使用6100像素的A7R4。</p>
+<p>14mm端，光圈全开时中心锐度为Very
+Good级别；在F5.6光圈达到最佳锐度，为Outstanding级别。边角的锐度表现稍有不足。光圈F8时，中心和边角锐度一致，为Excellent级别。在F11时，开始出现衍射现象，锐度开始降低。</p>
+<p>24mm端，锐度就有点差强人意了，中心和边角的锐度都只能达到Very
+Good级别。</p>
+<h3 id="锐度对比sony-12-24mm-f4-g">3.2 锐度（对比Sony 12-24mm F4
+G）</h3>
+<p>适马1424F2.8在14mm端表现稍好，24mm端则稍微落后。边角锐度相当。</p>
+<p><img src="/2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/Pasted%20image%2020220817171714.png"></p>
+<h3 id="暗角色差畸变眩光星芒">3.3 暗角/色差/畸变/眩光/星芒</h3>
+<ul>
+<li>14mm端有明显的桶形畸变，24mm端有轻微的枕形畸变</li>
+<li>暗角可见，尤其是14mm端，但毕竟是超广角嘛</li>
+<li>色差非常微小，但在14mm会有出现</li>
+<li>抗眩光非常好，但依旧无法完全消除，毕竟这是一只超广角镜头</li>
+<li>在光圈F16至F22时，可以拍摄到不错的星芒</li>
+<li>没有明显的慧差，适合夜观星象</li>
+<li>Lightroom可以非常完美地校正畸变</li>
+</ul>
+<h3 id="焦外光斑色彩还原度">3.4 焦外光斑/色彩还原度</h3>
+<ul>
+<li>非常近的对焦距离（28cm）和F2.8的光圈可以获得一定程度的背景虚化。考虑到这是一只广角镜头，虚化的效果不算差</li>
+<li>焦外光斑非常好</li>
+<li>色彩还原度非常自然，表现非常好</li>
+</ul>
+<h2 id="视频">4 视频</h2>
+<p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
 ]]></content>
       <categories>
-        <category>杂项</category>
+        <category>镜头</category>
       </categories>
       <tags>
-        <tag>Spring</tag>
-        <tag>前端</tag>
+        <tag>镜头</tag>
+        <tag>适马Sigma</tag>
+        <tag>E卡口</tag>
+        <tag>全画幅</tag>
+        <tag>SonyAlphaBlog</tag>
       </tags>
   </entry>
   <entry>
@@ -2106,6 +2324,49 @@ G则非常适合手持Vlog。其它几支镜头就没什么可说的了，光为
       </tags>
   </entry>
   <entry>
+    <title>关于Spring框架的IOC和DI的理解</title>
+    <url>//2018/01/26/spring-ioc-di/</url>
+    <content><![CDATA[<p>Spring框架的详细内容就不赘述了。（也实在不是谦虚，主要是刚了解没几天，对Spring的框架完全没有概念）</p>
+<p>下面来说说我，一个初学者，对DI的理解。</p>
+<span id="more"></span>
+<p>1.假如没有Spring，Java中实例化对象一般都是调用构造器。这样，每个对象实例化的时候都要执行一遍实例化的流程。
+2.现在，有了Spring框架，可以使用依赖注入DI，将一些Java类预先进行实例化，并保存为对象模版。而之后的每次实例化都可以直接调用已经实例化成功的对象模版。</p>
+<p>个人认为，当某一类实例化次数较多时，可以有效地减少系统运行的时间。同时，这也可以减少服务器的物力资源压力。假如某一服务要被调用一万次，那么这个service类就会被实例化一万次；而使用了IOC和DI之后，一方面，实例化一万个对象的时间可以节约下来，另外一方面，bean在生命周期结束会释放资源，减轻了服务器的资源压力。</p>
+<p>这个是我今天看了Spring框架之后的理解。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (大犇.发现错误()) &#123;</span><br><span class="line">  大犇.println(错误);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>斯普林格Springer免费书籍</title>
+    <url>//2020/06/24/springer-free-books-2020/</url>
+    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
+<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
+<span id="more"></span>
+<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
+<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
+<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
+<hr>
+<blockquote>
+<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
+最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+        <tag>书籍</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>STM32基础_GPIO流水灯</title>
     <url>//2017/07/28/stm32-gpio-led/</url>
     <content><![CDATA[<p>从一个月前开始学习STM32，对于MCU的理解也更加深入透彻。今天开始就陆续将自己在学习中的经历发布到这里（当然，更新随缘）。</p>
@@ -2184,171 +2445,6 @@ G则非常适合手持Vlog。其它几支镜头就没什么可说的了，光为
       </categories>
       <tags>
         <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sigma 14-24mm f2.8 DG DN ART</title>
-    <url>//2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</url>
-    <content><![CDATA[<blockquote>
-<p>源：<a href="https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/">Sigma
-14-24mm f2.8 DG DN ART_by SonyAlphaBlog</a></p>
-</blockquote>
-<p><img src="/2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/Pasted%20image%2020220830195252.png"></p>
-<h2 id="结论">1 结论</h2>
-<p>Sigma 14-24mm F2.8 DG DN Art （<span class="math inline">\(7599_{JD,20220816}\)</span>）是一只非常不错的镜头；即使在6100万像素的A7R4上使用，也很适合建筑、风光和天文摄影。</p>
-<ul>
-<li>优势
-<ul>
-<li>14mm端在F5.6光圈时有Outstanding级别的锐度</li>
-<li>边角表现非常好</li>
-<li>非常自然的色彩还原度</li>
-<li>对于一只广角来说，背景虚化非常好；焦外光斑表现不错</li>
-<li>Lightroom可以修正广角带来的畸变</li>
-<li>14mm端暗角不明显</li>
-<li>无慧差，很适合夜观星像</li>
-<li>顶级的手感</li>
-<li>有防尘防滴特性</li>
-<li>照片的自动对焦非常好</li>
-<li>比Sony FE 12-24mm F4 G（<span class="math inline">\(11543_{\mathbf{SONY},20220816}\)</span>）便宜</li>
-</ul></li>
-<li>一般
-<ul>
-<li>2.8光圈全开情况下，锐度只能达到Very Good的等级</li>
-<li>光圈缩小至F5.6时，24mm端锐度只能达到Very
-Good级别，与14mm端的Outstanding级别的锐度差距加大</li>
-<li>如果要平衡边角和中心锐度，光圈需要缩小至F8</li>
-<li>滤镜系统后置，使用时需要根据其形状进行选购或裁剪</li>
-<li>体积和重量有进步，达到了其它竞品的平均水平</li>
-<li>不可拆卸遮光罩，这一点和其它超广角镜头一样</li>
-<li>没有镜身光学防抖，但可以依靠机身防抖</li>
-</ul></li>
-<li>缺陷
-<ul>
-<li>焦距范围受限</li>
-<li>视频拍摄时，画面会出现闪烁</li>
-<li>必须使用150mm滤镜系统</li>
-</ul></li>
-<li>镜头比较
-<ul>
-<li>可替换镜头
-<ul>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G</li>
-<li><span class="math inline">\(\mathbf{SONY}\)</span> FE 16-35mm F2.8
-GM</li>
-<li>Tamron 17-28mm F2.8 Di III RXD</li>
-</ul></li>
-<li>其实，真的说起来，还是只有<span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G是同一等级比较的镜头。其他两只的焦距范围还是有点区别的。</li>
-<li>这两只镜头其实都是非常不错的镜头。适马1424F2.8有着2.8的光圈，更加适合暗光环境和星空的摄影；索尼1224F4则有着12mm的广角端，这2mm的差距在取景范围上其实是有非常巨大的差别的。</li>
-<li>锐度方面，适马1424F2.8在14mm端的中心锐度会有略微优势；索尼1224F4在24mm端稍微领先。边角情况，两只镜头表现差不多。</li>
-<li>至于到底选哪一只，就要看你的更想要2.8光圈还是12mm广角了。毕竟，这两支镜头在各方面的表现都是非常不错的。</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="总体信息">2 总体信息</h2>
-<h3 id="spec">2.1 SPEC</h3>
-<ul>
-<li>重量：795克</li>
-<li>价格：<span class="math inline">\(7599_{JD,20220816}\)</span></li>
-<li>长度：131mm</li>
-<li>几乎没有使用通用滤镜的可能性</li>
-<li>AF/MF切换按钮</li>
-<li>可自定义的对焦保持按钮</li>
-<li>11片光圈叶片</li>
-<li>防尘防潮设计</li>
-<li>最近对焦距离：28cm</li>
-<li>后置滤镜插槽</li>
-<li>不可拆卸遮光罩</li>
-<li>遮光罩预留镜头盖槽</li>
-<li>自带镜头盒</li>
-<li>The build construction is excellent</li>
-<li>自动对焦快速精准，非常安静</li>
-<li>内变焦</li>
-</ul>
-<h3 id="后置滤镜系统">2.2 后置滤镜系统</h3>
-<p>镜头尾部有后置滤镜插槽，并配有防掉落锁定。</p>
-<p>按照官方的用户手册的说法，必须将滤镜裁剪成对应的形状才能在后置滤镜插槽中使用。
-当然你也可以选择前置滤镜，但是得使用150mm的滤镜支架。</p>
-<p>P.S. 目前已有厂商发布了定制的后置滤镜片。</p>
-<h3 id="与sony-12-24mm-f4-g对比">2.3 与Sony 12-24mm F4 G对比</h3>
-<p><span class="math inline">\(\mathbf{SONY}\)</span> FE 12-24mm F4
-G</p>
-<ul>
-<li>重量：565克</li>
-<li>长度：117mm</li>
-<li>价格：<span class="math inline">\(11543_{\mathbf{SONY},20220816}\)</span></li>
-<li>7片光圈叶片</li>
-</ul>
-<p>Sigma 14-24mm F2.8 DG DN Art</p>
-<ul>
-<li>重量：795克（重40%）</li>
-<li>长度：131mm（长14mm）</li>
-<li>价格：<span class="math inline">\(7599_{JD,20220816}\)</span>（便宜34%）</li>
-<li>11片光圈叶片</li>
-</ul>
-<h2 id="光学性能">3 光学性能</h2>
-<h3 id="锐度">3.1 锐度</h3>
-<p>测试使用6100像素的A7R4。</p>
-<p>14mm端，光圈全开时中心锐度为Very
-Good级别；在F5.6光圈达到最佳锐度，为Outstanding级别。边角的锐度表现稍有不足。光圈F8时，中心和边角锐度一致，为Excellent级别。在F11时，开始出现衍射现象，锐度开始降低。</p>
-<p>24mm端，锐度就有点差强人意了，中心和边角的锐度都只能达到Very
-Good级别。</p>
-<h3 id="锐度对比sony-12-24mm-f4-g">3.2 锐度（对比Sony 12-24mm F4
-G）</h3>
-<p>适马1424F2.8在14mm端表现稍好，24mm端则稍微落后。边角锐度相当。</p>
-<p><img src="/2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/Pasted%20image%2020220817171714.png"></p>
-<h3 id="暗角色差畸变眩光星芒">3.3 暗角/色差/畸变/眩光/星芒</h3>
-<ul>
-<li>14mm端有明显的桶形畸变，24mm端有轻微的枕形畸变</li>
-<li>暗角可见，尤其是14mm端，但毕竟是超广角嘛</li>
-<li>色差非常微小，但在14mm会有出现</li>
-<li>抗眩光非常好，但依旧无法完全消除，毕竟这是一只超广角镜头</li>
-<li>在光圈F16至F22时，可以拍摄到不错的星芒</li>
-<li>没有明显的慧差，适合夜观星象</li>
-<li>Lightroom可以非常完美地校正畸变</li>
-</ul>
-<h3 id="焦外光斑色彩还原度">3.4 焦外光斑/色彩还原度</h3>
-<ul>
-<li>非常近的对焦距离（28cm）和F2.8的光圈可以获得一定程度的背景虚化。考虑到这是一只广角镜头，虚化的效果不算差</li>
-<li>焦外光斑非常好</li>
-<li>色彩还原度非常自然，表现非常好</li>
-</ul>
-<h2 id="视频">4 视频</h2>
-<p>视频拍摄时，成像锐度、色彩还原度、背景虚化都是顶尖水平。但在进行变焦时，会有出现闪烁和光线变化；这种情况在其它的镜头上并没有见过，但这对于拍摄需要变焦的连续片段有很大的影响。具体原因还没有确定，可能是A7R4机身有bug。</p>
-]]></content>
-      <categories>
-        <category>镜头</category>
-      </categories>
-      <tags>
-        <tag>镜头</tag>
-        <tag>适马Sigma</tag>
-        <tag>E卡口</tag>
-        <tag>全画幅</tag>
-        <tag>SonyAlphaBlog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>斯普林格Springer免费书籍</title>
-    <url>//2020/06/24/springer-free-books-2020/</url>
-    <content><![CDATA[<p>2020年不知不觉已经过去一半时间了。 :@(汗)<br>
-<a href="https://www.springer.com">斯普林格，Springer</a>，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。</p>
-<span id="more"></span>
-<p>Springer这次公开下载的书籍的<a href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v8">列表</a>。</p>
-<p>为了方便不同专业的进行快速检索，有大佬按照学科类别整理了这些免费书籍，<a href="https://hnarayanan.github.io/springer-books/">点这里</a>。当然，如果知道关键词，网页内搜索更加方便。</p>
-<p>希望这次的书籍公开下载可以给需要这部分资料的同学提供亿点点帮助。</p>
-<hr>
-<blockquote>
-<p>考研终于上岸了，需要提交的资料也已经基本搞定，就等开学了。<br>
-最近一段时间在从头开始学习FPGA，目前进度VHDL语法。之后，我准备把这次的学习比较上传到博客，敬请期待...</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>资源</tag>
-        <tag>书籍</tag>
       </tags>
   </entry>
   <entry>
@@ -3073,208 +3169,6 @@ GM的，更别说还提供了其它100400无法提供的、独家的50-100mm焦�
       </tags>
   </entry>
   <entry>
-    <title>Tiny Tiny RSS再次搭建</title>
-    <url>//2021/07/22/ttrss-build-2/</url>
-    <content><![CDATA[<p>贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github
-Pages上了，阿里云的服务器就空出来了。</p>
-<p>但是，不幸再次降临，TTRSS官方把原来的安装方式取消了，推荐使用docker安装。经过一番摸索，终于完成了docker安装TTRSS，并搞定fever。</p>
-<p>环境说明：所使用的是Aliyun服务器（1C2G），系统为CentOS 7.9。</p>
-<span id="more"></span>
-<h2 id="安装docker">1 安装Docker</h2>
-<p>Docker是...啥？我也不是特别清楚，我把它看作是独立的运行环境，和虚拟机类似。详细的请找Docker官方文档和百度。</p>
-<p>首先确保系统内没有预安装旧版本的docker，使用命令卸载旧版本。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
-<p>配置yum源，参考了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">TUNA
-CentOS镜像使用帮助</a>。使用云服务器一般不需要配置。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sed -e &#x27;s|^mirrorlist=|#mirrorlist=|g&#x27; \</span><br><span class="line">         -e &#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27; \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
-<p>配置docker的yum源。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-<p>安装docker相关依赖包。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-<p>安装docker</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
-<p>启动docker，并设置开机自启。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
-<p>验证docker安装。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
-<h2 id="安装docker-compose">2 安装Docker Compose</h2>
-<p>Docker Compose是基于Docker的多容器运行管理工具。</p>
-<p>下载Docker
-Compose的Release包。下面的命令使用的是1.29.2版本的Release，可前往<a href="https://github.com/docker/compose/releases">软件发布页</a>查看最新的版本号，然后修改下面命令的版本号即可。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>为文件夹添加可执行权限。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>为Docker Compose在<code>/usr/bin/</code>创建链接。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件copy到/usr/bin/目录下</span></span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
-<p>验证Docker Compose安装。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
-<h2 id="安装ttrss">3 安装TTRSS</h2>
-<p>TTRSS是啥就不再次介绍了，需要了解的可以看看之前写的<a href="/2020/04/23/ttrss-build/">那篇文章</a>，或者直接访问<a href="https://tt-rss.org/">TTRSS官网</a>。</p>
-<h3 id="获取docker安装所需文件">3.1 获取docker安装所需文件</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://git.tt-rss.org/fox/ttrss-docker-compose.git ttrss-docker</span><br><span class="line">cd ttrss-docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git checkout命令为切换static-dockerhub分支，也可以不切换使用master分支</span></span><br><span class="line">git checkout static-dockerhub</span><br></pre></td></tr></table></figure>
-<h3 id="修改.env配置文件">3.2 修改<code>.env</code>配置文件</h3>
-<p>首先需要将<code>ttrss-docker</code>文件夹中的<code>.env-dist</code>复制为<code>.env</code>。（注：<code>.env-dist</code>和<code>.env</code>均为隐藏文件，需要使用<code>ls -a</code>才能看到。）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp .env-dist .env</span><br></pre></td></tr></table></figure>
-<p>打开<code>.env</code>。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim .env</span><br></pre></td></tr></table></figure>
-<p>修改端口<code>HTTP_PORT</code>。默认为8280端口，可以配置为自定义端口。配置完成后，还需要Aliyun控制台开放端口访问，其它云平台类似，自建服务器那就自己搞定。</p>
-<p>修改URL<code>TTRSS_SELF_URL_PATH</code>。如果简单使用ip进行访问，只需要将<code>localhost</code>修改为服务器的ip地址即可。</p>
-<h3 id="拉取并启动容器">3.3 拉取并启动容器</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up -d</span><br></pre></td></tr></table></figure>
-<p>验证容器运行。 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure></p>
-<h3 id="登录ttrss">3.4 登录TTRSS</h3>
-<p>使用浏览器访问<code>TTRSS_SELF_URL_PATH</code>配置的URL。默认账号密码为<code>admin</code>和<code>password</code>。<strong>进入前台系统后，请先通过界面右上角的<code>偏好设置</code>修改密码。</strong></p>
-<p>有需要的可以新建普通用户，将<code>admin</code>仅作为管理员用户。</p>
-<p><img src="/2021/07/22/ttrss-build-2/ttrss-setting-1.png"></p>
-<p>注：文章编写时，TTRSS的前台系统由于使用<code>window.requestIdleCallback</code>API，该API并不受Safari支持，所以前台系统不能使用Safari<del>应该都知道我为什么知道吧</del>。</p>
-<p><img src="/2021/07/22/ttrss-build-2/ttrss-safari-bug.jpg"></p>
-<h2 id="ttrss后续配置">4 TTRSS后续配置</h2>
-<h3 id="fever">4.1 Fever</h3>
-<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
-API。因此，需要配置fever插件。</p>
-<p>获取TTRSS fever插件，仓库地址为<a href="https://github.com/DigitalDJ/tinytinyrss-fever-plugin">DigitalDJ/tinytinyrss-fever-plugin</a>。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin fever</span><br></pre></td></tr></table></figure>
-<p>由于ttrss是通过docker-compose安装的，所以具体的安装路径就不清楚了；虽然普通使用不需要知道安装路径，但是使用官方仓库以外的插件时，安装路径至关重要。下面先来确定TTRSS的安装路径。</p>
-<p>安装mlocate。为什么要安装mlocate呢？因为<code>find</code>的搜索速度堪忧啊。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y mlocate</span><br></pre></td></tr></table></figure>
-<p>初始化文件索引。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">updatedb</span><br></pre></td></tr></table></figure>
-<p>确定TTRSS安装路径。由于插件目录名称为<code>plugins.local</code>，为了简化搜索，直接搜索<code>plugins.local</code>即可。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">locate plugins.local</span><br></pre></td></tr></table></figure>
-<p>搜索后，TTRSS的安装路径就一目了然了，我的路径为<code>/var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/</code>。</p>
-<p><img src="/2021/07/22/ttrss-build-2/locate-plugins-folder.png"></p>
-<p>之后将插件复制到TTRSS的<code>plugins.local</code>目录下。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
-<p>登录到TTRSS前台界面，进入偏好设置，勾选<code>启用API:外部客户端通过API来访问账户</code>。同时，页面底部会有<code>Fever Emulation</code>的条目。</p>
-<p><img src="/2021/07/22/ttrss-build-2/ttrss-fever-1.png"></p>
-<p>选择<code>插件</code>条目，勾选<code>fever</code>。</p>
-<p><img src="/2021/07/22/ttrss-build-2/ttrss-fever-2.png"></p>
-<p>选择<code>Fever Emulation</code>的条目，在文本框中输入fever连接密码（可以与ttrss账号密码相同）。点击<code>Set Password</code>，设置成功后会有浮窗。另外，记住红框内的地址，这是客户端连接fever的地址。</p>
-<p><img src="/2021/07/22/ttrss-build-2/ttrss-fever-3.png"></p>
-<p>到这里，ttrss fever插件就搞定了。</p>
-<p>关于ttrss fever插件的更新。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
-<p>客户端连接可以参考下图。</p>
-<p><img src="/2021/07/22/ttrss-build-2/ttrss-reeder-setting.jpg"></p>
-<h3 id="ttrss工具更新">4.2 TTRSS工具更新</h3>
-<p>停止TTRSS相关容器。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose down &amp;&amp; docker-compose rm</span><br></pre></td></tr></table></figure>
-<p>拉取最新安装文件，根据需要选取分支。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取static-dockerhub分支</span></span><br><span class="line">git pull origin static-dockerhub</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取master分支</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
-<p>依据新的<code>.env-dist</code>修改<code>.env</code>。</p>
-<p>再起用docker-compose拉取、启动。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up</span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>写文章时，我的TTRSS已经稳定运行了两周了，没有出什么幺蛾子。</p>
-<p><img src="/2021/07/22/ttrss-build-2/ttrss-reeder-done.jpg"></p>
-<p>有TTRSS安装需求的同学可以参考上面的安装步骤，搭建自己的、可靠的RSS订阅服务。</p>
-]]></content>
-      <categories>
-        <category>DIY</category>
-      </categories>
-      <tags>
-        <tag>DIY</tag>
-        <tag>RSS</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux笔记之VNC配置</title>
-    <url>//2021/06/21/linux-note-vnc-config/</url>
-    <content><![CDATA[<p>又要当苦力了，自<del>bei</del>愿<del>po</del>学习VNC多用户的配置。成就·学习运维技能之VNC配置，get！</p>
-<p>和XDMCP相同，环境为CentOS 7.8，且已安装GNOME桌面环境。</p>
-<span id="more"></span>
-<blockquote>
-<p>友情提醒：配置生产用的服务器是务必小心，不熟悉、不自信的同学可以先用虚拟机练练手。</p>
-</blockquote>
-<h2 id="预备知识">1 预备知识</h2>
-<p>下面先简单讲一下VNC是个啥。<del>还是要先装模作样一番的</del></p>
-<p>VNC可以简单理解为桌面级的图像分享系统，可以通过它实现远程控制。<del>就这么简单，更难的我也不会</del></p>
-<p>wikipedia上有详细介绍<a href="https://en.m.wikipedia.org/wiki/Virtual_Network_Computing">VNC的词条</a>，可以过去看看。</p>
-<p>另外，VNC本质上是不需要桌面环境的，即使是CentOS最小安装也是可以使用VNC的；但是呢，这一套就比较麻烦了，所以，懂的都懂，毕竟打工人的干活方式就是能用就行嘛。</p>
-<h2 id="安装vnc">2 安装VNC</h2>
-<h3 id="安装桌面环境">2.1 安装桌面环境</h3>
-<p>首先检查系统内是否有图形界面，我就以GNOME为例，KDE也是类似的。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查group列表，看看是否有GNOME Desktop</span></span><br><span class="line">yum grouplist</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_gnome.png" alt="yum grouplist结果">
-<figcaption aria-hidden="true">yum grouplist结果</figcaption>
-</figure>
-<p>如果在已安装中有GNOME Desktop，那么就可以跳过桌面环境的安装了。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装GNOME Desktop环境</span></span><br><span class="line">sudo yum groupinstall -y &quot;GNOME Desktop&quot;</span><br></pre></td></tr></table></figure>
-<p>如果需要调整默认显示模式（命令行/图形桌面），可以使用下面的指令。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换为图形桌面</span></span><br><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换为命令行</span></span><br><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
-<h3 id="安装vnc组件">2.2 安装VNC组件</h3>
-<p>VNC组件安装前，可以确认一下使用的镜像源，如果是国外源，可以尝试切换为清华源，切换步骤查看TUNA的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">CentOS镜像使用帮助</a>。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装VNC组件</span></span><br><span class="line">yum install tigervnc-server -y</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">验证VNC安装</span></span><br><span class="line">rpm -qa|grep tigervnc-server</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_vnc.png" alt="验证VNC安装">
-<figcaption aria-hidden="true">验证VNC安装</figcaption>
-</figure>
-<h2 id="配置vnc">3 配置VNC</h2>
-<p>VNC安装结束后，需要为每个需要使用的用户配置VNC，本文就简单为2个用户配置一下。其中，<code>leon</code>用户使用的桌面号为<code>1</code>，<code>root</code>用户使用的桌面号为<code>2</code>。<del>注：实际配置过程中，请务必把老板的账号配置为<code>1</code>，以表示尊重</del></p>
-<p>第一步需要依据VNC自带的脚本sample来创建2个VNC启动脚本。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从sample创建VNC启动脚本</span></span><br><span class="line">sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</span><br><span class="line">sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:2.service</span><br></pre></td></tr></table></figure>
-<p>命令中的<code>1</code>和<code>2</code>是桌面号，访问VNC时，桌面号不同的脚本对应的端口号不同。VNC访问桌面号<code>1</code>时，使用<code>5900+1=5901</code>端口；问桌面号<code>2</code>时，使用<code>5900+2=5902</code>端口；以此类推。<del>但请不乱推</del></p>
-<p>接着，需要小小处理一下刚刚复制的脚本。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /etc/systemd/system</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">给权限x</span></span><br><span class="line">sudo chmod +x vncserver@\:1.service</span><br><span class="line">sudo chmod +x vncserver@\:2.service</span><br></pre></td></tr></table></figure>
-<p>接着打开2个脚本。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开脚本</span></span><br><span class="line">sudo vim vncserver@\:1.service</span><br></pre></td></tr></table></figure>
-<p>将<code>&lt;USER&gt;</code>改为用户名，此处为桌面号<code>1</code>的脚本<code>vncserver@\:1.service</code>，改为普通用户<code>leon</code>。</p>
-<figure>
-<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_script_1.png" alt="脚本修改前">
-<figcaption aria-hidden="true">脚本修改前</figcaption>
-</figure>
-<figure>
-<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_script_2.png" alt="脚本修改后">
-<figcaption aria-hidden="true">脚本修改后</figcaption>
-</figure>
-<p>相同的操作步骤，将<code>vncserver@\:2.service</code>中的<code>&lt;USER&gt;</code>改为<code>root</code>。</p>
-<p>改完之后，还需要设置一下VNC的连接密码。配置此密码需要在相应的用户下进行，可以使用<code>su</code>（仅能切换到root）或<code>su xxx</code>来进行用户切换。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置VNC连接密码</span></span><br><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
-<p>VNC密码配置过程中，首先是主密码的设置；接着是一个进入只读模式的辅助密码，可根据自身需求选择是否进行设置。</p>
-<h2 id="启动vnc服务及端口开放">4 启动VNC服务及端口开放</h2>
-<p>下面是VNC服务的启动和开机自启的配置。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动VNC脚本服务</span></span><br><span class="line">sudo systemctl start vncserver@\:1.service</span><br><span class="line">sudo systemctl start vncserver@\:2.service</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置开机自启</span></span><br><span class="line">sudo systemctl enable vncserver@\:1.service</span><br><span class="line">sudo systemctl enable vncserver@\:2.service</span><br></pre></td></tr></table></figure>
-<p>检查端口监听情况。<del>注：如果这里看不到端口<code>5901</code>和<code>5902</code>，可以尝试重启，具体原因未知</del></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查端口监听</span></span><br><span class="line">netstat -lnpt|grep Xvnc</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_port.png" alt="端口监听状态">
-<figcaption aria-hidden="true">端口监听状态</figcaption>
-</figure>
-<p>防火墙开放端口<code>5901</code>和<code>5902</code>。如果比较大胆的，可以直接把防火墙给关了。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">防火墙开放端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=5901/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=5902/tcp --permanent</span><br></pre></td></tr></table></figure>
-<p>关闭SELinux<del>我也不知道这个具体怎么使用，只清楚开着没办法连接¯\_(
-ツ )_/¯</del></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开SELinux配置文件</span></span><br><span class="line">vim /etc/selinux/config</span><br></pre></td></tr></table></figure>
-<p>将横线处改为<code>disabled</code>即可。改为<code>permissive</code>可以连接VNC，但是会报错，且可以屏蔽，自行选择。</p>
-<figure>
-<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_selinux.png" alt="端口监听状态">
-<figcaption aria-hidden="true">端口监听状态</figcaption>
-</figure>
-<h2 id="连接vnc">5 连接VNC</h2>
-<p>连接桌面号为<code>1</code>，可以使用<code>ip:1</code>或者<code>ip:5901</code>来连接；桌面号为<code>2</code>使用<code>ip:2</code>或者<code>ip:5902</code>。</p>
-<figure>
-<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_pre_1.png" alt="连接VNC地址配置">
-<figcaption aria-hidden="true">连接VNC地址配置</figcaption>
-</figure>
-<figure>
-<img src="/2021/06/21/linux-note-vnc-config/linux_note_vnc_config_pre_2.png" alt="连接VNC演示">
-<figcaption aria-hidden="true">连接VNC演示</figcaption>
-</figure>
-<h2 id="总结">6 总结</h2>
-<p>VNC配置到此结束，希望有需求的各位同学能有点收获吧。</p>
-<p>最后的最后，日常求<del>一键三连</del>收藏分享。</p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>CentOS</tag>
-        <tag>VNC</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>铭匠TTArtisan 50mm F1.4 Tilt</title>
     <url>//2022/10/27/ttartisan-50mm-f1-4-tilt/</url>
     <content><![CDATA[<blockquote>
@@ -3474,6 +3368,180 @@ F1.4非移轴版本同样有好得多的锐度表现。锐度上，铭匠TTArtis
       </tags>
   </entry>
   <entry>
+    <title>Tiny Tiny RSS再次搭建</title>
+    <url>//2021/07/22/ttrss-build-2/</url>
+    <content><![CDATA[<p>贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github
+Pages上了，阿里云的服务器就空出来了。</p>
+<p>但是，不幸再次降临，TTRSS官方把原来的安装方式取消了，推荐使用docker安装。经过一番摸索，终于完成了docker安装TTRSS，并搞定fever。</p>
+<p>环境说明：所使用的是Aliyun服务器（1C2G），系统为CentOS 7.9。</p>
+<span id="more"></span>
+<h2 id="安装docker">1 安装Docker</h2>
+<p>Docker是...啥？我也不是特别清楚，我把它看作是独立的运行环境，和虚拟机类似。详细的请找Docker官方文档和百度。</p>
+<p>首先确保系统内没有预安装旧版本的docker，使用命令卸载旧版本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
+<p>配置yum源，参考了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">TUNA
+CentOS镜像使用帮助</a>。使用云服务器一般不需要配置。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sed -e &#x27;s|^mirrorlist=|#mirrorlist=|g&#x27; \</span><br><span class="line">         -e &#x27;s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g&#x27; \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-*.repo</span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
+<p>配置docker的yum源。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>安装docker相关依赖包。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+<p>安装docker</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
+<p>启动docker，并设置开机自启。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
+<p>验证docker安装。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+<h2 id="安装docker-compose">2 安装Docker Compose</h2>
+<p>Docker Compose是基于Docker的多容器运行管理工具。</p>
+<p>下载Docker
+Compose的Release包。下面的命令使用的是1.29.2版本的Release，可前往<a href="https://github.com/docker/compose/releases">软件发布页</a>查看最新的版本号，然后修改下面命令的版本号即可。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>为文件夹添加可执行权限。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>为Docker Compose在<code>/usr/bin/</code>创建链接。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件copy到/usr/bin/目录下</span></span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>验证Docker Compose安装。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+<h2 id="安装ttrss">3 安装TTRSS</h2>
+<p>TTRSS是啥就不再次介绍了，需要了解的可以看看之前写的<a href="/2020/04/23/ttrss-build/">那篇文章</a>，或者直接访问<a href="https://tt-rss.org/">TTRSS官网</a>。</p>
+<h3 id="获取docker安装所需文件">3.1 获取docker安装所需文件</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://git.tt-rss.org/fox/ttrss-docker-compose.git ttrss-docker</span><br><span class="line">cd ttrss-docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git checkout命令为切换static-dockerhub分支，也可以不切换使用master分支</span></span><br><span class="line">git checkout static-dockerhub</span><br></pre></td></tr></table></figure>
+<h3 id="修改.env配置文件">3.2 修改<code>.env</code>配置文件</h3>
+<p>首先需要将<code>ttrss-docker</code>文件夹中的<code>.env-dist</code>复制为<code>.env</code>。（注：<code>.env-dist</code>和<code>.env</code>均为隐藏文件，需要使用<code>ls -a</code>才能看到。）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp .env-dist .env</span><br></pre></td></tr></table></figure>
+<p>打开<code>.env</code>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim .env</span><br></pre></td></tr></table></figure>
+<p>修改端口<code>HTTP_PORT</code>。默认为8280端口，可以配置为自定义端口。配置完成后，还需要Aliyun控制台开放端口访问，其它云平台类似，自建服务器那就自己搞定。</p>
+<p>修改URL<code>TTRSS_SELF_URL_PATH</code>。如果简单使用ip进行访问，只需要将<code>localhost</code>修改为服务器的ip地址即可。</p>
+<h3 id="拉取并启动容器">3.3 拉取并启动容器</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up -d</span><br></pre></td></tr></table></figure>
+<p>验证容器运行。 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure></p>
+<h3 id="登录ttrss">3.4 登录TTRSS</h3>
+<p>使用浏览器访问<code>TTRSS_SELF_URL_PATH</code>配置的URL。默认账号密码为<code>admin</code>和<code>password</code>。<strong>进入前台系统后，请先通过界面右上角的<code>偏好设置</code>修改密码。</strong></p>
+<p>有需要的可以新建普通用户，将<code>admin</code>仅作为管理员用户。</p>
+<p><img src="/2021/07/22/ttrss-build-2/ttrss-setting-1.png"></p>
+<p>注：文章编写时，TTRSS的前台系统由于使用<code>window.requestIdleCallback</code>API，该API并不受Safari支持，所以前台系统不能使用Safari<del>应该都知道我为什么知道吧</del>。</p>
+<p><img src="/2021/07/22/ttrss-build-2/ttrss-safari-bug.jpg"></p>
+<h2 id="ttrss后续配置">4 TTRSS后续配置</h2>
+<h3 id="fever">4.1 Fever</h3>
+<p>目前大部分RSS的客户端可以使用fever和GoogleAPI登录，但遗憾的是TTRSS不原生支持fever
+API。因此，需要配置fever插件。</p>
+<p>获取TTRSS fever插件，仓库地址为<a href="https://github.com/DigitalDJ/tinytinyrss-fever-plugin">DigitalDJ/tinytinyrss-fever-plugin</a>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin fever</span><br></pre></td></tr></table></figure>
+<p>由于ttrss是通过docker-compose安装的，所以具体的安装路径就不清楚了；虽然普通使用不需要知道安装路径，但是使用官方仓库以外的插件时，安装路径至关重要。下面先来确定TTRSS的安装路径。</p>
+<p>安装mlocate。为什么要安装mlocate呢？因为<code>find</code>的搜索速度堪忧啊。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y mlocate</span><br></pre></td></tr></table></figure>
+<p>初始化文件索引。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">updatedb</span><br></pre></td></tr></table></figure>
+<p>确定TTRSS安装路径。由于插件目录名称为<code>plugins.local</code>，为了简化搜索，直接搜索<code>plugins.local</code>即可。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">locate plugins.local</span><br></pre></td></tr></table></figure>
+<p>搜索后，TTRSS的安装路径就一目了然了，我的路径为<code>/var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/</code>。</p>
+<p><img src="/2021/07/22/ttrss-build-2/locate-plugins-folder.png"></p>
+<p>之后将插件复制到TTRSS的<code>plugins.local</code>目录下。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
+<p>登录到TTRSS前台界面，进入偏好设置，勾选<code>启用API:外部客户端通过API来访问账户</code>。同时，页面底部会有<code>Fever Emulation</code>的条目。</p>
+<p><img src="/2021/07/22/ttrss-build-2/ttrss-fever-1.png"></p>
+<p>选择<code>插件</code>条目，勾选<code>fever</code>。</p>
+<p><img src="/2021/07/22/ttrss-build-2/ttrss-fever-2.png"></p>
+<p>选择<code>Fever Emulation</code>的条目，在文本框中输入fever连接密码（可以与ttrss账号密码相同）。点击<code>Set Password</code>，设置成功后会有浮窗。另外，记住红框内的地址，这是客户端连接fever的地址。</p>
+<p><img src="/2021/07/22/ttrss-build-2/ttrss-fever-3.png"></p>
+<p>到这里，ttrss fever插件就搞定了。</p>
+<p>关于ttrss fever插件的更新。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">cp -rf ./fever /var/lib/docker/volumes/ttrss-docker_app/_data/tt-rss/plugins.local/</span><br></pre></td></tr></table></figure>
+<p>客户端连接可以参考下图。</p>
+<p><img src="/2021/07/22/ttrss-build-2/ttrss-reeder-setting.jpg"></p>
+<h3 id="ttrss工具更新">4.2 TTRSS工具更新</h3>
+<p>停止TTRSS相关容器。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose down &amp;&amp; docker-compose rm</span><br></pre></td></tr></table></figure>
+<p>拉取最新安装文件，根据需要选取分支。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取static-dockerhub分支</span></span><br><span class="line">git pull origin static-dockerhub</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取master分支</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<p>依据新的<code>.env-dist</code>修改<code>.env</code>。</p>
+<p>再起用docker-compose拉取、启动。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose pull &amp;&amp; docker-compose up</span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结</h2>
+<p>写文章时，我的TTRSS已经稳定运行了两周了，没有出什么幺蛾子。</p>
+<p><img src="/2021/07/22/ttrss-build-2/ttrss-reeder-done.jpg"></p>
+<p>有TTRSS安装需求的同学可以参考上面的安装步骤，搭建自己的、可靠的RSS订阅服务。</p>
+]]></content>
+      <categories>
+        <category>DIY</category>
+      </categories>
+      <tags>
+        <tag>DIY</tag>
+        <tag>RSS</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VHDL学习笔记之元件递归</title>
+    <url>//2020/08/05/vhdl-note-component-recursion/</url>
+    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
+<blockquote>
+<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
+</blockquote>
+<span id="more"></span>
+<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
+<h2 id="元件递归设计">1 元件递归设计</h2>
+<blockquote>
+<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
+</blockquote>
+<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://github.com/xulu199705/blog-attachment/blob/main/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
+Std 1076-2019</a>。</p>
+<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
+为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
+\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
+方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>简单写了个仿真文件，仿真结果如下。</p>
+<figure>
+<img src="/2020/08/05/vhdl-note-component-recursion/3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
+<figcaption aria-hidden="true">综合前仿真结果</figcaption>
+</figure>
+<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
+<figure>
+<img src="/2020/08/05/vhdl-note-component-recursion/4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
+<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
+</figure>
+<h2 id="正常的n输入与门设计">2 正常的n输入与门设计</h2>
+<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
+<figure>
+<img src="/2020/08/05/vhdl-note-component-recursion/590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
+<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
+</figure>
+<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
+<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
+<figure>
+<img src="/2020/08/05/vhdl-note-component-recursion/2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
+<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
+</figure>
+<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
+<figure>
+<img src="/2020/08/05/vhdl-note-component-recursion/2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
+<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
+</figure>
+<figure>
+<img src="/2020/08/05/vhdl-note-component-recursion/350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
+<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
+</figure>
+<h2 id="总结">3 总结</h2>
+<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
+:&amp;(蛆音娘_扶额)
+，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
+:@(击掌)</p>
+<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
+]]></content>
+      <categories>
+        <category>集成电路</category>
+      </categories>
+      <tags>
+        <tag>VHDL</tag>
+        <tag>FPGA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自建RSS服务——Tiny Tiny RSS</title>
     <url>//2020/04/23/ttrss-build/</url>
     <content><![CDATA[<p><strong>这篇文章使用的是TTRSS老版本安装方式，新版的Docker安装请参考最新的文章<a href="/2021/07/22/ttrss-build-2/">Tiny Tiny
@@ -3624,74 +3692,6 @@ Emulation"页面设置的密码。</p>
       </tags>
   </entry>
   <entry>
-    <title>VHDL学习笔记之元件递归</title>
-    <url>//2020/08/05/vhdl-note-component-recursion/</url>
-    <content><![CDATA[<p>欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。</p>
-<blockquote>
-<p>上个月没有时间<del>主要是懒</del>，所以没有达成每月至少一篇的小目标，这个与争取多写几篇。</p>
-</blockquote>
-<span id="more"></span>
-<p>设计n输入与门的想法是在做8421BCD计数器实验的时候冒出来的。设计这个计数器是用的D触发器，所以需要用到三输入的与门和或门。然后，我就联想到，如果是n输入的与门该怎么实现呢？</p>
-<h2 id="元件递归设计">1 元件递归设计</h2>
-<blockquote>
-<p>首先声明一点，元件递归的设计不是正常的设计，而且<strong>不可综合</strong>。</p>
-</blockquote>
-<p>元件(component)是重复使用entity的一种方式，可以在此基础上设计出通用的实体在项目中使用，具体语法请查阅<a href="https://github.com/xulu199705/blog-attachment/blob/main/pdf/1076-2019_ieee-standard-for-vhdl-language-reference-manual.pdf">IEEE
-Std 1076-2019</a>。</p>
-<p>在上数电课的时候，应该都知道设计多级逻辑门的时候最好要设计比较平衡的结构，以降低延迟带来的影响。所以，我在设计n输入与门的时候也想往这个方向靠。<del>但是事实证明我这个考虑似乎是多余的，见下一章</del><br>
-为了实现平衡的设计，我准备使用二分法。方案一，通过generate循环，使用二维数组存储每次二分的结果，循环次数可以通过<span class="math inline">\(n = \lceil log_{2}{m}
-\rceil\)</span>得到；但这个方案感觉比较麻烦，选择放弃。<br>
-方案二，利用元件自己调用自己，通过递归来实现二分法。首先，将输入端口数port_num为1或者2作为递归结束条件，直接使用and操作符输出结果；然后，针对输入端口数port_num为奇数和偶数分别进行操作，将二分后的结果连接到信号re中，最后对re做与操作输出到outp。代码如下。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">component</span> add_gate <span class="keyword">is</span></span><br><span class="line">        <span class="keyword">generic</span> (</span><br><span class="line">            port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">port</span> (</span><br><span class="line">            inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">            outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">component</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">signal</span> re : <span class="built_in">unsigned</span>(<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>) := <span class="string">&quot;00&quot;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    gen : <span class="keyword">if</span> port_num = <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num = <span class="number">2</span> <span class="keyword">generate</span></span><br><span class="line">        outp &lt;= inp(<span class="number">0</span>) <span class="keyword">and</span> inp(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">elsif</span> port_num <span class="keyword">mod</span> <span class="number">2</span> = <span class="number">1</span> <span class="keyword">generate</span> <span class="comment">-- odd</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span> + <span class="number">1</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">generate</span> <span class="comment">-- even</span></span><br><span class="line">        add1 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num / <span class="number">2</span> - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>), outp =&gt; re(<span class="number">0</span>));</span><br><span class="line">        add2 : add_gate <span class="keyword">generic</span> <span class="keyword">map</span> (port_num =&gt; port_num / <span class="number">2</span>)</span><br><span class="line">                        <span class="keyword">port</span> <span class="keyword">map</span> (inp =&gt; inp(port_num - <span class="number">1</span> <span class="keyword">downto</span> port_num / <span class="number">2</span>), outp =&gt; re(<span class="number">1</span>));</span><br><span class="line">        outp &lt;= re(<span class="number">0</span>) <span class="keyword">and</span> re(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>简单写了个仿真文件，仿真结果如下。</p>
-<figure>
-<img src="/2020/08/05/vhdl-note-component-recursion/3099739303.png#vwid=795&amp;vhei=409" alt="综合前仿真结果">
-<figcaption aria-hidden="true">综合前仿真结果</figcaption>
-</figure>
-<p>当然了，<strong>元件递归是不可综合的</strong>，综合是会出现如下的弹窗。</p>
-<figure>
-<img src="/2020/08/05/vhdl-note-component-recursion/4032806407.png#vwid=541&amp;vhei=351" alt="综合元件递归综合时出错">
-<figcaption aria-hidden="true">综合元件递归综合时出错</figcaption>
-</figure>
-<h2 id="正常的n输入与门设计">2 正常的n输入与门设计</h2>
-<p>一般来说，设计n输入与门是不会使用二分法的。虽然思路没错，但是，真的没有必要，原因我会在后面提到。下面两段代码都是比较正常的而且可以使用的n输入与门的设计。</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例一</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">signal</span> tmp : <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    tmp(<span class="number">0</span>) &lt;= inp(<span class="number">0</span>);</span><br><span class="line">    gen : <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> <span class="keyword">to</span> port_num - <span class="number">1</span> <span class="keyword">generate</span></span><br><span class="line">        tmp(i) &lt;= tmp(i - <span class="number">1</span>) <span class="keyword">and</span> inp(i);</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">generate</span>;</span><br><span class="line">    outp &lt;= tmp(port_num - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例一使用for/generate将后加入的输入信号和之前的结果进行与操作，RTL原理图如下。</p>
-<figure>
-<img src="/2020/08/05/vhdl-note-component-recursion/590385094.png#vwid=1184&amp;vhei=402" alt="示例一RTL原理图">
-<figcaption aria-hidden="true">示例一RTL原理图</figcaption>
-</figure>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 示例二</span></span><br><span class="line"><span class="keyword">library</span> ieee;</span><br><span class="line"><span class="keyword">use</span> ieee.std_logic_1164.<span class="keyword">all</span>;</span><br><span class="line"><span class="keyword">use</span> ieee.numeric_std.<span class="keyword">all</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">entity</span> add_gate <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">generic</span> (</span><br><span class="line">        port_num : <span class="built_in">integer</span> := <span class="number">6</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">port</span> (</span><br><span class="line">        inp : <span class="keyword">in</span> <span class="built_in">unsigned</span>(port_num - <span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">        outp : <span class="keyword">out</span> <span class="built_in">std_logic</span></span><br><span class="line">    );</span><br><span class="line"><span class="keyword">end</span> add_gate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">architecture</span> behavioral <span class="keyword">of</span> add_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"></span><br><span class="line">    outp &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> inp = to_unsigned(<span class="number">2</span> ** port_num - <span class="number">1</span>, port_num) <span class="keyword">else</span></span><br><span class="line">            <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> behavioral;</span><br></pre></td></tr></table></figure>
-<p>示例二利用了n输入与门的实质，即所有输入都为高电平才输出高电平，否则输出低电平，RTL原理图如下。</p>
-<figure>
-<img src="/2020/08/05/vhdl-note-component-recursion/2322955368.png#vwid=868&amp;vhei=495" alt="示例二RTL原理图">
-<figcaption aria-hidden="true">示例二RTL原理图</figcaption>
-</figure>
-<p>接下来，就要说说为什么二分法没有必要了。很显然，示例一的RTL图是一点都不平衡的设计，如果在实际连接中使用这个结构势必会出现延时的问题。但是，如果综合这两个示例，如下所示，就会发现这两个示例的RTL原理图虽然大相径庭，但是他们的综合后原理图是一模一样的。图中的LUT(查找表)是FPGA的基本组成单元，可以当做是一个n*1的RAM。以图中的6输入LUT为例，LUT内部存储了<span class="math inline">\(2^n\)</span>个1bit的数据，地址是6位的；输入信号是地址总线，LUT根据输入的地址查找到相应地址的数据，将数据直接输出到LUT的输出端口上。</p>
-<figure>
-<img src="/2020/08/05/vhdl-note-component-recursion/2394619868.png#vwid=930&amp;vhei=499" alt="示例一综合后原理图">
-<figcaption aria-hidden="true">示例一综合后原理图</figcaption>
-</figure>
-<figure>
-<img src="/2020/08/05/vhdl-note-component-recursion/350538066.png#vwid=958&amp;vhei=497" alt="示例二综合后原理图">
-<figcaption aria-hidden="true">示例二综合后原理图</figcaption>
-</figure>
-<h2 id="总结">3 总结</h2>
-<p>虽然这次用了元件递归来设计n输入与门才发现元件递归是不能综合的
-:&amp;(蛆音娘_扶额)
-，并且综合工具的优化功能是很强大的，但是，这次尝试真的特别有意思，让我对FPGA的设计有了新的关注点。之后的学习过程中，我准备将之前学过的算法设计思想添加到FPGA设计中，找到新的乐趣。
-:@(击掌)</p>
-<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。</p>
-]]></content>
-      <categories>
-        <category>集成电路</category>
-      </categories>
-      <tags>
-        <tag>VHDL</tag>
-        <tag>FPGA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>视频相关术语</title>
     <url>//2020/02/12/video-terms/</url>
     <content><![CDATA[<p>今天在人人影视上找资源的时候，突然对文件名上的HEVC、10bit等感到疑惑，就花了一下午时间研究了一下视频相关的术语，在下面分享一下。</p>
@@ -3788,6 +3788,45 @@ NVME的固态硬盘的最高读取速度远超这个码率，但每秒视频至�
       </tags>
   </entry>
   <entry>
+    <title>VS Code笔记之根据语言选择性删除行末空格</title>
+    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
+    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
+Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
+Workshop、Markdown+Math和Markdown Preview
+Enhanced配合来写东西，用着特别顺手。</p>
+<p>平时用VS
+Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
+<span id="more"></span>
+<h2 id="问题">1 问题</h2>
+<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
+样例一：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1</p>
+<p>para-2</p>
+<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
+样例二：<br>
+代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>
+para-1<br>
+para-2</p>
+<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
+<h2 id="解决方案">2 解决方案</h2>
+<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<p>VS
+Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VS Code笔记之可自动更新的Markdown目录</title>
     <url>//2020/05/05/vscode-note-tableofcontents/</url>
     <content><![CDATA[<p>Markdown语法支持自己编写目录，但是碰到中文标题就捉襟见肘了。不久前在写项目README的时候，我一时兴起准备给文章编写一个目录，却发现一开始编写的目录竟然可以自动更新。照着目录的格式摸索了几次，终于总结出快速编写目录的方法。</p>
@@ -3819,45 +3858,6 @@ Code笔记之快速插入Markdown目录"的标题，如图1。</p>
 </figure>
 <hr>
 <p>如果这篇可自动更新的Markdown目录编写指南对你有帮助，请别忘了<del>一键三连</del>收藏分享哦。</p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS Code笔记之根据语言选择性删除行末空格</title>
-    <url>//2020/04/08/vscode-note-trimTrailingWhitespace/</url>
-    <content><![CDATA[<p>由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
-Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
-Workshop、Markdown+Math和Markdown Preview
-Enhanced配合来写东西，用着特别顺手。</p>
-<p>平时用VS
-Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。</p>
-<span id="more"></span>
-<h2 id="问题">1 问题</h2>
-<p>Markdown换行机制原本就一直搞不太明白，之前都是使用另起新行来实现换行的，见下方样例一。<br>
-样例一：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1</span><br><span class="line">//另起新行</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1</p>
-<p>para-2</p>
-<p>后来重新看了Markdown的语法，学会了用行末空格来换行，见下方样例二。<br>
-样例二：<br>
-代码： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">para-1  //这里有2个空格</span><br><span class="line">para-2</span><br></pre></td></tr></table></figure></p>
-<p>效果：<br>
-para-1<br>
-para-2</p>
-<p>很明显，另起新行的效果更偏向于另起一段，行末空格的效果才是真正的换行方式。这也就代码编辑里面的自动去除行末空格起了冲突，行末空格换行就一直没有使用。</p>
-<h2 id="解决方案">2 解决方案</h2>
-<p>如果之前已经勾选了保存时自动删除文末空格，在setting.json文件中就会有下面这行代码。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-<p>VS
-Code支持对某一种语言自定额外规则，只需要在setting.json中的<em>files.trimTrailingWhitespace</em>同一级添加以下代码即可。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>软件</category>
