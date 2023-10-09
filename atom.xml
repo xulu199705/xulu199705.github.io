@@ -6,7 +6,7 @@
   <link href="https://hexo.leonxu.top/atom.xml" rel="self"/>
   
   <link href="https://hexo.leonxu.top/"/>
-  <updated>2023-08-21T07:31:03.085Z</updated>
+  <updated>2023-10-09T12:43:12.351Z</updated>
   <id>https://hexo.leonxu.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hexo.leonxu.top/2023/07/09/tamron-20-40mm-f2-8-di-iii-vxd-a062/"/>
     <id>https://hexo.leonxu.top/2023/07/09/tamron-20-40mm-f2-8-di-iii-vxd-a062/</id>
     <published>2023-07-09T02:34:55.000Z</published>
-    <updated>2023-08-21T07:31:03.085Z</updated>
+    <updated>2023-10-09T12:43:12.351Z</updated>
     
     
       
@@ -55,7 +55,7 @@
     <link href="https://hexo.leonxu.top/2022/11/14/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/"/>
     <id>https://hexo.leonxu.top/2022/11/14/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/</id>
     <published>2022-11-14T01:59:59.000Z</published>
-    <updated>2023-08-21T07:31:14.274Z</updated>
+    <updated>2023-10-09T12:40:42.318Z</updated>
     
     
       
@@ -89,7 +89,7 @@
     <link href="https://hexo.leonxu.top/2022/10/27/ttartisan-50mm-f1-4-tilt/"/>
     <id>https://hexo.leonxu.top/2022/10/27/ttartisan-50mm-f1-4-tilt/</id>
     <published>2022-10-27T11:52:42.000Z</published>
-    <updated>2023-08-21T07:31:24.294Z</updated>
+    <updated>2023-10-09T12:44:05.647Z</updated>
     
     
       
@@ -123,7 +123,7 @@
     <link href="https://hexo.leonxu.top/2022/09/22/sony-fe-200-600mm-f5-6-6-3-g-oss/"/>
     <id>https://hexo.leonxu.top/2022/09/22/sony-fe-200-600mm-f5-6-6-3-g-oss/</id>
     <published>2022-09-22T03:33:43.000Z</published>
-    <updated>2023-08-21T07:29:43.776Z</updated>
+    <updated>2023-10-09T12:42:51.658Z</updated>
     
     
       
@@ -157,7 +157,7 @@
     <link href="https://hexo.leonxu.top/2022/08/30/sony-pz-16-35mm-f4-g/"/>
     <id>https://hexo.leonxu.top/2022/08/30/sony-pz-16-35mm-f4-g/</id>
     <published>2022-08-30T11:59:15.000Z</published>
-    <updated>2023-08-21T07:30:23.695Z</updated>
+    <updated>2023-10-09T12:42:45.383Z</updated>
     
     
       
@@ -191,7 +191,7 @@
     <link href="https://hexo.leonxu.top/2022/08/27/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/"/>
     <id>https://hexo.leonxu.top/2022/08/27/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/</id>
     <published>2022-08-27T08:03:03.000Z</published>
-    <updated>2023-08-21T07:30:34.233Z</updated>
+    <updated>2023-10-09T12:43:01.069Z</updated>
     
     
       
@@ -226,7 +226,7 @@
     <link href="https://hexo.leonxu.top/2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/"/>
     <id>https://hexo.leonxu.top/2022/08/18/sigma-14-24mm-f2-8-dg-dn-art/</id>
     <published>2022-08-17T17:12:19.000Z</published>
-    <updated>2023-08-21T07:30:50.441Z</updated>
+    <updated>2023-10-09T12:43:07.235Z</updated>
     
     
       
@@ -330,11 +330,11 @@ Server配置、端口打开这两个部分。至于服务器上公网，我会�
   </entry>
   
   <entry>
-    <title>IC笔记之瞬态仿真</title>
+    <title>IC笔记01--瞬态仿真</title>
     <link href="https://hexo.leonxu.top/2021/04/06/ic-note-simu-tran/"/>
     <id>https://hexo.leonxu.top/2021/04/06/ic-note-simu-tran/</id>
     <published>2021-04-06T01:46:19.000Z</published>
-    <updated>2023-08-21T04:51:53.144Z</updated>
+    <updated>2023-10-09T12:49:42.734Z</updated>
     
     
     <summary type="html">&lt;p&gt;IC笔记系列再次更新，这次介绍一下瞬态仿真。&lt;/p&gt;</summary>
@@ -351,11 +351,11 @@ Server配置、端口打开这两个部分。至于服务器上公网，我会�
   </entry>
   
   <entry>
-    <title>IC笔记之反相器仿真</title>
+    <title>IC笔记02--反相器仿真</title>
     <link href="https://hexo.leonxu.top/2021/03/30/ic-note-inv-simu/"/>
     <id>https://hexo.leonxu.top/2021/03/30/ic-note-inv-simu/</id>
     <published>2021-03-30T00:23:04.000Z</published>
-    <updated>2023-08-21T04:52:03.540Z</updated>
+    <updated>2023-10-09T12:50:02.038Z</updated>
     
     
     <summary type="html">&lt;p&gt;2021第一次更新啦！！！&lt;/p&gt;
@@ -374,11 +374,11 @@ Server配置、端口打开这两个部分。至于服务器上公网，我会�
   </entry>
   
   <entry>
-    <title>VHDL学习笔记之元件递归</title>
+    <title>VHDL学习笔记01--元件递归</title>
     <link href="https://hexo.leonxu.top/2020/08/05/vhdl-note-component-recursion/"/>
     <id>https://hexo.leonxu.top/2020/08/05/vhdl-note-component-recursion/</id>
     <published>2020-08-05T10:32:19.000Z</published>
-    <updated>2023-08-21T04:22:08.235Z</updated>
+    <updated>2023-10-09T12:25:39.695Z</updated>
     
     
     <summary type="html">&lt;p&gt;欢迎来看我的VHDL学习笔记，这是我写的第一篇，是关于我在用元件递归来设计n输入与门的全过程。&lt;/p&gt;
@@ -424,7 +424,7 @@ Server配置、端口打开这两个部分。至于服务器上公网，我会�
     <link href="https://hexo.leonxu.top/2020/05/05/vscode-note-tableofcontents/"/>
     <id>https://hexo.leonxu.top/2020/05/05/vscode-note-tableofcontents/</id>
     <published>2020-05-05T04:02:54.000Z</published>
-    <updated>2023-08-21T12:20:25.894Z</updated>
+    <updated>2023-10-09T12:24:58.160Z</updated>
     
     
     <summary type="html">&lt;p&gt;Markdown语法支持自己编写目录，但是碰到中文标题就捉襟见肘了。不久前在写项目README的时候，我一时兴起准备给文章编写一个目录，却发现一开始编写的目录竟然可以自动更新。照着目录的格式摸索了几次，终于总结出快速编写目录的方法。&lt;/p&gt;</summary>
@@ -473,7 +473,7 @@ RSS再次搭建&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
     <link href="https://hexo.leonxu.top/2020/04/08/vscode-note-trimTrailingWhitespace/"/>
     <id>https://hexo.leonxu.top/2020/04/08/vscode-note-trimTrailingWhitespace/</id>
     <published>2020-04-08T03:34:40.000Z</published>
-    <updated>2023-08-21T12:20:24.974Z</updated>
+    <updated>2023-10-09T12:24:45.908Z</updated>
     
     
     <summary type="html">&lt;p&gt;由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
