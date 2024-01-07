@@ -313,9 +313,9 @@
       
         <tags>
             
-            <tag> VNC </tag>
-            
             <tag> CentOS </tag>
+            
+            <tag> VNC </tag>
             
         </tags>
       
@@ -340,11 +340,11 @@
       
         <tags>
             
-            <tag> CentOS </tag>
-            
             <tag> XDMCP </tag>
             
             <tag> Xmanager </tag>
+            
+            <tag> CentOS </tag>
             
         </tags>
       

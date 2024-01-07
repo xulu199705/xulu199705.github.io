@@ -329,9 +329,9 @@
     <category term="软件" scheme="https://hexo.leonxu.top/categories/%E8%BD%AF%E4%BB%B6/"/>
     
     
-    <category term="VNC" scheme="https://hexo.leonxu.top/tags/VNC/"/>
-    
     <category term="CentOS" scheme="https://hexo.leonxu.top/tags/CentOS/"/>
+    
+    <category term="VNC" scheme="https://hexo.leonxu.top/tags/VNC/"/>
     
   </entry>
   
@@ -351,11 +351,11 @@
     <category term="软件" scheme="https://hexo.leonxu.top/categories/%E8%BD%AF%E4%BB%B6/"/>
     
     
-    <category term="CentOS" scheme="https://hexo.leonxu.top/tags/CentOS/"/>
-    
     <category term="XDMCP" scheme="https://hexo.leonxu.top/tags/XDMCP/"/>
     
     <category term="Xmanager" scheme="https://hexo.leonxu.top/tags/Xmanager/"/>
+    
+    <category term="CentOS" scheme="https://hexo.leonxu.top/tags/CentOS/"/>
     
   </entry>
   
