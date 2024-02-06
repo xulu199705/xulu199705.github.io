@@ -1,0 +1,381 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ACFM裂纹检测改进——RACFM | Leon的网络日志</title><meta name="author" content="Leon"><meta name="copyright" content="Leon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。 针对交变电场检测（ACFM）的方向性局限，文章High sensitivity rotating alternating current field measurement for arbitrary-angle underwater cracks（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACFM裂纹检测改进——RACFM">
+<meta property="og:url" content="https://hexo.leonxu.top/p/racfm-summary/">
+<meta property="og:site_name" content="Leon的网络日志">
+<meta property="og:description" content="之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。 针对交变电场检测（ACFM）的方向性局限，文章High sensitivity rotating alternating current field measurement for arbitrary-angle underwater cracks（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2023/10/09/LP7v63nBNZjXRkg.jpg">
+<meta property="article:published_time" content="2020-04-03T03:03:17.000Z">
+<meta property="article:modified_time" content="2023-08-21T04:50:59.188Z">
+<meta property="article:author" content="Leon">
+<meta property="article:tag" content="summary">
+<meta property="article:tag" content="检测">
+<meta property="article:tag" content="电磁感应">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/09/LP7v63nBNZjXRkg.jpg"><link rel="shortcut icon" href="/favicon/logo_180px.png"><link rel="canonical" href="https://hexo.leonxu.top/p/racfm-summary/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ACFM裂纹检测改进——RACFM',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-21 12:50:59'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Leon的网络日志" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2023/10/09/LP7v63nBNZjXRkg.jpg" onerror="onerror=null;src='/img/uni/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/photograph/"><i class="fa-fw fas fa-camera-retro"></i><span> 时光留影</span></a></div><div class="menus_item"><a class="site-page" href="/dailyword/"><i class="fa-fw fas fa-book"></i><span> 闲言碎语</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://s2.loli.net/2023/08/21/3tkYORXcblCZowS.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Leon的网络日志"><span class="site-name">Leon的网络日志</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/photograph/"><i class="fa-fw fas fa-camera-retro"></i><span> 时光留影</span></a></div><div class="menus_item"><a class="site-page" href="/dailyword/"><i class="fa-fw fas fa-book"></i><span> 闲言碎语</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ACFM裂纹检测改进——RACFM</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2020-04-03T03:03:17.000Z" title="发表于 2020-04-03 11:03:17">2020-04-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A1%AC%E4%BB%B6/">硬件</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ACFM裂纹检测改进——RACFM"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。</p>
+<p>针对交变电场检测（ACFM）的方向性局限，文章<em>High sensitivity
+rotating alternating current field measurement for arbitrary-angle
+underwater
+cracks</em>（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环境实验验证了RACFM
+对任意角度裂纹的灵敏性。</p>
+<span id="more"></span>
+<h2 id="论文背景">1 论文背景</h2>
+<p>原文以离岸油气开采行业为实际应用背景，列举了当时水下管道裂纹检测的几种方法，并分析这些方法的特点和缺陷，请参见表1。针对当时普遍使用的交变电场检测（ACFM）的方向性局限，原文提出了一种新型的旋转交变电场检测（RACFM）在保证相对较高的灵敏度的前提下，克服方向性的局限。</p>
+<table>
+<tr>
+<th colspan="3">
+表1 多种裂纹检测比较
+</th>
+</tr>
+<tr>
+<th>
+</th>
+<th>
+特点
+</th>
+<th>
+缺陷
+</th>
+</tr>
+<tr>
+<th>
+肉眼检查
+</th>
+<th>
+实用、廉价
+</th>
+<th>
+<ol type="1">
+<li>高度依赖使用者的经验和能力<br>2. 不借助工具无法发现应力腐蚀开裂(SCC)
+</li></ol></th>
+</tr>
+<tr>
+<th>
+磁粉探伤(MPI)
+</th>
+<th>
+<ol type="1">
+<li>使用最广泛<br>2. 使用铁屑探查裂纹
+</li></ol></th>
+<th>
+MPI的检测性能依赖于结构体表面的平整程度，而水下表面清洁成本高昂
+</th>
+</tr>
+<tr>
+<th>
+漏磁检测(MFL)
+</th>
+<th>
+无接触检测，无需表面清洁
+</th>
+<th>
+无法检测排列紧密的裂纹
+</th>
+</tr>
+<tr>
+<th>
+涡流检测(ECT)
+</th>
+<th>
+检测导电材料表面和亚表面的裂缝
+</th>
+<th>
+水下结构体表面不规则，难以做到匀速检测装置离开，影响ECT精准性
+</th>
+</tr>
+<tr>
+<th>
+交流电场检测(ACFM)
+</th>
+<th>
+<ol type="1">
+<li>无需表面清洁<br>2. 数学模型精确<br>3. 对检测装置移动具有高容忍度
+</li></ol></th>
+<th>
+裂纹与感应电流垂直时，感应电流的扰动最大，与感应电流平行时最小，实际使用时需对同一位置多次检测，增加检测成本
+</th>
+</tr>
+</table>
+
+
+
+<h2 id="理论分析">2 理论分析</h2>
+<p>ACFM
+是一种基于交流电位差的裂纹检测手段。通以交流电的线圈在其周围产生变化的交流磁场，被测表面感应出感生电动势，产生变化的感生交流电场。当被测表面出现裂纹时，感生交流电场就会被干扰，同时交流磁场也会受到轻微的扰动。ACFM
+就是通过检测交流磁场的扰动来检测裂纹的长度和深度，其原理框图请参见图1。</p>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/racfm-summary/2779082017.png" alt="图1 ACFM原理框图">
+<figcaption aria-hidden="true">图1 ACFM原理框图</figcaption>
+</figure>
+<p>图2-a和图2-b分别为被测表面的裂纹与交流电场垂直和平行的示意图。显而易见，当交流电场的方向与裂纹垂直时，裂纹对交流电场的影响就会更加明显；反之，两者平行时，裂纹对交流电场的影响明显降低。原文针对这一局限，RACFM
+使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM
+感生交流电场方向理论示意图如图3所示。</p>
+<p>原文针对这一局限，RACFM使用双“U”型正交电感器产生周期旋转的交变磁场，感生出周期旋转的交变电场，最终实现电场与裂纹正交。一个周期内RACFM感生交流电场方向理论示意图如图3所示。</p>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/racfm-summary/3338828193.jpg" alt="图2 裂纹角度对交流电场的影响">
+<figcaption aria-hidden="true">图2 裂纹角度对交流电场的影响</figcaption>
+</figure>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/racfm-summary/3045871072.jpg" alt="图3 周期内RACFM感生交流电场方向理论示意图">
+<figcaption aria-hidden="true">图3
+周期内RACFM感生交流电场方向理论示意图</figcaption>
+</figure>
+<h2 id="实验验证">3 实验验证</h2>
+<p>原文使用RACFM与传统ACFM对照试验，除电感器的激励电流外，其余均相同。</p>
+<p>探测器直线移动经过裂纹，通过改变路径与裂纹的夹角(0°-90°)来模拟任意角度的裂纹，记录<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>两个方向的磁感应强度，实验结果如图4所示。在夹角为0°时，RACFM和ACFM得到的扰动都有明显的波动，可以作为裂纹的依据。随着夹角不断变大，ACFM得到的磁感应强度扰动不断衰减，当夹角过大时，扰动被噪声覆盖。而RACFM得到的扰动则一直比较明显，不会随着夹角变化产生明显的衰减。</p>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/racfm-summary/1016029282.jpg" alt="图4 B_x和B_z实验数据">
+<figcaption aria-hidden="true">图4 <span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>实验数据</figcaption>
+</figure>
+<p>为了量化RACFM的性能，原文定义了x和z方向磁感应强度的灵敏度，见下方公式。</p>
+<p><span class="math display">\[
+\left\{ \begin{array}{l}
+{S_x} = \frac{ {M{X_{max} } } }{ {M{X_0} } } \times 100\% \\
+{S_z} = \frac{ {M{Z_{max} } } }{ {M{X_0} } } \times 100\%
+\end{array} \right.
+\]</span></p>
+<p>其中，<span class="math inline">\(MX_0\)</span>表示无裂纹时，<span class="math inline">\(B_x\)</span>的幅度；<span class="math inline">\(M{X_{max}}\)</span>和<span class="math inline">\(M{Z_{max}}\)</span>分别表示<span class="math inline">\(B_x\)</span>和<span class="math inline">\(B_z\)</span>扰动的最大值。灵敏度与角度变化的关系如图5所示。随着路径与裂纹夹角不断变大，ACFM的灵敏度急剧降低，当夹角大于50°时，ACFM的两个方向灵敏度接近0；RACFM的灵敏度<span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>虽然有衰减，但依旧处于较高的灵敏范围内，可以作为裂纹检测的依据。</p>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/racfm-summary/2353434411.jpg" alt="图5 S_x和S_z变化趋势">
+<figcaption aria-hidden="true">图5 <span class="math inline">\(S_x\)</span>和<span class="math inline">\(S_z\)</span>变化趋势</figcaption>
+</figure>
+<p>根据实验结果，RACFM能克服传统ACFM的方向性局限，同时，RACFM还保持了较高的裂纹检测灵敏度，可以应用在实际的离岸油气开采行业的管道裂纹检测场景中。</p>
+<hr>
+<p>其实这篇文章提出的RACFM其实就是将ACFM从线到面，从单一角度扩展到多个角度，并不是特别深奥难懂的点子。甚至这样的例子也发生在平时的生活中，我们也许会写下“就这？”。前几天开始看<em>Talk
+Like TED</em>，开篇第一句就是“Ideas are the currency of the twenty-first
+century”。这就让我想起了RACFM这篇文章，以及经常遇见的“就这？”。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://hexo.leonxu.top">Leon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://hexo.leonxu.top/p/racfm-summary/">https://hexo.leonxu.top/p/racfm-summary/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明来自 <a href="https://hexo.leonxu.top" target="_blank">Leon的网络日志</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/summary/">summary</a><a class="post-meta__tags" href="/tags/%E6%A3%80%E6%B5%8B/">检测</a><a class="post-meta__tags" href="/tags/%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94/">电磁感应</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/p/vscode-note-trimTrailingWhitespace/" title="VS Code笔记之根据语言选择性删除行末空格"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/post_cover/vscode_logo.png" onerror="onerror=null;src='/img/uni/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">VS Code笔记之根据语言选择性删除行末空格</div></div></a></div><div class="next-post pull-right"><a href="/p/wifi_6/" title="Wi-Fi 6简析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Wi-Fi 6简析</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/p/can-based-optimization/" title="基于CAN总线的多轴运动控制系统的一种优化方案"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-01-30</div><div class="title">基于CAN总线的多轴运动控制系统的一种优化方案</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2023/10/09/LP7v63nBNZjXRkg.jpg" onerror="this.onerror=null;this.src='/img/uni/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Leon</div><div class="author-info__description">这里是爱研究各种问题、立许多flag的Leon的网络日志</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xulu199705" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xulu199705@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">1 论文背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">2 理论分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81"><span class="toc-number">3.</span> <span class="toc-text">3 实验验证</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/p/sony-fe-16-35mm-f2-8-gm-ii/" title="SONY FE 16-35mm F2.8 GM II"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/sony-fe-16-35mm-f2-8-gm-ii/1635gm2_banner_1610.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="SONY FE 16-35mm F2.8 GM II"/></a><div class="content"><a class="title" href="/p/sony-fe-16-35mm-f2-8-gm-ii/" title="SONY FE 16-35mm F2.8 GM II">SONY FE 16-35mm F2.8 GM II</a><time datetime="2023-12-24T13:53:35.000Z" title="发表于 2023-12-24 21:53:35">2023-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/tamron-20-40mm-f2-8-di-iii-vxd-a062/" title="TAMRON 20-40mm F2.8 Di III VXD A062"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/tamron-20-40mm-f2-8-di-iii-vxd-a062/2040banner.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="TAMRON 20-40mm F2.8 Di III VXD A062"/></a><div class="content"><a class="title" href="/p/tamron-20-40mm-f2-8-di-iii-vxd-a062/" title="TAMRON 20-40mm F2.8 Di III VXD A062">TAMRON 20-40mm F2.8 Di III VXD A062</a><time datetime="2023-07-09T02:34:55.000Z" title="发表于 2023-07-09 10:34:55">2023-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/" title="TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/tamron50400_banner_1610.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067"/></a><div class="content"><a class="title" href="/p/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/" title="TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067">TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067</a><time datetime="2022-11-14T01:59:59.000Z" title="发表于 2022-11-14 09:59:59">2022-11-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/ttartisan-50mm-f1-4-tilt/" title="铭匠TTArtisan 50mm F1.4 Tilt"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ttartisan-50mm-f1-4-tilt/Pasted%20image%2020221027195041.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="铭匠TTArtisan 50mm F1.4 Tilt"/></a><div class="content"><a class="title" href="/p/ttartisan-50mm-f1-4-tilt/" title="铭匠TTArtisan 50mm F1.4 Tilt">铭匠TTArtisan 50mm F1.4 Tilt</a><time datetime="2022-10-27T11:52:42.000Z" title="发表于 2022-10-27 19:52:42">2022-10-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/sony-fe-200-600mm-f5-6-6-3-g-oss/" title="Sony FE 200-600mm F5.6-6.3 G OSS"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/sony-fe-200-600mm-f5-6-6-3-g-oss/sel200600g_01_190620.jpg" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="Sony FE 200-600mm F5.6-6.3 G OSS"/></a><div class="content"><a class="title" href="/p/sony-fe-200-600mm-f5-6-6-3-g-oss/" title="Sony FE 200-600mm F5.6-6.3 G OSS">Sony FE 200-600mm F5.6-6.3 G OSS</a><time datetime="2022-09-22T03:33:43.000Z" title="发表于 2022-09-22 11:33:43">2022-09-22</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2023/08/21/3tkYORXcblCZowS.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2024 By Leon</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>苏 ICP 备 17063385 号</span></a>
+<br />
+Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> &amp; <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a>
+</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const loadUtterances = () => {
+    let ele = document.createElement('script')
+    ele.id = 'utterances_comment'
+    ele.src = 'https://utteranc.es/client.js'
+    ele.setAttribute('repo', 'xulu199705/blog-attachment')
+    ele.setAttribute('issue-term', 'title')
+    const nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+    ele.setAttribute('theme', nowTheme)
+    ele.crossOrigin = 'anonymous'
+    ele.async = true
+    document.getElementById('utterances-wrap').appendChild(ele)
+  }
+
+  const utterancesTheme = theme => {
+    const iframe = document.querySelector('.utterances-frame')
+    if (iframe) {
+      const theme = theme === 'dark' ? 'photon-dark' : 'github-light'
+      const message = {
+        type: 'set-theme',
+        theme: theme
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  btf.addGlobalFn('themeChange', utterancesTheme, 'utterances')
+
+  if ('Utterances' === 'Utterances' || !false) {
+    if (false) btf.loadComment(document.getElementById('utterances-wrap'), loadUtterances)
+    else loadUtterances()
+  } else {
+    window.loadOtherComment = loadUtterances
+  }
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.12.0"></script></div></div></body></html>
