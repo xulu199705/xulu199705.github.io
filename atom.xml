@@ -233,7 +233,8 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;源：&lt;a href=&quot;https://sonyalpha.blog/2020/07/21/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/&quot;&gt;Sigma 100-400mm f5-6.3 DG DN OS </summary>
+&lt;p&gt;源：&lt;a href=&quot;https://sonyalpha.blog/2020/07/21/sigma-100-400mm-f5-6-3-dg-dn-os-contemporary/&quot;&gt;Sigma
+100-400mm f5-6.3 DG DN OS </summary>
         
       
     
@@ -267,7 +268,8 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;源：&lt;a href=&quot;https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/&quot;&gt;Sigma 14-24mm f2.8 DG DN ART_by SonyAlphaBlog&lt;/a</summary>
+&lt;p&gt;源：&lt;a href=&quot;https://sonyalpha.blog/2019/11/12/sigma-14-24mm-f2-8-dg-dn-art/&quot;&gt;Sigma
+14-24mm f2.8 DG DN ART_by SonyAlphaBlog&lt;/a</summary>
         
       
     
@@ -296,7 +298,8 @@
     <updated>2024-01-07T11:20:15.497Z</updated>
     
     
-    <summary type="html">&lt;p&gt;贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github Pages上了，阿里云的服务器就空出来了。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;贫穷的Leon的腾讯云服务器快要到期了(发文章的时候已经到期了)，自用的TTRSS服务岌岌可危，这可咋整啊！！！所幸几周前已经把阿里云上的博客全部迁移到Github
+Pages上了，阿里云的服务器就空出来了。&lt;/p&gt;
 &lt;p&gt;但是，不幸再次降临，TTRSS官方把原来的安装方式取消了，推荐使用docker安装。经过一番摸索，终于完成了docker安装TTRSS，并搞定fever。&lt;/p&gt;
 &lt;p&gt;环境说明：所使用的是Aliyun服务器（1C2G），系统为CentOS 7.9。&lt;/p&gt;</summary>
     
@@ -344,7 +347,8 @@
     
     
     <summary type="html">&lt;p&gt;恰好遇到了服务器远程桌面的需求，记一篇笔记详细介绍一下XDMCP配置。&lt;/p&gt;
-&lt;p&gt;XDMCP配置主要是XDMCP Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。&lt;/p&gt;</summary>
+&lt;p&gt;XDMCP配置主要是XDMCP
+Server配置、端口打开这两个部分。至于服务器上公网，我会再开一篇写一下。&lt;/p&gt;</summary>
     
     
     
@@ -435,7 +439,8 @@
     <updated>2023-08-21T12:21:28.212Z</updated>
     
     
-    <summary type="html">&lt;p&gt;2020年不知不觉已经过去一半时间了。 :@(汗)&lt;br&gt;&lt;a href=&quot;https://www.springer.com/&quot;&gt;斯普林格，Springer&lt;/a&gt;，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;2020年不知不觉已经过去一半时间了。 :@(汗)&lt;br&gt;
+&lt;a href=&quot;https://www.springer.com&quot;&gt;斯普林格，Springer&lt;/a&gt;，是欧美非常著名的科技图书出版社。目前全球都被Covid-19笼罩，为了帮助有学习需求的同学，Springer将许多专业方面的教科书公开下载。&lt;/p&gt;</summary>
     
     
     
@@ -478,7 +483,9 @@
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;这篇文章使用的是TTRSS老版本安装方式，新版的Docker安装请参考最新的文章&lt;a href=&quot;/p/ttrss-build-2/&quot;&gt;Tiny Tiny RSS再次搭建&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder 3停更了。&lt;br&gt;为了解决日常的RSS阅读，自建RSS服务就提上了日程&lt;del&gt;从冒出想法到搞定实际只花了半天时间&lt;/del&gt;。&lt;/p&gt;
+&lt;p&gt;很早之前就有了自建RSS服务的想法，但是Feedly和Inoreader的基(mian)础(fei)套餐真的太香了，懒人表示无法拒绝。结果，不出所料，Feedly和Inoreader在4月初的时候陆续被墙，当时还以为Reeder
+3停更了。&lt;br&gt;
+为了解决日常的RSS阅读，自建RSS服务就提上了日程&lt;del&gt;从冒出想法到搞定实际只花了半天时间&lt;/del&gt;。&lt;/p&gt;
 &lt;p&gt;本文我就来详细介绍一下搭建多平台RSS服务——Tiny Tiny RSS(TTRSS)。&lt;/p&gt;</summary>
     
     
@@ -502,8 +509,12 @@
     <updated>2023-10-09T12:24:45.908Z</updated>
     
     
-    <summary type="html">&lt;p&gt;由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex Workshop、Markdown+Math和Markdown Preview Enhanced配合来写东西，用着特别顺手。&lt;/p&gt;
-&lt;p&gt;平时用VS Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;由于一直没有找到合适的Markdown编辑器，就一直用VS Code来写点东西。从VS
+Code发布以来就一直在用，到现在已经有了相当丰富的插件可以使用了。平时一直使用Latex
+Workshop、Markdown+Math和Markdown Preview
+Enhanced配合来写东西，用着特别顺手。&lt;/p&gt;
+&lt;p&gt;平时用VS
+Code写代码比较多，就在设置里面勾选了保存时自动删除文末的空格。Markdown写作当然就出现了瑕疵，最近才上心解决了这个问题。希望这个分享可以给有相同需求的同学带来一点帮助。&lt;/p&gt;</summary>
     
     
     
@@ -525,7 +536,11 @@
     
     
     <summary type="html">&lt;p&gt;之前一段时间，阅读了一片裂纹检测的文章，写了篇内容摘要。&lt;/p&gt;
-&lt;p&gt;针对交变电场检测（ACFM）的方向性局限，文章&lt;em&gt;High sensitivity rotating alternating current field measurement for arbitrary-angle underwater cracks&lt;/em&gt;（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环境实验验证了RACFM 对任意角度裂纹的灵敏性。&lt;/p&gt;</summary>
+&lt;p&gt;针对交变电场检测（ACFM）的方向性局限，文章&lt;em&gt;High sensitivity
+rotating alternating current field measurement for arbitrary-angle
+underwater
+cracks&lt;/em&gt;（下文简称“原文”）提出了基于旋转交变电场检测（RACFM）的裂纹检测方式，并通过模拟的海水环境实验验证了RACFM
+对任意角度裂纹的灵敏性。&lt;/p&gt;</summary>
     
     
     
@@ -548,9 +563,13 @@
     <updated>2024-02-06T13:16:42.988Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Wi-Fi 6这个词是我在翻看张大妈了解到的，只是大概知道Wi-Fi 6的延迟更低，传输更快，多设备体验更舒服。&lt;/p&gt;
-&lt;p&gt;2月13日，雷军在小米的 &lt;del&gt;无人&lt;/del&gt; 发布会上发布了Wi-Fi 6协议的AX3600，售价599，真不愧是价格屠夫。&lt;/p&gt;
-&lt;p&gt;反正最近一段时间一直在家蹲着，自然要看看这个Wi-Fi 6协议到底是个啥情况，Wi-Fi 6对于我这样的普通用户是不是真的有丶东西呢？&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Wi-Fi 6这个词是我在翻看张大妈了解到的，只是大概知道Wi-Fi
+6的延迟更低，传输更快，多设备体验更舒服。&lt;/p&gt;
+&lt;p&gt;2月13日，雷军在小米的 &lt;del&gt;无人&lt;/del&gt; 发布会上发布了Wi-Fi
+6协议的AX3600，售价599，真不愧是价格屠夫。&lt;/p&gt;
+&lt;p&gt;反正最近一段时间一直在家蹲着，自然要看看这个Wi-Fi
+6协议到底是个啥情况，Wi-Fi
+6对于我这样的普通用户是不是真的有丶东西呢？&lt;/p&gt;</summary>
     
     
     
