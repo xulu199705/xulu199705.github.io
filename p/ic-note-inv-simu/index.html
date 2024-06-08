@@ -159,277 +159,130 @@
 <p>本文是基于IC618的ADE仿真操作基本介绍，以反相器为例。</p>
 <p>接下来一段时间还会陆陆续续地更新一些IC电路的仿真。</p>
 <span id="more"></span>
+
 <p>仿真基于SMIC的.18库（工艺库的安装看后续时间安排，可能会写一篇<del>当然也可能不写</del>）。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/virtuoso_ui.png" alt="图0-1">
-<figcaption aria-hidden="true">图0-1</figcaption>
-</figure>
-<h2 id="新建library">1 新建Library</h2>
-<p>选择"File"-"New"-"Library"。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/new_library_1.png" alt="图1-1">
-<figcaption aria-hidden="true">图1-1</figcaption>
-</figure>
-<p>在弹出的对话框的文本框中输入Library的名称（因为之后的电路仿真主要是模拟方面，我就选了"analog_test"）。<br>
-"Technology File"选择第3项"Attach to an existing technology
-library"。点击"OK"，进入下一步。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/new_library_2.png" alt="图1-2">
-<figcaption aria-hidden="true">图1-2</figcaption>
-</figure>
-<p>选择依赖的已存在工艺库（这里我选择了"smic18ee"）。点击"OK"，进入下一步。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/new_library_3.png" alt="图1-3">
-<figcaption aria-hidden="true">图1-3</figcaption>
-</figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/virtuoso_ui.png" alt="图0-1"></p>
+<h2 id="1-新建Library"><a href="#1-新建Library" class="headerlink" title="1 新建Library"></a>1 新建Library</h2><p>选择”File”-“New”-“Library”。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/new_library_1.png" alt="图1-1"></p>
+<p>在弹出的对话框的文本框中输入Library的名称（因为之后的电路仿真主要是模拟方面，我就选了”analog_test”）。<br>“Technology File”选择第3项”Attach to an existing technology library”。点击”OK”，进入下一步。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/new_library_2.png" alt="图1-2"></p>
+<p>选择依赖的已存在工艺库（这里我选择了”smic18ee”）。点击”OK”，进入下一步。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/new_library_3.png" alt="图1-3"></p>
 <p>这是，Virtuoso的输出信息中就会有Library创建成功的信息。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/new_library_4.png" alt="图1-4">
-<figcaption aria-hidden="true">图1-4</figcaption>
-</figure>
-<p>选择"Tools"-"Library Manager"进入Library管理界面。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/lib_manager_1.png" alt="图1-5">
-<figcaption aria-hidden="true">图1-5</figcaption>
-</figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/new_library_4.png" alt="图1-4"></p>
+<p>选择”Tools”-“Library Manager”进入Library管理界面。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/lib_manager_1.png" alt="图1-5"></p>
 <p>刚刚新建的库可以看到，但库中还没有任何Cell。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/lib_manager_2.png" alt="图1-6">
-<figcaption aria-hidden="true">图1-6</figcaption>
-</figure>
-<h2 id="新建cell">2 新建Cell</h2>
-<p>在"Library Manager"中选择"File"-"New"-"Cell View"。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/new_cell_1.png" alt="图2-1">
-<figcaption aria-hidden="true">图2-1</figcaption>
-</figure>
-<p>在弹出对话框的"Cell"对话框中输入接下来设计的电路的名称，"Type"为"schematic"。点击"OK"，进入下一步。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/new_cell_2.png" alt="图2-2">
-<figcaption aria-hidden="true">图2-2</figcaption>
-</figure>
-<p>Cell新建对话框消失后，进入"Schematic Editor"窗口。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/new_cell_3.png" alt="图2-3">
-<figcaption aria-hidden="true">图2-3</figcaption>
-</figure>
-<p>"Library Manager"中"analog_test"库中也可以看到刚刚新建的Cell。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/new_cell_4.png" alt="图2-4">
-<figcaption aria-hidden="true">图2-4</figcaption>
-</figure>
-<h2 id="原理图绘制">3 原理图绘制</h2>
-<p>目前的原理图还是空的，需要向其中添加需要仿真的电路。</p>
-<h3 id="添加器件">3.1 添加器件</h3>
-<p>首先添加元器件。在"Schematic
-Editor"窗口空白处（好吧，是黑色的）按"i"。点击"Library"下拉框右边的"Browse"。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_add_instance_1.png" alt="图3-1">
-<figcaption aria-hidden="true">图3-1</figcaption>
-</figure>
-<p>先勾选弹窗左上角的"Show
-Categories"勾选框，再选择"smic18ee"-"mosfet"中的PMOS，根据需求选择规格，我选择了"p33e2r"。之后在"View"栏中双击"Symbol"。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_add_instance_2.png" alt="图3-2">
-<figcaption aria-hidden="true">图3-2</figcaption>
-</figure>
-<p>此时，"Add
-Instance"对话框中就有刚刚选择的"p33e2r"的详细参数，可以自行调节。<br>
-这里我简单设置了PMOS的宽长（<span class="math inline">\(L=1u,
-W=2u\)</span>）。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_add_instance_3.png" alt="图3-3">
-<figcaption aria-hidden="true">图3-3</figcaption>
-</figure>
-<p>设置好参数后，鼠标就可以在"Schematic
-Editor"窗口空白处中放置刚刚配置好参数的PMOS了。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_add_instance_4.png" alt="图3-4">
-<figcaption aria-hidden="true">图3-4</figcaption>
-</figure>
-<p>反相器还需要一个NMOS，也可通过上述的"Add Instance"来实现。<br>
-为了方便，我使用了另一种方法。首先复制一个PMOS，再选中后右键选择"Properties"进入第二个PMOS的属性页。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_add_instance_5.png" alt="图3-5">
-<figcaption aria-hidden="true">图3-5</figcaption>
-</figure>
-<p>在属性页中，修改"Cell
-Name"为"n33e2r"，再修改宽长比，点击"OK"。这样就得到一个NMOS了。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_add_instance_6.png" alt="图3-6">
-<figcaption aria-hidden="true">图3-6</figcaption>
-</figure>
-<h3 id="添加端口">3.2 添加端口</h3>
-<p>电路中除了器件外，还有输入输出端口和电源端口。在空白处按"p"进入"Create
-Pin"对话框。这里需要注意的是"Names"、"Direction"、"Signal
-Type"这三个属性。<br>
-与放置器件一样，配置好端口属性就可以在空白处放置端口了。表格中是常用的端口配置。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_add_port_1.png" alt="图3-7">
-<figcaption aria-hidden="true">图3-7</figcaption>
-</figure>
-<p>表3-1 常用端口配置 | Pin Name | Direction | Signal Type | | :---: |
-:---: | :---: | | in | input | signal | | out | output | signal | | vdd
-| inputoutput| power | | gnd | inputoutput| ground |</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/lib_manager_2.png" alt="图1-6"></p>
+<h2 id="2-新建Cell"><a href="#2-新建Cell" class="headerlink" title="2 新建Cell"></a>2 新建Cell</h2><p>在”Library Manager”中选择”File”-“New”-“Cell View”。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/new_cell_1.png" alt="图2-1"></p>
+<p>在弹出对话框的”Cell”对话框中输入接下来设计的电路的名称，”Type”为”schematic”。点击”OK”，进入下一步。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/new_cell_2.png" alt="图2-2"></p>
+<p>Cell新建对话框消失后，进入”Schematic Editor”窗口。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/new_cell_3.png" alt="图2-3"></p>
+<p>“Library Manager”中”analog_test”库中也可以看到刚刚新建的Cell。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/new_cell_4.png" alt="图2-4"></p>
+<h2 id="3-原理图绘制"><a href="#3-原理图绘制" class="headerlink" title="3 原理图绘制"></a>3 原理图绘制</h2><p>目前的原理图还是空的，需要向其中添加需要仿真的电路。</p>
+<h3 id="3-1-添加器件"><a href="#3-1-添加器件" class="headerlink" title="3.1 添加器件"></a>3.1 添加器件</h3><p>首先添加元器件。在”Schematic Editor”窗口空白处（好吧，是黑色的）按”i”。点击”Library”下拉框右边的”Browse”。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_add_instance_1.png" alt="图3-1"></p>
+<p>先勾选弹窗左上角的”Show Categories”勾选框，再选择”smic18ee”-“mosfet”中的PMOS，根据需求选择规格，我选择了”p33e2r”。之后在”View”栏中双击”Symbol”。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_add_instance_2.png" alt="图3-2"></p>
+<p>此时，”Add Instance”对话框中就有刚刚选择的”p33e2r”的详细参数，可以自行调节。<br>这里我简单设置了PMOS的宽长（$L&#x3D;1u, W&#x3D;2u$）。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_add_instance_3.png" alt="图3-3"></p>
+<p>设置好参数后，鼠标就可以在”Schematic Editor”窗口空白处中放置刚刚配置好参数的PMOS了。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_add_instance_4.png" alt="图3-4"></p>
+<p>反相器还需要一个NMOS，也可通过上述的”Add Instance”来实现。<br>为了方便，我使用了另一种方法。首先复制一个PMOS，再选中后右键选择”Properties”进入第二个PMOS的属性页。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_add_instance_5.png" alt="图3-5"></p>
+<p>在属性页中，修改”Cell Name”为”n33e2r”，再修改宽长比，点击”OK”。这样就得到一个NMOS了。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_add_instance_6.png" alt="图3-6"></p>
+<h3 id="3-2-添加端口"><a href="#3-2-添加端口" class="headerlink" title="3.2 添加端口"></a>3.2 添加端口</h3><p>电路中除了器件外，还有输入输出端口和电源端口。在空白处按”p”进入”Create Pin”对话框。这里需要注意的是”Names”、”Direction”、”Signal Type”这三个属性。<br>与放置器件一样，配置好端口属性就可以在空白处放置端口了。表格中是常用的端口配置。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_add_port_1.png" alt="图3-7"></p>
+<p>表3-1 常用端口配置</p>
+<table>
+<thead>
+<tr>
+<th align="center">Pin Name</th>
+<th align="center">Direction</th>
+<th align="center">Signal Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">in</td>
+<td align="center">input</td>
+<td align="center">signal</td>
+</tr>
+<tr>
+<td align="center">out</td>
+<td align="center">output</td>
+<td align="center">signal</td>
+</tr>
+<tr>
+<td align="center">vdd</td>
+<td align="center">inputoutput</td>
+<td align="center">power</td>
+</tr>
+<tr>
+<td align="center">gnd</td>
+<td align="center">inputoutput</td>
+<td align="center">ground</td>
+</tr>
+</tbody></table>
 <p>按照上述的方法，根据电路需求放置其它的端口。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_add_port_2.png" alt="图3-8">
-<figcaption aria-hidden="true">图3-8</figcaption>
-</figure>
-<h3 id="绘制导线">3.3 绘制导线</h3>
-<p>器件和端口添加好后，根据设计的电路连接导线，快捷键是"w"。<br>
-在连接MOS时，注意衬底"Bulk"上的连线。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_add_wire.png" alt="图3-9">
-<figcaption aria-hidden="true">图3-9</figcaption>
-</figure>
-<p>原理图绘制结束后，使用"Shift+X"检查保存。原理图的检查信息会输出到Virtuoso主界面。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_check_and_save.png" alt="图3-10">
-<figcaption aria-hidden="true">图3-10</figcaption>
-</figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_add_port_2.png" alt="图3-8"></p>
+<h3 id="3-3-绘制导线"><a href="#3-3-绘制导线" class="headerlink" title="3.3 绘制导线"></a>3.3 绘制导线</h3><p>器件和端口添加好后，根据设计的电路连接导线，快捷键是”w”。<br>在连接MOS时，注意衬底”Bulk”上的连线。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_add_wire.png" alt="图3-9"></p>
+<p>原理图绘制结束后，使用”Shift+X”检查保存。原理图的检查信息会输出到Virtuoso主界面。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_check_and_save.png" alt="图3-10"></p>
 <p>到这里，电路的原理图就设计完成了。</p>
-<h2 id="生成symbol">4 生成Symbol</h2>
-<p>为了方便调用设计好的电路，可以为电路生成一个Symbol。如果之前简单学习过Altium
-Designer，可以将之前绘制电路原理图理解为一个芯片，将Symbol理解为这个芯片的元器件符号。<br>
-在"Schematic Editor"窗口中选择"Create"-"Cellview"-"From Cellview"。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_generate_symbol_1.png" alt="图4-1">
-<figcaption aria-hidden="true">图4-1</figcaption>
-</figure>
+<h2 id="4-生成Symbol"><a href="#4-生成Symbol" class="headerlink" title="4 生成Symbol"></a>4 生成Symbol</h2><p>为了方便调用设计好的电路，可以为电路生成一个Symbol。如果之前简单学习过Altium Designer，可以将之前绘制电路原理图理解为一个芯片，将Symbol理解为这个芯片的元器件符号。<br>在”Schematic Editor”窗口中选择”Create”-“Cellview”-“From Cellview”。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_generate_symbol_1.png" alt="图4-1"></p>
 <p>这个对话框中的信息都是自动生成的，只要检查一下没有出现导出错误，可以直接进入下一步。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_generate_symbol_2.png" alt="图4-2">
-<figcaption aria-hidden="true">图4-2</figcaption>
-</figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_generate_symbol_2.png" alt="图4-2"></p>
 <p>这个对话框中只需要调整一下输出端口在Symbol中排布的位置。当然，这里直接进入下一步也没有问题，端口位置可以在下一步调整。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_generate_symbol_3.png" alt="图4-3">
-<figcaption aria-hidden="true">图4-3</figcaption>
-</figure>
-<p>此时，进入了"Symbol
-Editor"窗口，空白处已经放置了一个元器件符号。至此，Symbol就基本完成了。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_generate_symbol_4.png" alt="图4-4">
-<figcaption aria-hidden="true">图4-4</figcaption>
-</figure>
-<p>众所周知啊，反相器的符号绝对不是方形的，但是方形也不是不能用。所以，如果同样有轻微强迫症的同学可以自己捣鼓一下Symbol。我最后将Symbol整成下面这样。<br>
-友情提醒，在调整Symbol时，需要时刻注意鼠标的样式和被选择的对象。操作失误及时使用"u"撤销。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/sch_generate_symbol_5.png" alt="图4-5">
-<figcaption aria-hidden="true">图4-5</figcaption>
-</figure>
-<h2 id="仿真电路搭建">5 仿真电路搭建</h2>
-<p>使用新建Cell的方法新建一个inv_ade的Cell。<br>
-仿真电路中需要使用4个器件和1个端口：反相器inv、直流源vdc、脉冲生成器vpulse、电源地gnd和端口out。<br>
-器件使用"i"添加，端口使用"p"添加。</p>
-<p>以下是vdc、vpulse和gnd的参数配置。<br>
-vdc是直流源，在analoglib库中。在反相器的仿真中，只需要设置"DC
-Voltage"为3.3V就可以了。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_add_vdc.png" alt="图5-1">
-<figcaption aria-hidden="true">图5-1</figcaption>
-</figure>
-<p>vpluse是脉冲生成器，在analoglib库中。有4个参数需要设置，分别为"Voltage
-1"、"Voltage 2"、"Period"、"Pulse Width"。<br>
-"Voltage 1"、"Voltage 2"控制输出脉冲的两个边界电压。<br>
-"Period"控制脉冲的周期。<br>
-"Pulse Width"控制脉冲的宽度。<br>
-这方面的内容可以看一下PWM波的知识。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_add_vpulse.png" alt="图5-2">
-<figcaption aria-hidden="true">图5-2</figcaption>
-</figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_generate_symbol_3.png" alt="图4-3"></p>
+<p>此时，进入了”Symbol Editor”窗口，空白处已经放置了一个元器件符号。至此，Symbol就基本完成了。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_generate_symbol_4.png" alt="图4-4"></p>
+<p>众所周知啊，反相器的符号绝对不是方形的，但是方形也不是不能用。所以，如果同样有轻微强迫症的同学可以自己捣鼓一下Symbol。我最后将Symbol整成下面这样。<br>友情提醒，在调整Symbol时，需要时刻注意鼠标的样式和被选择的对象。操作失误及时使用”u”撤销。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/sch_generate_symbol_5.png" alt="图4-5"></p>
+<h2 id="5-仿真电路搭建"><a href="#5-仿真电路搭建" class="headerlink" title="5 仿真电路搭建"></a>5 仿真电路搭建</h2><p>使用新建Cell的方法新建一个inv_ade的Cell。<br>仿真电路中需要使用4个器件和1个端口：反相器inv、直流源vdc、脉冲生成器vpulse、电源地gnd和端口out。<br>器件使用”i”添加，端口使用”p”添加。</p>
+<p>以下是vdc、vpulse和gnd的参数配置。<br>vdc是直流源，在analoglib库中。在反相器的仿真中，只需要设置”DC Voltage”为3.3V就可以了。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_add_vdc.png" alt="图5-1"></p>
+<p>vpluse是脉冲生成器，在analoglib库中。有4个参数需要设置，分别为”Voltage 1”、”Voltage 2”、”Period”、”Pulse Width”。<br>“Voltage 1”、”Voltage 2”控制输出脉冲的两个边界电压。<br>“Period”控制脉冲的周期。<br>“Pulse Width”控制脉冲的宽度。<br>这方面的内容可以看一下PWM波的知识。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_add_vpulse.png" alt="图5-2"></p>
 <p>gnd是电源地，在analoglib库中。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_add_gnd.png" alt="图5-2">
-<figcaption aria-hidden="true">图5-2</figcaption>
-</figure>
-<p>器件和端口添加完毕，通过导线连接好。<br>
-为了仿真中对除端口外的信号进行更好的观察，需要为信号线添加导线名。<br>
-选择目标导线，右键选择"Add Name"。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_add_wire_name_1.png" alt="图5-3">
-<figcaption aria-hidden="true">图5-3</figcaption>
-</figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_add_gnd.png" alt="图5-2"></p>
+<p>器件和端口添加完毕，通过导线连接好。<br>为了仿真中对除端口外的信号进行更好的观察，需要为信号线添加导线名。<br>选择目标导线，右键选择”Add Name”。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_add_wire_name_1.png" alt="图5-3"></p>
 <p>在弹出对话框中输入导线名称后，添加在导线上。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_add_wire_name_2.png" alt="图5-4">
-<figcaption aria-hidden="true">图5-4</figcaption>
-</figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_add_wire_name_2.png" alt="图5-4"></p>
 <p>所有工作完成后，同样需要进行检查保存。仿真原理图设计完毕。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sch.png" alt="图5-5">
-<figcaption aria-hidden="true">图5-5</figcaption>
-</figure>
-<h2 id="ade仿真配置">6 ADE仿真配置</h2>
-<p>在仿真电路的窗口中选择"Launch"-"ADE L"。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_1.png" alt="图6-1">
-<figcaption aria-hidden="true">图6-1</figcaption>
-</figure>
-<p>此时，进入到"ADE L"窗口中。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_2.png" alt="图6-2">
-<figcaption aria-hidden="true">图6-2</figcaption>
-</figure>
-<p>选择"Setup"-"Model Libraries"查看仿真库的路径配置。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_3.png" alt="图6-3">
-<figcaption aria-hidden="true">图6-3</figcaption>
-</figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sch.png" alt="图5-5"></p>
+<h2 id="6-ADE仿真配置"><a href="#6-ADE仿真配置" class="headerlink" title="6 ADE仿真配置"></a>6 ADE仿真配置</h2><p>在仿真电路的窗口中选择”Launch”-“ADE L”。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_1.png" alt="图6-1"></p>
+<p>此时，进入到”ADE L”窗口中。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_2.png" alt="图6-2"></p>
+<p>选择”Setup”-“Model Libraries”查看仿真库的路径配置。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_3.png" alt="图6-3"></p>
 <p>一般来说，仿真库的路径是没有错的。但还是建议<strong>检查一下对应路径下是否有需要的仿真文件</strong>。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_4.png" alt="图6-4">
-<figcaption aria-hidden="true">图6-4</figcaption>
-</figure>
-<p>返回"ADE L"窗口，选择"Analyses"-"Choose"。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_5.png" alt="图6-5">
-<figcaption aria-hidden="true">图6-5</figcaption>
-</figure>
-<p>在"Choosing Analyses"对话框中配置仿真模式和对应参数。<br>
-这次的反相器仿真就使用瞬态仿真"tran"简单看一下结果。时间设置为5u。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_6.png" alt="图6-6">
-<figcaption aria-hidden="true">图6-6</figcaption>
-</figure>
-<p>接下来，需要将跟踪的信号添加进来。选择"Outputs"-"To Be
-Ploted"-"Select On
-Design"。然后再仿真原理图中选择对应的信号节点或导线。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_7.png" alt="图6-7">
-<figcaption aria-hidden="true">图6-7</figcaption>
-</figure>
-<p>这时，"ADE L"窗口就有仿真策略"tran"和跟踪信号"in"和"out"。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_8.png" alt="图6-8">
-<figcaption aria-hidden="true">图6-8</figcaption>
-</figure>
-<p>点击右侧的绿色按钮开始仿真。<br>
-仿真结果的可视化如下图所示（两个信号分组可以在右键中选择）。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_9.png" alt="图6-9">
-<figcaption aria-hidden="true">图6-9</figcaption>
-</figure>
-<p>如果想重复使用本次的仿真配置，可以将其保存起来以备后用。<br>
-选择"Session"-"Save State"。（加载仿真配置选择"Session"-"Load
-State"）</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_save_1.png" alt="图6-10">
-<figcaption aria-hidden="true">图6-10</figcaption>
-</figure>
-<p>共有3个属性需要填写。"State Save Directiory"为保存路径，"Save
-As"为仿真配置的名称，"Description"中可以选填一些配置信息，方便更好地与其他仿真配置区分。</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ade_sim_save_2.png" alt="图6-11">
-<figcaption aria-hidden="true">图6-11</figcaption>
-</figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_4.png" alt="图6-4"></p>
+<p>返回”ADE L”窗口，选择”Analyses”-“Choose”。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_5.png" alt="图6-5"></p>
+<p>在”Choosing Analyses”对话框中配置仿真模式和对应参数。<br>这次的反相器仿真就使用瞬态仿真”tran”简单看一下结果。时间设置为5u。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_6.png" alt="图6-6"></p>
+<p>接下来，需要将跟踪的信号添加进来。选择”Outputs”-“To Be Ploted”-“Select On Design”。然后再仿真原理图中选择对应的信号节点或导线。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_7.png" alt="图6-7"></p>
+<p>这时，”ADE L”窗口就有仿真策略”tran”和跟踪信号”in”和”out”。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_8.png" alt="图6-8"></p>
+<p>点击右侧的绿色按钮开始仿真。<br>仿真结果的可视化如下图所示（两个信号分组可以在右键中选择）。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_9.png" alt="图6-9"></p>
+<p>如果想重复使用本次的仿真配置，可以将其保存起来以备后用。<br>选择”Session”-“Save State”。（加载仿真配置选择”Session”-“Load State”）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_save_1.png" alt="图6-10"></p>
+<p>共有3个属性需要填写。”State Save Directiory”为保存路径，”Save As”为仿真配置的名称，”Description”中可以选填一些配置信息，方便更好地与其他仿真配置区分。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ic-note-inv-simu/ic-note-inv-simu/ade_sim_save_2.png" alt="图6-11"></p>
 <hr>
-<h2 id="总结">总结</h2>
-<p>基于IC618的反相器仿真就结束了，很详细地介绍了从建库到仿真结束的全部流程。</p>
-<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。 :@(击掌)</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://hexo.leonxu.top">Leon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://hexo.leonxu.top/p/ic-note-inv-simu/">https://hexo.leonxu.top/p/ic-note-inv-simu/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明来自 <a href="https://hexo.leonxu.top" target="_blank">Leon的网络日志</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/IC/">IC</a><a class="post-meta__tags" href="/tags/IC618/">IC618</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/p/ic-note-simu-tran/" title="IC笔记01--瞬态仿真"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/post_cover/cadence_logo.jpg" onerror="onerror=null;src='/img/uni/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">IC笔记01--瞬态仿真</div></div></a></div><div class="next-post pull-right"><a href="/p/vhdl-note-component-recursion/" title="VHDL学习笔记01--元件递归"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/post_cover/vhdl_learning_logo.png" onerror="onerror=null;src='/img/uni/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">VHDL学习笔记01--元件递归</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2023/10/09/LP7v63nBNZjXRkg.jpg" onerror="this.onerror=null;this.src='/img/uni/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Leon</div><div class="author-info__description">这里是爱研究各种问题、立许多flag的Leon的网络日志</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xulu199705" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xulu199705@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAlibrary"><span class="toc-number">1.</span> <span class="toc-text">1 新建Library</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAcell"><span class="toc-number">2.</span> <span class="toc-text">2 新建Cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE%E7%BB%98%E5%88%B6"><span class="toc-number">3.</span> <span class="toc-text">3 原理图绘制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%99%A8%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 添加器件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%AB%AF%E5%8F%A3"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 添加端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E5%AF%BC%E7%BA%BF"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 绘制导线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90symbol"><span class="toc-number">4.</span> <span class="toc-text">4 生成Symbol</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E7%94%B5%E8%B7%AF%E6%90%AD%E5%BB%BA"><span class="toc-number">5.</span> <span class="toc-text">5 仿真电路搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ade%E4%BB%BF%E7%9C%9F%E9%85%8D%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">6 ADE仿真配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-post-series"><div class="item-headline"><i class="fa-solid fa-layer-group"></i><span>系列文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/p/ic-note-simu-tran/" title="IC笔记01--瞬态仿真"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/post_cover/cadence_logo.jpg" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="IC笔记01--瞬态仿真"></a><div class="content"><a class="title" href="/p/ic-note-simu-tran/" title="IC笔记01--瞬态仿真">IC笔记01--瞬态仿真</a><time datetime="2021-04-06T01:46:19.000Z" title="发表于 2021-04-06 09:46:19">2021-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/ic-note-inv-simu/" title="IC笔记02--反相器仿真"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/post_cover/cadence_logo.jpg" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="IC笔记02--反相器仿真"></a><div class="content"><a class="title" href="/p/ic-note-inv-simu/" title="IC笔记02--反相器仿真">IC笔记02--反相器仿真</a><time datetime="2021-03-30T00:23:04.000Z" title="发表于 2021-03-30 08:23:04">2021-03-30</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/p/sony-fe-16-35mm-f2-8-gm-ii/" title="SONY FE 16-35mm F2.8 GM II"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/sony-fe-16-35mm-f2-8-gm-ii/1635gm2_banner_1610.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="SONY FE 16-35mm F2.8 GM II"/></a><div class="content"><a class="title" href="/p/sony-fe-16-35mm-f2-8-gm-ii/" title="SONY FE 16-35mm F2.8 GM II">SONY FE 16-35mm F2.8 GM II</a><time datetime="2023-12-24T13:53:35.000Z" title="发表于 2023-12-24 21:53:35">2023-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/tamron-20-40mm-f2-8-di-iii-vxd-a062/" title="TAMRON 20-40mm F2.8 Di III VXD A062"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/tamron-20-40mm-f2-8-di-iii-vxd-a062/2040banner.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="TAMRON 20-40mm F2.8 Di III VXD A062"/></a><div class="content"><a class="title" href="/p/tamron-20-40mm-f2-8-di-iii-vxd-a062/" title="TAMRON 20-40mm F2.8 Di III VXD A062">TAMRON 20-40mm F2.8 Di III VXD A062</a><time datetime="2023-07-09T02:34:55.000Z" title="发表于 2023-07-09 10:34:55">2023-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/" title="TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/tamron50400_banner_1610.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067"/></a><div class="content"><a class="title" href="/p/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/" title="TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067">TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067</a><time datetime="2022-11-14T01:59:59.000Z" title="发表于 2022-11-14 09:59:59">2022-11-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/ttartisan-50mm-f1-4-tilt/" title="铭匠TTArtisan 50mm F1.4 Tilt"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ttartisan-50mm-f1-4-tilt/Pasted%20image%2020221027195041.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="铭匠TTArtisan 50mm F1.4 Tilt"/></a><div class="content"><a class="title" href="/p/ttartisan-50mm-f1-4-tilt/" title="铭匠TTArtisan 50mm F1.4 Tilt">铭匠TTArtisan 50mm F1.4 Tilt</a><time datetime="2022-10-27T11:52:42.000Z" title="发表于 2022-10-27 19:52:42">2022-10-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/sony-fe-200-600mm-f5-6-6-3-g-oss/" title="Sony FE 200-600mm F5.6-6.3 G OSS"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/sony-fe-200-600mm-f5-6-6-3-g-oss/sel200600g_01_190620.jpg" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="Sony FE 200-600mm F5.6-6.3 G OSS"/></a><div class="content"><a class="title" href="/p/sony-fe-200-600mm-f5-6-6-3-g-oss/" title="Sony FE 200-600mm F5.6-6.3 G OSS">Sony FE 200-600mm F5.6-6.3 G OSS</a><time datetime="2022-09-22T03:33:43.000Z" title="发表于 2022-09-22 11:33:43">2022-09-22</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/post_cover/cadence_logo.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2024 By Leon</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>苏 ICP 备 17063385 号</span></a>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>基于IC618的反相器仿真就结束了，很详细地介绍了从建库到仿真结束的全部流程。</p>
+<p>最后的最后，请别忘了<del>一键三连</del>收藏分享。 :@(击掌) </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://hexo.leonxu.top">Leon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://hexo.leonxu.top/p/ic-note-inv-simu/">https://hexo.leonxu.top/p/ic-note-inv-simu/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明来自 <a href="https://hexo.leonxu.top" target="_blank">Leon的网络日志</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/IC/">IC</a><a class="post-meta__tags" href="/tags/IC618/">IC618</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/p/ic-note-simu-tran/" title="IC笔记01--瞬态仿真"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/post_cover/cadence_logo.jpg" onerror="onerror=null;src='/img/uni/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">IC笔记01--瞬态仿真</div></div></a></div><div class="next-post pull-right"><a href="/p/vhdl-note-component-recursion/" title="VHDL学习笔记01--元件递归"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/post_cover/vhdl_learning_logo.png" onerror="onerror=null;src='/img/uni/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">VHDL学习笔记01--元件递归</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2023/10/09/LP7v63nBNZjXRkg.jpg" onerror="this.onerror=null;this.src='/img/uni/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Leon</div><div class="author-info__description">这里是爱研究各种问题、立许多flag的Leon的网络日志</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xulu199705" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xulu199705@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BALibrary"><span class="toc-number">1.</span> <span class="toc-text">1 新建Library</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%96%B0%E5%BB%BACell"><span class="toc-number">2.</span> <span class="toc-text">2 新建Cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%8E%9F%E7%90%86%E5%9B%BE%E7%BB%98%E5%88%B6"><span class="toc-number">3.</span> <span class="toc-text">3 原理图绘制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%B7%BB%E5%8A%A0%E5%99%A8%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 添加器件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%B7%BB%E5%8A%A0%E7%AB%AF%E5%8F%A3"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 添加端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E7%BB%98%E5%88%B6%E5%AF%BC%E7%BA%BF"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 绘制导线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%94%9F%E6%88%90Symbol"><span class="toc-number">4.</span> <span class="toc-text">4 生成Symbol</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E4%BB%BF%E7%9C%9F%E7%94%B5%E8%B7%AF%E6%90%AD%E5%BB%BA"><span class="toc-number">5.</span> <span class="toc-text">5 仿真电路搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-ADE%E4%BB%BF%E7%9C%9F%E9%85%8D%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">6 ADE仿真配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-post-series"><div class="item-headline"><i class="fa-solid fa-layer-group"></i><span>系列文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/p/ic-note-simu-tran/" title="IC笔记01--瞬态仿真"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/post_cover/cadence_logo.jpg" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="IC笔记01--瞬态仿真"></a><div class="content"><a class="title" href="/p/ic-note-simu-tran/" title="IC笔记01--瞬态仿真">IC笔记01--瞬态仿真</a><time datetime="2021-04-06T01:46:19.000Z" title="发表于 2021-04-06 09:46:19">2021-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/ic-note-inv-simu/" title="IC笔记02--反相器仿真"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/post_cover/cadence_logo.jpg" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="IC笔记02--反相器仿真"></a><div class="content"><a class="title" href="/p/ic-note-inv-simu/" title="IC笔记02--反相器仿真">IC笔记02--反相器仿真</a><time datetime="2021-03-30T00:23:04.000Z" title="发表于 2021-03-30 08:23:04">2021-03-30</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/p/sony-fe-16-35mm-f2-8-gm-ii/" title="SONY FE 16-35mm F2.8 GM II"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/sony-fe-16-35mm-f2-8-gm-ii/1635gm2_banner_1610.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="SONY FE 16-35mm F2.8 GM II"/></a><div class="content"><a class="title" href="/p/sony-fe-16-35mm-f2-8-gm-ii/" title="SONY FE 16-35mm F2.8 GM II">SONY FE 16-35mm F2.8 GM II</a><time datetime="2023-12-24T13:53:35.000Z" title="发表于 2023-12-24 21:53:35">2023-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/tamron-20-40mm-f2-8-di-iii-vxd-a062/" title="TAMRON 20-40mm F2.8 Di III VXD A062"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/tamron-20-40mm-f2-8-di-iii-vxd-a062/2040banner.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="TAMRON 20-40mm F2.8 Di III VXD A062"/></a><div class="content"><a class="title" href="/p/tamron-20-40mm-f2-8-di-iii-vxd-a062/" title="TAMRON 20-40mm F2.8 Di III VXD A062">TAMRON 20-40mm F2.8 Di III VXD A062</a><time datetime="2023-07-09T02:34:55.000Z" title="发表于 2023-07-09 10:34:55">2023-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/" title="TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/tamron50400_banner_1610.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067"/></a><div class="content"><a class="title" href="/p/tamron-50-400-f4-5-6-3-di-iii-vc-vxd-a067/" title="TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067">TAMRON 50-400mm F4.5-6.3 Di III VC VXD A067</a><time datetime="2022-11-14T01:59:59.000Z" title="发表于 2022-11-14 09:59:59">2022-11-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/ttartisan-50mm-f1-4-tilt/" title="铭匠TTArtisan 50mm F1.4 Tilt"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/ttartisan-50mm-f1-4-tilt/Pasted%20image%2020221027195041.png" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="铭匠TTArtisan 50mm F1.4 Tilt"/></a><div class="content"><a class="title" href="/p/ttartisan-50mm-f1-4-tilt/" title="铭匠TTArtisan 50mm F1.4 Tilt">铭匠TTArtisan 50mm F1.4 Tilt</a><time datetime="2022-10-27T11:52:42.000Z" title="发表于 2022-10-27 19:52:42">2022-10-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/sony-fe-200-600mm-f5-6-6-3-g-oss/" title="Sony FE 200-600mm F5.6-6.3 G OSS"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/p/sony-fe-200-600mm-f5-6-6-3-g-oss/sel200600g_01_190620.jpg" onerror="this.onerror=null;this.src='/img/uni/404.jpg'" alt="Sony FE 200-600mm F5.6-6.3 G OSS"/></a><div class="content"><a class="title" href="/p/sony-fe-200-600mm-f5-6-6-3-g-oss/" title="Sony FE 200-600mm F5.6-6.3 G OSS">Sony FE 200-600mm F5.6-6.3 G OSS</a><time datetime="2022-09-22T03:33:43.000Z" title="发表于 2022-09-22 11:33:43">2022-09-22</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/post_cover/cadence_logo.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2024 By Leon</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>苏 ICP 备 17063385 号</span></a>
 <br />
 Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> &amp; <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a>
 </div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script>function panguFn () {
